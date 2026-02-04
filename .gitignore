@@ -16,3 +16,8 @@
 .DS_Store
 .idea/
 .vscode/
+
+# Junk/exports
+wget-log
+/web/*.tar.gz
+/web/*.tgz
