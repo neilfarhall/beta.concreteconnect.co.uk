@@ -1,0 +1,29 @@
+uuid: e33d530f-17c7-4ff7-9b9b-fef23c3fd5b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.inline
+    - field.field.media.pinterest.field_url
+    - media.type.pinterest
+  module:
+    - link
+id: media.pinterest.inline
+targetEntityType: media
+bundle: pinterest
+mode: inline
+content:
+  field_url:
+    type: link_default
+    weight: 0
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  name: true
+  path: true
+  status: true
+  uid: true

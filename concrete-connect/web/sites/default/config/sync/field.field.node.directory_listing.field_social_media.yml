@@ -1,0 +1,21 @@
+uuid: 83e1eada-a77d-4eca-9e14-1906a16eb4ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_media
+    - node.type.directory_listing
+  module:
+    - social_link_field
+id: node.directory_listing.field_social_media
+field_name: field_social_media
+entity_type: node
+bundle: directory_listing
+label: 'Social Media'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: social_links

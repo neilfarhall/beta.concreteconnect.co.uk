@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: mini_thumbnail
+label: 'Mini thumbnail'
+effects:
+  f8b8e461-f362-4b56-8182-a06667bc2df3:
+    uuid: f8b8e461-f362-4b56-8182-a06667bc2df3
+    id: image_scale
+    weight: 1
+    data:
+      width: 48
+      height: 48
+      upscale: false

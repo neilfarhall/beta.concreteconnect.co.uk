@@ -1,0 +1,13 @@
+name: 'Block Title Link'
+description: 'Adding link to title of blocks'
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
+package: 'User Interface'
+type: module
+dependencies:
+  - drupal:block
+
+# Information added by Drupal.org packaging script on 2024-03-14
+version: '1.1.6'
+project: 'block_title_link'
+datestamp: 1710425993

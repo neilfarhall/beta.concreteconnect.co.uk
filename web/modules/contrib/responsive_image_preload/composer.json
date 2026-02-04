@@ -1,0 +1,17 @@
+{
+    "name": "drupal/responsive_image_preload",
+    "description": "Enables site builders to configure responsive image preloads.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "homepage": "https://drupal.org/project/responsive_image_preload",
+    "authors": [
+        {
+            "name": "Luke Leber",
+            "email": "lukeleber@gmail.com"
+        }
+    ],
+    "require": {
+        "drupal/core": "^9.3 || ^10"
+    }
+}

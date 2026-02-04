@@ -1,0 +1,10 @@
+uuid: 81cb9eb5-4ba3-4004-9023-bf30370c5c37
+langcode: en
+status: true
+dependencies: {  }
+id: media_gallery
+label: 'Media Gallery'
+description: ''
+source_type: csv
+module: null
+shared_configuration: null

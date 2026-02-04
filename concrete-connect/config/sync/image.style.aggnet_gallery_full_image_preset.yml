@@ -1,0 +1,15 @@
+uuid: bd007c59-8f17-421f-b3d4-a111a264bffe
+langcode: en
+status: true
+dependencies: {  }
+name: aggnet_gallery_full_image_preset
+label: 'Aggnet Gallery Full Image Preset'
+effects:
+  b778feec-e4ff-444a-9d56-e428d84e87ce:
+    uuid: b778feec-e4ff-444a-9d56-e428d84e87ce
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 826
+      height: 700
+      anchor: center-center

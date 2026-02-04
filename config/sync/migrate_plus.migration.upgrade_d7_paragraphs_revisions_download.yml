@@ -1,0 +1,68 @@
+uuid: bc96ae54-aeec-4599-822c-df39bbcd3caa
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_revisions_download
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Revisions Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs Revisions (Download)'
+source:
+  plugin: d7_paragraphs_item_revision
+  bundle: download
+process:
+  id:
+    -
+      plugin: paragraphs_lookup
+      tags:
+        - 'Paragraphs Content'
+      source: item_id
+    -
+      plugin: extract
+      index:
+        - id
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_downloads:
+    -
+      plugin: sub_process
+      source: field_downloads
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  new_revisions: true
+  default_bundle: download
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_block_reference
+    - upgrade_d7_paragraphs_bordered_top_high_text
+    - upgrade_d7_paragraphs_bullet_list
+    - upgrade_d7_paragraphs_company_list
+    - upgrade_d7_paragraphs_dfp_video
+    - upgrade_d7_paragraphs_dfp_video_
+    - upgrade_d7_paragraphs_download
+    - upgrade_d7_paragraphs_header
+    - upgrade_d7_paragraphs_image
+    - upgrade_d7_paragraphs_image_and_text_banner
+    - upgrade_d7_paragraphs_image_carousel
+    - upgrade_d7_paragraphs_image_with_overlay_text
+    - upgrade_d7_paragraphs_light_blue_bar_left_with_dark_bl
+    - upgrade_d7_paragraphs_links
+    - upgrade_d7_paragraphs_search_form
+    - upgrade_d7_paragraphs_tabs
+    - upgrade_d7_paragraphs_text
+  optional: {  }

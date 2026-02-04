@@ -1,0 +1,15 @@
+uuid: 0d51822b-7c5a-4e28-8deb-e615790a877b
+langcode: en
+status: true
+dependencies: {  }
+name: iq_blog_main
+label: IQ_Blog_Main
+effects:
+  bf730ef6-7d87-45a6-b24c-d33df579b5c6:
+    uuid: bf730ef6-7d87-45a6-b24c-d33df579b5c6
+    id: image_scale
+    weight: 1
+    data:
+      width: 900
+      height: null
+      upscale: true

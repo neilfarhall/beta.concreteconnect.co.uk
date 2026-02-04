@@ -1,0 +1,8 @@
+uuid: ac5af839-ba91-4f48-b077-cc70260539df
+langcode: en
+status: true
+dependencies: {  }
+name: 'Recycling services'
+vid: recycling_services
+description: ''
+weight: 10

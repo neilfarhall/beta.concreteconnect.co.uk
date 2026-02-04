@@ -1,0 +1,30 @@
+uuid: d3c4bbe6-ffec-4c6e-9d95-fdd972a6de4e
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_realname_settings
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Realname 7 configuration'
+source:
+  plugin: variable
+  variables:
+    - realname_pattern
+  source_module: realname
+process:
+  pattern:
+    -
+      plugin: realname_replace_token
+      source:
+        - realname_pattern
+destination:
+  plugin: config
+  config_name: realname.settings
+migration_dependencies:
+  required: {  }
+  optional: {  }

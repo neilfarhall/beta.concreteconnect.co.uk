@@ -1,0 +1,32 @@
+uuid: c8af7dd8-fc3a-45b1-be8c-fbc2a11c77fe
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:fba3f0ba-833e-463a-a415-cd7a419e9222'
+  module:
+    - block_content
+    - block_title_link
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: newslettersignup
+theme: themag_st
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+settings:
+  id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+  label: 'Newsletter Signup'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

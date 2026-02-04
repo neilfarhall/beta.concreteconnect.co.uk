@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 18365c86-6717-4b83-92bf-77045b14bbd1
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    97542635-4575-4f35-8c80-46281ac783ab: menu_link_content
+    70f17118-eb7a-4710-bde3-433fc3375ca3: node
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Gallery Grid'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: 70f17118-eb7a-4710-bde3-433fc3375ca3
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:97542635-4575-4f35-8c80-46281ac783ab'
+  revision_translation_affected:
+    -
+      value: true

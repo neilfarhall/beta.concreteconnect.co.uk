@@ -1,0 +1,15 @@
+uuid: 603ef040-094c-4ee6-8591-78e0c2c4e887
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.image.field_image
+    - paragraphs.paragraphs_type.image
+id: paragraph.image.preview
+targetEntityType: paragraph
+bundle: image
+mode: preview
+content: {  }
+hidden:
+  field_image: true

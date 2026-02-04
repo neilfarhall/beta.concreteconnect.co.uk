@@ -1,0 +1,19 @@
+uuid: b5be9809-3056-41ec-b95a-3ff800a2f2f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_consultants
+    - node.type.directory_listing
+id: node.directory_listing.field_directory_consultants
+field_name: field_directory_consultants
+entity_type: node
+bundle: directory_listing
+label: 'Consultants field'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

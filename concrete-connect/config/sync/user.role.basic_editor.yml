@@ -1,0 +1,43 @@
+uuid: fbb9100f-c097-448f-9ebc-79893546b96c
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - node.type.article
+    - node.type.event
+    - node.type.job_listing
+    - node.type.news_article
+  module:
+    - exclude_node_title
+    - filter
+    - node
+    - scheduler
+    - system
+    - toolbar
+id: basic_editor
+label: 'basic editor'
+weight: 4
+is_admin: null
+permissions:
+  - 'access administration menu'
+  - 'access toolbar'
+  - 'administer nodes'
+  - 'create article content'
+  - 'create event content'
+  - 'create job_listing content'
+  - 'create news_article content'
+  - 'create word link'
+  - 'delete word link'
+  - 'edit own article content'
+  - 'edit own event content'
+  - 'edit own job_listing content'
+  - 'edit own news_article content'
+  - 'edit word link'
+  - 'schedule publishing of nodes'
+  - 'use exclude node title'
+  - 'use text format full_html'
+  - 'view own unpublished content'
+  - 'view scheduled content'
+  - 'view the administration theme'
+  - 'view word link'

@@ -1,0 +1,29 @@
+uuid: ea3a26d0-c5b8-483c-876f-a52f0d11bc00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.glossary_entry.body
+    - node.type.glossary_entry
+  module:
+    - text
+    - user
+id: node.glossary_entry.default
+targetEntityType: node
+bundle: glossary_entry
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  shariff_field: true

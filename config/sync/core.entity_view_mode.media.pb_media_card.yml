@@ -1,0 +1,12 @@
+uuid: 49b53e26-6d99-49b4-b55e-1286358a71f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: 319Kxrj0QwdD8RzBA3ehCkOuHaXiCGvgVrVOz1vYaFc
+id: media.pb_media_card
+label: 'PB Media Card'
+targetEntityType: media
+cache: true

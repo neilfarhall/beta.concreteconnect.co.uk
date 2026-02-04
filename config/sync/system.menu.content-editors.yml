@@ -1,0 +1,8 @@
+uuid: 0726c571-da35-4c3e-a975-623a31ab0976
+langcode: en
+status: true
+dependencies: {  }
+id: content-editors
+label: 'Content Editors'
+description: ''
+locked: false

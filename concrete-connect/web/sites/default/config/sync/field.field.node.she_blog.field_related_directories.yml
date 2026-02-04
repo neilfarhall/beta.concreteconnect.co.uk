@@ -1,0 +1,29 @@
+uuid: 2c509ebb-cc8d-4c66-b0fd-05b0e16ad950
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_directories
+    - node.type.directory_listing
+    - node.type.she_blog
+id: node.she_blog.field_related_directories
+field_name: field_related_directories
+entity_type: node
+bundle: she_blog
+label: 'Related Directories'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      directory_listing: directory_listing
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

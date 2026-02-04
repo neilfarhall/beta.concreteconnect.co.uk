@@ -1,0 +1,8 @@
+uuid: 1ae20db3-1d3c-4291-8cf1-ad8ca90eb3dd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Directory type'
+vid: directory_type
+description: ''
+weight: -4

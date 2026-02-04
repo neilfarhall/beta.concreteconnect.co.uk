@@ -1,0 +1,23 @@
+uuid: 1cb0df6d-0ef3-436b-a23e-91ab8597df6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: medium_teaser_card_370x280_home
+label: 'Medium Teaser Card (370x280) Home'
+effects:
+  cafd4176-2bf1-4635-8914-b3d345ac66f1:
+    uuid: cafd4176-2bf1-4635-8914-b3d345ac66f1
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 370
+      height: 280
+      crop_type: focal_point
+  ae1cf408-0e49-4950-beab-3366903defcc:
+    uuid: ae1cf408-0e49-4950-beab-3366903defcc
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

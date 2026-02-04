@@ -1,0 +1,23 @@
+uuid: 5c0dcdf8-95a8-4dda-8746-2c551f0409c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.she_intro
+  module:
+    - text
+id: node.she_intro.body
+field_name: body
+entity_type: node
+bundle: she_intro
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

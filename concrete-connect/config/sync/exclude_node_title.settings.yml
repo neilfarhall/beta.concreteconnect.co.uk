@@ -1,0 +1,64 @@
+_core:
+  default_config_hash: 0yJNd4uWv8TzhYEPQBDiApPL2e8ar88kBmQrzDjNCqc
+nid_list: {  }
+translation_sync: true
+search: false
+type: remove
+content_types:
+  ad_spec: none
+  article: none
+  directory_listing: none
+  document: none
+  download: none
+  event: none
+  feed: none
+  feed_item: none
+  glossary_entry: none
+  image: none
+  iq_blog: none
+  job_listing: none
+  migrate_example_producer: none
+  migrate_example_wine: none
+  news_article: none
+  page: none
+  paragraphs: none
+  popup: none
+  she_blog: none
+  she_intro: none
+  simpleads: none
+  test: none
+  themag_landing_page: none
+  video: none
+  webform: none
+content_type_modes:
+  ad_spec: {  }
+  article: {  }
+  directory_listing: {  }
+  document: {  }
+  download: {  }
+  event:
+    - directory_home_profile
+    - full
+  feed: {  }
+  feed_item: {  }
+  glossary_entry: {  }
+  image: {  }
+  iq_blog: {  }
+  job_listing:
+    - directory_contact_details
+    - directory_home_profile
+    - full
+    - gallery_grid
+  migrate_example_producer: {  }
+  migrate_example_wine: {  }
+  news_article: {  }
+  page: {  }
+  paragraphs: {  }
+  popup: {  }
+  she_blog: {  }
+  she_intro: {  }
+  simpleads: {  }
+  test: {  }
+  themag_landing_page: {  }
+  video: {  }
+  webform: {  }

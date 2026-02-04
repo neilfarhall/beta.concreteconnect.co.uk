@@ -1,0 +1,78 @@
+<?php
+
+use Drupal\Component\Serialization\Json;
+
+
+/**
+ * Implements hook_page_attachments().
+ */
+function prelinker_page_attachments(array &$page)
+{
+    // don't add to admin pages
+    if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+        return;
+    }
+
+    $config = \Drupal::configFactory()->getEditable('prelinker.settings');
+
+    // preconnects
+    if ($config->get('preconnect_head')) {
+        $storage = \Drupal::entityTypeManager()->getStorage('preconnect');
+        $query = $storage->getQuery()->sort('weight', 'ASC')->accessCheck(FALSE)->execute();
+
+        $preconnects = $storage->loadMultiple($query);
+
+        foreach ($preconnects as $preconnect) {
+            if (\Drupal::service('prelinker.prelinker')->check_page($preconnect->get('pages'))) {
+                $link = [
+                    '#tag' => 'link',
+                    '#attributes' => [
+                        'rel' => 'preconnect',
+                        'href' => '//'.$preconnect->get('domain')
+                    ],
+                ];
+                $page['#attached']['html_head'][] = [$link, $preconnect->get('id')];
+            }
+        }
+    }
+
+    // preload
+    if ($config->get('preload_head')) {
+        $storage = \Drupal::entityTypeManager()->getStorage('preload');
+        $query = $storage->getQuery()->sort('weight', 'ASC')->accessCheck(FALSE)->execute();
+
+        $preloads = $storage->loadMultiple($query);
+
+        foreach ($preloads as $preload) {
+            if (\Drupal::service('prelinker.prelinker')->check_page($preload->get('pages'))) {
+                $link = [
+                    '#tag' => 'link',
+                    '#attributes' => [
+                        'rel' => 'preload',
+                        'href' => $preload->get('file'),
+                        'as' => $preload->get('as'),
+                    ],
+                ];
+                if ($preload->get('as') == 'font') {
+                    $link['#attributes']['crossorigin'] = 'crossorigin';
+                }
+                $page['#attached']['html_head'][] = [$link, $preload->get('id')];
+            }
+        }
+    }
+}
+
+/**
+ * Implements hook_link_alter().
+ */
+function prelinker_link_alter(&$variables)
+{
+    if (array_key_exists('data-drupal-link-system-path', $variables['options']['attributes']) &&
+        (strpos($variables['options']['attributes']['data-drupal-link-system-path'], 'admin/config/system/prelinker/preconnect/add') !== false || strpos($variables['options']['attributes']['data-drupal-link-system-path'], 'admin/config/system/prelinker/preload/add') !== false)
+    ) {
+        $variables['options']['attributes']['class'][] = 'use-ajax';
+        // off_canvas could be used as an alternative.
+        $variables['options']['attributes']['data-dialog-type'][] = 'dialog';
+        $variables['options']['attributes']['data-dialog-options'][] = Json::encode(['width' => 700]);
+    }
+}

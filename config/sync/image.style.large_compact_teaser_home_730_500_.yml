@@ -1,0 +1,23 @@
+uuid: f78fa5bc-2254-4c6e-84af-a3c91604576d
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: large_compact_teaser_home_730_500_
+label: 'Large Compact Teaser Home (730×500)'
+effects:
+  dfa699b2-fe78-4a89-8751-da557a700457:
+    uuid: dfa699b2-fe78-4a89-8751-da557a700457
+    id: focal_point_scale_and_crop
+    weight: -9
+    data:
+      width: 730
+      height: 520
+      crop_type: focal_point
+  05c8165a-e610-47e8-8eaa-316c526ffa8a:
+    uuid: 05c8165a-e610-47e8-8eaa-316c526ffa8a
+    id: image_convert
+    weight: -10
+    data:
+      extension: webp

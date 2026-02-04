@@ -1,0 +1,9 @@
+name: Node Access Grants
+description: OOP-fies the node access grants system
+core_version_requirement: ^8 || ^9 || ^10
+type: module
+
+# Information added by Drupal.org packaging script on 2023-05-06
+version: '8.x-3.1'
+project: 'node_access_grants'
+datestamp: 1683398926

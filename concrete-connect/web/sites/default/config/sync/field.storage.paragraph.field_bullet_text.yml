@@ -1,0 +1,20 @@
+uuid: 613e4f97-3913-4a9a-b36f-ffb6bff802bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_bullet_text
+field_name: field_bullet_text
+entity_type: paragraph
+type: text
+settings:
+  max_length: 500
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

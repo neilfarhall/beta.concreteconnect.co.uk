@@ -1,0 +1,10 @@
+uuid: 5366f4ac-2814-472c-9e2a-4f14b43e6078
+langcode: en
+status: true
+dependencies: {  }
+id: light_blue_bar_left_with_dark_bl
+label: 'Light Blue Bar Left with Dark Blue Bar Link'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

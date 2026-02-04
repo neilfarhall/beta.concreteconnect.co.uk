@@ -1,0 +1,130 @@
+@import "../dependencies/index";
+
+//
+// Teaser
+//
+details.teaser,
+fieldset.teaser {
+
+  .details-wrapper,
+  .fieldset-wrapper {
+    display: flex;
+  }
+
+  .field--name-field-teaser-media {
+    margin-right: $spacer;
+
+    details[open] {
+      border: 0;
+
+      p,
+      summary[aria-expanded="true"] {
+        display: none;
+      }
+
+      .details-wrapper {
+        box-sizing: border-box;
+        padding: $spacer 0 0;
+      }
+    }
+  }
+
+  .media-library-widget {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    padding: 0;
+    border: none;
+
+    .media-library-item--grid:before {
+      display: none;
+    }
+
+    * {
+      width: auto;
+      height: auto;
+      //display: block;
+    }
+
+    .fieldset-wrapper {
+      display: block;
+    }
+
+    .media-library-open-button {
+      width: 100%;
+      margin-top: 18px;
+    }
+
+
+    .media-library-item__preview {
+      padding: 0;
+    }
+
+    .media-library-selection {
+      display: block;
+      margin: 0;
+    }
+
+    .field--name-thumbnail {
+      background: none;
+    }
+
+    .media-library-widget__toggle-weight,
+    .description,
+    .media-library-item__attributes{
+      display: none;
+    }
+  }
+
+  .field--name-field-teaser-text {
+    flex: 1;
+  }
+}
+
+
+
+//
+// Media preview wrapper
+//
+.media-preview {
+  display: flex;
+  align-items: center;
+
+  &__thumbnail {
+    flex: 0 0 auto;
+    margin-right: $spacer;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+
+    .field:not(:last-child) {
+      margin-bottom: $spacer/4;
+    }
+  }
+}
+
+//
+// Media preview for TheMAG & EM themes
+//
+.pd-preview {
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &-thumb {
+    flex: 0 0 auto;
+    margin-right: $spacer;
+  }
+
+  &-content {
+    flex: 1 1 auto;
+
+    .field:not(:last-child) {
+      margin-bottom: $spacer/4;
+    }
+  }
+}
+

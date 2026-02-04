@@ -1,0 +1,8 @@
+uuid: fa37dba2-e9d7-4638-9b80-8e539151c7d1
+langcode: en
+status: true
+dependencies: {  }
+id: news-right
+label: 'News Right'
+description: ''
+locked: false

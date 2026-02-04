@@ -1,0 +1,25 @@
+uuid: fa80b5f4-a42f-4ec9-b336-f7c143f85184
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bullet_list.field_bullet_text
+    - paragraphs.paragraphs_type.bullet_list
+  module:
+    - text
+id: paragraph.bullet_list.default
+targetEntityType: paragraph
+bundle: bullet_list
+mode: default
+content:
+  field_bullet_text:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,14 @@
+uuid: 06e106c4-22cf-4f4a-b701-af5e4a7196e8
+langcode: en
+status: true
+dependencies: {  }
+id: video_file_local_
+label: 'Video file (local)'
+description: ''
+source: video_file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_video_file
+field_map:
+  name: name

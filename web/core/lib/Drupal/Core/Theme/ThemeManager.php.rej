@@ -1,0 +1,11 @@
+--- lib/Drupal/Core/Theme/ThemeManager.php
++++ lib/Drupal/Core/Theme/ThemeManager.php
+@@ -397,6 +413,8 @@ public function render($hook, array $variables) {
+       if (isset($theme_hook_suggestion)) {
+         $variables['theme_hook_suggestion'] = $theme_hook_suggestion;
+       }
++      // Make sure we pass the file name suggestions that were actually used.
++      $variables['file_name_suggestions'] = $suggestions;
+       $output = $render_function($template_file, $variables);
+     }
+ 

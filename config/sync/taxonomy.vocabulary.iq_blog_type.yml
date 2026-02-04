@@ -1,0 +1,8 @@
+uuid: 55ac3880-f34e-4795-97af-87ff5a3b04da
+langcode: en
+status: true
+dependencies: {  }
+name: 'IQ Blog Type'
+vid: iq_blog_type
+description: ''
+weight: 0

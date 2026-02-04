@@ -1,0 +1,8 @@
+uuid: 06f6879c-d6f2-4ae5-af44-79287c698309
+langcode: en
+status: true
+dependencies: {  }
+name: 'Whos-who directory category'
+vid: whos_who_directory_category
+description: ''
+weight: 10

@@ -1,0 +1,27 @@
+uuid: a385d2f0-390c-4a0e-b4f9-62937f998e44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_video_file
+    - media.type.video_local_host
+  module:
+    - file
+id: media.video_local_host.field_media_video_file
+field_name: field_media_video_file
+entity_type: media
+bundle: video_local_host
+label: File
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: video
+  file_extensions: 'mp4 webm'
+  max_filesize: '25 MB'
+  description_field: false
+field_type: file

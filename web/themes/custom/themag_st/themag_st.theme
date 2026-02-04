@@ -1,0 +1,156 @@
+<?php
+/**
+ * @file
+ * themag.template
+ */
+
+// Include files with preprocess functions.
+foreach (glob(dirname(__FILE__) .  '/includes/*.inc' ) as $filename) {
+  require_once dirname(__FILE__) . '/includes/' . basename($filename);
+}
+/**
+ * Implements hook_preprocess_search_result().
+ */
+function themag_st_preprocess_search_result(&$variables) {
+    $variables['nid'] = $variables['result']['node']->get('nid')->getString();
+  $variables['content_type'] = $variables['result']['node']->get('type')->entity->get('name');
+
+    switch ($variables['type']) {
+        // some other adjustments based on the node tpye
+    }
+
+  // Apply custom date formatter to "date" field.
+  if ($variables['result']['node'] && !empty($variables['result']['node'])) {
+    $variables['aggnet_formatted_date'] = \Drupal::service('date.formatter')->format($variables['result']['node']->getCreatedTime(), 'custom', 'd M Y');
+  }
+}
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Render\Element;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+
+function themag_st_preprocess_node(&$variables) {
+  $node = $variables['node'];
+
+  // dataLayer for tags
+
+  if ($node->getType() == 'news_article') {
+    $tags = [];
+    $i = 1;
+    foreach ($node->get('field_tags')->referencedEntities() as $term) {
+      $tags["tag{$i}"] = $term->label();
+      $i++;
+    }
+
+    $variables['#attached']['drupalSettings']['dataLayerNewsArticle'] = array_merge([
+      'event' => 'news_article_view',
+      'title' => $node->label(),
+    ], $tags);
+  }
+  // Check if this node has a five-fold calling assigned.
+  if ($node->hasField('field_color') && !$node->get('field_color')->isEmpty()) {
+    $color = $node->field_color->entity->getName();
+    $variables['attributes']['class'][] = Html::cleanCssIdentifier($color);
+  }
+
+  if ($variables['view_mode'] === 'medium_card_with_square_image') {
+
+    // Check if the node has the 'news_type' field and if it's not empty.
+    if ($node->hasField('field_news_type') && !$node->get('field_news_type')->isEmpty()) {
+      // Get the taxonomy term ID from the 'news_type' field.
+      $term_id = $node->get('field_news_type')->target_id;
+
+      // Load the taxonomy term based on the ID.
+      $term = Term::load($term_id);
+      if ($term) {
+        // Get the term name.
+        $term_name = $term->getName();
+
+        // Sanitize the term name to make it a safe CSS class.
+        $clean_css_class = strtolower(Html::cleanCssIdentifier($term_name));
+
+        // Add the sanitized term name as a class to the node.
+        $variables['attributes']['class'][] = $clean_css_class;
+      }
+    }
+  }
+if ($variables['view_mode'] === 'large_compact_teaser') {
+
+    // Check if the node has the 'news_type' field and if it's not empty.
+    if ($node->hasField('field_news_type') && !$node->get('field_news_type')->isEmpty()) {
+      // Get the taxonomy term ID from the 'news_type' field.
+      $term_id = $node->get('field_news_type')->target_id;
+
+      // Load the taxonomy term based on the ID.
+      $term = Term::load($term_id);
+      if ($term) {
+        // Get the term name.
+        $term_name = $term->getName();
+
+        // Sanitize the term name to make it a safe CSS class.
+        $clean_css_class = strtolower(Html::cleanCssIdentifier($term_name));
+
+        // Add the sanitized term name as a class to the node.
+        $variables['attributes']['class'][] = $clean_css_class;
+      }
+    }
+  }
+if ($variables['view_mode'] === 'small_compact_teaser') {
+
+    // Check if the node has the 'news_type' field and if it's not empty.
+    if ($node->hasField('field_news_type') && !$node->get('field_news_type')->isEmpty()) {
+      // Get the taxonomy term ID from the 'news_type' field.
+      $term_id = $node->get('field_news_type')->target_id;
+
+      // Load the taxonomy term based on the ID.
+      $term = Term::load($term_id);
+      if ($term) {
+        // Get the term name.
+        $term_name = $term->getName();
+
+        // Sanitize the term name to make it a safe CSS class.
+        $clean_css_class = strtolower(Html::cleanCssIdentifier($term_name));
+
+        // Add the sanitized term name as a class to the node.
+        $variables['attributes']['class'][] = $clean_css_class;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function themag_preprocess_views_view(array &$variables) {
+  $view = $variables['view'];
+
+  // Check for teh view we want to add classes to
+  if ($view->id() == 'taxonomy_term') {
+
+    // Check if the view has arguments.
+    if (!empty($view->args)) {
+
+      // Assuming the first argument is the taxonomy term ID
+      $tid = reset($view->args);
+
+      $term = Term::load($tid);
+
+      if ($term) {
+        //   Get the term name and sanitize it to a safe CSS class
+        $sanitized_term_name = strtolower(Html::cleanCssIdentifier($term->getName()));
+
+        // Create a new class string
+        $custom_class = 'section-view-' . $sanitized_term_name;
+
+        // Add the custom class to the view's classes.
+        $variables['attributes']['class'][] = $custom_class;
+
+//        now we have a new class - e.g. section-view-decarbonisation
+      }
+    }
+  }
+}
+

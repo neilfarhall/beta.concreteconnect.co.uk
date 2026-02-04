@@ -1,0 +1,64 @@
+@mixin button {
+  display: inline-block;
+  padding: $spacer/1.5 $spacer * 1.5;
+  position: relative;
+  outline: none;
+  box-sizing: border-box;
+  background-color: #FFF;
+  border: 1px solid $color--gray;
+  border-radius: 2px;
+  transition: all .2s ease-in-out;
+  color: $gray-blue-700;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  &:hover {
+    background-color: $color--primary;
+    border-color: transparent;
+    color: $text-color--light;
+    box-shadow: 0 2px 8px 0 rgba($gray-blue-900, .3);
+  }
+  &:focus, &:active {
+    box-shadow: 0 0 0 0 rgba($gray-blue-900, .1);
+  }
+
+  &--small {
+    padding: $spacer/4 $spacer;
+    font-size: 10px;
+  }
+
+  &--primary {
+    background-color: $color--primary;
+    border-color: $color--primary;
+    color: $text-color--light;
+    &:hover {
+      background-color: $blue-light-800;
+    }
+  }
+
+  &--danger {
+    background-color: $red-600;
+    border-color: $red-600;
+    color: $text-color--light;
+    &:hover {
+      background-color: $red-800;
+    }
+  }
+
+  &:disabled,
+  &:disabled:active,
+  &.is-disabled,
+  &.is-disabled:active {
+    cursor: default;
+    color: $gray-blue-300;
+    border-color: $color--gray--light;
+    background: $color--gray--light;
+    box-shadow: none;
+    text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
+    font-weight: normal;
+  }
+}

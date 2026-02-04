@@ -1,0 +1,83 @@
+name: 'TheMAG Demo'
+type: module
+description: 'Provide additional demo content for TheMAG. This module is used for demonstration purposes only, you can uninstall it on your production site.'
+package: TheMAG Demo
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - themag_default_content
+  - entityqueue
+default_content:
+  node:
+    - d6c0f846-a941-47d0-bb40-e34d3102cd44
+    - 6bca2f0a-6e9b-49d4-b69f-33f6ed8a6e80
+    - f09c0bed-8e67-4afc-bee1-620376a81a2d
+    - 59f28cf0-3dd8-4b93-881e-b65daad39832
+    - a849d9cc-313b-4a73-bc66-9e7907ab9247
+    - b4ecc682-9889-4d4a-831e-88802702fa7a
+    - 5adf0e43-f486-4a5e-8913-e32871f38aff
+    - d9d1b30c-d5f1-4dad-a955-5f2e84cb9d32
+    - 0dc1da63-3004-42a2-9004-fef26b74e96d
+    - 28d6f1b9-0703-42f4-8496-f58220a9af99
+    - d3c38534-5eed-44bd-8361-8bff6df91a00
+    - 5d9a2f0e-8f2c-49e0-ab57-dff7d31f6cf2
+    - 0960fc1b-7596-4e09-8cd4-b731aff769eb
+    - b37ecf0c-07a8-407e-87e6-1a6fb7eac59c
+    - 11041d5e-3756-4af3-bf6b-46b985afeed1
+    - 44475a90-72d8-408e-9641-2c90ac117ebe
+    - 930026b5-6d40-4a06-981c-68ad16e890ea
+    - f4a8bab1-ebab-4bb4-b306-18b1a3ff4edc
+    - a79d47f6-0dd4-4578-a989-a47babf6fa17
+    - a2739cb3-6c79-42f0-932f-a14e5204ab60
+    - 8a9c4fd0-f790-4d64-9239-befa11c049ee
+    - 275de5eb-b07e-49e4-a3fe-2a6b851c1c62
+    - 8f835db4-9e8c-433c-b815-161bc57699b0
+    - 93be6264-3265-46f8-b0a7-fb45ee259eea
+    - dbd7d4a8-50ec-46d7-aac2-27e72a17810e
+    - 70f17118-eb7a-4710-bde3-433fc3375ca3
+    - 15499a69-0037-48b3-a00d-fc321ece9221
+    - 3ebc7c90-45f1-4cdb-8901-4a7f182ac1a8
+    - 6334bd1d-6bc9-4752-82d2-e5d93576eb15
+  taxonomy_term:
+    - 3055923a-47a9-4adc-8cda-ddd44279d999
+    - 61943b17-d795-4630-b0ec-1ed678fc1229
+    - d80cf981-0e48-4de3-a687-96f6d19cadee
+    - b16f9878-49f2-4afe-a4cb-647181eb9da6
+    - 88eb7904-8dd3-4bd7-9e13-1ac0256f0683
+    - 01378c66-b01c-410b-8851-5fdbec5ca544
+    - 32c90636-e36c-43af-8517-6d314e3237a8
+    - ae44cd63-e987-486f-987c-443f5887782c
+    - 191f97ee-a5b4-429c-a2db-bde0216e6f93
+    - 43bb0b8b-53aa-438c-9d65-ffbda0b9f299
+    - d3c861c4-6c76-4abc-822d-d7fb4c13ad52
+    - 9946e834-dff7-4f0e-9e92-22a6523e7395
+    - 99372a06-c10f-4d05-997f-41a88550725c
+    - eb6c319a-63d7-4f80-ba1c-202d396494c8
+    - 35adf6cd-5d47-4be0-b668-3ba84614c520
+    - e5dd9fca-3e85-4711-a378-b2a7e18d44b3
+    - 072cf82b-b731-4693-8f7c-233528403d99
+    - ef795f1a-f408-4b45-bca8-7398debd3820
+  media:
+    - 805ca35f-8990-497e-8a41-98ac6f36c531
+    - e4d13ef5-285c-427f-990e-d46e0a30ff21
+  poll:
+    - 396aca72-a9f9-4392-a428-2c66082a5dfd
+  poll_choice:
+    - fed731ce-7c35-46a4-9412-cde2dacfda11
+    - 4bd61302-d051-4860-a10e-76ff35f6aadf
+    - 272acd65-f5e9-480e-80b5-cc0ce59221e1
+  menu_link_content:
+    - 97542635-4575-4f35-8c80-46281ac783ab
+    - eb5ae43b-22cb-47ed-9f0b-c1469dc14858
+    - 18365c86-6717-4b83-92bf-77045b14bbd1
+    - 4cafc2be-7ef8-474b-94b2-84f12c9d3f98
+    - 3f1da591-552f-4b1e-8aa2-90471d4baf05
+    - 185fae2c-86fc-4c07-87b0-2f7f061bf992
+    - 08e9095c-d520-43c5-9481-dcec19893fde
+    - fb83d5be-4e4c-4919-9b0f-5cf68e91a94d
+    - 2d5e4991-2f49-42a4-b033-e82e09093e7a
+    - 2d5a4444-b89d-4be5-858f-96c378a9b20d
+    - c60ca557-a7c8-4a24-88de-83d6d3193221
+    - a7915d04-3a35-4d00-8432-928eac924921
+    - 1ccb6771-dee3-47d0-9535-a05af91971ba
+    - 40f39e75-ce30-4126-a47b-e844f4081bcc
+

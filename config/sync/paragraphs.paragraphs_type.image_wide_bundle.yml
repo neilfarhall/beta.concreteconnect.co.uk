@@ -1,0 +1,12 @@
+uuid: aee8b4b9-aea0-4b67-a096-1c0f8ee1b1ed
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3LmMoHJfoGlM2md9-ynMQNYBBV5jcqzyALoMWM5XF6I
+id: image_wide_bundle
+label: 'Image Wide'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

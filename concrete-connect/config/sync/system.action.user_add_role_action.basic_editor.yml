@@ -1,0 +1,14 @@
+uuid: a6926b0d-2ea0-43bf-aaf3-e238cd29e950
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.basic_editor
+  module:
+    - user
+id: user_add_role_action.basic_editor
+label: 'Add the basic editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: basic_editor

@@ -1,0 +1,25 @@
+uuid: 2c00af3f-ca29-4843-b3e0-9ce6b05aa03a
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - node
+  enforced:
+    module:
+      - migrate_example_advanced_setup
+_core:
+  default_config_hash: rnPNDP4H1c8HbKIqtU9w1amrixUl-lpEbXjksd2rBoE
+id: node.field_migrate_example_comments
+field_name: field_migrate_example_comments
+entity_type: node
+type: comment
+settings:
+  comment_type: migrate_example_advanced_comment
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

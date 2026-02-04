@@ -1,0 +1,8 @@
+uuid: 58d23ebc-40ad-4b60-b527-e5ae4dafe743
+langcode: en
+status: true
+dependencies: {  }
+name: Newsletter
+vid: newsletter
+description: ''
+weight: 4

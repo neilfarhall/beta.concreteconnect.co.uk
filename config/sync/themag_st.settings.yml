@@ -1,0 +1,71 @@
+_core:
+  default_config_hash: NFxSfgvZaEIKGOKA1tAfSbP_UCwDKS5BGPuzhdG_K1c
+favicon:
+  mimetype: image/png
+  path: ''
+  use_default: false
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: false
+  node_user_picture: true
+logo:
+  use_default: true
+themag_header_style: header_c
+themag_header_banner: "<table class=\"table table-hover table-striped\">\r\n     <tr><td class=\"site-org\">From the <br class=\"site-org\">organisers of</td><td><a href=\"https://www.concreteshow.co.uk/\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"/themes/custom/themag_st/assets/UKCS_2026_site-logo.svg\" alt=\"Concrete Show Logo\" height=\"38px\" width=\"190px\"></a></td></tr>\r\n</table>\r\n"
+themag_sticky_header: 1
+themag_search_button_text: Go
+themag_search_field_placeholder_text: 'Enter the terms you wish to search for'
+themag_toggle_scroll_to_top: 1
+themag_sticky_sidebar: 0
+themag_header_user_icon: 1
+themag_header_search_icon: 1
+themag_facebook: ''
+themag_twitter: ''
+themag_youtube: ''
+themag_instagram: 'https://www.instagram.com/concreteconnect.co.uk/'
+themag_pinterest: ''
+themag_rrssb_buttons:
+  rrssb_facebook: rrssb_facebook
+  rrssb_twitter: rrssb_twitter
+  rrssb_googleplus: rrssb_googleplus
+  rrssb_email: rrssb_email
+  rrssb_tumblr: 0
+  rrssb_linkedin: 0
+  rrssb_reddit: 0
+  rrssb_vk: 0
+  rrssb_hackernews: 0
+  rrssb_pocket: 0
+themag_use_custom_css_file: 1
+themag_use_custom_js_file: 0
+themag_additional_css: ''
+themag_additional_javascript: ''
+themag_facebook_link_title: ''
+themag_twitter_link_title: ''
+themag_googleplus: 'http://google.com'
+themag_googleplus_link_title: ''
+themag_youtube_link_title: ''
+themag_instagram_link_title: ''
+themag_pinterest_link_title: ''
+themag_tumblr: ''
+themag_tumblr_link_title: ''
+themag_author_role: contributor
+themag_google-plus: ''
+themag_google-plus_link_title: ''
+themag_media_icons: 1
+pd_teaser_show_author_info: 1
+pd_teaser_show_post_date: 1
+pd_teaser_date_format: fallback
+themag_teaser_show_author_info: 1
+themag_teaser_show_post_date: 1
+themag_teaser_date_format: short
+themag_teaser_show_media_contained_icons: 1
+themag_linked-in: 'https://www.linkedin.com/company/concreteconnect'
+themag_linked-in_link_title: ''
+themag_mailchimp_signup_headline: 'Newsletters and Alerts'
+themag_mailchimp_signup_text: 'Sign up to receive latest news from the concrete industry'
+themag_compatibility_mode: 0
+themag_header_cart_icon: 1
+themag_teaser_show_author_name: 1
+themag_header_search_icon_as_link: 0
+themag_search_page_path: ''

@@ -1,0 +1,216 @@
+uuid: 67366202-5e36-4b35-b8a4-aa920e5e7823
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.tagging_location.field_color
+    - field.field.taxonomy_term.tagging_location.field_media
+    - field.field.taxonomy_term.tagging_location.layout_builder__layout
+    - taxonomy.vocabulary.tagging_location
+    - views.view.mg_taxonomy_term
+  content:
+    - 'block_content:advertisement:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+    - 'block_content:advertisement:f66ff081-dc10-45ef-ade1-23884bcc4885'
+    - 'block_content:basic:fba3f0ba-833e-463a-a415-cd7a419e9222'
+  module:
+    - block_content
+    - color_field
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - text
+    - themag_layouts
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: themag_onecol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: leaderboard-strip
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: '12'
+          sticky_columns: null
+          first:
+            custom_classes: ''
+        components:
+          7e1a03c8-fac2-4021-85e4-a5f9d20549a2:
+            uuid: 7e1a03c8-fac2-4021-85e4-a5f9d20549a2
+            region: first
+            configuration:
+              id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+              label: 'Leaderboard Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 0
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          21aa0dc5-e4a4-46b2-bde6-6274ee38a21b:
+            uuid: 21aa0dc5-e4a4-46b2-bde6-6274ee38a21b
+            region: first
+            configuration:
+              id: 'field_block:taxonomy_term:tagging_location:name'
+              label: Name
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: custom
+                    destination:
+                      field:
+                        field: ''
+                        custom:
+                          custom: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 0
+            additional: {  }
+          8f8fb0b3-ffa4-4f13-abb2-cd0a819d9543:
+            uuid: 8f8fb0b3-ffa4-4f13-abb2-cd0a819d9543
+            region: first
+            configuration:
+              id: 'views_block:mg_taxonomy_term-block_2'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping:
+                term_node_tid_depth: layout_builder.entity
+              views_label: ''
+              items_per_page: none
+              pager: view
+              exposed: {  }
+              pager_offset: 0
+            weight: 1
+            additional: {  }
+          55c470d5-2d8c-4124-b3d9-8acc0c74aa15:
+            uuid: 55c470d5-2d8c-4124-b3d9-8acc0c74aa15
+            region: second
+            configuration:
+              id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+              label: 'MPU Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          c42ae55a-b29d-43cc-88a5-510c78647fdf:
+            uuid: c42ae55a-b29d-43cc-88a5-510c78647fdf
+            region: first
+            configuration:
+              id: 'views_block:mg_taxonomy_term-block_6'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping:
+                term_node_tid_depth: layout_builder.entity
+              views_label: ''
+              items_per_page: none
+              pager: view
+              exposed: {  }
+              pager_offset: 0
+            weight: 2
+            additional: {  }
+          15093b51-64bb-46e0-bdc2-182a9ed529a1:
+            uuid: 15093b51-64bb-46e0-bdc2-182a9ed529a1
+            region: second
+            configuration:
+              id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+              label: 'Newsletter Signup'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: taxonomy_term.tagging_location.full
+targetEntityType: taxonomy_term
+bundle: tagging_location
+mode: full
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  layout_builder__layout: true
+  search_api_excerpt: true

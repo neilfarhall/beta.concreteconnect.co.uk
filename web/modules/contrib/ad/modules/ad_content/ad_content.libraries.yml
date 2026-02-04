@@ -1,0 +1,9 @@
+ad_content.render_ads:
+  version: 'VERSION'
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+  js:
+    js/ad-content.render.js: {}

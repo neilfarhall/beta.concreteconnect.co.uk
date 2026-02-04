@@ -1,0 +1,33 @@
+uuid: 8d26892f-3f42-45bf-bed1-fb7f43ec9cae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_articles
+    - node.type.article
+    - node.type.directory_listing
+    - node.type.news_article
+    - node.type.she_blog
+id: node.she_blog.field_related_articles
+field_name: field_related_articles
+entity_type: node
+bundle: she_blog
+label: 'Related Articles'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      directory_listing: directory_listing
+      news_article: news_article
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

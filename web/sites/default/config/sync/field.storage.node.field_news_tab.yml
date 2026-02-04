@@ -1,0 +1,18 @@
+uuid: ba25a0f4-fb2a-4480-8a36-4c1ffae92394
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_news_tab
+field_name: field_news_tab
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

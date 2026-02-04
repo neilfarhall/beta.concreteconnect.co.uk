@@ -1,0 +1,18 @@
+uuid: 233cd29c-78eb-4bd6-a933-1868bd0ad7dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - disable_messages
+    - eu_cookie_compliance
+    - exclude_node_title
+id: subscriber
+label: subscriber
+weight: 6
+is_admin: null
+permissions:
+  - 'display eu cookie compliance popup'
+  - 'use exclude node title'
+  - 'view error messages'
+  - 'view status messages'
+  - 'view warning messages'

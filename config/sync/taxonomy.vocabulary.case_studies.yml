@@ -1,0 +1,8 @@
+uuid: de960e76-978d-4213-b383-6179b1b6aca1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Case studies'
+vid: case_studies
+description: ''
+weight: -8

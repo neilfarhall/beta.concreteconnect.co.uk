@@ -1,0 +1,10 @@
+uuid: 3a76e557-712f-46ab-ba8b-eed87d0820a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.profile_page_logo
+label: 'Profile Page Logo'
+targetEntityType: media
+cache: true

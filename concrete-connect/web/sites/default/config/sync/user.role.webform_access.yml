@@ -1,0 +1,92 @@
+uuid: 28010886-64cb-4d92-a94d-33dc2f9c2258
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.document
+    - node.type.download
+    - node.type.event
+    - node.type.glossary_entry
+    - node.type.image
+    - node.type.page
+    - node.type.she_intro
+    - node.type.simpleads
+    - node.type.video
+  module:
+    - exclude_node_title
+    - node
+    - system
+id: webform_access
+label: 'webform access'
+weight: 8
+is_admin: null
+permissions:
+  - 'access administration menu'
+  - 'access administration pages'
+  - 'access all webform results'
+  - 'access content'
+  - 'access content overview'
+  - 'access own webform results'
+  - 'access own webform submissions'
+  - 'administer content types'
+  - 'administer fields'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'bypass node access'
+  - 'create document content'
+  - 'create download content'
+  - 'create event content'
+  - 'create glossary_entry content'
+  - 'create image content'
+  - 'create page content'
+  - 'create she_intro content'
+  - 'create simpleads content'
+  - 'create video content'
+  - 'delete all webform submissions'
+  - 'delete any document content'
+  - 'delete any download content'
+  - 'delete any event content'
+  - 'delete any glossary_entry content'
+  - 'delete any image content'
+  - 'delete any page content'
+  - 'delete any she_intro content'
+  - 'delete any simpleads content'
+  - 'delete any video content'
+  - 'delete own document content'
+  - 'delete own download content'
+  - 'delete own event content'
+  - 'delete own glossary_entry content'
+  - 'delete own image content'
+  - 'delete own page content'
+  - 'delete own she_intro content'
+  - 'delete own simpleads content'
+  - 'delete own video content'
+  - 'delete own webform submissions'
+  - 'delete revisions'
+  - 'display drupal links'
+  - 'edit all webform submissions'
+  - 'edit any document content'
+  - 'edit any download content'
+  - 'edit any event content'
+  - 'edit any glossary_entry content'
+  - 'edit any image content'
+  - 'edit any page content'
+  - 'edit any she_intro content'
+  - 'edit any simpleads content'
+  - 'edit any video content'
+  - 'edit own document content'
+  - 'edit own download content'
+  - 'edit own event content'
+  - 'edit own glossary_entry content'
+  - 'edit own image content'
+  - 'edit own page content'
+  - 'edit own she_intro content'
+  - 'edit own simpleads content'
+  - 'edit own video content'
+  - 'edit own webform submissions'
+  - 'edit webform components'
+  - 'flush caches'
+  - 'revert revisions'
+  - 'use exclude node title'
+  - 'view own unpublished content'
+  - 'view revisions'

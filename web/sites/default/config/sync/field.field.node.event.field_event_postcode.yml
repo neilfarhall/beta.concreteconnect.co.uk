@@ -1,0 +1,19 @@
+uuid: 3f1a94bc-b406-4c57-803c-8ea49b8a131d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_postcode
+    - node.type.event
+id: node.event.field_event_postcode
+field_name: field_event_postcode
+entity_type: node
+bundle: event
+label: Postcode
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

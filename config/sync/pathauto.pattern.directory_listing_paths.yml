@@ -1,0 +1,22 @@
+uuid: d5b7e628-5b7b-4700-971f-0eeb86923448
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: directory_listing_paths
+label: 'Directory listing paths'
+type: 'canonical_entities:node'
+pattern: '[node:field_directory_page_type]/[node:title]'
+selection_criteria:
+  f53c6b7d-b026-4e4b-8802-043a866cf2ed:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: f53c6b7d-b026-4e4b-8802-043a866cf2ed
+    context_mapping:
+      node: node
+    bundles:
+      directory_listing: directory_listing
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,8 @@
+uuid: 83f05081-7bcd-4fed-883b-da113bf8549e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Expert category'
+vid: expert_category
+description: ''
+weight: -1

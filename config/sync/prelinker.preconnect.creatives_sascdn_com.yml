@@ -1,0 +1,9 @@
+uuid: 4e038c16-b1be-47c3-8a70-9a72e523478e
+langcode: en
+status: true
+dependencies: {  }
+id: creatives_sascdn_com
+label: creatives.sascdn.com
+domain: creatives.sascdn.com
+pages: ''
+weight: 0

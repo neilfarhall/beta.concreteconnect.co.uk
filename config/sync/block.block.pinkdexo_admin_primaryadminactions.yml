@@ -1,0 +1,20 @@
+uuid: 60b2152d-9862-4469-90a7-5c70f2d86c75
+langcode: en
+status: true
+dependencies:
+  theme:
+    - pinkdexo_admin
+_core:
+  default_config_hash: hLddl7n6qXpHPThxPe8RtodgAU6MbvXtcIEdZKdMikY
+id: pinkdexo_admin_primaryadminactions
+theme: pinkdexo_admin
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

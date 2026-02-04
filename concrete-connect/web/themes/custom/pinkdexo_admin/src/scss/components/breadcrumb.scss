@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Breadcrumbs.
+ */
+
+@import "../dependencies/index";
+
+.breadcrumb {
+  padding: $spacer * 1.5 0 $spacer;
+  line-height: 1;
+}

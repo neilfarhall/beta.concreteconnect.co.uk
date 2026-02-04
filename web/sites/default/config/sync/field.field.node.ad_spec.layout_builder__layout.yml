@@ -1,0 +1,21 @@
+uuid: e0dc3167-cd52-4649-9100-c6efa1d6b976
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.ad_spec
+  module:
+    - layout_builder
+id: node.ad_spec.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: ad_spec
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

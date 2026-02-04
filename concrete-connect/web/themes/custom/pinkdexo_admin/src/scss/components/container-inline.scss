@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Inline items.
+ */
+
+@import "../dependencies/index";
+
+.container-inline {
+  .form-radios,
+  .form-checkboxes {
+    label:after {
+      content: "";
+    }
+  }
+
+  .form-radios {
+
+    .form-type-radio {
+      margin-right: $spacer;
+
+      [dir="rtl"] & {
+        margin-right: 0;
+        margin-left: $spacer;
+      }
+    }
+  }
+
+  .form-checkboxes {
+
+    .form-type-checkbox {
+      margin-right: $spacer;
+
+      [dir="rtl"] & {
+        margin-right: 0;
+        margin-left: $spacer;
+      }
+    }
+  }
+}

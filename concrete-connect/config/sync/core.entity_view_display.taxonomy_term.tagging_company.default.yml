@@ -1,0 +1,23 @@
+uuid: 32d5ecba-dfaf-4a28-91d2-7d8e86c7bfc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tagging_company.layout_builder__layout
+    - taxonomy.vocabulary.tagging_company
+  module:
+    - text
+id: taxonomy_term.tagging_company.default
+targetEntityType: taxonomy_term
+bundle: tagging_company
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  layout_builder__layout: true

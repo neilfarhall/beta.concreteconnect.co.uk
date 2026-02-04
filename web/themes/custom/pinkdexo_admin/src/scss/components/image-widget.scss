@@ -1,0 +1,45 @@
+//
+// @file
+// Image upload widget.
+//
+
+@import "../dependencies/index";
+
+.image-widget {
+  display: flex;
+  position: relative;
+
+  a.focal-point-preview-link {
+    display: inline-block;
+    padding: 4px;
+    background: rgba(#000, .35);
+    color: #FFF;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.image-preview {
+  flex: 0 0 auto;
+  padding: 0 $spacer 0 0; /* LTR */
+
+  [dir="rtl"] & {
+    order: 1;
+    padding: 0 0 0 $spacer;
+  }
+}
+
+.image-widget-data {
+  order: 0;
+
+  .text-field {
+    width: 100%;
+  }
+}

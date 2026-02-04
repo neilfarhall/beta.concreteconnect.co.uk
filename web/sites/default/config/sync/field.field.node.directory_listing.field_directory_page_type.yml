@@ -1,0 +1,29 @@
+uuid: 25ceba38-75f9-4bbb-99ef-981aaf9d4f23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_page_type
+    - node.type.directory_listing
+    - taxonomy.vocabulary.directory_type
+id: node.directory_listing.field_directory_page_type
+field_name: field_directory_page_type
+entity_type: node
+bundle: directory_listing
+label: 'Directory page type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      directory_type: directory_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

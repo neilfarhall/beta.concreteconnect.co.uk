@@ -1,0 +1,45 @@
+uuid: 60c43aeb-3de3-48cd-bd5b-8af14dbc4228
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.profile_page_logo
+    - field.field.media.image.feeds_item
+    - field.field.media.image.field_description
+    - field.field.media.image.field_image
+    - media.type.image
+    - responsive_image.styles.teaser_medium_teaser_item_profile_logo
+  module:
+    - layout_builder
+    - responsive_image
+    - responsive_image_preload
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.image.profile_page_logo
+targetEntityType: media
+bundle: image
+mode: profile_page_logo
+content:
+  field_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: teaser_medium_teaser_item_profile_logo
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      responsive_image_preload:
+        generate_preloads: false
+    weight: 0
+    region: content
+hidden:
+  created: true
+  feeds_item: true
+  field_description: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

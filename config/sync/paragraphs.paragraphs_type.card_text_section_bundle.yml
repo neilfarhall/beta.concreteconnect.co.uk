@@ -1,0 +1,12 @@
+uuid: 13419e68-84f1-4f1a-b013-fc51ca7d8794
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: o279yxE0QibAKMxHYrePfVDPV0TqaHGBX3N_fiXeDbg
+id: card_text_section_bundle
+label: 'Card Text Section'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

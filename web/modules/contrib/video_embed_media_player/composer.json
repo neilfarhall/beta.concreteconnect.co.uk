@@ -1,0 +1,12 @@
+{
+  "name": "drupal/video_embed_media_player",
+  "description": "Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers",
+  "type": "drupal-module",
+  "authors": [
+    {
+      "name": "Dharmesh Savaliya (dharmesh.savaliya)",
+      "homepage": "https://www.drupal.org/u/dharmeshsavaliya",
+      "role": "Maintainer"
+    }
+  ]
+}

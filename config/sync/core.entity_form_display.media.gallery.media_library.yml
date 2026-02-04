@@ -1,0 +1,27 @@
+uuid: f5267af9-0550-4d10-bba3-5f11a612630e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.gallery.field_media_slideshow
+    - media.type.gallery
+id: media.gallery.media_library
+targetEntityType: media
+bundle: gallery
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_slideshow: true
+  path: true
+  status: true
+  uid: true

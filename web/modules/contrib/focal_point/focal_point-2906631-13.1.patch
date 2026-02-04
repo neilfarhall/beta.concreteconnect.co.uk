@@ -1,0 +1,22 @@
+diff --git a/focal_point.module b/focal_point.module
+index 90a35da..1ad8b34 100644
+--- a/focal_point.module
++++ b/focal_point.module
+@@ -9,6 +9,7 @@
+  */
+ 
+ use Drupal\Component\Utility\NestedArray;
++use Drupal\Core\Cache\Cache;
+ use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Core\Entity\FieldableEntityInterface;
+ use Drupal\Core\Form\FormStateInterface;
+@@ -95,8 +96,9 @@ function focal_point_entity_update(EntityInterface $entity) {
+             }
+           }
+           if ($focal_point && $item->width && $item->height) {
+             [$x, $y] = explode(',', $focal_point);
+             $focal_point_manager->saveCropEntity($x, $y, $item->width, $item->height, $crop);
++            Cache::invalidateTags($item->entity->getCacheTagsToInvalidate());
+           }
+         }
+       }

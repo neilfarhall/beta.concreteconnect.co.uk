@@ -1,0 +1,136 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 3ebc7c90-45f1-4cdb-8901-4a7f182ac1a8
+  bundle: article
+  default_langcode: en
+  depends:
+    191f97ee-a5b4-429c-a2db-bde0216e6f93: taxonomy_term
+    e4d13ef5-285c-427f-990e-d46e0a30ff21: media
+    3055923a-47a9-4adc-8cda-ddd44279d999: taxonomy_term
+    cf63c953-a8cb-4f09-867b-6844a4715d39: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Why Artists No Longer Need Hit Singles to Release Their Album'
+  created:
+    -
+      value: 1535889849
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /why-artists-no-longer-need-hit-singles-release-their-album
+      langcode: en
+      pathauto: 1
+  field_channel:
+    -
+      entity: 191f97ee-a5b4-429c-a2db-bde0216e6f93
+  field_comment:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1659899228
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_paragraphs:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 3d74064a-4922-43a3-a4a5-57d66d1d0493
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1535889904
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_text:
+            -
+              value: "<p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida venenatis tristique. Phasellus et feugiat odio. Aliquam imperdiet sit amet risus nec volutpat. Nam at tellus quis risus scelerisque vestibulum. Integer in libero finibus leo tincidunt condimentum.</p>\r\n"
+              format: full_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 20d6e693-6375-4b27-9047-f8873335253e
+          bundle: gallery_slider
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1537536292
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_media:
+            -
+              entity: e4d13ef5-285c-427f-990e-d46e0a30ff21
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f1e8b895-73f4-4144-84f8-aad5b7f94c81
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1537536321
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_text:
+            -
+              value: "<p>Etiam gravida gravida quam interdum rhoncus. Vestibulum facilisis non orci et vulputate. Aliquam finibus tristique bibendum. Aliquam sollicitudin congue blandit. Nullam consequat vestibulum ante. Aliquam congue porta augue, in scelerisque turpis euismod id. Nunc fermentum, lectus egestas finibus tristique, tellus turpis euismod nibh, eget auctor dui felis eu neque. Donec et massa enim.</p>\r\n\r\n<p>Proin placerat nibh erat, placerat auctor orci dictum et. Etiam nulla turpis, semper eget volutpat non, convallis eget ex. Etiam eget commodo quam. Aliquam erat volutpat. Sed at mi justo. Nulla condimentum pellentesque nisi, at ullamcorper dolor elementum ac. Nam volutpat, est ut fermentum maximus, turpis dolor cursus orci, ut tristique metus ipsum sit amet purus. Aliquam et hendrerit felis, eu egestas massa. Nam posuere iaculis aliquam.</p>\r\n\r\n<p>In nec sem id nibh vestibulum dapibus ut ut enim. Integer eget porta ligula. Aliquam sed dictum dui. Nulla facilisi. Ut feugiat, ante ac ornare vulputate, sapien velit porttitor neque, non pellentesque ligula ligula sed quam. Sed non varius sapien. In eu felis efficitur, eleifend mi vitae, consectetur libero. Quisque porttitor vel eros sed congue. Nunc lobortis varius ex, eget tempor leo. Donec dictum, nulla in pulvinar suscipit, urna dui facilisis metus, eget dictum metus purus vel arcu. In consectetur ante sem, eu vestibulum sapien sagittis ut.</p>\r\n\r\n<p>Vestibulum fermentum nisi nec turpis bibendum, ut posuere est efficitur. Donec porttitor lorem a elit fermentum, id commodo leo hendrerit. Nam leo lectus, dignissim ultricies tincidunt id, sollicitudin eu nulla. Vivamus quis diam et purus pretium faucibus in eget nulla. Suspendisse potenti. Morbi imperdiet nulla fringilla lorem cursus, et aliquam risus hendrerit. Proin diam erat, condimentum eget porta sit amet, pulvinar sit amet orci.</p>\r\n"
+              format: full_html
+  field_tags:
+    -
+      entity: 3055923a-47a9-4adc-8cda-ddd44279d999
+  field_teaser_media:
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+  field_teaser_text:
+    -
+      value: 'Nunc fermentum, lectus egestas finibus tristique, tellus turpis euismod nibh, eget auctor dui felis eu neque. Donec et massa enim.'

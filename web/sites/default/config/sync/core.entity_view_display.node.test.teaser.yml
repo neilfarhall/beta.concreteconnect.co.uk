@@ -1,0 +1,39 @@
+uuid: 631aaceb-65f9-453e-b7a8-061739775b3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.test.body
+    - field.field.node.test.field_blog_type
+    - field.field.node.test.field_email
+    - field.field.node.test.field_home_tab
+    - field.field.node.test.field_home_video
+    - node.type.test
+  module:
+    - text
+    - user
+id: node.test.teaser
+targetEntityType: node
+bundle: test
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_blog_type: true
+  field_email: true
+  field_home_tab: true
+  field_home_video: true
+  shariff_field: true

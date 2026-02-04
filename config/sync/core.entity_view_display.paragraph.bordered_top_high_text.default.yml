@@ -1,0 +1,20 @@
+uuid: bd7688e6-87f4-4276-91b7-b0804cfd2540
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bordered_top_high_text.field_text_para
+    - paragraphs.paragraphs_type.bordered_top_high_text
+id: paragraph.bordered_top_high_text.default
+targetEntityType: paragraph
+bundle: bordered_top_high_text
+mode: default
+content:
+  field_text_para:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

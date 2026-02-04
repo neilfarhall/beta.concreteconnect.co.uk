@@ -1,0 +1,23 @@
+uuid: 60791474-6a1a-44b4-9d45-893a45ef1778
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.file_attachments.field_file_attachment
+    - paragraphs.paragraphs_type.file_attachments
+  module:
+    - file
+id: paragraph.file_attachments.default
+targetEntityType: paragraph
+bundle: file_attachments
+mode: default
+content:
+  field_file_attachment:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

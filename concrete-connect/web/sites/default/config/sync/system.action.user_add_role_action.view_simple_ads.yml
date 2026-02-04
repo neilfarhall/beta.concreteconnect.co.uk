@@ -1,0 +1,14 @@
+uuid: f60f7bbf-e391-4fa1-b2d7-ce34bd75af0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.view_simple_ads
+  module:
+    - user
+id: user_add_role_action.view_simple_ads
+label: 'Add the view simple ads role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: view_simple_ads

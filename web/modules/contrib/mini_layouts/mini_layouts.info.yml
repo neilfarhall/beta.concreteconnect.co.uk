@@ -1,0 +1,12 @@
+name: Mini Layouts
+description: 'Create re-usable layout sections to place as blocks.'
+core_version_requirement: ^9.3 || ^10
+type: module
+configure: entity.mini_layout.collection
+dependencies:
+- drupal:layout_builder
+
+# Information added by Drupal.org packaging script on 2022-11-10
+version: '2.0.0-alpha1'
+project: 'mini_layouts'
+datestamp: 1668073553

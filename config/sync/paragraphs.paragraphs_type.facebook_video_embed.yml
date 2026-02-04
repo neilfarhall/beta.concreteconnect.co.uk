@@ -1,0 +1,10 @@
+uuid: 778681c2-7ad7-4516-80d9-ab14c7169ea5
+langcode: en
+status: true
+dependencies: {  }
+id: facebook_video_embed
+label: 'Facebook Video Embed'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

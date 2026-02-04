@@ -1,0 +1,38 @@
+uuid: 583d6f28-352b-47f5-b10c-bf63ad237649
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_bordered_top_high_text
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Bordered Top High Text)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: bordered_top_high_text
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_text_para:
+    -
+      plugin: get
+      source: field_text_para
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: bordered_top_high_text
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+  optional:
+    - upgrade_d7_field_instance

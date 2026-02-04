@@ -1,0 +1,95 @@
+uuid: 412d2b22-ac38-4640-9dd3-467c699d4a3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.paragraph_preview
+    - field.field.media.gallery.field_media_slideshow
+    - image.style.paragraph_preview
+    - media.type.gallery
+  module:
+    - field_group
+    - svg_image
+third_party_settings:
+  field_group:
+    group_preview_wrapper:
+      children:
+        - group_thumb_preview
+        - group_content_preview
+      label: 'Preview Wrapper'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: pd-preview-wrapper
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+    group_thumb_preview:
+      children:
+        - thumbnail
+      label: 'Thumb Preview'
+      parent_name: group_preview_wrapper
+      region: content
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: pd-preview-thumb
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+    group_content_preview:
+      children:
+        - name
+      label: 'Content Preview'
+      parent_name: group_preview_wrapper
+      region: content
+      weight: 21
+      format_type: html_element
+      format_settings:
+        classes: pd-preview-content
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+id: media.gallery.paragraph_preview
+targetEntityType: media
+bundle: gallery
+mode: paragraph_preview
+content:
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: paragraph_preview
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  field_media_slideshow: true
+  search_api_excerpt: true
+  uid: true

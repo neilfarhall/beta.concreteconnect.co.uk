@@ -1,0 +1,24 @@
+uuid: 353a31b4-24a4-4e16-a151-df402ec587e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.profile_logo
+    - image.style.profile_logo_small
+  theme:
+    - themag
+id: teaser_medium_teaser_item_profile_logo
+label: 'Teaser: Medium Teaser Item Profile Logo'
+image_style_mappings:
+  -
+    breakpoint_id: themag.md
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: profile_logo
+  -
+    breakpoint_id: themag.xs
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: profile_logo_small
+breakpoint_group: themag
+fallback_image_style: profile_logo

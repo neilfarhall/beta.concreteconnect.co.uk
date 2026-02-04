@@ -1,0 +1,10 @@
+uuid: 30dc81e7-beba-41ac-b77b-92aaf5ff9c54
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.agg_gallery_thumbnail
+label: 'Agg Gallery thumbnail'
+targetEntityType: media
+cache: true

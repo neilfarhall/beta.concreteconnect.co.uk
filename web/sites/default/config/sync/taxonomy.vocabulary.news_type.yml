@@ -1,0 +1,8 @@
+uuid: 5f2398b6-84c4-4e62-845d-e21b4a36580f
+langcode: en
+status: true
+dependencies: {  }
+name: 'News type'
+vid: news_type
+description: 'Taxonomy used for categorisation of news articles.'
+weight: 3

@@ -1,0 +1,58 @@
+uuid: b0b2345e-e355-46ee-b5f8-5d5f02acf21e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.small_teaser_item
+    - field.field.node.she_blog.body
+    - field.field.node.she_blog.field_blog_download
+    - field.field.node.she_blog.field_featured_image
+    - field.field.node.she_blog.field_related_articles
+    - field.field.node.she_blog.field_related_directories
+    - field.field.node.she_blog.field_tagging_company
+    - field.field.node.she_blog.field_tagging_location
+    - field.field.node.she_blog.field_tagging_subject
+    - field.field.node.she_blog.layout_builder__layout
+    - node.type.she_blog
+    - responsive_image.styles.teaser_small_teaser_item
+  module:
+    - layout_builder
+    - responsive_image
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.she_blog.small_teaser_item
+targetEntityType: node
+bundle: she_blog
+mode: small_teaser_item
+content:
+  field_featured_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: teaser_small_teaser_item
+      image_link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_tagging_subject:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_blog_download: true
+  field_related_articles: true
+  field_related_directories: true
+  field_tagging_company: true
+  field_tagging_location: true
+  layout_builder__layout: true
+  links: true
+  search_api_excerpt: true
+  shariff_field: true

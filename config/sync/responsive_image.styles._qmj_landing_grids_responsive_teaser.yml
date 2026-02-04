@@ -1,0 +1,37 @@
+uuid: 9362c663-74c5-4be7-ac53-b3624519fab8
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style._qmj_grid_image_213x148_webp
+    - image.style._qmj_grid_image_270x187_webp
+    - image.style._qmj_grid_image_367x254_jpg
+    - image.style._qmj_grid_image_367x254_webp
+    - image.style._qmj_grid_image_517x358_webp
+  theme:
+    - themag_st
+id: _qmj_landing_grids_responsive_teaser
+label: '!QMJ Landing Grids Responsive Teaser'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: _qmj_grid_image_270x187_webp
+    breakpoint_id: themag_st.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: _qmj_grid_image_213x148_webp
+    breakpoint_id: themag_st.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: _qmj_grid_image_517x358_webp
+    breakpoint_id: themag_st.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: _qmj_grid_image_367x254_webp
+    breakpoint_id: themag_st.xxs
+    multiplier: 1x
+breakpoint_group: themag_st
+fallback_image_style: _qmj_grid_image_367x254_jpg

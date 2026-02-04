@@ -1,0 +1,14 @@
+uuid: 233cd29c-78eb-4bd6-a933-1868bd0ad7dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - exclude_node_title
+    - system
+id: subscriber
+label: subscriber
+weight: 6
+is_admin: null
+permissions:
+  - 'use exclude node title'
+  - 'view the administration theme'

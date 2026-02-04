@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: s
+label: 'Small (400×400)'
+effects:
+  1cfec298-8620-4749-b100-ccb6c4500776:
+    uuid: 1cfec298-8620-4749-b100-ccb6c4500776
+    id: image_scale
+    weight: 0
+    data:
+      width: 400
+      height: 400
+      upscale: true

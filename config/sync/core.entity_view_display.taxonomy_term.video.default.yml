@@ -1,0 +1,21 @@
+uuid: b6c4eb24-4086-43d0-82b1-cca8e3471862
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.video
+  module:
+    - text
+id: taxonomy_term.video.default
+targetEntityType: taxonomy_term
+bundle: video
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

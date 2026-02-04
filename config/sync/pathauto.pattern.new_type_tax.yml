@@ -1,0 +1,22 @@
+uuid: ea9d0f2c-e116-401f-86b0-8705f97e12ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: new_type_tax
+label: 'New Type Tax'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria:
+  968b507a-ac20-4d8b-b6a6-366c06decf3c:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 968b507a-ac20-4d8b-b6a6-366c06decf3c
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      news_type: news_type
+selection_logic: and
+weight: -5
+relationships: {  }

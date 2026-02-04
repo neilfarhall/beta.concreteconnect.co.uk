@@ -1,0 +1,8 @@
+uuid: 71db5f48-4e6a-4737-aabe-8dd2bb3ba3e8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Site type'
+vid: site_type
+description: ''
+weight: 10

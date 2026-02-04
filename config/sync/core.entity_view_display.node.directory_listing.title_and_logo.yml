@@ -1,0 +1,385 @@
+uuid: 5f022f29-41cd-4781-a2cf-73d2bf962640
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.title_and_logo
+    - field.field.node.directory_listing.body
+    - field.field.node.directory_listing.feeds_item
+    - field.field.node.directory_listing.field_address
+    - field.field.node.directory_listing.field_allow_widget
+    - field.field.node.directory_listing.field_brand_video
+    - field.field.node.directory_listing.field_company_slogan
+    - field.field.node.directory_listing.field_directory_address_postcode
+    - field.field.node.directory_listing.field_directory_brands
+    - field.field.node.directory_listing.field_directory_consultants
+    - field.field.node.directory_listing.field_directory_consultants_cat
+    - field.field.node.directory_listing.field_directory_contact_email
+    - field.field.node.directory_listing.field_directory_contact_fax
+    - field.field.node.directory_listing.field_directory_contact_phone
+    - field.field.node.directory_listing.field_directory_equipment
+    - field.field.node.directory_listing.field_directory_key
+    - field.field.node.directory_listing.field_directory_logo
+    - field.field.node.directory_listing.field_directory_main_image
+    - field.field.node.directory_listing.field_directory_material
+    - field.field.node.directory_listing.field_directory_opco_key
+    - field.field.node.directory_listing.field_directory_operating_comp
+    - field.field.node.directory_listing.field_directory_organisation_sec
+    - field.field.node.directory_listing.field_directory_organisations
+    - field.field.node.directory_listing.field_directory_page_type
+    - field.field.node.directory_listing.field_directory_product_type
+    - field.field.node.directory_listing.field_directory_products
+    - field.field.node.directory_listing.field_directory_quality_scheme
+    - field.field.node.directory_listing.field_directory_record_type
+    - field.field.node.directory_listing.field_directory_region
+    - field.field.node.directory_listing.field_directory_regional_offices
+    - field.field.node.directory_listing.field_directory_site_type
+    - field.field.node.directory_listing.field_directory_web_address
+    - field.field.node.directory_listing.field_display_email
+    - field.field.node.directory_listing.field_downloads_tab
+    - field.field.node.directory_listing.field_file_attachments
+    - field.field.node.directory_listing.field_home_tab
+    - field.field.node.directory_listing.field_media_gallery
+    - field.field.node.directory_listing.field_media_gallery_tab
+    - field.field.node.directory_listing.field_news_tab
+    - field.field.node.directory_listing.field_related_articles
+    - field.field.node.directory_listing.field_social_media
+    - field.field.node.directory_listing.field_teaser_media
+    - field.field.node.directory_listing.field_twitt
+    - field.field.node.directory_listing.layout_builder__layout
+    - field.field.node.directory_listing.layout_selection
+    - node.type.directory_listing
+  module:
+    - address
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - link
+    - telephone
+    - text
+    - themag_layouts
+    - user
+    - video_embed_field
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 0
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          cdfad4f6-76e4-4496-9a50-ccd061affbd1:
+            uuid: cdfad4f6-76e4-4496-9a50-ccd061affbd1
+            region: first
+            configuration:
+              id: 'field_block:node:directory_listing:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: custom
+                    destination:
+                      field:
+                        field: ''
+                        custom:
+                          custom: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 0
+            additional: {  }
+          55a99770-4bf8-4504-ac45-e67e0707f2ba:
+            uuid: 55a99770-4bf8-4504-ac45-e67e0707f2ba
+            region: second
+            configuration:
+              id: 'field_block:node:directory_listing:field_teaser_media'
+              label: 'Profile Logo'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: profile_page_logo
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.directory_listing.title_and_logo
+targetEntityType: node
+bundle: directory_listing
+mode: title_and_logo
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_address:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 30
+    region: content
+  field_brand_video:
+    type: video_embed_field_video
+    label: above
+    settings:
+      autoplay: true
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_directory_address_postcode:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_directory_brands:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_directory_consultants:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_directory_consultants_cat:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 27
+    region: content
+  field_directory_contact_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_directory_contact_phone:
+    type: telephone_link
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_directory_equipment:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_directory_key:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_directory_material:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 29
+    region: content
+  field_directory_opco_key:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_directory_operating_comp:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_directory_organisation_sec:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 28
+    region: content
+  field_directory_page_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_directory_product_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_directory_products:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_directory_quality_scheme:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 25
+    region: content
+  field_directory_record_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_directory_regional_offices:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_directory_site_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_directory_web_address:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_related_articles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  feeds_item: true
+  field_allow_widget: true
+  field_company_slogan: true
+  field_directory_contact_fax: true
+  field_directory_logo: true
+  field_directory_main_image: true
+  field_directory_organisations: true
+  field_directory_region: true
+  field_display_email: true
+  field_downloads_tab: true
+  field_file_attachments: true
+  field_home_tab: true
+  field_media_gallery: true
+  field_media_gallery_tab: true
+  field_news_tab: true
+  field_social_media: true
+  field_teaser_media: true
+  field_twitt: true
+  layout_builder__layout: true
+  layout_selection: true
+  links: true
+  search_api_excerpt: true
+  shariff_field: true

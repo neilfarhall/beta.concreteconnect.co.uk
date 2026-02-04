@@ -1,0 +1,16 @@
+// Field
+//
+
+.field__label {
+  color: var(--mag-text-secondary);
+  &:after {
+    content: ':';
+  }
+}
+
+.field--label-inline {
+  display: flex;
+  .field__label {
+    margin-right: .5556rem;
+  }
+}

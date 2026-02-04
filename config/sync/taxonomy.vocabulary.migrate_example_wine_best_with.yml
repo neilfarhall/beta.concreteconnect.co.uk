@@ -1,0 +1,13 @@
+uuid: 52f19b45-6c5f-4d74-b775-076aced62594
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_example_advanced_setup
+_core:
+  default_config_hash: 9Aer_8gIZqqcYuvJz-TxJOkAyaCwRcEthJzz5neWTUo
+name: 'Migrate Example Wine Best With'
+vid: migrate_example_wine_best_with
+description: 'Foods the wine goes best with'
+weight: 0

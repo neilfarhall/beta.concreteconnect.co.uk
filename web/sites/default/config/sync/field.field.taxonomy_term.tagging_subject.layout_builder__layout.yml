@@ -1,0 +1,21 @@
+uuid: 1696e079-96f3-476a-a486-706774d1ed9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.layout_builder__layout
+    - taxonomy.vocabulary.tagging_subject
+  module:
+    - layout_builder
+id: taxonomy_term.tagging_subject.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: taxonomy_term
+bundle: tagging_subject
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

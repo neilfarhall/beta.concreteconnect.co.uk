@@ -1,0 +1,5 @@
+services:
+  ad_content.route_subscriber:
+    class: Drupal\ad_content\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

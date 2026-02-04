@@ -1,0 +1,131 @@
+uuid: 71e5e403-0970-4e12-af36-977c9fd05d69
+langcode: en
+status: true
+dependencies: {  }
+id: iq_branch_blog
+label: 'IQ Branch Blog'
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      3ba560a0-02d7-4ab7-94dc-2c4a79eebb9c:
+        uuid: 3ba560a0-02d7-4ab7-94dc-2c4a79eebb9c
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      87fdd6d6-489a-4478-971f-a05fdfb0aac8:
+        uuid: 87fdd6d6-489a-4478-971f-a05fdfb0aac8
+        region: second
+        configuration:
+          id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+          label: 'Newsletter Signup'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 8-4
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      f23b897e-4a8b-466d-8fa2-91211873a98d:
+        uuid: f23b897e-4a8b-466d-8fa2-91211873a98d
+        region: first
+        configuration:
+          id: 'block_content:3921b698-8693-42fa-87c9-ba3a0332a265'
+          label: 'IQ Branch Blog'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      f6c4257c-5010-4fe8-85e4-73f6ccb8f19a:
+        uuid: f6c4257c-5010-4fe8-85e4-73f6ccb8f19a
+        region: first
+        configuration:
+          id: 'block_content:f14fbaad-f165-4051-8f74-a0ee4957a226'
+          label: 'Branch blog main image'
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 1
+        additional: {  }
+      cd4178e5-4a87-4113-bbda-25fe3d5fc144:
+        uuid: cd4178e5-4a87-4113-bbda-25fe3d5fc144
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      d04f1924-bfd1-496c-8d78-645103b5a207:
+        uuid: d04f1924-bfd1-496c-8d78-645103b5a207
+        region: second
+        configuration:
+          id: 'views_block:mg_single_item_slider-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 1
+        additional: {  }
+    third_party_settings: {  }

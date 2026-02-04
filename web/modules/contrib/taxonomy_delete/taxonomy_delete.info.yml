@@ -1,0 +1,11 @@
+name: Taxonomy Delete
+type: module
+description: A utility module which will delete all the taxonomy under a Vocabulary.
+core_version_requirement: ^8 || ^9 || ^10
+package: Taxonomy
+configure: taxonomy_delete.ui
+
+# Information added by Drupal.org packaging script on 2023-11-16
+version: '8.x-1.5'
+project: 'taxonomy_delete'
+datestamp: 1700140807

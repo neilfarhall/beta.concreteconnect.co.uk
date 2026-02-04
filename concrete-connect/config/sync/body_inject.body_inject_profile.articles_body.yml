@@ -1,0 +1,17 @@
+uuid: d34f3cdd-7d75-4070-afc0-d4e16780741d
+langcode: en
+status: true
+dependencies: {  }
+label: 'Articles body'
+id: articles_body
+description: ''
+node_type: article
+block_reference: '15'
+paragraph_operator: '>'
+paragraph_number: '3'
+and_or: and
+char_operator: '>'
+char_number: ''
+paragraph_offset: ''
+paragraph_position: '3'
+char_position: ''

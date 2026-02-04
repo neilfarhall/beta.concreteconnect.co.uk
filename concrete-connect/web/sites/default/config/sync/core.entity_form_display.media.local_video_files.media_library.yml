@@ -1,0 +1,27 @@
+uuid: 84040353-01be-494c-bc9c-07283a67416b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.local_video_files.field_media_video_file_1
+    - media.type.local_video_files
+id: media.local_video_files.media_library
+targetEntityType: media
+bundle: local_video_files
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_video_file_1: true
+  path: true
+  status: true
+  uid: true

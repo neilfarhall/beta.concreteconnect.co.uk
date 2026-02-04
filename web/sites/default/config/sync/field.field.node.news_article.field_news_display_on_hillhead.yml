@@ -1,0 +1,23 @@
+uuid: dfaceec0-bb31-4502-a0d1-8556efb0d041
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_display_on_hillhead
+    - node.type.news_article
+  module:
+    - options
+id: node.news_article.field_news_display_on_hillhead
+field_name: field_news_display_on_hillhead
+entity_type: node
+bundle: news_article
+label: 'Display on Hillhead.com'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'No (default)'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

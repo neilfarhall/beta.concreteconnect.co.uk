@@ -1,0 +1,357 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+// very useful
+// https://www.metaltoad.com/blog/drupal-8-entity-api-cheat-sheet
+
+// ideas
+// https://www.drupal.org/project/drupal/issues/2626224
+
+/**
+ * Implements hook_entity_view_alter().
+ * https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Entity!entity.api.php/function/hook_entity_view_alter/8.9.x
+ *
+ * Leaving this generic as "entity" but we could switch to "node" for our current functionality.
+ * That is i had hook_ENTITY_TYPE_view_alter() for nodes, hook_node_view_alter(&$build, $node, $display)
+ */
+function body_inject_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+
+  $inject_list = body_inject_profiles();
+
+  // First check if we have blocks to inject here.
+  $eb = $entity->bundle();
+  if (!isset($inject_list[$entity->bundle()])) {
+    return;
+  }
+
+  // @TODO Make view mode configurable.
+  if ($display->getOriginalMode() !== 'full') {
+    return;
+  }
+
+  $body_text = NULL;
+  if (isset($build['body'][0]['#text'])) {
+    $body_text =& $build['body'][0]['#text'];
+  } else {
+    // Dig for it in the layout builder.
+    //ok this is wacky hacky ... but i have no idea how else to do it better. Api? What functions?
+    //patches welcome
+    if (isset($build['_layout_builder'][0])) {
+      $layoutbuilder_content = $build['_layout_builder'][0];
+
+      foreach ($layoutbuilder_content as $key => $vals) {
+        //skip all indices with #
+        if (strpos($key, '#') === FALSE) {
+          foreach ($vals as $id => $block_data) {
+            //do we have a body block?
+            if (isset($block_data['#plugin_id'])) {
+              $field_data = explode(':', $block_data['#plugin_id']);
+
+              // We have the body field of the node!
+              if (isset($field_data[1]) && $field_data[1] == 'node' && isset($field_data[3])
+                && $field_data[3] == 'body'
+              ) {
+                //this is not a good solution BUT
+                //giving up...well find out how it can be done in mega complex drupal 10. solutions welcome.
+                $body_text =& $build['_layout_builder'][0][$key][$id]['content'][0][0]['#text'];
+                break 2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (!$body_text) {
+    \Drupal::logger('body_inject')->warning('Could not insert block into %path - no body found.',
+      [
+        '%path' => $entity->toUrl()->toString(),
+      ]);
+    return;
+  }
+  // @TODO we could double-check it is processed text, maybe even check that
+  // it has token filters enabled, by looking up $build['body'][0]['#format']
+  // but requiring that be full_html (as i did originally) is not reasonable.
+
+  $injection_actions = [];
+
+  foreach ($inject_list[$entity->bundle()] as $inject_data) {
+    $do_inject = body_inject_adv_process_condition($body_text, $inject_data);
+    if ($do_inject) {
+      $injection_actions[] = $inject_data;
+    }
+  }
+  //now we can do the injections
+  $injected_body = body_inject_adv_node($injection_actions, $body_text);
+
+  //replace original with our injection
+  $body_text = $injected_body;
+
+}
+
+//CAN NOT BE USED AS IT ONLY SHOWS BLOCKS PLACED USING THE BLOCK UI!
+//function body_inject_block_view_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+//
+//  $base_id =$block->getBaseId();
+//
+//  if ($block->getBaseId() === 'mycustomfooterblock') {
+//    $build['#pre_render'][] = '_MYMODULE_block_customfooter_prerender';
+//  }
+//}
+
+/**
+ * Helper function to process the condition for an injection.
+ *
+ * @param $id
+ * @param $body
+ *   The node body
+ *
+ * @return bool|array False if no condition, or the action data
+ * @internal param $node_type The node type*   The node type
+ */
+function body_inject_adv_process_condition($body, $settings) {
+
+  if (!$settings['paragraph_number'] && !$settings['char_number']) {
+    return TRUE;
+  }
+
+  // PARAGRAPHS
+  // Break up the body field string into an array of paragraphs and count them.
+  $array_explode = explode("<p>", $body);
+  $body_paragraphs_count = count($array_explode);
+
+  // CHARACTERS
+  $body_html_stripped = trim(strip_tags($body));
+  $body_char_count = strlen($body_html_stripped);
+
+  $paragraph_operator = $settings['paragraph_operator'];
+  $char_operator = $settings['char_operator'];
+  $paragraph_no = $settings['paragraph_number'];
+  $char_no = $settings['char_number'];
+  $condition_boole = $settings['and_or'];
+
+  // init states
+  $paragraph_state = FALSE;
+  $char_state = FALSE;
+  $inject_state = FALSE;
+
+  //@todo this state handling could be made more generic and better for more cases or data
+  //-- AND
+  if ($condition_boole == 'and') {
+
+    // 1 paragraph AND character
+    if (isset($paragraph_no) && isset($char_no)) {
+      $paragraph_state = body_inject_operator_check($paragraph_operator, $paragraph_no, $body_paragraphs_count);
+      $char_state = body_inject_operator_check($char_operator, $char_no, $body_char_count);
+      if ($paragraph_state && $char_state) {
+        $inject_state = TRUE;
+      }
+    }
+    // Only paragraph
+    if (isset($paragraph_no)) {
+      $paragraph_state = body_inject_operator_check($paragraph_operator, $paragraph_no, $body_paragraphs_count);
+      if ($paragraph_state) {
+        $inject_state = TRUE;
+      }
+    }
+    //only char
+    if (isset($char_no)) {
+      $char_state = body_inject_operator_check($char_operator, $char_no, $body_char_count);
+      if ($char_state) {
+        $inject_state = TRUE;
+      }
+    }
+
+  }
+
+  // -- OR
+  if ($condition_boole == 'or') {
+
+    // 2 paragraph OR character
+    if (isset($paragraph_no) || isset($char_no)) {
+      $paragraph_state = body_inject_operator_check($paragraph_operator, $paragraph_no, $body_paragraphs_count);
+      $char_state = body_inject_operator_check($char_operator, $char_no, $body_char_count);
+      if ($paragraph_state && $char_state) {
+        $inject_state = TRUE;
+      }
+    }
+    // Only paragraph
+    if (isset($paragraph_no)) {
+      $paragraph_state = body_inject_operator_check($paragraph_operator, $paragraph_no, $body_paragraphs_count);
+      if ($paragraph_state) {
+        $inject_state = TRUE;
+      }
+    }
+    // Only char
+    if (isset($char_no)) {
+      $char_state = body_inject_operator_check($char_operator, $char_no, $body_char_count);
+      if ($char_state) {
+        $inject_state = TRUE;
+      }
+    }
+  }
+
+  // Return true or false if no action will be used (no injection)
+  if ($inject_state) {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+
+}
+
+/**
+ * Helper to load all config for blocks to insert into nodes.
+ */
+function body_inject_profiles() {
+  $storage = \Drupal::entityTypeManager()->getStorage('body_inject_profile');
+  $config_entities = $storage->loadMultiple();
+  $inject_list = [];
+  foreach ($config_entities as $id => $entity) {
+    $inject_node_type = $entity->getNodeType();
+    $inject_list[$inject_node_type][$id]['label'] = $entity->label();
+    $inject_list[$inject_node_type][$id]['block_reference'] = $entity->getBlock();
+    $inject_list[$inject_node_type][$id]['node_type'] = $entity->getNodeType();
+    $inject_list[$inject_node_type][$id]['paragraph_operator'] = $entity->getParagraphOperator();
+    $inject_list[$inject_node_type][$id]['paragraph_number'] = $entity->getParagraphNumber();
+    $inject_list[$inject_node_type][$id]['and_or'] = $entity->getAndOr();
+    $inject_list[$inject_node_type][$id]['char_operator'] = $entity->getCharOperator();
+    $inject_list[$inject_node_type][$id]['char_number'] = $entity->getCharNumber();
+    $inject_list[$inject_node_type][$id]['paragraph_offset'] = $entity->getParagraphOffset();
+    $inject_list[$inject_node_type][$id]['paragraph_position'] = $entity->getParagraphPosition();
+    $inject_list[$inject_node_type][$id]['char_position'] = $entity->getCharPosition();
+  }
+  return $inject_list;
+}
+
+
+/**
+ * Injects the region in the middle of the node.
+ *
+ * @param        $actions
+ * @param string $body
+ *   The body field to be injected in.
+ *
+ * @return bool|string The injected body string or false if not enough paragraphs.
+ * The injected body string or false if not enough paragraphs.
+ * @internal param int $positioning_data
+ */
+function body_inject_adv_node($actions, $body) {
+
+  // Break up the body field string into an array of paragraphs.
+  $array_body_paragraphs = explode("<p>", $body);
+  foreach ($actions as $action_data) {
+
+    // load the block content that should be inserted
+    $bid = $action_data['block_reference'];
+//        $block = \Drupal\block_content\Entity\BlockContent::load($bid);
+//        $block_content = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block);
+//        $block_markup = \Drupal::service('renderer')->renderPlain($block_content);
+
+    $block_manager = \Drupal::service('plugin.manager.block');
+    //just get body content
+    $custom_block = \Drupal::entityTypeManager()->getStorage('block_content')->load($bid);
+    if (!empty($custom_block)) {
+      $block_markup = $custom_block->body->value;
+    } else {
+      $config = [];
+      $plugin_block = $block_manager->createInstance($bid, $config);
+      $render = $plugin_block->build();
+      // Add the cache tags/contexts.
+      // \Drupal::service('renderer')->addCacheableDependency($render, $plugin_block);
+      $block_markup = \Drupal::service('renderer')->renderPlain($render);
+    }
+
+    // we add a wrapper
+    $block_markup = "<div class='body-inject body-inject-$bid'>" . $block_markup . "</div>";
+
+    // 3 actions avaliable, parapgraph_position, char_position, paragraph_offset
+
+    // paragraph_position
+    if (!empty($action_data['paragraph_position'])) {
+      //--Insert the renderable region array into paragraph position
+      array_splice($array_body_paragraphs, ($action_data['paragraph_position']) + 1, 0, $block_markup);
+    }
+
+    //char_position
+    if (!empty($action_data['char_position'])) {
+      //check char count and add after closest paragraph
+      //for character insertion. we can not insert after like 300 characters
+      // because that could lead to insertion in the middle of a table or other weird places. so we use the closest paragraph
+      //@todo advanced solutioun must analyze code inside <p> ..
+      $current_char = 0;
+      $inserted = FALSE;
+
+      foreach ($array_body_paragraphs as $body_key => $string) {
+        $replace = array('\n', '\r', '\t');
+        $array_body_chars[$body_key]['paragraph'] = str_replace($replace, '', trim(strip_tags($string)));
+        $array_body_chars[$body_key]['char_count'] = mb_strlen($array_body_chars[$body_key]['paragraph']);
+        $paragraph_char_pos = $body_key;
+        $current_char = $current_char + $array_body_chars[$body_key]['char_count'];
+
+        //insert after this paragraph
+        if (($current_char >= $action_data['char_position']) && $inserted === FALSE) {
+          //--Insert the renderable region array into paragraph position
+          array_splice($array_body_paragraphs, $paragraph_char_pos + 1, 0, $block_markup);
+          $inserted = TRUE;
+        }
+      }
+    }
+
+    //paragraph_offset
+    if (!empty($action_data['paragraph_offset'])) {
+      // Get the half number of the total number of paragraphs (round up).
+      $array_explode_half = round((count($array_body_paragraphs) - 1) / 2);
+
+      //--Insert the renderable region array into the middle of the body field.
+      if (isset($action_data['paragraph_offset'])) {
+        array_splice($array_body_paragraphs, ($array_explode_half + 1 + $action_data['paragraph_offset']), 0, $block_markup);
+      }
+    }
+  }
+
+  // Re-create the body field string with the regions injected.
+  return implode("<p>", $array_body_paragraphs);
+}
+
+/**
+ * checking operator, user condition aganinst actual numer of chars/paragraphs of body field
+ *
+ * @param $operator
+ *    operator can be: >, <, =
+ * @param $compare_to
+ *    value to compare. e.g the number of paragraphs or chars in the body
+ * @param $uservalue
+ *    value to compare too, input from user settingsform, e.g 5 (parapgraphs) or 300 (chars)
+ *
+ * @return bool
+ */
+function body_inject_operator_check($operator, $uservalue, $compare_to) {
+  $stop = 1;
+
+  // Process condition.
+  switch ($operator) {
+    case '=':
+      if ($compare_to = $uservalue) {
+        return TRUE;
+      }
+      break;
+    case '>':
+      if ($compare_to > $uservalue) {
+        return TRUE;
+      }
+      break;
+    case '<':
+      if ($compare_to < $uservalue) {
+        return TRUE;
+      }
+      break;
+  }
+  return FALSE;
+}
+
+
+

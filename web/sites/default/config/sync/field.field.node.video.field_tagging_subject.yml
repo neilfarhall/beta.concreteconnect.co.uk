@@ -1,0 +1,29 @@
+uuid: 6a40b6f4-1e9c-4cde-98f9-94417f7e512b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tagging_subject
+    - node.type.video
+    - taxonomy.vocabulary.tagging_subject
+id: node.video.field_tagging_subject
+field_name: field_tagging_subject
+entity_type: node
+bundle: video
+label: 'Subject Tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tagging_subject: tagging_subject
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

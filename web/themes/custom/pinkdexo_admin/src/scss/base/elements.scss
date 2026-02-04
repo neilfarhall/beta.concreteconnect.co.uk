@@ -1,0 +1,189 @@
+@import "../dependencies/index";
+
+/**
+ * Generic elements.
+ */
+html, body {
+  background: $body-bg;
+  color: $text-color--base;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida Sans", sans-serif;
+  font-size: $font-size--base;
+  line-height: $line-height--base;
+  font-weight: normal;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a, .link {
+  text-decoration: none;
+  color: $link-color--base;
+  &:hover, &:focus {
+    text-decoration: underline;
+    outline: 0;
+  }
+}
+
+hr {
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: $color--gray;
+}
+
+summary,
+.fieldgroup:not(.form-composite) > legend {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.simpletest-results-form summary {
+  text-transform: none;
+}
+
+/**
+ * Reusable heading classes are included to help modules change the styling of
+ * headings on a page without affecting accessibility.
+ */
+h1,
+.heading-a {
+  margin: 0;
+  font-size: 1.625em;
+  font-weight: bold;
+  line-height: 1.875em;
+}
+
+h2,
+.heading-b {
+  margin: 0 0 $spacer 0;
+  font-size: 1.385em;
+  font-weight: bold;
+}
+
+h3,
+.heading-c {
+  margin: 0 0 $spacer 0;
+  font-size: 1.231em;
+  font-weight: bold;
+}
+
+h4,
+.heading-d {
+  margin: 0 0 $spacer 0;
+  font-size: 1.154em;
+  font-weight: bold;
+}
+
+h5,
+.heading-e {
+  margin: 0 0 $spacer 0;
+  font-size: 1.077em;
+  font-weight: bold;
+}
+
+h6,
+.heading-f {
+  margin: 0 0 $spacer 0;
+  font-size: 1.077em;
+  font-weight: bold;
+}
+
+p {
+  margin: 0 0 $spacer 0;
+  line-height: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+dl {
+  margin: 0 0 $spacer * 1.5;
+
+  dd, dl {
+    margin-bottom: $spacer;
+    margin-left: $spacer * 2; /* LTR */
+
+    [dir="rtl"] & {
+      margin-right: $spacer * 2;
+    }
+  }
+}
+
+blockquote {
+  margin: $spacer $spacer * 2;
+}
+
+address {
+  font-style: italic;
+}
+
+u, ins {
+  text-decoration: underline;
+}
+
+s, strike, del {
+  text-decoration: line-through;
+}
+
+big {
+  font-size: $font-size--base * 1.5;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: 80%;
+  line-height: 1.1;
+}
+
+sup {
+  @extend sub;
+  vertical-align: super;
+}
+
+abbr,
+acronym {
+  border-bottom: dotted 1px;
+}
+
+ul {
+  margin: 0 0 $spacer 0; /* LTR */
+  padding: 0;
+  list-style-type: disc;
+  list-style-image: none;
+   ul {
+     padding-left: $spacer;
+   }
+}
+
+
+/* This is required to win over specificity of [dir="rtl"] ul */
+[dir="rtl"] .messages__list {
+  margin-right: 0;
+}
+
+ol {
+  margin: 0 0 $spacer 0; /* LTR */
+  padding: 0;
+  list-style-type: decimal;
+}
+
+code {
+  margin: $spacer 0;
+}
+
+pre {
+  margin: $spacer 0;
+  white-space: pre-wrap;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}

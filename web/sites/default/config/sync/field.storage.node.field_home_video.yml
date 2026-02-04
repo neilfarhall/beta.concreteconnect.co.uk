@@ -1,0 +1,27 @@
+uuid: d2867fce-342d-4a1a-9f5d-fb9fcb887b34
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+    - video
+id: node.field_home_video
+field_name: field_home_video
+entity_type: node
+type: video
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: null
+  default_video:
+    uuid: null
+    data: null
+module: video
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

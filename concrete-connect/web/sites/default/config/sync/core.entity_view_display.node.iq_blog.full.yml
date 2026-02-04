@@ -1,0 +1,337 @@
+uuid: 24dc1449-47e6-4112-a5a4-2096108663bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.iq_blog.body
+    - field.field.node.iq_blog.field_blog_type
+    - field.field.node.iq_blog.field_news_image
+    - field.field.node.iq_blog.field_tagging_company
+    - field.field.node.iq_blog.field_tagging_location
+    - field.field.node.iq_blog.field_tagging_subject
+    - field.field.node.iq_blog.field_teaser_media
+    - field.field.node.iq_blog.field_teaser_text
+    - field.field.node.iq_blog.layout_builder__layout
+    - node.type.iq_blog
+    - views.view.mg_article_headers
+    - views.view.mg_single_item_slider
+  content:
+    - 'block_content:advertisement:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+    - 'block_content:advertisement:f66ff081-dc10-45ef-ade1-23884bcc4885'
+    - 'block_content:basic:fba3f0ba-833e-463a-a415-cd7a419e9222'
+  module:
+    - block_content
+    - layout_builder
+    - layout_library
+    - shariff
+    - svg_image
+    - text
+    - themag_layouts
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 0
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          0d341ab1-0b83-4877-8520-3aac86998e55:
+            uuid: 0d341ab1-0b83-4877-8520-3aac86998e55
+            region: first
+            configuration:
+              id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+              label: 'Leaderboard Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          18f9f500-c118-4a95-9886-bcdd7d74d489:
+            uuid: 18f9f500-c118-4a95-9886-bcdd7d74d489
+            region: second
+            configuration:
+              id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+              label: 'Newsletter Signup'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 8-4
+          sticky_columns: 0
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          a202150b-fdac-4a6d-94e0-7034ca2a0d0d:
+            uuid: a202150b-fdac-4a6d-94e0-7034ca2a0d0d
+            region: second
+            configuration:
+              id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+              label: 'MPU Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          08d57d7c-efd1-4d3a-97f5-9309e778d164:
+            uuid: 08d57d7c-efd1-4d3a-97f5-9309e778d164
+            region: first
+            configuration:
+              id: 'field_block:node:iq_blog:field_news_image'
+              label: 'Blog Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 1
+            additional: {  }
+          6a6730c7-8d5f-4864-ae76-9806821622e2:
+            uuid: 6a6730c7-8d5f-4864-ae76-9806821622e2
+            region: first
+            configuration:
+              id: shariff_block
+              label: 'Shariff share buttons'
+              label_display: '0'
+              provider: shariff
+              context_mapping: {  }
+              shariff_default_settings: 0
+              shariff_services:
+                twitter: twitter
+                facebook: facebook
+                linkedin: linkedin
+                whatsapp: whatsapp
+                pinterest: 0
+                vk: 0
+                xing: 0
+                addthis: 0
+                telegram: 0
+                tumblr: 0
+                flattr: 0
+                diaspora: 0
+                flipboard: 0
+                pocket: 0
+                print: 0
+                reddit: 0
+                stumbleupon: 0
+                threema: 0
+                mail: 0
+                info: 0
+                buffer: 0
+              shariff_theme: colored
+              shariff_css: complete
+              shariff_button_style: icon
+              shariff_orientation: horizontal
+              shariff_twitter_via: ''
+              shariff_mail_url: ''
+              shariff_mail_subject: ''
+              shariff_mail_body: ''
+              shariff_referrer_track: ''
+              shariff_backend_url: ''
+              shariff_flattr_category: ''
+              shariff_flattr_user: ''
+              shariff_media_url: ''
+              shariff_info_url: ''
+              shariff_info_display: null
+              shariff_title: ''
+              shariff_url: ''
+            weight: 2
+            additional: {  }
+          cb420c48-9dc9-4b5c-8e97-b6e217685765:
+            uuid: cb420c48-9dc9-4b5c-8e97-b6e217685765
+            region: first
+            configuration:
+              id: 'field_block:node:iq_blog:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 3
+            additional: {  }
+          fe24bf2a-dc07-44d6-a01f-5ab369702cd9:
+            uuid: fe24bf2a-dc07-44d6-a01f-5ab369702cd9
+            region: second
+            configuration:
+              id: 'views_block:mg_single_item_slider-block_2'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+            weight: 1
+            additional: {  }
+          62e0e654-6e17-42ea-b6e6-942795bd79a5:
+            uuid: 62e0e654-6e17-42ea-b6e6-942795bd79a5
+            region: first
+            configuration:
+              id: 'views_block:mg_article_headers-block_1'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+            weight: -6
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.iq_blog.full
+targetEntityType: node
+bundle: iq_blog
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_blog_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_news_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_tagging_company:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_tagging_location:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_tagging_subject:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_teaser_media: true
+  field_teaser_text: true
+  layout_builder__layout: true
+  shariff_field: true

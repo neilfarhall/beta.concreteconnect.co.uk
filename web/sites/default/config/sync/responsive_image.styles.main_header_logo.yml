@@ -1,0 +1,24 @@
+uuid: b762bb3d-b3ca-4bed-ba46-8c3ae3567ad9
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.main_header_logo
+    - image.style.medium_compact_teaser
+  theme:
+    - themag
+id: main_header_logo
+label: 'Main: Header Logo'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: main_header_logo
+    breakpoint_id: themag.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_compact_teaser
+    breakpoint_id: themag.xs
+    multiplier: 1x
+breakpoint_group: themag
+fallback_image_style: main_header_logo

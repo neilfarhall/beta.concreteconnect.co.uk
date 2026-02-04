@@ -1,0 +1,28 @@
+uuid: 5943aa7b-23ad-46b9-a3e2-a59e7f8cb0df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_operating_comp
+    - node.type.directory_listing
+id: node.directory_listing.field_directory_operating_comp
+field_name: field_directory_operating_comp
+entity_type: node
+bundle: directory_listing
+label: 'Operating Company'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      directory_listing: directory_listing
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

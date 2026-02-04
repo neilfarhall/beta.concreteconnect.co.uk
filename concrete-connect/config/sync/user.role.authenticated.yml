@@ -1,0 +1,31 @@
+uuid: 8b9ebad8-3221-4571-a0c6-dbf11984ddb5
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - exclude_node_title
+    - google_analytics
+    - media
+    - search
+    - system
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access print'
+  - 'display EU Cookie Compliance popup'
+  - 'edit mimemail user settings'
+  - 'opt-in or out of google analytics tracking'
+  - 'post comments'
+  - 'search content'
+  - 'use advanced search'
+  - 'use custom search'
+  - 'use exclude node title'
+  - 'use text format filtered_html'
+  - 'view media'

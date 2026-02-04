@@ -1,0 +1,21 @@
+uuid: c89febce-5537-4371-a30c-20bbb3e5190d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_authors_socials
+    - paragraphs.paragraphs_type.people_bio
+  module:
+    - social_link_field
+id: paragraph.people_bio.field_authors_socials
+field_name: field_authors_socials
+entity_type: paragraph
+bundle: people_bio
+label: Socials
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: social_links

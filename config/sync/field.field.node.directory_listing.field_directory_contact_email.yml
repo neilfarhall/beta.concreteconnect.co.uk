@@ -1,0 +1,19 @@
+uuid: cd4a29e5-4d70-4dbf-b6ca-892b62ffbcb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_contact_email
+    - node.type.directory_listing
+id: node.directory_listing.field_directory_contact_email
+field_name: field_directory_contact_email
+entity_type: node
+bundle: directory_listing
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

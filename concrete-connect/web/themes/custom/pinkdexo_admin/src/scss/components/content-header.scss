@@ -1,0 +1,11 @@
+@import "../dependencies/index";
+
+/**
+ * Content header.
+ */
+.content-header {
+  overflow: hidden;
+  padding: $spacer 0 0;
+  background-color: $color--gray--darkest;
+  color: $text-color--light;
+}

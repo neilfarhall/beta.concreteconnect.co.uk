@@ -1,0 +1,114 @@
+uuid: 75bc6f52-081b-429a-9d53-da7c2ef22b07
+langcode: en
+status: true
+dependencies: {  }
+id: bulletin_signup
+label: 'Bulletin Signup'
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      a3869605-3d95-4e32-bd73-63d126d4d91a:
+        uuid: a3869605-3d95-4e32-bd73-63d126d4d91a
+        region: second
+        configuration:
+          id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+          label: 'Newsletter Signup'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      ab6aab15-1f29-45b6-9f71-3fdd2f829548:
+        uuid: ab6aab15-1f29-45b6-9f71-3fdd2f829548
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 8-4
+      sticky_columns: 1
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      681f5134-6e42-4778-9db9-5879897ac905:
+        uuid: 681f5134-6e42-4778-9db9-5879897ac905
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 2
+        additional: {  }
+      999d5b55-c35e-4207-9df9-8270e0f5b303:
+        uuid: 999d5b55-c35e-4207-9df9-8270e0f5b303
+        region: second
+        configuration:
+          id: 'views_block:mg_single_item_slider-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 3
+        additional: {  }
+      4b768ff5-e3a5-4396-999c-84b5d6559939:
+        uuid: 4b768ff5-e3a5-4396-999c-84b5d6559939
+        region: first
+        configuration:
+          id: 'mailchimp_signup_subscribe_block:bulletin'
+          label: 'Mailchimp Subscription Form: Bulletin'
+          label_display: visible
+          provider: mailchimp_signup
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }

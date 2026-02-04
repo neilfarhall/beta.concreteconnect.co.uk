@@ -1,0 +1,7 @@
+ad.settings:
+  path: '/admin/ad'
+  defaults:
+    _form: '\Drupal\ad\Form\SettingsForm'
+    _title: 'Settings'
+  requirements:
+    _permission: 'administer ad settings'

@@ -1,0 +1,23 @@
+uuid: f53c6bf8-4731-4995-8336-8a8f1a7ff8bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_omit_from_homepage
+    - node.type.news_article
+id: node.news_article.field_omit_from_homepage
+field_name: field_omit_from_homepage
+entity_type: node
+bundle: news_article
+label: 'Omit from homepage'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

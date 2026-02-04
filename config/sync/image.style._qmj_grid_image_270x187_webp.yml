@@ -1,0 +1,23 @@
+uuid: 1efab905-d8e0-4f3a-b3e8-ad7f4543bdc2
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: _qmj_grid_image_270x187_webp
+label: '!QMJ Grid Image 270x187 webp'
+effects:
+  c0828aa0-3a96-4b48-b02e-56c334a491aa:
+    uuid: c0828aa0-3a96-4b48-b02e-56c334a491aa
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 270
+      height: 187
+      crop_type: focal_point
+  eae83d87-3826-4d4a-a5dd-c6bae87a1b90:
+    uuid: eae83d87-3826-4d4a-a5dd-c6bae87a1b90
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

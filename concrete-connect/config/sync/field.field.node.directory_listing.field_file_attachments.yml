@@ -1,0 +1,27 @@
+uuid: 5c72179f-114b-4025-b963-e952c9b80dee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_attachments
+    - node.type.directory_listing
+  module:
+    - file
+id: node.directory_listing.field_file_attachments
+field_name: field_file_attachments
+entity_type: node
+bundle: directory_listing
+label: 'File Attachments'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: file_attachments
+  file_extensions: 'txt pdf xls doc'
+  max_filesize: ''
+  description_field: true
+field_type: file

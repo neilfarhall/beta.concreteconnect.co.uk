@@ -1,0 +1,9 @@
+preconnect_head: 1
+preconnect_push: 1
+preload_head: 1
+preload_push: 1
+preload_head_image: 0
+preload_push_image: 0
+preload_push_css: 0
+preload_push_preload: 0
+preload_push_preconnect: 1

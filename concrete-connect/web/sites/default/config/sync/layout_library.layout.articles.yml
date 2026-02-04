@@ -1,0 +1,75 @@
+uuid: 749c9c51-5746-410b-b692-6d88f413bd55
+langcode: en
+status: true
+dependencies: {  }
+id: articles
+label: Articles
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      72ba323e-b028-4d85-bf06-561a78c5c43e:
+        uuid: 72ba323e-b028-4d85-bf06-561a78c5c43e
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      ec740767-4b68-4875-a489-57b7bd2183fa:
+        uuid: ec740767-4b68-4875-a489-57b7bd2183fa
+        region: second
+        configuration:
+          id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+          label: 'Newsletter Signup'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components: {  }
+    third_party_settings: {  }

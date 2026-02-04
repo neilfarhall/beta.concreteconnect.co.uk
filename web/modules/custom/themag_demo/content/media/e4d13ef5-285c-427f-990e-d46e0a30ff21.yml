@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: e4d13ef5-285c-427f-990e-d46e0a30ff21
+  bundle: gallery
+  default_langcode: en
+  depends:
+    cf63c953-a8cb-4f09-867b-6844a4715d39: media
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'Gallery Slider'
+  created:
+    -
+      value: 1537536300
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_slideshow:
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39

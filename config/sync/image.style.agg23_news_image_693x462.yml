@@ -1,0 +1,23 @@
+uuid: 7f0f465c-b747-4312-b45d-927afee5de6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: agg23_news_image_693x462
+label: agg23_news_image_693x462
+effects:
+  4af668c3-a5f7-4654-b3fa-689608a97008:
+    uuid: 4af668c3-a5f7-4654-b3fa-689608a97008
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 693
+      height: 462
+      crop_type: focal_point
+  02f965bd-6e6e-42f7-9af8-c5c8fb44d212:
+    uuid: 02f965bd-6e6e-42f7-9af8-c5c8fb44d212
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

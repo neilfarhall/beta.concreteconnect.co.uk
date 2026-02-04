@@ -1,0 +1,11 @@
+:root {
+  @each $color, $value in $colors {
+    --mag-#{$color}: #{$value};
+  }
+}
+
+:root.themag-dark {
+  @each $color, $value in $colors-dark {
+    --mag-#{$color}: #{$value};
+  }
+}

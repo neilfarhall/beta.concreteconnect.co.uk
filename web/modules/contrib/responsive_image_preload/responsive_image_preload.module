@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Allows content editors to configure preloaded responsive images.
+ */
+
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FormatterInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_field_formatter_third_party_settings_form().
+ */
+function responsive_image_preload_field_formatter_third_party_settings_form(FormatterInterface $plugin, FieldDefinitionInterface $field_definition, $view_mode, array $form, FormStateInterface $form_state) {
+
+  /** @var \Drupal\responsive_image_preload\ThirdPartySettings $third_party_settings */
+  $third_party_settings = \Drupal::service('responsive_image_preload.third_party_settings');
+
+  return $third_party_settings->settingsForm($plugin);
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary_alter().
+ */
+function responsive_image_preload_field_formatter_settings_summary_alter(array &$summary, array $context) {
+
+  /** @var \Drupal\responsive_image_preload\ThirdPartySettings $third_party_settings */
+  $third_party_settings = \Drupal::service('responsive_image_preload.third_party_settings');
+
+  $third_party_settings->settingsSummaryAlter($summary, $context);
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function responsive_image_preload_preprocess_field(array &$variables) {
+
+  /** @var \Drupal\responsive_image_preload\FieldPreprocessor $field_preprocessor */
+  $field_preprocessor = \Drupal::service('responsive_image_preload.field_preprocessor');
+
+  $field_preprocessor->preprocessField($variables);
+}

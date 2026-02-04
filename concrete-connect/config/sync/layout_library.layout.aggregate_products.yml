@@ -1,0 +1,115 @@
+uuid: 171b839c-7a37-4d6d-8cfd-75f23ab0546c
+langcode: en
+status: true
+dependencies: {  }
+id: aggregate_products
+label: 'Aggregate Products'
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_onecol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: leaderboard-strip
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: '12'
+      sticky_columns: null
+      first:
+        custom_classes: ''
+    components:
+      735bdf78-81e8-4cfa-ae10-22f8238a72e5:
+        uuid: 735bdf78-81e8-4cfa-ae10-22f8238a72e5
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 1
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      0946bb9f-6fce-40eb-ae8c-89a5655a050b:
+        uuid: 0946bb9f-6fce-40eb-ae8c-89a5655a050b
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      b73ffbf6-74ba-457d-8209-d7143db0f0cb:
+        uuid: b73ffbf6-74ba-457d-8209-d7143db0f0cb
+        region: second
+        configuration:
+          id: 'views_block:featured_company_item_slider-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 1
+        additional: {  }
+      83a61f36-ad0f-41c7-a9d5-b967aa4ca50f:
+        uuid: 83a61f36-ad0f-41c7-a9d5-b967aa4ca50f
+        region: first
+        configuration:
+          id: 'views_block:aggregates_directory-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 0
+        additional: {  }
+      d7036f5a-eff9-4a30-854f-c777b0b42c80:
+        uuid: d7036f5a-eff9-4a30-854f-c777b0b42c80
+        region: second
+        configuration:
+          id: 'block_content:30002b78-4eaa-48eb-ad63-d48330532c9b'
+          label: 'MPU Lower'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 2
+        additional: {  }
+    third_party_settings: {  }

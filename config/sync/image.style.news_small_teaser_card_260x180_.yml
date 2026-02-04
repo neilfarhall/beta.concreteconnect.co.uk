@@ -1,0 +1,17 @@
+uuid: de0e5ab7-396d-475a-9d30-2fc9d5feacc6
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: news_small_teaser_card_260x180_
+label: "News Small Teaser Card (260x180)\t"
+effects:
+  b5f9e1c6-0a1e-48b7-b767-f51abef5cd21:
+    uuid: b5f9e1c6-0a1e-48b7-b767-f51abef5cd21
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 260
+      height: 175
+      crop_type: focal_point

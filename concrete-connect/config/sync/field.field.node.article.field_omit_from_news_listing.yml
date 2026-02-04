@@ -1,0 +1,23 @@
+uuid: 6582ef50-157b-48c9-9948-14d5936e3ced
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_omit_from_news_listing
+    - node.type.article
+id: node.article.field_omit_from_news_listing
+field_name: field_omit_from_news_listing
+entity_type: node
+bundle: article
+label: 'Omit from News Listing'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

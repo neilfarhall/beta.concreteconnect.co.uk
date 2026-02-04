@@ -1,0 +1,47 @@
+uuid: e58e914c-a405-4cd4-a9d8-00fbd713a365
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.she_blog.body
+    - field.field.node.she_blog.field_blog_download
+    - field.field.node.she_blog.field_featured_image
+    - field.field.node.she_blog.field_related_articles
+    - field.field.node.she_blog.field_related_directories
+    - field.field.node.she_blog.field_tagging_company
+    - field.field.node.she_blog.field_tagging_location
+    - field.field.node.she_blog.field_tagging_subject
+    - field.field.node.she_blog.layout_builder__layout
+    - node.type.she_blog
+  module:
+    - text
+    - user
+id: node.she_blog.teaser
+targetEntityType: node
+bundle: she_blog
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_blog_download: true
+  field_featured_image: true
+  field_related_articles: true
+  field_related_directories: true
+  field_tagging_company: true
+  field_tagging_location: true
+  field_tagging_subject: true
+  layout_builder__layout: true
+  shariff_field: true

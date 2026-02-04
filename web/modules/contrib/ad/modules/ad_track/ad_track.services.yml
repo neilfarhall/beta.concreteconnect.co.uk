@@ -1,0 +1,4 @@
+services:
+  ad_track.total_storage:
+    class: Drupal\ad_track\TotalSqlStorage
+    arguments: ['@database']

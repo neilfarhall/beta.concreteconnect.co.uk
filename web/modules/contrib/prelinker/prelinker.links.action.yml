@@ -1,0 +1,11 @@
+entity.preconnect.add_form:
+  route_name: 'entity.preconnect.add_form'
+  title: 'Add Preconnect Domain'
+  appears_on:
+    - entity.preconnect.collection
+
+entity.preload.add_form:
+  route_name: 'entity.preload.add_form'
+  title: 'Add Preload File'
+  appears_on:
+    - entity.preload.collection

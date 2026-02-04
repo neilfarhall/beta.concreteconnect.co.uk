@@ -1,0 +1,19 @@
+uuid: de73fb77-58a9-4122-b371-7c91a63d3581
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_overlay_text
+    - paragraphs.paragraphs_type.image_with_overlay_text
+id: paragraph.image_with_overlay_text.field_overlay_text
+field_name: field_overlay_text
+entity_type: paragraph
+bundle: image_with_overlay_text
+label: overlay_text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

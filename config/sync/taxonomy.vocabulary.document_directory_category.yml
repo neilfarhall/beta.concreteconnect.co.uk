@@ -1,0 +1,8 @@
+uuid: d2d6eedf-eb01-4acb-8c40-4c2aa2dce048
+langcode: en
+status: true
+dependencies: {  }
+name: 'Document directory category'
+vid: document_directory_category
+description: ''
+weight: -3

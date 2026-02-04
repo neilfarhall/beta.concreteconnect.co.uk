@@ -1,0 +1,29 @@
+uuid: 6e396e48-18aa-47c2-9456-29ab3e6e8af3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_media
+    - media.type.image
+    - node.type.iq_blog
+id: node.iq_blog.field_teaser_media
+field_name: field_teaser_media
+entity_type: node
+bundle: iq_blog
+label: 'Teaser Media'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

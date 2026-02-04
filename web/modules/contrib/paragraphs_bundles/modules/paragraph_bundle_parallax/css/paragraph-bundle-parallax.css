@@ -1,0 +1,47 @@
+/**
+ * @file
+ * Paragraph Bundle Parallax.
+ *
+ * Filename:     paragraph-bundle-parallax.css
+ * Website:      https://www.flashwebcenter.com
+ * Developer:    Alaa Haddad https://www.alaahaddad.com.
+ */
+.paragraph--type--parallax-bundle {
+  overflow: hidden;
+}
+
+.paragraph--type--parallax-bundle .pb__parallax-text {
+  background-color: var(--pb-bg);
+  border-color: var(--pb-br);
+  color: var(--pb-tx);
+}
+
+.paragraph--type--parallax-bundle .pb__parallax-text:hover {
+  background-color: var(--pb-bg-h, var(--pb-bg));
+  border-color: var(--pb-br-h, var(--pb-br));
+  color: var(--pb-tx-h, var(--pb-tx));
+}
+
+.paragraph--type--parallax-section-bundle .paragraph__inner {
+  position: relative;
+}
+
+.paragraph--type--parallax-section-bundle .pb__parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.paragraph--type--parallax-section-bundle .pb__parallax-bg {
+  min-height: calc(6 * var(--pb-px48));
+}
+
+.paragraph--type--parallax-section-bundle .pb__parallax-text {
+  min-height: calc(3 * var(--pb-px32));
+}
+
+.page-node-type-pb-content .paragraph--type--parallax-bundle>div>div {
+  width: 100% !important;
+  max-width: 100% !important;
+}

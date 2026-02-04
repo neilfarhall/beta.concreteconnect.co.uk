@@ -1,0 +1,21 @@
+uuid: a5de42f2-dc4c-4ac8-8e92-40df55a725a6
+langcode: en
+status: true
+dependencies: {  }
+id: test
+label: Test
+media_types:
+  image: image
+  gallery: 0
+  instagram: 0
+  local_video_files: 0
+  pinterest: 0
+  twitter: 0
+  video: 0
+  video_file: 0
+  video_local_host: 0
+  video_file_local_: 0
+form_mode: ''
+upload_location: sites/default/files/concrete
+show_alt: null
+show_title: null

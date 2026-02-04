@@ -1,0 +1,75 @@
+.themag-layout__region {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) / 2);
+  padding-left: calc(var(--bs-gutter-x) / 2);
+  margin-top: var(--bs-gutter-y);
+}
+
+.themag-layout--my-default {
+  margin-bottom: 3rem;
+}
+
+.themag-layout--py-xsmall {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.themag-layout--py-small {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.themag-layout--py-medium {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .themag-layout--py-medium {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.themag-layout--py-large {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .themag-layout--py-large {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.themag-layout--py-xlarge {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 992px) {
+  .themag-layout--py-xlarge {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.themag-layout--is-sticky > div {
+  position: sticky;
+  top: 16px;
+}
+
+.themag--has-sticky-header .themag-layout--is-sticky > div {
+  top: 80px;
+}
+
+.no-gutters > .themag-layout__region {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/*# sourceMappingURL=sourcemap/section.css.map */

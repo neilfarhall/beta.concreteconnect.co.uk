@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: xs
+label: 'Extra small (300×300)'
+effects:
+  1cfec298-8620-4749-b100-ccb6c4500777:
+    uuid: 1cfec298-8620-4749-b100-ccb6c4500777
+    id: image_scale
+    weight: 0
+    data:
+      width: 300
+      height: 300
+      upscale: true

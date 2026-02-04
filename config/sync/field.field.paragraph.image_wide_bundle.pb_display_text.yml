@@ -1,0 +1,23 @@
+uuid: a0571633-ff18-4ed5-9360-ad29b666f9ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_text
+    - paragraphs.paragraphs_type.image_wide_bundle
+  module:
+    - paragraphs_bundles
+_core:
+  default_config_hash: SdBfQe31lsAd9pOz3KZmAXdUeQF10eook8kzp2MeEDk
+id: paragraph.image_wide_bundle.pb_display_text
+field_name: pb_display_text
+entity_type: paragraph
+bundle: image_wide_bundle
+label: 'Text Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraphs_bundles_rgb

@@ -1,0 +1,23 @@
+uuid: 275a6def-3ebd-496a-8708-c889dc20b24c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_border_hover
+    - paragraphs.paragraphs_type.image_wide_bundle
+  module:
+    - paragraphs_bundles
+_core:
+  default_config_hash: HjTCqEBXghBZZC6J4dtR6W2reZWAVnAxEyOeiEp2L88
+id: paragraph.image_wide_bundle.pb_display_border_hover
+field_name: pb_display_border_hover
+entity_type: paragraph
+bundle: image_wide_bundle
+label: 'Border Color Hover'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraphs_bundles_rgb

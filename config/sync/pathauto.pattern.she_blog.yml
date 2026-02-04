@@ -1,0 +1,22 @@
+uuid: c795f501-ed15-476a-a349-ececab6665b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: she_blog
+label: 'SHE Blog'
+type: 'canonical_entities:node'
+pattern: 'she/blogs/[node:title]'
+selection_criteria:
+  1455b1aa-b6c1-4eeb-99ca-5473c36aa66b:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 1455b1aa-b6c1-4eeb-99ca-5473c36aa66b
+    context_mapping:
+      node: node
+    bundles:
+      she_blog: she_blog
+selection_logic: and
+weight: -5
+relationships: {  }

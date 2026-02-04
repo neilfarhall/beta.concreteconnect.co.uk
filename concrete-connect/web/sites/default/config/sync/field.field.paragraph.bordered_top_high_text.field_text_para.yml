@@ -1,0 +1,19 @@
+uuid: 8c6fc171-7f93-41bb-bd7d-605036847160
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_para
+    - paragraphs.paragraphs_type.bordered_top_high_text
+id: paragraph.bordered_top_high_text.field_text_para
+field_name: field_text_para
+entity_type: paragraph
+bundle: bordered_top_high_text
+label: text_para
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

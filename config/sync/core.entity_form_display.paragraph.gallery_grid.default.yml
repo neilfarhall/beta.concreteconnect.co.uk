@@ -1,0 +1,48 @@
+uuid: ff2057d3-7382-4f7a-856f-d3615ad8a52f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.inline
+    - field.field.paragraph.gallery_grid.field_media
+    - paragraphs.paragraphs_type.gallery_grid
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+id: paragraph.gallery_grid.default
+targetEntityType: paragraph
+bundle: gallery_grid
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media:
+    type: inline_entity_form_complex
+    weight: 0
+    region: content
+    settings:
+      form_mode: inline
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: true
+      removed_reference: optional
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: media_entity_browser
+hidden:
+  created: true
+  status: true
+  uid: true

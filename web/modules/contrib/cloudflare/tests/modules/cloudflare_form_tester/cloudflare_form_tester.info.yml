@@ -1,0 +1,14 @@
+name: CloudFlare Form Tester
+type: module
+description: Adds replacement services used for testing CloudFlare forms
+core_version_requirement: ^8 || ^9
+package: Web services
+
+dependencies:
+  - ctools:ctools
+  - cloudflare:cloudflare
+
+# Information added by Drupal.org packaging script on 2023-03-01
+version: '8.x-1.0-beta3'
+project: 'cloudflare'
+datestamp: 1677699925

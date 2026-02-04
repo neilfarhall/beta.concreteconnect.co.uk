@@ -1,0 +1,22 @@
+uuid: c86eaf2c-afe2-474c-bce0-96a346f6e973
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pinkdexo_admin
+_core:
+  default_config_hash: rwOEweyA2HdvArChnDqDq6ovvaBAcYdPngryCo5mvb8
+id: pinkdexo_admin_breadcrumbs
+theme: pinkdexo_admin
+region: breadcrumb
+weight: -1
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

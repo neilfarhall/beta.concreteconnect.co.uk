@@ -1,0 +1,22 @@
+uuid: 082dfeaf-c0e3-4141-b666-6b8597313247
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pinkdexo_admin
+_core:
+  default_config_hash: IJ-YPdkhir1rsnm6XzHmNJD1w17CT_JJ3sGw8B3zNfs
+id: pinkdexo_admin_messages
+theme: pinkdexo_admin
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

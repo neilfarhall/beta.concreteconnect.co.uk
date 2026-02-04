@@ -1,0 +1,11 @@
+--- src/Form/PollForm.php
++++ src/Form/PollForm.php
+@@ -72,7 +72,7 @@ class PollForm extends ContentEntityForm {
+       drupal_set_message($this->t('The poll %poll has been updated.', array('%poll' => $poll->label())));
+     }
+     else {
+-      \Drupal::logger('poll')->notice('Poll %poll added.', array('%poll' => $poll->label()), WATCHDOG_NOTICE, $poll->link($poll->label()));
++      \Drupal::logger('poll')->notice('Poll %poll added.', array('%poll' => $poll->label(), 'link' => $poll->link($poll->label())));
+       drupal_set_message($this->t('The poll %poll has been added.', array('%poll' => $poll->label())));
+     }
+ 

@@ -1,0 +1,32 @@
+uuid: 631e78fc-bf68-4d2a-a0a0-01bc0e8478c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_test_file
+    - node.type.document
+  module:
+    - file
+    - pdf_preview_image
+third_party_settings:
+  pdf_preview_image:
+    enable: 0
+    target_field: field_test_image
+id: node.document.field_test_file
+field_name: field_test_file
+entity_type: node
+bundle: document
+label: 'Test File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+field_type: file

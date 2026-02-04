@@ -1,0 +1,10 @@
+entity.ad_content.collection:
+  route_name: entity.ad_content.collection
+  title: 'Content'
+  base_route: entity.ad_content.collection
+
+ad.admin.settings:
+  route_name: ad.settings
+  title: 'Settings'
+  base_route: entity.ad_content.collection
+  weight: 1

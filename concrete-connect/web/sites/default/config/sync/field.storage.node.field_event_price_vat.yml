@@ -1,0 +1,30 @@
+uuid: 6daba016-8ae7-476f-8032-b9825a2cba88
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_event_price_vat
+field_name: field_event_price_vat
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'No VAT'
+      label: 'No VAT'
+    -
+      value: 'Incl. VAT'
+      label: 'Incl. VAT'
+    -
+      value: 'Excl. VAT'
+      label: 'Excl. VAT'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

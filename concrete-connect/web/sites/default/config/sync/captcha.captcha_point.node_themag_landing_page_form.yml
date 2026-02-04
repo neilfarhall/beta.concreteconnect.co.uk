@@ -1,0 +1,7 @@
+uuid: f3a8fa19-fba1-4234-aabe-17583e5dc057
+langcode: en
+status: false
+dependencies: {  }
+formId: node_themag_landing_page_form
+captchaType: default
+label: node_themag_landing_page_form

@@ -1,0 +1,10 @@
+uuid: 9961ce02-e88f-4570-9ccb-9247c675c01c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.small_compact_teaser_focus
+label: 'Small Compact Teaser Focus'
+targetEntityType: node
+cache: true

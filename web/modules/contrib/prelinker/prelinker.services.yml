@@ -1,0 +1,17 @@
+services:
+  prelinker.preconnectForm:
+    class: \Drupal\prelinker\Form\PreconnectForm
+    arguments: ['@entity_type.manager', '@cache.data']
+
+  prelinker.preloadForm:
+    class: \Drupal\prelinker\Form\PreloadForm
+    arguments: ['@entity_type.manager', '@cache.data']
+
+  prelinker.prelinker:
+    class: \Drupal\prelinker\Service\Prelinker
+
+  html_response.attachments_processor.prelinker:
+    public: false
+    class: \Drupal\prelinker\Render\HeaderProcessor
+    decorates: html_response.attachments_processor
+    arguments: ['@html_response.attachments_processor.prelinker.inner']

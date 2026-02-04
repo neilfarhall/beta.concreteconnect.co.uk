@@ -1,0 +1,122 @@
+<?php
+
+/**
+ * @file
+ * Provides Slick lightbox images integration.
+ */
+
+use Drupal\slick\Entity\Slick;
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function slick_lightbox_library_info_alter(&$libraries, $extension) {
+  if ($extension === 'slick_lightbox'
+    && $path = slick()->getLibrariesPath('slick-lightbox')) {
+    $libraries['slick-lightbox']['js'] = ['/' . $path . '/dist/slick-lightbox.min.js' => []];
+    $libraries['slick-lightbox']['css']['base'] = ['/' . $path . '/dist/slick-lightbox.css' => []];
+  }
+}
+
+/**
+ * Implements hook_blazy_attach_alter().
+ */
+function slick_lightbox_blazy_attach_alter(array &$load, $attach = []) {
+  if (!empty($attach['slick_lightbox'])) {
+    $optionset = Slick::loadSafely('slick_lightbox');
+
+    // Attach default skin in the least.
+    $attach['skin'] = $optionset->getSkin() ?: 'default';
+
+    // @todo replace with $optionset->toJson() post slick:2.10.
+    if ($json = $optionset->removeDefaultValues($optionset->getSettings())) {
+      $excludes = ['appendArrows', 'asNavFor', 'prevArrow', 'nextArrow'];
+      $excludes = array_combine($excludes, $excludes);
+
+      // The lightbox requires a separate lazy flag ignoring Slick default.
+      $json['lazyLoad'] = $optionset->getSetting('lazyLoad');
+      // To add more itemSelector, append by comma, do not nullify defaults.
+      // Do not put .slide to avoid clone issues, see
+      // slick_lightbox_preprocess_blazy() for slides. Implement
+      // hook_slick_lightbox_attach_alter() to modify things in here.
+      $lightbox = [
+        'itemContainers' => [
+          '.box',
+          '.grid',
+          '.field__item',
+          // '.slide:not(.slick-clone)',
+          '.views-row',
+          '.content',
+        ],
+        'itemSelector' => '[data-slick-lightbox-trigger],.slick-lightbox-trigger',
+      ];
+      $slick = array_diff_key($json, $excludes);
+
+      slick()->moduleHandler()->alter('slick_lightbox_attach', $slick, $lightbox, $load);
+      $load['drupalSettings']['slickLightbox'] = [
+        'lightbox' => $lightbox,
+        'slick' => $slick,
+      ];
+    }
+
+    $load['library'][] = 'slick_lightbox/load';
+    slick()->attachSkin($load, $attach);
+  }
+}
+
+/**
+ * Implements hook_blazy_lightboxes_alter().
+ */
+function slick_lightbox_blazy_lightboxes_alter(array &$lightboxes) {
+  $lightboxes[] = 'slick_lightbox';
+}
+
+/**
+ * Implements hook_blazy_settings_alter().
+ */
+function slick_lightbox_blazy_settings_alter(array &$build, $items) {
+  // @todo remove check post blazy:2.17, only needed for mismatched versions.
+  $key = 'settings';
+  if (!isset($build["#$key"]) && isset($build[$key])) {
+    $build["#$key"] = $build[$key];
+  }
+
+  $settings = &$build['#settings'];
+
+  // Tell Blazy we are supporting rich box: local video within lightbox.
+  if (!empty($settings['media_switch'])
+    && $settings['media_switch'] == 'slick_lightbox') {
+    $blazies = $settings['blazies'];
+    $blazies->set('is.richbox', TRUE)
+      ->set('is.encodedbox', TRUE);
+  }
+}
+
+/**
+ * Overrides variables for theme_blazy().
+ *
+ * @todo remove post blazy:2.17.
+ */
+function slick_lightbox_preprocess_blazy(array &$variables) {
+  $settings = &$variables['settings'];
+  $blazies  = $settings['blazies'];
+  $switch   = $settings['media_switch'] ?? '';
+
+  // With clones, add a persistent delta.
+  if ($switch == 'slick_lightbox') {
+    if (!isset($variables['url_attributes']['data-b-delta'])) {
+      $variables['url_attributes']['data-b-delta'] = $blazies->get('delta');
+    }
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function slick_lightbox_help($route_name) {
+  if ($route_name == 'help.page.slick_lightbox') {
+    $output = file_get_contents(dirname(__FILE__) . '/README.md');
+    return blazy()->markdown($output);
+  }
+  return '';
+}

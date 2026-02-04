@@ -1,0 +1,6 @@
+services:
+  unused_modules.commands:
+    class: \Drupal\unused_modules\Commands\UnusedModulesCommands
+    arguments: ['@unused_modules.helper']
+    tags:
+      - { name: drush.command }

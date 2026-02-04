@@ -1,0 +1,108 @@
+/**
+ * @file
+ * Styles for lists of entities display using FieldWidgetDisplayInterface plugins.
+ */
+
+@import "../../dependencies/index";
+
+.entities-list {
+  margin-bottom: $spacer;
+
+  .item-container {
+    background: transparent !important;
+    display: block;
+    margin: 0;
+
+    > .media,
+    > img,
+    > input {
+      display: inline-block;
+      margin: 0 $spacer/2 0 0;
+    }
+  }
+
+  .item-container,
+  .item-container.rendered-entity,
+  &.ui-sortable .item-container {
+    display: inline-block;
+    margin: 0;
+    padding: 0 $spacer*2 0 0;
+    position: relative;
+    vertical-align: text-top;
+    background: $gray-200;
+
+    img {
+      display: block;
+      margin: 0;
+    }
+
+    input {
+      display: inline-block;
+      margin: 0;
+    }
+
+    .edit-button,
+    .replace-button,
+    .remove-button,
+    .entity-browser-remove-selected-entity {
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      background-color: $color--gray--dark;
+      mask-repeat: no-repeat;
+      mask-position: center center;
+      overflow: hidden;
+      text-transform: none;
+      font-weight: normal;
+      text-indent: -9999rem;
+      position: absolute;
+      right: 4px;
+      &:hover {
+        background-color: $color--primary--dark;
+      }
+    }
+
+    .edit-button {
+      mask-image: url(../#{$path-to-icons}/edit-24px.svg);
+      bottom: 4px;
+    }
+
+    .replace-button {
+      mask-image: url(../#{$path-to-icons}/loop-24px.svg);
+      top: $spacer*2;
+    }
+
+    .remove-button,
+    .entity-browser-remove-selected-entity {
+      mask-image: url(../#{$path-to-icons}/delete-24px.svg);
+      top: 4px;
+    }
+  }
+
+
+  &.ui-sortable {
+    padding: $spacer/2;
+
+    .item-container {
+      margin-bottom: $spacer;
+      &:hover {
+        cursor: move;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+
+.entity-browser-multiple-image-browser-form {
+  .entities-list {
+    .item-container {
+      margin: 0 $spacer/2 $spacer/2 0;
+    }
+  }
+}
+

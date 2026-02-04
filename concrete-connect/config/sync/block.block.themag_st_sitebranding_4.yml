@@ -1,0 +1,30 @@
+uuid: 1de9afa7-6835-4a21-8e32-b991290a25f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_title_link
+    - system
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: themag_st_sitebranding_4
+theme: themag_st
+region: footer_first
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: false
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

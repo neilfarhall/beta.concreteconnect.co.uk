@@ -1,0 +1,27 @@
+uuid: 46b1b0f5-0028-42ec-8a65-6161550f4299
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_video_file
+    - media.type.video_file_local_
+  module:
+    - file
+id: media.video_file_local_.field_media_video_file
+field_name: field_media_video_file
+entity_type: media
+bundle: video_file_local_
+label: 'Video file'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: video
+  file_extensions: mp4
+  max_filesize: '25 MB'
+  description_field: true
+field_type: file

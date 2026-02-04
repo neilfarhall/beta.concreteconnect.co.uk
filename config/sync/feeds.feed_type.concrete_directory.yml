@@ -1,0 +1,222 @@
+uuid: 3b7d5683-5480-4b93-a8df-bc739c5cd867
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.directory_listing.body
+    - field.field.node.directory_listing.field_directory_address_postcode
+    - field.field.node.directory_listing.field_directory_contact_email
+    - field.field.node.directory_listing.field_directory_contact_phone
+    - field.field.node.directory_listing.field_directory_products
+    - field.field.node.directory_listing.field_directory_regional_offices
+    - node.type.directory_listing
+  module:
+    - feeds_log
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers:
+      37330ef7-b417-406d-a086-b8b888fc4939:
+        separator: ','
+        limit: null
+        uuid: 37330ef7-b417-406d-a086-b8b888fc4939
+        plugin: explode
+        source: directory_products
+        weight: 0
+        label: Explode
+label: 'Concrete Directory'
+id: concrete_directory
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: directory_listing
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  id:
+    value: id
+    label: id
+    machine_name: id
+    type: csv
+  title:
+    value: Title
+    label: Title
+    machine_name: title
+    type: csv
+  directory_products:
+    value: 'Directory Products'
+    label: 'Directory Products'
+    machine_name: directory_products
+    type: csv
+  address_line_1:
+    value: 'Address Line 1'
+    label: 'Address Line 1'
+    machine_name: address_line_1
+    type: csv
+  address_line_2:
+    value: 'Address Line 2'
+    label: 'Address Line 2'
+    machine_name: address_line_2
+    type: csv
+  address_line_3:
+    value: 'Address Line 3'
+    label: 'Address Line 3'
+    machine_name: address_line_3
+    type: csv
+  address_line_4:
+    value: 'Address Line 4'
+    label: 'Address Line 4'
+    machine_name: address_line_4
+    type: csv
+  address_line_5:
+    value: 'Address Line 5'
+    label: 'Address Line 5'
+    machine_name: address_line_5
+    type: csv
+  address_line_6:
+    value: 'Address Line 6'
+    label: 'Address Line 6'
+    machine_name: address_line_6
+    type: csv
+  postcode:
+    value: Postcode
+    label: Postcode
+    machine_name: postcode
+    type: csv
+  phone:
+    value: Phone
+    label: Phone
+    machine_name: phone
+    type: csv
+  email:
+    value: Email
+    label: Email
+    machine_name: email
+    type: csv
+  regional_offices:
+    value: 'Regional Offices'
+    label: 'Regional Offices'
+    machine_name: regional_offices
+    type: csv
+  body:
+    value: Body
+    label: Body
+    machine_name: body
+    type: csv
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: csv
+  directory_page_type:
+    value: 'Directory page type'
+    label: 'Directory page type'
+    machine_name: directory_page_type
+    type: csv
+mappings:
+  -
+    target: nid
+    map:
+      value: id
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_directory_products
+    map:
+      target_id: directory_products
+    settings:
+      language: ''
+      reference_by: tid
+      autocreate: 0
+      autocreate_bundle: products
+      feeds_item: false
+  -
+    target: field_directory_address_postcode
+    map:
+      value: postcode
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_directory_contact_phone
+    map:
+      value: phone
+    settings:
+      language: null
+  -
+    target: field_directory_contact_email
+    map:
+      value: email
+    settings:
+      language: null
+      defuse: false
+    unique: {  }
+  -
+    target: field_directory_regional_offices
+    map:
+      value: regional_offices
+    settings:
+      language: null
+  -
+    target: body
+    map:
+      value: body
+      summary: ''
+    settings:
+      language: null
+      format: plain_text
+  -
+    target: field_directory_page_type
+    map:
+      target_id: directory_page_type
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: directory_type
+      feeds_item: false

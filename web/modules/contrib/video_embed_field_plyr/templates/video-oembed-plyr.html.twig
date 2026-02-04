@@ -1,0 +1,8 @@
+{#
+  To change or add data to the default settings use the twig merge filter
+  {% set plyr_settings = plyr_settings|merge({'loadSprite':false,'blankVideo': '/'~active_theme_path()~'/assets/video/blank.mp4'}) %}
+#}
+ <div {{ attributes}} data-plyr-config="{{ plyr_settings|json_encode }}">
+    {{ iframe }}
+ </div>
+

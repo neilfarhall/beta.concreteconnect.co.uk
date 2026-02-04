@@ -1,0 +1,7 @@
+block.settings.token_block:
+  type: block_settings
+  label: 'Token Block configuration'
+  mapping:
+    body:
+      type: text_format
+      label: 'Body'      

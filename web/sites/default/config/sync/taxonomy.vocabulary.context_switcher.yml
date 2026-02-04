@@ -1,0 +1,8 @@
+uuid: c68f5c50-acd2-4a0d-97ec-037daa64a9fc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Context switcher'
+vid: context_switcher
+description: ''
+weight: 0

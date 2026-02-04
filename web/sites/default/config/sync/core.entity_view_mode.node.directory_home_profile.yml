@@ -1,0 +1,10 @@
+uuid: 9593df8c-6ca3-41c4-954a-48e541f9af8c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.directory_home_profile
+label: 'Directory Home Profile'
+targetEntityType: node
+cache: true

@@ -1,0 +1,214 @@
+uuid: d6785325-eebb-445f-8e90-c0b7dab6a52e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.tagging_subject.field_color
+    - field.field.taxonomy_term.tagging_subject.field_media
+    - field.field.taxonomy_term.tagging_subject.layout_builder__layout
+    - taxonomy.vocabulary.tagging_subject
+    - views.view.featured_company_item_slider
+    - views.view.mg_taxonomy_term
+  content:
+    - 'block_content:advertisement:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+    - 'block_content:advertisement:f66ff081-dc10-45ef-ade1-23884bcc4885'
+    - 'block_content:basic:fba3f0ba-833e-463a-a415-cd7a419e9222'
+  module:
+    - block_content
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - text
+    - themag_layouts
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 0
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          993d24fd-2402-4324-af35-541b394a5cff:
+            uuid: 993d24fd-2402-4324-af35-541b394a5cff
+            region: first
+            configuration:
+              id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+              label: 'Leaderboard Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          1139b1e0-442e-4782-b102-7276f1641fac:
+            uuid: 1139b1e0-442e-4782-b102-7276f1641fac
+            region: second
+            configuration:
+              id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+              label: 'Newsletter Signup'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 0
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          c95c7553-2cf9-4188-9def-5a73141ea067:
+            uuid: c95c7553-2cf9-4188-9def-5a73141ea067
+            region: second
+            configuration:
+              id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+              label: 'MPU Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          76215430-a480-4210-8ff4-3deceed34b9d:
+            uuid: 76215430-a480-4210-8ff4-3deceed34b9d
+            region: second
+            configuration:
+              id: 'views_block:featured_company_item_slider-block_2'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+            weight: 1
+            additional: {  }
+          dcd3f571-64e0-49ad-b900-24290c6148fe:
+            uuid: dcd3f571-64e0-49ad-b900-24290c6148fe
+            region: first
+            configuration:
+              id: 'views_block:mg_taxonomy_term-block_2'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping:
+                term_node_tid_depth: layout_builder.entity
+              views_label: ''
+              items_per_page: none
+              pager: view
+              exposed: {  }
+              pager_offset: 0
+            weight: 0
+            additional: {  }
+          b4a065bf-4341-4324-a596-cab095033cc0:
+            uuid: b4a065bf-4341-4324-a596-cab095033cc0
+            region: first
+            configuration:
+              id: 'field_block:taxonomy_term:tagging_subject:name'
+              label: Name
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: custom
+                    destination:
+                      field:
+                        field: ''
+                        custom:
+                          custom: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: -3
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          7b6a4c48-1357-4151-b154-90f350f37ef3:
+            uuid: 7b6a4c48-1357-4151-b154-90f350f37ef3
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:tagging_subject:description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: taxonomy_term.tagging_subject.full
+targetEntityType: taxonomy_term
+bundle: tagging_subject
+mode: full
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_color: true
+  field_media: true
+  layout_builder__layout: true

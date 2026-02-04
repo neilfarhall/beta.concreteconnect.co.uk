@@ -1,0 +1,23 @@
+uuid: e4238ab6-2753-41e7-ba05-6f643e580ac2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_border_radius
+    - paragraphs.paragraphs_type.image_wide_bundle
+  module:
+    - options
+_core:
+  default_config_hash: EdRqXH1dprwK1XTxKOXUqxnhJvrT8rHJRInpUQs6dVM
+id: paragraph.image_wide_bundle.pb_display_border_radius
+field_name: pb_display_border_radius
+entity_type: paragraph
+bundle: image_wide_bundle
+label: 'Border Radius'
+description: 'Incorporate pre-set custom CSS classes.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

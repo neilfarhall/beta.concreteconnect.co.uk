@@ -1,0 +1,41 @@
+uuid: 4d5e4e79-5c98-42c8-baa3-b3e0d5de5e26
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:advertisement:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+  module:
+    - block_content
+    - block_title_link
+    - node
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: leaderboardtop
+theme: themag_st
+region: content_administration
+weight: 0
+provider: null
+plugin: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+settings:
+  id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+  label: 'Leaderboard Top'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      news_article: news_article

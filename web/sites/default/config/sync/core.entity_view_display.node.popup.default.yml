@@ -1,0 +1,29 @@
+uuid: b1fa6c92-35e0-4cdb-909f-c79a9aa55592
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.popup.body
+    - node.type.popup
+  module:
+    - text
+    - user
+id: node.popup.default
+targetEntityType: node
+bundle: popup
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  shariff_field: true

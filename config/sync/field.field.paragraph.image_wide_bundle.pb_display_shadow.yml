@@ -1,0 +1,23 @@
+uuid: adafa579-c662-4ac2-ab7e-1fa19dd9173c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_shadow
+    - paragraphs.paragraphs_type.image_wide_bundle
+  module:
+    - options
+_core:
+  default_config_hash: caX87N0cnNRXsjnrHvopWr_pnQ7ZrNgMWHFi7e-j6mk
+id: paragraph.image_wide_bundle.pb_display_shadow
+field_name: pb_display_shadow
+entity_type: paragraph
+bundle: image_wide_bundle
+label: Shadow
+description: 'Incorporate pre-set custom CSS classes.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,9 @@
+name: 'Video Embed Field Plyr'
+type: module
+description: 'Add Plyr.js as a field formatter for video embed or oEmbed fields'
+package: Media
+core_version_requirement: ^9 || ^10
+# Information added by Drupal.org packaging script on 2024-02-15
+version: '2.0.0-rc1'
+project: 'video_embed_field_plyr'
+datestamp: 1708005560

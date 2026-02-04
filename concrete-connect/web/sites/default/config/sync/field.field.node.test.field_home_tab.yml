@@ -1,0 +1,23 @@
+uuid: 8ce9317a-f22e-4014-bac4-69c87ed51b88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_home_tab
+    - node.type.test
+id: node.test.field_home_tab
+field_name: field_home_tab
+entity_type: node
+bundle: test
+label: 'Home Tab'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

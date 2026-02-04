@@ -1,0 +1,29 @@
+uuid: 6f08a366-6d01-4bee-8070-aeda082ce38a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.inline
+    - field.field.media.instagram.field_url
+    - media.type.instagram
+  module:
+    - link
+id: media.instagram.inline
+targetEntityType: media
+bundle: instagram
+mode: inline
+content:
+  field_url:
+    type: link_default
+    weight: 0
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  name: true
+  path: true
+  status: true
+  uid: true

@@ -1,0 +1,14 @@
+name: Paragraph Blocks
+type: module
+description: Panels paragraph blocks for placing paragraph panels field instances into panels.
+core_version_requirement: ^8 || ^9 || ^10
+package: paragraphs
+configure: paragraph_blocks.settings
+dependencies:
+  - ctools:ctools
+  - paragraphs:paragraphs
+
+# Information added by Drupal.org packaging script on 2023-06-16
+version: '3.1.8'
+project: 'paragraph_blocks'
+datestamp: 1686941924

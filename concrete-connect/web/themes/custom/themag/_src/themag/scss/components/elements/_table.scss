@@ -1,0 +1,43 @@
+//.table > :not(:last-child) > :last-child > * {
+//  border-bottom-color: var(--mag-border)
+//}
+
+// Views table
+.table {
+  width: 100%;
+  color: var(--mag-text-primary);
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+
+  tr {
+    td, th {
+      &.is-active {
+        background-color: var(--mag-bg-grey);
+        border-color: var(--mag-divider);
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  thead th {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--mag-border);
+
+    a {
+      color: var(--mag-headline);
+    }
+  }
+
+  tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--mag-border);
+  }
+}

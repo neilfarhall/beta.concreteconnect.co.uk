@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.default
+    - image.style.xxs
+    - image.style.xs
+    - image.style.s
+    - image.style.m
+    - image.style.l
+    - image.style.xl
+  module:
+    - responsive_image_preload_test
+id: test1
+label: 'test1'
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image_preload_test.xl
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: xl
+  -
+    breakpoint_id: responsive_image_preload_test.l
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: l
+  -
+    breakpoint_id: responsive_image_preload_test.m
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: m
+  -
+    breakpoint_id: responsive_image_preload_test.s
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: s
+  -
+    breakpoint_id: responsive_image_preload_test.xs
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: xs
+  -
+    breakpoint_id: responsive_image_preload_test.xxs
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: xxs
+  -
+    breakpoint_id: responsive_image_preload_test.default
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: default
+breakpoint_group: responsive_image_preload_test
+fallback_image_style: '_empty image_'

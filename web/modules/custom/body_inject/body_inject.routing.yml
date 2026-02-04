@@ -1,0 +1,30 @@
+entity.body_inject_profile.collection:
+  path: '/admin/config/content/body_inject'
+  defaults:
+    _entity_list: 'body_inject_profile'
+    _title: 'BodyInject profiles'
+  requirements:
+    _permission: 'administer body_inject profiles'
+
+entity.body_inject_profile.add_form:
+  path: '/admin/config/content/body_inject/add'
+  defaults:
+    _entity_form: body_inject_profile.add
+    _title: 'Add profile'
+  requirements:
+    _permission: 'administer body_inject profiles'
+
+entity.body_inject_profile.edit_form:
+  path: '/admin/config/content/body_inject/manage/{body_inject_profile}'
+  defaults:
+    _entity_form: body_inject_profile.edit
+    _title_callback: 'Drupal\body_inject\Controller\BodyInjectController::profileTitle'
+  requirements:
+    _permission: 'administer body_inject profiles'
+
+entity.body_inject_profile.delete_form:
+  path: '/admin/config/content/body_inject/manage/{body_inject_profile}/delete'
+  defaults:
+    _entity_form: body_inject_profile.delete
+  requirements:
+    _permission: 'administer body_inject profiles'

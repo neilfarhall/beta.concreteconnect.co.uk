@@ -1,0 +1,115 @@
+uuid: 3198e48a-a717-40f4-84de-96ed451d31c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_and_text_banner.field_image_banner
+    - field.field.paragraph.image_and_text_banner.field_text_banner
+    - field.field.paragraph.image_and_text_banner.layout_builder__layout
+    - field.field.paragraph.image_and_text_banner.layout_selection
+    - paragraphs.paragraphs_type.image_and_text_banner
+  module:
+    - image
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - themag_layouts
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 3-9
+          sticky_columns: 0
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          51fd3f1f-1188-43f1-9066-3e2f9f6d8c9b:
+            uuid: 51fd3f1f-1188-43f1-9066-3e2f9f6d8c9b
+            region: first
+            configuration:
+              id: 'field_block:paragraph:image_and_text_banner:field_image_banner'
+              label: 'image banner'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          42ceb2ba-1349-4368-a3a2-e36c2f012e5d:
+            uuid: 42ceb2ba-1349-4368-a3a2-e36c2f012e5d
+            region: second
+            configuration:
+              id: 'field_block:paragraph:image_and_text_banner:field_text_banner'
+              label: 'text banner'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: true
+id: paragraph.image_and_text_banner.default
+targetEntityType: paragraph
+bundle: image_and_text_banner
+mode: default
+content:
+  field_image_banner:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_text_banner:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  layout_builder__layout: true
+  layout_selection: true

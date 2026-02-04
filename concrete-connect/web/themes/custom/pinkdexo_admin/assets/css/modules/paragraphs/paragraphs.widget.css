@@ -1,0 +1,157 @@
+.js .field--widget-paragraphs tr {
+  border: 0;
+}
+
+.js .field--widget-paragraphs td {
+  padding: 8px 0;
+}
+
+.js .field--widget-paragraphs .draggable {
+  background-color: #fafafa;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  transition: background-color .15s ease-in-out;
+}
+
+.js .field--widget-paragraphs .draggable:hover {
+  background-color: whitesmoke;
+}
+
+.js .field--widget-paragraphs .paragraphs-features__add-in-between__row {
+  background: transparent;
+}
+
+.js .field--widget-paragraphs .field-multiple-drag {
+  vertical-align: middle;
+  position: relative;
+}
+
+.js .field--widget-paragraphs .field-multiple-drag .warning {
+  background-color: #f9a825;
+  width: 4px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  text-indent: -9999rem;
+}
+
+.js .field--widget-paragraphs a.tabledrag-handle {
+  display: block;
+  float: none;
+  height: auto;
+  margin: 0;
+  padding: 0 8px;
+}
+
+.js .field--widget-paragraphs a.tabledrag-handle:hover .handle, .js .field--widget-paragraphs a.tabledrag-handle:focus .handle, .js .field--widget-paragraphs a.tabledrag-handle:active .handle {
+  background-color: #01579b;
+}
+
+.js .field--widget-paragraphs a.tabledrag-handle .handle {
+  box-sizing: border-box;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  margin: 0;
+  background-color: #9e9e9e;
+  -webkit-mask-image: url(../../../misc/icons/drag_handle-24px.svg);
+          mask-image: url(../../../misc/icons/drag_handle-24px.svg);
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
+.js .field--widget-paragraphs .paragraph-form-item .paragraph-top {
+  font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+  .js .field--widget-paragraphs .paragraph-form-item--preview {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--preview .paragraph-top {
+  margin: 0 16px 8px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+@media (min-width: 1200px) {
+  .js .field--widget-paragraphs .paragraph-form-item--preview .paragraph-top {
+    flex: 0 1 auto;
+    order: 1;
+    margin: 0 16px 0 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+    text-align: right;
+  }
+}
+
+@media (min-width: 1200px) {
+  .js .field--widget-paragraphs .paragraph-form-item--preview .paragraph {
+    flex: 1 1 auto;
+    order: 0;
+  }
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--subform {
+  display: flex;
+  flex-flow: column;
+  padding: 16px;
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraph-top {
+  order: 1;
+  margin-top: 16px;
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraphs-subform {
+  order: 0;
+  background: #FFF;
+  padding: 32px;
+  box-shadow: 0 0 20px 0 #0003;
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraphs-subform .field--type-entity-reference > details {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraphs-subform .field--type-entity-reference > details > summary {
+  display: none;
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraphs-subform .field--type-entity-reference > details > .details-wrapper {
+  padding: 0;
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraphs-subform .field--type-entity-reference > fieldset:not(.fieldgroup) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraphs-subform .field--type-entity-reference > fieldset:not(.fieldgroup) > legend {
+  display: none;
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraphs-subform .field--name-field-media-slideshow .entities-list.sortable {
+  margin: 16px 0 0 -16px;
+  padding: 0;
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraphs-subform .field--name-field-media-slideshow .entities-list.sortable .item-container {
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraphs-subform input[type="text"],
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraphs-subform input[type="url"],
+.js .field--widget-paragraphs .paragraph-form-item--subform .paragraphs-subform input[type="email"] {
+  width: 100%;
+}

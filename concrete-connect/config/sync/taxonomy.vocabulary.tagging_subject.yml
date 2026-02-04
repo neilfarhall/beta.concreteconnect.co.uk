@@ -1,0 +1,8 @@
+uuid: 3e5b92d6-1a2c-4d89-84f7-e1eca91439fc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Freetags: Subject'
+vid: tagging_subject
+description: ''
+weight: 0

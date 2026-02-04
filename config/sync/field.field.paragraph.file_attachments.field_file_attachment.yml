@@ -1,0 +1,32 @@
+uuid: 5639c91d-6d5f-40c4-9f3a-434c2dbfce68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_file_attachment
+    - paragraphs.paragraphs_type.file_attachments
+  module:
+    - file
+    - pdf_preview_image
+third_party_settings:
+  pdf_preview_image:
+    enable: 0
+    target_field: ''
+id: paragraph.file_attachments.field_file_attachment
+field_name: field_file_attachment
+entity_type: paragraph
+bundle: file_attachments
+label: 'File Attachment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: attachments
+  file_extensions: 'txt pdf doc docx'
+  max_filesize: '15 MB'
+  description_field: true
+field_type: file

@@ -1,0 +1,12 @@
+uuid: aecf4581-43b8-4809-933d-0ec59348e0c5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Foo1AblJKK-ckQc17Fo97DdzerwyC32KYfETgT6w_tA
+id: image_narrow_bundle
+label: 'Image Narrow'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

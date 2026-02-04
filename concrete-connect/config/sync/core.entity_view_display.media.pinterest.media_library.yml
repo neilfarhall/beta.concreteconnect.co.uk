@@ -1,0 +1,33 @@
+uuid: 9a3e1b49-9b52-4742-bb97-c4cec63d35f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.pinterest.field_url
+    - image.style.media_library
+    - media.type.pinterest
+  module:
+    - svg_image
+id: media.pinterest.media_library
+targetEntityType: media
+bundle: pinterest
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: media_library
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_url: true
+  name: true
+  search_api_excerpt: true
+  uid: true

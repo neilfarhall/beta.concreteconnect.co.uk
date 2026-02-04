@@ -1,0 +1,70 @@
+uuid: 9aa0443a-22a7-426d-a316-1e58407cf7a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.iq_blog.body
+    - field.field.node.iq_blog.field_blog_type
+    - field.field.node.iq_blog.field_news_image
+    - field.field.node.iq_blog.field_tagging_company
+    - field.field.node.iq_blog.field_tagging_location
+    - field.field.node.iq_blog.field_tagging_subject
+    - field.field.node.iq_blog.field_teaser_media
+    - field.field.node.iq_blog.field_teaser_text
+    - field.field.node.iq_blog.layout_builder__layout
+    - node.type.iq_blog
+  module:
+    - svg_image
+    - text
+    - user
+id: node.iq_blog.default
+targetEntityType: node
+bundle: iq_blog
+mode: default
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_news_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  field_blog_type: true
+  field_tagging_company: true
+  field_tagging_location: true
+  field_tagging_subject: true
+  layout_builder__layout: true
+  links: true
+  shariff_field: true

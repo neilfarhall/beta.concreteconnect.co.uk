@@ -1,0 +1,4 @@
+paragraph-bundle-parallax:
+  css:
+    theme:
+      css/paragraph-bundle-parallax.css: { }

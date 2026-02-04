@@ -1,0 +1,364 @@
+//
+// Label
+//
+label {
+  display: table;
+  margin: 0 0 4px;
+  padding: 0;
+  color: var(--mag-text-primary);
+  font-size: 16px;
+  font-weight: normal;
+  &.error {
+    color: var(--mag-error);
+  }
+  &[for] {
+    cursor: pointer;
+  }
+
+  .form-disabled & {
+    color: var(--mag-text-hint);
+  }
+}
+
+//
+// Form Item
+//
+.form-item {
+  margin: 0 0 16px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+label.option {
+  margin-left: 8px;
+  text-transform: none;
+}
+
+//
+// Inline Form
+//
+.form--inline {
+  display: block;
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
+
+  .form-item {
+    width: 100%;
+    @include media-breakpoint-up(md) {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .form-actions {
+    width: 100%;
+    flex: 0;
+    margin: 0;
+
+    .button {
+      display: block;
+      width: 100%;
+      @include media-breakpoint-up(md) {
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }
+}
+
+//
+// Form type checkbox
+//
+.form-type-checkbox {
+  padding: 0;
+}
+
+//
+// Input fields
+//
+input.form-autocomplete,
+input.form-text,
+input.form-tel,
+input.form-email,
+input.form-url,
+input.form-search,
+input.form-number,
+input.form-color,
+input.form-file,
+input.form-date,
+input.form-time,
+textarea.form-textarea,
+select {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 8px 16px; /* LTR */
+  border: 1px solid var(--mag-border);
+  border-radius: 4px;
+  background: var(--mag-bg-default);
+  color: var(--mag-text-primary);
+  font-size: 16px;
+  line-height: 1.5;
+  transition: all .15s ease-in-out;
+  &:focus {
+    border-color: var(--mag-primary);
+    outline: 0;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
+  }
+
+  .form-disabled & {
+    //border-color: $gray-100;
+    //background-color: $gray-100;
+    //box-shadow: none;
+    //color: $gray-400;
+    //text-align: center;
+  }
+
+  &.error {
+    border: 2px solid var(--mag-error);
+  }
+
+  &::placeholder {
+    color: var(--mag-text-hint);
+  }
+}
+
+//
+// Select
+//
+select {
+  background-image: url(../images/icons/arrow_drop_down.svg);
+  background-color: var(--mag-bg-default);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 16px) center;
+  appearance: none;
+}
+
+//
+// Address
+//
+.address-container-inline {
+  display: flex;
+  input {
+    width: 100%;
+  }
+  .form-item {
+    display: block;
+    flex: 1;
+    margin: 0 16px 16px 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .form-actions {
+    // display grid
+  }
+}
+
+//
+// Confirm
+//
+.confirm-parent,
+.password-parent {
+  overflow: visible;
+  width: auto;
+}
+
+.form-item-options-group-info-identifier,
+.form-item-pass .description {
+  clear: both;
+}
+
+//
+// Improve spacing of cancel link.
+//
+#edit-cancel {
+  margin-left: 16px; /* LTR */
+
+  [dir="rtl"] & {
+    margin-right: 16px;
+    margin-left: 0;
+  }
+}
+
+
+//
+// Form type checkbox
+//
+.form-type-checkbox {
+  padding: 0;
+}
+
+//
+// Input fields
+//
+input.form-autocomplete,
+input.form-text,
+input.form-tel,
+input.form-email,
+input.form-url,
+input.form-search,
+input.form-number,
+input.form-color,
+input.form-file,
+input.form-date,
+input.form-time,
+textarea.form-textarea,
+select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 16px; /* LTR */
+  border: 1px solid var(--mag-border);
+  border-radius: 4px;
+  background: var(--mag-bg-default);
+  color: var(--mag-text-primary);
+  font-size: 16px;
+  line-height: 1.5;
+  transition: all .15s ease-in-out;
+  &:focus {
+    border-color: var(--mag-primary);
+    outline: 0;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
+  }
+
+  .form-disabled & {
+    //border-color: $gray-100;
+    //background-color: $gray-100;
+    //box-shadow: none;
+    //color: $gray-400;
+    //text-align: center;
+  }
+
+  &.error {
+    border: 2px solid var(--mag-error);
+  }
+
+  &::placeholder {
+    color: var(--mag-text-hint);
+  }
+}
+
+//
+// Select
+//
+select {
+  background-image: url(../images/icons/arrow_drop_down.svg);
+  background-color: var(--mag-bg-default);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 16px) center;
+  appearance: none;
+}
+
+//
+// Address
+//
+.address-container-inline {
+  display: flex;
+  input {
+    width: 100%;
+  }
+  .form-item {
+    display: block;
+    flex: 1;
+    margin: 0 16px 16px 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+//
+// Confirm
+//
+.confirm-parent,
+.password-parent {
+  overflow: visible;
+  width: auto;
+}
+
+.form-item-options-group-info-identifier,
+.form-item-pass .description {
+  clear: both;
+}
+
+//
+// Improve spacing of cancel link.
+//
+#edit-cancel {
+  margin-left: 16px; /* LTR */
+  &:first-child {
+    margin-left: 0;
+  }
+
+  [dir="rtl"] & {
+    margin-right: 16px;
+    margin-left: 0;
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+}
+
+//
+// Legend
+//
+
+fieldset {
+  legend {
+    padding: 12px 0;
+    margin-bottom: 12px;
+  }
+}
+
+//
+// Details
+//
+details {
+  summary {
+    display: block;
+    background-color: var(--mag-button);
+    padding: 1rem;
+    font-size: .9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all .2s ease-in-out;
+    &:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f107";
+      margin-right: 10px;
+    }
+    &:hover {
+      background-color: var(--mag-button-hover);
+    }
+    &[aria-expanded="true"] {
+      &:before {
+        content: "\f106";
+      }
+    }
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+  .details-wrapper {
+    background-color: var(--mag-bg-default);
+    padding: 1.5rem;
+    border: 1px solid var(--mag-divider);
+    border-top: none;
+
+  }
+  a.details-title {
+    color: var(--mag-headline);
+    text-decoration: none;
+  }
+
+  .action {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--mag-divider);
+  }
+}

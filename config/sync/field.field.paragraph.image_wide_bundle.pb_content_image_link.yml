@@ -1,0 +1,25 @@
+uuid: f02b4317-6455-41d6-917e-5c7104b21800
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_content_image_link
+    - paragraphs.paragraphs_type.image_wide_bundle
+  module:
+    - link
+_core:
+  default_config_hash: OGJ7YpYFoTjFusKKBlSntOAmWHnK1DwFiQJb537YXQ0
+id: paragraph.image_wide_bundle.pb_content_image_link
+field_name: pb_content_image_link
+entity_type: paragraph
+bundle: image_wide_bundle
+label: 'Image Link'
+description: 'Add a link to make the image clickable.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

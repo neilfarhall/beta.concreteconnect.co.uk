@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 99ebe17e-1f33-445c-8412-38af1a5bc531
+  bundle: themag_landing_page
+  default_langcode: en
+  depends:
+    cf63c953-a8cb-4f09-867b-6844a4715d39: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Home
+  created:
+    -
+      value: 1561376098
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /home
+      langcode: en
+      pathauto: 1
+  field_teaser_media:
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+  field_teaser_text:
+    -
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo nec neque lacinia, non volutpat est mollis. Curabitur a sapien a leo euismod porta.'
+  layout_selection:
+    -
+      target_id: mg_home_page_1

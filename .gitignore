@@ -1,0 +1,18 @@
+# Drupal runtime
+/web/sites/*/files/
+/web/sites/*/private/
+/web/sites/*/settings*.php
+/web/sites/*/services*.yml
+
+# Composer / Node
+/vendor/
+/node_modules/
+
+# Legacy / local
+/web/modules-old/
+/local/
+
+# OS/IDE
+.DS_Store
+.idea/
+.vscode/

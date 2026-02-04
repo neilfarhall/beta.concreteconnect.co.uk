@@ -1,0 +1,10 @@
+uuid: 954c1318-4814-4716-b07f-23faae5efae5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.title_and_logo
+label: 'Title and Logo'
+targetEntityType: node
+cache: true

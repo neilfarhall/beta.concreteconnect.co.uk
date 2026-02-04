@@ -1,0 +1,32 @@
+uuid: f230812f-7afe-4e17-a60d-77256c39af2a
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:db8f9e3e-291e-4554-8572-b37aed437e13'
+  module:
+    - block_content
+    - block_title_link
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: concreteshowregister
+theme: themag_st
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:db8f9e3e-291e-4554-8572-b37aed437e13'
+settings:
+  id: 'block_content:db8f9e3e-291e-4554-8572-b37aed437e13'
+  label: 'Concrete Show Register'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

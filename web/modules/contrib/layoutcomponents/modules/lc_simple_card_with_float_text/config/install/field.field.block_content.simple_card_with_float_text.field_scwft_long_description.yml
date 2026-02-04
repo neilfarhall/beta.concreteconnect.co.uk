@@ -1,0 +1,21 @@
+uuid: 02deddb2-bb58-484a-b7b9-c4898b9f41ba
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_card_with_float_text
+    - field.storage.block_content.field_scwft_long_description
+  module:
+    - text
+id: block_content.simple_card_with_float_text.field_scwft_long_description
+field_name: field_scwft_long_description
+entity_type: block_content
+bundle: simple_card_with_float_text
+label: 'Long Float Text'
+description: 'Set the Long Float Text of this card'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

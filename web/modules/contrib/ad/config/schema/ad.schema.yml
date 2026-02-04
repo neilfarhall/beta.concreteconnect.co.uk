@@ -1,0 +1,12 @@
+# Schema for the configuration files of the "AD" module.
+
+ad.settings:
+  type: config_object
+  label: 'AD Settings'
+  mapping:
+    trackers:
+      type: sequence
+      label: 'Trackers'
+      sequence:
+        type: string
+        label: 'Tracker'

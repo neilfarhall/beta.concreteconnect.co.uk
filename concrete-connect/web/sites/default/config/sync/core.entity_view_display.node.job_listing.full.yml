@@ -1,0 +1,513 @@
+uuid: 63e3bae9-8b87-45ff-8a47-17d9117fdfda
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.job_listing.body
+    - field.field.node.job_listing.field_image
+    - field.field.node.job_listing.field_job_attachments
+    - field.field.node.job_listing.field_job_email
+    - field.field.node.job_listing.field_related_directories
+    - field.field.node.job_listing.field_teaser_media
+    - field.field.node.job_listing.field_teaser_text
+    - field.field.node.job_listing.layout_builder__layout
+    - field.field.node.job_listing.layout_selection
+    - node.type.job_listing
+    - views.view.featured_company_item_slider
+    - webform.webform.jobs_contact_form
+  content:
+    - 'block_content:advertisement:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+    - 'block_content:advertisement:b5b372fc-85aa-4761-b242-dde9ebe89f1e'
+    - 'block_content:advertisement:f66ff081-dc10-45ef-ade1-23884bcc4885'
+    - 'block_content:basic:fba3f0ba-833e-463a-a415-cd7a419e9222'
+  module:
+    - block_content
+    - file
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - shariff
+    - svg_image
+    - text
+    - themag_layouts
+    - user
+    - views
+    - webform
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 0
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          c28b7684-6720-4d88-880a-2b4fc51aeff0:
+            uuid: c28b7684-6720-4d88-880a-2b4fc51aeff0
+            region: first
+            configuration:
+              id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+              label: 'Leaderboard Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          bf4e2c85-e3ed-4209-bdb6-9726c5fba215:
+            uuid: bf4e2c85-e3ed-4209-bdb6-9726c5fba215
+            region: second
+            configuration:
+              id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+              label: 'Newsletter Signup'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: themag_threecol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: custom
+          sticky_columns: 0
+          first:
+            custom_classes: 'col-8 col-md-6'
+          second:
+            custom_classes: 'col-3 col-md-3'
+          third:
+            custom_classes: 'col-6 col-md-3'
+        components:
+          bab89e8c-3722-4a27-bd60-8dce0449c96f:
+            uuid: bab89e8c-3722-4a27-bd60-8dce0449c96f
+            region: first
+            configuration:
+              id: 'field_block:node:job_listing:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: custom
+                    destination:
+                      field:
+                        field: ''
+                        custom:
+                          custom: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 0
+            additional: {  }
+          0091bfdd-4d9c-454c-a4c1-fbb286d1d0ff:
+            uuid: 0091bfdd-4d9c-454c-a4c1-fbb286d1d0ff
+            region: second
+            configuration:
+              id: 'field_block:node:job_listing:field_teaser_media'
+              label: 'Teaser Media'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 0
+            additional: {  }
+          8fb0a763-226b-4c1f-a332-022ba69168d1:
+            uuid: 8fb0a763-226b-4c1f-a332-022ba69168d1
+            region: third
+            configuration:
+              id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+              label: 'MPU Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          9fca62d4-3d7a-48ec-8953-4dd98b0e4885:
+            uuid: 9fca62d4-3d7a-48ec-8953-4dd98b0e4885
+            region: second
+            configuration:
+              id: shariff_block
+              label: 'Shariff share buttons'
+              label_display: '0'
+              provider: shariff
+              context_mapping: {  }
+              shariff_default_settings: 0
+              shariff_services:
+                twitter: twitter
+                facebook: facebook
+                linkedin: linkedin
+                whatsapp: whatsapp
+                pinterest: 0
+                vk: 0
+                xing: 0
+                addthis: 0
+                telegram: 0
+                tumblr: 0
+                flattr: 0
+                diaspora: 0
+                flipboard: 0
+                pocket: 0
+                print: 0
+                reddit: 0
+                stumbleupon: 0
+                threema: 0
+                mail: 0
+                info: 0
+                buffer: 0
+              shariff_theme: colored
+              shariff_css: complete
+              shariff_button_style: icon
+              shariff_orientation: horizontal
+              shariff_twitter_via: ''
+              shariff_mail_url: ''
+              shariff_mail_subject: ''
+              shariff_mail_body: ''
+              shariff_referrer_track: ''
+              shariff_backend_url: ''
+              shariff_flattr_category: ''
+              shariff_flattr_user: ''
+              shariff_media_url: ''
+              shariff_info_url: ''
+              shariff_info_display: null
+              shariff_title: ''
+              shariff_url: ''
+            weight: 1
+            additional: {  }
+          08b55701-24e0-4d47-824f-bd763b859ffe:
+            uuid: 08b55701-24e0-4d47-824f-bd763b859ffe
+            region: first
+            configuration:
+              id: 'field_block:node:job_listing:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 200
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 1
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          0447f96d-a0e2-4421-b2be-35fa50e71d16:
+            uuid: 0447f96d-a0e2-4421-b2be-35fa50e71d16
+            region: first
+            configuration:
+              id: 'field_block:node:job_listing:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: -5
+            additional: {  }
+          e90129fd-8b99-4062-963a-5cc7bb124fac:
+            uuid: e90129fd-8b99-4062-963a-5cc7bb124fac
+            region: first
+            configuration:
+              id: 'field_block:node:job_listing:field_related_directories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: -3
+            additional: {  }
+          2a77f0b1-240f-4780-92dd-80ac021c5e06:
+            uuid: 2a77f0b1-240f-4780-92dd-80ac021c5e06
+            region: first
+            configuration:
+              id: 'field_block:node:job_listing:field_job_attachments'
+              label: 'Application Form'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: file_table
+                label: above
+                settings:
+                  use_description_as_link_text: true
+                third_party_settings: {  }
+            weight: -6
+            additional: {  }
+          650e967b-6125-4ae2-b3da-39123e5c66b6:
+            uuid: 650e967b-6125-4ae2-b3da-39123e5c66b6
+            region: first
+            configuration:
+              id: 'block_content:b5b372fc-85aa-4761-b242-dde9ebe89f1e'
+              label: 'Video Tenancy'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          00aea054-7085-4856-9bc6-cb6880c69d61:
+            uuid: 00aea054-7085-4856-9bc6-cb6880c69d61
+            region: first
+            configuration:
+              id: webform_block
+              label: Webform
+              label_display: '0'
+              provider: webform
+              context_mapping: {  }
+              webform_id: jobs_contact_form
+              default_data: ''
+              redirect: false
+            weight: -8
+            additional: {  }
+          fb71a564-d6d4-4686-b0ed-b67aff0e8b05:
+            uuid: fb71a564-d6d4-4686-b0ed-b67aff0e8b05
+            region: first
+            configuration:
+              id: shariff_block
+              label: share
+              label_display: '0'
+              provider: shariff
+              context_mapping: {  }
+              shariff_default_settings: 0
+              shariff_services:
+                twitter: twitter
+                facebook: facebook
+                linkedin: linkedin
+                whatsapp: whatsapp
+                mail: mail
+                pinterest: 0
+                vk: 0
+                xing: 0
+                addthis: 0
+                telegram: 0
+                tumblr: 0
+                flattr: 0
+                diaspora: 0
+                flipboard: 0
+                pocket: 0
+                print: 0
+                reddit: 0
+                stumbleupon: 0
+                threema: 0
+                info: 0
+                buffer: 0
+              shariff_theme: colored
+              shariff_css: min
+              shariff_button_style: icon
+              shariff_orientation: horizontal
+              shariff_twitter_via: ''
+              shariff_mail_url: ''
+              shariff_mail_subject: ''
+              shariff_mail_body: ''
+              shariff_referrer_track: ''
+              shariff_backend_url: ''
+              shariff_flattr_category: ''
+              shariff_flattr_user: ''
+              shariff_media_url: ''
+              shariff_info_url: ''
+              shariff_info_display: null
+              shariff_title: ''
+              shariff_url: ''
+            weight: -2
+            additional: {  }
+          40f17390-cfd0-49db-83f9-e362efe55bb9:
+            uuid: 40f17390-cfd0-49db-83f9-e362efe55bb9
+            region: second
+            configuration:
+              id: 'views_block:featured_company_item_slider-block_2'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.job_listing.full
+targetEntityType: node
+bundle: job_listing
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_job_attachments:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_job_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_related_directories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_teaser_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  layout_builder__layout: true
+  layout_selection: true
+  shariff_field: true

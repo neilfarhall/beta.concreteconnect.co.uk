@@ -1,0 +1,42 @@
+<?php
+
+use Drupal\entityqueue\Entity\EntityQueue;
+use Drupal\entityqueue\Entity\EntitySubqueue;
+
+
+/**
+ * Implements hook_install().
+ */
+function themag_demo_install() {
+
+  // Add content to Featured and Editor's picks queue.
+  $items = array(16, 17, 29, 11, 21);
+
+  // Get entity queues associated with the node entity.
+  $queues = EntityQueue::loadMultipleByTargetType('node');
+
+  foreach ($queues as $queue) {
+    __themag_demo_add_entity_to_queue($items, $queue);
+  }
+}
+
+
+/**
+ * Add an entity to a queue.
+ *
+ * @param $entity
+ * @param EntityQueue $queue
+ */
+function __themag_demo_add_entity_to_queue($items, EntityQueue $queue) {
+
+  // Get the subqueues.
+  $query = \Drupal::entityQuery('entity_subqueue')->condition('queue', $queue->id());
+  $result = $query->execute();
+  $subqueues = EntitySubqueue::loadMultiple($result);
+
+  // Add entity to each subqueue.
+  foreach ($subqueues as $subqueue) {
+    $subqueue->set('items', $items);
+    $subqueue->save();
+  }
+}

@@ -1,0 +1,29 @@
+uuid: 64b28f7b-e1f3-42e0-b8a5-861bf155cbbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_profile_pic
+    - media.type.image
+    - paragraphs.paragraphs_type.authors_panel
+id: paragraph.authors_panel.field_profile_pic
+field_name: field_profile_pic
+entity_type: paragraph
+bundle: authors_panel
+label: 'Profile Pic'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

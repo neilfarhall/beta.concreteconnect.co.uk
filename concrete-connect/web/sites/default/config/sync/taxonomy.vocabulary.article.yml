@@ -1,0 +1,8 @@
+uuid: e9e53462-def3-4755-91d0-bb965412fa7a
+langcode: en
+status: true
+dependencies: {  }
+name: Article
+vid: article
+description: ''
+weight: -9

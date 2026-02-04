@@ -1,0 +1,71 @@
+prelinker.admin_overview:
+  path: '/admin/config/system/prelinker'
+  defaults:
+    _title: 'Prelinker: Settings'
+    _form: \Drupal\prelinker\Form\PrelinkerSettings
+  requirements:
+    _permission: 'administer'
+
+entity.preconnect.collection:
+  path: /admin/config/system/prelinker/preconnect
+  defaults:
+    _entity_list: 'preconnect'
+    _title: 'Prelinker: Preconnect Domains'
+  requirements:
+    _permission: 'administer'
+
+entity.preconnect.add_form:
+  path: '/admin/config/system/prelinker/preconnect/add'
+  defaults:
+    _entity_form: 'preconnect.add'
+    _title: 'Add Preconnect Domain'
+  requirements:
+    _permission: 'administer'
+
+entity.preconnect.edit_form:
+  path: '/admin/config/system/prelinker/preconnect/{preconnect}'
+  defaults:
+    _entity_form: 'preconnect.edit'
+    _title: 'Edit Preconnect Domain'
+  requirements:
+    _permission: 'administer'
+
+entity.preconnect.delete_form:
+  path: '/admin/config/system/prelinker/preconnect/{preconnect}/delete'
+  defaults:
+    _entity_form: 'preconnect.delete'
+    _title: 'Delete Preconnect Domain'
+  requirements:
+    _permission: 'administer'
+
+entity.preload.collection:
+  path: /admin/config/system/prelinker/preload
+  defaults:
+    _entity_list: 'preload'
+    _title: 'Prelinker: Preload Files'
+  requirements:
+    _permission: 'administer'
+
+entity.preload.add_form:
+  path: '/admin/config/system/prelinker/preload/add'
+  defaults:
+    _entity_form: 'preload.add'
+    _title: 'Add Preload File'
+  requirements:
+    _permission: 'administer'
+
+entity.preload.edit_form:
+  path: '/admin/config/system/prelinker/preload/{preload}'
+  defaults:
+    _entity_form: 'preload.edit'
+    _title: 'Edit Preload File'
+  requirements:
+    _permission: 'administer'
+
+entity.preload.delete_form:
+  path: '/admin/config/system/prelinker/preload/{preload}/delete'
+  defaults:
+    _entity_form: 'preload.delete'
+    _title: 'Delete Preload File'
+  requirements:
+    _permission: 'administer'

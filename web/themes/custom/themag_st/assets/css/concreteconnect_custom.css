@@ -1,0 +1,51 @@
+.menu--footer ul.menu {
+  display: flex; /* Enables flexbox layout for direct children, i.e., li elements */
+  flex-wrap: wrap; /* Allows items to wrap onto the next line as needed */
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Aligns items vertically */
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none; /* Removes default list styling */
+}
+
+@media (min-width: 992px) {
+  .menu--footer ul.menu {
+    justify-content: flex-start; /* Aligns items to the left on desktop screens */
+    margin-top: 0;
+  }
+  .menu--footer ul.menu li:first-child a {
+    padding-left: 0; /* Removes left padding for the first link in the first item on desktop */
+  }
+}
+
+.menu--footer ul.menu li {
+  margin: 0.5rem; /* Provides space around each item */
+}
+
+.menu--footer ul.menu li a {
+  color: #B3B3B3; /* Updated color for all link states */
+  text-decoration: none;
+  padding: 0.75rem; /* Increased padding for better touch accessibility */
+  display: block; /* Ensures padding applies correctly and increases hit area */
+}
+
+.menu--footer ul.menu li a:hover {
+  text-decoration: underline;
+}
+.view-id-video_listing .button--primary{
+  background-color: #808080;
+  border-color: #808080;
+  color: #fff;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.ConcreteConnectTV{
+  padding-bottom: 10px;
+  padding-top: 20px;
+  border-bottom: 1px solid #919191;
+  margin-bottom: 10px;
+}
+.video-listings div.view-header{
+  padding: 0px;
+}

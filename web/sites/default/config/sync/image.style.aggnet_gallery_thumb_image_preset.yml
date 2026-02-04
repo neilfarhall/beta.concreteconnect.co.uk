@@ -1,0 +1,15 @@
+uuid: f274519a-9ae1-4fcb-82db-a350d8e517b3
+langcode: en
+status: true
+dependencies: {  }
+name: aggnet_gallery_thumb_image_preset
+label: 'Aggnet Gallery Thumb Image Preset'
+effects:
+  95abf3bd-f12d-4c53-aa5e-d0af4e2753db:
+    uuid: 95abf3bd-f12d-4c53-aa5e-d0af4e2753db
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 190
+      height: 122
+      anchor: center-center

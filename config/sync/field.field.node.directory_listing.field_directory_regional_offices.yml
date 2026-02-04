@@ -1,0 +1,19 @@
+uuid: 8cf0f676-7cac-4de0-b9e8-c0dc7dfabe61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_regional_offices
+    - node.type.directory_listing
+id: node.directory_listing.field_directory_regional_offices
+field_name: field_directory_regional_offices
+entity_type: node
+bundle: directory_listing
+label: 'Regional Offices'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

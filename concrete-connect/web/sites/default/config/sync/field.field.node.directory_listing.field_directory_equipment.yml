@@ -1,0 +1,19 @@
+uuid: 6423e05b-1673-40fc-a658-8142886218b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_equipment
+    - node.type.directory_listing
+id: node.directory_listing.field_directory_equipment
+field_name: field_directory_equipment
+entity_type: node
+bundle: directory_listing
+label: 'Equipment & Services field'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

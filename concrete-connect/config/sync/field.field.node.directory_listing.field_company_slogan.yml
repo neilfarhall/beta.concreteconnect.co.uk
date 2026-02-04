@@ -1,0 +1,19 @@
+uuid: 4d281856-da34-4051-9d59-f5e522135e45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_slogan
+    - node.type.directory_listing
+id: node.directory_listing.field_company_slogan
+field_name: field_company_slogan
+entity_type: node
+bundle: directory_listing
+label: 'Company Slogan'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

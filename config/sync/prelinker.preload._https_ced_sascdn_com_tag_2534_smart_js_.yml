@@ -1,0 +1,10 @@
+uuid: b86cd098-84c2-4b24-85f4-3debda1f1804
+langcode: en
+status: true
+dependencies: {  }
+id: _https_ced_sascdn_com_tag_2534_smart_js_
+label: '"https://ced.sascdn.com/tag/2534/smart.js"'
+file: 'https://ced.sascdn.com/tag/2534/smart.js'
+as: script
+pages: ''
+weight: 0

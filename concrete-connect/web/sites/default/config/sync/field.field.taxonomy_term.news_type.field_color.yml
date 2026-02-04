@@ -1,0 +1,22 @@
+uuid: fb213ff8-b5e2-429f-8151-71d42ad8a0e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_color
+    - taxonomy.vocabulary.news_type
+  module:
+    - color_field
+id: taxonomy_term.news_type.field_color
+field_name: field_color
+entity_type: taxonomy_term
+bundle: news_type
+label: Color
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 1
+field_type: color_field_type

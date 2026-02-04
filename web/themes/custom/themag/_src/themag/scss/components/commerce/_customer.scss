@@ -1,0 +1,76 @@
+//
+// Profile (Customer profile)
+//
+.profile {
+  font-size: 16px;
+}
+
+//
+// Address field
+//
+.field--type-address {
+
+  .form-wrapper:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  input, select {
+    width: 100%;
+  }
+
+  .address-container-inline {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 16px;
+    margin-bottom: 16px;
+    > .form-item {
+      display: block;
+      margin: 0;
+    }
+  }
+}
+
+//
+// Address book
+//
+.view-profiles {
+  .view-content {
+    margin-top: 1.5rem;
+  }
+  .field--name-address {
+    padding: 1rem;
+    border: 1px solid var(--mag-border);
+  }
+  .dropbutton-widget {
+    border-top: none;
+  }
+}
+
+//
+// Orders page
+//
+.order-information {
+  margin-top: 2rem;
+  .view-commerce-order-item-table {
+    margin-top: 2rem;
+  }
+
+  // Order total
+  //
+  .order-total-line-value {
+    width: auto;
+    min-width: 80px;
+  }
+  .order-total-line__subtotal {
+    color: $gray-blue-600;
+  }
+  .order-total-line__total {
+    width: auto;
+    min-width: 80px;
+    color: $gray-blue-900;
+    font-size: 1.8rem;
+    .order-total-line-label {
+      margin-right: 1rem;
+    }
+  }
+}

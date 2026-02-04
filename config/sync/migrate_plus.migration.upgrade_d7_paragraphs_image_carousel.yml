@@ -1,0 +1,44 @@
+uuid: 05f23ac7-ae43-4ec5-ae19-d7f5ddf420e2
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_image_carousel
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (image carousel)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: image_carousel
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_image_carousel_:
+    -
+      plugin: sub_process
+      source: field_image_carousel_
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: image_carousel
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+  optional:
+    - upgrade_d7_field_instance

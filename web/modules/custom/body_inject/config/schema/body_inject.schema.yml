@@ -1,0 +1,47 @@
+# Schema for the configuration files of the BodyInject module.
+
+body_inject.body_inject_profile.*:
+  type: config_entity
+  mapping:
+    label:
+      type: label
+      label: 'Name'
+    id:
+      type: string
+    description:
+      type: string
+      label: 'Description'
+    node_type:
+      type: string
+      label: 'Node Type'
+    block_reference:
+      label: 'Entity reference'
+      type: mapping
+      mapping:
+        target_id:
+          type: string
+          label: 'Value'
+    paragraph_operator:
+      type: string
+      label: 'Value'
+    paragraph_number:
+      type: string
+      label: 'Value'
+    and_or:
+      type: string
+      label: 'Value'
+    char_operator:
+      type: string
+      label: 'Value'
+    char_number:
+      type: string
+      label: 'Value'
+    paragraph_offset:
+      type: string
+      label: 'Value'
+    paragraph_position:
+      type: string
+      label: 'Value'
+    char_position:
+      type: string
+      label: 'Value'

@@ -1,0 +1,262 @@
+uuid: 43f3cc06-b655-4a6c-b49b-d5e7501a37b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news_article.body
+    - field.field.node.news_article.field_news_type
+    - field.field.node.news_article.field_tagging_company
+    - field.field.node.news_article.field_tagging_location
+    - field.field.node.news_article.field_tagging_subject
+    - field.field.node.news_article.field_teaser_media
+    - field.field.node.news_article.field_teaser_text
+    - node.type.news_article
+  module:
+    - feeds_log
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers:
+      584ea2db-fe80-42ed-b214-992173459ebc:
+        separator: ','
+        limit: null
+        uuid: 584ea2db-fe80-42ed-b214-992173459ebc
+        plugin: explode
+        source: subject_tags
+        weight: 0
+        label: Explode
+      2b1a51c7-528b-43aa-bfb2-279b720d9c9d:
+        separator: ','
+        limit: null
+        uuid: 2b1a51c7-528b-43aa-bfb2-279b720d9c9d
+        plugin: explode
+        source: company_tags
+        weight: 0
+        label: Explode
+      3b5e380f-46b4-467c-a493-60997a66802e:
+        separator: ','
+        limit: null
+        uuid: 3b5e380f-46b4-467c-a493-60997a66802e
+        plugin: explode
+        source: location_tags
+        weight: 0
+        label: Explode
+      b2f492c6-63cc-42e7-854e-c1c16639c6b4:
+        uuid: b2f492c6-63cc-42e7-854e-c1c16639c6b4
+        plugin: html_entity_decode
+        source: body
+        weight: 0
+        label: 'HTML entity decode'
+      14a37a76-04a1-4dfc-b8a8-03f60d2f2667:
+        uuid: 14a37a76-04a1-4dfc-b8a8-03f60d2f2667
+        plugin: html_entity_decode
+        source: title
+        weight: 0
+        label: 'HTML entity decode'
+      18db7ba5-3181-405a-8e79-0ec251fd26a7:
+        uuid: 18db7ba5-3181-405a-8e79-0ec251fd26a7
+        plugin: html_entity_decode
+        source: summary
+        weight: 0
+        label: 'HTML entity decode'
+      a3f1ca7c-b3a3-4da2-882e-b3c2cdb68a07:
+        separator: ','
+        limit: null
+        uuid: a3f1ca7c-b3a3-4da2-882e-b3c2cdb68a07
+        plugin: explode
+        source: news_type
+        weight: 0
+        label: Explode
+label: News
+id: news
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: news_article
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  id:
+    value: ID
+    label: ID
+    machine_name: id
+    type: csv
+  title:
+    value: Title
+    label: Title
+    machine_name: title
+    type: csv
+  subject_tags:
+    value: 'Subject Tags'
+    label: 'Subject Tags'
+    machine_name: subject_tags
+    type: csv
+  teaser_media:
+    value: 'Teaser Media'
+    label: 'Teaser Media'
+    machine_name: teaser_media
+    type: csv
+  teaser_text:
+    value: 'Teaser Text'
+    label: 'Teaser Text'
+    machine_name: teaser_text
+    type: csv
+  company_tags:
+    value: 'Company Tags'
+    label: 'Company Tags'
+    machine_name: company_tags
+    type: csv
+  location_tags:
+    value: 'Location Tags'
+    label: 'Location Tags'
+    machine_name: location_tags
+    type: csv
+  body:
+    value: Body
+    label: Body
+    machine_name: body
+    type: csv
+  body2:
+    value: Body2
+    label: Body2
+    machine_name: body2
+    type: csv
+  authored_on:
+    value: 'Authored on'
+    label: 'Authored on'
+    machine_name: authored_on
+    type: csv
+  summary:
+    value: Summary
+    label: Summary
+    machine_name: summary
+    type: csv
+  paragraphs:
+    value: Paragraphs
+    label: Paragraphs
+    machine_name: paragraphs
+    type: csv
+  news_type:
+    value: 'News type'
+    label: 'News type'
+    machine_name: news_type
+    type: csv
+mappings:
+  -
+    target: nid
+    map:
+      value: id
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: ''
+    unique: {  }
+  -
+    target: field_tagging_subject
+    map:
+      target_id: subject_tags
+    settings:
+      language: ''
+      reference_by: tid
+      autocreate: 0
+      autocreate_bundle: tagging_subject
+  -
+    target: field_teaser_media
+    map:
+      target_id: teaser_media
+    settings:
+      language: ''
+      reference_by: name
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: image
+  -
+    target: field_teaser_text
+    map:
+      value: summary
+    settings:
+      language: null
+  -
+    target: field_tagging_company
+    map:
+      target_id: company_tags
+    settings:
+      language: ''
+      reference_by: tid
+      autocreate: 0
+      autocreate_bundle: tagging_company
+  -
+    target: field_tagging_location
+    map:
+      target_id: location_tags
+    settings:
+      language: ''
+      reference_by: tid
+      autocreate: 0
+      autocreate_bundle: tagging_location
+  -
+    target: body
+    map:
+      value: body
+      summary: summary
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: created
+    map:
+      value: authored_on
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_news_type
+    map:
+      target_id: news_type
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: 1
+      autocreate_bundle: news_type

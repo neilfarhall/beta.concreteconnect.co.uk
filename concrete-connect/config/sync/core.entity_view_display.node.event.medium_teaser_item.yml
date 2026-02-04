@@ -1,0 +1,116 @@
+uuid: 604008de-e52d-41dc-a470-ae6a5d0168c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.medium_teaser_item
+    - field.field.node.event.body
+    - field.field.node.event.field_advertisement_keywords
+    - field.field.node.event.field_county
+    - field.field.node.event.field_event_address_1
+    - field.field.node.event.field_event_address_2
+    - field.field.node.event.field_event_concessions
+    - field.field.node.event.field_event_contact_name
+    - field.field.node.event.field_event_country
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_email
+    - field.field.node.event.field_event_email_message
+    - field.field.node.event.field_event_organiser
+    - field.field.node.event.field_event_postcode
+    - field.field.node.event.field_event_price
+    - field.field.node.event.field_event_price_vat
+    - field.field.node.event.field_event_reference
+    - field.field.node.event.field_event_speakers_topic
+    - field.field.node.event.field_event_town_city
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_event_venue
+    - field.field.node.event.field_event_website
+    - field.field.node.event.field_logo
+    - field.field.node.event.field_tagging_company
+    - field.field.node.event.field_tagging_location
+    - field.field.node.event.field_tagging_subject
+    - field.field.node.event.field_teaser_media
+    - field.field.node.event.field_teaser_text
+    - field.field.node.event.layout_builder__layout
+    - node.type.event
+  module:
+    - datetime_range
+    - field_formatter
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.event.medium_teaser_item
+targetEntityType: node
+bundle: event
+mode: medium_teaser_item
+content:
+  field_event_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short
+      separator: until
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_event_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_teaser_media:
+    type: field_formatter_with_inline_settings
+    label: hidden
+    settings:
+      field_name: field_image
+      type: responsive_image
+      settings:
+        responsive_image_style: main_header_logo
+        image_link: ''
+      label: hidden
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  field_advertisement_keywords: true
+  field_county: true
+  field_event_address_1: true
+  field_event_address_2: true
+  field_event_concessions: true
+  field_event_contact_name: true
+  field_event_country: true
+  field_event_email: true
+  field_event_email_message: true
+  field_event_organiser: true
+  field_event_postcode: true
+  field_event_price: true
+  field_event_price_vat: true
+  field_event_reference: true
+  field_event_speakers_topic: true
+  field_event_town_city: true
+  field_event_venue: true
+  field_event_website: true
+  field_logo: true
+  field_tagging_company: true
+  field_tagging_location: true
+  field_tagging_subject: true
+  layout_builder__layout: true
+  links: true
+  search_api_excerpt: true
+  shariff_field: true

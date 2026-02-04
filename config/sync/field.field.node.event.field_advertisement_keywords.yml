@@ -1,0 +1,27 @@
+uuid: 0f5cb4ac-063f-4469-9dad-3bd47e9dbb5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_advertisement_keywords
+    - node.type.event
+id: node.event.field_advertisement_keywords
+field_name: field_advertisement_keywords
+entity_type: node
+bundle: event
+label: 'Advertisement Keywords'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,7 @@
+uuid: 421a0576-4caa-4953-8219-425258806ff2
+langcode: en
+status: false
+dependencies: {  }
+formId: node_iq_blog_form
+captchaType: default
+label: node_iq_blog_form

@@ -1,0 +1,147 @@
+// Comments
+// ------------------
+.field--name-field-comment,
+.field--name-field-mg-comments {
+  background-color: var(--mag-bg-grey);
+  padding: 1.5rem;
+  @include media-breakpoint-up(lg) {
+    padding: 2.5rem 3rem;
+  }
+
+  h2.title {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--mag-text-primary);
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .form-wrapper > .form-group {
+    margin-top: 0;
+  }
+
+  label,
+  .grippie {
+    display: none;
+  }
+  textarea {
+    height: 70px;
+    transition: height .2s ease-in-out;
+    &:focus {
+      height: 120px;
+    }
+  }
+  .form-actions {
+    margin-bottom: 0;
+  }
+}
+
+
+// ----------------
+// Comment
+// ----------------
+.comment {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--mag-text-primary);
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+}
+
+.user-image {
+  overflow: hidden;
+  border-radius: 3px;
+  img {
+    border-radius: 3px;
+  }
+}
+
+.comment-user-info {
+  margin: 0 0 10px;
+  padding: 0 0 0 10px;
+  border-left: 3px solid var(--mag-border);
+  > div {
+    display: inline-block;
+    vertical-align: middle
+  }
+}
+
+.comment-user-name {
+  color: var(--mag-text-primary);
+  font-weight: bold;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.comment-date {
+  color: var(--mag-text-secondary);
+  font-size: 14px;
+}
+
+
+// Replays (indented comments)
+.indented .comment {
+  grid-template-columns: 48px 1fr;
+  margin-left: 4px;
+  @include media-breakpoint-up(md) {
+    margin-left: 64px;
+  }
+}
+
+.indented > .indented {
+  margin-left: 0;
+  @include media-breakpoint-up(md) {
+    margin-left: 48px;
+  }
+}
+
+// Comment Links
+// ---------------------
+.comment__links {
+  display: flex;
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--mag-text-secondary);
+  ul.links {
+    display: flex;
+    margin-right: 16px;
+    li:not(:first-child) {
+      margin-left: 16px;
+    }
+  }
+  a {
+    color: var(--mag-headline);
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Mark "New"
+// ---------------------
+ mark {
+  background: $red;
+  padding: 0 .5rem;
+  height: 14px;
+  display: inline-block;
+  font-size: 80%;
+  line-height: 14px;
+  color: #FFF;
+}

@@ -1,0 +1,21 @@
+prelinker.preconnect.*:
+  type: config_entity
+  label: 'Preconnect Domain'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    domain:
+      type: string
+      label: Domain
+    pages:
+      type: string
+      label: Pages
+    weight:
+      type: number
+      label: Weight
+    uuid:
+      type: string

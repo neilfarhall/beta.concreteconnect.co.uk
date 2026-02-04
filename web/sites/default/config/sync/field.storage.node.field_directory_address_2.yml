@@ -1,0 +1,21 @@
+uuid: d53776d2-97e8-424c-b0f4-2f0a4559be0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_directory_address_2
+field_name: field_directory_address_2
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,71 @@
+uuid: 675a60bc-50b8-47ad-9c36-31a879216f02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.test.body
+    - field.field.node.test.field_blog_type
+    - field.field.node.test.field_email
+    - field.field.node.test.field_home_tab
+    - field.field.node.test.field_home_video
+    - node.type.test
+  module:
+    - text
+    - user
+    - video
+id: node.test.default
+targetEntityType: node
+bundle: test
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_blog_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_email:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_home_tab:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_home_video:
+    type: video_embed_player
+    label: above
+    settings:
+      autoplay: true
+      width: '854'
+      height: '480'
+      related_videos: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  shariff_field: true

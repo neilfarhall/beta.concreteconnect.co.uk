@@ -1,0 +1,23 @@
+uuid: 5104bb94-5297-4ec8-8968-6fa941e62fa5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kLTw1fR6rTF8tVaaJ3GMbrvxDVlTdhOS5_ZxwB4j5tg
+name: pb_wide_lg
+label: 'PB Wide LG 1280x380'
+effects:
+  a85d6d3d-4131-4022-8a95-205aa544cb67:
+    uuid: a85d6d3d-4131-4022-8a95-205aa544cb67
+    id: image_convert
+    weight: 1
+    data:
+      extension: webp
+  529b4bc4-1ff6-49db-9f4d-c665dfa2af05:
+    uuid: 529b4bc4-1ff6-49db-9f4d-c665dfa2af05
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1280
+      height: 380
+      anchor: center-center

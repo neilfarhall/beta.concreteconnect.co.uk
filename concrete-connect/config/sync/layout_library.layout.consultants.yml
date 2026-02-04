@@ -1,0 +1,145 @@
+uuid: ecf6ab94-19e7-4402-8ab4-110ae2c9b2f6
+langcode: en
+status: true
+dependencies: {  }
+id: consultants
+label: Consultants
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      9ea76c4c-b9d3-4e8e-bda2-2ae44269e684:
+        uuid: 9ea76c4c-b9d3-4e8e-bda2-2ae44269e684
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      e8ee44f9-3393-4834-bbcf-754f5187250a:
+        uuid: e8ee44f9-3393-4834-bbcf-754f5187250a
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 1
+        additional: {  }
+      3fe135c8-0e05-43a8-9936-0f6db929ab52:
+        uuid: 3fe135c8-0e05-43a8-9936-0f6db929ab52
+        region: second
+        configuration:
+          id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+          label: 'Newsletter Signup'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 1
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 1
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      57b0cfa9-5b5f-434a-a3a7-1b22df636827:
+        uuid: 57b0cfa9-5b5f-434a-a3a7-1b22df636827
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: -10
+        additional: {  }
+      b6d0b873-8c75-40a1-a078-18f1dbda9415:
+        uuid: b6d0b873-8c75-40a1-a078-18f1dbda9415
+        region: second
+        configuration:
+          id: 'views_block:featured_company_item_slider-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: -8
+        additional: {  }
+      b95b90e4-0a8a-47e1-ae7e-3bead601e5c6:
+        uuid: b95b90e4-0a8a-47e1-ae7e-3bead601e5c6
+        region: first
+        configuration:
+          id: 'views_block:consultants_directory-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 0
+        additional: {  }
+      438e3ad3-aafb-4971-9fce-b8654c74a2a1:
+        uuid: 438e3ad3-aafb-4971-9fce-b8654c74a2a1
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: -9
+        additional: {  }
+    third_party_settings: {  }

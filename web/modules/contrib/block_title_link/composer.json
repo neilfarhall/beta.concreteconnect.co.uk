@@ -1,0 +1,15 @@
+{
+    "name": "drupal/block_title_link",
+    "type": "drupal-module",
+    "description": "Adding link to title of blocks.",
+    "keywords": ["Drupal", "Block Title Link"],
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/block_title_link",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/block_title_link",
+        "source": "https://git.drupalcode.org/project/block_title_link"
+    },
+    "require": {
+        "drupal/core": "^8 || ^9 || ^10"
+    }
+}

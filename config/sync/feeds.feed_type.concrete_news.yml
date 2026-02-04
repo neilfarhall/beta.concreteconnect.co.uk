@@ -1,0 +1,192 @@
+uuid: e943fea7-8755-42c0-b14d-436ae7eff461
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news_article.field_tagging_company
+    - field.field.node.news_article.field_tagging_subject
+    - field.field.node.news_article.field_teaser_media
+    - field.field.node.news_article.field_teaser_text
+    - node.type.news_article
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      b0860986-b28a-4188-b19a-f62bf10ff456:
+        separator: ','
+        limit: null
+        uuid: b0860986-b28a-4188-b19a-f62bf10ff456
+        plugin: explode
+        source: subject_tags
+        weight: 0
+        label: Explode
+      b0704510-4b76-4655-b4a8-0b520e7b4e99:
+        separator: ','
+        limit: null
+        uuid: b0704510-4b76-4655-b4a8-0b520e7b4e99
+        plugin: explode
+        source: company_tags
+        weight: 0
+        label: Explode
+label: 'Concrete News'
+id: concrete_news
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: news_article
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  id:
+    value: id
+    label: id
+    machine_name: id
+    type: csv
+  title:
+    value: Title
+    label: Title
+    machine_name: title
+    type: csv
+  subject_tags:
+    value: 'Subject Tags'
+    label: 'Subject Tags'
+    machine_name: subject_tags
+    type: csv
+  authored_on:
+    value: 'Authored on'
+    label: 'Authored on'
+    machine_name: authored_on
+    type: csv
+  teaser_media:
+    value: 'Teaser Media'
+    label: 'Teaser Media'
+    machine_name: teaser_media
+    type: csv
+  teaser_text:
+    value: 'Teaser Text'
+    label: 'Teaser Text'
+    machine_name: teaser_text
+    type: csv
+  company_tags:
+    value: 'Company Tags'
+    label: 'Company Tags'
+    machine_name: company_tags
+    type: csv
+  location_tags:
+    value: 'Location Tags'
+    label: 'Location Tags'
+    machine_name: location_tags
+    type: csv
+  related_directories:
+    value: 'Related Directories'
+    label: 'Related Directories'
+    machine_name: related_directories
+    type: csv
+  related_articles:
+    value: 'Related Articles'
+    label: 'Related Articles'
+    machine_name: related_articles
+    type: csv
+  email:
+    value: email
+    label: email
+    machine_name: email
+    type: csv
+  body:
+    value: Body
+    label: Body
+    machine_name: body
+    type: csv
+  body2:
+    value: Body
+    label: Body
+    machine_name: body2
+    type: csv
+  sticky_at_top_of_lists:
+    value: 'Sticky at top of lists'
+    label: 'Sticky at top of lists'
+    machine_name: sticky_at_top_of_lists
+    type: csv
+  paragraphs:
+    value: Paragraphs
+    label: Paragraphs
+    machine_name: paragraphs
+    type: csv
+mappings:
+  -
+    target: nid
+    map:
+      value: id
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_tagging_subject
+    map:
+      target_id: subject_tags
+    settings:
+      language: ''
+      reference_by: tid
+      autocreate: 0
+      autocreate_bundle: tagging_subject
+  -
+    target: created
+    map:
+      value: authored_on
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_teaser_media
+    map:
+      target_id: teaser_media
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: image
+      feeds_item: false
+  -
+    target: field_teaser_text
+    map:
+      value: teaser_text
+    settings:
+      language: null
+  -
+    target: field_tagging_company
+    map:
+      target_id: company_tags
+    settings:
+      language: ''
+      reference_by: tid
+      autocreate: 0
+      autocreate_bundle: tagging_company

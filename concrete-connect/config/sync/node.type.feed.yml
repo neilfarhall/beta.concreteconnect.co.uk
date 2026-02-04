@@ -1,0 +1,11 @@
+uuid: a0617727-feb3-4cd7-bd62-16fb8a303fe4
+langcode: en
+status: true
+dependencies: {  }
+name: Feed
+type: feed
+description: 'Subscribe to RSS or Atom feeds. Creates nodes of the content type "Feed item" from feed content.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

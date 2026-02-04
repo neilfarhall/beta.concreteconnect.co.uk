@@ -1,0 +1,11 @@
+uuid: 7f593d58-324d-4bbc-afdf-12169d784c14
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: got_a_story
+title: 'Got a Story'
+content:
+  value: '<div class="got_a_story"><strong>Got a Story?</strong> <a href="https://www.concreteconnect.co.uk/form/submit-news">Submit your news here</a></div>'
+  format: full_html

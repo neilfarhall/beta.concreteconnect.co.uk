@@ -1,0 +1,126 @@
+details.teaser .details-wrapper,
+details.teaser .fieldset-wrapper,
+fieldset.teaser .details-wrapper,
+fieldset.teaser .fieldset-wrapper {
+  display: flex;
+}
+
+details.teaser .field--name-field-teaser-media,
+fieldset.teaser .field--name-field-teaser-media {
+  margin-right: 16px;
+}
+
+details.teaser .field--name-field-teaser-media details[open],
+fieldset.teaser .field--name-field-teaser-media details[open] {
+  border: 0;
+}
+
+details.teaser .field--name-field-teaser-media details[open] p,
+details.teaser .field--name-field-teaser-media details[open] summary[aria-expanded="true"],
+fieldset.teaser .field--name-field-teaser-media details[open] p,
+fieldset.teaser .field--name-field-teaser-media details[open] summary[aria-expanded="true"] {
+  display: none;
+}
+
+details.teaser .field--name-field-teaser-media details[open] .details-wrapper,
+fieldset.teaser .field--name-field-teaser-media details[open] .details-wrapper {
+  box-sizing: border-box;
+  padding: 16px 0 0;
+}
+
+details.teaser .media-library-widget,
+fieldset.teaser .media-library-widget {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  padding: 0;
+  border: none;
+}
+
+details.teaser .media-library-widget .media-library-item--grid:before,
+fieldset.teaser .media-library-widget .media-library-item--grid:before {
+  display: none;
+}
+
+details.teaser .media-library-widget *,
+fieldset.teaser .media-library-widget * {
+  width: auto;
+  height: auto;
+}
+
+details.teaser .media-library-widget .fieldset-wrapper,
+fieldset.teaser .media-library-widget .fieldset-wrapper {
+  display: block;
+}
+
+details.teaser .media-library-widget .media-library-open-button,
+fieldset.teaser .media-library-widget .media-library-open-button {
+  width: 100%;
+  margin-top: 18px;
+}
+
+details.teaser .media-library-widget .media-library-item__preview,
+fieldset.teaser .media-library-widget .media-library-item__preview {
+  padding: 0;
+}
+
+details.teaser .media-library-widget .media-library-selection,
+fieldset.teaser .media-library-widget .media-library-selection {
+  display: block;
+  margin: 0;
+}
+
+details.teaser .media-library-widget .field--name-thumbnail,
+fieldset.teaser .media-library-widget .field--name-thumbnail {
+  background: none;
+}
+
+details.teaser .media-library-widget .media-library-widget__toggle-weight,
+details.teaser .media-library-widget .description,
+details.teaser .media-library-widget .media-library-item__attributes,
+fieldset.teaser .media-library-widget .media-library-widget__toggle-weight,
+fieldset.teaser .media-library-widget .description,
+fieldset.teaser .media-library-widget .media-library-item__attributes {
+  display: none;
+}
+
+details.teaser .field--name-field-teaser-text,
+fieldset.teaser .field--name-field-teaser-text {
+  flex: 1;
+}
+
+.media-preview {
+  display: flex;
+  align-items: center;
+}
+
+.media-preview__thumbnail {
+  flex: 0 0 auto;
+  margin-right: 16px;
+}
+
+.media-preview__content {
+  flex: 1 1 auto;
+}
+
+.media-preview__content .field:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.pd-preview-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.pd-preview-thumb {
+  flex: 0 0 auto;
+  margin-right: 16px;
+}
+
+.pd-preview-content {
+  flex: 1 1 auto;
+}
+
+.pd-preview-content .field:not(:last-child) {
+  margin-bottom: 4px;
+}

@@ -1,0 +1,22 @@
+uuid: 258281ea-66ca-4dc5-b65e-93acd4038df2
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - node
+_core:
+  default_config_hash: tjGyfvYTAizXjZsWbDGcRil75SIxEsZrLP4WaBCrx_0
+id: node.pb_content_reference_para_block
+field_name: pb_content_reference_para_block
+entity_type: node
+type: entity_reference
+settings:
+  target_type: block_content
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

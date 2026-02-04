@@ -1,0 +1,23 @@
+uuid: a3889eb7-60a6-4924-b951-114247e27662
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_gallery_tab
+    - node.type.directory_listing
+id: node.directory_listing.field_media_gallery_tab
+field_name: field_media_gallery_tab
+entity_type: node
+bundle: directory_listing
+label: 'Media Gallery Tab'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

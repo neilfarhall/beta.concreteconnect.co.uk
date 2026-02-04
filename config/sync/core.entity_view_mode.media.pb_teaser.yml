@@ -1,0 +1,12 @@
+uuid: 04af2cc6-2488-47ea-ad7f-2743e2c2c1f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: etR9ef9dN5uRYkBAjUsDtHQ9HwWO4txJtBMwr0m6xcg
+id: media.pb_teaser
+label: 'PB Teaser'
+targetEntityType: media
+cache: true

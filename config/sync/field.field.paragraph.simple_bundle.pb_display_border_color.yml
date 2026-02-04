@@ -1,0 +1,23 @@
+uuid: 631e3993-9a8b-4dc1-bd32-dd4d6e493ad2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_border_color
+    - paragraphs.paragraphs_type.simple_bundle
+  module:
+    - paragraphs_bundles
+_core:
+  default_config_hash: TPg4krHssWufnHGjSq8yTwXeTF7kUnpWjcKcdaC8NdA
+id: paragraph.simple_bundle.pb_display_border_color
+field_name: pb_display_border_color
+entity_type: paragraph
+bundle: simple_bundle
+label: 'Border Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraphs_bundles_rgb

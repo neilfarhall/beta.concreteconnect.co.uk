@@ -1,0 +1,74 @@
+uuid: a484764d-75d4-4cf0-abb6-ecec3cadf562
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.authors_panel.field_authors_bio
+    - field.field.paragraph.authors_panel.field_authors_email
+    - field.field.paragraph.authors_panel.field_authors_name
+    - field.field.paragraph.authors_panel.field_authors_socials
+    - field.field.paragraph.authors_panel.field_authors_title
+    - field.field.paragraph.authors_panel.field_profile_pic
+    - field.field.paragraph.authors_panel.field_website
+    - paragraphs.paragraphs_type.authors_panel
+  module:
+    - link
+    - media_library
+    - text
+id: paragraph.authors_panel.default
+targetEntityType: paragraph
+bundle: authors_panel
+mode: default
+content:
+  field_authors_bio:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_authors_email:
+    type: email_default
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_authors_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_authors_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_profile_pic:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_website:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  admin_title: true
+  created: true
+  field_authors_socials: true
+  status: true

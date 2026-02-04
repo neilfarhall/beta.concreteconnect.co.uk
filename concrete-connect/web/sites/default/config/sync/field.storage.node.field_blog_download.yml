@@ -1,0 +1,23 @@
+uuid: b7725e4b-4f53-4c2e-b8fe-39aa76b6183f
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_blog_download
+field_name: field_blog_download
+entity_type: node
+type: file
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+module: file
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

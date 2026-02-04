@@ -1,0 +1,19 @@
+uuid: fdee2416-94ea-4f64-87c0-8a8930a5d483
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - social_link_field
+id: paragraph.field_authors_socials
+field_name: field_authors_socials
+entity_type: paragraph
+type: social_links
+settings: {  }
+module: social_link_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

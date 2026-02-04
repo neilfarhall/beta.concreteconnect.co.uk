@@ -1,0 +1,25 @@
+uuid: 42ab7e7a-88ad-4cfb-b63b-251eb067102c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_card_layout_three
+    - paragraphs.paragraphs_type.card_three_columns_bundle
+  module:
+    - options
+_core:
+  default_config_hash: poSJndoYoM-vaAgv_LqfP640x7qyq6rrK9_V00Xc4WE
+id: paragraph.card_three_columns_bundle.pb_display_card_layout_three
+field_name: pb_display_card_layout_three
+entity_type: paragraph
+bundle: card_three_columns_bundle
+label: 'Card Layout'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: l4_l4_l4
+default_value_callback: ''
+settings: {  }
+field_type: list_string

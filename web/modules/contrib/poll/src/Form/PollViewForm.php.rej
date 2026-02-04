@@ -1,0 +1,14 @@
+--- src/Form/PollViewForm.php
++++ src/Form/PollViewForm.php
+@@ -176,10 +176,9 @@ class PollViewForm extends FormBase {
+ 
+     $output = array(
+       '#theme' => 'poll_results',
+-      '#raw_title' => $poll->label(),
++      '#raw_question' => $poll->label(),
+       '#results' => $poll_results,
+       '#votes' => $total_votes,
+-      '#raw_links' => isset($poll->links) ? $poll->links : array(),
+       '#block' => $block,
+       '#pid' => $poll->id(),
+       '#vote' => isset($poll->vote) ? $poll->vote : NULL,

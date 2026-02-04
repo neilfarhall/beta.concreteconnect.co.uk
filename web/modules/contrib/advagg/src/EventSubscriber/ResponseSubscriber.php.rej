@@ -1,0 +1,13 @@
+--- src/EventSubscriber/ResponseSubscriber.php
++++ src/EventSubscriber/ResponseSubscriber.php
+@@ -53,8 +53,9 @@ class ResponseSubscriber implements EventSubscriberInterface {
+     if ($this->config->get('dns_prefetch')) {
+       $response = $event->getResponse();
+ 
++      $content_type = $response->headers->get('Content-Type');
+       // Ensure that it is an html response.
+-      if (stripos($response->headers->get('Content-Type'), 'text/html') === FALSE) {
++      if (empty($content_type) || stripos($content_type, 'text/html') === FALSE) {
+         return;
+       }
+ 

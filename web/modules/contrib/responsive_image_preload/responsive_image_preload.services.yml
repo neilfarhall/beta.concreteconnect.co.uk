@@ -1,0 +1,17 @@
+services:
+  responsive_image_preload.preload_generator:
+    class: \Drupal\responsive_image_preload\PreloadGenerator
+    arguments:
+      - '@breakpoint.manager'
+      - '@entity_type.manager'
+      - '@image.factory'
+      - '@file_url_generator'
+
+  responsive_image_preload.third_party_settings:
+    class: \Drupal\responsive_image_preload\ThirdPartySettings
+
+  responsive_image_preload.field_preprocessor:
+    class: \Drupal\responsive_image_preload\FieldPreprocessor
+    arguments:
+      - '@responsive_image_preload.preload_generator'
+      - '@entity_type.manager'

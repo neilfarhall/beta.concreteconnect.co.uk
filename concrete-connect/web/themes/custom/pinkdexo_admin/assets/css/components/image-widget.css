@@ -1,0 +1,40 @@
+.image-widget {
+  display: flex;
+  position: relative;
+}
+
+.image-widget a.focal-point-preview-link {
+  display: inline-block;
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #FFF;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+}
+
+.image-widget a.focal-point-preview-link:before {
+  display: none;
+}
+
+.image-preview {
+  flex: 0 0 auto;
+  padding: 0 16px 0 0;
+  /* LTR */
+}
+
+[dir="rtl"] .image-preview {
+  order: 1;
+  padding: 0 0 0 16px;
+}
+
+.image-widget-data {
+  order: 0;
+}
+
+.image-widget-data .text-field {
+  width: 100%;
+}

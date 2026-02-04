@@ -1,0 +1,29 @@
+uuid: e048596e-3573-4a6e-b9fd-86caa1f0814e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_directories
+    - node.type.directory_listing
+    - node.type.job_listing
+id: node.job_listing.field_related_directories
+field_name: field_related_directories
+entity_type: node
+bundle: job_listing
+label: 'Related Directories'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      directory_listing: directory_listing
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

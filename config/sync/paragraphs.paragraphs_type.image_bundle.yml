@@ -1,0 +1,12 @@
+uuid: 402a0e41-d640-425a-90ad-33203d526db8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: fGwS3xXat9SlL6gLeexTtHHF-XdRtfkTgEFkFnUbcMc
+id: image_bundle
+label: Image
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

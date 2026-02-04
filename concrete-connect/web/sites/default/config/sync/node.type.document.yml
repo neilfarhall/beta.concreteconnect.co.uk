@@ -1,0 +1,18 @@
+uuid: 13fccb35-af9a-4825-98ca-af39b5a17494
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: Document
+type: document
+description: 'Content type used to define new "need to know" documents.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

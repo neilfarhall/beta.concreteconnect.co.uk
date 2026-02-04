@@ -1,0 +1,147 @@
+<?php
+
+/**
+ * @file
+ * Adding link to title of blocks.
+ */
+
+use Drupal\block\Entity\Block;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\link\LinkItemInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Entity\Element\EntityAutocomplete;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function block_title_link_form_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  /** @var \Drupal\block\BlockInterface $block */
+  $block = $form_state->getFormObject()->getEntity();
+
+  // This will automatically be saved in the third party settings.
+  $form['third_party_settings']['#tree'] = TRUE;
+  $form['third_party_settings']['block_title_link'] = [
+    '#type' => 'details',
+    '#title' => t('Block Title Link Settings'),
+    '#group' => 'advanced',
+    '#open' => FALSE,
+    '#access' => TRUE,
+  ];
+
+  $form['third_party_settings']['block_title_link']['title_link_url'] = [
+    '#type' => 'entity_autocomplete',
+    '#target_type' => 'node',
+    '#title' => t('Title Link Url'),
+    '#description' => t("URL path of Block Title."),
+    '#default_value' => getUriAsDisplayableString($block->getThirdPartySetting('block_title_link', 'title_link_url')),
+    '#element_validate' => [[
+      '\Drupal\link\Plugin\Field\FieldWidget\LinkWidget',
+      'validateUriElement',
+    ],
+    ],
+    '#link_type' => LinkItemInterface::LINK_GENERIC,
+    '#attributes' => [
+      'data-autocomplete-first-character-blacklist' => '/#?',
+    ],
+    '#process_default_value' => FALSE
+  ];
+
+  $form['third_party_settings']['block_title_link']['link_title'] = [
+    '#type' => 'textfield',
+    '#title' => t('Link Title'),
+    '#empty_value' => '',
+    '#description' => t('Define the title of a link, which appears to the user as a tooltip.'),
+    '#default_value' => $block->getThirdPartySetting('block_title_link', 'link_title'),
+  ];
+  $targetValues = [
+    '_blank' => '_blank',
+    '_self' => '_self',
+    '_parent' => '_parent',
+    '_top' => '_top',
+  ];
+  $form['third_party_settings']['block_title_link']['title_link_target'] = [
+    '#type' => 'select',
+    '#title' => t('Link Target'),
+    '#options' => $targetValues,
+    '#empty_value' => '',
+    '#description' => t('Select a target to open the link in a new tab/window'),
+    '#default_value' => $block->getThirdPartySetting('block_title_link', 'title_link_target'),
+  ];
+  $form['third_party_settings']['block_title_link']['title_link_enable'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enable'),
+    '#description' => t('Check to Enable Title Link to this Block'),
+    '#default_value' => $block->getThirdPartySetting('block_title_link', 'title_link_enable'),
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function block_title_link_preprocess_block(&$variables) {
+  // Blocks coming from page manager widget does not have id.
+  if (!empty($variables['elements']['#id'])) {
+    $block = Block::load($variables['elements']['#id']);
+    if ($block && $block->getThirdPartySetting('block_title_link', 'title_link_enable')) {
+      $tileLink = $block->getThirdPartySetting('block_title_link', 'title_link_url');
+      $linkTitle = $block->getThirdPartySetting('block_title_link', 'link_title');
+      $linkTarget = $block->getThirdPartySetting('block_title_link', 'title_link_target');
+      $blockLabel = $variables['label'];
+      $variables['label'] = [
+        '#type' => 'link',
+        '#title' => $blockLabel,
+        '#url' => Url::fromUri($tileLink),
+        '#attributes' => [
+          'target' => $linkTarget,
+          'title' => $linkTitle,
+        ],
+      ];
+    }
+  }
+}
+
+/**
+ * Copied from LinkWidget::getUriAsDisplayableString
+ */
+function getUriAsDisplayableString($uri) {
+  $displayable_string = '';
+
+  if ($uri) {
+    $scheme = parse_url($uri, PHP_URL_SCHEME);
+
+    // By default, the displayable string is the URI.
+    $displayable_string = $uri;
+
+    // A different displayable string may be chosen in case of the 'internal:'
+    // or 'entity:' built-in schemes.
+    if ($scheme === 'internal') {
+      $uri_reference = explode(':', $uri, 2)[1];
+
+      // @todo '<front>' is valid input for BC reasons, may be removed by
+      //   https://www.drupal.org/node/2421941
+      $path = parse_url($uri, PHP_URL_PATH);
+      if ($path === '/') {
+        $uri_reference = '<front>' . substr($uri_reference, 1);
+      }
+
+      $displayable_string = $uri_reference;
+    }
+    elseif ($scheme === 'entity') {
+      [$entity_type, $entity_id] = explode('/', substr($uri, 7), 2);
+      // Show the 'entity:' URI as the entity autocomplete would.
+      // @todo Support entity types other than 'node'. Will be fixed in
+      //    https://www.drupal.org/node/2423093.
+      if ($entity_type == 'node' && $entity = \Drupal::entityTypeManager()
+          ->getStorage($entity_type)
+          ->load($entity_id)) {
+        $displayable_string = EntityAutocomplete::getEntityLabels([$entity]);
+      }
+    }
+    elseif ($scheme === 'route') {
+      $displayable_string = ltrim($displayable_string, 'route:');
+    }
+  }
+
+  return $displayable_string;
+}

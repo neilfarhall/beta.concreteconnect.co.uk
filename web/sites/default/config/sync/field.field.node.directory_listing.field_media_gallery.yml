@@ -1,0 +1,31 @@
+uuid: 1957b906-e316-4527-87cc-0052e2bc6780
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_gallery
+    - media.type.image
+    - media.type.video
+    - node.type.directory_listing
+id: node.directory_listing.field_media_gallery
+field_name: field_media_gallery
+entity_type: node
+bundle: directory_listing
+label: 'Media Gallery'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

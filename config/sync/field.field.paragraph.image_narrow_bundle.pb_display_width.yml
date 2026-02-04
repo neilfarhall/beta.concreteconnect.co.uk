@@ -1,0 +1,23 @@
+uuid: ef3c66de-90cd-4a96-9757-da1553bbf005
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_width
+    - paragraphs.paragraphs_type.image_narrow_bundle
+  module:
+    - options
+_core:
+  default_config_hash: 2dTCeeceApHOzQ5t_QEfpw_zg9VEvhGefjEce1wgI2U
+id: paragraph.image_narrow_bundle.pb_display_width
+field_name: pb_display_width
+entity_type: paragraph
+bundle: image_narrow_bundle
+label: 'Max Width'
+description: 'Change the max width for the paragraph wrapper.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

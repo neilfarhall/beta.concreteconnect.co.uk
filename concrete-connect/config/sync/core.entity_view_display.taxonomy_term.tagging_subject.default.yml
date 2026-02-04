@@ -1,0 +1,259 @@
+uuid: ee0e990a-181f-43e3-875e-934803241427
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tagging_subject.field_color
+    - field.field.taxonomy_term.tagging_subject.field_media
+    - field.field.taxonomy_term.tagging_subject.layout_builder__layout
+    - taxonomy.vocabulary.tagging_subject
+    - views.view.featured_company_item_slider
+    - views.view.mg_taxonomy_term
+  content:
+    - 'block_content:advertisement:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+    - 'block_content:advertisement:f66ff081-dc10-45ef-ade1-23884bcc4885'
+    - 'block_content:basic:fba3f0ba-833e-463a-a415-cd7a419e9222'
+  module:
+    - block_content
+    - color_field
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - text
+    - themag_layouts
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 0
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          c758529e-eee4-47ac-9fe4-451474de4d42:
+            uuid: c758529e-eee4-47ac-9fe4-451474de4d42
+            region: first
+            configuration:
+              id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+              label: 'Leaderboard Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          57ffe92d-dc59-447f-bc31-662fe43ccba1:
+            uuid: 57ffe92d-dc59-447f-bc31-662fe43ccba1
+            region: second
+            configuration:
+              id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+              label: 'Newsletter Signup'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 0
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          43cc650f-782e-4921-bf0b-3848bf6e3992:
+            uuid: 43cc650f-782e-4921-bf0b-3848bf6e3992
+            region: first
+            configuration:
+              id: 'views_block:mg_taxonomy_term-block_1'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              pager: view
+              exposed: {  }
+              pager_offset: 0
+            weight: 0
+            additional: {  }
+          1be125d1-cea7-4be0-9f38-65a3e0633889:
+            uuid: 1be125d1-cea7-4be0-9f38-65a3e0633889
+            region: second
+            configuration:
+              id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+              label: 'MPU Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          71d14d95-483a-4c48-bfac-3428c82e1510:
+            uuid: 71d14d95-483a-4c48-bfac-3428c82e1510
+            region: second
+            configuration:
+              id: 'views_block:featured_company_item_slider-block_2'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+            weight: 1
+            additional: {  }
+          ee00bfb6-fe73-4eb2-b819-27aa646e2d0d:
+            uuid: ee00bfb6-fe73-4eb2-b819-27aa646e2d0d
+            region: first
+            configuration:
+              id: 'views_block:mg_taxonomy_term-block_2'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping:
+                term_node_tid_depth: layout_builder.entity
+              views_label: ''
+              items_per_page: none
+              pager: none
+              exposed: {  }
+              pager_offset: 0
+            weight: 1
+            additional: {  }
+          546f17a5-d86f-451c-a8fc-1db36e9af14a:
+            uuid: 546f17a5-d86f-451c-a8fc-1db36e9af14a
+            region: first
+            configuration:
+              id: 'views_block:mg_taxonomy_term-block_3'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              pager: none
+              exposed: {  }
+              pager_offset: 0
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          2b06f39d-74c4-45d8-a35a-8b296a5a2658:
+            uuid: 2b06f39d-74c4-45d8-a35a-8b296a5a2658
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:tagging_subject:description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: inline
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          b4ab50c4-8587-43f2-b5e7-cc2011229e18:
+            uuid: b4ab50c4-8587-43f2-b5e7-cc2011229e18
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:tagging_subject:field_color'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: color_field_formatter_text
+                label: above
+                settings:
+                  format: hex
+                  opacity: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          8a1050cf-d8d1-4350-93f9-c8d7114ef615:
+            uuid: 8a1050cf-d8d1-4350-93f9-c8d7114ef615
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:tagging_subject:field_media'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: taxonomy_term.tagging_subject.default
+targetEntityType: taxonomy_term
+bundle: tagging_subject
+mode: default
+content:
+  description:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  layout_builder__layout: true

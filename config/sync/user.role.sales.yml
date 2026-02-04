@@ -1,0 +1,16 @@
+uuid: 801d28ce-013d-4d49-aa94-0c7b0cb3449e
+langcode: en
+status: true
+dependencies:
+  module:
+    - disable_messages
+    - eu_cookie_compliance
+id: sales
+label: Sales
+weight: 9
+is_admin: null
+permissions:
+  - 'display eu cookie compliance popup'
+  - 'view error messages'
+  - 'view status messages'
+  - 'view warning messages'

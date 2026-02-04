@@ -1,0 +1,17 @@
+uuid: b33848aa-ad4e-4b68-958f-91e866233858
+langcode: en
+status: true
+dependencies: {  }
+id: node__event
+label: 'Content: Event'
+tags:
+  schema_event_description: '[node:field_teaser_text]'
+  schema_event_end_date: '[node:field_event_date:end_value:html_datetime]'
+  schema_event_id: '[node:url]'
+  schema_event_image: 'a:5:{s:5:"@type";s:11:"ImageObject";s:20:"representativeOfPage";s:4:"True";s:3:"url";s:54:"[node:field_teaser_media:agg23_news_image_870x580:url]";s:5:"width";s:3:"870";s:6:"height";s:3:"580";}'
+  schema_event_location: 'a:3:{s:5:"@type";s:5:"Place";s:4:"name";s:24:"[node:field_event_venue]";s:7:"address";a:6:{s:5:"@type";s:13:"PostalAddress";s:13:"streetAddress";s:58:"[node:field_event_address_1], [node:field_event_address_2]";s:15:"addressLocality";s:28:"[node:field_event_town_city]";s:13:"addressRegion";s:19:"[node:field_county]";s:10:"postalCode";s:27:"[node:field_event_postcode]";s:14:"addressCountry";s:20:"[node:field_country]";}}'
+  schema_event_name: '[node:title]'
+  schema_event_organizer: 'a:3:{s:5:"@type";s:12:"Organization";s:3:"@id";s:28:"[node:field_event_organiser]";s:4:"name";s:28:"[node:field_event_organiser]";}'
+  schema_event_start_date: '[node:field_event_date:value:html_datetime]'
+  schema_event_type: BusinessEvent
+  schema_event_url: '[node:field_event_website]'

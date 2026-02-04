@@ -1,0 +1,23 @@
+uuid: 21e4b21d-5b9d-411d-8da8-21bd89fee219
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_bg
+    - paragraphs.paragraphs_type.simple_bundle
+  module:
+    - paragraphs_bundles
+_core:
+  default_config_hash: gjZPl_v8GaVVCmLVxwoNpMjDbd57m7ggYOoZPw7rZ8o
+id: paragraph.simple_bundle.pb_display_bg
+field_name: pb_display_bg
+entity_type: paragraph
+bundle: simple_bundle
+label: 'Background Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraphs_bundles_rgb

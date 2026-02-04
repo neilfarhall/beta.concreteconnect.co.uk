@@ -1,0 +1,23 @@
+uuid: 2351f58f-cc8d-4e92-8c6a-b9e66f2286c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.popup
+  module:
+    - text
+id: node.popup.body
+field_name: body
+entity_type: node
+bundle: popup
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

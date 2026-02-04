@@ -1,0 +1,23 @@
+uuid: 9efddd73-c301-4010-a533-8c12b7c9e13b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_shadow
+    - paragraphs.paragraphs_type.simple_bundle
+  module:
+    - options
+_core:
+  default_config_hash: FrB-5_12cehC8VdlHb8FEXeUVu9hXEQcem4Pw87kaSg
+id: paragraph.simple_bundle.pb_display_shadow
+field_name: pb_display_shadow
+entity_type: paragraph
+bundle: simple_bundle
+label: Shadow
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

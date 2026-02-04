@@ -1,0 +1,74 @@
+uuid: a102a13d-cb6c-4564-81a8-6613b71db2c8
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_revisions_image_with_overlay_text
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Revisions Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs Revisions (Image with Overlay Text)'
+source:
+  plugin: d7_paragraphs_item_revision
+  bundle: image_with_overlay_text
+process:
+  id:
+    -
+      plugin: paragraphs_lookup
+      tags:
+        - 'Paragraphs Content'
+      source: item_id
+    -
+      plugin: extract
+      index:
+        - id
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_image_para:
+    -
+      plugin: sub_process
+      source: field_image_para
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_overlay_text:
+    -
+      plugin: get
+      source: field_overlay_text
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  new_revisions: true
+  default_bundle: image_with_overlay_text
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_block_reference
+    - upgrade_d7_paragraphs_bordered_top_high_text
+    - upgrade_d7_paragraphs_bullet_list
+    - upgrade_d7_paragraphs_company_list
+    - upgrade_d7_paragraphs_dfp_video
+    - upgrade_d7_paragraphs_dfp_video_
+    - upgrade_d7_paragraphs_download
+    - upgrade_d7_paragraphs_header
+    - upgrade_d7_paragraphs_image
+    - upgrade_d7_paragraphs_image_and_text_banner
+    - upgrade_d7_paragraphs_image_carousel
+    - upgrade_d7_paragraphs_image_with_overlay_text
+    - upgrade_d7_paragraphs_light_blue_bar_left_with_dark_bl
+    - upgrade_d7_paragraphs_links
+    - upgrade_d7_paragraphs_search_form
+    - upgrade_d7_paragraphs_tabs
+    - upgrade_d7_paragraphs_text
+  optional: {  }

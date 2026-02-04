@@ -1,0 +1,19 @@
+uuid: c4bd7e4a-6cfa-4857-a0a1-9d52bb43eef8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_event_speakers_topic
+field_name: field_event_speakers_topic
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

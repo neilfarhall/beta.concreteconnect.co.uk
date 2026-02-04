@@ -1,0 +1,21 @@
+uuid: cf8e1e00-ac1b-4015-835a-095baa28cb23
+langcode: en
+status: true
+dependencies: {  }
+name: agg23_news_image_870x580
+label: agg23_news_image_870x580
+effects:
+  2611db6a-8e00-464a-80b9-dfe294182266:
+    uuid: 2611db6a-8e00-464a-80b9-dfe294182266
+    id: image_convert
+    weight: -9
+    data:
+      extension: webp
+  0070eeea-b272-405d-b76f-cba2b7f4d0f1:
+    uuid: 0070eeea-b272-405d-b76f-cba2b7f4d0f1
+    id: image_scale
+    weight: -10
+    data:
+      width: 870
+      height: null
+      upscale: true

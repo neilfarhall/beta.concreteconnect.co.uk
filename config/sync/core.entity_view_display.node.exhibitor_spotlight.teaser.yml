@@ -1,0 +1,41 @@
+uuid: 79f77b7f-e511-420d-af59-6301ca84ae2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.exhibitor_spotlight.body
+    - field.field.node.exhibitor_spotlight.feeds_item
+    - field.field.node.exhibitor_spotlight.field_cs_link
+    - field.field.node.exhibitor_spotlight.field_image_link
+    - field.field.node.exhibitor_spotlight.field_teaser_media
+    - field.field.node.exhibitor_spotlight.field_teaser_text
+    - node.type.exhibitor_spotlight
+  module:
+    - text
+    - user
+id: node.exhibitor_spotlight.teaser
+targetEntityType: node
+bundle: exhibitor_spotlight
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true
+  field_cs_link: true
+  field_image_link: true
+  field_teaser_media: true
+  field_teaser_text: true
+  shariff_field: true

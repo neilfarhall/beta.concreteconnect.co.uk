@@ -1,0 +1,9 @@
+uuid: f6c42a0b-86fc-493f-a957-8eb6cdc95f1f
+langcode: en
+status: true
+dependencies: {  }
+id: ajax_googleapis_com
+label: ajax.googleapis.com
+domain: ajax.googleapis.com
+pages: ''
+weight: 0

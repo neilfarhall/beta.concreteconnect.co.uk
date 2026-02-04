@@ -1,0 +1,6 @@
+ad.admin:
+  title: 'Advertisement'
+  description: 'Configure and manage all advertisement settings.'
+  route_name: ad.settings
+  parent: system.admin
+  weight: 4

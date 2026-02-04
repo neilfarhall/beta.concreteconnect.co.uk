@@ -1,0 +1,9 @@
+_meta:
+  version: '1.0'
+  entity_type: poll_choice
+  uuid: 272acd65-f5e9-480e-80b5-cc0ce59221e1
+  default_langcode: en
+default:
+  choice:
+    -
+      value: 'Option 3'

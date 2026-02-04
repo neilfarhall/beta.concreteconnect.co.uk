@@ -1,0 +1,29 @@
+uuid: 74ff288b-4c93-4123-8db1-e26819e90c83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tagging_location
+    - node.type.she_blog
+    - taxonomy.vocabulary.tagging_location
+id: node.she_blog.field_tagging_location
+field_name: field_tagging_location
+entity_type: node
+bundle: she_blog
+label: 'Location Tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tagging_location: tagging_location
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

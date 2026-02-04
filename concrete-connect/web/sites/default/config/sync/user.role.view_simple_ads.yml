@@ -1,0 +1,14 @@
+uuid: 859bb7c2-6962-401f-ac5b-2f068e6dc4cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - exclude_node_title
+    - system
+id: view_simple_ads
+label: 'view simple ads'
+weight: 7
+is_admin: null
+permissions:
+  - 'use exclude node title'
+  - 'view the administration theme'

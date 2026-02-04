@@ -1,0 +1,15 @@
+uuid: 113dd6e8-1adf-41a1-b777-8262077f95fa
+langcode: en
+status: true
+dependencies: {  }
+name: main_header_logo
+label: 'Main: Header Logo'
+effects:
+  2f992f0e-b08f-45d4-8e23-872ba473a91c:
+    uuid: 2f992f0e-b08f-45d4-8e23-872ba473a91c
+    id: image_scale
+    weight: 1
+    data:
+      width: 200
+      height: null
+      upscale: true

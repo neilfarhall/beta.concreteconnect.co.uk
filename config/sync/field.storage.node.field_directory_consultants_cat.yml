@@ -1,0 +1,20 @@
+uuid: a5ebe88a-3b87-45e4-bef3-f32d27020db5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_directory_consultants_cat
+field_name: field_directory_consultants_cat
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

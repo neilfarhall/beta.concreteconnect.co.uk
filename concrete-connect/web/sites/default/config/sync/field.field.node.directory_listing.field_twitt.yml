@@ -1,0 +1,21 @@
+uuid: 4ef7e033-8df1-4fb9-83d1-86885ab63817
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_twitt
+    - node.type.directory_listing
+  module:
+    - twitter_embed
+id: node.directory_listing.field_twitt
+field_name: field_twitt
+entity_type: node
+bundle: directory_listing
+label: 'Twitter Embed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: twitter_embed_field

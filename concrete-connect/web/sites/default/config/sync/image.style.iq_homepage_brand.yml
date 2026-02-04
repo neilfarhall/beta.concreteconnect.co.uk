@@ -1,0 +1,15 @@
+uuid: a7eb674a-45d3-4051-a7dc-7438ae3acba7
+langcode: en
+status: true
+dependencies: {  }
+name: iq_homepage_brand
+label: 'IQ Homepage Brand'
+effects:
+  c50d5847-d74d-4423-960d-f77d065039e3:
+    uuid: c50d5847-d74d-4423-960d-f77d065039e3
+    id: image_scale
+    weight: 1
+    data:
+      width: 120
+      height: 120
+      upscale: false

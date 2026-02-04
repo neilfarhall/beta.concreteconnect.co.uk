@@ -1,0 +1,29 @@
+uuid: 409be3b3-b9f7-48ce-bce2-5caba5313e67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tagging_location
+    - node.type.iq_blog
+    - taxonomy.vocabulary.tagging_location
+id: node.iq_blog.field_tagging_location
+field_name: field_tagging_location
+entity_type: node
+bundle: iq_blog
+label: 'Location Tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tagging_location: tagging_location
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

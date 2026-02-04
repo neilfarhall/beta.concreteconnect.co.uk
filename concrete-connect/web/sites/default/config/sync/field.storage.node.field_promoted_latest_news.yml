@@ -1,0 +1,27 @@
+uuid: 494a19d9-cd41-4947-b631-9f18d22e1316
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_promoted_latest_news
+field_name: field_promoted_latest_news
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'yes'
+      label: 'Yes'
+    -
+      value: 'no'
+      label: 'No'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,337 @@
+uuid: 9b0f42ca-8873-4f41-b2fe-24f5e403f115
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_complete_directory_listing
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Directory listing)'
+source:
+  plugin: d7_node_complete
+  node_type: directory_listing
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_directory_listing/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_directory_page_type:
+    -
+      plugin: sub_process
+      source: field_directory_page_type
+      process:
+        target_id: tid
+  field_directory_aggregates:
+    -
+      plugin: get
+      source: field_directory_aggregates
+  field_directory_consultants:
+    -
+      plugin: get
+      source: field_directory_consultants
+  field_directory_equipment:
+    -
+      plugin: get
+      source: field_directory_equipment
+  field_directory_organisations:
+    -
+      plugin: get
+      source: field_directory_organisations
+  field_directory_address_1:
+    -
+      plugin: get
+      source: field_directory_address_1
+  field_directory_address_2:
+    -
+      plugin: get
+      source: field_directory_address_2
+  field_directory_address_3:
+    -
+      plugin: get
+      source: field_directory_address_3
+  field_directory_address_4:
+    -
+      plugin: get
+      source: field_directory_address_4
+  field_directory_address_5:
+    -
+      plugin: get
+      source: field_directory_address_5
+  field_directory_address_6:
+    -
+      plugin: get
+      source: field_directory_address_6
+  field_directory_address_postcode:
+    -
+      plugin: get
+      source: field_directory_address_postcode
+  field_directory_contact_phone:
+    -
+      plugin: get
+      source: field_directory_contact_phone
+  field_directory_contact_fax:
+    -
+      plugin: get
+      source: field_directory_contact_fax
+  field_directory_contact_email:
+    -
+      plugin: get
+      source: field_directory_contact_email
+  field_directory_web_address:
+    -
+      plugin: field_link
+      source: field_directory_web_address
+  field_directory_main_image:
+    -
+      plugin: sub_process
+      source: field_directory_main_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_directory_logo:
+    -
+      plugin: sub_process
+      source: field_directory_logo
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_related_articles:
+    -
+      plugin: sub_process
+      source: field_related_articles
+      process:
+        target_id: nid
+  field_directory_gallery_images:
+    -
+      plugin: sub_process
+      source: field_directory_gallery_images
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_directory_vimeo:
+    -
+      plugin: get
+      source: field_directory_vimeo
+  field_file_attachments:
+    -
+      plugin: sub_process
+      source: field_file_attachments
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_directory_products:
+    -
+      plugin: sub_process
+      source: field_directory_products
+      process:
+        target_id: tid
+  field_directory_regional_offices:
+    -
+      plugin: get
+      source: field_directory_regional_offices
+  field_directory_brands:
+    -
+      plugin: get
+      source: field_directory_brands
+  field_directory_key:
+    -
+      plugin: get
+      source: field_directory_key
+  field_directory_organisation_sec:
+    -
+      plugin: sub_process
+      source: field_directory_organisation_sec
+      process:
+        target_id: tid
+  field_directory_consultants_cat:
+    -
+      plugin: sub_process
+      source: field_directory_consultants_cat
+      process:
+        target_id: tid
+  field_directory_product_type:
+    -
+      plugin: sub_process
+      source: field_directory_product_type
+      process:
+        target_id: tid
+  field_directory_material:
+    -
+      plugin: sub_process
+      source: field_directory_material
+      process:
+        target_id: tid
+  field_directory_county:
+    -
+      plugin: sub_process
+      source: field_directory_county
+      process:
+        target_id: tid
+  field_directory_quality_scheme:
+    -
+      plugin: sub_process
+      source: field_directory_quality_scheme
+      process:
+        target_id: tid
+  field_directory_region:
+    -
+      plugin: sub_process
+      source: field_directory_region
+      process:
+        target_id: tid
+  field_directory_site_type:
+    -
+      plugin: sub_process
+      source: field_directory_site_type
+      process:
+        target_id: tid
+  field_directory_company_type:
+    -
+      plugin: sub_process
+      source: field_directory_company_type
+      process:
+        target_id: tid
+  field_directory_operating_comp:
+    -
+      plugin: sub_process
+      source: field_directory_operating_comp
+      process:
+        target_id: nid
+  field_directory_related_sites:
+    -
+      plugin: sub_process
+      source: field_directory_related_sites
+      process:
+        target_id: nid
+  meta_description:
+    -
+      plugin: get
+      source: meta_description
+  meta_keywords:
+    -
+      plugin: get
+      source: meta_keywords
+  field_directory_new_aggregate:
+    -
+      plugin: get
+      source: field_directory_new_aggregate
+  field_directory_opco_key:
+    -
+      plugin: get
+      source: field_directory_opco_key
+  field_directory_record_type:
+    -
+      plugin: sub_process
+      source: field_directory_record_type
+      process:
+        target_id: tid
+  field_display_email:
+    -
+      plugin: get
+      source: field_display_email
+  field_allow_widget:
+    -
+      plugin: get
+      source: field_allow_widget
+  field_directory_map_location:
+    -
+      plugin: get
+      source: field_directory_map_location
+  field_directory_map_zoom:
+    -
+      plugin: get
+      source: field_directory_map_zoom
+  field_product_tax:
+    -
+      plugin: get
+      source: field_product_tax
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: directory_listing
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_comment_field_instance

@@ -1,0 +1,13 @@
+--- templates/poll-vote.html.twig
++++ templates/poll-vote.html.twig
+@@ -4,8 +4,8 @@
+ #}
+ <div class="poll">
+   <div class="vote-form">
+-    {% if block %}
+-      <h3 class="poll-title">{{ title }}</h3>
++    {% if show_question %}
++      <h3 class="poll-question">{{ question }}</h3>
+     {% endif %}
+ 
+     {{ choice }}

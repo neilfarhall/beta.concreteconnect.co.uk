@@ -1,0 +1,14 @@
+name: Layout Components - Simple Accordion
+type: module
+description: Simple accordion block type
+package: LayoutComponents
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:layoutcomponents
+  - lc_simple_text:lc_simple_text
+  - lc_simple_title:lc_simple_title
+
+# Information added by Drupal.org packaging script on 2023-12-14
+version: '3.0.2'
+project: 'layoutcomponents'
+datestamp: 1702568529

@@ -1,0 +1,13 @@
+name: AD Track
+description: 'AD statistics tracker allowing to count AD impressions and clicks locally.'
+type: module
+package: Advertisement
+core_version_requirement: ^9 || ^10
+dependencies:
+  - ad:ad
+configure: 'ad.settings'
+
+# Information added by Drupal.org packaging script on 2023-12-13
+version: '4.0.0-beta4'
+project: 'ad'
+datestamp: 1702486078

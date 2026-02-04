@@ -1,0 +1,12 @@
+uuid: 72ea1287-5c47-493a-8296-e9553e3db750
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: XIhukTmUVR4ZC5w7ICECLPR8WrZlbji4SJgL9FGoFNw
+id: card_two_columns_bundle
+label: 'Card Two Columns'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

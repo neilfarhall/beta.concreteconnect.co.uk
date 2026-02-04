@@ -1,0 +1,33 @@
+// Header Main Navigation
+//
+.block--region-header-primary-menu  {
+  > ul.menu {
+    @include list__reset;
+    display: flex;
+    > li > a,
+    > li > span {
+      padding: 15px;
+      border-radius: .25rem;
+      margin-right: 1px;
+      background: var(--mag-navigation-bg);
+      color: var(--mag-navigation-color);
+      font-weight: $main-navigation-font-weight;
+      font-size: $main-navigation-font-size;
+      line-height: 1;
+      text-transform: $main-navigation-text-transform;
+      transition: all .3s ease-in-out;
+      &:hover {
+        background: var(--mag-navigation-bg-hover);
+        color: var(--mag-navigation-color-hover);
+      }
+    }
+    > li > span {
+      cursor: default;
+    }
+    a.is-active,
+    li.menu-item--active-trail > a {
+      background: var(--mag-navigation-bg-active);
+      color: var(--mag-navigation-color-active);
+    }
+  }
+}

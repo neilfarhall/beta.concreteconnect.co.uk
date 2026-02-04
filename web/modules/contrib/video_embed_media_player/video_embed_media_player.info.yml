@@ -1,0 +1,18 @@
+name: 'Video Embed Media: Player'
+type: module
+description: 'Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Media
+dependencies:
+  - video_embed_field
+  - video_embed_media
+
+# Information added by Drupal.org packaging script on 2020-07-29
+# version: '9.0.0'
+# project: 'video_embed_media_player'
+# datestamp: 1595980800
+# Information added by Drupal.org packaging script on 2020-07-29
+version: '1.0.0'
+project: 'video_embed_media_player'
+datestamp: 1596002243

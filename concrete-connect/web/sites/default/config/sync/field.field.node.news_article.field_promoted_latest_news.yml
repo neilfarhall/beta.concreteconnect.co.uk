@@ -1,0 +1,21 @@
+uuid: 7a790a84-bb3e-43df-acaf-85d5191d32c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promoted_latest_news
+    - node.type.news_article
+  module:
+    - options
+id: node.news_article.field_promoted_latest_news
+field_name: field_promoted_latest_news
+entity_type: node
+bundle: news_article
+label: 'Promote to latest news'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

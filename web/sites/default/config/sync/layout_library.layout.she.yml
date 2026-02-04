@@ -1,0 +1,87 @@
+uuid: bdef278a-938b-4bb1-9af0-b85673d53bfa
+langcode: en
+status: true
+dependencies: {  }
+id: she
+label: SHE
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_onecol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: '12'
+      sticky_columns: null
+      first:
+        custom_classes: ''
+    components:
+      c196f080-012d-4ac0-a0e9-67650333d1d2:
+        uuid: c196f080-012d-4ac0-a0e9-67650333d1d2
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      f77f83e3-057b-47f0-85be-db7b7636cba8:
+        uuid: f77f83e3-057b-47f0-85be-db7b7636cba8
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      5d14751c-91f4-4d11-8740-df118891a262:
+        uuid: 5d14751c-91f4-4d11-8740-df118891a262
+        region: second
+        configuration:
+          id: 'views_block:mg_single_item_slider-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 1
+        additional: {  }
+    third_party_settings: {  }

@@ -1,0 +1,19 @@
+uuid: 3b5a0e69-a87e-49c5-a9a7-a2674a7e1241
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_address_4
+    - node.type.directory_listing
+id: node.directory_listing.field_directory_address_4
+field_name: field_directory_address_4
+entity_type: node
+bundle: directory_listing
+label: 'Address Line 4'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

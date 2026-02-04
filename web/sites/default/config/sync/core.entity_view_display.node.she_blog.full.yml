@@ -1,0 +1,294 @@
+uuid: df128470-2311-4559-88fa-62beacf06bc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.she_blog.body
+    - field.field.node.she_blog.field_blog_download
+    - field.field.node.she_blog.field_featured_image
+    - field.field.node.she_blog.field_related_articles
+    - field.field.node.she_blog.field_related_directories
+    - field.field.node.she_blog.field_tagging_company
+    - field.field.node.she_blog.field_tagging_location
+    - field.field.node.she_blog.field_tagging_subject
+    - field.field.node.she_blog.layout_builder__layout
+    - node.type.she_blog
+    - views.view.mg_content_related_by_tags
+  module:
+    - file
+    - image
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - text
+    - themag_layouts
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 8-4
+          sticky_columns: 1
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          e21b1112-877f-43e1-a210-e573c2f76001:
+            uuid: e21b1112-877f-43e1-a210-e573c2f76001
+            region: first
+            configuration:
+              id: 'extra_field_block:node:she_blog:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: -10
+            additional: {  }
+          a41e42f5-aa7f-462f-97fd-53d4571b122a:
+            uuid: a41e42f5-aa7f-462f-97fd-53d4571b122a
+            region: first
+            configuration:
+              id: 'field_block:node:she_blog:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: -8
+            additional: {  }
+          2150da6a-2b65-4346-9fe3-4ced11e6d95e:
+            uuid: 2150da6a-2b65-4346-9fe3-4ced11e6d95e
+            region: first
+            configuration:
+              id: 'field_block:node:she_blog:field_blog_download'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: file_default
+                label: above
+                settings:
+                  use_description_as_link_text: true
+                third_party_settings: {  }
+            weight: -7
+            additional: {  }
+          8a34b221-7c94-4054-91e6-caf380b983f4:
+            uuid: 8a34b221-7c94-4054-91e6-caf380b983f4
+            region: first
+            configuration:
+              id: 'field_block:node:she_blog:field_related_articles'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: -6
+            additional: {  }
+          38a5aa01-003c-42b3-8905-6544195a7556:
+            uuid: 38a5aa01-003c-42b3-8905-6544195a7556
+            region: first
+            configuration:
+              id: 'field_block:node:she_blog:field_related_directories'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: -5
+            additional: {  }
+          290da36d-32e1-4bf1-a6cf-ce9b58454459:
+            uuid: 290da36d-32e1-4bf1-a6cf-ce9b58454459
+            region: first
+            configuration:
+              id: 'field_block:node:she_blog:field_tagging_company'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: -4
+            additional: {  }
+          392d8012-4a6e-4c2e-a3d2-c216758f2d6f:
+            uuid: 392d8012-4a6e-4c2e-a3d2-c216758f2d6f
+            region: first
+            configuration:
+              id: 'field_block:node:she_blog:field_tagging_subject'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: -3
+            additional: {  }
+          0b0d8551-519e-4a5f-b89b-f42b01de0eb6:
+            uuid: 0b0d8551-519e-4a5f-b89b-f42b01de0eb6
+            region: first
+            configuration:
+              id: 'field_block:node:she_blog:field_tagging_location'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: -2
+            additional: {  }
+          f4367944-4f45-4a0c-a4d3-7d906c199699:
+            uuid: f4367944-4f45-4a0c-a4d3-7d906c199699
+            region: first
+            configuration:
+              id: 'field_block:node:she_blog:field_featured_image'
+              label: 'Featured Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: -9
+            additional: {  }
+          89cc5539-15ae-457c-bdf1-3c00658ec082:
+            uuid: 89cc5539-15ae-457c-bdf1-3c00658ec082
+            region: second
+            configuration:
+              id: 'views_block:mg_content_related_by_tags-block_2'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.she_blog.full
+targetEntityType: node
+bundle: she_blog
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_blog_download:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_featured_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_related_articles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_related_directories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_tagging_company:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_tagging_location:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_tagging_subject:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  layout_builder__layout: true
+  shariff_field: true

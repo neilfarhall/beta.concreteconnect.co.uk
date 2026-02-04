@@ -1,0 +1,29 @@
+uuid: 7df94852-43b7-44f2-a968-69c0a3186fb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tagging_company
+    - node.type.article
+    - taxonomy.vocabulary.tagging_company
+id: node.article.field_tagging_company
+field_name: field_tagging_company
+entity_type: node
+bundle: article
+label: 'Company Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tagging_company: tagging_company
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

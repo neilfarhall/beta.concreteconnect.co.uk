@@ -1,0 +1,46 @@
+_meta:
+  version: '1.0'
+  entity_type: poll
+  uuid: 396aca72-a9f9-4392-a428-2c66082a5dfd
+  default_langcode: en
+  depends:
+    fed731ce-7c35-46a4-9412-cde2dacfda11: poll_choice
+    4bd61302-d051-4860-a10e-76ff35f6aadf: poll_choice
+    272acd65-f5e9-480e-80b5-cc0ce59221e1: poll_choice
+default:
+  uid:
+    -
+      target_id: 1
+  question:
+    -
+      value: 'Question?'
+  choice:
+    -
+      entity: fed731ce-7c35-46a4-9412-cde2dacfda11
+    -
+      entity: 4bd61302-d051-4860-a10e-76ff35f6aadf
+    -
+      entity: 272acd65-f5e9-480e-80b5-cc0ce59221e1
+  runtime:
+    -
+      value: 0
+  anonymous_vote_allow:
+    -
+      value: true
+  cancel_vote_allow:
+    -
+      value: true
+  result_vote_allow:
+    -
+      value: true
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1559509119
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0

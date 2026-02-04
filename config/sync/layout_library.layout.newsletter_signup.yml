@@ -1,0 +1,9 @@
+uuid: 74f1a28c-b608-40b2-af28-65760aa220b4
+langcode: en
+status: true
+dependencies: {  }
+id: newsletter_signup
+label: 'Newsletter Signup'
+targetEntityType: node
+targetBundle: themag_landing_page
+layout: {  }

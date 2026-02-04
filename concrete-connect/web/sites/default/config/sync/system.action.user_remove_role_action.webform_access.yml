@@ -1,0 +1,14 @@
+uuid: e3df547a-f7bd-49a7-a313-e2e98cc5b65b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.webform_access
+  module:
+    - user
+id: user_remove_role_action.webform_access
+label: 'Remove the webform access role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: webform_access

@@ -1,0 +1,104 @@
+uuid: 24f86c96-1dda-4220-b467-e4f8a6556f0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.she_blog.body
+    - field.field.node.she_blog.field_blog_download
+    - field.field.node.she_blog.field_featured_image
+    - field.field.node.she_blog.field_related_articles
+    - field.field.node.she_blog.field_related_directories
+    - field.field.node.she_blog.field_tagging_company
+    - field.field.node.she_blog.field_tagging_location
+    - field.field.node.she_blog.field_tagging_subject
+    - field.field.node.she_blog.layout_builder__layout
+    - node.type.she_blog
+  module:
+    - file
+    - svg_image
+    - text
+    - user
+id: node.she_blog.default
+targetEntityType: node
+bundle: she_blog
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_blog_download:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_featured_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_related_articles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_related_directories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_tagging_company:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_tagging_location:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_tagging_subject:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  layout_builder__layout: true
+  search_api_excerpt: true
+  shariff_field: true

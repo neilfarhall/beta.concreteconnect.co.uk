@@ -1,0 +1,12 @@
+name: 'Advanced Views RSS Feed: Media (MRSS) Elements'
+type: module
+description: 'Provides Media (MRSS) element set.'
+package: Views
+core_version_requirement: ^9 || ^10
+dependencies:
+  - views_rss:views_rss
+
+# Information added by Drupal.org packaging script on 2023-09-24
+version: '8.x-2.2'
+project: 'views_rss'
+datestamp: 1695558548

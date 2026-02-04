@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: fb83d5be-4e4c-4919-9b0f-5cf68e91a94d
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    08e9095c-d520-43c5-9481-dcec19893fde: menu_link_content
+    93be6264-3265-46f8-b0a7-fb45ee259eea: node
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Layout 3'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: 93be6264-3265-46f8-b0a7-fb45ee259eea
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: -48
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:08e9095c-d520-43c5-9481-dcec19893fde'
+  revision_translation_affected:
+    -
+      value: true

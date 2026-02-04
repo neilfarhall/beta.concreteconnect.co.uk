@@ -1,0 +1,29 @@
+uuid: 21aa3a32-3e62-4352-930d-ea0f49aac0a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profile_media_gallery
+    - media.type.gallery
+    - node.type.article
+id: node.article.field_profile_media_gallery
+field_name: field_profile_media_gallery
+entity_type: node
+bundle: article
+label: 'Profile Media Gallery'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      gallery: gallery
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

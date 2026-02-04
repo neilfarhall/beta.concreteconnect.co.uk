@@ -1,0 +1,14 @@
+uuid: 0ed634e6-edc6-43d3-9286-28f8704e49f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.view_simple_ads
+  module:
+    - user
+id: user_remove_role_action.view_simple_ads
+label: 'Remove the view simple ads role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: view_simple_ads

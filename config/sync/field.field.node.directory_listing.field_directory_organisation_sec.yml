@@ -1,0 +1,29 @@
+uuid: a8b165ef-17ab-43b0-8d76-c512864ac7e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_organisation_sec
+    - node.type.directory_listing
+    - taxonomy.vocabulary.organisation_directory_section
+id: node.directory_listing.field_directory_organisation_sec
+field_name: field_directory_organisation_sec
+entity_type: node
+bundle: directory_listing
+label: 'Trade Bodies Sector'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      organisation_directory_section: organisation_directory_section
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

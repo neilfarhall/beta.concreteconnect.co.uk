@@ -1,0 +1,21 @@
+uuid: 2a3f0882-3940-4779-af13-432a0348602e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_contact_phone
+    - node.type.directory_listing
+  module:
+    - telephone
+id: node.directory_listing.field_directory_contact_phone
+field_name: field_directory_contact_phone
+entity_type: node
+bundle: directory_listing
+label: Phone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

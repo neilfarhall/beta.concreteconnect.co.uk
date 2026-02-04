@@ -1,0 +1,9 @@
+uuid: 2579738e-e204-4b36-ab19-60a626fe6b7b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3v3z-0C6AqpGLFg2NudC5X-bVA4KsDIU9bEsAWbqo6Q
+id: register
+label: 'Register page'
+tags: {  }

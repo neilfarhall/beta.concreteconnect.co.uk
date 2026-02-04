@@ -1,0 +1,36 @@
+uuid: 74cf8566-c010-495c-979a-f138d453db35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.news_type.field_color
+    - field.field.taxonomy_term.news_type.field_media
+    - field.field.taxonomy_term.news_type.layout_builder__layout
+    - taxonomy.vocabulary.news_type
+  module:
+    - color_field
+    - text
+id: taxonomy_term.news_type.default
+targetEntityType: taxonomy_term
+bundle: news_type
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_media: true
+  layout_builder__layout: true

@@ -1,0 +1,22 @@
+uuid: 59358d62-3d8a-4835-9b53-f20ba4a4d688
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: channel_tax
+label: 'Channel Tax'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria:
+  35a147a7-073c-4a8d-93fc-3915f67d5f5c:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 35a147a7-073c-4a8d-93fc-3915f67d5f5c
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      channel: channel
+selection_logic: and
+weight: -5
+relationships: {  }

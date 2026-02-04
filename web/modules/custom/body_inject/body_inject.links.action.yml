@@ -1,0 +1,5 @@
+body_inject_profile.add_form:
+  route_name: entity.body_inject_profile.add_form
+  title: 'Add profile'
+  appears_on:
+    - entity.body_inject_profile.collection

@@ -1,0 +1,25 @@
+uuid: ecb3d0d8-aa0d-4ff3-b9c5-66c60adcf101
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_bg_opacity
+    - paragraphs.paragraphs_type.card_text_section_bundle
+  module:
+    - paragraphs_bundles
+_core:
+  default_config_hash: s_-kPLC0vpC1B6bzpwK9nSULDtp_ZOKPIuaM6LsYld8
+id: paragraph.card_text_section_bundle.pb_display_bg_opacity
+field_name: pb_display_bg_opacity
+entity_type: paragraph
+bundle: card_text_section_bundle
+label: 'Background Color Opacity'
+description: 'Value 1 to 100'
+required: false
+translatable: false
+default_value:
+  -
+    value: '100'
+default_value_callback: ''
+settings: {  }
+field_type: paragraphs_bundles_range

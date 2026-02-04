@@ -1,0 +1,23 @@
+uuid: f2ecc51f-06cd-4aa1-8027-0ca43e354432
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.exhibitor_spotlight
+  module:
+    - feeds
+id: node.exhibitor_spotlight.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: exhibitor_spotlight
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

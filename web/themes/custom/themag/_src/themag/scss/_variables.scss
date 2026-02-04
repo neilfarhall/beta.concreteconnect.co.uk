@@ -1,0 +1,406 @@
+@import "colors";
+// =============================
+// Colors
+// =============================
+
+// Primary Color
+$theme-primary-color: $blue-400 !default;
+$theme-primary-color-light: $blue-100 !default;
+$theme-primary-color-dark: $blue-800 !default;
+$theme-primary-color-contrast: #FFF !default;
+
+// Grays
+$theme-gray-dark:                       $gray-blue-900 !default;
+$theme-gray:                            $gray-blue-500 !default;
+$theme-gray-light:                      $gray-blue-300 !default;
+$theme-gray-lighter:                    $gray-blue-100 !default;
+$theme-gray-lightest:                   $gray-blue-50 !default;
+
+// Background color
+$theme-light-default-bg: #1F2125;
+$theme-light-grey-bg: $theme-gray-lightest;
+$theme-dark-default-bg: #1F2125;
+$theme-dark-grey-bg: #17181C;
+
+// Text Colors
+$theme-text-dark--primary: $theme-gray-dark !default;
+$theme-text-dark--secondary: transparentize($theme-gray-dark, .46) !default;
+$theme-text-dark--hint: transparentize($theme-gray-dark, .62) !default;
+$theme-text-light--primary: #FFF !default;;
+$theme-text-light--secondary: transparentize(#FFF, .25) !default;
+$theme-text-light--hint: transparentize(#FFF, .7) !default;
+
+
+//
+// Light theme
+//
+$colors: (
+  // Primary color
+  "primary": $theme-primary-color,
+  "primary-light": $theme-primary-color-light,
+  "primary-dark": $theme-primary-color-dark,
+  "primary-contrast":$theme-primary-color-contrast,
+
+  // Backgrounds
+  "bg-default": $theme-light-default-bg,
+  "bg-grey": $theme-light-grey-bg,
+  "bg-grey-light": #f6f8f8,
+
+  //Border
+  'border': $theme-gray-lighter,
+
+  // Divider
+  "divider": rgba($theme-gray-dark, .12),
+
+  // Typography
+  "text-primary": rgba($theme-gray-dark, .9),
+  "text-secondary": rgba($theme-gray-dark, .62),
+  "text-hint": rgba($theme-gray-dark, .46),
+
+  // Teaser/Article
+  "headline": $theme-gray-dark,
+  "headline-hover": #FFF,
+  "headline-hover-bg": $theme-gray-dark,
+
+  // State
+  "info": $blue-500,
+  "success": $green-500,
+  "warning": $orange-500,
+  "error": $red-500,
+
+  // Button
+  "button": $theme-gray-lightest,
+  "button-hover": darken($theme-gray-lightest, 3%),
+  "button-disabled": #3e4047,
+
+  // Navigation
+  "navigation-bg": rgba(#FFF, .9),
+  "navigation-bg-hover": rgba($theme-gray-lightest, .9),
+  "navigation-bg-active": $theme-gray-lightest,
+  "navigation-color": $theme-gray-dark,
+  "navigation-color-hover": $theme-gray-dark,
+  "navigation-color-acive": $theme-gray-dark,
+
+) !default;
+
+//
+// Dark theme
+//
+$colors-dark: (
+  "primary-dark": rgba($theme-primary-color-dark, .2),
+
+  // Backgrounds
+  "bg-default": $theme-dark-default-bg,
+  "bg-grey": $theme-dark-grey-bg,
+  "bg-grey-light": #1a1b1f,
+
+  //Border
+  'border': #5F6368,
+
+  // Divider
+  "divider": rgba(#FFF, .08),
+
+  // Typography
+  "text-primary": rgba(#FFF, .65),
+  "text-secondary": rgba(#FFF, .4),
+  "text-hint": rgba(#FFF, .25),
+
+  // Teaser/Article
+  "headline": rgba(#FFF, .8),
+  "headline-hover": #FFF,
+  "headline-hover-bg": transparent,
+
+  // State
+  "error": $red-400,
+
+  // Button
+  "button": #3e4047,
+  "button-hover": #4c4e57,
+  "button-disabled": #3e4047,
+
+  // Navigation
+  "navigation-bg": rgba(#17181C, .9),
+  "navigation-bg-hover": rgba(#FFF, .1),
+  "navigation-bg-active": rgba(#FFF, .1),
+  "navigation-color": $theme-gray-lighter,
+  "navigation-color-hover": $theme-gray-lightest,
+  "navigation-color-acive": $theme-gray-dark,
+
+) !default;
+
+
+// =============================
+// Text
+// =============================
+
+// Font Family
+$theme-base-font-family: "Roboto", sans-serif !default;
+$theme-headings-font-family: "Roboto Condensed", sans-serif !default;
+$font-awesome: "Font Awesome 5 Free" !default;
+
+// Base font sizes
+$theme-font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+
+// Headings
+$theme-headings-font-family: $theme-headings-font-family !default;
+$theme-headings-font-weight: 700 !default;;
+
+// Headings sizes
+$theme-h1-font-size:  $theme-font-size-base * 3 !default;
+
+// Lead text
+$theme-lead-font-size: ($theme-font-size-base * 1.25) !default;
+$theme-lead-font-weight: 300 !default;
+
+// Muted text
+$theme-text-muted: $theme-text-dark--secondary !default;
+
+// =============================
+// Search Form
+// =============================
+$search-button-color: #f44336 !default;
+
+
+// =============================
+// Block
+// =============================
+
+// Block Title
+$block-title-font-family: $theme-base-font-family !default;
+$block-title-font-size: .7rem !default;
+$block-title-mobile-font-size: .9rem !default;
+$block-title-weight: bold !default;
+$block-text-align: center !default;
+$block-text-transform: uppercase !default;
+
+// =============================
+// Header Main Navigation
+// =============================
+
+$main-navigation-font-size: .889rem !default;
+$main-navigation-font-weight: bold !default;
+$main-navigation-text-transform: uppercase !default;
+
+
+
+// =============================
+// WE Mega Menu
+// =============================
+
+$we-submenu-min-width: 200px !default;
+$we-submenu-bg-color: rgba(#FFF, .9) !default;
+
+// Level 1
+$we-menu-level-1-font-size: $main-navigation-font-size !default;
+$we-menu-level-1-font-weight: $main-navigation-font-weight !default;
+$we-menu-level-1-text-transform: $main-navigation-text-transform !default;
+
+// =============================
+// TB Mega Menu
+// =============================
+
+$tb-menu-background-color: transparentize(#FFF, .1) !default;
+
+// TB Megamenu Level 1
+$tb-menu-level-1-font-size: $main-navigation-font-size !default;
+$tb-menu-level-1-font-weight: $main-navigation-font-weight !default;
+$tb-menu-level-1-text-transform: $main-navigation-text-transform !default;
+
+// TB Megamenu Level 2+
+$tb-menu-level-2-font-size: $tb-menu-level-1-font-size !default;
+$tb-menu-level-2-font-weight: normal !default;
+$tb-menu-level-2-text-transform: none !default;
+$tb-menu-level-2-link-border-bottom: 1px solid !default;
+
+// =============================
+// Responsive side menu
+// =============================
+
+$sidr-desktop-width: 360px !default;
+$sidr-mobile-width: 280px !default;
+
+$sidr-background: $theme-dark-default-bg !default;
+$sidr-background-shadow-color: $theme-dark-default-bg !default;
+$sidr-box-shadow-color: $theme-dark-default-bg !default;
+$sidr-input-background-color: $theme-dark-default-bg !default;
+
+$sidr-font-size: .9rem !default;
+$sidr-text-color: $theme-text-dark--primary !default;
+
+// Menu Level 1
+$sidr-menu-level1-link-bg: $theme-dark-default-bg !default;
+$sidr-menu-level1-border-bottom: 1px solid transparentize($theme-gray-light, .8) !default;
+$sidr-menu-level1-link-text-color: $theme-text-light--primary !default;
+
+// Menu Level 2
+$sidr-menu-level2-link-bg: $theme-dark-grey-bg !default;
+$sidr-menu-level2-border-bottom: 1px solid $theme-dark-default-bg !default;
+$sidr-menu-level2-link-text-color: rgba($theme-text-light--primary, .55) !default;
+
+
+// =============================
+// Teasers
+// =============================
+
+$teaser-block--border: 1px solid $theme-gray-lighter !default;
+
+// Channel
+$teaser-channel--link-color: $theme-gray !default;
+$teaser-channel--link-hover-color: $teaser-channel--link-color !default;
+
+// Headline
+$teaser-headline--link-color: $theme-gray-dark !default;
+$teaser-headline--link-hover-color: #FFF !default;
+$teaser-headline--link-bg-color-hover: $theme-gray-dark !default;
+
+// Author
+$teaser-authored--color: $theme-gray-light !default;
+$teaser-authored--link-color: $theme-gray !default;
+$teaser-authored--link-hover-color: $teaser-authored--link-color !default;
+
+// Teaser Text
+$teaser-text--color: $theme-gray-light !default;
+
+
+// =============================
+// Comments
+// =============================
+
+$comments-bg: lighten($theme-gray-lightest, 2%);
+
+
+// =============================
+// Slick Slider
+// =============================
+
+$slick-direction-button-bg-color: transparent !default;
+$slick-direction-button-font-color: $theme-text-light--primary !default;
+$slick-direction-button-width: 65px !default;
+$slick-direction-button-height: $slick-direction-button-width !default;
+$slick-direction-button-border: none !default;
+$slick-direction-button-border-radius: 0 !default;
+
+
+// =============================
+// Vertical Tabs
+// =============================
+
+$vertical-tabs-bg-color: transparentize(#FFF, .5) !default;
+$vertical-tabs-border-width: 1px !default;
+$vertical-tabs-border-color: transparentize(#000, .85) !default;
+
+
+// =============================
+// Overridden
+// Bootstrap variables
+// =============================
+
+// Grid columns
+$theme-grid-columns: 12 !default;
+$theme-grid-gutter-width: 1.6667rem !default;
+
+// Grid breakpoints
+$theme-container-max-widths-sm: 540px !default;
+$theme-container-max-widths-md: 720px !default;
+$theme-container-max-widths-lg: 960px !default;
+$theme-container-max-widths-xl: 1200px !default;
+
+$container-max-widths: (
+    sm: $theme-container-max-widths-sm,
+    md: $theme-container-max-widths-md,
+    lg: $theme-container-max-widths-lg,
+    xl: $theme-container-max-widths-xl
+);
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+    (
+      0: 0,
+      1: ($spacer * .25),
+      2: ($spacer * .5),
+      3: $spacer,
+      4: ($spacer * 1.5),
+      5: ($spacer * 2),
+      6: ($spacer * 3),
+      7: ($spacer * 4),
+      8: ($spacer * 6)
+    ),
+    $spacers
+);
+
+// Enable negative margins
+$enable-negative-margins: true;
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-columns: $theme-grid-columns;
+$grid-gutter-width: $theme-grid-gutter-width;
+
+// Text
+$font-family-base: $theme-base-font-family;
+$font-size-base: $theme-font-size-base;
+
+// Headings
+$h1-font-size: $theme-h1-font-size;
+$headings-font-family: $theme-headings-font-family;
+$headings-font-weight: $theme-headings-font-weight;
+
+// Lead
+$lead-font-size: $theme-lead-font-size;
+$lead-font-weight: $theme-lead-font-weight;
+
+// Muted
+$text-muted: $theme-text-muted;
+
+
+// Forms
+$input-bg:                              #FFF;
+$input-disabled-bg:                     $gray-blue-200;
+
+$input-color:                           $theme-gray;
+$input-border-color:                    $theme-gray-lighter;
+$input-border-width:                    1px;
+$input-box-shadow:                      inset 0 1px 1px rgba($theme-gray-dark, .075);
+
+$input-focus-bg:                        $input-bg;
+$input-focus-border-color:              lighten($theme-primary-color, 15%);
+$input-focus-color:                     $input-color;
+
+$input-placeholder-color:               $theme-gray-light;
+
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+$table-cell-padding:          .75rem;
+$table-cell-padding-sm:       .3rem;
+
+$table-bg:                    transparent;
+$table-accent-bg:             rgba(#000, .05);
+$table-hover-bg:              rgba(#000, .075);
+$table-active-bg:             $table-hover-bg;
+
+$table-border-width:          1px;
+$table-border-color:          $theme-gray-lightest;
+
+$table-head-bg:               $theme-gray-lighter;
+$table-head-color:            $theme-gray-dark;
+
+$table-dark-bg:               $theme-gray-dark;
+$table-dark-accent-bg:        rgba(#FFF, .05);
+$table-dark-hover-bg:         rgba(#FFF, .075);
+$table-dark-border-color:     lighten($theme-gray-dark, 7.5%);
+$table-dark-color:            $theme-gray-lightest;
+
+$table-striped-order:         odd;
+$table-caption-color:         $text-muted;

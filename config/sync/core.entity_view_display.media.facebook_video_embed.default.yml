@@ -1,0 +1,26 @@
+uuid: b45a3783-ecc1-4736-a9ff-74790ee829ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.facebook_video_embed.field_media_facebook
+    - media.type.facebook_video_embed
+  module:
+    - media_entity_facebook
+id: media.facebook_video_embed.default
+targetEntityType: media
+bundle: facebook_video_embed
+mode: default
+content:
+  field_media_facebook:
+    type: facebook_embed
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

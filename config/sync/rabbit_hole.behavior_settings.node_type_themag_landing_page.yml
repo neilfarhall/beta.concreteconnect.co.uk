@@ -1,0 +1,14 @@
+uuid: b03df0b3-cc1a-4486-a896-9aa28cd09f23
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.themag_landing_page
+id: node_type_themag_landing_page
+entity_type_id: node_type
+entity_id: themag_landing_page
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

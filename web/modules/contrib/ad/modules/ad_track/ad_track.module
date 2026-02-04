@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @file
+ * Main module file for the "AD Track" module.
+ */
+
+use Drupal\ad\Track\TrackerInterface;
+use Drupal\ad_content\Entity\AdContentInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function ad_track_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+
+  if ($entity_type->id() === 'ad_content') {
+    $types = [
+      TrackerInterface::EVENT_IMPRESSION => new TranslatableMarkup('Total impressions'),
+      TrackerInterface::EVENT_CLICK => new TranslatableMarkup('Total clicks'),
+    ];
+
+    foreach ($types as $type => $label) {
+      $fields['total_' . $type] = BaseFieldDefinition::create('integer')
+        ->setLabel($label)
+        ->setSetting('size', 'big')
+        ->setCustomStorage(TRUE)
+        ->setReadOnly(TRUE)
+        ->setDisplayOptions('view', [
+          'type' => 'number_integer',
+          'weight' => 10,
+        ])
+        ->setDisplayConfigurable('view', TRUE);
+    }
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_entity_prepare_view().
+ */
+function ad_track_entity_prepare_view($entity_type_id, array $entities, array $displays, $view_mode) {
+  if ($entity_type_id === 'ad_content' && $view_mode !== TrackerInterface::EVENT_IMPRESSION) {
+    /** @var \Drupal\ad_track\TotalStorageInterface $total_storage */
+    $total_storage = \Drupal::service('ad_track.total_storage');
+    /** @var \Drupal\ad_content\Entity\AdContentInterface $ad_content */
+    foreach ($entities as $ad_content) {
+      $totals = $total_storage->loadTotals($ad_content);
+      foreach ($totals as $type => $total) {
+        $ad_content->set('total_' . $type, $total);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function ad_track_ad_content_view_alter(array &$build, AdContentInterface $ad_content, EntityViewDisplayInterface $display) {
+  if ($build['#view_mode'] !== TrackerInterface::EVENT_IMPRESSION) {
+    foreach ([TrackerInterface::EVENT_IMPRESSION, TrackerInterface::EVENT_CLICK] as $type) {
+      $field_name = 'total_' . $type;
+      if ($display->getComponent($field_name)) {
+        $build[$field_name]['#cache']['max-age'] = 0;
+      }
+    }
+  }
+}

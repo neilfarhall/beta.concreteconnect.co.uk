@@ -1,0 +1,166 @@
+uuid: c1648098-5773-49a8-8cf1-e0b6b8dacb96
+langcode: en
+status: true
+dependencies: {  }
+id: environmental_risk_management_sy
+label: 'Environmental Risk Management System'
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      1f483ff1-3184-4049-8e38-c9c58a295aa4:
+        uuid: 1f483ff1-3184-4049-8e38-c9c58a295aa4
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      a5a87c0f-006a-4357-97eb-ae11d77f93c0:
+        uuid: a5a87c0f-006a-4357-97eb-ae11d77f93c0
+        region: second
+        configuration:
+          id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+          label: 'Newsletter Signup'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: themag_onecol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: '12'
+      sticky_columns: null
+      first:
+        custom_classes: ''
+    components:
+      c80e09d0-6d5f-4b9c-bb29-0419e171cd11:
+        uuid: c80e09d0-6d5f-4b9c-bb29-0419e171cd11
+        region: first
+        configuration:
+          id: 'field_block:node:themag_landing_page:title'
+          label: Title
+          label_display: '0'
+          provider: layout_builder
+          context_mapping:
+            entity: layout_builder.entity
+            view_mode: view_mode
+          formatter:
+            type: string
+            label: above
+            settings:
+              link_to_entity: false
+            third_party_settings:
+              linked_field:
+                linked: 0
+                type: custom
+                destination:
+                  field:
+                    field: ''
+                    custom:
+                      custom: ''
+                  custom: ''
+                advanced:
+                  title: ''
+                  target: ''
+                  class: ''
+                  rel: ''
+                  text: ''
+                token: ''
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 1
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      9f6d76a2-a3bc-4e4c-bed6-fb3cee7f6d47:
+        uuid: 9f6d76a2-a3bc-4e4c-bed6-fb3cee7f6d47
+        region: first
+        configuration:
+          id: 'quicktabs_block:environmental_risk_management_sy'
+          label: 'QuickTabs - Environmental Risk Management System'
+          label_display: '0'
+          provider: quicktabs
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      3b4176a2-400e-46e9-9126-dd4fe6110f6b:
+        uuid: 3b4176a2-400e-46e9-9126-dd4fe6110f6b
+        region: second
+        configuration:
+          id: 'views_block:mg_single_item_slider-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 1
+        additional: {  }
+      655250b6-5b46-4210-b32b-def87e6a9f5c:
+        uuid: 655250b6-5b46-4210-b32b-def87e6a9f5c
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 2
+        additional: {  }
+    third_party_settings: {  }

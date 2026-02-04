@@ -1,0 +1,8 @@
+uuid: 6f193796-ee6f-46f1-a6d8-27beac01173e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Company type'
+vid: company_type
+description: ''
+weight: -7

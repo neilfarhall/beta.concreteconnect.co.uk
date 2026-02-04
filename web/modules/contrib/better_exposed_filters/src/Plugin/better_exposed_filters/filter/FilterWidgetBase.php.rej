@@ -1,0 +1,13 @@
+--- src/Plugin/better_exposed_filters/filter/FilterWidgetBase.php
++++ src/Plugin/better_exposed_filters/filter/FilterWidgetBase.php
+@@ -188,7 +188,9 @@ abstract class FilterWidgetBase extends BetterExposedFiltersWidgetBase implement
+     // Handle filter value rewrites.
+     if ($this->configuration['advanced']['rewrite']['filter_rewrite_values']) {
+       // Reorder options based on rewrite values, if sort options is disabled.
+-      $form[$field_id]['#options'] = BetterExposedFiltersHelper::rewriteOptions($form[$field_id]['#options'], $this->configuration['advanced']['rewrite']['filter_rewrite_values'], !$this->configuration['advanced']['sort_options']);
++      if (isset($form[$field_id]['#options'])) {
++        $form[$field_id]['#options'] = BetterExposedFiltersHelper::rewriteOptions($form[$field_id]['#options'], $this->configuration['advanced']['rewrite']['filter_rewrite_values'], !$this->configuration['advanced']['sort_options']);
++      }
+       // @todo what is $selected?
+       // if (isset($selected) &&
+       // !isset($form[$field_id]['#options'][$selected])) {

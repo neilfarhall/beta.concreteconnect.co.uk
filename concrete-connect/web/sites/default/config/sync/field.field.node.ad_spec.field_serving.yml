@@ -1,0 +1,19 @@
+uuid: 36f176ba-1951-4e93-8246-003e538773c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_serving
+    - node.type.ad_spec
+id: node.ad_spec.field_serving
+field_name: field_serving
+entity_type: node
+bundle: ad_spec
+label: Serving
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

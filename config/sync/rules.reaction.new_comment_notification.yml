@@ -1,0 +1,52 @@
+uuid: 1561ddc3-3fff-44df-8a32-a95d7a558ecd
+langcode: en
+status: true
+dependencies: {  }
+id: new_comment_notification
+label: 'New comment notification'
+events:
+  -
+    event_name: 'rules_entity_insert:comment--comment'
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: d594fcf4-2ef0-4547-a170-f9addd1c9412
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: 220ee6c0-0a65-47bd-9421-0ab3fd544928
+    weight: 0
+    conditions: {  }
+  actions:
+    id: rules_action_set
+    uuid: fd91a68e-2e02-43f8-a5b9-0fa982225a9a
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: 18f4669b-3ae9-4ce6-a708-847f9bbbfd44
+        weight: 0
+        action_id: rules_send_email
+        context_values:
+          to:
+            - admin@qmj.co.uk
+            - richard.high@concreteshow.co.uk
+          subject: 'New comment added'
+          message: 'https://www.concreteconnect.co.uk/admin/content/comment/approval'
+          reply: admin@concreteconnect.co.uk
+          language: ''
+        context_mapping: {  }
+        context_processors:
+          to:
+            rules_tokens: {  }
+          subject:
+            rules_tokens: {  }
+          message:
+            rules_tokens: {  }
+          reply:
+            rules_tokens: {  }
+          language:
+            rules_tokens: {  }
+        provides_mapping: {  }

@@ -1,0 +1,1114 @@
+_core:
+  default_config_hash: ev_QLQNwc0-1EGokxDRzrPpUi1kLXjeBRd5vhwpB6h0
+allowed_grant_operations:
+  grant_view: true
+  grant_update: true
+  grant_delete: true
+bundles_roles_grants:
+  ad_spec:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  article:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  directory_listing:
+    authenticated:
+      grant_view: 1
+      grant_update: 1
+      grant_delete: 0
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  document:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  download:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  event:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  feed:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  feed_item:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  glossary_entry:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  image:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  iq_blog:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  job_listing:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  migrate_example_producer:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  migrate_example_wine:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  news_article:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  page:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  paragraphs:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  popup:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  she_blog:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  she_intro:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  simpleads:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  test:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  themag_landing_page:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  video:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  webform:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    basic_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    contributor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    subscriber:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    view_simple_ads:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    webform_access:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+grants_tab_availability:
+  ad_spec: false
+  article: false
+  directory_listing: true
+  document: false
+  download: false
+  event: false
+  feed: false
+  feed_item: false
+  glossary_entry: false
+  image: false
+  iq_blog: false
+  job_listing: false
+  migrate_example_producer: false
+  migrate_example_wine: false
+  news_article: false
+  page: false
+  paragraphs: false
+  popup: false
+  she_blog: false
+  she_intro: false
+  simpleads: false
+  test: false
+  themag_landing_page: false
+  video: false
+  webform: false
+map_rid_gid:
+  anonymous: 0
+  authenticated: 1
+  administrator: 2
+  editor: 3
+  basic_editor: 4
+  contributor: 5
+  subscriber: 6
+  view_simple_ads: 7
+  webform_access: 8
+roles_settings:
+  anonymous:
+    display_name: 'anonymous user'
+    name: 'anonymous user'
+    weight: 0
+    selected: false
+  authenticated:
+    display_name: 'authenticated user'
+    name: 'authenticated user'
+    weight: 0
+    selected: false
+  administrator:
+    display_name: administrator
+    name: administrator
+    weight: 0
+    selected: false
+  editor:
+    display_name: editor
+    name: editor
+    weight: 0
+    selected: false
+  basic_editor:
+    display_name: 'basic editor'
+    name: 'basic editor'
+    weight: 0
+    selected: false
+  contributor:
+    display_name: contributor
+    name: contributor
+    weight: 0
+    selected: false
+  subscriber:
+    display_name: subscriber
+    name: subscriber
+    weight: 0
+    selected: false
+  view_simple_ads:
+    display_name: 'view simple ads'
+    name: 'view simple ads'
+    weight: 0
+    selected: false
+  webform_access:
+    display_name: 'webform access'
+    name: 'webform access'
+    weight: 0
+    selected: false

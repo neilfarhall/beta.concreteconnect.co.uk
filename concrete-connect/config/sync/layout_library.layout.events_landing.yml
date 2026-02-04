@@ -1,0 +1,144 @@
+uuid: 1aa05e6e-057e-49d3-9d7c-a9858fe58e56
+langcode: en
+status: true
+dependencies: {  }
+id: events_landing
+label: 'Events Landing'
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      c953569d-246f-430f-b7ef-d71806e43256:
+        uuid: c953569d-246f-430f-b7ef-d71806e43256
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      30b27b92-07d8-46fe-a534-0ab9fbec50f0:
+        uuid: 30b27b92-07d8-46fe-a534-0ab9fbec50f0
+        region: second
+        configuration:
+          id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+          label: 'Newsletter Signup'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      f86e49a8-7e66-42f6-997d-2cb67494349c:
+        uuid: f86e49a8-7e66-42f6-997d-2cb67494349c
+        region: first
+        configuration:
+          id: 'views_block:mg_example_1-block_3'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+        weight: 0
+        additional: {  }
+      33dfe403-250c-4e7b-8e51-cffdfd68b585:
+        uuid: 33dfe403-250c-4e7b-8e51-cffdfd68b585
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      e7266397-6391-4724-8a6a-8ae029735baf:
+        uuid: e7266397-6391-4724-8a6a-8ae029735baf
+        region: second
+        configuration:
+          id: 'views_block:mg_single_item_slider-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 1
+        additional: {  }
+      70699e73-39ed-4b95-b0b5-4ca9f4cad73a:
+        uuid: 70699e73-39ed-4b95-b0b5-4ca9f4cad73a
+        region: second
+        configuration:
+          id: 'views_block:tags-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 2
+        additional: {  }
+      65f62fa4-5591-4f12-8e25-23ad149e321f:
+        uuid: 65f62fa4-5591-4f12-8e25-23ad149e321f
+        region: second
+        configuration:
+          id: 'views_block:featured_company_item_slider-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 3
+        additional: {  }
+    third_party_settings: {  }

@@ -1,0 +1,31 @@
+{# Header user action menu #}
+
+<div class="header__user-nav">
+  <div class="d-flex">
+    {% if themag.header_user_icon %}
+      {% include '@themag/base-layout/header/components/toggleable-account-menu.html.twig' %}
+    {% endif %}
+
+    {% if themag.header_search_icon and (themag.modules.search or themag.modules.search_api) %}
+      {% if themag.header_search_icon_as_link %}
+        <a class="header__toggleable-button" href="{{ themag.search_page_path }}">
+          {#          <i class="fas fa-search"></i>#}
+          <svg class="svg-inline--fa fa-magnifying-glass" data-fa-pseudo-element-pending-:before="magnifying-glass" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"></path></svg>
+        </a>
+      {% else %}
+        <button class="header__toggleable-button js-toggle-search" aria-label="Search">
+          {#          <i class="fas fa-search"></i>#}
+          <svg class="svg-inline--fa fa-magnifying-glass" data-fa-pseudo-element-pending-:before="magnifying-glass" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"></path></svg>
+        </button>
+      {% endif %}
+    {% endif %}
+
+    {% if themag.header_cart_icon and themag.modules.commerce_cart %}
+     {{ themag.commerce.commerce_cart_block }}
+    {% endif %}
+  </div>
+
+  <button class="header__toggleable-button toggle-offcanvas-sidebar js-toggle-offcanvas-sidebar" aria-label="Toggle navigation menu">
+    <i class="fas fa-bars"></i>
+  </button>
+</div>

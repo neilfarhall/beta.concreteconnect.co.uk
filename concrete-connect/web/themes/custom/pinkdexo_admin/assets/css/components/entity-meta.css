@@ -1,0 +1,62 @@
+/**
+ * Entity meta settings.
+ */
+.entity-meta {
+  border-right: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #FFF;
+}
+
+.entity-meta__header {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1em 1.5em;
+  border-radius: 3px 3px 0 0;
+}
+
+.entity-meta__header .form-item {
+  margin: 0.25em 0;
+}
+
+.entity-meta__title {
+  margin: 0.25em 0;
+  text-shadow: 0 1px 0 #fff;
+  font-size: 1.231em;
+  font-weight: bold;
+}
+
+.entity-meta details {
+  margin: 0;
+  border-top: 1px solid #fff;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+
+.entity-meta details :last-child {
+  border-radius: 0 0 4px 4px;
+}
+
+.entity-meta details[open] {
+  padding-top: 1px;
+  border-top-width: 0;
+  background-color: transparent;
+}
+
+.entity-meta details[open] + [open] {
+  padding-top: 0;
+  border-top-width: 1px;
+  background-image: none;
+}
+
+/**
+ * Hide JS summary from the details polyfill to make it consistent with native
+ * details elements.
+ *
+ * @todo Consider removing this after https://www.drupal.org/node/2493957 has
+ *   been solved.
+ */
+.entity-meta .seven-details .summary {
+  display: none;
+}

@@ -1,0 +1,30 @@
+uuid: bd6c5adf-cb43-4816-b1ac-34929850b52a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.facebook_video_embed.field_media_facebook
+    - media.type.facebook_video_embed
+id: media.facebook_video_embed.media_library
+targetEntityType: media
+bundle: facebook_video_embed
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_facebook: true
+  path: true
+  publish_on: true
+  scheduler_settings: true
+  status: true
+  uid: true
+  unpublish_on: true

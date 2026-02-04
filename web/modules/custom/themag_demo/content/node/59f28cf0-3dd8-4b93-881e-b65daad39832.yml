@@ -1,0 +1,86 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 59f28cf0-3dd8-4b93-881e-b65daad39832
+  bundle: article
+  default_langcode: en
+  depends:
+    61943b17-d795-4630-b0ec-1ed678fc1229: taxonomy_term
+    3055923a-47a9-4adc-8cda-ddd44279d999: taxonomy_term
+    cf63c953-a8cb-4f09-867b-6844a4715d39: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Marc Max Is Staying Put, as Stated by His Spring 2018 Collection'
+  created:
+    -
+      value: 1535803758
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /marc-max-staying-put-stated-his-spring-2018-collection
+      langcode: en
+      pathauto: 1
+  field_channel:
+    -
+      entity: 61943b17-d795-4630-b0ec-1ed678fc1229
+  field_comment:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1659899228
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_paragraphs:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 1940d513-0f13-497b-b78e-ba9db5376d26
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1535804094
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_text:
+            -
+              value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus, turpis ut egestas rhoncus, augue neque luctus nunc, id lacinia ante lectus et justo. Nulla posuere hendrerit neque, et suscipit odio. In scelerisque tortor non justo porta elementum. Nulla sollicitudin quis leo sit amet tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi vel tincidunt turpis. Nulla volutpat, metus nec fringilla venenatis, risus massa molestie arcu, ac convallis tellus diam vulputate dui.</p>\r\n\r\n<p>Morbi non dui sed orci rhoncus mattis sed vitae tortor. Pellentesque porttitor ipsum nunc, non volutpat neque fringilla vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam dignissim mattis ante a varius. Duis tempor ut mauris non varius. Maecenas ante turpis, ullamcorper nec bibendum eu, finibus sagittis nisi. Proin nunc lorem, fermentum et tincidunt quis, mattis sed nisi. Duis venenatis, turpis quis fermentum fermentum, augue justo aliquam nisl, id auctor diam justo id risus. Maecenas et facilisis purus. Fusce bibendum, diam ut iaculis tempus, nisl diam fringilla metus, eu posuere massa eros at ante. Sed sodales ac nisl sed condimentum. Suspendisse eget pretium mauris, ut semper nisi.</p>\r\n\r\n<p>Vestibulum et dolor dapibus, commodo ligula vel, semper lorem. Nullam libero eros, vestibulum a mauris vel, dignissim interdum odio. Nulla ipsum nisl, suscipit et velit in, tincidunt feugiat enim. Donec varius turpis nisl, ut interdum dolor ullamcorper non. In non blandit libero. Praesent vel magna vitae est sodales rutrum a in felis. Mauris malesuada lacus vel sapien consequat efficitur. Sed vel varius nibh, sit amet sagittis est. Morbi dignissim tincidunt dolor vel malesuada. Maecenas posuere vehicula ex, ut eleifend sem iaculis sit amet.</p>\r\n\r\n<p>Nunc at efficitur neque. Nunc rhoncus nunc at tincidunt efficitur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ac urna eu erat accumsan placerat ut nec tellus. In et tincidunt enim. In sollicitudin eu nibh ut feugiat. Nunc dignissim et sapien in egestas. Suspendisse eu felis imperdiet, vulputate lorem at, scelerisque eros. Nulla volutpat enim et arcu venenatis ornare. Donec blandit eget felis et varius. Sed vitae risus vestibulum tortor pulvinar interdum. Nunc molestie eu ante a interdum. Donec suscipit dignissim lorem placerat dictum. Sed turpis diam, ultricies quis velit gravida, viverra pulvinar tortor. Aliquam fringilla, dui faucibus placerat egestas, tortor purus finibus augue, vel accumsan sapien sapien eget tellus. Quisque nulla sem, luctus a laoreet quis, convallis nec sapien.</p>\r\n\r\n<p>Ut auctor interdum tempus. Duis vel erat eu nisl malesuada facilisis ac a lorem. Phasellus iaculis ipsum sed risus mattis, ullamcorper maximus purus laoreet. Aliquam neque turpis, interdum quis sodales eget, luctus vehicula urna. Maecenas eget metus lorem. Vivamus porta euismod elit tempus sagittis. Mauris ut condimentum lorem, eget ultrices nisl. Mauris non condimentum arcu, non convallis felis. Sed tortor sapien, venenatis sed bibendum semper, dignissim vitae lectus. Morbi facilisis id tortor in varius. Etiam dignissim maximus augue. Nunc vestibulum felis ut mi ullamcorper maximus. Curabitur auctor laoreet semper. Proin erat dui, pellentesque vel convallis quis, aliquet sed mi. Donec tincidunt fermentum ante sit amet mollis. Donec tortor neque, lobortis at fermentum in, fringilla vitae urna.</p>\r\n"
+              format: full_html
+  field_tags:
+    -
+      entity: 3055923a-47a9-4adc-8cda-ddd44279d999
+  field_teaser_media:
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+  field_teaser_text:
+    -
+      value: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'

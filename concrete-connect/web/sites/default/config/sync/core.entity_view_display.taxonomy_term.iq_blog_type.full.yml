@@ -1,0 +1,84 @@
+uuid: 35ec8972-46ac-48a5-a368-8d37fb136122
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - taxonomy.vocabulary.iq_blog_type
+    - views.view.iq_presidents_blog
+  content:
+    - 'block_content:advertisement:f66ff081-dc10-45ef-ade1-23884bcc4885'
+  module:
+    - block_content
+    - layout_builder
+    - layout_library
+    - text
+    - themag_layouts
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 1
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          f037ae71-65ff-4f35-9608-5fb393abb6f6:
+            uuid: f037ae71-65ff-4f35-9608-5fb393abb6f6
+            region: first
+            configuration:
+              id: 'views_block:iq_presidents_blog-block_1'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+            weight: 0
+            additional: {  }
+          da641faf-4d9e-47d8-abb1-0257c8c7ee52:
+            uuid: da641faf-4d9e-47d8-abb1-0257c8c7ee52
+            region: second
+            configuration:
+              id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+              label: 'MPU Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: taxonomy_term.iq_blog_type.full
+targetEntityType: taxonomy_term
+bundle: iq_blog_type
+mode: full
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

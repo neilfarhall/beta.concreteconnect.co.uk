@@ -1,0 +1,7 @@
+uuid: 52b996bf-0c4d-4380-99cd-cf10818fe189
+langcode: en
+status: false
+dependencies: {  }
+formId: node_glossary_entry_form
+captchaType: default
+label: node_glossary_entry_form

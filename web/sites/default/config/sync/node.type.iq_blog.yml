@@ -1,0 +1,18 @@
+uuid: d0853a29-d58d-496e-9f0e-7d0d500371df
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: 'IQ Blog'
+type: iq_blog
+description: 'Institute of Quarrying Blog'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

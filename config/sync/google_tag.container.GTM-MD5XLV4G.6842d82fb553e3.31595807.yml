@@ -1,0 +1,33 @@
+uuid: 28c11055-4a82-41c8-9b2b-014a647ca203
+langcode: en
+status: true
+dependencies: {  }
+id: GTM-MD5XLV4G.6842d82fb553e3.31595807
+label: GTM-MD5XLV4G
+weight: 0
+tag_container_ids:
+  - GTM-MD5XLV4G
+advanced_settings:
+  consent_mode: false
+  gtm:
+    GTM-MD5XLV4G:
+      data_layer: dataLayer
+      include_classes: false
+      allowlist_classes: ''
+      blocklist_classes: ''
+      include_environment: false
+      environment_id: ''
+      environment_token: ''
+dimensions_metrics: {  }
+conditions: {  }
+events:
+  generate_lead:
+    value: ''
+    currency: ''
+  webform_purchase: {  }
+  sign_up:
+    method: CMS
+  custom: {  }
+  search: {  }
+  login:
+    method: CMS

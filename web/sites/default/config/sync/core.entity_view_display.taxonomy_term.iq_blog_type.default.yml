@@ -1,0 +1,21 @@
+uuid: 798f905f-1625-43a8-b3ff-c1e1524039a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.iq_blog_type
+  module:
+    - text
+id: taxonomy_term.iq_blog_type.default
+targetEntityType: taxonomy_term
+bundle: iq_blog_type
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -1,0 +1,339 @@
+uuid: beb95d34-0c82-4f1c-bed6-740f9f3581ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.authors_panel.field_authors_bio
+    - field.field.paragraph.authors_panel.field_authors_email
+    - field.field.paragraph.authors_panel.field_authors_name
+    - field.field.paragraph.authors_panel.field_authors_socials
+    - field.field.paragraph.authors_panel.field_authors_title
+    - field.field.paragraph.authors_panel.field_profile_pic
+    - field.field.paragraph.authors_panel.field_website
+    - paragraphs.paragraphs_type.authors_panel
+  module:
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - link
+    - social_link_field
+    - text
+    - themag_layouts
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: gray-light
+          section_padding: py-medium
+          section_margin: my-default
+          section_custom_classes: authors-panel
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 4-8
+          sticky_columns: 1
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          b14e6ba2-6937-4719-bc40-80ca67317122:
+            uuid: b14e6ba2-6937-4719-bc40-80ca67317122
+            region: second
+            configuration:
+              id: 'field_block:paragraph:authors_panel:field_profile_pic'
+              label: 'Profile Pic'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: field_formatter_with_inline_settings
+                label: hidden
+                settings:
+                  field_name: field_image
+                  type: responsive_image
+                  settings:
+                    responsive_image_style: teaser_small_teaser_item
+                    image_link: ''
+                  label: hidden
+                  link_to_entity: false
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 1
+            additional: {  }
+          da952924-6e89-4223-b10b-73b27e38e561:
+            uuid: da952924-6e89-4223-b10b-73b27e38e561
+            region: first
+            configuration:
+              id: 'field_block:paragraph:authors_panel:field_authors_name'
+              label: 'Guest Blogger'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: inline
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: -2
+            additional: {  }
+          c8dbdb5d-e2c9-4da0-b77d-1cf90bad59ed:
+            uuid: c8dbdb5d-e2c9-4da0-b77d-1cf90bad59ed
+            region: first
+            configuration:
+              id: 'field_block:paragraph:authors_panel:field_authors_bio'
+              label: 'Authors Bio'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 0
+            additional: {  }
+          b0da4cca-5406-449b-9cbf-0a58580ef113:
+            uuid: b0da4cca-5406-449b-9cbf-0a58580ef113
+            region: first
+            configuration:
+              id: 'field_block:paragraph:authors_panel:field_authors_email'
+              label: 'Authors email'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: email_mailto
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 1
+            additional: {  }
+          8032acd6-4018-44bc-b91b-c5e09c7857f4:
+            uuid: 8032acd6-4018-44bc-b91b-c5e09c7857f4
+            region: first
+            configuration:
+              id: 'field_block:paragraph:authors_panel:field_authors_socials'
+              label: 'Authors Socials'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: font_awesome
+                label: hidden
+                settings:
+                  new_tab: 1
+                  icon_type: common
+                  orientation: vertical
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 2
+            additional: {  }
+          0efd86c8-18b6-4e02-8274-230713e7799e:
+            uuid: 0efd86c8-18b6-4e02-8274-230713e7799e
+            region: first
+            configuration:
+              id: 'field_block:paragraph:authors_panel:field_authors_title'
+              label: 'Authors Title'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: -1
+            additional: {  }
+          674d639f-bbcf-494c-9884-9a0563d08b15:
+            uuid: 674d639f-bbcf-494c-9884-9a0563d08b15
+            region: first
+            configuration:
+              id: 'field_block:paragraph:authors_panel:field_website'
+              label: Website
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: inline
+                settings:
+                  trim_length: 100
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: paragraph.authors_panel.default
+targetEntityType: paragraph
+bundle: authors_panel
+mode: default
+content:
+  field_authors_bio:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_authors_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_authors_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_authors_socials:
+    type: font_awesome
+    label: above
+    settings:
+      icon_type: common
+      orientation: vertical
+      new_tab: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_authors_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_profile_pic:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_website:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: first
+hidden: {  }

@@ -1,0 +1,22 @@
+uuid: 1f747b4a-a74f-4f5d-96be-f4bc5a10b696
+langcode: en
+status: true
+dependencies:
+  theme:
+    - pinkdexo_admin
+_core:
+  default_config_hash: 5IrFc68YIyaYjmt8eGCRh2HAcNXbPIkJBCnoOz-uXwQ
+id: pinkdexo_admin_tabs_primary
+theme: pinkdexo_admin
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

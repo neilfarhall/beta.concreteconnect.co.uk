@@ -1,0 +1,28 @@
+uuid: 12a80c27-777c-4d96-a5a2-3eb76211abda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media
+    - media.type.gallery
+    - paragraphs.paragraphs_type.gallery_slider
+id: paragraph.gallery_slider.field_media
+field_name: field_media
+entity_type: paragraph
+bundle: gallery_slider
+label: Media
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      gallery: gallery
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

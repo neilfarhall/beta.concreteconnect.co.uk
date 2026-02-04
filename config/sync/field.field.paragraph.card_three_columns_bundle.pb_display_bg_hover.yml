@@ -1,0 +1,23 @@
+uuid: 8d9f03cf-a255-4c54-aedb-5de9cd5c4d4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_bg_hover
+    - paragraphs.paragraphs_type.card_three_columns_bundle
+  module:
+    - paragraphs_bundles
+_core:
+  default_config_hash: g5d61SJo2qJdVipNeeS84HQHrGtEYmSm30X1V1LyteY
+id: paragraph.card_three_columns_bundle.pb_display_bg_hover
+field_name: pb_display_bg_hover
+entity_type: paragraph
+bundle: card_three_columns_bundle
+label: 'Background Color Hover'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraphs_bundles_rgb

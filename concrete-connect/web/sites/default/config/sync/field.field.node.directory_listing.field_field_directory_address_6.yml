@@ -1,0 +1,19 @@
+uuid: 12a01519-13f0-49a0-a7bb-2c28baa903aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_field_directory_address_6
+    - node.type.directory_listing
+id: node.directory_listing.field_field_directory_address_6
+field_name: field_field_directory_address_6
+entity_type: node
+bundle: directory_listing
+label: 'Address Line 6'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

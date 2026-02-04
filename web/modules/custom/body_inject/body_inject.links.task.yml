@@ -1,0 +1,5 @@
+entity.body_inject_profile.edit_form:
+  route_name: entity.body_inject_profile.edit_form
+  title: 'Edit'
+  base_route: entity.body_inject_profile.edit_form
+  weight: 0

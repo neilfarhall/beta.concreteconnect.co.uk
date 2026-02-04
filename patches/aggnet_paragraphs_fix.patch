@@ -1,0 +1,31 @@
+diff --git a/body_inject.module b/body_inject.module
+index bdd1689..090aff8 100755
+--- a/body_inject.module
++++ b/body_inject.module
+@@ -206,7 +206,7 @@ function block_inject_adv_process_condition($body, $settings) {
+ 
+     //PARAGRAPHS
+     // Break up the body field string into an array of paragraphs and count them.
+-    $array_explode = explode("<p>", $body);
++    $array_explode = explode("<p", $body);
+     $body_paragraphs_count = count($array_explode);
+ 
+     //CHARACTERS
+@@ -306,7 +306,7 @@ function block_inject_adv_process_condition($body, $settings) {
+ function block_inject_adv_node($actions, $body) {
+ 
+   // Break up the body field string into an array of paragraphs.
+-  $array_body_paragraphs = explode("<p>", $body);
++  $array_body_paragraphs = explode("<p", $body);
+ 
+ 
+   foreach ($actions as $key => $action_data) {
+@@ -370,7 +370,7 @@ function block_inject_adv_node($actions, $body) {
+   }
+ 
+   // Re-create the body field string with the regions injected.
+-  return implode("<p>", $array_body_paragraphs);
++  return implode("<p", $array_body_paragraphs);
+ }
+ 
+ /**

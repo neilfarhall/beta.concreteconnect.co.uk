@@ -1,0 +1,21 @@
+uuid: 0f23c70f-bee2-4d89-992a-81b18cf3ca24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_company_names
+    - paragraphs.paragraphs_type.company_list
+  module:
+    - text
+id: paragraph.company_list.field_company_names
+field_name: field_company_names
+entity_type: paragraph
+bundle: company_list
+label: 'Company names'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

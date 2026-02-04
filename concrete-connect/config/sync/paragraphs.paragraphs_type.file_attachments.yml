@@ -1,0 +1,10 @@
+uuid: e4822570-8b92-415c-a730-fff9855ad4b6
+langcode: en
+status: true
+dependencies: {  }
+id: file_attachments
+label: 'File Attachments'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

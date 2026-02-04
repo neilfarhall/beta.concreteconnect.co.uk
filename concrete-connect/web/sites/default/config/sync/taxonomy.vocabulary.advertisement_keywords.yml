@@ -1,0 +1,8 @@
+uuid: 810ee4be-523a-46d5-95c7-880dd917b1a4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Advertisement keywords'
+vid: advertisement_keywords
+description: ''
+weight: -10

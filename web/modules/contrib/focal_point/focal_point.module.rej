@@ -1,0 +1,12 @@
+--- focal_point.module
++++ focal_point.module
+@@ -96,8 +97,9 @@ function focal_point_entity_update(EntityInterface $entity) {
+             }
+           }
+           if ($focal_point && $item->width && $item->height) {
+             [$x, $y] = explode(',', $focal_point);
+             $focal_point_manager->saveCropEntity($x, $y, $item->width, $item->height, $crop);
++            Cache::invalidateTags($item->entity->getCacheTagsToInvalidate());
+           }
+         }
+       }

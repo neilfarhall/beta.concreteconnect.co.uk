@@ -1,0 +1,21 @@
+uuid: cf69454d-cc48-42c7-90e3-65ef79c6fe78
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - paragraphs_bundles
+_core:
+  default_config_hash: '-xXtiWSlzt79ctszsD0bBMhW2Agifaubw8GTzEj4Ih0'
+id: paragraph.pb_display_bg_opacity
+field_name: pb_display_bg_opacity
+entity_type: paragraph
+type: paragraphs_bundles_range
+settings: {  }
+module: paragraphs_bundles
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

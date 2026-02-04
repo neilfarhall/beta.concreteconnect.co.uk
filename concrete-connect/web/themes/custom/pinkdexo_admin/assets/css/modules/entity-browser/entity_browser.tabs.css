@@ -1,0 +1,39 @@
+.entity-browser-form input.edit-submit {
+  margin-top: 20px;
+}
+
+.entity-browser-form nav.tabs {
+  margin-bottom: 20px;
+}
+
+.entity-browser-form input.tab {
+  display: none;
+}
+
+.entity-browser-form .entity-tabs a {
+  cursor: pointer;
+}
+
+.eb-tabs {
+  background: #FFF;
+  margin-bottom: 16px;
+}
+
+.eb-tabs ul {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.eb-tabs ul li {
+  display: inline-block;
+}
+
+.eb-tabs ul li.active {
+  border-bottom: 4px solid #01579b;
+}
+
+.eb-tabs ul li a {
+  padding: 16px 24px;
+  display: block;
+}

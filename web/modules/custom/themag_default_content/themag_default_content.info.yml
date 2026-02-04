@@ -1,0 +1,20 @@
+name: 'TheMAG Default Content'
+type: module
+description: 'The module provides an initial demo content for TheMAG theme. This module is used for demonstration purposes only, you can disable it on your production site.'
+package: TheMAG Demo
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - default_content
+default_content:
+  node:
+    - 99ebe17e-1f33-445c-8412-38af1a5bc531
+  block_content:
+    - b53fdcd3-00e9-4c33-bcd1-c7e58557ef43
+    - 7220b7e7-3ead-421a-b249-d9279bcadfc2
+  media:
+    - cf63c953-a8cb-4f09-867b-6844a4715d39
+  file:
+    - 13fd22bc-cc58-46cb-8e68-da2caaa48953
+    - ca529434-0772-420e-97d5-cab61c3fdb7d
+  menu_link_content:
+    - d805be67-3ac7-419e-be62-63fb2ecf313d

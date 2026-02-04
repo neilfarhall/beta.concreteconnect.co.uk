@@ -1,0 +1,9 @@
+uuid: 74c4b398-fb0a-4134-b306-368f06e63d9e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: jhtQeP59auh777lmzaFU0WvXSXEJgqcn0pSy9JIWsV8
+id: login
+label: 'Login page'
+tags: {  }

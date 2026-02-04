@@ -1,0 +1,21 @@
+uuid: 89453a4a-1cdc-476a-8371-e5fde851d7a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_contact_fax
+    - node.type.directory_listing
+  module:
+    - telephone
+id: node.directory_listing.field_directory_contact_fax
+field_name: field_directory_contact_fax
+entity_type: node
+bundle: directory_listing
+label: Fax
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

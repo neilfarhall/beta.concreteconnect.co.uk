@@ -1,0 +1,29 @@
+uuid: c163b022-79d2-4c16-ada7-70aeb8371dc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_advertisement_keywords
+    - node.type.news_article
+    - taxonomy.vocabulary.advertisement_keywords
+id: node.news_article.field_advertisement_keywords
+field_name: field_advertisement_keywords
+entity_type: node
+bundle: news_article
+label: 'Advertisement Keywords'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      advertisement_keywords: advertisement_keywords
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

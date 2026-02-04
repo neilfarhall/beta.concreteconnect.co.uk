@@ -1,0 +1,27 @@
+uuid: 094a5fcd-0831-4009-8dff-418b88ddf815
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_news_display_on_hillhead
+field_name: field_news_display_on_hillhead
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'No (default)'
+      label: 'No (default)'
+    -
+      value: 'Yes'
+      label: 'Yes'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

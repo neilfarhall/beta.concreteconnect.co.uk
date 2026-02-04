@@ -1,0 +1,32 @@
+uuid: 6b217c81-18d6-4642-9982-823230c390dd
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:f14fbaad-f165-4051-8f74-a0ee4957a226'
+  module:
+    - block_content
+    - block_title_link
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: branchblogmainimage
+theme: themag_st
+region: footer_bottom_first
+weight: -5
+provider: null
+plugin: 'block_content:f14fbaad-f165-4051-8f74-a0ee4957a226'
+settings:
+  id: 'block_content:f14fbaad-f165-4051-8f74-a0ee4957a226'
+  label: 'Branch blog main image'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

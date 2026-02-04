@@ -1,0 +1,199 @@
+
+          /*.leaderboard-strip .field--name-body {*/
+          /*  padding-left: 15px;*/
+          /*  padding-right: 15px;*/
+          /*}*/
+
+          /*.leaderboard-strip {*/
+          /*  justify-content: center;*/
+          /*  height: 179px;*/
+
+          /*  background: #41413e 0% 0% no-repeat padding-box;*/
+          /*  opacity: 1;*/
+          /*  padding-top: 5px;*/
+          /*  padding-bottom: 5px;*/
+          /*}*/
+
+          /*@media (min-width: 576px) {*/
+          /*  .leaderboard-strip {*/
+          /*    height: 228px;*/
+          /*  }*/
+          /*}*/
+
+          /*@media (min-width: 768px) {*/
+          /*  .leaderboard-strip {*/
+          /*    height: 280px;*/
+          /*  }*/
+
+          /*  .shariff {*/
+          /*    height: 36px;*/
+          /*  }*/
+          /*}*/
+
+          /*@media (min-width: 992px) {*/
+          /*  .leaderboard-strip {*/
+
+          /*  }*/
+          /*}*/
+
+          /*@media (min-width: 1200px) {*/
+          /*  .leaderboard-strip {*/
+
+          /*  }*/
+          /*}*/
+
+          /*.shariff {*/
+          /*  height: 32px;*/
+          /*}*/
+
+          /*.shariff a .share_text {*/
+          /*  display: none !important;*/
+          /*}*/
+
+          /*.shariff[data-css="min"] a, .shariff[data-css="complete"] a {*/
+          /*  display: flex;*/
+          /*  align-items: center;*/
+          /*  justify-content: center;*/
+          /*  line-height: 16px;*/
+          /*}*/
+
+          /*.field--name-body .body-inject + div {*/
+          /*  max-width: 100%;*/
+          /*  margin-bottom: 1em;*/
+          /*  min-height: 232px;*/
+          /*  height: auto !important;*/
+          /*  display: flex;*/
+          /*  justify-content: center;*/
+          /*  align-items: center;*/
+          /*}*/
+
+          /*@media (min-width: 768px) {*/
+          /*  .field--name-body .body-inject + div {*/
+          /*    max-width: 100%;*/
+          /*    margin-bottom: 1em;*/
+          /*    min-height: 430px;*/
+          /*    height: auto !important;*/
+          /*    display: flex;*/
+          /*    justify-content: center;*/
+          /*    align-items: center;*/
+          /*    width: 100% !important;*/
+          /*  }*/
+          /*}*/
+
+          /*.field--name-body .body-inject + div div {*/
+          /*  max-width: 100%;*/
+          /*  color: rgb(102, 102, 102) !important;*/
+          /*}*/
+
+          /*.field--name-body .body-inject + div div.sas-linear {*/
+          /*  background: #fff;*/
+          /*}*/
+
+          /*.field--name-body .body-inject + div video  {*/
+          /*  max-width: 100%;*/
+          /*}*/
+
+          /*#sas_53422 video {*/
+          /*  !* Make video responsive to the container's width *!*/
+          /*  width: 100% !important;*/
+          /*  height: auto !important; !* Adjust height automatically to maintain aspect ratio *!*/
+          /*  max-width: 100%; !* Ensure it does not overflow its container *!*/
+          /*}*/
+
+
+
+/*#sas_53422 {*/
+/*  !* Ensure the container can adjust size to the viewport *!*/
+/*  width: 100%;*/
+/*  max-width: 724px; !* Set this to the max width the video should have, if necessary *!*/
+/*  overflow: hidden; !* This ensures nothing spills outside the container *!*/
+/*}*/
+
+
+.fab.fa-twitter {
+  /* Override default Font Awesome icon */
+  font-family: "Arial", sans-serif; /* Reset font, optional */
+  background-image: url('../icons/x.svg');
+  /*content: url('data:image/svg+xml,<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="#000000"><path d="Your SVG path here"/></svg>');*/
+  display: inline-block; /* Ensures it behaves like an image */
+  width: 16px; /* Set width of the icon */
+  height: 16px; /* Set height of the icon */
+  background-size: contain;
+  transform: scale(1); /* Ensures the icon scales properly */
+  fill: #fff;
+  color: #fff;
+}
+
+.fab.fa-facebook-f {
+  /* Override default Font Awesome icon */
+  font-family: "Arial", sans-serif; /* Reset font, optional */
+  background-image: url('../icons/facebook.svg');
+  /*content: url('data:image/svg+xml,<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="#000000"><path d="Your SVG path here"/></svg>');*/
+  display: inline-block; /* Ensures it behaves like an image */
+  width: 16px; /* Set width of the icon */
+  height: 16px; /* Set height of the icon */
+  background-size: contain;
+  transform: scale(1); /* Ensures the icon scales properly */
+  fill: #fff;
+  color: #fff;
+}
+
+.fab.fa-twitter {
+  /* Override default Font Awesome icon */
+  font-family: "Arial", sans-serif; /* Reset font, optional */
+  background-image: url('../icons/x.svg');
+  /*content: url('data:image/svg+xml,<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="#000000"><path d="Your SVG path here"/></svg>');*/
+  display: inline-block; /* Ensures it behaves like an image */
+  width: 16px; /* Set width of the icon */
+  height: 16px; /* Set height of the icon */
+  background-size: contain;
+  transform: scale(1); /* Ensures the icon scales properly */
+  fill: #fff;
+  color: #fff;
+}
+
+.fab.fa-linkedin-in {
+  /* Override default Font Awesome icon */
+  font-family: "Arial", sans-serif; /* Reset font, optional */
+  background-image: url('../icons/linkedin.svg');
+  /*content: url('data:image/svg+xml,<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="#000000"><path d="Your SVG path here"/></svg>');*/
+  display: inline-block; /* Ensures it behaves like an image */
+  width: 16px; /* Set width of the icon */
+  height: 16px; /* Set height of the icon */
+  background-size: contain;
+  transform: scale(1); /* Ensures the icon scales properly */
+  fill: #fff;
+  color: #fff;
+}
+
+.tag-content a {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.teaser--tiny-item .teaser__authored {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.view-mode-main-news-image img {
+  width: 100%;
+}
+
+.region--offcanvas-sidebar #offcanvas-sidebar.sidr {
+  display: none;
+}
+/*.sidr.left {*/
+/*  left: -280px;*/
+/*  right: auto;*/
+/*}*/
+
+.block--region-search input[type='search']::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+.we-mega-menu-ul .we-mega-menu-li.dropdown-menu .we-mega-menu-submenu {
+  border-top: 1px solid #545454;
+}

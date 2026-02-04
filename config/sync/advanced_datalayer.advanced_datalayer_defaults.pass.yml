@@ -1,0 +1,9 @@
+uuid: aef47832-9160-4f9e-91b7-cd1d774e5965
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 74YK3sI0RXuurZbkP6DJDMxNStrWTnbptZuCjmlRFMs
+id: pass
+label: 'Password reset page'
+tags: {  }

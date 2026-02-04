@@ -1,0 +1,78 @@
+uuid: b2473933-8a6f-4d77-8c10-81bd7bd5fbc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.taxonomy_term.channel.field_color
+    - field.field.taxonomy_term.channel.field_media
+    - field.field.taxonomy_term.channel.layout_builder__layout
+    - taxonomy.vocabulary.channel
+  module:
+    - color_field
+    - entity_browser
+    - path
+    - text
+id: taxonomy_term.channel.default
+targetEntityType: taxonomy_term
+bundle: channel
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_color:
+    type: color_field_widget_spectrum
+    weight: 1
+    region: content
+    settings:
+      show_input: '0'
+      show_palette: '0'
+      palette: ''
+      show_palette_only: '0'
+      show_buttons: '0'
+      allow_empty: '0'
+    third_party_settings: {  }
+  field_media:
+    type: entity_browser_entity_reference
+    weight: 3
+    region: content
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: true
+      open: true
+      field_widget_display_settings:
+        view_mode: compact_preview
+      selection_mode: selection_append
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  layout_builder__layout: true

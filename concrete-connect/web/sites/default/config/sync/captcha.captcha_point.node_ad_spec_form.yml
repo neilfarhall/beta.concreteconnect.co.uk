@@ -1,0 +1,7 @@
+uuid: e3007796-a8b8-4b4b-97c0-c039621623ef
+langcode: en
+status: false
+dependencies: {  }
+formId: node_ad_spec_form
+captchaType: default
+label: node_ad_spec_form

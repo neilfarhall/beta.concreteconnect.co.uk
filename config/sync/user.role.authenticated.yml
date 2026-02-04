@@ -1,0 +1,44 @@
+uuid: 8b9ebad8-3221-4571-a0c6-dbf11984ddb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.webform_default
+  module:
+    - comment
+    - comment_notify
+    - disable_messages
+    - eu_cookie_compliance
+    - exclude_node_title
+    - filter
+    - fontawesome
+    - media
+    - poll
+    - search
+    - system
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access fontawesome additional settings'
+  - 'access poll overview'
+  - 'access polls'
+  - 'access print'
+  - 'display EU Cookie Compliance popup'
+  - 'display eu cookie compliance popup'
+  - 'edit mimemail user settings'
+  - 'post comments'
+  - 'search content'
+  - 'subscribe to comments'
+  - 'use advanced search'
+  - 'use custom search'
+  - 'use exclude node title'
+  - 'use text format filtered_html'
+  - 'use text format webform_default'
+  - 'view media'
+  - 'view status messages'

@@ -1,0 +1,10 @@
+uuid: 5741d7b5-11a3-4a25-b802-48e1a163faf6
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.mid_page_news_image
+label: 'Mid-Page News image'
+targetEntityType: media
+cache: true

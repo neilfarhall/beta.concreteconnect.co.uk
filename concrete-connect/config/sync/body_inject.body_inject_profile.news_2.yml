@@ -1,0 +1,17 @@
+uuid: bcd4f44c-51e9-44c3-982c-c81b8df029ef
+langcode: en
+status: true
+dependencies: {  }
+label: 'News 2'
+id: news_2
+description: ''
+node_type: news_article
+block_reference: '15'
+paragraph_operator: '>'
+paragraph_number: '3'
+and_or: and
+char_operator: '>'
+char_number: ''
+paragraph_offset: ''
+paragraph_position: '3'
+char_position: ''

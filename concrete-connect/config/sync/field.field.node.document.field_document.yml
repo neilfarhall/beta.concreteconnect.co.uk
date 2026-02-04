@@ -1,0 +1,32 @@
+uuid: 7f1aecf6-e82d-4f37-9dda-739457a16287
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document
+    - node.type.document
+  module:
+    - file
+    - pdf_preview_image
+third_party_settings:
+  pdf_preview_image:
+    enable: 1
+    target_field: field_front_page
+id: node.document.field_document
+field_name: field_document
+entity_type: node
+bundle: document
+label: Document
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documents
+  file_extensions: 'txt pdf xls doc'
+  max_filesize: ''
+  description_field: true
+field_type: file

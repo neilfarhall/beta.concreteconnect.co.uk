@@ -1,0 +1,19 @@
+/**
+ * @file
+ * Panel styling. Panels are used to visually group items together.
+ */
+
+@import "../dependencies/index";
+
+.panel {
+  margin: 0 0 $spacer*2;
+  padding: $spacer;
+  border: 1px solid $color--gray;
+  background: #FFF;
+}
+.panel__title {
+  margin: 0;
+  padding-bottom: $spacer;
+  text-transform: uppercase;
+  font-size: $font-size--base;
+}

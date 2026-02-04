@@ -1,0 +1,33 @@
+uuid: 1b585249-e437-44dc-ad32-e0cdc4168e16
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 9sz1xUdRmwGeN6seByZJmRsrBtfVECpdzoKGBa2MwXk
+id: taxonomy_term
+label: 'Taxonomy term'
+tags:
+  canonical_url: '[term:url:absolute]'
+  description: '[term:description]'
+  og_description: '[term:description]'
+  og_image: '[term:field_media:entity:field_image:facebook:url]'
+  og_image_height: '[term:field_media:entity:field_image:facebook:height]'
+  og_image_width: '[term:field_media:entity:field_image:facebook:width]'
+  og_site_name: '[site:name]'
+  og_title: '[term:name]'
+  og_type: article
+  og_url: '[current-page:url]'
+  robots: 'follow, noindex, noarchive, noimageindex'
+  schema_organization_address: 'a:5:{s:5:"@type";s:13:"PostalAddress";s:13:"streetAddress";s:15:"7 Regent Street";s:15:"addressLocality";s:10:"Nottingham";s:10:"postalCode";s:7:"NG1 5BS";s:14:"addressCountry";s:14:"United Kingdom";}'
+  schema_organization_contact_point: 'a:3:{s:5:"@type";s:13:"PostalAddress";s:9:"telephone";s:20:" +44 (0)115 941 1315";s:5:"email";s:15:"admin@qmj.co.uk";}'
+  schema_organization_description: 'The QMJ Group is a privately owned publishing and exhibitions business that serves the quarrying, recycling and natural stone industries. We''re the industry choice for online, print, face-to-face, and market analysis.'
+  schema_organization_id: 'https://www.qmj.co.uk'
+  schema_organization_logo: 'a:4:{s:5:"@type";s:11:"ImageObject";s:3:"url";s:79:"https://www.qmj.co.uk/sites/default/files/color/custom_barrio-7a7446d6/logo.svg";s:5:"width";s:3:"300";s:6:"height";s:2:"40";}'
+  schema_organization_name: 'The QMJ Group Ltd'
+  schema_organization_same_as: 'https://www.linkedin.com/company/qmj-publishing-limited'
+  schema_organization_telephone: ' +44 (0)115 941 1315'
+  schema_organization_type: Organization
+  schema_organization_url: 'https://www.qmj.co.uk'
+  title: '[term:name] | [site:name]'
+  twitter_cards_image: '[term:field_media:entity:field_image:twitter:url]'
+  twitter_cards_type: summary_large_image

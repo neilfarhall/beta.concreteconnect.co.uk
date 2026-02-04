@@ -1,0 +1,21 @@
+uuid: 2da12f21-648e-4cb4-a953-ca43f179abd7
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - paragraphs_bundles
+_core:
+  default_config_hash: pGUh3W0WTDyQhkSRAPlnwKwRlLmbj8Oee6zXle0Igik
+id: paragraph.pb_display_border_color
+field_name: pb_display_border_color
+entity_type: paragraph
+type: paragraphs_bundles_rgb
+settings: {  }
+module: paragraphs_bundles
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

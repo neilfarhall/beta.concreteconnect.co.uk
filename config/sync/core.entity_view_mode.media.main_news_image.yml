@@ -1,0 +1,10 @@
+uuid: cbd83e79-f5d3-451a-827a-521515b94155
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.main_news_image
+label: 'Main News Image'
+targetEntityType: media
+cache: true

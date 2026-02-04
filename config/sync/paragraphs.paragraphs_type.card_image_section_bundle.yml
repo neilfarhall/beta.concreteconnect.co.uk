@@ -1,0 +1,12 @@
+uuid: 705ddf44-3c37-4c6e-a065-36c7c9afd00d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: qkIi5s5tPDTkEFVzxt1gY2j959bbaaudlCZMCyrEpII
+id: card_image_section_bundle
+label: 'Card Image Section'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

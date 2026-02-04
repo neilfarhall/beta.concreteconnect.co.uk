@@ -1,0 +1,7 @@
+field.formatter.third_party.responsive_image_preload:
+  type: mapping
+  label: 'Third party settings for the responsive image preload module'
+  mapping:
+    generate_preloads:
+      type: boolean
+      label: 'If enabled, preloads will be generated'

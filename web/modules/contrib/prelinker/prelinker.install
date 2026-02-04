@@ -1,0 +1,23 @@
+<?php
+
+/*
+ * Implement hook_install. Just flush caches.
+ */
+function prelinker_install() {
+  drupal_flush_all_caches();
+}
+
+/**
+ * @implements hook_uninstall()
+ */
+function prelinker_uninstall()
+{
+    $configs = [
+        'prelinker.settings',
+    ];
+    foreach ($configs as $config) {
+        \Drupal::configFactory()->getEditable(
+            $config
+        )->delete();
+    }
+}

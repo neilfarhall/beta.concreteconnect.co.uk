@@ -1,0 +1,92 @@
+uuid: ed7dd4dc-a3f0-4e89-ad4b-91bbaf4d6798
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_bulletin
+  module:
+    - mailchimp_lists
+    - user
+id: user.user.field_bulletin
+field_name: field_bulletin
+entity_type: user
+bundle: user
+label: Bulletin
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    subscribe: false
+    interest_groups:
+      7cb58bf5e0:
+        b017190db2: 0
+        dc0729822d: 0
+        6c8880c834: 0
+        85fcc37d64: 0
+      2e5ec877cf:
+        10bc5a8b52: 0
+        9f6dca9eb6: 0
+      cea5ac8353:
+        22e89b7cf0: 0
+        55c1e41903: 0
+      ff28d14d9e:
+        84fb0ef868: 0
+        655cdb2033: 0
+        da192c2353: 0
+        576217b7a8: 0
+        e2b41e9495: 0
+        125432783a: 0
+        c8f2cf57b0: 0
+        ffca46c225: 0
+      2fc832f33a:
+        8c4a7fd836: 0
+        db0fc59feb: 0
+      789afeb2a0:
+        e1d03ffbc2: 0
+        22370f94d9: 0
+        731d4120e2: 0
+        16ee57f316: 0
+        ace024c628: 0
+        c29f2a54de: 0
+        '803e582187': 0
+      8729376f3e:
+        0c81803489: 0
+default_value_callback: ''
+settings:
+  subscribe_checkbox_label: Subscribe
+  show_interest_groups: false
+  hide_subscribe_checkbox: false
+  interest_groups_hidden: false
+  interest_groups_label: 'Interest Groups'
+  merge_fields:
+    EMAIL: mail
+    FNAME: name
+    LNAME: field_last_name
+    MMERGE10: ''
+    MMERGE11: ''
+    MMERGE12: ''
+    MMERGE13: ''
+    MMERGE14: ''
+    MMERGE15: ''
+    MMERGE16: ''
+    MMERGE17: ''
+    MMERGE18: ''
+    MMERGE19: ''
+    MMERGE20: ''
+    MMERGE21: ''
+    MMERGE22: ''
+    MMERGE23: ''
+    MMERGE24: ''
+    MMERGE27: ''
+    MMERGE29: ''
+    MMERGE3: ''
+    MMERGE4: ''
+    MMERGE5: ''
+    MMERGE6: ''
+    MMERGE7: ''
+    MMERGE8: ''
+    MMERGE9: ''
+    POPUP: ''
+  unsubscribe_on_delete: false
+field_type: mailchimp_lists_subscription

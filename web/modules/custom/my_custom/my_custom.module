@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Custom tweaks to page attachments.
+ */
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function my_custom_page_attachments_alter(array &$attachments) {
+  // Remove jQuery CDN preload if present.
+  if (isset($attachments['#attached']['html_head_link'])) {
+    foreach ($attachments['#attached']['html_head_link'] as $key => $link) {
+      if (isset($link[0]['rel'], $link[0]['href']) &&
+          $link[0]['rel'] === 'preload' &&
+          strpos($link[0]['href'], 'ajax.googleapis.com/ajax/libs/jquery') !== FALSE) {
+        unset($attachments['#attached']['html_head_link'][$key]);
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+uuid: 6ca14c02-6800-46c6-a6d0-75507149c839
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_margin
+    - paragraphs.paragraphs_type.simple_bundle
+  module:
+    - options
+_core:
+  default_config_hash: UZ4n2d5CbA0sAo3YmkUdc_yJrJeFI9HwMWTj9l2L3iI
+id: paragraph.simple_bundle.pb_display_margin
+field_name: pb_display_margin
+entity_type: paragraph
+bundle: simple_bundle
+label: Margin
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

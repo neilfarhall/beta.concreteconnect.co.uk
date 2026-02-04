@@ -1,0 +1,32 @@
+uuid: fb14d720-3c11-4246-91ed-b1a85fa08722
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.mg_popular_content
+  module:
+    - block_title_link
+    - views
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: views_block__mg_popular_content_block_4
+theme: themag_st
+region: footer_third
+weight: -9
+provider: null
+plugin: 'views_block:mg_popular_content-block_4'
+settings:
+  id: 'views_block:mg_popular_content-block_4'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+  exposed: {  }
+visibility: {  }

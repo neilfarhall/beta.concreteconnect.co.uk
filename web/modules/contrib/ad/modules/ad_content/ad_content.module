@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Main file for the "AD Content" module.
+ */
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function ad_content_menu_links_discovered_alter(&$links) {
+  $links['ad.admin']['route_name'] = 'entity.ad_content.collection';
+}

@@ -1,0 +1,43 @@
+uuid: 182ce702-6312-474d-839d-616b2da1d70e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tagging_location.field_color
+    - field.field.taxonomy_term.tagging_location.field_media
+    - field.field.taxonomy_term.tagging_location.layout_builder__layout
+    - taxonomy.vocabulary.tagging_location
+  module:
+    - color_field
+    - text
+id: taxonomy_term.tagging_location.default
+targetEntityType: taxonomy_term
+bundle: tagging_location
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  layout_builder__layout: true

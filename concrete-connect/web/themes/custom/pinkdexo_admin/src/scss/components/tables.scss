@@ -1,0 +1,188 @@
+//
+// Seven styles for Tables.
+//
+@import "../dependencies/index";
+
+table {
+  width: 100%;
+  margin: 0 0 $spacer;
+}
+
+caption {
+  text-align: left; /* LTR */
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+//
+// Table header
+//
+thead {
+
+  > tr {
+    border-bottom: 3px solid $color--gray;
+  }
+}
+
+th {
+  padding: $spacer $spacer;
+  text-align: left; /* LTR */
+  vertical-align: middle;
+
+  thead & {
+    text-transform: uppercase;
+    border: solid $color--gray;
+    border-width: 1px 0;
+    //background: #FFF;
+  }
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+
+  > a {
+    position: relative;
+    display: block;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $color--primary;
+      &:after {
+        border-bottom-color: $color--primary;
+      }
+    }
+    // Must match negative bottom padding of the parent <th>
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: -$spacer - 2; /* 1. */
+      left: 0;
+      display: block;
+      content: "";
+      -webkit-transition: all 0.1s;
+      transition: all 0.1s;
+      border-bottom: 2px solid transparent;
+    }
+  }
+
+  // Force browsers to calculate the width of a 'select all' <th> element.
+  .select-all {
+    width: 1px;
+  }
+
+  // If is active
+  &.is-active {
+
+    > a {
+      color: $color--primary--dark;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $color--primary;
+      }
+      &:after {
+        border-bottom-color: $color--primary--dark;
+        &:hover,
+        &:focus {
+          border-bottom-color: $color--primary;
+        }
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      right: 0; /* LTR */
+
+      [dir="rtl"] &  {
+        right: auto;
+        left: 0;
+      }
+    }
+
+  }
+}
+
+//
+// Table row
+//
+tr {
+  padding: $spacer/2;
+  border-bottom: 1px solid $color--gray;
+
+  tbody & {
+
+    &:hover,
+    &:focus {
+      background: #FFF;
+    }
+
+    &.color-warning,
+    &.dblog-warning {
+      &:hover,
+      &:focus {
+        background: $color--warning;
+      }
+    }
+
+    &.color-error,
+    &.dblog-error {
+      &:hover,
+      &:focus {
+        background: $color--danger;
+      }
+    }
+  }
+}
+
+
+table.no-highlight tr.selected td {
+  background: transparent;
+}
+
+//
+// Table data
+//
+td {
+  padding: $spacer;
+  text-align: left; /* LTR */
+  vertical-align: middle;
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+
+  &.is-active {
+    background: none;
+  }
+}
+
+
+//
+// Captions.
+//
+.caption {
+  margin-bottom: $spacer*1.5;
+}
+
+//
+// Responsive tables.
+//
+@media screen and (max-width: 37.5em) { /* 600px */
+  th.priority-low,
+  td.priority-low,
+  th.priority-medium,
+  td.priority-medium {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 60em) { /* 920px */
+  th.priority-low,
+  td.priority-low {
+    display: none;
+  }
+}

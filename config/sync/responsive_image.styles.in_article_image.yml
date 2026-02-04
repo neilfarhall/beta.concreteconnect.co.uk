@@ -1,0 +1,37 @@
+uuid: e5c0afd7-6773-4ebc-a830-51bbf3e93458
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.agg23_news_image_407x271
+    - image.style.agg23_news_image_517x344
+    - image.style.agg23_news_image_693x462
+    - image.style.agg23_news_image_693x462_jpg
+    - image.style.agg23_news_image_870x580
+  theme:
+    - themag
+id: in_article_image
+label: 'In-Article Image'
+image_style_mappings:
+  -
+    breakpoint_id: themag.xl
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: agg23_news_image_870x580
+  -
+    breakpoint_id: themag.md
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: agg23_news_image_693x462
+  -
+    breakpoint_id: themag.sm
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: agg23_news_image_517x344
+  -
+    breakpoint_id: themag.xs
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: agg23_news_image_407x271
+breakpoint_group: themag
+fallback_image_style: agg23_news_image_693x462_jpg

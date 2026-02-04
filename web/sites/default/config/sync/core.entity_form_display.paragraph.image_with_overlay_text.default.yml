@@ -1,0 +1,35 @@
+uuid: 5081a13d-36c4-4a15-aff1-d45e61c2faf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_with_overlay_text.field_image_para
+    - field.field.paragraph.image_with_overlay_text.field_overlay_text
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.image_with_overlay_text
+  module:
+    - image
+id: paragraph.image_with_overlay_text.default
+targetEntityType: paragraph
+bundle: image_with_overlay_text
+mode: default
+content:
+  field_image_para:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_overlay_text:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

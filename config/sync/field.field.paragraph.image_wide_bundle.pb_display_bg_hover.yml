@@ -1,0 +1,23 @@
+uuid: 105b2bf9-50e8-439e-927f-e788e38f781a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_bg_hover
+    - paragraphs.paragraphs_type.image_wide_bundle
+  module:
+    - paragraphs_bundles
+_core:
+  default_config_hash: Bxhu6zyKDzndlfEIAwM8e1RrHaC-MYLJrJCpFm1WL34
+id: paragraph.image_wide_bundle.pb_display_bg_hover
+field_name: pb_display_bg_hover
+entity_type: paragraph
+bundle: image_wide_bundle
+label: 'Background Color Hover'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraphs_bundles_rgb

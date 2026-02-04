@@ -1,0 +1,7 @@
+name: TheMAG Commerce Field Group
+core_version_requirement: ^8.8 || ^9
+description: Provides field group functionalities for product and product variation entity.
+package: TheMAG
+type: module
+dependencies:
+  - field_group

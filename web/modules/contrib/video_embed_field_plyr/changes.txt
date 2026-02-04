@@ -1,0 +1,14 @@
+2.0.0-beta5
+- Dropped Drupal 8 support
+- Added Drupal 10 support
+- Updated Plyr to 3.7.8
+- Removed the mjs version of Plyr
+
+2.0.0-beta2
+----------------------------
+- Refactored the oembed plugin to use the Drupal core oembed logic, using media.oembed_iframe route.
+- oembed and embed field are two different templates for now, the oembed one uses the recomended progressive enhancement mode of plyr. The embed one uses the old version.
+- Experimental support for background video. The mode is enabled for both, but only tested on the oembed version.
+- Upgraded plyr to 3.7.2
+- Split the plyr css/js into 2 separate libraries.
+- Dropped PHP 7.3 support in composer.json, will drop Drupal 8 support in the next beta.

@@ -1,0 +1,35 @@
+/**
+* Reusable utility classes that apply vertical spacing consistency and in line
+* with the base line height of Seven.
+*/
+.leader {
+  margin-top: 24px;
+}
+
+.leader-double {
+  margin-top: 40px;
+}
+
+.leader-triple {
+  margin-top: 64px;
+}
+
+.leader-quadruple {
+  margin-top: 80px;
+}
+
+.trailer {
+  margin-bottom: 24px;
+}
+
+.trailer-double {
+  margin-bottom: 40px;
+}
+
+.trailer-triple {
+  margin-bottom: 64px;
+}
+
+.trailer-quadruple {
+  margin-bottom: 80px;
+}

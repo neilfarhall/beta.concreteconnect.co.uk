@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Provides field group functionalities for product and product variation entity.
+ *
+ * @see
+ * Allow contrib to add support for any entity type
+ * https://www.drupal.org/node/2842280
+ */
+
+
+/**
+ * Implements hook_field_group_content_element_keys_alter()
+ */
+function themag_commerce_field_group_field_group_content_element_keys_alter(&$keys) {
+
+  if (!isset($keys['commerce_product_variation'])) {
+    $keys['commerce_product_variation'] = 'product_variation';
+  }
+
+  if (!isset($keys['commerce_product'])) {
+    $keys['commerce_product'] = 'product';
+  }
+
+}
+

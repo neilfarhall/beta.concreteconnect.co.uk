@@ -1,0 +1,23 @@
+uuid: 77eb8f65-9f26-472c-a1e6-7e8918270b70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_border_hover
+    - paragraphs.paragraphs_type.card_image_section_bundle
+  module:
+    - paragraphs_bundles
+_core:
+  default_config_hash: lXnV0y-HTiamnFvURk3Vd-4gXBB-VfIeNWbssOZ3zp8
+id: paragraph.card_image_section_bundle.pb_display_border_hover
+field_name: pb_display_border_hover
+entity_type: paragraph
+bundle: card_image_section_bundle
+label: 'Border Color Hover'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraphs_bundles_rgb

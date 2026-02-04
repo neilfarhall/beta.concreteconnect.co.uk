@@ -1,0 +1,17 @@
+uuid: 89364801-eaf3-4662-bc64-4c10a3b6fc35
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: E01pJAUr_f43DPCa_TV2E-s5A2C5USN9oTKKz7OCu_8
+name: mini_thumbnail
+label: 'Mini thumbnail'
+effects:
+  f8b8e461-f362-4b56-8182-a06667bc2df3:
+    uuid: f8b8e461-f362-4b56-8182-a06667bc2df3
+    id: image_scale
+    weight: 1
+    data:
+      width: 48
+      height: 48
+      upscale: false

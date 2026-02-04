@@ -1,0 +1,37 @@
+uuid: 54796247-d082-4519-a3c9-f156da66c43b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:advertisement:b5b372fc-85aa-4761-b242-dde9ebe89f1e'
+  module:
+    - block_content
+    - block_title_link
+    - system
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: videotenancy
+theme: themag_st
+region: content
+weight: -7
+provider: null
+plugin: 'block_content:b5b372fc-85aa-4761-b242-dde9ebe89f1e'
+settings:
+  id: 'block_content:b5b372fc-85aa-4761-b242-dde9ebe89f1e'
+  label: 'Video Tenancy'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node/60245

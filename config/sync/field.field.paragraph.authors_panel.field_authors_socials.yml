@@ -1,0 +1,21 @@
+uuid: 254f1557-c0ad-4862-bd63-e20b472bb9d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_authors_socials
+    - paragraphs.paragraphs_type.authors_panel
+  module:
+    - social_link_field
+id: paragraph.authors_panel.field_authors_socials
+field_name: field_authors_socials
+entity_type: paragraph
+bundle: authors_panel
+label: 'Authors Socials'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: social_links

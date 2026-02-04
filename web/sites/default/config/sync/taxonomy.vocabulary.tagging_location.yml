@@ -1,0 +1,8 @@
+uuid: e7c583df-d42e-4375-8286-1645cae3c25c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Freetags: Location'
+vid: tagging_location
+description: ''
+weight: 0

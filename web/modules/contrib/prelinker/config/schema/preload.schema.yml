@@ -1,0 +1,24 @@
+prelinker.preload.*:
+  type: config_entity
+  label: 'Preload File'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    file:
+      type: string
+      label: File
+    as:
+      type: string
+      label: As
+    pages:
+      type: string
+      label: Pages
+    weight:
+      type: number
+      label: Weight
+    uuid:
+      type: string

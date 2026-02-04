@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 1ccb6771-dee3-47d0-9535-a05af91971ba
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    6bca2f0a-6e9b-49d4-b69f-33f6ed8a6e80: node
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Cookie Statement'
+  menu_name:
+    -
+      value: footer
+  link:
+    -
+      target_uuid: 6bca2f0a-6e9b-49d4-b69f-33f6ed8a6e80
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: -49
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

@@ -1,0 +1,10 @@
+uuid: 179be282-e826-41a9-96f3-c43f419e8ab0
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.video_local_host
+label: 'Video Local Host'
+targetEntityType: media
+cache: true

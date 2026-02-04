@@ -1,0 +1,36 @@
+uuid: e8bcaa88-cf65-404a-8aa2-ce2675692813
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.facebook_video_embed.field_media_facebook
+    - image.style.media_library
+    - media.type.facebook_video_embed
+  module:
+    - svg_image
+id: media.facebook_video_embed.media_library
+targetEntityType: media
+bundle: facebook_video_embed
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: media_library
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_facebook: true
+  name: true
+  uid: true

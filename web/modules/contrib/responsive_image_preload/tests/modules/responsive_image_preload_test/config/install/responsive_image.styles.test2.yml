@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.default
+    - image.style.xxs
+    - image.style.xs
+    - image.style.s
+    - image.style.m
+    - image.style.l
+    - image.style.xl
+  module:
+    - responsive_image_preload_test
+id: test2
+label: test2
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image_preload_test.default
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - xl
+        - l
+        - m
+        - s
+        - xs
+        - xxs
+breakpoint_group: responsive_image_preload_test
+fallback_image_style: '_empty image_'

@@ -1,0 +1,21 @@
+uuid: 1997ebd6-d4d3-4af8-a096-903ee94ef677
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.directory_listing
+  module:
+    - layout_builder
+id: node.directory_listing.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: directory_listing
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

@@ -1,0 +1,23 @@
+uuid: 9ea88fc4-a148-4e70-ad93-2a9fb58f1e25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_shadow
+    - paragraphs.paragraphs_type.card_two_columns_bundle
+  module:
+    - options
+_core:
+  default_config_hash: P8lOPPFJwvpWZB8Ul2TbQFRCga2c_8fx4Wvtt5uEa7E
+id: paragraph.card_two_columns_bundle.pb_display_shadow
+field_name: pb_display_shadow
+entity_type: paragraph
+bundle: card_two_columns_bundle
+label: Shadow
+description: 'Incorporate pre-set custom CSS classes.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

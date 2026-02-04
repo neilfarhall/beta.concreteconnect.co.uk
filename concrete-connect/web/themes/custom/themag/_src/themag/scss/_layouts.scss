@@ -1,0 +1,19 @@
+// Background colors
+//
+.themag-layout {
+  &--white {
+    background-color: #FFF;
+  }
+
+  &--gray {
+    background-color: var(--mag-bg-grey);
+  }
+
+  &--gray-light {
+    background-color: var(--mag-bg-grey-light);
+  }
+
+  &--black {
+    background-color: #000;
+  }
+}

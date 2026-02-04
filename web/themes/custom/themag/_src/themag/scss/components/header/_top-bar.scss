@@ -1,0 +1,43 @@
+// Top Bar
+//
+.top-bar {
+  background-color: var(--mag-bg-default);
+  border-bottom: 1px solid var(--mag-divider);
+  padding: .5rem 0;
+
+  .menu,
+  .links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    @include media-breakpoint-up(md) {
+      font-size: 14px;
+    }
+
+    li {
+      display: block;
+      margin: 0;
+      padding: 0 .5rem;
+      border-left: 1px solid var(--mag-divider);
+      line-height: 1;
+      &:first-child {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      a {
+        display: block;
+        color: var(--mag-text-secondary);
+        text-decoration: none;
+        transition: color .15s ease-in-out;
+        &:hover,
+        &.is-active {
+          color: var(--mag-text-primary);
+        }
+      }
+    }
+  }
+}

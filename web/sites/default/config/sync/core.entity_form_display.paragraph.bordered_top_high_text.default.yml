@@ -1,0 +1,23 @@
+uuid: 1f730245-1595-4596-8e23-6385f33510f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bordered_top_high_text.field_text_para
+    - paragraphs.paragraphs_type.bordered_top_high_text
+id: paragraph.bordered_top_high_text.default
+targetEntityType: paragraph
+bundle: bordered_top_high_text
+mode: default
+content:
+  field_text_para:
+    type: string_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

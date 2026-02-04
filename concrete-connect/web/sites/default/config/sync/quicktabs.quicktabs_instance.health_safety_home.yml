@@ -1,0 +1,65 @@
+uuid: 7deb63ec-01bd-413d-b766-ced45e5584a8
+langcode: en
+status: true
+dependencies: {  }
+id: health_safety_home
+label: 'Health Safety Home'
+renderer: quick_tabs
+hide_empty_tabs: false
+default_tab: 9999
+options:
+  quick_tabs:
+    ajax: false
+    class: ''
+    style: ''
+  accordion_tabs:
+    jquery_ui:
+      collapsible: false
+      heightStyle: auto
+configuration_data:
+  -
+    title: 'Health Risk Management'
+    weight: 0
+    type: block_content
+    content:
+      view_content:
+        options:
+          vid: aggregates_directory
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:risk_management_listings-block_10'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: advertising_specs
+  -
+    title: 'Safety Risk Management'
+    weight: 0
+    type: block_content
+    content:
+      view_content:
+        options:
+          vid: aggregates_directory
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:risk_management_listings-block_11'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: advertising_specs

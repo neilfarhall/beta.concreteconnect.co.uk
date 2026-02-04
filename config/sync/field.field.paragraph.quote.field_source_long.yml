@@ -1,0 +1,19 @@
+uuid: e726807a-c031-4468-9349-2b1f1367a993
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_source_long
+    - paragraphs.paragraphs_type.quote
+id: paragraph.quote.field_source_long
+field_name: field_source_long
+entity_type: paragraph
+bundle: quote
+label: 'source long'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,33 @@
+uuid: 7015ab7f-7b44-461f-8f7f-b98ce914b8d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.instagram.field_url
+    - image.style.media_library
+    - media.type.instagram
+  module:
+    - svg_image
+id: media.instagram.media_library
+targetEntityType: media
+bundle: instagram
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: media_library
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_url: true
+  name: true
+  search_api_excerpt: true
+  uid: true

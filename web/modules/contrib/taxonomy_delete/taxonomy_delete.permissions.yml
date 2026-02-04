@@ -1,0 +1,4 @@
+delete taxonomy terms:
+  title: 'Delete taxonomy terms'
+  description: 'Allows to delete taxonomy terms via UI.'
+  restrict access: TRUE

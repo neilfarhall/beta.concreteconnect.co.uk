@@ -1,0 +1,275 @@
+uuid: fbb9100f-c097-448f-9ebc-79893546b96c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.node.paragraphs.default
+    - core.entity_view_display.paragraph.image_and_text_banner.default
+    - core.entity_view_display.taxonomy_term.channel.full
+    - core.entity_view_display.taxonomy_term.news_type.full
+    - core.entity_view_display.taxonomy_term.tagging_company.full
+    - core.entity_view_display.taxonomy_term.tagging_location.full
+    - core.entity_view_display.taxonomy_term.tagging_subject.full
+    - core.entity_view_display.taxonomy_term.tags.full
+    - filter.format.full_html
+    - media.type.facebook_video_embed
+    - media.type.gallery
+    - media.type.image
+    - media.type.instagram
+    - media.type.local_video_files
+    - media.type.pinterest
+    - media.type.twitter
+    - media.type.video
+    - media.type.video_file
+    - media.type.video_file_local_
+    - media.type.video_local_host
+    - node.type.article
+    - node.type.event
+    - node.type.image
+    - node.type.job_listing
+    - node.type.news_article
+    - node.type.paragraphs
+    - node.type.themag_landing_page
+    - node.type.video
+    - node.type.webform
+    - taxonomy.vocabulary.tagging_company
+    - taxonomy.vocabulary.tagging_location
+    - taxonomy.vocabulary.tagging_subject
+    - taxonomy.vocabulary.tags
+  module:
+    - block
+    - block_content
+    - comment
+    - comment_notify
+    - disable_messages
+    - dropzonejs
+    - entity_browser
+    - entityqueue
+    - eu_cookie_compliance
+    - exclude_node_title
+    - field_ui
+    - filter
+    - honeypot
+    - layout_builder
+    - media
+    - node
+    - pager
+    - paragraphs
+    - poll
+    - scheduler
+    - simple_image_rotate
+    - system
+    - taxonomy
+    - toolbar
+    - toolbar_menu
+id: basic_editor
+label: 'basic editor'
+weight: 4
+is_admin: null
+permissions:
+  - 'access administration menu'
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'access embedded_video_browser entity browser pages'
+  - 'access image_browser entity browser pages'
+  - 'access media overview'
+  - 'access media_entity_browser entity browser pages'
+  - 'access media_entity_browser_modal entity browser pages'
+  - 'access multiple_image_browser entity browser pages'
+  - 'access toolbar'
+  - 'administer block_content display'
+  - 'administer blocks'
+  - 'administer comment display'
+  - 'administer comment form display'
+  - 'administer comment notify'
+  - 'administer comment types'
+  - 'administer comments'
+  - 'administer content types'
+  - 'administer entity browsers'
+  - 'administer entity_subqueue display'
+  - 'administer media'
+  - 'administer media display'
+  - 'administer media types'
+  - 'administer node display'
+  - 'administer nodes'
+  - 'administer pager'
+  - 'administer paragraph display'
+  - 'administer poll display'
+  - 'administer polls'
+  - 'administer taxonomy_term display'
+  - 'bypass honeypot protection'
+  - 'bypass node access'
+  - 'cancel own vote'
+  - 'configure all channel taxonomy_term layout overrides'
+  - 'configure all news_type taxonomy_term layout overrides'
+  - 'configure all tagging_company taxonomy_term layout overrides'
+  - 'configure all tagging_location taxonomy_term layout overrides'
+  - 'configure all tagging_subject taxonomy_term layout overrides'
+  - 'configure all tags taxonomy_term layout overrides'
+  - 'configure editable channel taxonomy_term layout overrides'
+  - 'configure editable image_and_text_banner paragraph layout overrides'
+  - 'configure editable news_type taxonomy_term layout overrides'
+  - 'configure editable paragraphs node layout overrides'
+  - 'configure editable tagging_company taxonomy_term layout overrides'
+  - 'configure editable tagging_location taxonomy_term layout overrides'
+  - 'configure editable tagging_subject taxonomy_term layout overrides'
+  - 'configure editable tags taxonomy_term layout overrides'
+  - 'create article content'
+  - 'create event content'
+  - 'create facebook_video_embed media'
+  - 'create gallery media'
+  - 'create image content'
+  - 'create image media'
+  - 'create instagram media'
+  - 'create job_listing content'
+  - 'create local_video_files media'
+  - 'create media'
+  - 'create news_article content'
+  - 'create paragraphs content'
+  - 'create pinterest media'
+  - 'create polls'
+  - 'create terms in tagging_company'
+  - 'create terms in tagging_location'
+  - 'create terms in tagging_subject'
+  - 'create terms in tags'
+  - 'create themag_landing_page content'
+  - 'create twitter media'
+  - 'create video content'
+  - 'create video media'
+  - 'create video_file media'
+  - 'create video_file_local_ media'
+  - 'create video_local_host media'
+  - 'create webform content'
+  - 'create word link'
+  - 'delete all revisions'
+  - 'delete any article content'
+  - 'delete any facebook_video_embed media'
+  - 'delete any gallery media'
+  - 'delete any image content'
+  - 'delete any image media'
+  - 'delete any instagram media'
+  - 'delete any job_listing content'
+  - 'delete any local_video_files media'
+  - 'delete any media'
+  - 'delete any news_article content'
+  - 'delete any paragraphs content'
+  - 'delete any pinterest media'
+  - 'delete any twitter media'
+  - 'delete any video content'
+  - 'delete any video media'
+  - 'delete any video_file media'
+  - 'delete any video_file_local_ media'
+  - 'delete any video_local_host media'
+  - 'delete any webform content'
+  - 'delete article revisions'
+  - 'delete image revisions'
+  - 'delete job_listing revisions'
+  - 'delete media'
+  - 'delete news_article revisions'
+  - 'delete own article content'
+  - 'delete own event content'
+  - 'delete own facebook_video_embed media'
+  - 'delete own gallery media'
+  - 'delete own image content'
+  - 'delete own image media'
+  - 'delete own instagram media'
+  - 'delete own job_listing content'
+  - 'delete own local_video_files media'
+  - 'delete own news_article content'
+  - 'delete own paragraphs content'
+  - 'delete own pinterest media'
+  - 'delete own twitter media'
+  - 'delete own video content'
+  - 'delete own video media'
+  - 'delete own video_file media'
+  - 'delete own video_file_local_ media'
+  - 'delete own video_local_host media'
+  - 'delete own webform content'
+  - 'delete paragraphs revisions'
+  - 'delete video revisions'
+  - 'delete webform revisions'
+  - 'delete word link'
+  - 'display eu cookie compliance popup'
+  - 'dropzone upload files'
+  - 'edit any article content'
+  - 'edit any event content'
+  - 'edit any facebook_video_embed media'
+  - 'edit any gallery media'
+  - 'edit any image content'
+  - 'edit any image media'
+  - 'edit any instagram media'
+  - 'edit any job_listing content'
+  - 'edit any local_video_files media'
+  - 'edit any news_article content'
+  - 'edit any paragraphs content'
+  - 'edit any pinterest media'
+  - 'edit any twitter media'
+  - 'edit any video content'
+  - 'edit any video media'
+  - 'edit any video_file media'
+  - 'edit any video_file_local_ media'
+  - 'edit any video_local_host media'
+  - 'edit any webform content'
+  - 'edit own article content'
+  - 'edit own comments'
+  - 'edit own event content'
+  - 'edit own facebook_video_embed media'
+  - 'edit own gallery media'
+  - 'edit own image content'
+  - 'edit own image media'
+  - 'edit own instagram media'
+  - 'edit own job_listing content'
+  - 'edit own local_video_files media'
+  - 'edit own news_article content'
+  - 'edit own paragraphs content'
+  - 'edit own pinterest media'
+  - 'edit own polls'
+  - 'edit own twitter media'
+  - 'edit own video content'
+  - 'edit own video media'
+  - 'edit own video_file media'
+  - 'edit own video_file_local_ media'
+  - 'edit own video_local_host media'
+  - 'edit own webform content'
+  - 'edit word link'
+  - 'manipulate all entityqueues'
+  - 'manipulate entityqueues'
+  - 'post comments'
+  - 'revert all revisions'
+  - 'revert article revisions'
+  - 'revert image revisions'
+  - 'revert job_listing revisions'
+  - 'revert news_article revisions'
+  - 'revert paragraphs revisions'
+  - 'revert video revisions'
+  - 'revert webform revisions'
+  - 'rotate images'
+  - 'schedule publishing of nodes'
+  - 'skip comment approval'
+  - 'update any media'
+  - 'update editors_picks entityqueue'
+  - 'update featured_items entityqueue'
+  - 'update media'
+  - 'use exclude node title'
+  - 'use text format full_html'
+  - 'view add_content in toolbar'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view article revisions'
+  - 'view event revisions'
+  - 'view how_to in toolbar'
+  - 'view job_listing revisions'
+  - 'view media'
+  - 'view news_article revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view paragraphs revisions'
+  - 'view poll results'
+  - 'view scheduled content'
+  - 'view status messages'
+  - 'view the administration theme'
+  - 'view video revisions'
+  - 'view warning messages'
+  - 'view webform revisions'
+  - 'view word link'

@@ -1,0 +1,27 @@
+uuid: 14b043a0-3ca2-447e-a353-e4e96ea26696
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_download
+    - node.type.download
+  module:
+    - file
+id: node.download.field_directory_download
+field_name: field_directory_download
+entity_type: node
+bundle: download
+label: Download
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: directory-downloads
+  file_extensions: 'txt pdf doc docx'
+  max_filesize: ''
+  description_field: true
+field_type: file

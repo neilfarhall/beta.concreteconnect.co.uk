@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: xxs
+label: 'Extra extra small (200×200)'
+effects:
+  1cfec298-8620-4749-b100-ccb6c4500778:
+    uuid: 1cfec298-8620-4749-b100-ccb6c4500778
+    id: image_scale
+    weight: 0
+    data:
+      width: 200
+      height: 200
+      upscale: true

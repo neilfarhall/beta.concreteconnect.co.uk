@@ -1,0 +1,6 @@
+#drupal-off-canvas-wrapper ul li a.inline-block-list__item.simple_reference_field:before,
+#drupal-off-canvas ul li a.inline-block-list__item.simple_reference_field:before {
+  content: "\f079";
+  font-family: FontAwesome;
+  font-size: 60px;
+}

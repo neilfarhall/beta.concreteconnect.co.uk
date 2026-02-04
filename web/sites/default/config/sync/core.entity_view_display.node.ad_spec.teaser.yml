@@ -1,0 +1,47 @@
+uuid: f0129f2e-76c8-4806-b897-905aed5595c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ad_spec.body
+    - field.field.node.ad_spec.field_ad_example
+    - field.field.node.ad_spec.field_dimensions
+    - field.field.node.ad_spec.field_file_formats
+    - field.field.node.ad_spec.field_file_load_max
+    - field.field.node.ad_spec.field_notes
+    - field.field.node.ad_spec.field_serving
+    - field.field.node.ad_spec.field_video_spec
+    - field.field.node.ad_spec.layout_builder__layout
+    - node.type.ad_spec
+  module:
+    - text
+    - user
+id: node.ad_spec.teaser
+targetEntityType: node
+bundle: ad_spec
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_ad_example: true
+  field_dimensions: true
+  field_file_formats: true
+  field_file_load_max: true
+  field_notes: true
+  field_serving: true
+  field_video_spec: true
+  layout_builder__layout: true
+  shariff_field: true

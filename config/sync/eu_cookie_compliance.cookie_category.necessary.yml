@@ -1,0 +1,9 @@
+uuid: 82185e17-8d88-4ac9-8efb-cde16da32ad8
+langcode: en
+status: true
+dependencies: {  }
+id: necessary
+label: Necessary
+description: ''
+checkbox_default_state: required
+weight: -9

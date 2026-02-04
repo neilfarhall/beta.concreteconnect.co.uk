@@ -1,0 +1,19 @@
+uuid: 389f00c8-9b29-4506-b1f6-46660b26fa3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - twitter_embed
+id: node.field_twitt
+field_name: field_twitt
+entity_type: node
+type: twitter_embed_field
+settings: {  }
+module: twitter_embed
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

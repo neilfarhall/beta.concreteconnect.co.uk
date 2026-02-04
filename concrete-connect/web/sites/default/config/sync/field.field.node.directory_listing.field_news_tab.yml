@@ -1,0 +1,23 @@
+uuid: 05952ca7-ebe3-4fdc-9e61-2989bd06f5cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_tab
+    - node.type.directory_listing
+id: node.directory_listing.field_news_tab
+field_name: field_news_tab
+entity_type: node
+bundle: directory_listing
+label: 'News Tab'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

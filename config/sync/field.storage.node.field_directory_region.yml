@@ -1,0 +1,20 @@
+uuid: 52d025a0-6077-4b2a-a3b4-014255ce4161
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_directory_region
+field_name: field_directory_region
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

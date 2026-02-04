@@ -1,0 +1,23 @@
+uuid: fbc59468-b084-43e1-b91c-c3e3071ff59e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-zHE5BhInehU9mJ6vxhLaAx7miMiQ43tSn7_rZqXdKU'
+name: pb_narrow_sm
+label: 'PB Narrow SM 600x600'
+effects:
+  a15e2646-27e2-41ea-8e2c-a94aa413f099:
+    uuid: a15e2646-27e2-41ea-8e2c-a94aa413f099
+    id: image_convert
+    weight: 1
+    data:
+      extension: webp
+  91076b34-1b06-4ead-8e42-47c8485d4173:
+    uuid: 91076b34-1b06-4ead-8e42-47c8485d4173
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 600
+      height: 600
+      anchor: center-center

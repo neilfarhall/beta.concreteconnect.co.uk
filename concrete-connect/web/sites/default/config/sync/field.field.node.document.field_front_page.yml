@@ -1,0 +1,38 @@
+uuid: 983f1680-cf68-4321-a166-c5417eac05ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_front_page
+    - node.type.document
+  module:
+    - image
+id: node.document.field_front_page
+field_name: field_front_page
+entity_type: node
+bundle: document
+label: front_page
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: video
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

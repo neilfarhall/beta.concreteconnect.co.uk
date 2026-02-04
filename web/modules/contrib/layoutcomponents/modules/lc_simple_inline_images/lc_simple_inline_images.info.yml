@@ -1,0 +1,13 @@
+name: Layout Components - Simple Inline Images
+type: module
+description: Simple inline images block type
+package: LayoutComponents
+core_version_requirement: ^9 || ^10
+dependencies:
+  - lc_simple_image:lc_simple_image
+  - inline_entity_form:inline_entity_form
+
+# Information added by Drupal.org packaging script on 2023-12-14
+version: '3.0.2'
+project: 'layoutcomponents'
+datestamp: 1702568529

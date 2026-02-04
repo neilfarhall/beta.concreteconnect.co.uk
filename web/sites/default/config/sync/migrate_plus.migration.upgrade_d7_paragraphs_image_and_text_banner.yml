@@ -1,0 +1,48 @@
+uuid: c67d2216-4fba-40c4-86d6-18dc85ad0d1e
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_image_and_text_banner
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Image and Text Banner)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: image_and_text_banner
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_image_banner:
+    -
+      plugin: sub_process
+      source: field_image_banner
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_text_banner:
+    -
+      plugin: get
+      source: field_text_banner
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: image_and_text_banner
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+  optional:
+    - upgrade_d7_field_instance

@@ -1,0 +1,19 @@
+uuid: 0b222b16-57b0-463f-96d7-3a8c125360f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_organiser
+    - node.type.event
+id: node.event.field_event_organiser
+field_name: field_event_organiser
+entity_type: node
+bundle: event
+label: 'Event Organiser'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

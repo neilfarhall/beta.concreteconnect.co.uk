@@ -1,0 +1,29 @@
+uuid: 0b264586-a8b5-4d11-ab69-34a6c72b9941
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_site_type
+    - node.type.directory_listing
+    - taxonomy.vocabulary.site_type
+id: node.directory_listing.field_directory_site_type
+field_name: field_directory_site_type
+entity_type: node
+bundle: directory_listing
+label: 'Site type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_type: site_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

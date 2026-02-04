@@ -1,0 +1,27 @@
+uuid: 8a0530f9-469e-4388-8f7e-580bac8ef112
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_attachments
+    - node.type.news_article
+  module:
+    - file
+id: node.news_article.field_file_attachments
+field_name: field_file_attachments
+entity_type: node
+bundle: news_article
+label: 'File Attachments'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: attachments/news
+  file_extensions: 'txt pdf doc docx'
+  max_filesize: ''
+  description_field: true
+field_type: file

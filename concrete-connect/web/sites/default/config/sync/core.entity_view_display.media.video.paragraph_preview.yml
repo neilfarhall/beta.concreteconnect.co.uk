@@ -1,0 +1,104 @@
+uuid: 2deada61-9786-426a-807f-f2dfc9cef8f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.paragraph_preview
+    - field.field.media.video.field_description
+    - field.field.media.video.field_media_video_embed_field
+    - image.style.paragraph_preview
+    - media.type.video
+  module:
+    - field_group
+    - svg_image
+third_party_settings:
+  field_group:
+    group_preview_wrapped:
+      children:
+        - group_preview_thumb
+        - group_preview_content
+      label: 'Preview Wrapped'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: pd-preview-wrapper
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+    group_preview_thumb:
+      children:
+        - thumbnail
+      label: 'Preview Thumb'
+      parent_name: group_preview_wrapped
+      region: content
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: pd-preview-thumb
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+    group_preview_content:
+      children:
+        - name
+        - field_description
+      label: 'Preview Content'
+      parent_name: group_preview_wrapped
+      region: content
+      weight: 21
+      format_type: html_element
+      format_settings:
+        classes: pd-preview-content
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+id: media.video.paragraph_preview
+targetEntityType: media
+bundle: video
+mode: paragraph_preview
+content:
+  field_description:
+    type: basic_string
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  name:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: paragraph_preview
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_video_embed_field: true
+  search_api_excerpt: true
+  uid: true

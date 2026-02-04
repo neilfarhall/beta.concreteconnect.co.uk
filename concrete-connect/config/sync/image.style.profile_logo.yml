@@ -1,0 +1,15 @@
+uuid: 936a0e34-c848-44da-a03d-8bccf603f471
+langcode: en
+status: true
+dependencies: {  }
+name: profile_logo
+label: 'Profile Logo'
+effects:
+  6afb666d-6dd5-4ba5-9b9d-c747de81e9d6:
+    uuid: 6afb666d-6dd5-4ba5-9b9d-c747de81e9d6
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 122
+      upscale: false

@@ -1,0 +1,167 @@
+From b0dc025213016b8bfde5a376264562a20cfb9b30 Mon Sep 17 00:00:00 2001
+From: Paul Maddern <pobster@25159.no-reply.drupal.org>
+Date: Mon, 22 Nov 2021 17:25:49 +0000
+Subject: [PATCH] Issue #2924204 by grasmash: Add <image> element to RSS
+ channel.
+
+---
+ .../views/src/Plugin/views/style/Rss.php      | 21 +++++++++++++++++++
+ .../views/templates/views-view-rss.html.twig  |  8 +++++++
+ core/modules/views/views.theme.inc            |  1 +
+ .../Core/Theme/ConfirmClassyCopiesTest.php    |  2 +-
+ .../templates/views/views-view-rss.html.twig  |  8 +++++++
+ .../templates/views/views-view-rss.html.twig  |  8 +++++++
+ 6 files changed, 47 insertions(+), 1 deletion(-)
+
+diff --git a/core/modules/views/src/Plugin/views/style/Rss.php b/core/modules/views/src/Plugin/views/style/Rss.php
+index 6693c4863e..f4915fdfb5 100644
+--- a/core/modules/views/src/Plugin/views/style/Rss.php
++++ b/core/modules/views/src/Plugin/views/style/Rss.php
+@@ -55,6 +55,7 @@ protected function defineOptions() {
+     $options = parent::defineOptions();
+ 
+     $options['description'] = ['default' => ''];
++    $options['image'] = ['default' => ''];
+ 
+     return $options;
+   }
+@@ -69,6 +70,14 @@ public function buildOptionsForm(&$form, FormStateInterface $form_state) {
+       '#description' => $this->t('This will appear in the RSS feed itself.'),
+       '#maxlength' => 1024,
+     ];
++
++    $form['image'] = [
++      '#type' => 'textfield',
++      '#title' => $this->t('RSS image URL'),
++      '#default_value' => $this->options['image'],
++      '#description' => $this->t('This will appear in the RSS feed itself.'),
++      '#maxlength' => 1024,
++    ];
+   }
+ 
+   /**
+@@ -96,6 +105,18 @@ public function getDescription() {
+     return $description;
+   }
+ 
++  /**
++   * Get RSS feed image.
++   *
++   * @return string
++   *   The string containing the image URL.
++   */
++  public function getImage() {
++    $image = $this->options['image'];
++
++    return $image;
++  }
++
+   public function render() {
+     if (empty($this->view->rowPlugin)) {
+       trigger_error('Drupal\views\Plugin\views\style\Rss: Missing row plugin', E_WARNING);
+diff --git a/core/modules/views/templates/views-view-rss.html.twig b/core/modules/views/templates/views-view-rss.html.twig
+index cd80f8106e..c56656965c 100644
+--- a/core/modules/views/templates/views-view-rss.html.twig
++++ b/core/modules/views/templates/views-view-rss.html.twig
+@@ -8,6 +8,7 @@
+  * - namespaces: The XML namespaces (added automatically).
+  * - title: The title of the feed (as set in the view).
+  * - description: The feed description (from feed settings).
++ * - image_url: The feed image URL.
+  * - langcode: The language encoding.
+  * - channel_elements: The formatted channel elements.
+  * - items: The feed items themselves.
+@@ -24,6 +25,13 @@
+     <link>{{ link }}</link>
+     <description>{{ description }}</description>
+     <language>{{ langcode }}</language>
++    {% if image_url -%}
++    <image>
++      <url>{{ image_url }}</url>
++      <title>{{ title }}</title>
++      <link>{{ link }}</link>
++    </image>
++    {%- endif -%}
+     {{ channel_elements }}
+     {{ items }}
+   </channel>
+diff --git a/core/modules/views/views.theme.inc b/core/modules/views/views.theme.inc
+index 499d860ef6..1876dc017f 100644
+--- a/core/modules/views/views.theme.inc
++++ b/core/modules/views/views.theme.inc
+@@ -890,6 +890,7 @@ function template_preprocess_views_view_rss(&$variables) {
+   $variables['namespaces'] = new Attribute($style->namespaces);
+   $variables['items'] = $items;
+   $variables['channel_elements'] = $style->channel_elements;
++  $variables['image_url'] = $style->getImage();
+ 
+   // During live preview we don't want to output the header since the contents
+   // of the feed are being displayed inside a normal HTML page.
+diff --git a/core/tests/Drupal/KernelTests/Core/Theme/ConfirmClassyCopiesTest.php b/core/tests/Drupal/KernelTests/Core/Theme/ConfirmClassyCopiesTest.php
+index e95aad3e1e..677595fb17 100644
+--- a/core/tests/Drupal/KernelTests/Core/Theme/ConfirmClassyCopiesTest.php
++++ b/core/tests/Drupal/KernelTests/Core/Theme/ConfirmClassyCopiesTest.php
+@@ -840,7 +840,7 @@ protected function getClassyHash($type, $file) {
+         'views-view-summary-unformatted.html.twig' => '76f6e5882aa7fe6bc0440b66e85a0a6c',
+         'views-view.html.twig' => '6e823aff4c9a83fa2f426510a90e8f7d',
+         'views-view-grid.html.twig' => '8f4ea66bf949530d31a79a44f3d87650',
+-        'views-view-rss.html.twig' => 'f4e49d0d8df01019245c51ff2a4259c2',
++        'views-view-rss.html.twig' => 'fd9503dddb34ada22fc631edb8ec3a9a',
+         'block--system-branding-block.html.twig' => '558d83af4c06e78f46790e0e18295588',
+         'block--search-form-block.html.twig' => '7fef4c274e4487ba887fdeaa41acb5ca',
+         'block.html.twig' => '9b68163e596c63921119ff8f20c6f157',
+diff --git a/core/themes/classy/templates/views/views-view-rss.html.twig b/core/themes/classy/templates/views/views-view-rss.html.twig
+index 0800237e39..5af37fbd87 100644
+--- a/core/themes/classy/templates/views/views-view-rss.html.twig
++++ b/core/themes/classy/templates/views/views-view-rss.html.twig
+@@ -8,6 +8,7 @@
+  * - namespaces: The XML namespaces (added automatically).
+  * - title: The title of the feed (as set in the view).
+  * - description: The feed description (from feed settings).
++ * - image_url: The feed image URL.
+  * - langcode: The language encoding.
+  * - channel_elements: The formatted channel elements.
+  * - items: The feed items themselves.
+@@ -22,6 +23,13 @@
+     <link>{{ link }}</link>
+     <description>{{ description }}</description>
+     <language>{{ langcode }}</language>
++    {% if image_url -%}
++    <image>
++      <url>{{ image_url }}</url>
++      <title>{{ title }}</title>
++      <link>{{ link }}</link>
++    </image>
++    {%- endif -%}
+     {{ channel_elements }}
+     {{ items }}
+   </channel>
+diff --git a/core/themes/stable/templates/views/views-view-rss.html.twig b/core/themes/stable/templates/views/views-view-rss.html.twig
+index 0800237e39..5af37fbd87 100644
+--- a/core/themes/stable/templates/views/views-view-rss.html.twig
++++ b/core/themes/stable/templates/views/views-view-rss.html.twig
+@@ -8,6 +8,7 @@
+  * - namespaces: The XML namespaces (added automatically).
+  * - title: The title of the feed (as set in the view).
+  * - description: The feed description (from feed settings).
++ * - image_url: The feed image URL.
+  * - langcode: The language encoding.
+  * - channel_elements: The formatted channel elements.
+  * - items: The feed items themselves.
+@@ -22,6 +23,13 @@
+     <link>{{ link }}</link>
+     <description>{{ description }}</description>
+     <language>{{ langcode }}</language>
++    {% if image_url -%}
++    <image>
++      <url>{{ image_url }}</url>
++      <title>{{ title }}</title>
++      <link>{{ link }}</link>
++    </image>
++    {%- endif -%}
+     {{ channel_elements }}
+     {{ items }}
+   </channel>
+-- 
+2.21.1 (Apple Git-122.3)
+

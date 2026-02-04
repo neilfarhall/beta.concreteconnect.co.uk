@@ -1,0 +1,51 @@
+--- src/WeMegaMenuBuilder.php
++++ src/WeMegaMenuBuilder.php
+@@ -495,7 +495,7 @@ class WeMegaMenuBuilder {
+                 }
+               }
+ 
+-              if (!sizeof($positions)) {
++              if (empty($positions)) {
+                 continue;
+               }
+ 
+@@ -542,14 +542,14 @@ class WeMegaMenuBuilder {
+    *
+    * @param string $menu_name
+    *   Public static function menuItemInsert menu_name.
+-   * @param string $theme_name
+-   *   Public static function menuItemInsert theme_name.
+    * @param object $menu_config
+    *   Public static function menuItemInsert menu_config.
+    * @param object $child_item
+    *   Public static function menuItemInsert child_item.
++   * @param string $theme_name
++   *   Public static function menuItemInsert theme_name.
+    */
+-  public static function dragDropMenuItems($menu_name, $theme_name = '', $menu_config, $child_item) {
++  public static function dragDropMenuItems($menu_name, $menu_config, $child_item, $theme_name = '') {
+     $list_menu_items = WeMegaMenuBuilder::getMenuItems($menu_name);
+     if (isset($child_item['col_content']) && isset($child_item['col_cfg']) && isset($menu_config->menu_config)) {
+       $tmp_col_content = $child_item['col_content'];
+@@ -689,17 +689,17 @@ class WeMegaMenuBuilder {
+    *
+    * @param string $menu_name
+    *   Public static function menuItemInsert menu_name.
+-   * @param string $theme_name
+-   *   Public static function menuItemInsert theme_name.
+    * @param object $menu_config
+    *   Public static function menuItemInsert menu_config.
+    * @param object $child_item
+    *   Public static function menuItemInsert child_item.
++   * @param string $theme_name
++   *   Public static function menuItemInsert theme_name.
+    */
+-  public static function repositionMenuItems($menu_name, $theme_name = '', $menu_config, $child_item) {
++  public static function repositionMenuItems($menu_name, $menu_config, $child_item, $theme_name = '') {
+     $list_menu_items = WeMegaMenuBuilder::getMenuItems($menu_name);
+ 
+-    
++
+     \Drupal::logger('megamenu')->warning( print_r(json_encode($list_menu_items), true) );
+     foreach ($list_menu_items as $uuid => $childs) {
+     }

@@ -1,0 +1,5 @@
+entity.body_inject_profile.collection:
+  title: 'Body Inject'
+  parent: system.admin_config_content
+  description: 'Manage BodyInject profiles.'
+  route_name: entity.body_inject_profile.collection

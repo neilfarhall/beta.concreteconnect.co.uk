@@ -1,0 +1,11 @@
+name: 'Views collapsible lists'
+description: 'Provides a Views style for expanding/collapsing fields.'
+type: module
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:views
+
+# Information added by Drupal.org packaging script on 2023-11-01
+version: '8.x-1.5'
+project: 'views_collapsible_list'
+datestamp: 1698862050

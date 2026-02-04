@@ -1,0 +1,23 @@
+uuid: 5907f0d6-6830-41d7-ba80-7944c007ff48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsored
+    - node.type.article
+id: node.article.field_sponsored
+field_name: field_sponsored
+entity_type: node
+bundle: article
+label: Sponsored
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'yes'
+  off_label: 'no'
+field_type: boolean

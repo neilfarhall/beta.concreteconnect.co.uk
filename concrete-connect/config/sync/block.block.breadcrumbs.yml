@@ -1,0 +1,31 @@
+uuid: 7e90e60c-5b0e-44cb-a6ef-6f1cde89a7f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_title_link
+    - system
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: breadcrumbs
+theme: themag_st
+region: content_header
+weight: -6
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /form/contact-us

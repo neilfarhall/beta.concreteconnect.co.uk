@@ -1,0 +1,6 @@
+taxonomy_delete.ui:
+  title: 'Taxonomy Delete'
+  route_name: taxonomy_delete.ui
+  description: 'Taoxnomy Delete UI'
+  parent: entity.taxonomy_vocabulary.collection
+  weight: 99

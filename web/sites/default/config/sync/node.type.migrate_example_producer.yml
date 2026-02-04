@@ -1,0 +1,16 @@
+uuid: 5b5051b8-aa2d-4362-8b14-0d7cdb657343
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_example_advanced_setup
+_core:
+  default_config_hash: GRPhdurJoTKVPWCp9-WcxE5UnQsaZfYhsbTWLsVZ8AA
+name: 'Wine Producer'
+type: migrate_example_producer
+description: 'Wineries, vineyards, and large producers.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

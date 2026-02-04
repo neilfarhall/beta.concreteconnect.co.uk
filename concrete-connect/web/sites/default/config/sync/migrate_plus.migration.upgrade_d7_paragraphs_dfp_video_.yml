@@ -1,0 +1,38 @@
+uuid: 4dbedc31-3991-4884-8e81-3d201b489437
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_dfp_video_
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (DFP Video)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: dfp_video_
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_text_dfp:
+    -
+      plugin: get
+      source: field_text_dfp
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: dfp_video_
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+  optional:
+    - upgrade_d7_field_instance

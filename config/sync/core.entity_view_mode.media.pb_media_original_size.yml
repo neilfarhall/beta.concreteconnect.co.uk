@@ -1,0 +1,12 @@
+uuid: 37499a88-9470-4b24-9cec-6aeba321d466
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: GWcMrD1fDD_SxaK5TabjuOhlxeGQw36sGugNa2sw2n8
+id: media.pb_media_original_size
+label: 'PB Media Original Size'
+targetEntityType: media
+cache: true

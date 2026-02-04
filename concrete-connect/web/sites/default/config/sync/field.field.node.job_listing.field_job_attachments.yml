@@ -1,0 +1,27 @@
+uuid: becd03e8-d3ac-4161-a1fa-951d113e046c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_attachments
+    - node.type.job_listing
+  module:
+    - file
+id: node.job_listing.field_job_attachments
+field_name: field_job_attachments
+entity_type: node
+bundle: job_listing
+label: 'File attachments'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: job-attachments
+  file_extensions: 'txt pdf doc docx'
+  max_filesize: ''
+  description_field: true
+field_type: file

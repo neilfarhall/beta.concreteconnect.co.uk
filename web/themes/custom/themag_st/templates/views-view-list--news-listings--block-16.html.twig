@@ -1,0 +1,75 @@
+{#
+/**
+ * @file
+ * Theme override for a view template to display a list of rows.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the container.
+ * - rows: A list of rows for this list.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's contents.
+ * - title: The title of this group of rows. May be empty.
+ * - list: @todo.
+ *   - type: Starting tag will be either a ul or ol.
+ *   - attributes: HTML attributes for the list element.
+ *
+ * @see template_preprocess_views_view_list()
+ */
+#}
+{% if attributes -%}
+  <div{{ attributes }}>
+{% endif %}
+  {% if title %}
+    <h3>{{ title }}</h3>
+  {% endif %}
+
+{% set fisttwo = [] %}
+
+{% if view.pager.current_page == 0 %}
+
+    {% set fisttwo = rows|slice(0,3) %}
+    {% set rest = rows[3:] %}
+
+  {% else %}
+
+    {% set rest = rows %}
+
+{% endif %}
+
+
+{% if fisttwo is not empty %}
+
+  <{{ list.type }}{{ list.attributes }}>
+
+    {% for key, row in fisttwo %}
+        <li{{ row.attributes }}>
+          {{- row.content -}}
+        </li>
+    {% endfor %}
+
+  </{{ list.type }}>
+
+  <div id="sas_53422"></div>
+  <script type="application/javascript">
+    sas.cmd.push(function() {
+      sas.render("53422");  // Format : Video 640x480 0x0
+    });
+  </script>
+
+{% endif %}
+
+  <div class="grid-md--3-columns no-borders">
+    <ul>
+      {% for key, row in rest %}
+          <li class="">
+            {{ drupal_entity('node', row['content']['#node'].nid.value, 'small_teaser_card') }}
+          </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+
+{% if attributes -%}
+  </div>
+{% endif %}

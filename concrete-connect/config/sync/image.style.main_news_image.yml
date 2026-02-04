@@ -1,0 +1,17 @@
+uuid: 6de0710d-8125-4fc4-aa67-462c5dd31876
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: main_news_image
+label: 'Main News Image'
+effects:
+  2c0091de-fdf5-472c-a286-e7d1d8fcac9a:
+    uuid: 2c0091de-fdf5-472c-a286-e7d1d8fcac9a
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 900
+      height: 600
+      crop_type: focal_point

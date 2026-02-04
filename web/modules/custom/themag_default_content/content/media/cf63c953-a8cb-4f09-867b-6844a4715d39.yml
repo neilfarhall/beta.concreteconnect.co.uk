@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: cf63c953-a8cb-4f09-867b-6844a4715d39
+  bundle: image
+  default_langcode: en
+  depends:
+    ca529434-0772-420e-97d5-cab61c3fdb7d: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'Default Image'
+  created:
+    -
+      value: 1535804336
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  field_description:
+    -
+      value: 'Etiam gravida gravida quam interdum rhoncus. Vestibulum facilisis non orci et vulputate. Aliquam finibus tristique bibendum.'
+  field_image:
+    -
+      entity: ca529434-0772-420e-97d5-cab61c3fdb7d
+      alt: 'Default Image'
+      title: ''
+      width: 1440
+      height: 1050

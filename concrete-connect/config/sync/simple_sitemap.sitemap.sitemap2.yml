@@ -1,0 +1,11 @@
+uuid: 043991d0-fbe1-4555-901f-727666647493
+langcode: en
+status: true
+dependencies:
+  config:
+    - simple_sitemap.type.default_hreflang
+id: sitemap2
+label: sitemap2
+description: ''
+type: default_hreflang
+weight: 0

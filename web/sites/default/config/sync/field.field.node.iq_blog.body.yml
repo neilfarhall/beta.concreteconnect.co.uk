@@ -1,0 +1,23 @@
+uuid: e7db86b8-05fc-4362-82eb-e90810909e66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.iq_blog
+  module:
+    - text
+id: node.iq_blog.body
+field_name: body
+entity_type: node
+bundle: iq_blog
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

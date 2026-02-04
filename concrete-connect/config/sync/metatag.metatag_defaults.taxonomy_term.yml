@@ -1,0 +1,25 @@
+uuid: 1b585249-e437-44dc-ad32-e0cdc4168e16
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 9sz1xUdRmwGeN6seByZJmRsrBtfVECpdzoKGBa2MwXk
+id: taxonomy_term
+label: 'Taxonomy term'
+tags:
+  title: '[term:name] | [site:name]'
+  canonical_url: '[term:url:unaliased:absolute]'
+  description: '[term:description]'
+  og_type: article
+  og_image_width: '[term:field_media:entity:field_image:facebook:width]'
+  og_image: '[term:field_media:entity:field_image:facebook:url]'
+  og_image_height: '[term:field_media:entity:field_image:facebook:height]'
+  og_url: '[current-page:url]'
+  og_description: '[term:description]'
+  og_site_name: '[site:name]'
+  og_title: '[term:name]'
+  twitter_cards_image: '[term:field_media:entity:field_image:twitter:url]'
+  twitter_cards_image_width: '[term:field_media:entity:field_image:twitter:width]'
+  twitter_cards_page_url: '[current-page:url]'
+  twitter_cards_type: summary_large_image
+  twitter_cards_image_height: '[term:field_media:entity:field_image:twitter:height]'

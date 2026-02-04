@@ -1,0 +1,29 @@
+uuid: 7384b90f-b0be-4c1e-812c-1f5a13a4bb75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tagging_location
+    - node.type.article
+    - taxonomy.vocabulary.tagging_location
+id: node.article.field_tagging_location
+field_name: field_tagging_location
+entity_type: node
+bundle: article
+label: 'Location Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tagging_location: tagging_location
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

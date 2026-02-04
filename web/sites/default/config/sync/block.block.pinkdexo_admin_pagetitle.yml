@@ -1,0 +1,20 @@
+uuid: 5aa696a4-3d95-4fca-9151-5708c3ad2ad4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - pinkdexo_admin
+_core:
+  default_config_hash: IvT_ul5DS6ASY-eX2QriCP_8GggVt5gYf7QTw_tGukE
+id: pinkdexo_admin_pagetitle
+theme: pinkdexo_admin
+region: header
+weight: -1
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

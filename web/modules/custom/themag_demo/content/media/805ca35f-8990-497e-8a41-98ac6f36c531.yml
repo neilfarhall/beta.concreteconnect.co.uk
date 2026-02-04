@@ -1,0 +1,46 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 805ca35f-8990-497e-8a41-98ac6f36c531
+  bundle: gallery
+  default_langcode: en
+  depends:
+    cf63c953-a8cb-4f09-867b-6844a4715d39: media
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'Gallery Grid'
+  created:
+    -
+      value: 1537535999
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_slideshow:
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39
+    -
+      entity: cf63c953-a8cb-4f09-867b-6844a4715d39

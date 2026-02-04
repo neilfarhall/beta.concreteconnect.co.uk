@@ -1,0 +1,8 @@
+uuid: e0cec9c5-081b-465e-8825-3d3da3e93ca0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Record type'
+vid: record_type
+description: ''
+weight: 0

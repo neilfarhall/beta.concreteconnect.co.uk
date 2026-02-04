@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ad_content
+id: ad_content.full
+label: Preview
+targetEntityType: ad_content
+cache: true

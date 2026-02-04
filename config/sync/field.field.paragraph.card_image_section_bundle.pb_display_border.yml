@@ -1,0 +1,23 @@
+uuid: f048e74a-0e1a-42a5-b7db-8cf88256fe58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_border
+    - paragraphs.paragraphs_type.card_image_section_bundle
+  module:
+    - options
+_core:
+  default_config_hash: 9BFXDQv8wUqJY7aLX6t3p-BOtW2evBNPuLtT7Nxky7g
+id: paragraph.card_image_section_bundle.pb_display_border
+field_name: pb_display_border
+entity_type: paragraph
+bundle: card_image_section_bundle
+label: Border
+description: 'Incorporate pre-set custom CSS classes.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

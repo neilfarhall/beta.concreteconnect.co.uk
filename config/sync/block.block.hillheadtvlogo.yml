@@ -1,0 +1,32 @@
+uuid: e10ccdd4-c343-4c80-897e-5e921542d1cb
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:68e14572-e15c-44ed-9b47-fbec7a2371f6'
+  module:
+    - block_content
+    - block_title_link
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: hillheadtvlogo
+theme: themag_st
+region: top_bar_first
+weight: 0
+provider: null
+plugin: 'block_content:68e14572-e15c-44ed-9b47-fbec7a2371f6'
+settings:
+  id: 'block_content:68e14572-e15c-44ed-9b47-fbec7a2371f6'
+  label: 'Hillhead TV Logo'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

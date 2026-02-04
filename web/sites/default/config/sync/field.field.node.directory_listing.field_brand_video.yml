@@ -1,0 +1,25 @@
+uuid: cd757aba-796d-4e64-9b7c-767a535c8e73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_brand_video
+    - node.type.directory_listing
+  module:
+    - video_embed_field
+id: node.directory_listing.field_brand_video
+field_name: field_brand_video
+entity_type: node
+bundle: directory_listing
+label: 'Branding Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    vimeo: vimeo
+    youtube: youtube
+    youtube_playlist: '0'
+field_type: video_embed_field

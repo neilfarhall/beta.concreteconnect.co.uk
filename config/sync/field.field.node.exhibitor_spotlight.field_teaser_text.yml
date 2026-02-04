@@ -1,0 +1,19 @@
+uuid: 13a44df8-9db0-4319-8aa8-6a2842450a29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_text
+    - node.type.exhibitor_spotlight
+id: node.exhibitor_spotlight.field_teaser_text
+field_name: field_teaser_text
+entity_type: node
+bundle: exhibitor_spotlight
+label: 'Teaser Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,22 @@
+prelinker.admin_overview:
+  title: 'Prelinker'
+  route_name: prelinker.admin_overview
+  base_route: system.performance_settings
+
+prelinker.admin_overview.form:
+  route_name: prelinker.admin_overview
+  parent_id: prelinker.admin_overview
+  title: 'Prelinker Settings'
+  weight: 10
+
+prelinker.preconnect.form:
+  route_name: entity.preconnect.collection
+  parent_id: prelinker.admin_overview
+  title: 'Preconnect Domains'
+  weight: 20
+
+prelinker.preload.form:
+  route_name: entity.preload.collection
+  parent_id: prelinker.admin_overview
+  title: 'Preload Files'
+  weight: 30

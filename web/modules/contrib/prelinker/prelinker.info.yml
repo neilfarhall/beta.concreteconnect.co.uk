@@ -1,0 +1,11 @@
+name: Prelinker
+description: Allows configuration of preload and preconnect links, either within the response header or via Link elements in the Head section.
+type: module
+core_version_requirement: ^8 || ^9 || ^10
+package: "Performance and scalability"
+configure: prelinker.admin_overview
+
+# Information added by Drupal.org packaging script on 2023-05-11
+version: '2.0.0-alpha2'
+project: 'prelinker'
+datestamp: 1683842156

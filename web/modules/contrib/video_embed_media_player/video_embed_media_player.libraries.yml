@@ -1,0 +1,13 @@
+plyr:
+  version: 2.0.11
+  css:
+    component:
+      https://cdn.plyr.io/2.0.11/plyr.css: { type: external }
+  js:
+    https://cdn.plyr.io/2.0.11/plyr.js: { type: external }
+
+setup:
+  js:
+    js/plyr-setup.js: {}
+  dependencies:
+    - video_embed_media_player/plyr

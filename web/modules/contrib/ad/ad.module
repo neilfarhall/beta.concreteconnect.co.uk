@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Main file for the "AD" module.
+ */
+
+use Drupal\ad\Size\SizeInterface;
+
+/**
+ * Returns the available AD sizes.
+ *
+ * @return string[]
+ *   An array of array size IDs.
+ */
+function ad_get_sizes(): array {
+  /** @var \Drupal\ad\Size\SizeFactory $factory */
+  $factory = \Drupal::service('ad.size_factory');
+  return array_map(
+    function (SizeInterface $size) {
+      return $size->getId();
+    },
+    $factory->getAll()
+  );
+}

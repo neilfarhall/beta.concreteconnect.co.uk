@@ -1,0 +1,19 @@
+uuid: f9f0af7d-e81a-4b5b-8bcc-af259a483b52
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_authors_bio
+field_name: field_authors_bio
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

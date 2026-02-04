@@ -1,0 +1,291 @@
+uuid: 2c91c582-5444-4de8-be60-712e0830c428
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.ad_spec.body
+    - field.field.node.ad_spec.field_ad_example
+    - field.field.node.ad_spec.field_dimensions
+    - field.field.node.ad_spec.field_file_formats
+    - field.field.node.ad_spec.field_file_load_max
+    - field.field.node.ad_spec.field_notes
+    - field.field.node.ad_spec.field_serving
+    - field.field.node.ad_spec.field_video_spec
+    - field.field.node.ad_spec.layout_builder__layout
+    - node.type.ad_spec
+  module:
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - svg_image
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          903c7c3e-24fe-4572-af98-c34539017e20:
+            uuid: 903c7c3e-24fe-4572-af98-c34539017e20
+            region: content
+            configuration:
+              id: 'field_block:node:ad_spec:field_dimensions'
+              label: Dimensions
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: inline
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 2
+            additional: {  }
+          d039a77e-5ecc-4e96-9c08-cc0024841f31:
+            uuid: d039a77e-5ecc-4e96-9c08-cc0024841f31
+            region: content
+            configuration:
+              id: 'field_block:node:ad_spec:field_file_load_max'
+              label: 'file load max'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 3
+            additional: {  }
+          6c66089d-1370-4a20-b0d5-b86c089a93b1:
+            uuid: 6c66089d-1370-4a20-b0d5-b86c089a93b1
+            region: content
+            configuration:
+              id: 'field_block:node:ad_spec:field_file_formats'
+              label: 'File Formats'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 4
+            additional: {  }
+          f5570a86-9c9a-4ad3-9208-ec97b2176a7d:
+            uuid: f5570a86-9c9a-4ad3-9208-ec97b2176a7d
+            region: content
+            configuration:
+              id: 'field_block:node:ad_spec:field_serving'
+              label: Serving
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 5
+            additional: {  }
+          e25db802-649c-4276-9045-2a9202e76d76:
+            uuid: e25db802-649c-4276-9045-2a9202e76d76
+            region: content
+            configuration:
+              id: 'field_block:node:ad_spec:field_notes'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          696bc75a-8e32-4b57-ae07-2e7a306d5102:
+            uuid: 696bc75a-8e32-4b57-ae07-2e7a306d5102
+            region: content
+            configuration:
+              id: 'field_block:node:ad_spec:field_ad_example'
+              label: 'Ad Example'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 7
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.ad_spec.full
+targetEntityType: node
+bundle: ad_spec
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_ad_example:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_dimensions:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_file_formats:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_file_load_max:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_notes:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_serving:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_video_spec: true
+  layout_builder__layout: true
+  shariff_field: true

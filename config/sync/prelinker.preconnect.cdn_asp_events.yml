@@ -1,0 +1,9 @@
+uuid: fddb369a-e42c-43ea-a7db-9af4a045e46a
+langcode: en
+status: true
+dependencies: {  }
+id: cdn_asp_events
+label: cdn.asp.events
+domain: cdn.asp.events
+pages: ''
+weight: 0

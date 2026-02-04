@@ -1,0 +1,17 @@
+uuid: 998c36b2-8142-4396-9649-7eb6432353ca
+langcode: en
+status: true
+dependencies: {  }
+label: 'Video Tenancy'
+id: mpu_2nd_paragraph
+description: ''
+node_type: news_article
+block_reference: '15'
+paragraph_operator: '>'
+paragraph_number: '3'
+and_or: and
+char_operator: '<'
+char_number: ''
+paragraph_offset: ''
+paragraph_position: '3'
+char_position: ''

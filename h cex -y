@@ -1,0 +1,106 @@
+[1mdiff --git a/config/sync/core.extension.yml b/config/sync/core.extension.yml[m
+[1mindex 5d8aeec5..720ec024 100644[m
+[1m--- a/config/sync/core.extension.yml[m
+[1m+++ b/config/sync/core.extension.yml[m
+[36m@@ -7,11 +7,11 @@[m [mmodule:[m
+   admin_toolbar_tools: 0[m
+   advagg: 0[m
+   advagg_bundler: 0[m
+[31m-  advagg_cdn: 0[m
+   advagg_css_minify: 0[m
+   advagg_ext_minify: 0[m
+   advagg_js_minify: 0[m
+   advagg_validator: 0[m
+[32m+[m[32m  advanced_datalayer: 0[m
+   automated_cron: 0[m
+   better_exposed_filters: 0[m
+   big_pipe: 0[m
+[36m@@ -30,15 +30,19 @@[m [mmodule:[m
+   chosen_lib: 0[m
+   ckeditor5: 0[m
+   ckeditor5_paste_filter: 0[m
+[32m+[m[32m  cloudflare: 0[m
+   color_field: 0[m
+   comment: 0[m
+   config: 0[m
+[32m+[m[32m  context: 0[m
+[32m+[m[32m  context_ui: 0[m
+   contextual: 0[m
+   critical_css: 0[m
+   crop: 0[m
+   csv_importer: 0[m
+   ctools: 0[m
+   ctools_views: 0[m
+[32m+[m[32m  datalayer: 0[m
+   datetime: 0[m
+   datetime_range: 0[m
+   dblog: 0[m
+[36m@@ -54,6 +58,7 @@[m [mmodule:[m
+   entity_reference_revisions: 0[m
+   entity_update: 0[m
+   entityqueue: 0[m
+[32m+[m[32m  example_advanced_datalayer: 0[m
+   exclude_node_title: 0[m
+   feeds: 0[m
+   feeds_log: 0[m
+[36m@@ -74,7 +79,6 @@[m [mmodule:[m
+   flexslider_views: 0[m
+   focal_point: 0[m
+   fontawesome: 0[m
+[31m-  google_analytics: 0[m
+   google_tag: 0[m
+   help: 0[m
+   history: 0[m
+[36m@@ -104,6 +108,7 @@[m [mmodule:[m
+   media_bulk_upload: 0[m
+   media_bulk_upload_dropzonejs: 0[m
+   media_entity_browser: 0[m
+[32m+[m[32m  media_entity_facebook: 0[m
+   media_entity_instagram: 0[m
+   media_entity_pinterest: 0[m
+   media_entity_slideshow: 0[m
+[36m@@ -135,6 +140,7 @@[m [mmodule:[m
+   pagerer: 0[m
+   pagerer_example: 0[m
+   paragraph_blocks: 0[m
+[32m+[m[32m  paragraphs_bundles: 0[m
+   paragraphs_features: 0[m
+   path: 0[m
+   path_alias: 0[m
+[36m@@ -153,6 +159,7 @@[m [mmodule:[m
+   redirect: 0[m
+   redirect_404: 0[m
+   redis: 0[m
+[32m+[m[32m  responsive_favicons: 0[m
+   responsive_image: 0[m
+   responsive_image_preload: 0[m
+   rest: 0[m
+[36m@@ -169,18 +176,19 @@[m [mmodule:[m
+   shariff: 0[m
+   simple_block: 0[m
+   simple_block_layout_builder: 0[m
+[32m+[m[32m  simple_image_rotate: 0[m
+   simple_popup_blocks: 0[m
+   simple_sitemap: 0[m
+   simple_sitemap_engines: 0[m
+   simple_sitemap_views: 0[m
+   slick: 0[m
+[32m+[m[32m  slick_lightbox: 0[m
+   slick_ui: 0[m
+   slick_views: 0[m
+   sliderwidget: 0[m
+   social_link_field: 0[m
+   statistics: 0[m
+   svg_image: 0[m
+[31m-  swiftmailer: 0[m
+   symfony_mailer: 0[m
+   system: 0[m
+   tamper: 0[m
+[36m@@ -232,6 +240,7 @@[m [mmodule:[m
+   views: 10[m
+   paragraphs: 11[m
+   linked_field: 100[m
+[32m+[m[32m  context_advanced_datalayer: 1000[m
+   minimal: 1000[m
+   eu_cookie_compliance: 1001[m
+ theme:[m

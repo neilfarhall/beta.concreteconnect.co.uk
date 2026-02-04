@@ -1,0 +1,5 @@
+prelinker.admin_overview:
+  title: 'Prelinker'
+  description: 'Configure Prelinker'
+  route_name: 'prelinker.admin_overview'
+  parent: system.performance_settings

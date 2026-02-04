@@ -1,0 +1,19 @@
+uuid: ec0fd69d-cb6e-4d91-82e6-f3d5bce8aa9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: lfwKjiT5VJcd0ud_QpWI1a8asCR3T-0WncZ2f9puXiM
+name: 'PB Content'
+type: pb_content
+description: 'This is a custom content type that includes two fields: a paragraph field and a reference content block field. It also possesses the capability to disable any region when using the solo theme.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

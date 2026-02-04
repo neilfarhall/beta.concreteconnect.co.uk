@@ -1,0 +1,15 @@
+uuid: 8a9de303-5d1f-44f7-bb14-98e2c88b32f7
+langcode: en
+status: true
+dependencies: {  }
+name: logo_home
+label: 'Logo Home'
+effects:
+  7f9c96b9-3289-48b9-b72a-394e75056927:
+    uuid: 7f9c96b9-3289-48b9-b72a-394e75056927
+    id: image_scale
+    weight: 1
+    data:
+      width: 120
+      height: null
+      upscale: false

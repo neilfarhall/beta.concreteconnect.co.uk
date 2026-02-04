@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * themag.template
+ */
+
+// Include files with preprocess functions.
+foreach (glob(dirname(__FILE__) .  '/includes/*.inc' ) as $filename) {
+  require_once dirname(__FILE__) . '/includes/' . basename($filename);
+}
+/**
+ * Implements hook_preprocess_search_result().
+ */
+function themag_st_preprocess_search_result(&$variables) {
+    $variables['nid'] = $variables['result']['node']->get('nid')->getString();
+  $variables['content_type'] = $variables['result']['node']->get('type')->entity->get('name');
+
+    switch ($variables['type']) {
+        // some other adjustments based on the node tpye
+    }
+
+  // Apply custom date formatter to "date" field.
+  if ($variables['result']['node'] && !empty($variables['result']['node'])) {
+    $variables['aggnet_formatted_date'] = \Drupal::service('date.formatter')->format($variables['result']['node']->getCreatedTime(), 'custom', 'd M Y');
+  }
+}

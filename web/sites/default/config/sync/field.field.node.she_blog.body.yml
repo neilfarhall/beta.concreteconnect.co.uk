@@ -1,0 +1,23 @@
+uuid: 4b696b6b-006b-43c9-a44f-83f142e27512
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.she_blog
+  module:
+    - text
+id: node.she_blog.body
+field_name: body
+entity_type: node
+bundle: she_blog
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

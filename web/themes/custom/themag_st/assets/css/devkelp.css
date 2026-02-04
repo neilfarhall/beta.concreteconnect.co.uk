@@ -1,0 +1,100 @@
+.article-header {
+  background-color: #ffcccc; /* Light red */
+}
+
+.article-header__content {
+  background-color: #ccccff; /* Light blue */
+}
+
+.article-header__channel {
+  background-color: #ccffcc; /* Light green */
+}
+
+.channel {
+  background-color: #ffffcc; /* Light yellow */
+}
+
+.channel__icon {
+  background-color: #ccffff; /* Light cyan */
+}
+
+.channel__label {
+  background-color: #ffcce5; /* Light pink */
+}
+
+.article-header__title {
+  background-color: #e6ccff; /* Light purple */
+}
+
+.article-title {
+  background-color: #ffcc99; /* Light orange */
+}
+
+.article-header__meta {
+  background-color: #d9d9d9; /* Light gray */
+}
+
+.byline {
+  background-color: #fff2cc; /* Light cream */
+}
+
+.byline__created-date {
+  background-color: #ffe6cc; /* Light peach */
+}
+
+
+
+
+
+
+
+
+/* Root element of the region */
+.themag-layout__region--second {
+  background-color: #ffcccc; /* Light red */
+}
+
+/* First level of nesting */
+.themag-layout__region--second > div {
+  background-color: #ffdddd; /* Slightly darker light red */
+}
+
+/* Blocks within the region */
+.themag-layout__region--second .block {
+  background-color: #ffeedd; /* Light peach */
+}
+
+/* Advertisement blocks specifically */
+.themag-layout__region--second .block--advertisement {
+  background-color: #ffeecc; /* Different shade of light peach */
+}
+
+/* Content within blocks */
+.themag-layout__region--second .block__content {
+  background-color: #ffffcc; /* Light yellow */
+}
+
+/* Specific ad placement */
+.themag-layout__region--second #sas_53336 {
+  background-color: #e0ffcc; /* Light green */
+}
+
+/* Newsletter sign-up section */
+.themag-layout__region--second .signup-newsletter {
+  background-color: #cceeff; /* Light blue */
+}
+
+/* Nested elements inside signup-newsletter */
+.themag-layout__region--second .signup-newsletter img,
+.themag-layout__region--second .signup-newsletter p,
+.themag-layout__region--second .signup-newsletter .more-link-newsletter {
+  background-color: #ccddff; /* Lighter blue */
+}
+
+/* Links within newsletter */
+.themag-layout__region--second .signup-newsletter a {
+  background-color: #ffb3b3; /* Light pink */
+}
+
+
+

@@ -1,0 +1,8 @@
+/**
+ * @file
+ * Breadcrumbs.
+ */
+.breadcrumb {
+  padding: 24px 0 16px;
+  line-height: 1;
+}

@@ -1,0 +1,21 @@
+uuid: faa6a351-9ff6-4843-b9d5-c390313eccda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_spec
+    - node.type.ad_spec
+  module:
+    - text
+id: node.ad_spec.field_video_spec
+field_name: field_video_spec
+entity_type: node
+bundle: ad_spec
+label: 'Video Embed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,10 @@
+uuid: 476b0230-6e9f-49c4-aa23-e0f541f215e6
+langcode: en
+status: true
+dependencies: {  }
+id: bullet_list
+label: 'Bullet List'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

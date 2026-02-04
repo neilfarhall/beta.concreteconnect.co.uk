@@ -1,0 +1,19 @@
+.navbar-we-mega-menu.navbar .we-mega-menu-ul > li.we-mega-menu-li > a,
+.navbar-we-mega-menu.navbar .we-mega-menu-ul > li.we-mega-menu-li > span {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header__top__left img{
+
+     height: 100px;
+ }
+
+

@@ -1,0 +1,37 @@
+uuid: da1893c5-c0b0-46f1-9268-b52018d696cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.video_file.field_media_video_file
+    - media.type.video_file
+  module:
+    - blazy
+    - file
+id: media.video_file.default
+targetEntityType: media
+bundle: video_file
+mode: default
+content:
+  field_media_video_file:
+    type: file_video
+    label: visually_hidden
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+      muted: false
+      width: 640
+      height: 480
+    third_party_settings:
+      blazy:
+        blazy: false
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

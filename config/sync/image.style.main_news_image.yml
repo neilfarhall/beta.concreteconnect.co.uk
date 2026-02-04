@@ -1,0 +1,23 @@
+uuid: 6de0710d-8125-4fc4-aa67-462c5dd31876
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: main_news_image
+label: 'Main News Image'
+effects:
+  f2d284ad-4023-4059-81f6-d4efc2e37528:
+    uuid: f2d284ad-4023-4059-81f6-d4efc2e37528
+    id: image_scale
+    weight: -9
+    data:
+      width: 900
+      height: null
+      upscale: true
+  989a91cd-d1a4-4d36-8289-c3457b38aaee:
+    uuid: 989a91cd-d1a4-4d36-8289-c3457b38aaee
+    id: image_effects_auto_orient
+    weight: -10
+    data:
+      scan_exif: true

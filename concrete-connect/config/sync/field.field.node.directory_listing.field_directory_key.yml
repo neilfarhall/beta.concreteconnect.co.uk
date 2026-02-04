@@ -1,0 +1,19 @@
+uuid: c4ba2750-0629-41be-b1d0-e06d7af71e17
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_key
+    - node.type.directory_listing
+id: node.directory_listing.field_directory_key
+field_name: field_directory_key
+entity_type: node
+bundle: directory_listing
+label: Key
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

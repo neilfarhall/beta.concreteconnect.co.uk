@@ -1,0 +1,21 @@
+uuid: 50bf6cfc-e24f-472b-960d-4d09b45a6271
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_text_with_hover_image
+    - field.storage.block_content.field_stwi_text
+  module:
+    - text
+id: block_content.simple_text_with_hover_image.field_stwi_text
+field_name: field_stwi_text
+entity_type: block_content
+bundle: simple_text_with_hover_image
+label: Text
+description: 'Set the text of this card'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

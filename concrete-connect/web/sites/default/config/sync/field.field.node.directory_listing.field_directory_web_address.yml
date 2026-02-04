@@ -1,0 +1,23 @@
+uuid: eb52bad4-c88d-4e1a-b197-b295449f5b2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_web_address
+    - node.type.directory_listing
+  module:
+    - link
+id: node.directory_listing.field_directory_web_address
+field_name: field_directory_web_address
+entity_type: node
+bundle: directory_listing
+label: 'Web Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

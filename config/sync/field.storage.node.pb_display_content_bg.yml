@@ -1,0 +1,21 @@
+uuid: 2028fb76-0c45-4034-88f6-ed253d6c0378
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs_bundles
+_core:
+  default_config_hash: dGhn231ZStZQk96jzeLVwIHjtWJlg_3yl-P7zKHELBw
+id: node.pb_display_content_bg
+field_name: pb_display_content_bg
+entity_type: node
+type: paragraphs_bundles_rgb
+settings: {  }
+module: paragraphs_bundles
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

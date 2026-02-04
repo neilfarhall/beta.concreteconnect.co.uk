@@ -1,0 +1,29 @@
+uuid: 779cfe25-0a29-4047-9fe4-bedda1e85961
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_region
+    - node.type.directory_listing
+    - taxonomy.vocabulary.region
+id: node.directory_listing.field_directory_region
+field_name: field_directory_region
+entity_type: node
+bundle: directory_listing
+label: Region
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      region: region
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

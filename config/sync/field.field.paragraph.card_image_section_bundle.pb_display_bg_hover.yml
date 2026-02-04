@@ -1,0 +1,23 @@
+uuid: 49b5e510-f932-4fb7-b80b-41b8b4fb9d44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_bg_hover
+    - paragraphs.paragraphs_type.card_image_section_bundle
+  module:
+    - paragraphs_bundles
+_core:
+  default_config_hash: P9T3zpvTSX_tZ7f_49cwCuPbQQ-IfBHILlLqOnFQe64
+id: paragraph.card_image_section_bundle.pb_display_bg_hover
+field_name: pb_display_bg_hover
+entity_type: paragraph
+bundle: card_image_section_bundle
+label: 'Background Color Hover'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraphs_bundles_rgb

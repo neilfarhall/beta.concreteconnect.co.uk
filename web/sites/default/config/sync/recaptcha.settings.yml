@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: eKR4FfUD7Cp3bXamsCz6GAxh0PCLIZNMa65y2kChIh0
+site_key: 6LdwhTskAAAAACuEvl_N2jFtwWQK3GkfoQSWexS8
+secret_key: 6LdwhTskAAAAAEZ5d-Cey1vk6MfzamDN0tIyGAdW
+verify_hostname: true
+use_globally: true
+widget:
+  theme: light
+  type: image
+  size: ''
+  tabindex: 0
+  noscript: false

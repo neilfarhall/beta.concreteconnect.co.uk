@@ -1,0 +1,7 @@
+uuid: 83878b3d-490c-4fe6-998b-e07f258baee8
+langcode: en
+status: false
+dependencies: {  }
+formId: node_paragraphs_form
+captchaType: default
+label: node_paragraphs_form

@@ -1,0 +1,523 @@
+uuid: 133913dc-7937-462c-9d42-217bce9e294b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.event.body
+    - field.field.node.event.field_advertisement_keywords
+    - field.field.node.event.field_county
+    - field.field.node.event.field_event_address_1
+    - field.field.node.event.field_event_address_2
+    - field.field.node.event.field_event_concessions
+    - field.field.node.event.field_event_contact_name
+    - field.field.node.event.field_event_country
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_email
+    - field.field.node.event.field_event_email_message
+    - field.field.node.event.field_event_organiser
+    - field.field.node.event.field_event_postcode
+    - field.field.node.event.field_event_price
+    - field.field.node.event.field_event_price_vat
+    - field.field.node.event.field_event_reference
+    - field.field.node.event.field_event_speakers_topic
+    - field.field.node.event.field_event_town_city
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_event_venue
+    - field.field.node.event.field_event_website
+    - field.field.node.event.field_logo
+    - field.field.node.event.field_tagging_company
+    - field.field.node.event.field_tagging_location
+    - field.field.node.event.field_tagging_subject
+    - field.field.node.event.field_teaser_media
+    - field.field.node.event.field_teaser_text
+    - field.field.node.event.layout_builder__layout
+    - node.type.event
+    - views.view.event_header
+    - views.view.mg_single_item_slider
+    - webform.webform.events_contact_form
+  content:
+    - 'block_content:advertisement:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+    - 'block_content:advertisement:b5b372fc-85aa-4761-b242-dde9ebe89f1e'
+    - 'block_content:advertisement:f66ff081-dc10-45ef-ade1-23884bcc4885'
+  module:
+    - block_content
+    - datetime
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - link
+    - options
+    - price
+    - shariff
+    - svg_image
+    - text
+    - themag_layouts
+    - user
+    - views
+    - webform
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: themag_onecol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: leaderboard-strip
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: '12'
+          sticky_columns: null
+          first:
+            custom_classes: ''
+        components:
+          c8545d8a-fe58-4488-b7ed-fa56f2d6075d:
+            uuid: c8545d8a-fe58-4488-b7ed-fa56f2d6075d
+            region: first
+            configuration:
+              id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+              label: 'Leaderboard Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 1
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          4d5a7629-bf53-4876-a3db-a20b58dac89d:
+            uuid: 4d5a7629-bf53-4876-a3db-a20b58dac89d
+            region: second
+            configuration:
+              id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+              label: 'MPU Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          104f2ab2-c7b4-4c75-ac81-09d5795fa2c2:
+            uuid: 104f2ab2-c7b4-4c75-ac81-09d5795fa2c2
+            region: second
+            configuration:
+              id: 'views_block:mg_single_item_slider-block_2'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+            weight: 1
+            additional: {  }
+          b9f5bb11-6020-4590-9ae0-1b93d33137a0:
+            uuid: b9f5bb11-6020-4590-9ae0-1b93d33137a0
+            region: first
+            configuration:
+              id: 'field_block:node:event:body'
+              label: Description
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 1
+            additional: {  }
+          af2ae553-c3b3-4353-93a1-3ccacf6664c2:
+            uuid: af2ae553-c3b3-4353-93a1-3ccacf6664c2
+            region: first
+            configuration:
+              id: webform_block
+              label: Webform
+              label_display: '0'
+              provider: webform
+              context_mapping: {  }
+              webform_id: events_contact_form
+              default_data: ''
+              redirect: false
+            weight: 3
+            additional: {  }
+          1cb63cb9-b9fc-4973-bafb-6f2fe2c16a16:
+            uuid: 1cb63cb9-b9fc-4973-bafb-6f2fe2c16a16
+            region: first
+            configuration:
+              id: shariff_block
+              label: 'Shariff share buttons'
+              label_display: '0'
+              provider: shariff
+              context_mapping: {  }
+              shariff_default_settings: 0
+              shariff_services:
+                twitter: twitter
+                facebook: facebook
+                linkedin: linkedin
+                whatsapp: whatsapp
+                mail: mail
+                pinterest: 0
+                vk: 0
+                xing: 0
+                addthis: 0
+                telegram: 0
+                tumblr: 0
+                flattr: 0
+                diaspora: 0
+                flipboard: 0
+                pocket: 0
+                print: 0
+                reddit: 0
+                stumbleupon: 0
+                threema: 0
+                info: 0
+                buffer: 0
+              shariff_theme: colored
+              shariff_css: complete
+              shariff_button_style: standard
+              shariff_orientation: horizontal
+              shariff_twitter_via: ''
+              shariff_mail_url: ''
+              shariff_mail_subject: ''
+              shariff_mail_body: ''
+              shariff_referrer_track: ''
+              shariff_backend_url: ''
+              shariff_flattr_category: ''
+              shariff_flattr_user: ''
+              shariff_media_url: ''
+              shariff_info_url: ''
+              shariff_info_display: null
+              shariff_title: ''
+              shariff_url: ''
+            weight: 3
+            additional: {  }
+          dae77300-beb9-4efe-940b-f33004463663:
+            uuid: dae77300-beb9-4efe-940b-f33004463663
+            region: first
+            configuration:
+              id: 'views_block:event_header-block_2'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+            weight: 0
+            additional: {  }
+          a6684315-7941-42d3-9fea-adfb8c246568:
+            uuid: a6684315-7941-42d3-9fea-adfb8c246568
+            region: first
+            configuration:
+              id: 'field_block:node:event:field_event_website'
+              label: Website
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          a376cb3f-fb49-45d8-a7dc-ff9ef2f21d1d:
+            uuid: a376cb3f-fb49-45d8-a7dc-ff9ef2f21d1d
+            region: first
+            configuration:
+              id: 'block_content:b5b372fc-85aa-4761-b242-dde9ebe89f1e'
+              label: 'Video Tenancy'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 4
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          711da4b3-28b2-41ac-9e91-3b5214e2d96f:
+            uuid: 711da4b3-28b2-41ac-9e91-3b5214e2d96f
+            region: content
+            configuration:
+              id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+              label: 'Leaderboard Top'
+              label_display: visible
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.event.full
+targetEntityType: node
+bundle: event
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_advertisement_keywords:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_county:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_event_address_1:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_event_address_2:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_event_concessions:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_event_contact_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_event_country:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_event_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_event_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_event_email_message:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_event_organiser:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_event_postcode:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_event_price:
+    type: price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_event_price_vat:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_event_reference:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_event_speakers_topic:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_event_town_city:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_event_venue:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_event_website:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_tagging_company:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_tagging_location:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 124
+    region: content
+  field_tagging_subject:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_event_type: true
+  field_teaser_media: true
+  field_teaser_text: true
+  layout_builder__layout: true
+  shariff_field: true

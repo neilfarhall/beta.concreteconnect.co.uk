@@ -1,0 +1,19 @@
+uuid: ae93cd50-e741-43b6-9827-7618ef4029bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large_compact_teaser_home_730_500_
+    - image.style.medium_compact_teaser
+  theme:
+    - themag
+id: teaser_large_compact_teaser_home
+label: 'Teaser: Large Compact Teaser Home'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: large_compact_teaser_home_730_500_
+    breakpoint_id: themag.md
+    multiplier: 1x
+breakpoint_group: themag
+fallback_image_style: medium_compact_teaser

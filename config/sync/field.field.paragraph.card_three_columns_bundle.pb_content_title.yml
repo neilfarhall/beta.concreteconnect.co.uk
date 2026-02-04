@@ -1,0 +1,21 @@
+uuid: df19f25b-c25c-489e-b549-6a7ce6a9038a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_content_title
+    - paragraphs.paragraphs_type.card_three_columns_bundle
+_core:
+  default_config_hash: ujLtAeNdp6FcFf9H96vqQhfPnmyifzGaag4omtqcw6g
+id: paragraph.card_three_columns_bundle.pb_content_title
+field_name: pb_content_title
+entity_type: paragraph
+bundle: card_three_columns_bundle
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

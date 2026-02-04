@@ -1,0 +1,21 @@
+uuid: eeb09522-831f-4d2c-9f14-5a5a3fcd527c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bullet_text
+    - paragraphs.paragraphs_type.bullet_list
+  module:
+    - text
+id: paragraph.bullet_list.field_bullet_text
+field_name: field_bullet_text
+entity_type: paragraph
+bundle: bullet_list
+label: 'Bullet Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

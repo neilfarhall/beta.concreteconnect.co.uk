@@ -1,0 +1,18 @@
+uuid: 81d234d0-94f5-4f42-9814-07cf74c6d16f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_authors_email
+field_name: field_authors_email
+entity_type: paragraph
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

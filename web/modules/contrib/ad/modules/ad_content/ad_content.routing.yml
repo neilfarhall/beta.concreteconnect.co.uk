@@ -1,0 +1,7 @@
+ad_content.render_ad:
+  path: '/ad/content/render'
+  defaults:
+    _controller: '\Drupal\ad_content\Controller\ImpressionController::renderAds'
+    _title: 'Render AD'
+  requirements:
+    _permission: 'access content'

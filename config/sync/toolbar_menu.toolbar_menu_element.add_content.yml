@@ -1,0 +1,9 @@
+uuid: 3c9184fe-28a3-4fd4-bc57-39257b652b42
+langcode: en
+status: true
+dependencies: {  }
+id: add_content
+label: 'Add Content'
+weight: -10
+menu: content-editors
+rewrite_label: false

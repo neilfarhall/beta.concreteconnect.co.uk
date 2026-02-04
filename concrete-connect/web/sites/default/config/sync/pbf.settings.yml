@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: 1R1X1UvfkWtx6yddoRgpgGqAI3M27YGM96gBrCONV8c
+pbf_roles_gids:
+  anonymous: 1
+  authenticated: 2
+  administrator: 3
+  editor: 4
+  basic_editor: 5
+  contributor: 6
+  subscriber: 7
+  view_simple_ads: 8
+  webform_access: 9

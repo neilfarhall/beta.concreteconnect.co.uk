@@ -1,0 +1,10 @@
+uuid: 72262740-3160-4b9e-b63b-cd829c3dbcf9
+langcode: en
+status: true
+dependencies: {  }
+id: authors_panel
+label: 'Authors panel'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

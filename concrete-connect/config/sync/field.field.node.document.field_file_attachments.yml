@@ -1,0 +1,32 @@
+uuid: 2d841d65-41bd-4c47-9787-9422a785e861
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_attachments
+    - node.type.document
+  module:
+    - file
+    - pdf_preview_image
+third_party_settings:
+  pdf_preview_image:
+    enable: 1
+    target_field: field_front_page
+id: node.document.field_file_attachments
+field_name: field_file_attachments
+entity_type: node
+bundle: document
+label: 'File Attachments'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: attachments/documents
+  file_extensions: 'txt pdf doc docx'
+  max_filesize: ''
+  description_field: true
+field_type: file

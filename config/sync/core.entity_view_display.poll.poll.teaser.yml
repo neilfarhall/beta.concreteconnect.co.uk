@@ -1,0 +1,80 @@
+uuid: 6d20cc5d-b87e-4d4b-88a5-f057cf2d2bf5
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.poll.teaser
+  content:
+    - 'block_content:advertisement:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+  module:
+    - block_content
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - poll
+    - themag_layouts
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: themag_onecol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: leaderboard-strip
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: '12'
+          sticky_columns: null
+          first:
+            custom_classes: ''
+        components:
+          dabdc72a-0904-425e-a8e7-7d45ee92cec4:
+            uuid: dabdc72a-0904-425e-a8e7-7d45ee92cec4
+            region: first
+            configuration:
+              id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+              label: 'Leaderboard Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          9f2d9dd1-58cf-47de-b2cf-060a4883de1a:
+            uuid: 9f2d9dd1-58cf-47de-b2cf-060a4883de1a
+            region: content
+            configuration:
+              id: 'extra_field_block:poll:poll:poll_votes'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: poll.poll.teaser
+targetEntityType: poll
+bundle: poll
+mode: teaser
+content:
+  poll_votes:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

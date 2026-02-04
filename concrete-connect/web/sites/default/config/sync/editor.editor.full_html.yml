@@ -1,0 +1,63 @@
+uuid: 58f39e0c-8faa-447f-8a98-80e466ec9329
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor5
+format: full_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+      - undo
+      - redo
+      - specialCharacters
+      - sourceEditing
+      - underline
+      - code
+      - link
+      - blockQuote
+      - bulletedList
+      - numberedList
+      - horizontalLine
+      - alignment
+      - insertTable
+      - removeFormat
+      - drupalInsertImage
+      - outdent
+      - indent
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading1
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
+        - justify
+    ckeditor5_imageResize:
+      allow_resize: true
+image_upload:
+  status: false
+  scheme: null
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: 0
+    height: 0

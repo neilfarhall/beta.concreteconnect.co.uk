@@ -1,0 +1,10 @@
+uuid: 40962607-de73-4335-a9e3-537b9c69323e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.header_with_logo_left
+label: 'Header With logo left'
+targetEntityType: node
+cache: true

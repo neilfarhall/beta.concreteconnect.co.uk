@@ -1,0 +1,8 @@
+{
+    "name": "drupal/node_access_grants",
+    "description": "OOP-fies the node access grants system.",
+    "type": "drupal-module",
+    "require": {
+        "php": ">=7.1"
+    }
+}

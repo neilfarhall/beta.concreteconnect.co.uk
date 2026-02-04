@@ -1,0 +1,9 @@
+uuid: 4d87060c-ed03-4326-8b6d-d16e3cb2cdd7
+langcode: en
+status: true
+dependencies: {  }
+id: seznam
+label: Seznam
+url: null
+index_now_url: 'https://search.seznam.cz/indexnow?url=[url]&key=[key]'
+sitemap_variants: null

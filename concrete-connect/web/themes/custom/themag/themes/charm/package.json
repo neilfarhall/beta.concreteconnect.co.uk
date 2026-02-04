@@ -1,0 +1,15 @@
+{
+  "name": "charm",
+  "version": "1.0.0",
+  "description": "Theme Plugins",
+  "main": "index.js",
+  "author": "PinkDexo",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery.photoswipe": "https://github.com/yaquawa/jquery.photoswipe.git",
+    "parallax.js": "https://github.com/pixelcog/parallax.js.git#^1.5.0",
+    "photoswipe": "^4.1.2",
+    "sidr": "https://github.com/artberri/sidr.git#^2.2.1"
+  }
+}

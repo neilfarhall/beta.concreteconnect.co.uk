@@ -1,0 +1,82 @@
+@import "../../dependencies/index";
+
+.view-media-entity-browser {
+
+  .form--inline {
+    display: flex;
+    margin: $spacer 0;
+
+    .form-item {
+      margin: $spacer/2;
+    }
+
+    .form-actions {
+      margin-top: $spacer*1.5;
+    }
+  }
+
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $spacer;
+    padding-bottom: $spacer;
+    border-bottom: 4px solid $color--gray;
+  }
+
+  .views-row {
+    width: 45%;
+    position: relative;
+    margin: $spacer/2;
+    @include media-breakpoint-up(md) {
+      width: 20%;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 15.3%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .views-field-entity-browser-select {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 5;
+
+      .form-item {
+        margin: 0;
+      }
+
+      input[type="checkbox"] {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        appearance: none;
+        cursor: pointer;
+        outline: none;
+        transition: background-color .2s ease-in-out;
+        &:hover {
+          background-color: rgba(#000, .25);
+        }
+        &:checked {
+          background-color: rgba(#000, .5);
+          background-image: url(../#{$path-to-icons}/check-100.svg);
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 7220b7e7-3ead-421a-b249-d9279bcadfc2
+  bundle: basic
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Short About Us'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: "<p>Sed nulla lorem, posuere sed venenatis et, consequat vitae risus. Duis viverra mauris vel sapien laoreet ultrices.</p>\r\n\r\n<p>Vivamus vel erat mi. Pellentesque lobortis nunc sed egestas elementum. Phasellus volutpat fringilla diam, eu fermentum ante tincidunt quis. Sed congue dui nisl, sit amet ornare turpis blandit et.</p>\r\n"
+      format: full_html
+      summary: ''

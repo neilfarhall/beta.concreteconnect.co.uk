@@ -1,0 +1,88 @@
+uuid: 1f7bee44-0a5b-42b0-96ce-d08a209a91e5
+langcode: en
+status: true
+dependencies: {  }
+id: environmental_risk_home
+label: 'Environmental Risk Home'
+renderer: quick_tabs
+hide_empty_tabs: false
+default_tab: 9999
+options:
+  quick_tabs:
+    ajax: false
+    class: ''
+    style: ''
+  accordion_tabs:
+    jquery_ui:
+      collapsible: false
+      heightStyle: auto
+configuration_data:
+  -
+    title: 'Management System'
+    weight: 0
+    type: block_content
+    content:
+      view_content:
+        options:
+          vid: aggregates_directory
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:risk_management_listings-block_12'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: advertising_specs
+  -
+    title: 'Environmental Procedures'
+    weight: 0
+    type: block_content
+    content:
+      view_content:
+        options:
+          vid: aggregates_directory
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:risk_management_listings-block_13'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: advertising_specs
+  -
+    title: 'Operational Procedures'
+    weight: 0
+    type: block_content
+    content:
+      view_content:
+        options:
+          vid: aggregates_directory
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:risk_management_listings-block_14'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: advertising_specs

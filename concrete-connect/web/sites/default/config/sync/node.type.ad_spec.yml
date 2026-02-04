@@ -1,0 +1,16 @@
+uuid: 7509f074-a7e3-4958-815d-b16aacb3eb37
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main-menu:0:'
+name: 'Ad Spec'
+type: ad_spec
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

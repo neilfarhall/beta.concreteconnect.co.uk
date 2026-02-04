@@ -1,0 +1,20 @@
+services:
+
+  ad.bucket_factory:
+    class: Drupal\ad\Bucket\BucketFactory
+    arguments: ['@ad.bucket_plugin_manager', '@config.factory', '@request_stack']
+  ad.bucket_plugin_manager:
+    class: Drupal\ad\Bucket\BucketPluginManager
+    arguments: ['@container.namespaces', '@module_handler']
+    private: true
+
+  ad.size_factory:
+    class: Drupal\ad\Size\SizeFactory
+
+  ad.tracker_factory:
+    class: Drupal\ad\Track\TrackerFactory
+    arguments: ['@ad.tracker_plugin_manager']
+  ad.tracker_plugin_manager:
+    class: Drupal\ad\Track\TrackerPluginManager
+    arguments: ['@container.namespaces', '@module_handler']
+    private: true

@@ -1,0 +1,10 @@
+uuid: 2be2f7bc-0380-4232-a031-92ece91ce479
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.mdeia_gallery
+label: 'Media Gallery'
+targetEntityType: media
+cache: true

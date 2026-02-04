@@ -1,0 +1,20 @@
+uuid: 05914311-b489-42f8-bdbc-89169f07b22d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_directory_material
+field_name: field_directory_material
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

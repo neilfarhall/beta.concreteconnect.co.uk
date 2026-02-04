@@ -1,0 +1,52 @@
+uuid: b67f5c1f-bead-44be-a739-995c6011821b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.video_local_host
+    - field.field.media.video_local_host.field_local_video
+    - field.field.media.video_local_host.field_media_video_file
+    - media.type.video_local_host
+  module:
+    - blazy
+    - file
+    - layout_builder
+    - video
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.video_local_host.video_local_host
+targetEntityType: media
+bundle: video_local_host
+mode: video_local_host
+content:
+  field_local_video:
+    type: video_url
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_video_file:
+    type: file_video
+    label: above
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+      muted: false
+      width: 640
+      height: 480
+    third_party_settings:
+      blazy:
+        blazy: false
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

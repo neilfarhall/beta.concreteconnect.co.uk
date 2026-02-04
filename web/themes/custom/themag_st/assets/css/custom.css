@@ -1,0 +1,87 @@
+.navbar-we-mega-menu.navbar .we-mega-menu-ul > li.we-mega-menu-li > a,
+.navbar-we-mega-menu.navbar .we-mega-menu-ul > li.we-mega-menu-li > span {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header__top__left img{
+
+     height: 100px;
+ }
+
+
+
+.menu--footer ul.menu {
+  display: flex; /* Enables flexbox layout for direct children, i.e., li elements */
+  flex-wrap: wrap; /* Allows items to wrap onto the next line as needed */
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Aligns items vertically */
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none; /* Removes default list styling */
+}
+
+@media (min-width: 992px) {
+  .menu--footer ul.menu {
+    justify-content: flex-start; /* Aligns items to the left on desktop screens */
+    margin-top: 0;
+  }
+  .menu--footer ul.menu li:first-child a {
+    padding-left: 0; /* Removes left padding for the first link in the first item on desktop */
+  }
+}
+
+.menu--footer ul.menu li {
+  margin: 0.5rem; /* Provides space around each item */
+}
+
+.menu--footer ul.menu li a {
+  color: #B3B3B3; /* Updated color for all link states */
+  text-decoration: none;
+  padding: 0.75rem; /* Increased padding for better touch accessibility */
+  display: block; /* Ensures padding applies correctly and increases hit area */
+}
+
+.menu--footer ul.menu li a:hover {
+  text-decoration: underline;
+}
+
+
+/*--- this makes corrections to slider styles. Paragraph Bunldes moodule made some overrides and broke slick. */
+/*if it isn't possible to remove paragraph bundles module - */
+/*The below takes them back to the original. */
+
+.paragraph {
+  display: block !important;
+}
+
+/* Narrow scope so you don’t affect other paragraphs */
+/* Scope only the gallery slider paragraph */
+.paragraph.paragraph--type--gallery-slider button,
+.paragraph--type--gallery-slider .trigger,
+.paragraph--type--gallery-slider .slick-arrow,
+.paragraph--type--gallery-slider .slick-dots button {
+  -webkit-appearance: button;
+  appearance: button;
+  text-align: center;
+  /* keep your project-wide choices */
+  box-sizing: border-box;
+  outline: revert;
+  cursor: pointer;
+}
+
+.paragraph--type--gallery-slider .slick-dots button {
+  display: inline-block;
+}
+
+.paragraph--type--gallery-slider .slick-arrow {
+  padding: 1px 6px;
+}
+/*------- END*/

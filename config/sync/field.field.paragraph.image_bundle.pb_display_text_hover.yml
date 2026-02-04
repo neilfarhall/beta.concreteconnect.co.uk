@@ -1,0 +1,23 @@
+uuid: e1184cc1-e4c6-4e8d-8cf6-8480d76c7d40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_text_hover
+    - paragraphs.paragraphs_type.image_bundle
+  module:
+    - paragraphs_bundles
+_core:
+  default_config_hash: F68Uww4sYVphCvKZ90C35czAhId_zgEN1sBNY2jdocU
+id: paragraph.image_bundle.pb_display_text_hover
+field_name: pb_display_text_hover
+entity_type: paragraph
+bundle: image_bundle
+label: 'Text Color Hover'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraphs_bundles_rgb

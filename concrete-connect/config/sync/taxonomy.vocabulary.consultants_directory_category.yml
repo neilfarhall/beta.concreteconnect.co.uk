@@ -1,0 +1,8 @@
+uuid: 4b811d7b-bf1a-43a5-8317-bbd15de83232
+langcode: en
+status: true
+dependencies: {  }
+name: 'Consultants directory category'
+vid: consultants_directory_category
+description: ''
+weight: -6

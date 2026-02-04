@@ -1,0 +1,29 @@
+uuid: e6a56639-8c4b-4fbe-ba33-cd6a07ecbb8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_category
+    - node.type.document
+    - taxonomy.vocabulary.document_directory_category
+id: node.document.field_document_category
+field_name: field_document_category
+entity_type: node
+bundle: document
+label: 'Document Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      document_directory_category: document_directory_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

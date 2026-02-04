@@ -1,0 +1,142 @@
+uuid: 4b41626e-eddc-43c1-a60f-43d5ec637976
+langcode: en
+status: true
+dependencies: {  }
+id: jobs_landing
+label: 'Jobs Landing'
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_onecol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: leaderboard-strip
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: '12'
+      sticky_columns: null
+      first:
+        custom_classes: ''
+    components:
+      c4ebaa83-fadd-4bf5-a839-0b2772583092:
+        uuid: c4ebaa83-fadd-4bf5-a839-0b2772583092
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 1
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      e07cc4d8-1c09-43af-9fd7-eb7e91fd98f7:
+        uuid: e07cc4d8-1c09-43af-9fd7-eb7e91fd98f7
+        region: first
+        configuration:
+          id: 'views_block:mg_example_1-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+        weight: 0
+        additional: {  }
+      bf39f52a-a184-4982-a772-4774c954eb01:
+        uuid: bf39f52a-a184-4982-a772-4774c954eb01
+        region: second
+        configuration:
+          id: 'block_content:c0b05cb3-a9fd-485d-a592-dcec0b26babc'
+          label: MPU
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 2
+        additional: {  }
+      bf887262-e121-4303-998f-071729564a51:
+        uuid: bf887262-e121-4303-998f-071729564a51
+        region: second
+        configuration:
+          id: 'block_content:c0b05cb3-a9fd-485d-a592-dcec0b26babc'
+          label: MPU
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 1
+        additional: {  }
+      3af3b06d-7402-44d2-be8b-a286f27a9bfa:
+        uuid: 3af3b06d-7402-44d2-be8b-a286f27a9bfa
+        region: second
+        configuration:
+          id: 'block_content:c0b05cb3-a9fd-485d-a592-dcec0b26babc'
+          label: MPU
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 2
+        additional: {  }
+      3f875c5c-d478-4a7c-9f17-aaff44eac53e:
+        uuid: 3f875c5c-d478-4a7c-9f17-aaff44eac53e
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: -6
+        additional: {  }
+      c01bd370-1bcd-4a53-8409-61380fb904ef:
+        uuid: c01bd370-1bcd-4a53-8409-61380fb904ef
+        region: second
+        configuration:
+          id: 'views_block:featured_company_item_slider-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: -5
+        additional: {  }
+    third_party_settings: {  }

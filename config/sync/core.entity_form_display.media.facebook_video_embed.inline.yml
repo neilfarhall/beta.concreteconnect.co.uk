@@ -1,0 +1,57 @@
+uuid: 3fc789b9-b079-4a28-b999-76975eea39a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.inline
+    - field.field.media.facebook_video_embed.field_media_facebook
+    - media.type.facebook_video_embed
+  module:
+    - path
+id: media.facebook_video_embed.inline
+targetEntityType: media
+bundle: facebook_video_embed
+mode: inline
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_media_facebook: true
+  publish_on: true
+  scheduler_settings: true
+  unpublish_on: true

@@ -1,0 +1,34 @@
+uuid: ea099577-6e08-43a7-a44a-03b53a4e4b26
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.gallery_grid
+    - field.field.media.gallery.field_media_slideshow
+    - media.type.gallery
+  module:
+    - field_formatter
+id: media.gallery.gallery_grid
+targetEntityType: media
+bundle: gallery
+mode: gallery_grid
+content:
+  field_media_slideshow:
+    type: field_formatter_with_inline_settings
+    label: hidden
+    settings:
+      field_name: bundle
+      type: field_formatter_with_inline_settings
+      settings:
+        link: '1'
+      label: hidden
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

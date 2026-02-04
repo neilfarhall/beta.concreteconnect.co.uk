@@ -1,0 +1,371 @@
+uuid: 63e3bae9-8b87-45ff-8a47-17d9117fdfda
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.job_listing.body
+    - field.field.node.job_listing.field_image
+    - field.field.node.job_listing.field_job_attachments
+    - field.field.node.job_listing.field_job_email
+    - field.field.node.job_listing.field_related_directories
+    - field.field.node.job_listing.field_teaser_media
+    - field.field.node.job_listing.field_teaser_text
+    - field.field.node.job_listing.layout_builder__layout
+    - field.field.node.job_listing.layout_selection
+    - node.type.job_listing
+    - views.view.event_header
+    - views.view.featured_company_item_slider
+    - webform.webform.jobs_contact_form
+  content:
+    - 'block_content:advertisement:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+    - 'block_content:advertisement:f66ff081-dc10-45ef-ade1-23884bcc4885'
+  module:
+    - block_content
+    - file
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - shariff
+    - svg_image
+    - text
+    - themag_layouts
+    - user
+    - views
+    - webform
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: themag_onecol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: leaderboard-strip
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: '12'
+          sticky_columns: null
+          first:
+            custom_classes: ''
+        components:
+          c28b7684-6720-4d88-880a-2b4fc51aeff0:
+            uuid: c28b7684-6720-4d88-880a-2b4fc51aeff0
+            region: first
+            configuration:
+              id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+              label: 'Leaderboard Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: ''
+          section_padding: ''
+          section_margin: my-default
+          section_custom_classes: ''
+          container_style: container
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 9-3
+          sticky_columns: 1
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          5a644d1d-d1a5-4a93-892b-a4630e56532c:
+            uuid: 5a644d1d-d1a5-4a93-892b-a4630e56532c
+            region: first
+            configuration:
+              id: 'views_block:event_header-block_3'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+            weight: 0
+            additional: {  }
+          8fb0a763-226b-4c1f-a332-022ba69168d1:
+            uuid: 8fb0a763-226b-4c1f-a332-022ba69168d1
+            region: second
+            configuration:
+              id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+              label: 'MPU Top'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          e92328c9-43f0-427d-9015-e0f0d7a6c2b5:
+            uuid: e92328c9-43f0-427d-9015-e0f0d7a6c2b5
+            region: first
+            configuration:
+              id: 'field_block:node:job_listing:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 1
+            additional: {  }
+          c899f0b7-536a-4e5c-876b-b2fe390a9f5d:
+            uuid: c899f0b7-536a-4e5c-876b-b2fe390a9f5d
+            region: first
+            configuration:
+              id: 'field_block:node:job_listing:field_job_attachments'
+              label: 'File attachments'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: file_table
+                label: hidden
+                settings:
+                  use_description_as_link_text: true
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 2
+            additional: {  }
+          52fb082d-5907-4500-91d5-7e1ca9d9c0fa:
+            uuid: 52fb082d-5907-4500-91d5-7e1ca9d9c0fa
+            region: first
+            configuration:
+              id: webform_block
+              label: Webform
+              label_display: '0'
+              provider: webform
+              context_mapping: {  }
+              webform_id: jobs_contact_form
+              default_data: ''
+              redirect: false
+            weight: 3
+            additional: {  }
+          d2a2464c-6857-4f5c-9063-73f17dc3aca5:
+            uuid: d2a2464c-6857-4f5c-9063-73f17dc3aca5
+            region: first
+            configuration:
+              id: 'field_block:node:job_listing:field_related_directories'
+              label: 'Related Directories'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 4
+            additional: {  }
+          7dd9beda-3648-457f-ba07-80c8cc64db8b:
+            uuid: 7dd9beda-3648-457f-ba07-80c8cc64db8b
+            region: first
+            configuration:
+              id: shariff_block
+              label: 'Shariff share buttons'
+              label_display: '0'
+              provider: shariff
+              context_mapping: {  }
+              shariff_default_settings: 0
+              shariff_services:
+                twitter: twitter
+                facebook: facebook
+                linkedin: linkedin
+                whatsapp: whatsapp
+                mail: mail
+                pinterest: 0
+                vk: 0
+                xing: 0
+                addthis: 0
+                telegram: 0
+                tumblr: 0
+                flattr: 0
+                diaspora: 0
+                flipboard: 0
+                pocket: 0
+                print: 0
+                reddit: 0
+                stumbleupon: 0
+                threema: 0
+                info: 0
+                buffer: 0
+              shariff_theme: colored
+              shariff_css: complete
+              shariff_button_style: standard
+              shariff_orientation: horizontal
+              shariff_twitter_via: ''
+              shariff_mail_url: ''
+              shariff_mail_subject: ''
+              shariff_mail_body: ''
+              shariff_referrer_track: ''
+              shariff_backend_url: ''
+              shariff_flattr_category: ''
+              shariff_flattr_user: ''
+              shariff_media_url: ''
+              shariff_info_url: ''
+              shariff_info_display: null
+              shariff_title: ''
+              shariff_url: ''
+            weight: 5
+            additional: {  }
+          e5c2c8b6-d38b-4938-b2c7-f01964cc9b72:
+            uuid: e5c2c8b6-d38b-4938-b2c7-f01964cc9b72
+            region: second
+            configuration:
+              id: 'views_block:featured_company_item_slider-block_2'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+              exposed: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.job_listing.full
+targetEntityType: node
+bundle: job_listing
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_job_attachments:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_job_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_related_directories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_teaser_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  layout_builder__layout: true
+  layout_selection: true
+  search_api_excerpt: true
+  shariff_field: true

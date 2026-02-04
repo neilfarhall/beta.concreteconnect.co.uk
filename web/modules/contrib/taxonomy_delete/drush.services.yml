@@ -1,0 +1,6 @@
+services:
+  taxonomy_delete.commands:
+    class: \Drupal\taxonomy_delete\Commands\TaxonomyDelete
+    arguments: ['@entity_type.manager', '@logger.factory']
+    tags:
+      - { name: drush.command }

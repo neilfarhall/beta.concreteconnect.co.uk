@@ -1,0 +1,34 @@
+uuid: 16c42c7c-bb10-4fe3-87fb-d48e9abcd377
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quote.field_source
+    - field.field.paragraph.quote.field_source_long
+    - field.field.paragraph.quote.field_text
+    - paragraphs.paragraphs_type.quote
+  module:
+    - text
+id: paragraph.quote.default
+targetEntityType: paragraph
+bundle: quote
+mode: default
+content:
+  field_source:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_source_long: true

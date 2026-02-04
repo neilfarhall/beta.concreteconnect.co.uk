@@ -1,0 +1,19 @@
+uuid: 5e11153a-83fd-4e4c-89ec-53c09eb5f57f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_text
+    - node.type.job_listing
+id: node.job_listing.field_teaser_text
+field_name: field_teaser_text
+entity_type: node
+bundle: job_listing
+label: 'Teaser Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,333 @@
+uuid: dc2db934-3c77-4c7b-996f-5353ad1f0718
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.people_bio.field_authors_bio
+    - field.field.paragraph.people_bio.field_authors_email
+    - field.field.paragraph.people_bio.field_authors_name
+    - field.field.paragraph.people_bio.field_authors_socials
+    - field.field.paragraph.people_bio.field_authors_title
+    - field.field.paragraph.people_bio.field_profile_pic
+    - field.field.paragraph.people_bio.field_website
+    - paragraphs.paragraphs_type.people_bio
+  module:
+    - layout_builder
+    - layout_library
+    - link
+    - social_link_field
+    - text
+    - themag_layouts
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: themag_twocol_section
+        layout_settings:
+          context_mapping: {  }
+          section_bg: gray-light
+          section_padding: py-large
+          section_margin: my-default
+          section_custom_classes: people-bio
+          container_style: container-fluid
+          row_custom_classes: ''
+          no_gutters: 0
+          column_widths: 8-4
+          sticky_columns: 0
+          first:
+            custom_classes: ''
+          second:
+            custom_classes: ''
+        components:
+          0f032c3c-7514-4ddb-9970-a4af8d0ba4a5:
+            uuid: 0f032c3c-7514-4ddb-9970-a4af8d0ba4a5
+            region: first
+            configuration:
+              id: 'field_block:paragraph:people_bio:field_authors_name'
+              label: Name
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 1
+            additional: {  }
+          6dcd753e-1f74-480c-8e46-18e336bff88b:
+            uuid: 6dcd753e-1f74-480c-8e46-18e336bff88b
+            region: first
+            configuration:
+              id: 'field_block:paragraph:people_bio:field_authors_title'
+              label: 'Job Title'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 2
+            additional: {  }
+          67bee744-2610-47b1-b498-163c8bac4075:
+            uuid: 67bee744-2610-47b1-b498-163c8bac4075
+            region: first
+            configuration:
+              id: 'field_block:paragraph:people_bio:field_authors_bio'
+              label: Bio
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 3
+            additional: {  }
+          d71dfd1c-4656-4bc7-9127-ba925786507a:
+            uuid: d71dfd1c-4656-4bc7-9127-ba925786507a
+            region: first
+            configuration:
+              id: 'field_block:paragraph:people_bio:field_website'
+              label: Website
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          5e42a035-4615-4127-b24c-04cec520fb0d:
+            uuid: 5e42a035-4615-4127-b24c-04cec520fb0d
+            region: first
+            configuration:
+              id: 'field_block:paragraph:people_bio:field_authors_socials'
+              label: Socials
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: font_awesome
+                label: hidden
+                settings:
+                  new_tab: 1
+                  icon_type: common
+                  orientation: vertical
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 5
+            additional: {  }
+          808684bb-0c6a-4e24-962d-4a6c631f49d4:
+            uuid: 808684bb-0c6a-4e24-962d-4a6c631f49d4
+            region: first
+            configuration:
+              id: 'field_block:paragraph:people_bio:field_authors_email'
+              label: email
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: email_mailto
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 6
+            additional: {  }
+          cac062f1-3080-4d3d-8ee7-685463d4c30e:
+            uuid: cac062f1-3080-4d3d-8ee7-685463d4c30e
+            region: second
+            configuration:
+              id: 'field_block:paragraph:people_bio:field_profile_pic'
+              label: 'Profile Pic'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: field_formatter_with_inline_settings
+                label: hidden
+                settings:
+                  field_name: field_image
+                  type: responsive_image
+                  settings:
+                    responsive_image_style: teaser_small_teaser_item
+                    image_link: ''
+                    image_loading:
+                      attribute: lazy
+                  label: hidden
+                  link_to_entity: false
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: paragraph.people_bio.default
+targetEntityType: paragraph
+bundle: people_bio
+mode: default
+content:
+  field_authors_bio:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_authors_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_authors_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_authors_socials:
+    type: font_awesome
+    label: above
+    settings:
+      icon_type: common
+      orientation: vertical
+      new_tab: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_authors_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_profile_pic:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_website:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden: {  }

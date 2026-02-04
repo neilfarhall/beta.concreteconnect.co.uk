@@ -1,0 +1,5 @@
+ad_content.add_form:
+  route_name: entity.ad_content.add_form
+  title: 'Add content AD'
+  appears_on:
+    - entity.ad_content.collection

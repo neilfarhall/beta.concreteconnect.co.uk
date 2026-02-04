@@ -1,0 +1,33 @@
+uuid: 7611f9ca-d64e-4504-a51e-bd44467b8873
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags:
+  canonical_url: '[site:url]'
+  description: '[node:field_teaser_text]'
+  og_description: '[node:field_teaser_text]'
+  og_image: '[node:field_teaser_media:entity:field_image:og_image:url]'
+  og_image_height: '[node:field_teaser_media:entity:field_image:og_image:height]'
+  og_image_type: '[node:field_teaser_media:entity:field_image:entity:mime]'
+  og_image_width: '[node:field_teaser_media:entity:field_image:og_image:width]'
+  og_site_name: '[site:name]'
+  og_title: '[current-page:title]'
+  og_url: '[site:url]'
+  robots: 'index, follow'
+  schema_organization_address: 'a:5:{s:5:"@type";s:13:"PostalAddress";s:13:"streetAddress";s:15:"7 Regent Street";s:15:"addressLocality";s:10:"Nottingham";s:10:"postalCode";s:7:"NG1 5BS";s:14:"addressCountry";s:14:"United Kingdom";}'
+  schema_organization_contact_point: 'a:5:{s:5:"@type";s:12:"ContactPoint";s:9:"telephone";s:20:" +44 (0)115 941 1315";s:5:"email";s:15:"admin@qmj.co.uk";s:3:"url";s:21:"https://www.qmj.co.uk";s:10:"areaServed";a:3:{s:5:"@type";s:7:"Country";s:4:"name";s:14:"United Kingdom";s:7:"address";a:5:{s:5:"@type";s:13:"PostalAddress";s:13:"streetAddress";s:15:"7 Regent Street";s:15:"addressLocality";s:10:"Nottingham";s:10:"postalCode";s:7:"NG1 5BS";s:14:"addressCountry";s:14:"United Kingdom";}}}'
+  schema_organization_description: 'The QMJ Group is a privately owned publishing and exhibitions business that serves the quarrying, recycling and natural stone industries. We''re the industry choice for online, print, face-to-face, and market analysis.'
+  schema_organization_id: 'https://www.qmj.co.uk'
+  schema_organization_logo: 'a:4:{s:5:"@type";s:11:"ImageObject";s:3:"url";s:79:"https://www.qmj.co.uk/sites/default/files/color/custom_barrio-7a7446d6/logo.svg";s:5:"width";s:3:"300";s:6:"height";s:2:"40";}'
+  schema_organization_name: 'The QMJ Group Ltd'
+  schema_organization_same_as: 'https://www.linkedin.com/company/qmj-publishing-limited'
+  schema_organization_telephone: ' +44 (0)115 941 1315'
+  schema_organization_type: Organization
+  schema_organization_url: 'https://www.qmj.co.uk'
+  shortlink: '[site:url]'
+  title: '[current-page:title] | [site:name]'
+  twitter_cards_image: '[node:field_teaser_media:entity:field_image:entity:url]'

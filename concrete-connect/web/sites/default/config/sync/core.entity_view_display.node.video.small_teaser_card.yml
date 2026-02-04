@@ -1,0 +1,54 @@
+uuid: 76b367df-a568-49a6-9a89-f5386954b26b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.small_teaser_card
+    - field.field.node.video.field_tagging_subject
+    - field.field.node.video.field_teaser_media
+    - field.field.node.video.field_teaser_text
+    - field.field.node.video.field_video_embed
+    - node.type.video
+  module:
+    - field_formatter
+    - layout_builder
+    - layout_library
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_library:
+    enable: false
+id: node.video.small_teaser_card
+targetEntityType: node
+bundle: video
+mode: small_teaser_card
+content:
+  field_teaser_media:
+    type: field_formatter_with_inline_settings
+    label: hidden
+    settings:
+      field_name: field_image
+      type: image
+      settings:
+        image_link: ''
+        image_style: news_small_teaser_card_260x180_
+        svg_attributes:
+          width: null
+          height: null
+        svg_render_as_image: false
+        image_loading:
+          attribute: lazy
+      label: hidden
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_tagging_subject: true
+  field_teaser_text: true
+  field_video_embed: true
+  links: true
+  search_api_excerpt: true
+  shariff_field: true

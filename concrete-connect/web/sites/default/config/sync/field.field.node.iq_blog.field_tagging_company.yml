@@ -1,0 +1,29 @@
+uuid: 04be6c86-e243-4dc4-879a-de9b5b400a9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tagging_company
+    - node.type.iq_blog
+    - taxonomy.vocabulary.tagging_company
+id: node.iq_blog.field_tagging_company
+field_name: field_tagging_company
+entity_type: node
+bundle: iq_blog
+label: 'Company Tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tagging_company: tagging_company
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

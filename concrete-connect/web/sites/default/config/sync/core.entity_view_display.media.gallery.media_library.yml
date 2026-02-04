@@ -1,0 +1,33 @@
+uuid: 491395b4-2680-4198-9d9e-03bad600468f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.gallery.field_media_slideshow
+    - image.style.media_library
+    - media.type.gallery
+  module:
+    - svg_image
+id: media.gallery.media_library
+targetEntityType: media
+bundle: gallery
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: media_library
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_slideshow: true
+  name: true
+  search_api_excerpt: true
+  uid: true

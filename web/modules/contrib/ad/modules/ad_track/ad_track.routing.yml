@@ -1,0 +1,7 @@
+ad_track.track:
+  path: '/ad/track/{bucket_id}/{ad_id}'
+  defaults:
+    _controller: '\Drupal\ad_track\Controller\ClickTrackController::track'
+    _title: 'Click Tracking'
+  requirements:
+    _permission: 'access content'

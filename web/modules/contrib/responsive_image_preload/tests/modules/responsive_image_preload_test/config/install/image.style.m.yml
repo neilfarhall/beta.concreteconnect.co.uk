@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: m
+label: 'Medium (500×500)'
+effects:
+  1cfec298-8620-4749-b100-ccb6c4500775:
+    uuid: 1cfec298-8620-4749-b100-ccb6c4500775
+    id: image_scale
+    weight: 0
+    data:
+      width: 500
+      height: 500
+      upscale: true

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: xl
+label: 'Extra large (700×700)'
+effects:
+  1cfec298-8620-4749-b100-ccb6c4500773:
+    uuid: 1cfec298-8620-4749-b100-ccb6c4500773
+    id: image_scale
+    weight: 0
+    data:
+      width: 700
+      height: 700
+      upscale: true

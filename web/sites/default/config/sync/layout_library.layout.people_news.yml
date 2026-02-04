@@ -1,0 +1,145 @@
+uuid: ddf86b34-1568-4fbf-a92b-3296bc8ef348
+langcode: en
+status: true
+dependencies: {  }
+id: people_news
+label: 'People News'
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      d81b5584-b805-45c0-a127-8f4463585ce3:
+        uuid: d81b5584-b805-45c0-a127-8f4463585ce3
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      aa36a05c-b92e-46bf-9612-48b5b7f6fccb:
+        uuid: aa36a05c-b92e-46bf-9612-48b5b7f6fccb
+        region: first
+        configuration:
+          id: 'block_content:a5bd7637-24a7-464f-a553-67dcfa0cb69b'
+          label: 'Leaderboard Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 1
+        additional: {  }
+      a952bda7-9463-4ba7-89b1-6d9a7dfd54c0:
+        uuid: a952bda7-9463-4ba7-89b1-6d9a7dfd54c0
+        region: second
+        configuration:
+          id: 'block_content:fba3f0ba-833e-463a-a415-cd7a419e9222'
+          label: 'Newsletter Signup'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 0
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      1bcba1c3-e5d6-4985-a781-e17b241b91cc:
+        uuid: 1bcba1c3-e5d6-4985-a781-e17b241b91cc
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      60da78f0-ead3-4520-b214-db03286a366a:
+        uuid: 60da78f0-ead3-4520-b214-db03286a366a
+        region: first
+        configuration:
+          id: 'views_block:quarry_people_news_listings-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 0
+        additional: {  }
+      53393854-d8fb-4c66-b34d-f9ef43d6d36e:
+        uuid: 53393854-d8fb-4c66-b34d-f9ef43d6d36e
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 1
+        additional: {  }
+      cedeb8a4-4f65-44d6-90ae-53ead443a0f1:
+        uuid: cedeb8a4-4f65-44d6-90ae-53ead443a0f1
+        region: second
+        configuration:
+          id: 'views_block:mg_single_item_slider-block_2'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 2
+        additional: {  }
+    third_party_settings: {  }

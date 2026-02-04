@@ -1,0 +1,84 @@
+uuid: a482d42c-c8f8-4d00-9eda-23cc342f29a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.document.body
+    - field.field.node.document.field_document
+    - field.field.node.document.field_document_category
+    - field.field.node.document.field_file_attachments
+    - field.field.node.document.field_front_page
+    - field.field.node.document.field_image
+    - field.field.node.document.field_test_file
+    - field.field.node.document.field_test_image
+    - field.field.node.document.field_test_image_2
+    - node.type.document
+  module:
+    - file
+    - layout_builder
+    - svg_image
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.document.search_index
+targetEntityType: node
+bundle: document
+mode: search_index
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_document:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_document_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_file_attachments:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_front_page: true
+  field_test_file: true
+  field_test_image: true
+  field_test_image_2: true
+  shariff_field: true

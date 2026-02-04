@@ -1,0 +1,23 @@
+uuid: 9070a270-9beb-442b-a8d3-931b1b36ce1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.exhibitor_spotlight
+  module:
+    - text
+id: node.exhibitor_spotlight.body
+field_name: body
+entity_type: node
+bundle: exhibitor_spotlight
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

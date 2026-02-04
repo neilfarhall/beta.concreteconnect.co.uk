@@ -1,0 +1,139 @@
+//
+// IPE Wrapper
+//
+.ipe-tab-content  {
+  a, div, h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+  }
+}
+
+
+//
+// IPE Site elements
+//
+div.ipe-actions {
+  align-items: center;
+  a {
+    color: #000!important;
+  }
+}
+
+
+//
+// IPE Picker
+//
+.ipe-tab.active a, .ipe-tab a:hover {
+  color: var(--mag-text-secondary);
+  border-bottom: 3px solid var(--mag-border);
+}
+
+.ipe-tab-content {
+  padding: 12px 0 0;
+  border: none;
+}
+
+.ipe-layout-image {
+  width: auto;
+}
+
+.ipe-category-picker-search {
+  background: transparent;
+  margin-top: -12px;
+  padding: 0;
+  border: none;
+  input[type="text"], input[type="search"] {
+    width: 100%;
+    margin: 0;
+    padding: .4rem;
+    border-radius: 0;
+    text-align: center;
+  }
+  .ipe-icon-search {
+    display: none;
+  }
+}
+
+.ipe-category {
+  padding: 14px;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+  line-height: 14px;
+  &.ipe-create-category {
+    background: var(--mag-bg-grey);
+    padding: 16px 12px 17px;
+  }
+  .ipe-category-count {
+    background: var(--mag-bg-grey);
+  }
+  &:hover {
+    background: var(--mag-bg-grey);
+    color: var(--mag-text-primary);
+  }
+  &.active {
+    background: var(--mag-bg-default);
+    color: var(--mag-text-primary);
+    .ipe-category-count  {
+      background: var(--mag-bg-grey);
+    }
+  }
+}
+
+#panels-ipe-tray .ipe-category {
+  margin-right: 0;
+}
+
+.ipe-layout {
+  @extend .ipe-category;
+  width: 150px;
+  margin-top: 10px;
+  .ipe-layout-label {
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: var(--mag-text-primary);
+  }
+  .ipe-current-layout-label {
+    background: transparent;
+    border: 1px solid var(--mag-border);
+    color: var(--mag-text-primary);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  &:hover {
+    background-color: var(--mag-bg-grey);
+  }
+}
+
+.ipe-blockpicker-item a {
+  background: transparent;
+  border: 1px solid var(--mag-border);
+  &:hover {
+    color: var(--mag-text-primary);
+    border: 1px solid var(--mag-border);
+    h5 {
+      color: var(--mag-text-primary);
+    }
+  }
+}
+
+.ipe-category-picker-top {
+  &.active {
+    padding-top: 0;
+  }
+}
+
+.ipe-category-picker-bottom {
+  background: #000;
+  color: var(--mag-text-primary);
+  padding: 0;
+  min-height: 40px;
+  &.top-open {
+    border: none;
+  }
+  a {
+    color: var(--mag-text-primary);
+  }
+}

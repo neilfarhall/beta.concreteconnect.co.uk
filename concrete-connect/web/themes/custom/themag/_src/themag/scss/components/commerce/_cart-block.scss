@@ -1,0 +1,71 @@
+.cart--cart-block {
+  position: relative;
+}
+
+.cart-block--contents {
+  background-color: var(--mag-bg-default);
+  box-shadow: 0 6px 10px 0 rgba(#000, .3);
+  min-width: 400px;
+  font-size: 12px;
+  right: 0;
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+    min-width: 400px;
+  }
+  table {
+    margin-bottom: 0;
+    td {
+      padding: .5rem;
+      vertical-align: middle;
+    }
+    td.views-field-field-image {  width: 90px;  }
+    td.views-field-total-price__number {  font-weight: bold;  }
+    tr:first-child td {  border-top: none;  }
+    tr:last-child td {  border-bottom: none;  }
+  }
+}
+
+.cart-block--contents__items {
+  overflow: auto;
+}
+
+// Icon and number of items
+.cart-block--link__expand {
+  position: relative;
+  .cart-block--summary__count {
+    background: $red;
+    width: 18px;
+    height:18px;
+    border-radius: 50%;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: -8px;
+  }
+}
+
+.cart-block--contents__items {
+  padding: 0 16px;
+}
+
+
+.cart-block--contents__links a {
+  display: block;
+  margin-top: 0;
+  padding: 14px 16px;
+  background: var(--mag-button);
+  color: var(--mag-text-primary);
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background .2s ease-in-out;
+  &:hover {
+    background: var(--mag-button-hover);
+    color: var(--mag-text-primary);
+  }
+}

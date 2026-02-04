@@ -1,0 +1,14 @@
+.block-inline-blocksimple-image {
+  text-align: center;
+}
+.block-inline-blocksimple-image img {
+  width: 100%;
+  height: auto;
+}
+
+#drupal-off-canvas-wrapper ul li a.inline-block-list__item.simple_image:before,
+#drupal-off-canvas ul li a.inline-block-list__item.simple_image:before {
+  content: "\f03e";
+  font-family: FontAwesome;
+  font-size: 60px;
+}

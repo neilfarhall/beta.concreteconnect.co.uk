@@ -1,0 +1,14 @@
+uuid: de22d093-013f-49d4-92b4-2c918da41128
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.webform_access
+  module:
+    - user
+id: user_add_role_action.webform_access
+label: 'Add the webform access role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: webform_access

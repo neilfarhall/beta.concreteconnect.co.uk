@@ -1,0 +1,8 @@
+uuid: 03d4d272-e6c8-4256-97ca-e0d92ef69572
+langcode: en
+status: true
+dependencies: {  }
+name: 'Quality scheme'
+vid: quality_scheme
+description: ''
+weight: 8

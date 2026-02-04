@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d6c0f846-a941-47d0-bb40-e34d3102cd44
+  bundle: page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Terms of Use'
+  created:
+    -
+      value: 1537995415
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /terms-use
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacus lectus, sodales feugiat eros vitae, fermentum lobortis nisl. In semper tellus ac ornare pretium. Praesent sit amet nulla lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec a mollis ex, nec convallis libero. Fusce tortor felis, pulvinar in magna quis, cursus cursus ligula. Morbi mattis nec purus eget ornare. Proin pulvinar, magna et pretium gravida, lacus nisi hendrerit neque, et auctor enim metus eu ligula. Nulla facilisi. Phasellus auctor iaculis nisl ut malesuada. Nunc orci mi, tempor sit amet sollicitudin non, luctus mattis nibh.</p>\r\n\r\n<p>In hac habitasse platea dictumst. Phasellus consectetur diam sit amet odio vulputate dapibus. Donec tincidunt at orci quis porta. Ut lorem mi, viverra id ipsum at, mattis rhoncus sapien. Praesent interdum mattis velit at imperdiet. Vivamus diam sem, sodales in nulla ac, luctus vestibulum lectus. Etiam gravida, eros eget aliquam consequat, leo augue finibus orci, eget posuere elit ante in enim.</p>\r\n\r\n<p>Pellentesque rutrum venenatis ipsum, vitae sodales mauris euismod a. Vivamus suscipit bibendum nisi, nec lacinia enim efficitur laoreet. Integer et magna ac leo posuere scelerisque sit amet eu libero. Praesent id suscipit enim. Nulla a metus nec est venenatis finibus. Pellentesque ultrices sem nunc, rhoncus fringilla mi lobortis at. In ipsum lorem, fermentum vel placerat eu, efficitur non mi. Aliquam aliquet convallis mauris, gravida rutrum erat dignissim eget. Nunc molestie finibus bibendum. Integer posuere, urna sit amet tempor commodo, dolor dolor semper sem, non feugiat nisi sapien vitae leo. Fusce id purus vitae turpis bibendum semper sit amet ut turpis. Donec sodales libero in tellus porttitor, ac mattis urna tincidunt. Nullam in orci eget velit sollicitudin fringilla. Sed vitae odio erat. Vivamus eu leo ac nisl laoreet mollis.</p>\r\n\r\n<p>Suspendisse congue, orci tempus dictum tincidunt, metus ante tempor lectus, sit amet tincidunt quam nibh vitae orci. Maecenas dignissim euismod risus consectetur iaculis. Vivamus mauris urna, gravida ac risus vel, tempus aliquam risus. In id erat nibh. Donec euismod odio at nunc porta sagittis. Etiam vehicula nisi nibh, sed sagittis enim efficitur quis. Sed risus sem, pellentesque ac mi non, pretium accumsan erat. Nullam sodales finibus pharetra. Nunc et auctor lectus.</p>\r\n\r\n<p>Curabitur congue, neque sit amet finibus pharetra, enim justo dapibus nibh, et placerat enim leo sed est. Aliquam erat volutpat. Nullam sed luctus lacus, sit amet feugiat neque. Etiam eleifend finibus tellus, in placerat massa molestie vitae. Nulla vel ipsum sit amet enim bibendum eleifend dignissim sed dui. Etiam ac varius mi. Nunc efficitur tincidunt felis, nec auctor metus ultricies eget. Morbi dictum, sapien sit amet sodales convallis, tortor est suscipit enim, et molestie tortor orci ac ligula.</p>\r\n"
+      format: full_html
+      summary: ''

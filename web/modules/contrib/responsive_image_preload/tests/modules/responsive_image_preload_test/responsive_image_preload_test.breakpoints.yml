@@ -1,0 +1,49 @@
+responsive_image_preload_test.default:
+  label: Default image style for tiny viewports or old browsers
+  mediaQuery: '(min-width: 1px) and (max-width: 319px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+responsive_image_preload_test.xxs:
+  label: Extra extra small
+  mediaQuery: '(min-width: 320px) and (max-width: 549px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+responsive_image_preload_test.xs:
+  label: Extra small
+  mediaQuery: '(min-width: 550px) and (max-width: 799px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+responsive_image_preload_test.s:
+  label: Small
+  mediaQuery: '(min-width: 800px) and (max-width: 949px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+responsive_image_preload_test.m:
+  label: Medium
+  mediaQuery: '(min-width: 950px) and (max-width: 1023px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+responsive_image_preload_test.l:
+  label: Large
+  mediaQuery: '(min-width: 1024px) and (max-width: 1279px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+responsive_image_preload_test.xl:
+  label: Extra large
+  mediaQuery: '(min-width: 1280px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x

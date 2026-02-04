@@ -1,0 +1,19 @@
+uuid: 3a83c0e3-a34e-414a-8412-8399407f1a91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_authors_email
+    - paragraphs.paragraphs_type.people_bio
+id: paragraph.people_bio.field_authors_email
+field_name: field_authors_email
+entity_type: paragraph
+bundle: people_bio
+label: email
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

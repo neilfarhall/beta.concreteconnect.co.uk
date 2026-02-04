@@ -1,0 +1,56 @@
+uuid: e1d21bd5-8925-400e-93f0-e25263afbbbe
+langcode: en
+status: true
+dependencies: {  }
+id: trade_bodies
+label: 'Trade Bodies'
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 1
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      dd45e33f-3ec5-41ae-96bf-7537a078f184:
+        uuid: dd45e33f-3ec5-41ae-96bf-7537a078f184
+        region: first
+        configuration:
+          id: 'views_block:trade_bodies_directory-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 0
+        additional: {  }
+      72656897-1c96-46d7-83c6-2d3e59ab025c:
+        uuid: 72656897-1c96-46d7-83c6-2d3e59ab025c
+        region: second
+        configuration:
+          id: 'block_content:f66ff081-dc10-45ef-ade1-23884bcc4885'
+          label: 'MPU Top'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }

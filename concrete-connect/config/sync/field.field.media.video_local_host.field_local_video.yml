@@ -1,0 +1,26 @@
+uuid: 11b3a716-f4dc-4cb4-9d05-193b16091b7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_local_video
+    - media.type.video_local_host
+  module:
+    - video
+id: media.video_local_host.field_local_video
+field_name: field_local_video
+entity_type: media
+bundle: video_local_host
+label: 'Local Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'videos/[date:custom:Y]-[date:custom:m]'
+  file_extensions: ''
+  max_filesize: ''
+field_type: video

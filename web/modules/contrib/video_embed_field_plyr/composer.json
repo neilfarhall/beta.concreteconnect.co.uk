@@ -1,0 +1,30 @@
+{
+  "name": "drupal/video_embed_field_plyr",
+  "type": "drupal-module",
+  "description": "Add Plyr.js as a field formatter for video embed or oEmbed fields",
+  "keywords": ["Drupal","Media","FieldFormatter"],
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+        "name": "René Bakx (rene-bakx)",
+        "homepage": "https://www.drupal.org/u/rene-bakx",
+        "role": "Maintainer"
+    }
+  ],
+  "homepage": "https://www.drupal.org/project/video_embed_field_plyr",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/video_embed_field_plyr",
+    "source": "http://cgit.drupalcode.org/video_embed_field_plyr"
+  },
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "drupal/core": "^9 || ^10"
+  }
+}

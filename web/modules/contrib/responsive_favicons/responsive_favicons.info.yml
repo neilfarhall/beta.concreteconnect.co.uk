@@ -1,0 +1,13 @@
+name: 'Responsive Favicons'
+type: module
+description: 'Add responsive favicons to your site based on the code from https://realfavicongenerator.net/'
+core_version_requirement: ^9.3 || ^10
+package: User interface
+configure: responsive_favicons.admin
+dependencies:
+  - drupal:file
+
+# Information added by Drupal.org packaging script on 2023-04-22
+version: '2.0.1'
+project: 'responsive_favicons'
+datestamp: 1682129246

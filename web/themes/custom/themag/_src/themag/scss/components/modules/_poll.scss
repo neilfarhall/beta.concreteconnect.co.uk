@@ -1,0 +1,118 @@
+  // MailChimp
+
+
+// Mailchimp Signup Block
+//
+.block--poll {
+  background: transparent;
+  border: 1px solid var(--mag-divider);
+  color: var(--mag-text-primary);
+  padding: 2rem;
+
+  .block__title {
+    margin-bottom: .5rem;
+    text-align: left;
+    .title-text {
+      background: transparent;
+      color: var(--mag-text-primary);
+      padding: 0 .1rem;
+    }
+    &:before, &:after {
+      display: none;
+    }
+  }
+  .form-actions {
+    margin-top: .5rem;
+    margin-bottom: 0;
+  }
+  input[type="submit"] {
+    background-color: var(--mag-primary);
+    border-color: var(--mag-primary);
+    width: 100%;
+    margin-top: .25rem;
+    color: var(--mag-primary-contrast);
+  }
+}
+
+
+// Poll
+//
+.poll__question {
+  line-height: 1.1;
+}
+
+.poll__choice__title {
+  font-weight: bold;
+}
+
+.poll__total {
+  font-size: .778rem;
+  color: var(--mag-text-secondary);
+}
+
+// Poll Vote
+//
+
+.poll--vote {
+  .poll__choice__title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  .poll__choice {
+
+    .form-actions {
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+  }
+  #edit-result {
+    background: transparent;
+    border-color: var(--mag-divider);
+    color: var(--mag-text-primary);
+    text-shadow: none;
+  }
+}
+
+// Poll Results
+//
+.poll__result {
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.poll--results {
+  .poll__question {
+    margin-bottom: 1.2rem;
+  }
+  .poll__choice {
+    display: flex;
+    margin-bottom: .5rem;
+    > * {
+      margin-right: .5rem;
+    }
+  }
+}
+
+.poll__choice__percent {
+  color: var(--mag-text-primary);
+  font-family: $theme-headings-font-family;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.poll__choice__votes {
+  margin-top: .2rem;
+  font-size: .7rem;
+  color: var(--mag-text-secondary);
+}
+
+
+.poll .bar {
+  background: var(--mag-bg-grey);
+  .themag-dark & {
+    background: var(--mag-primary-dark);
+  }
+  .foreground {
+    background: var(--mag-primary);
+  }
+}

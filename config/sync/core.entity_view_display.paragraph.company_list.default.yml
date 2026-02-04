@@ -1,0 +1,22 @@
+uuid: 15384e27-58b2-47d4-9ce7-43df1065e3aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.company_list.field_company_names
+    - paragraphs.paragraphs_type.company_list
+  module:
+    - text
+id: paragraph.company_list.default
+targetEntityType: paragraph
+bundle: company_list
+mode: default
+content:
+  field_company_names:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

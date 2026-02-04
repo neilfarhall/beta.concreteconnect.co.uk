@@ -1,0 +1,21 @@
+uuid: bf521935-4126-43f3-a6e1-999e9a15d858
+langcode: en
+status: true
+dependencies: {  }
+name: agg23_news_image_693x462_jpg
+label: agg23_news_image_693x462_jpg
+effects:
+  03baca00-d374-4a5e-a7e5-c84e2db3a545:
+    uuid: 03baca00-d374-4a5e-a7e5-c84e2db3a545
+    id: image_convert
+    weight: -8
+    data:
+      extension: jpg
+  f0b58c36-d2f8-4da9-8b13-01211c380edf:
+    uuid: f0b58c36-d2f8-4da9-8b13-01211c380edf
+    id: image_scale
+    weight: -10
+    data:
+      width: 693
+      height: null
+      upscale: true

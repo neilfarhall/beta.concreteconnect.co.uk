@@ -1,0 +1,51 @@
+//
+// @file
+// Styles for Entity Browser.
+//
+
+@import "../../dependencies/index";
+
+//
+// Form elements.
+//
+.entity-browser-form input.edit-submit {
+  margin-top: 20px;
+}
+
+//
+// Tab navigation.
+//
+.entity-browser-form nav.tabs {
+  margin-bottom: 20px;
+}
+
+.entity-browser-form input.tab {
+  display: none;
+}
+
+.entity-browser-form .entity-tabs a {
+  cursor: pointer;
+}
+
+.eb-tabs {
+  background: #FFF;
+  margin-bottom: $spacer;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid $color--gray--light;
+
+    li {
+      display: inline-block;
+      &.active {
+        border-bottom: 4px solid $color--primary--dark;
+      }
+
+      a {
+        padding: $spacer $spacer*1.5;
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+administer ads:
+  title: 'Administer ADs'
+  description: 'Manage all advertisements.'
+  restrict access: true
+administer ad settings:
+  title: 'Administer AD settings'
+  description: 'Configure and manage all advertisement settings.'
+  restrict access: true

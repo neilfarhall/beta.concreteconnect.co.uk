@@ -1,0 +1,27 @@
+uuid: 11edf2cb-9174-4f04-8f26-0c927cc6b995
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_image_display_gallery
+field_name: field_image_display_gallery
+entity_type: node
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 0
+      label: 'Yes'
+    -
+      value: 1
+      label: 'No'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

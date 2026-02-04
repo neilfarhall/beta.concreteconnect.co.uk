@@ -1,0 +1,345 @@
+uuid: 2b7a6d5c-0939-466e-9e05-b7c12070ab6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_directory_address_1
+    - field.storage.node.field_directory_address_2
+    - field.storage.node.field_directory_address_3
+    - field.storage.node.field_directory_address_4
+    - field.storage.node.field_directory_address_5
+    - field.storage.node.field_directory_address_postcode
+    - field.storage.node.field_directory_products
+    - search_api.server.db_search_server
+    - core.entity_view_mode.node.search_index
+  module:
+    - taxonomy
+    - node
+    - search_api
+id: db_index_directory_listing
+name: 'DB Index Directory Listing'
+description: ''
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    boost: 1.4
+    dependencies:
+      config:
+        - field.storage.node.body
+  entity_type:
+    label: 'Entity type'
+    property_path: search_api_entity_type
+    type: string
+  field_directory_address_1:
+    label: 'Address Line 1'
+    datasource_id: 'entity:node'
+    property_path: field_directory_address_1
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.node.field_directory_address_1
+  field_directory_address_2:
+    label: 'Address Line 2'
+    datasource_id: 'entity:node'
+    property_path: field_directory_address_2
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_directory_address_2
+  field_directory_address_3:
+    label: 'Address Line 3'
+    datasource_id: 'entity:node'
+    property_path: field_directory_address_3
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_directory_address_3
+  field_directory_address_4:
+    label: 'Address Line 4'
+    datasource_id: 'entity:node'
+    property_path: field_directory_address_4
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_directory_address_4
+  field_directory_address_5:
+    label: 'Address Line 5'
+    datasource_id: 'entity:node'
+    property_path: field_directory_address_5
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_directory_address_5
+  field_directory_address_postcode:
+    label: Postcode
+    datasource_id: 'entity:node'
+    property_path: field_directory_address_postcode
+    type: text
+    boost: !!float 5
+    dependencies:
+      config:
+        - field.storage.node.field_directory_address_postcode
+  field_directory_products:
+    label: 'Directory Products'
+    datasource_id: 'entity:node'
+    property_path: field_directory_products
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_directory_products
+  name:
+    label: 'Directory Products » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_directory_products:entity:name'
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.node.field_directory_products
+      module:
+        - taxonomy
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    boost: 1.4
+    configuration:
+      roles:
+        - anonymous
+      view_mode:
+        'entity:node':
+          directory_listing: search_index
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  tid:
+    label: 'Directory Products » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_directory_products:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_directory_products
+      module:
+        - taxonomy
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 13
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - directory_listing
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  entity_type: {  }
+  html_filter:
+    weights:
+      preprocess_index: -48
+      preprocess_query: -47
+    all_fields: true
+    fields:
+      - body
+      - entity_type
+      - field_directory_address_1
+      - field_directory_address_2
+      - field_directory_address_3
+      - field_directory_address_4
+      - field_directory_address_5
+      - field_directory_address_postcode
+      - name
+      - rendered_item
+      - title
+    title: false
+    alt: false
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+  ignore_character:
+    weights:
+      preprocess_index: -49
+      preprocess_query: -48
+    all_fields: true
+    fields:
+      - body
+      - entity_type
+      - field_directory_address_1
+      - field_directory_address_2
+      - field_directory_address_3
+      - field_directory_address_4
+      - field_directory_address_5
+      - field_directory_address_postcode
+      - name
+      - rendered_item
+      - title
+    ignorable: '[''¿¡!?,.:;]'
+    ignorable_classes:
+      - Cc
+      - Cf
+      - Co
+      - Mc
+      - Me
+      - Mn
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+      - Sc
+      - Sk
+      - Sm
+      - So
+      - Zl
+      - Zp
+      - Zs
+  ignorecase:
+    weights:
+      preprocess_index: -50
+      preprocess_query: -49
+    all_fields: true
+    fields:
+      - body
+      - entity_type
+      - field_directory_address_1
+      - field_directory_address_2
+      - field_directory_address_3
+      - field_directory_address_4
+      - field_directory_address_5
+      - field_directory_address_postcode
+      - name
+      - rendered_item
+      - title
+  language_with_fallback: {  }
+  rendered_item: {  }
+  stemmer:
+    weights:
+      preprocess_index: -42
+      preprocess_query: -44
+    all_fields: false
+    fields:
+      - body
+      - field_directory_address_1
+      - field_directory_address_2
+      - field_directory_address_3
+      - field_directory_address_4
+      - field_directory_address_5
+      - name
+      - rendered_item
+      - title
+    exceptions:
+      mexican: mexic
+      texan: texa
+  stopwords:
+    weights:
+      preprocess_index: -44
+      preprocess_query: -45
+    all_fields: false
+    fields:
+      - body
+      - field_directory_address_1
+      - field_directory_address_2
+      - field_directory_address_3
+      - field_directory_address_4
+      - field_directory_address_5
+      - name
+      - rendered_item
+      - title
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+  tokenizer:
+    weights:
+      preprocess_index: -45
+      preprocess_query: -46
+    all_fields: false
+    fields:
+      - body
+      - field_directory_address_1
+      - field_directory_address_2
+      - field_directory_address_3
+      - field_directory_address_4
+      - field_directory_address_5
+      - name
+      - rendered_item
+      - title
+    spaces: ''
+    ignored: ._-
+    overlap_cjk: 1
+    minimum_word_size: '2'
+tracker_settings:
+  default:
+    indexing_order: lifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: false
+server: db_search_server

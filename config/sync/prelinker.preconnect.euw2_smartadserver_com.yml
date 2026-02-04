@@ -1,0 +1,9 @@
+uuid: 67415129-b805-49b3-81bb-3a2ae054305d
+langcode: en
+status: true
+dependencies: {  }
+id: euw2_smartadserver_com
+label: euw2.smartadserver.com
+domain: euw2.smartadserver.com
+pages: ''
+weight: 0

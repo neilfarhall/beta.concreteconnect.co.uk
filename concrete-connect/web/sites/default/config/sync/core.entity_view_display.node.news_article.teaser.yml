@@ -1,0 +1,77 @@
+uuid: e8ec80e0-48e6-4115-9ad1-91db5e48a246
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.news_article.body
+    - field.field.node.news_article.field_advertisement_keywords
+    - field.field.node.news_article.field_channel
+    - field.field.node.news_article.field_comment
+    - field.field.node.news_article.field_featured_news
+    - field.field.node.news_article.field_file_attachments
+    - field.field.node.news_article.field_keywords
+    - field.field.node.news_article.field_news_display_on_hillhead
+    - field.field.node.news_article.field_news_email
+    - field.field.node.news_article.field_news_email_message
+    - field.field.node.news_article.field_news_image
+    - field.field.node.news_article.field_news_type
+    - field.field.node.news_article.field_omit_from_homepage
+    - field.field.node.news_article.field_omit_from_news_listing
+    - field.field.node.news_article.field_promoted_latest_news
+    - field.field.node.news_article.field_related_articles
+    - field.field.node.news_article.field_related_directories
+    - field.field.node.news_article.field_tagging_company
+    - field.field.node.news_article.field_tagging_location
+    - field.field.node.news_article.field_tagging_subject
+    - field.field.node.news_article.field_teaser_media
+    - field.field.node.news_article.field_teaser_text
+    - field.field.node.news_article.layout_builder__layout
+    - field.field.node.news_article.layout_selection
+    - node.type.news_article
+  module:
+    - text
+    - user
+id: node.news_article.teaser
+targetEntityType: node
+bundle: news_article
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_advertisement_keywords: true
+  field_channel: true
+  field_comment: true
+  field_featured_news: true
+  field_file_attachments: true
+  field_keywords: true
+  field_news_display_on_hillhead: true
+  field_news_email: true
+  field_news_email_message: true
+  field_news_image: true
+  field_news_type: true
+  field_omit_from_homepage: true
+  field_omit_from_news_listing: true
+  field_promoted_latest_news: true
+  field_related_articles: true
+  field_related_directories: true
+  field_tagging_company: true
+  field_tagging_location: true
+  field_tagging_subject: true
+  field_teaser_media: true
+  field_teaser_text: true
+  layout_builder__layout: true
+  layout_selection: true
+  shariff_field: true

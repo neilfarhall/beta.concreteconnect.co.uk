@@ -1,0 +1,10 @@
+uuid: 2adbb18f-85e7-415a-bc69-bed300ade7ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.directory_contact_details
+label: 'Directory Contact Details'
+targetEntityType: node
+cache: true

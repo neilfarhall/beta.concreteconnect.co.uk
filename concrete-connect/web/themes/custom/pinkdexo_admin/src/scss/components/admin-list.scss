@@ -1,0 +1,71 @@
+@import "../dependencies/index";
+
+/**
+ * Admin lists.
+ */
+ul.admin-list {
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-image: none;
+    border-top: 1px solid $color--gray;
+    &:last-child a {
+      padding-bottom: 0;
+    }
+
+    a {
+      display: block;
+      min-height: 0;
+      padding: $spacer $spacer $spacer $spacer*2; /* LTR */
+      position: relative;
+      &:before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: $color--gray--dark;
+        mask-image: url(#{$path-to-icons}/chevron_right-24px.svg);
+        mask-size: contain;
+        position: absolute;
+        left: 0;
+        top: $spacer/1.2;
+        [dir="rtl"] & {
+          mask-image: url(#{$path-to-icons}/chevron_left-24px.svg);
+          left: auto;
+          right: 0;
+        }
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none;
+      }
+
+      .label {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      [dir="rtl"] & {
+        padding-right: $spacer * 2;;
+        padding-left: $spacer;
+      }
+    }
+
+  }
+
+  &.compact li {
+    border: none;
+
+    a {
+      padding: $spacer/2 0;
+      background-image: none;
+    }
+  }
+}

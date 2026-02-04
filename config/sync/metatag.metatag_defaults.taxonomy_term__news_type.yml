@@ -1,0 +1,8 @@
+uuid: a3b8c8aa-42b2-41b4-ad51-977e7e95892c
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_term__news_type
+label: 'Taxonomy term: News type'
+tags:
+  robots: 'index, follow, noimageindex'

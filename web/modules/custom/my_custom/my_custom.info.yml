@@ -1,0 +1,5 @@
+name: 'My Custom Tweaks'
+type: module
+description: 'Custom alterations for preload warnings'
+core_version_requirement: ^9
+package: Custom

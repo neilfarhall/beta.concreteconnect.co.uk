@@ -1,0 +1,41 @@
+themag_section:
+  version: VERSION
+  css:
+    theme:
+      assets/css/section.css: {}
+
+
+themag_onecol_section:
+  version: VERSION
+  css:
+    theme:
+      assets/css/onecol-section.css: {}
+  dependencies:
+    - themag_layouts/themag_section
+
+
+themag_twocol_section:
+  version: VERSION
+  css:
+    theme:
+      assets/css/twocol-section.css: {}
+  dependencies:
+    - themag_layouts/themag_section
+
+
+themag_threecol_section:
+  version: VERSION
+  css:
+    theme:
+      assets/css/threecol-section.css: {}
+  dependencies:
+    - themag_layouts/themag_section
+
+
+themag_fourcol_section:
+  version: VERSION
+  css:
+    theme:
+      assets/css/fourcol-section.css: {}
+  dependencies:
+    - themag_layouts/themag_section

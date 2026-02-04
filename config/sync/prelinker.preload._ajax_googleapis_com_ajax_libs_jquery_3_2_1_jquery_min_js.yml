@@ -1,0 +1,10 @@
+uuid: 74f43088-7365-4f47-82c6-761919ba748c
+langcode: en
+status: true
+dependencies: {  }
+id: _ajax_googleapis_com_ajax_libs_jquery_3_2_1_jquery_min_js
+label: //ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+file: //ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+as: script
+pages: ''
+weight: 0

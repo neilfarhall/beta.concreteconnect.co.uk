@@ -1,0 +1,30 @@
+uuid: b762bb3d-b3ca-4bed-ba46-8c3ae3567ad9
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.jobs_listing_logo
+    - image.style.main_header_logo
+    - image.style.small_teaser_item
+  theme:
+    - themag
+id: main_header_logo
+label: 'Main: Header Logo'
+image_style_mappings:
+  -
+    breakpoint_id: themag.md
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: main_header_logo
+  -
+    breakpoint_id: themag.sm
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: small_teaser_item
+  -
+    breakpoint_id: themag.xs
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: jobs_listing_logo
+breakpoint_group: themag
+fallback_image_style: main_header_logo

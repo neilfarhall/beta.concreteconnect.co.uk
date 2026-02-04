@@ -1,0 +1,53 @@
+uuid: 061ef85d-51b1-4da9-a27f-dabb109a5f40
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.small_compact_teaser_focus
+    - field.field.node.video.field_tagging_subject
+    - field.field.node.video.field_teaser_media
+    - field.field.node.video.field_teaser_text
+    - field.field.node.video.field_video_embed
+    - node.type.video
+  module:
+    - layout_builder
+    - layout_library
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_library:
+    enable: false
+id: node.video.small_compact_teaser_focus
+targetEntityType: node
+bundle: video
+mode: small_compact_teaser_focus
+content:
+  field_teaser_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_video_embed:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_tagging_subject: true
+  field_teaser_text: true
+  search_api_excerpt: true
+  shariff_field: true

@@ -1,0 +1,19 @@
+uuid: 6d462e02-6839-423a-a2ae-2b1a2fed1061
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_formats
+    - node.type.ad_spec
+id: node.ad_spec.field_file_formats
+field_name: field_file_formats
+entity_type: node
+bundle: ad_spec
+label: 'File Formats'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,29 @@
+uuid: a4fce15c-deca-4557-8e1b-6e1fa6c73819
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_directory_listing
+    - node.type.directory_listing
+    - node.type.download
+id: node.download.field_directory_listing
+field_name: field_directory_listing
+entity_type: node
+bundle: download
+label: 'Directory listing'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      directory_listing: directory_listing
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

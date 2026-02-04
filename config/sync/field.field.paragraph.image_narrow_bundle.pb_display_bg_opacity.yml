@@ -1,0 +1,25 @@
+uuid: 7d3dfd55-b936-47ba-9a52-a76ec5c66b3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_display_bg_opacity
+    - paragraphs.paragraphs_type.image_narrow_bundle
+  module:
+    - paragraphs_bundles
+_core:
+  default_config_hash: dLXCFRyZCYdD__JiC7cR_i8N30_BLYuPY52DZQ4NDic
+id: paragraph.image_narrow_bundle.pb_display_bg_opacity
+field_name: pb_display_bg_opacity
+entity_type: paragraph
+bundle: image_narrow_bundle
+label: 'Background Color Opacity'
+description: 'Value 1 to 100'
+required: false
+translatable: false
+default_value:
+  -
+    value: '100'
+default_value_callback: ''
+settings: {  }
+field_type: paragraphs_bundles_range

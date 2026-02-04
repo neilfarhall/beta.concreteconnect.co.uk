@@ -1,0 +1,83 @@
+uuid: 8b2bca45-8f90-43cb-9e2a-5563210b6a98
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.medium_card_with_square_image
+    - field.field.node.iq_blog.body
+    - field.field.node.iq_blog.field_blog_type
+    - field.field.node.iq_blog.field_news_image
+    - field.field.node.iq_blog.field_tagging_company
+    - field.field.node.iq_blog.field_tagging_location
+    - field.field.node.iq_blog.field_tagging_subject
+    - field.field.node.iq_blog.field_teaser_media
+    - field.field.node.iq_blog.field_teaser_text
+    - field.field.node.iq_blog.layout_builder__layout
+    - image.style.medium_teaser_card_370x280_home
+    - node.type.iq_blog
+  module:
+    - field_formatter
+    - layout_builder
+    - svg_image
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.iq_blog.medium_card_with_square_image
+targetEntityType: node
+bundle: iq_blog
+mode: medium_card_with_square_image
+content:
+  field_blog_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_news_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium_teaser_card_370x280_home
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_teaser_media:
+    type: field_formatter_with_inline_settings
+    label: hidden
+    settings:
+      field_name: field_image
+      type: image
+      settings:
+        image_link: ''
+        image_style: medium_teaser_card_370x280_home
+        svg_attributes:
+          width: null
+          height: null
+        svg_render_as_image: true
+        image_loading:
+          attribute: lazy
+      label: hidden
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_tagging_company: true
+  field_tagging_location: true
+  field_tagging_subject: true
+  field_teaser_text: true
+  layout_builder__layout: true
+  links: true
+  shariff_field: true

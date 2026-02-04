@@ -1,0 +1,30 @@
+uuid: 03177a80-b63f-4ae0-bb24-2cd7bec4a006
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.pb_media_responsive_narrow
+    - field.field.media.pb_media_image.pb_image_caption
+    - field.field.media.pb_media_image.pb_image_field
+    - media.type.pb_media_image
+_core:
+  default_config_hash: 8UDPGbhKmf7G-fdue5siFj6bcj11GtlU80I1ia8jng0
+id: media.pb_media_image.pb_media_responsive_narrow
+targetEntityType: media
+bundle: pb_media_image
+mode: pb_media_responsive_narrow
+content:
+  pb_image_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  pb_image_field: true
+  thumbnail: true
+  uid: true

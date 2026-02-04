@@ -1,0 +1,10 @@
+uuid: 54808306-c367-4606-99f7-15d2cf9f11cd
+langcode: en
+status: true
+dependencies: {  }
+id: image_with_overlay_text
+label: 'Image with Overlay Text'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

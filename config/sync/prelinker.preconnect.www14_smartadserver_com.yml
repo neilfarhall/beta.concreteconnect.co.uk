@@ -1,0 +1,9 @@
+uuid: 70641591-808e-4cfe-8635-0fb4a03229c2
+langcode: en
+status: true
+dependencies: {  }
+id: www14_smartadserver_com
+label: www14.smartadserver.com
+domain: www14.smartadserver.com
+pages: ''
+weight: 0

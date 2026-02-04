@@ -1,0 +1,145 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      assets/css/themag.css: { weight: -20 }
+#  js:
+#    assets/js/light-dark-mode.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+drupal.dialog.off_canvas:
+  css:
+    theme:
+      assets/css/drupal/off-canvas.css: {}
+
+drupal.layout_builder:
+  css:
+    theme:
+      assets/css/drupal/layout-builder.css: {}
+
+
+#google-fonts:
+#  css:
+#    base:
+#      https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;subset=cyrillic,greek: { type: external }
+
+
+# Sidr - Off-canvas main menu
+# --------------------------------------
+off-canvas-main-menu:
+  js:
+    assets/js/sidr-off-canvas-main-menu.js: {}
+  dependencies:
+    - charm/sidr
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
+
+# Back to top button
+# --------------------------------------
+back-to-top-button:
+  js:
+    assets/js/back-to-top-button.js: {}
+  dependencies:
+    - charm/smooth-scroll
+
+
+# Toggle search block
+# --------------------------------------
+toggle-search-block:
+  js:
+    assets/js/toggle-search-block.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
+
+# Tabs
+# --------------------------------------
+drupal-tabs:
+  js:
+    assets/js/drupal-tabs.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
+# User profile menu in header
+# -------------------------------------
+header-user-profile-menu:
+  js:
+    assets/js/header-user-profile-menu.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
+
+# WE Mega Menu
+# -------------------------------------
+we-mega-menu:
+  css:
+    theme:
+      assets/css/components/modules/we-megamenu.css: {}
+  js:
+    assets/js/we-megamenu.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
+
+# TB Mega Menu
+# -------------------------------------
+tb-mega-menu:
+  css:
+    theme:
+      assets/css/components/modules/tb-megamenu.css: {}
+
+# Commerce cart block
+# -------------------------------------
+commerce-cart-block:
+  js:
+    assets/js/commerce-cart-block.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
+
+# Grid image gallery
+# --------------------------------------
+grid-image-gallery:
+  js:
+    assets/js/grid-image-gallery.js: {}
+  dependencies:
+    - charm/jquery-photoswipe
+    - core/jquery.once
+    - core/drupal
+
+
+# TheMAG Utilities
+# --------------------------------------
+themag-utilities:
+  js:
+    assets/js/utilities-background.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
+
+# Drupal forum module.
+# --------------------------------------
+forum:
+  version: VERSION
+  css:
+    theme:
+      assets/css/components/modules/forum.css: { weight: -10 }

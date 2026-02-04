@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: eb5ae43b-22cb-47ed-9f0b-c1469dc14858
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    97542635-4575-4f35-8c80-46281ac783ab: menu_link_content
+    275de5eb-b07e-49e4-a3fe-2a6b851c1c62: node
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Quotes Text'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: 275de5eb-b07e-49e4-a3fe-2a6b851c1c62
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:97542635-4575-4f35-8c80-46281ac783ab'
+  revision_translation_affected:
+    -
+      value: true

@@ -1,0 +1,223 @@
+// Checkout Progress
+// ---------------------
+
+.checkout-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  top: -1.2rem;
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-end;
+  }
+  li {
+    padding: .3rem 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    position: relative;
+    color: var(--mag-text-secondary);
+    &:before {
+      display: none;
+      @include media-breakpoint-up(md) {
+        display: inline;
+      }
+    }
+    &:after {
+      content: '';
+      display: block;
+      border-right: 1px solid var(--mag-border);
+      transform: skewX(-20deg);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
+    &:last-child:after {
+      display: none;
+    }
+  }
+
+  .checkout-progress--step__previous {
+    color: var(--mag-text-primary);
+    font-weight: bold;
+  }
+  .checkout-progress--step__current {
+    color: var(--mag-text-primary);
+    font-weight: bold;
+  }
+}
+
+
+// Commerce cart form
+// ---------------------------
+
+.view-commerce-cart-form,
+.commerce-checkout-flow {
+  color: var(--mag-text-secondary);
+
+  // Tables
+  // -------------
+  table {
+    border-bottom: 1px solid var(--mag-border);
+    th {
+      color: var(--mag-text-primary);
+    }
+    td {
+      vertical-align: middle;
+    }
+    // Hide item title td and th on small displays
+    th.views-field-field-image,
+    td.views-field-field-image {
+      display: none;
+      @include media-breakpoint-up(md) {
+        width: 120px;
+        display: table-cell;
+      }
+    }
+  }
+
+  .field--name-total-price {
+    margin-top: $spacer;
+  }
+
+  // Fieldsets
+  // -----------------
+  fieldset {
+    margin-bottom: 32px;
+    legend {
+      border-bottom: 1px solid var(--mag-border);
+      color: var(--mag-text-primary);
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    fieldset legend {
+      border: none;
+      font-size: 1.125rem;
+      font-weight: 300;
+    }
+  }
+
+  // Forms
+  // -----------------
+  .form-group.form-type-radio {
+    margin-bottom: 0;
+  }
+
+  // Product title
+  // -----------------
+  .field--name-product-id,
+  .field--name-product-id a {
+    color: var(--mag-text-primary);
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .views-field-purchased-entity,
+  .views-field-purchased-entity a {
+    color: var(--mag-headline);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Remove button
+  // ----------------
+  table .form-group {
+    margin: 0;
+  }
+  .delete-order-item.btn.btn-primary {
+    background-color: transparent;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+    color: var(--mag-error);
+  }
+
+  // Order total
+  // ---------------
+  .order-total-line-value {
+    width: auto;
+    min-width: 80px;
+  }
+
+  .order-total-line__subtotal {
+    color: var(--mag-text-secondary);
+  }
+
+  .order-total-line__total {
+    width: auto;
+    min-width: 80px;
+    color: var(--mag-text-primary);
+    font-size: 1.8rem;
+    .order-total-line-label {
+      margin-right: 1rem;
+    }
+  }
+
+  // Order action
+  // ----------------
+  .form-actions {
+    margin: 1rem 0 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--mag-divider);
+    text-align: right;
+  }
+
+}
+
+
+// Checkout flow
+// ---------------------
+
+.path-checkout {
+  .credit-card-form,
+  .field--name-address {
+    background-color: var(--mag-bg-grey);
+    padding: 16px;
+    border-radius: $border-radius;
+    margin: 16px 0;
+
+     .address {
+       margin-bottom: 0;
+     }
+  }
+
+  .credit-card-form__expiration {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+
+  // Coupon form
+  #edit-sidebar-coupon-redemption-form {
+    display: flex;
+    align-items: flex-end;
+    margin: 1.5rem 0;
+    .form-item-sidebar-coupon-redemption-form-code {
+      margin-right: 1rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+// Checkout complete
+// ---------------------
+.checkout-complete__title {
+  color: var(--mag-headline);
+  font-size: 4rem;
+  font-weight: 100;
+}
+
+.checkout-complete__payment-instructions {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--mag-border);
+}

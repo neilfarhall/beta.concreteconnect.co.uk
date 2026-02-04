@@ -1,0 +1,14 @@
+uuid: bd59b37f-925b-4fd1-bd63-64db09d18397
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.basic_editor
+  module:
+    - user
+id: user_remove_role_action.basic_editor
+label: 'Remove the basic editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: basic_editor

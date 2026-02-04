@@ -1,0 +1,6 @@
+@import "../dependencies/index";
+
+.button,
+a.button {
+  @include button;
+}

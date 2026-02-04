@@ -1,0 +1,10 @@
+uuid: 64e7c656-5c38-40dd-81bf-bd6d0b1ca48f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.agg_gallery_full_view
+label: 'Agg Gallery Full View'
+targetEntityType: media
+cache: true

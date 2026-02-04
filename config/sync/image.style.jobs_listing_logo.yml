@@ -1,0 +1,15 @@
+uuid: c6044fe5-99d5-4202-872c-3e67c6778cbe
+langcode: en
+status: true
+dependencies: {  }
+name: jobs_listing_logo
+label: 'Jobs listing logo'
+effects:
+  7e40d51c-92fb-4017-9de0-9867cedaaf23:
+    uuid: 7e40d51c-92fb-4017-9de0-9867cedaaf23
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 152
+      upscale: false

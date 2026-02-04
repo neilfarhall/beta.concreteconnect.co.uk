@@ -1,0 +1,36 @@
+uuid: 577844bb-8f49-4611-968c-432c5ab01aae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_with_overlay_text.field_image_para
+    - field.field.paragraph.image_with_overlay_text.field_overlay_text
+    - image.style.iq_blog_main
+    - paragraphs.paragraphs_type.image_with_overlay_text
+  module:
+    - image
+id: paragraph.image_with_overlay_text.default
+targetEntityType: paragraph
+bundle: image_with_overlay_text
+mode: default
+content:
+  field_image_para:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: iq_blog_main
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_overlay_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

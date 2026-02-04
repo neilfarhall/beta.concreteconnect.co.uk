@@ -1,0 +1,17 @@
+uuid: 3562ab70-b291-4a28-912b-4348374a5f81
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.video.field_video_caption
+    - field.field.paragraph.video.field_video_embed
+    - paragraphs.paragraphs_type.video
+id: paragraph.video.preview
+targetEntityType: paragraph
+bundle: video
+mode: preview
+content: {  }
+hidden:
+  field_video_caption: true
+  field_video_embed: true

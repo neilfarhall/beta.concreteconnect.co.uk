@@ -1,0 +1,55 @@
+uuid: ef556f31-d57a-426b-91fc-9fc0a81792a5
+langcode: en
+status: true
+dependencies: {  }
+id: organisations
+label: Organisations
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 1
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      41012b0b-5b78-456c-a748-972040799ef2:
+        uuid: 41012b0b-5b78-456c-a748-972040799ef2
+        region: first
+        configuration:
+          id: 'views_block:organisations_directory-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+        weight: 0
+        additional: {  }
+      f6d8861f-d56b-4aba-9f48-e09d52ebd0ec:
+        uuid: f6d8861f-d56b-4aba-9f48-e09d52ebd0ec
+        region: second
+        configuration:
+          id: 'block_content:3fbca170-4cf8-45d0-8dc9-81ce07db324b'
+          label: 'MPU Ad'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }

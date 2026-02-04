@@ -1,0 +1,130 @@
+uuid: 6099e56f-cc49-4365-8f72-67b71ef5732e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_types
+    - node.type.paragraphs
+    - paragraphs.paragraphs_type.block_reference
+    - paragraphs.paragraphs_type.bordered_top_high_text
+    - paragraphs.paragraphs_type.bullet_list
+    - paragraphs.paragraphs_type.company_list
+    - paragraphs.paragraphs_type.file_attachments
+    - paragraphs.paragraphs_type.gallery_grid
+    - paragraphs.paragraphs_type.gallery_slider
+    - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.image_and_text_banner
+    - paragraphs.paragraphs_type.image_with_overlay_text
+    - paragraphs.paragraphs_type.images
+    - paragraphs.paragraphs_type.instagram
+    - paragraphs.paragraphs_type.light_blue_bar_left_with_dark_bl
+    - paragraphs.paragraphs_type.links
+    - paragraphs.paragraphs_type.pinterest
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.twitter
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+    - paragraph_blocks
+third_party_settings:
+  paragraph_blocks:
+    status: 1
+id: node.paragraphs.field_paragraph_types
+field_name: field_paragraph_types
+entity_type: node
+bundle: paragraphs
+label: paragraph_types
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      bordered_top_high_text: bordered_top_high_text
+      bullet_list: bullet_list
+      gallery_grid: gallery_grid
+      gallery_slider: gallery_slider
+      image: image
+      image_and_text_banner: image_and_text_banner
+      block_reference: block_reference
+      file_attachments: file_attachments
+      image_with_overlay_text: image_with_overlay_text
+      company_list: company_list
+      header: header
+      images: images
+      instagram: instagram
+      links: links
+      light_blue_bar_left_with_dark_bl: light_blue_bar_left_with_dark_bl
+      pinterest: pinterest
+      quote: quote
+      text: text
+      twitter: twitter
+      video: video
+    negate: 0
+    target_bundles_drag_drop:
+      block_reference:
+        weight: 21
+        enabled: true
+      bordered_top_high_text:
+        weight: 15
+        enabled: true
+      bullet_list:
+        weight: 16
+        enabled: true
+      company_list:
+        weight: 22
+        enabled: true
+      file_attachments:
+        weight: 21
+        enabled: true
+      gallery_grid:
+        weight: 17
+        enabled: true
+      gallery_slider:
+        weight: 18
+        enabled: true
+      header:
+        weight: 22
+        enabled: true
+      image:
+        weight: 19
+        enabled: true
+      image_and_text_banner:
+        weight: 20
+        enabled: true
+      image_with_overlay_text:
+        weight: 21
+        enabled: true
+      images:
+        weight: 22
+        enabled: true
+      instagram:
+        weight: 22
+        enabled: true
+      light_blue_bar_left_with_dark_bl:
+        weight: 24
+        enabled: true
+      links:
+        weight: 23
+        enabled: true
+      pinterest:
+        weight: 24
+        enabled: true
+      quote:
+        weight: 25
+        enabled: true
+      text:
+        weight: 26
+        enabled: true
+      twitter:
+        weight: 27
+        enabled: true
+      video:
+        weight: 28
+        enabled: true
+field_type: entity_reference_revisions

@@ -1,0 +1,25 @@
+uuid: ad07069a-20f3-467a-bc24-eb964f029080
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.pb_display_content_width
+    - node.type.pb_content
+  module:
+    - options
+_core:
+  default_config_hash: 5OSdjRrvYafEl5n8IiayNwylp6XA44kI7mJIN45fY-A
+id: node.pb_content.pb_display_content_width
+field_name: pb_display_content_width
+entity_type: node
+bundle: pb_content
+label: 'Max Content Width'
+description: 'The global width is disabled for this content type to control it from here.'
+required: true
+translatable: false
+default_value:
+  -
+    value: pb__nmw_1024
+default_value_callback: ''
+settings: {  }
+field_type: list_string

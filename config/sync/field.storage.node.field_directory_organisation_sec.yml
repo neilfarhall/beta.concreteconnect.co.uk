@@ -1,0 +1,20 @@
+uuid: 6ea9c3db-288f-4bbb-aae6-74e8a7e011aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_directory_organisation_sec
+field_name: field_directory_organisation_sec
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

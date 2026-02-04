@@ -1,0 +1,13 @@
+name: 'Views collapsible lists TEST'
+description: 'Provides sample configs for automated tests.'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:node
+  - drupal:views_collapsible_list
+
+# Information added by Drupal.org packaging script on 2023-11-01
+version: '8.x-1.5'
+project: 'views_collapsible_list'
+datestamp: 1698862050

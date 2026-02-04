@@ -1,0 +1,12 @@
+name: 'Responsive image preload test'
+type: module
+description: 'Support module for responsive image preload testing.'
+package: 'Responsive image preload Testing'
+core_version_requirement: ^9.3 || ^10
+dependencies:
+  - 'responsive_image_preload:responsive_image_preload'
+
+# Information added by Drupal.org packaging script on 2023-03-06
+version: '2.0.0'
+project: 'responsive_image_preload'
+datestamp: 1678146041

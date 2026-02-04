@@ -1,0 +1,29 @@
+uuid: aa065d0b-0ed6-46b5-b998-4d4a45cd90ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.inline
+    - field.field.media.twitter.field_url
+    - media.type.twitter
+  module:
+    - link
+id: media.twitter.inline
+targetEntityType: media
+bundle: twitter
+mode: inline
+content:
+  field_url:
+    type: link_default
+    weight: 0
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  name: true
+  path: true
+  status: true
+  uid: true

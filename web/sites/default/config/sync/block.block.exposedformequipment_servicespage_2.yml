@@ -1,0 +1,35 @@
+uuid: ef160cb7-5f4c-4cef-8948-50f78ed441d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.equipment_services
+  module:
+    - block_title_link
+    - system
+    - views
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: exposedformequipment_servicespage_2
+theme: themag_st
+region: content_right
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:equipment_services-page_2'
+settings:
+  id: 'views_exposed_filter_block:equipment_services-page_2'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /marektest2

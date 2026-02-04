@@ -1,0 +1,31 @@
+// Breadcrumb
+//
+.breadcrumb,
+.simple-breadcrumb {
+  ol, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    color: var(--mag-text-secondary);
+  }
+  ol {
+    display: flex;
+  }
+  li a {
+    color: var(--mag-text-primary);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  li {
+    &:after {
+      content: ' / ';
+      margin-right: 3px;
+    }
+    &:last-child:after {
+      display: none;
+    }
+  }
+}

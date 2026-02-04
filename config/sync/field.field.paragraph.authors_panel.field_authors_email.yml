@@ -1,0 +1,19 @@
+uuid: 70aacff3-4e46-474f-89d1-7f788590b6dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_authors_email
+    - paragraphs.paragraphs_type.authors_panel
+id: paragraph.authors_panel.field_authors_email
+field_name: field_authors_email
+entity_type: paragraph
+bundle: authors_panel
+label: 'Authors email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,8 @@
+uuid: 543bf93a-4cb8-4700-88b9-9c57fb951166
+langcode: en
+status: true
+dependencies: {  }
+name: 'Recycled materials'
+vid: recycled_materials
+description: ''
+weight: 9

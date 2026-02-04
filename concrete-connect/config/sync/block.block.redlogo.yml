@@ -1,0 +1,32 @@
+uuid: fcd0b9f2-a0f9-4f94-987c-e90d0010b148
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e51072f2-e231-46ac-aba0-8cfb8a995c03'
+  module:
+    - block_content
+    - block_title_link
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: redlogo
+theme: themag_st
+region: footer_first
+weight: -8
+provider: null
+plugin: 'block_content:e51072f2-e231-46ac-aba0-8cfb8a995c03'
+settings:
+  id: 'block_content:e51072f2-e231-46ac-aba0-8cfb8a995c03'
+  label: 'Red Logo'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

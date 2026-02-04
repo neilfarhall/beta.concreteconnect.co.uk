@@ -1,0 +1,14 @@
+uuid: 14ba9cd9-5f24-47c7-9294-bb0411f2bfdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.exhibitor_spotlight
+id: node_type_exhibitor_spotlight
+entity_type_id: node_type
+entity_id: exhibitor_spotlight
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

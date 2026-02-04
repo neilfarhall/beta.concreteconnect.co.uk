@@ -1,0 +1,134 @@
+uuid: 2eb530da-542d-4cb0-92c4-353f19efabf1
+langcode: en
+status: true
+dependencies: {  }
+id: directory_tabs
+label: 'Directory Tabs'
+renderer: quick_tabs
+hide_empty_tabs: true
+default_tab: 0
+options:
+  quick_tabs:
+    ajax: false
+    class: ''
+    style: tabsbar
+  accordion_tabs:
+    jquery_ui:
+      collapsible: false
+      heightStyle: auto
+configuration_data:
+  -
+    title: Home
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: directories_tabs_content_
+          display: block_5
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: environmental_risk_management_sy
+      block_content:
+        options:
+          bid: 'views_block:directories_tabs_content_-block_5'
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+  -
+    title: 'Media Gallery'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: directories_tabs_content_
+          display: block_3
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: environmental_risk_management_sy
+      block_content:
+        options:
+          bid: 'views_block:directories_tabs_content_-block_3'
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+  -
+    title: Downloads
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: directories_tabs_content_
+          display: block_7
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: environmental_risk_management_sy
+      block_content:
+        options:
+          bid: 'views_block:directories_tabs_content_-block_7'
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+  -
+    title: News
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: profile_news_items_content_
+          display: block_3
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: environmental_risk_management_sy
+      block_content:
+        options:
+          bid: 'views_block:content_recent-block_1'
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+  -
+    title: Quarries
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: directories_tabs_content_cats
+          display: block_15
+          args: ''
+      qtabs_content:
+        options:
+          machine_name: advertising_specs
+      block_content:
+        options:
+          bid: 'views_block:directories_tabs_content_cats-block_1'
+          block_title: ''
+          display_title: false
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true

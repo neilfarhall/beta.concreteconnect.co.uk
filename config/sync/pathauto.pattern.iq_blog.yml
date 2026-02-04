@@ -1,0 +1,22 @@
+uuid: cc6928fa-f0e6-42d2-88d3-6698d8b50b1e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: iq_blog
+label: 'IQ Blog'
+type: 'canonical_entities:node'
+pattern: 'iq-blogs/[node:title]'
+selection_criteria:
+  70608816-b498-4b04-9e9a-b1587b999681:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 70608816-b498-4b04-9e9a-b1587b999681
+    context_mapping:
+      node: node
+    bundles:
+      iq_blog: iq_blog
+selection_logic: and
+weight: 0
+relationships: {  }

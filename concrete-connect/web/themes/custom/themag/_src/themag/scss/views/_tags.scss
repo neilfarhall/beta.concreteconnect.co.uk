@@ -1,0 +1,42 @@
+// Popular tags view
+
+.tag-list {
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include media-breakpoint-up(lg) {
+      justify-content: left;
+    }
+    li {
+      display: block;
+      margin: 0 4px 4px 0;
+      @include media-breakpoint-up(lg) {
+        font-size: 14px;
+      }
+    }
+  }
+  a {
+    display: block;
+    background: var(--mag-button);
+    filter: brightness(93%);
+    border-radius: 4px;
+    padding: 8px;
+    line-height: 1;
+    color: var(--mag-text-primary);
+    font-weight: bold;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+    &:hover {
+      background-color: var(--mag-button-hover);
+      text-decoration: none;
+    }
+    &:before {
+      font-family: $font-awesome;
+      content: '\f292';
+      font-size: .65rem;
+      font-weight: 900;
+      margin-right: 1px;
+    }
+  }
+}

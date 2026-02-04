@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Installation file for the "AD Track" module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function ad_track_schema() {
+  $schema = [];
+
+  $schema['ad_track_total'] = [
+    'description' => 'Stores AD total event counts.',
+    'fields' => [
+      'ad_id' => [
+        'description' => 'The AD identifier.',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ],
+      'bucket_id' => [
+        'description' => 'The identifier of the AD bucket.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'click' => [
+        'description' => 'Total clicks of an ad.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'impression' => [
+        'description' => 'Total impressions of an ad.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['ad_id', 'bucket_id'],
+  ];
+
+  return $schema;
+}

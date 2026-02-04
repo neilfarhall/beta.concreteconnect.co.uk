@@ -1,0 +1,23 @@
+uuid: 2b85af83-25e7-4ad0-a984-c371b8d035ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_news
+    - node.type.news_article
+id: node.news_article.field_featured_news
+field_name: field_featured_news
+entity_type: node
+bundle: news_article
+label: 'Display in Featured Blocks'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

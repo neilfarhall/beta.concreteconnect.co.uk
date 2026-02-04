@@ -1,0 +1,19 @@
+uuid: a1bbb89b-5ba5-45c4-9141-a4502d723e84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_text
+    - node.type.iq_blog
+id: node.iq_blog.field_teaser_text
+field_name: field_teaser_text
+entity_type: node
+bundle: iq_blog
+label: 'Teaser Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

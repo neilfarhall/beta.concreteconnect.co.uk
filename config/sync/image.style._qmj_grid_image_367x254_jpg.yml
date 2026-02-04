@@ -1,0 +1,23 @@
+uuid: b74e8dda-7f55-4ec8-807a-4642309af4b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: _qmj_grid_image_367x254_jpg
+label: '!QMJ Grid Image 367x254 jpg'
+effects:
+  eba41e8d-9867-47b2-a577-ad374ece1594:
+    uuid: eba41e8d-9867-47b2-a577-ad374ece1594
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 367
+      height: 254
+      crop_type: focal_point
+  75982f9f-6d15-4214-874d-5db50a6e5f26:
+    uuid: 75982f9f-6d15-4214-874d-5db50a6e5f26
+    id: image_convert
+    weight: 2
+    data:
+      extension: jpg

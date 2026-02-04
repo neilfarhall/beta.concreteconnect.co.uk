@@ -1,0 +1,9 @@
+taxonomy_delete.ui:
+  path: '/admin/structure/taxonomy/taxonomy-delete'
+  defaults:
+    _form: '\Drupal\taxonomy_delete\Form\TaxonomyDeleteUIForm'
+    _title: 'Taxonomy Delete UI'
+  requirements:
+    _permission: 'administer site configuration+delete taxonomy terms'
+  options:
+    _admin_route: TRUE

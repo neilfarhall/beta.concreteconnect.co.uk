@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 61943b17-d795-4630-b0ec-1ed678fc1229
+  bundle: channel
+  default_langcode: en
+  depends:
+    b16f9878-49f2-4afe-a4cb-647181eb9da6: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Style
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: b16f9878-49f2-4afe-a4cb-647181eb9da6
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /life-style/style
+      langcode: en
+      pathauto: 1
+  field_color:
+    -
+      color: '#C2C3BC'
+      opacity: !!float 1

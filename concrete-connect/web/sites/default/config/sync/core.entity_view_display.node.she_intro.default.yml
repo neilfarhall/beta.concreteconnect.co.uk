@@ -1,0 +1,29 @@
+uuid: f1f01ce0-f260-4d10-befa-095cf2b2d882
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.she_intro.body
+    - node.type.she_intro
+  module:
+    - text
+    - user
+id: node.she_intro.default
+targetEntityType: node
+bundle: she_intro
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  shariff_field: true

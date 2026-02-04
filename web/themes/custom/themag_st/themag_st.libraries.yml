@@ -1,0 +1,20 @@
+global:
+  version: VERSION
+  css:
+    theme:
+      assets/css/subtheme.css: {}
+      assets/css/common_for_qmj_themag_sites.css: {}
+      assets/css/concreteconnect_custom.css: {}
+  js:
+    assets/js/custom.js: {}
+
+custom-css:
+  version: VERSION
+  css:
+    theme:
+      assets/css/custom.css: {}
+
+custom-js:
+  version: VERSION
+  js:
+    assets/js/custom.js: {}

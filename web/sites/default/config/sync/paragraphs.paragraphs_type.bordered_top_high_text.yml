@@ -1,0 +1,10 @@
+uuid: 846fce44-505d-4daa-804e-6d5c9dcefaac
+langcode: en
+status: true
+dependencies: {  }
+id: bordered_top_high_text
+label: 'Bordered Top High Text'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

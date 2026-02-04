@@ -1,0 +1,16 @@
+{
+  "name": "drupal/body_inject",
+  "type": "drupal-module",
+  "description": "Body Inject (insert blocks into content)",
+  "keywords": ["Drupal", "blocks", "content", "advertising"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/body_inject",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/body_inject",
+    "source": "https://git.drupalcode.org/project/body_inject"
+  },
+  "require": {
+    "drupal/token_block": "^1|^2"
+  }
+}

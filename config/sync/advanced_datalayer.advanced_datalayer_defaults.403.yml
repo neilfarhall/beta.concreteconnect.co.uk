@@ -1,0 +1,9 @@
+uuid: 03331c4c-b7a0-4a5b-add7-41b9b9672a02
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: U0nprodkpu6uFFBDhpzEihcDmQbkwvQop9I6pgX9uUg
+id: '403'
+label: '403 access denied'
+tags: {  }

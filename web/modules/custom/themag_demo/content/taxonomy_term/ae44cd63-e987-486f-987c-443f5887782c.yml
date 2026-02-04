@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: ae44cd63-e987-486f-987c-443f5887782c
+  bundle: channel
+  default_langcode: en
+  depends:
+    01378c66-b01c-410b-8851-5fdbec5ca544: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Travel
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 01378c66-b01c-410b-8851-5fdbec5ca544
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /travel-eats/travel
+      langcode: en
+      pathauto: 1
+  field_color:
+    -
+      color: '#F8E71C'
+      opacity: !!float 1

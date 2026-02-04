@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 08e9095c-d520-43c5-9481-dcec19893fde
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    185fae2c-86fc-4c07-87b0-2f7f061bf992: menu_link_content
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Post Layouts'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'internal:#'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: -50
+  expanded:
+    -
+      value: true
+  parent:
+    -
+      value: 'menu_link_content:185fae2c-86fc-4c07-87b0-2f7f061bf992'
+  revision_translation_affected:
+    -
+      value: true

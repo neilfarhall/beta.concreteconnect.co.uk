@@ -1,0 +1,101 @@
+uuid: ba914210-62b6-4ecf-b13e-4c1aace52cc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.large_teaser_card
+    - field.field.node.article.body
+    - field.field.node.article.field_advertisement_keywords
+    - field.field.node.article.field_article_article
+    - field.field.node.article.field_article_email_message
+    - field.field.node.article.field_channel
+    - field.field.node.article.field_comment
+    - field.field.node.article.field_email
+    - field.field.node.article.field_featured_article
+    - field.field.node.article.field_file_attachments
+    - field.field.node.article.field_image
+    - field.field.node.article.field_images
+    - field.field.node.article.field_keywords
+    - field.field.node.article.field_paragraphs
+    - field.field.node.article.field_profile_media_gallery
+    - field.field.node.article.field_related_articles
+    - field.field.node.article.field_related_directories
+    - field.field.node.article.field_sponsored
+    - field.field.node.article.field_tagging_company
+    - field.field.node.article.field_tagging_location
+    - field.field.node.article.field_tagging_subject
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_teaser_media
+    - field.field.node.article.field_teaser_text
+    - field.field.node.article.layout_builder__layout
+    - field.field.node.article.layout_selection
+    - node.type.article
+  module:
+    - field_formatter
+    - user
+id: node.article.large_teaser_card
+targetEntityType: node
+bundle: article
+mode: large_teaser_card
+content:
+  field_article_article:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_channel:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser_media:
+    type: field_formatter_with_inline_settings
+    label: hidden
+    settings:
+      field_name: field_image
+      type: responsive_image
+      settings:
+        responsive_image_style: teaser_large_teaser_card
+        image_link: ''
+      label: hidden
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  body: true
+  field_advertisement_keywords: true
+  field_article_email_message: true
+  field_comment: true
+  field_email: true
+  field_featured_article: true
+  field_file_attachments: true
+  field_image: true
+  field_images: true
+  field_keywords: true
+  field_paragraphs: true
+  field_profile_media_gallery: true
+  field_related_articles: true
+  field_related_directories: true
+  field_sponsored: true
+  field_tagging_company: true
+  field_tagging_location: true
+  field_tagging_subject: true
+  field_tags: true
+  layout_builder__layout: true
+  layout_selection: true
+  links: true
+  shariff_field: true

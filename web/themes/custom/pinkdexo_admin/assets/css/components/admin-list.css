@@ -1,0 +1,72 @@
+/**
+ * Admin lists.
+ */
+ul.admin-list {
+  margin: 0;
+  padding: 0;
+}
+
+ul.admin-list li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
+  border-top: 1px solid #e0e0e0;
+}
+
+ul.admin-list li:last-child a {
+  padding-bottom: 0;
+}
+
+ul.admin-list li a {
+  display: block;
+  min-height: 0;
+  padding: 16px 16px 16px 32px;
+  /* LTR */
+  position: relative;
+}
+
+ul.admin-list li a:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #9e9e9e;
+  -webkit-mask-image: url(../../misc/icons/chevron_right-24px.svg);
+          mask-image: url(../../misc/icons/chevron_right-24px.svg);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  position: absolute;
+  left: 0;
+  top: 13.33333px;
+}
+
+[dir="rtl"] ul.admin-list li a:before {
+  -webkit-mask-image: url(../../misc/icons/chevron_left-24px.svg);
+          mask-image: url(../../misc/icons/chevron_left-24px.svg);
+  left: auto;
+  right: 0;
+}
+
+ul.admin-list li a:hover, ul.admin-list li a:focus, ul.admin-list li a:active {
+  text-decoration: none;
+}
+
+ul.admin-list li a .label:hover {
+  text-decoration: underline;
+}
+
+[dir="rtl"] ul.admin-list li a {
+  padding-right: 32px;
+  padding-left: 16px;
+}
+
+ul.admin-list.compact li {
+  border: none;
+}
+
+ul.admin-list.compact li a {
+  padding: 8px 0;
+  background-image: none;
+}

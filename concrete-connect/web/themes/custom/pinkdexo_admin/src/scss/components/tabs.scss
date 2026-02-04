@@ -1,0 +1,43 @@
+//
+// Overriding some styles from Seven tabs
+//
+
+@import "../dependencies/index";
+
+.tabs.primary {
+  .tabs__tab {
+    background: $color--gray--dark;
+    border-color: $color--gray--dark;
+    &:not(:first-child) {
+      border-left-color: lighten($color--gray--dark, 8%);
+    }
+
+    a {
+      color: $text-color--light;
+      text-decoration: none;
+      transition: all .15s ease-in-out;
+      &:not(.is-active) {
+        &:hover,
+        &:focus,
+        &:active {
+          background: $color--gray;
+          border-color: $color--gray;
+          color: $text-color--base;
+        }
+      }
+    }
+
+
+    &.is-active {
+      background: $body-bg;
+      a {
+        color: $text-color--primary;
+      }
+    }
+  }
+}
+
+.is-collapse-enabled .tabs:before,
+.is-horizontal .tabs:before {
+  background-color: $color--gray--dark;
+}

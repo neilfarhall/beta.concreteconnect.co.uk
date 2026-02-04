@@ -1,0 +1,15 @@
+uuid: 7493aab7-091d-4454-98e7-eb93529eb548
+langcode: en
+status: true
+dependencies: {  }
+name: profile_logo_small
+label: 'Profile Logo Small'
+effects:
+  4dfc155b-0226-4001-8eab-c4ecc1096dac:
+    uuid: 4dfc155b-0226-4001-8eab-c4ecc1096dac
+    id: image_scale
+    weight: 1
+    data:
+      width: 80
+      height: null
+      upscale: false

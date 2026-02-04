@@ -1,0 +1,29 @@
+{# Header A #}
+{% set header_attribute = create_attribute() %}
+
+{%
+  set header_classes = [
+  'header',
+  'header--' ~ themag.header_style|clean_class,
+  themag.sticky_header ? 'is-sticky',
+  'js-page-header'
+]
+%}
+
+<header{{ header_attribute.addClass(header_classes) }}>
+  <div class="header__container-wrapper--header__main">
+    <div class="container header__container">
+      <div class="header__main">
+        <div class="header__main__left">
+          {{ page.logo }}
+          {{ page.header_primary_menu }}
+        </div>
+        <div class="header__main__right">
+          {% include '@themag/base-layout/header/components/social-media-pages-menu.html.twig' %}
+          {% include '@themag/base-layout/header/components/user-action-menu.html.twig' %}
+        </div>
+      </div>
+    </div>
+    {{ page.search }}
+  </div>
+</header>

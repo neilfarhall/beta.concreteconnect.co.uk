@@ -1,0 +1,26 @@
+uuid: d29bd074-3b1e-41e8-8db7-988a4d30d262
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: latest_jobs
+label: 'Latest Jobs'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      job_listing: job_listing
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse: false

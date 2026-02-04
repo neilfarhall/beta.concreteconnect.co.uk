@@ -1,0 +1,8 @@
+uuid: 1ecefcc2-a0f9-405a-aa48-5559388ec379
+langcode: en
+status: true
+dependencies: {  }
+name: 'DFP Ad Categories'
+vid: dfp_ad_categories
+description: ''
+weight: 0

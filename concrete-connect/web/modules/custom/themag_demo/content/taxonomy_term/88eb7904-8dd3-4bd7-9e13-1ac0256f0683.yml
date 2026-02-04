@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 88eb7904-8dd3-4bd7-9e13-1ac0256f0683
+  bundle: channel
+  default_langcode: en
+  depends:
+    b16f9878-49f2-4afe-a4cb-647181eb9da6: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Fashion
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: b16f9878-49f2-4afe-a4cb-647181eb9da6
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /life-style/fashion
+      langcode: en
+      pathauto: 1
+  field_color:
+    -
+      color: '#797189'
+      opacity: !!float 1

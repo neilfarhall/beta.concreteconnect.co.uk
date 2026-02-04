@@ -1,0 +1,23 @@
+uuid: d73cb6de-a126-4be0-b229-501b9e7cdaad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.news_article
+  module:
+    - entity_reference_revisions
+id: node.news_article.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: news_article
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings: {  }
+field_type: entity_reference_revisions

@@ -1,0 +1,71 @@
+name: 'PinkDexo Admin'
+type: theme
+base theme: seven
+description: 'Administration theme that extends Seven to improve the content editing experience.'
+package: PinkDexo
+core: 8.x
+core_version_requirement: ^8 || ^9
+version: VERSION
+libraries:
+  - pinkdexo_admin/global-styling
+
+libraries-override:
+  classy/image-widget: false
+  seven/global-styling:
+    css:
+      base:
+        css/base/elements.css: assets/css/base/elements.css
+        css/base/typography.css: assets/css/base/typography.css
+      component:
+        css/components/admin-list.css: assets/css/components/admin-list.css
+        css/components/content-header.css: assets/css/components/content-header.css
+        css/components/container-inline.css: assets/css/components/container-inline.css
+        #css/components/container-inline.module.css: assets/css/components/container-inline.module.css
+        css/components/breadcrumb.css: assets/css/components/breadcrumb.css
+        css/components/buttons.css: assets/css/components/buttons.css
+        css/components/details.css: false
+        #css/components/messages.css: assets/css/components/messages.css
+        css/components/dropbutton.component.css: assets/css/components/dropbutton.component.css
+        css/components/entity-meta.css: assets/css/components/entity-meta.css
+        css/components/field-ui.css: assets/css/components/field-ui.css
+        css/components/form.css: assets/css/components/form.css
+        css/components/help.css: assets/css/components/help.css
+        #css/components/menus-and-lists.css: assets/css/components/menus-and-lists.css
+        #css/components/modules-page.css: assets/css/components/modules-page.css
+        css/components/node.css: assets/css/components/node.css
+        #css/components/page-title.css: assets/css/components/page-title.css
+        css/components/pager.css: assets/css/components/pager.css
+        css/components/panel.css: assets/css/components/panel.css
+        #css/components/skip-link.css: assets/css/components/skip-link.css
+        css/components/tables.css: assets/css/components/tables.css
+        #css/components/search-admin-settings.css: assets/css/components/search-admin-settings.css
+        #css/components/tablesort-indicator.css: assets/css/components/tablesort-indicator.css
+        #css/components/system-status-report-general-info.css: assets/css/components/system-status-report-general-info.css
+        #css/components/system-status-report.css: assets/css/components/system-status-report.css
+        #css/components/system-status-report-counters.css: assets/css/components/system-status-report-counters.css
+        #css/components/system-status-counter.css: assets/css/components/system-status-counter.css
+        #css/components/tabs.css: assets/css/components/tabs.css
+        css/components/views-ui.css: assets/css/components/views-ui.css
+  entity_browser/tabs:
+    css:
+      component:
+        css/entity_browser.tabs.css: assets/css/modules/entity-browser/entity_browser.tabs.css
+
+libraries-extend:
+  entity_browser/entity_list:
+    - pinkdexo_admin/entity_browser
+  paragraphs/drupal.paragraphs.widget:
+    - pinkdexo_admin/drupal.paragraphs.widget
+
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first

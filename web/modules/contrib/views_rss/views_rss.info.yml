@@ -1,0 +1,12 @@
+name: 'Advanced Views RSS Feed'
+type: module
+description: 'Provides a Views plugin that allows fields to be included in RSS feeds created using the Views module.'
+package: Views
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:views
+
+# Information added by Drupal.org packaging script on 2023-09-24
+version: '8.x-2.2'
+project: 'views_rss'
+datestamp: 1695558548

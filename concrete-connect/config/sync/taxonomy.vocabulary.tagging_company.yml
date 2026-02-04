@@ -1,0 +1,8 @@
+uuid: 7e7e6881-2b49-44e5-93b7-b397478cf334
+langcode: en
+status: true
+dependencies: {  }
+name: 'Freetags: Company'
+vid: tagging_company
+description: ''
+weight: 0

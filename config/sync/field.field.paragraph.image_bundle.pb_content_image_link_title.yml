@@ -1,0 +1,21 @@
+uuid: bcdb0d00-1af5-4f04-b744-ae4d4134a631
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.pb_content_image_link_title
+    - paragraphs.paragraphs_type.image_bundle
+_core:
+  default_config_hash: BykV8JmAKQkxaeTo6tSN44xgASJcWWocSuhUgNubl_M
+id: paragraph.image_bundle.pb_content_image_link_title
+field_name: pb_content_image_link_title
+entity_type: paragraph
+bundle: image_bundle
+label: 'Image Link Title'
+description: 'The title attribute is used to provide additional information to help clarify or further describe the purpose of a link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,48 @@
+video_embed_field_plyr.drupal:
+  version: VERSION
+  js:
+    assets/drupal.video-embed-field-plyr.js: {}
+  dependencies:
+    - core/drupal
+
+video_embed_field_plyr.plyr-styles:
+  remote: https://cdn.plyr.io/3.7.8/plyr.css
+  license:
+    name: MIT
+    url: https://github.com/sampotts/plyr/blob/master/license.md
+    gpl-compatible: true
+  version: 3.7.8
+  css:
+    theme:
+      assets/plyr/plyr.css: {minified: true }
+
+video_embed_field_plyr.modern:
+  remote: https://cdn.plyr.io/3.7.8/plyr.js
+  license:
+    name: MIT
+    url: https://github.com/sampotts/plyr/blob/master/license.md
+    gpl-compatible: true
+  version: 3.7.8
+  js:
+    assets/plyr/plyr.min.js: {minified: true }
+
+video_embed_field_plyr.polyfilled:
+  remote: https://cdn.plyr.io/3.7.8/plyr.polyfilled.js
+  license:
+    name: MIT
+    url: https://github.com/sampotts/plyr/blob/master/license.md
+    gpl-compatible: true
+  version: 3.7.8
+  js:
+    assets/plyr/plyr.polyfilled.min.js: {minified: true }
+
+video_embed_field_plyr.rangetouch:
+  remote: https://github.com/sampotts/rangetouch
+  license:
+    name: MIT
+    url: https://github.com/sampotts/rangetouch/blob/v2.0.1/license.md
+    gpl-compatible: true
+  version: 2.0.1
+  dependencies:
+  js:
+    assets/plyr/rangetouch.min.js: {minified: true }

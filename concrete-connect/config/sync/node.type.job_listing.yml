@@ -1,0 +1,18 @@
+uuid: 8fd7ae9c-5af5-46ed-a053-6379f37b3413
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: 'Job listing'
+type: job_listing
+description: 'Content type used to define new job listings'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

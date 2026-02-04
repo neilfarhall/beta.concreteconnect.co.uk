@@ -1,0 +1,9 @@
+uuid: 913b6e73-4a19-4b89-9782-b0f35780f235
+langcode: en
+status: true
+dependencies: {  }
+id: cdn_id5_sync_com
+label: cdn.id5-sync.com
+domain: cdn.id5-sync.com
+pages: ''
+weight: 0

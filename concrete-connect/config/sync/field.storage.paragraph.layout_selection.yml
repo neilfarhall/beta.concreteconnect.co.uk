@@ -1,0 +1,20 @@
+uuid: 143d6e18-43b0-4ea2-9804-f19b375d558e
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_library
+    - paragraphs
+id: paragraph.layout_selection
+field_name: layout_selection
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: layout
+module: core
+locked: true
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

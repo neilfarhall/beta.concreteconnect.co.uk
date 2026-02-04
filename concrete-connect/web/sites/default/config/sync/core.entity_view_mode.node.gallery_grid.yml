@@ -1,0 +1,10 @@
+uuid: 42ac12d9-a49d-4174-a027-9c22e76b0541
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.gallery_grid
+label: 'Gallery Grid'
+targetEntityType: node
+cache: true

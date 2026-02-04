@@ -1,0 +1,36 @@
+uuid: 47083183-1c04-4962-b6ca-dc1d97d99727
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - node.type.job_listing
+    - node.type.news_article
+  module:
+    - exclude_node_title
+    - filter
+    - node
+    - system
+id: contributor
+label: contributor
+weight: 5
+is_admin: null
+permissions:
+  - 'create job_listing content'
+  - 'create news_article content'
+  - 'delete any job_listing content'
+  - 'delete any news_article content'
+  - 'delete own job_listing content'
+  - 'delete own news_article content'
+  - 'edit any job_listing content'
+  - 'edit any news_article content'
+  - 'edit metatags_quick'
+  - 'edit own job_listing content'
+  - 'edit own news_article content'
+  - 'schedule publishing of nodes'
+  - 'set page title'
+  - 'use exclude node title'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'view scheduled content'
+  - 'view the administration theme'

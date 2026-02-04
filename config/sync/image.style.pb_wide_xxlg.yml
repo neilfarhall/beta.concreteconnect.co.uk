@@ -1,0 +1,23 @@
+uuid: 9adb2ce6-ac5e-46eb-a9b5-433b0b671144
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yztQblpbljJQYYOojJGtn7m2ZePebWRJLkolK3rmSag
+name: pb_wide_xxlg
+label: 'PB Wide XXLG 1700x600'
+effects:
+  b8acd5c8-527b-4e79-86b9-e9fb54468a5c:
+    uuid: b8acd5c8-527b-4e79-86b9-e9fb54468a5c
+    id: image_convert
+    weight: 1
+    data:
+      extension: webp
+  b77b9433-8e9e-4f7d-9a54-dfb350c4c039:
+    uuid: b77b9433-8e9e-4f7d-9a54-dfb350c4c039
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1700
+      height: 600
+      anchor: center-center

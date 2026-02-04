@@ -1,0 +1,29 @@
+uuid: 422e882e-337d-44f7-a3e4-f87264306d52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tagging_company
+    - node.type.news_article
+    - taxonomy.vocabulary.tagging_company
+id: node.news_article.field_tagging_company
+field_name: field_tagging_company
+entity_type: node
+bundle: news_article
+label: 'Company Tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tagging_company: tagging_company
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

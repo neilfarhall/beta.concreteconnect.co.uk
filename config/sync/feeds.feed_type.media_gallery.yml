@@ -1,0 +1,83 @@
+uuid: d052ef2d-76e9-4d85-b38e-842835ba70e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_image
+    - media.type.image
+  module:
+    - media
+label: 'Media Gallery'
+id: media_gallery
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:media'
+processor_configuration:
+  values:
+    bundle: image
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  id:
+    value: id
+    label: id
+    machine_name: id
+    type: csv
+  mid:
+    value: id
+    label: id
+    machine_name: mid
+    type: csv
+  alt:
+    value: alt
+    label: alt
+    machine_name: alt
+    type: csv
+  teaser_media:
+    value: 'Teaser Media'
+    label: 'Teaser Media'
+    machine_name: teaser_media
+    type: csv
+  authored_on:
+    value: 'Authored on'
+    label: 'Authored on'
+    machine_name: authored_on
+    type: csv
+mappings:
+  -
+    target: field_image
+    map:
+      target_id: mid
+      alt: alt
+      title: teaser_media
+    settings:
+      existing: 2
+      language: null
+      reference_by: filename
+      autocreate: false
+      autocreate_bundle: false
+  -
+    target: created
+    map:
+      value: authored_on
+    settings:
+      language: null
+      timezone: UTC

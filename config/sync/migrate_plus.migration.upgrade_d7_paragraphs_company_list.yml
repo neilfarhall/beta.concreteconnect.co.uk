@@ -1,0 +1,38 @@
+uuid: 3be4a154-7dfb-4737-9e9b-a9df62c9f535
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_company_list
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Company List)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: company_list
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_company_names:
+    -
+      plugin: get
+      source: field_company_names
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: company_list
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+  optional:
+    - upgrade_d7_field_instance

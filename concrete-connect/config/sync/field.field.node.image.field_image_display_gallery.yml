@@ -1,0 +1,21 @@
+uuid: cdfc67bc-4db4-4cba-9cf1-0bdf61f557b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_display_gallery
+    - node.type.image
+  module:
+    - options
+id: node.image.field_image_display_gallery
+field_name: field_image_display_gallery
+entity_type: node
+bundle: image
+label: 'Display in Gallery'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

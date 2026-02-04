@@ -1,0 +1,69 @@
+uuid: 98af480a-9302-4d10-98e7-97382dbada22
+langcode: en
+status: true
+dependencies: {  }
+id: iq_president_s_blog
+label: 'IQ President''s Blog'
+targetEntityType: node
+targetBundle: themag_landing_page
+layout:
+  -
+    layout_id: themag_twocol_section
+    layout_settings:
+      context_mapping: {  }
+      section_bg: ''
+      section_padding: ''
+      section_margin: my-default
+      section_custom_classes: ''
+      container_style: container
+      row_custom_classes: ''
+      no_gutters: 0
+      column_widths: 9-3
+      sticky_columns: 1
+      first:
+        custom_classes: ''
+      second:
+        custom_classes: ''
+    components:
+      ad87b8cf-db8c-4dcc-be99-4508a0fd502f:
+        uuid: ad87b8cf-db8c-4dcc-be99-4508a0fd502f
+        region: first
+        configuration:
+          id: 'block_content:23cc9811-53ce-48b6-94c5-5e6c80a0fcbc'
+          label: 'IQ Blog Header'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      12831ac2-b2a0-4bb5-bc46-79d37421adf8:
+        uuid: 12831ac2-b2a0-4bb5-bc46-79d37421adf8
+        region: first
+        configuration:
+          id: 'block_content:0639ab99-993c-44c1-9c73-a375486889b9'
+          label: 'Presidents blog main image'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 1
+        additional: {  }
+      a3e12061-4486-44d8-b007-c82c29f28f12:
+        uuid: a3e12061-4486-44d8-b007-c82c29f28f12
+        region: first
+        configuration:
+          id: 'views_block:iq_presidents_blog-block_1'
+          label: ''
+          label_display: '0'
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+        weight: 2
+        additional: {  }
+    third_party_settings: {  }

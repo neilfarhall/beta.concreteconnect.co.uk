@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains hooks for the Video Embed Media: player module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function video_embed_media_player_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.video_embed_media_player':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers.') . '</p>';
+      $output .= '<p>' . t('HTML Video & Audio, YouTube & Vimeo - support for the major formats.') . '</p>';
+      $output .= '<p>' . t('Accessible - full support for VTT captions and screen readers.') . '</p>';
+      $output .= '<p>' . t('Responsive - works with any screen size.') . '</p>';
+      $output .= '<p>' . t('Events - no messing around with Vimeo and YouTube APIs, all events are standardized across formats.') . '</p>';
+      $output .= '<p>' . t('Fullscreen - supports native fullscreen with fallback to "full window" modes.') . '</p>';
+      $output .= '<p>' . t('i18n support - support for internationalization of controls.') . '</p>';
+      $output .= '<p>' . t('No frameworks - written in "vanilla" ES6 JavaScript, no jQuery required.') . '</p>';
+      $output .= '<h3>' . t('Configuration') . '</h3>';
+      $output .= '<ol>
+            <li>Install module “Video Embed Media: Player”</li>
+            <li>Go to the “Content types”. Eg:- Admin Menu >> structure >> Content types >> Article >> Manage fields</li>
+            <li>Add a new field in Media >> Video Embed field.</li>
+            <li>Click the "Manage display" Change your field format "Plyr video player" Save.</li>
+        </ol>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function video_embed_media_player_theme() {
+  $items = [];
+
+  $items['plyr_video'] = [
+    'render element' => 'element',
+  ];
+
+  return $items;
+}

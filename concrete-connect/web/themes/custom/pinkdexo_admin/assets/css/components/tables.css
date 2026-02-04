@@ -1,0 +1,152 @@
+table {
+  width: 100%;
+  margin: 0 0 16px;
+}
+
+caption {
+  text-align: left;
+  /* LTR */
+}
+
+[dir="rtl"] caption {
+  text-align: right;
+}
+
+thead > tr {
+  border-bottom: 3px solid #e0e0e0;
+}
+
+th {
+  padding: 16px 16px;
+  text-align: left;
+  /* LTR */
+  vertical-align: middle;
+}
+
+thead th {
+  text-transform: uppercase;
+  border: solid #e0e0e0;
+  border-width: 1px 0;
+}
+
+[dir="rtl"] th {
+  text-align: right;
+}
+
+th > a {
+  position: relative;
+  display: block;
+}
+
+th > a:hover, th > a:focus {
+  text-decoration: none;
+  color: #0277bd;
+}
+
+th > a:hover:after, th > a:focus:after {
+  border-bottom-color: #0277bd;
+}
+
+th > a:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -18px;
+  /* 1. */
+  left: 0;
+  display: block;
+  content: "";
+  transition: all 0.1s;
+  border-bottom: 2px solid transparent;
+}
+
+th .select-all {
+  width: 1px;
+}
+
+th.is-active > a {
+  color: #01579b;
+}
+
+th.is-active > a:hover, th.is-active > a:focus {
+  text-decoration: none;
+  color: #0277bd;
+}
+
+th.is-active > a:after {
+  border-bottom-color: #01579b;
+}
+
+th.is-active > a:after:hover, th.is-active > a:after:focus {
+  border-bottom-color: #0277bd;
+}
+
+th.is-active img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  /* LTR */
+}
+
+[dir="rtl"] th.is-active img {
+  right: auto;
+  left: 0;
+}
+
+tr {
+  padding: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:hover, tbody tr:focus {
+  background: #FFF;
+}
+
+tbody tr.color-warning:hover, tbody tr.color-warning:focus, tbody tr.dblog-warning:hover, tbody tr.dblog-warning:focus {
+  background: #f9a825;
+}
+
+tbody tr.color-error:hover, tbody tr.color-error:focus, tbody tr.dblog-error:hover, tbody tr.dblog-error:focus {
+  background: #ef5350;
+}
+
+table.no-highlight tr.selected td {
+  background: transparent;
+}
+
+td {
+  padding: 16px;
+  text-align: left;
+  /* LTR */
+  vertical-align: middle;
+}
+
+[dir="rtl"] td {
+  text-align: right;
+}
+
+td.is-active {
+  background: none;
+}
+
+.caption {
+  margin-bottom: 24px;
+}
+
+@media screen and (max-width: 37.5em) {
+  /* 600px */
+  th.priority-low,
+  td.priority-low,
+  th.priority-medium,
+  td.priority-medium {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 60em) {
+  /* 920px */
+  th.priority-low,
+  td.priority-low {
+    display: none;
+  }
+}

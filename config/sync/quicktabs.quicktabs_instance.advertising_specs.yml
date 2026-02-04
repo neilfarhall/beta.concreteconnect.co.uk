@@ -1,0 +1,157 @@
+uuid: a46c6408-4598-4102-a3ae-43d1e69f8109
+langcode: en
+status: true
+dependencies: {  }
+id: advertising_specs
+label: 'Advertising Specs'
+renderer: quick_tabs
+hide_empty_tabs: false
+default_tab: 9999
+options:
+  quick_tabs:
+    ajax: false
+    class: ''
+    style: tabsbar
+  accordion_tabs:
+    jquery_ui:
+      collapsible: false
+      heightStyle: auto
+configuration_data:
+  -
+    title: Leaderboard
+    weight: 0
+    type: node_content
+    content:
+      view_content:
+        options:
+          vid: aggregates_directory
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: '60240'
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:content_recent-block_1'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: directory_tabs
+  -
+    title: MPU
+    weight: 0
+    type: node_content
+    content:
+      view_content:
+        options:
+          vid: aggregates_directory
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: '60241'
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:content_recent-block_1'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: directory_tabs
+  -
+    title: 'Double/Jumbo MPU'
+    weight: 0
+    type: node_content
+    content:
+      view_content:
+        options:
+          vid: aggregates_directory
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: '60242'
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:content_recent-block_1'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: directory_tabs
+  -
+    title: Billboard
+    weight: 0
+    type: node_content
+    content:
+      view_content:
+        options:
+          vid: aggregates_directory
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: '60243'
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:content_recent-block_1'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: directory_tabs
+  -
+    title: 'Mobile Banner'
+    weight: 0
+    type: node_content
+    content:
+      view_content:
+        options:
+          vid: aggregates_directory
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: '60244'
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:content_recent-block_1'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: directory_tabs
+  -
+    title: Video
+    weight: 0
+    type: node_content
+    content:
+      view_content:
+        options:
+          vid: aggregates_directory
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: '60245'
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:content_recent-block_1'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: directory_tabs

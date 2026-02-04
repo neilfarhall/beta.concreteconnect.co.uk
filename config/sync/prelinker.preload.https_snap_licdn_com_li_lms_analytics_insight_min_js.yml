@@ -1,0 +1,10 @@
+uuid: 5950e83b-25ee-438f-9207-6b904ff2a8f2
+langcode: en
+status: true
+dependencies: {  }
+id: https_snap_licdn_com_li_lms_analytics_insight_min_js
+label: 'https://snap.licdn.com/li.lms-analytics/insight.min.js'
+file: 'https://snap.licdn.com/li.lms-analytics/insight.min.js'
+as: script
+pages: ''
+weight: 0

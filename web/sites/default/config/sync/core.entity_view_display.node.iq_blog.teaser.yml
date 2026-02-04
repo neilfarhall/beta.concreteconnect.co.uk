@@ -1,0 +1,47 @@
+uuid: 4a22a953-79c3-4993-82c0-1537d6cb1e5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.iq_blog.body
+    - field.field.node.iq_blog.field_blog_type
+    - field.field.node.iq_blog.field_news_image
+    - field.field.node.iq_blog.field_tagging_company
+    - field.field.node.iq_blog.field_tagging_location
+    - field.field.node.iq_blog.field_tagging_subject
+    - field.field.node.iq_blog.field_teaser_media
+    - field.field.node.iq_blog.field_teaser_text
+    - field.field.node.iq_blog.layout_builder__layout
+    - node.type.iq_blog
+  module:
+    - text
+    - user
+id: node.iq_blog.teaser
+targetEntityType: node
+bundle: iq_blog
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_blog_type: true
+  field_news_image: true
+  field_tagging_company: true
+  field_tagging_location: true
+  field_tagging_subject: true
+  field_teaser_media: true
+  field_teaser_text: true
+  layout_builder__layout: true
+  shariff_field: true

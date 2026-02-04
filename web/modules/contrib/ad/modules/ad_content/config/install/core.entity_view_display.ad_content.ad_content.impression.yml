@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.ad_content.impression
+    - field.field.ad_content.ad_content.field_image
+  module:
+    - ad_content
+    - ad_track
+id: ad_content.ad_content.impression
+targetEntityType: ad_content
+bundle: ad_content
+mode: impression
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: ad_content_image_click_track
+    region: content
+hidden:
+  created: true
+  size: true
+  status: true
+  target_url: true
+  title: true
+  total_click: true
+  total_impression: true
+  uid: true

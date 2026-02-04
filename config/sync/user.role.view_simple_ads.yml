@@ -1,0 +1,20 @@
+uuid: 859bb7c2-6962-401f-ac5b-2f068e6dc4cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - disable_messages
+    - eu_cookie_compliance
+    - exclude_node_title
+    - system
+id: view_simple_ads
+label: 'view simple ads'
+weight: 7
+is_admin: null
+permissions:
+  - 'display eu cookie compliance popup'
+  - 'use exclude node title'
+  - 'view error messages'
+  - 'view status messages'
+  - 'view the administration theme'
+  - 'view warning messages'

@@ -1,0 +1,39 @@
+uuid: 05cf28cc-8fd8-4c9e-847b-1098cf724cb7
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - comment_notify
+    - disable_messages
+    - eu_cookie_compliance
+    - media
+    - poll
+    - search
+    - system
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access poll overview'
+  - 'access polls'
+  - 'access print'
+  - 'count ad clicks'
+  - 'count ad impressions'
+  - 'display EU Cookie Compliance popup'
+  - 'display eu cookie compliance popup'
+  - 'edit own polls'
+  - 'post comments'
+  - 'search content'
+  - 'subscribe to comments'
+  - 'use advanced search'
+  - 'use custom search'
+  - 'use text format filtered_html'
+  - 'view media'
+  - 'view poll results'
+  - 'view status messages'

@@ -1,0 +1,29 @@
+uuid: 4fc43e9d-6bb8-41ba-ba06-329b980a6153
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tagging_subject
+    - node.type.event
+    - taxonomy.vocabulary.tagging_subject
+id: node.event.field_tagging_subject
+field_name: field_tagging_subject
+entity_type: node
+bundle: event
+label: 'Subject Tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tagging_subject: tagging_subject
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

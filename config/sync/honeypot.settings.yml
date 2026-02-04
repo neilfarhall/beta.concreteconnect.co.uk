@@ -1,0 +1,32 @@
+_core:
+  default_config_hash: 9bVDfWSa_In6VzTXmy04jJ_3ZQobihKjO9isuuUCPaw
+protect_all_forms: false
+unprotected_forms:
+  - user_login_form
+  - search_form
+  - search_block_form
+  - views_exposed_form
+  - honeypot_settings_form
+log: true
+element_name: url
+time_limit: 5
+expire: 300
+form_settings:
+  user_register_form: true
+  user_pass: true
+  node_article_form: true
+  node_directory_listing_form: true
+  node_event_form: true
+  node_exhibitor_spotlight_form: true
+  node_feed_form: true
+  node_feed_item_form: true
+  node_image_form: true
+  node_job_listing_form: true
+  node_news_article_form: true
+  node_page_form: true
+  node_paragraphs_form: true
+  node_themag_landing_page_form: true
+  node_video_form: true
+  node_webform_form: false
+  comment_comment_form: true
+  comment_migrate_example_advanced_comment_form: true

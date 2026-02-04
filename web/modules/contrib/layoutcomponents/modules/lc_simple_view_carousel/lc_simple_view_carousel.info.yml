@@ -1,0 +1,15 @@
+name: Layout Components - View Carousel
+type: module
+description: Layout Components view carousel
+package: LayoutComponents
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:layoutcomponents
+  - drupal:slick
+  - drupal:slick_ui
+  - lc_slick:lc_slick
+
+# Information added by Drupal.org packaging script on 2023-12-14
+version: '3.0.2'
+project: 'layoutcomponents'
+datestamp: 1702568529

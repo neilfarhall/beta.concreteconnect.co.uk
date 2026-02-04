@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 32c90636-e36c-43af-8517-6d314e3237a8
+  bundle: channel
+  default_langcode: en
+  depends:
+    01378c66-b01c-410b-8851-5fdbec5ca544: taxonomy_term
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Food & Drinks'
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      entity: 01378c66-b01c-410b-8851-5fdbec5ca544
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /travel-eats/food-drinks
+      langcode: en
+      pathauto: 1
+  field_color:
+    -
+      color: '#FFA000'
+      opacity: !!float 1

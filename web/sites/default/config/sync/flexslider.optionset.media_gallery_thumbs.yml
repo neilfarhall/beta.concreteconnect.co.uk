@@ -1,0 +1,47 @@
+uuid: bca69d4b-dad1-4a63-93d1-f12266ff81a6
+langcode: en
+status: true
+dependencies: {  }
+id: media_gallery_thumbs
+label: 'Media Gallery - Thumbs'
+options:
+  animation: fade
+  animationSpeed: 600
+  direction: horizontal
+  slideshow: false
+  easing: swing
+  smoothHeight: false
+  reverse: false
+  slideshowSpeed: 7000
+  animationLoop: false
+  randomize: false
+  startAt: 1
+  itemWidth: 190
+  itemMargin: 1
+  minItems: 0
+  maxItems: 0
+  move: 0
+  directionNav: false
+  controlNav: '0'
+  thumbCaptions: false
+  thumbCaptionsBoth: false
+  keyboard: true
+  multipleKeyboard: false
+  mousewheel: false
+  touch: true
+  prevText: Previous
+  nextText: Next
+  namespace: flex-
+  selector: '.slides > li'
+  sync: ''
+  asNavFor: '#slider'
+  initDelay: 0
+  useCSS: true
+  video: false
+  pausePlay: false
+  pauseText: Pause
+  playText: Play
+  pauseOnAction: true
+  pauseOnHover: false
+  controlsContainer: ''
+  manualControls: ''

@@ -1,0 +1,500 @@
+    3  drush config:set system.logging error_level verbose -y
+    4  drush cr
+    5  cd web/modules/contrib/
+    6  ls -l
+    7  rm -r ctools
+    8  df -h /
+    9  df -h /
+   10  cd restore-agg-net-2025-02-23/
+   11  ls
+   12  ls -altr
+   13  du -sh *
+   14  watch du -sh *
+   15  df -h /
+   16  watch du -sh *
+   17  watch du -s *
+   18  du -sh * && df -h /
+   19  watch du -sh * && df -h /
+   20  cd /srv/
+   21  ls
+   22  du -sh *
+   23  df -h  /
+   24  cd /root/
+   25  ls 
+   26  ls a-ltr
+   27  ls -altr
+   28  du -sh *
+   29  df -h /
+   30  df -h 
+   31  df / 
+   32  watch df / 
+   33  watch df / 
+   34  cd /root/restore-agg-net-2025-02-23/
+   35  ls
+   36  du -sh *
+   37  watch du -sh *
+   38  watch du -sh *
+   39  watch du -sh *
+   40  exit
+   41  df -h /
+   42  apt clean
+   43  df -h /
+   44  cd /root/
+   45  ls
+   46  mkdir restore-agg-net-2025-02-23
+   47  cd restore
+   48  ls
+   49  cd ../
+   50  cd restore-agg-net-2025-02-23/
+   51  ls
+   52  mythic-backup 
+   53  mythic-backup -
+   54  mythic-backup -Z
+   55  mythic-backup -z 2025-02-23T08:04:26Z0000 -r "/srv/agg-net.com/" -D "/root/restore-agg-net-2025-02-23/"
+   56  ls
+   57  ls a-l
+   58  ls -al
+   59  mythic-backup -z 2025-02-23T08:04:26Z0000 -r "/srv/agg-net.com/" -D "/root/restore-agg-net-2025-02-23/"
+   60  cd ..
+   61  rm -r restore-agg-net-2025-02-23/
+   62  mkdir restore-agg-net-2025-02-23
+   63  cd restore-agg-net-2025-02-23/
+   64  mythic-backup -z 2025-02-23T08:04:26Z0000 -r "/srv/agg-net.com/public/web/modules/" -D "/root/restore-agg-net-2025-02-23/"
+   65  mkdir web-modules
+   66  ls
+   67  mv contrib/ web-modules/
+   68  mv custom/ web-modules/
+   69  mv README.txt web-modules/
+   70  ls
+   71  mkdir cc-web-modules
+   72  mythic-backup -z 2025-02-23T08:04:26Z0000 -r "/srv/concreteconnect.co.uk/public/web/modules/" -D "/root/restore-agg-net-2025-02-23/cc-web-modules/"
+   73  mythic-backup -z 2025-02-23T08:04:26Z0000 -r "/srv/concreteconnect.co.uk/public/composer.json" -D "/root/restore-agg-net-2025-02-23/"
+   74  ls
+   75  mv web-modules/ agg-net-web-modules
+   76  ls -altr
+   77  du -sh *
+   78  exit
+   79  cd /root/
+   80  ls -l
+   81  cd restore-agg-net-2025-02-23/
+   82  ls -l
+   83  cd agg-net-web-modules/contrib/
+   84  ls -l
+   85  cp -r body_inject /srv/agg-net.com/public/web/modules/contrib/
+   86  cd /srv/agg-net.com/public/web/modules/contrib/
+   87  ls -l
+   88  rm -r body_inject
+   89  ls -l
+   90  cd /srv/agg-net.com/public/web/modules/
+   91  ls
+   92  cd /root
+   93  ls
+   94  mkdir restore
+   95  cd restore/
+   96  mythic-backup -Z
+   97  du -sh /srv/agg-net.com/
+   98  du -sh /srv/agg-net.com/public/web/modulees
+   99  du -sh /srv/agg-net.com/public/web/modules
+  100  cd ..
+  101  cd root
+  102  ls -l
+  103  mv -r restore-agg-net-2025-02-23 /srv/agg-net.com/
+  104  mv restore-agg-net-2025-02-23 /srv/agg-net.com/
+  105  pwd
+  106  cd /srv/agg-net.com/
+  107  ls -l
+  108  rm public/web/modules/contrib/body_inject
+  109  rm -r public/web/modules/contrib/body_inject
+  110  cd restore-agg-net-2025-02-23/agg-net-web-modules/contrib/
+  111  mv body_inject /srv/agg-net.com/public/web/modules/contrib/
+  112  cd /srv/agg-net.com/public/web/modules/contrib/
+  113  ls -l
+  114  drush cr
+  115  cd /srv/
+  116  ls -l
+  117  sympl web create images.concreteshow.co.uk
+  118  ls -l
+  119  ls -l
+  120  ls -l
+  121  cd /srv/images.concreteshow.co.uk/public/
+  122  ls -l
+  123  cd htdocs/
+  124  ls -l
+  125  nano index.php
+  126  ls -l
+  127  w
+  128  ps -Af
+  129  ps -Af|grep apa
+  130  ps -Af|grep apa|wc -l
+  131  w
+  132  ps -Af
+  133  df -h
+  134  cd /ar/log/apa
+  135  cd /var/log/apache2/
+  136  ls -ltra
+  137  tail -f other_vhosts_access.log
+  138  tail -f zz-mass-hosting.ssl_access.log
+  139  w
+  140  ps -Af
+  141  ps -Af|grep fpm
+  142  systmectl restart 'php*' apache2
+  143  systemctl restart 'php*' apache2
+  144  top
+  145  tail -f zz-mass-hosting.ssl_access.log
+  146  ls -ltra
+  147  tial -f *log
+  148  tail -f *log
+  149  ps -Af|grep apa|wc -l
+  150  cd /srv/
+  151  tail -f */public/logs/*cess.log
+  152  tail -f */public/logs/*cess.log
+  153  tail -f */public/logs/*cess.log
+  154  ls /srv/*/public/logs
+  155  tail -f /srv/*/public/logs/*.log
+  156  tail -f /srv/*/public/logs/*.log
+  157  cd /srv/images.concreteshow.co.uk/public/htdocs/
+  158  ls -l
+  159  nano index.php 
+  160  nano download_csv.php
+  161  mkdir  images
+  162  ls -l
+  163  cd images
+  164  cd ..
+  165  chmod 777 images
+  166  nano index.php 
+  167  nano index.php 
+  168  nano index.php 
+  169  ls -l
+  170  ls -l
+  171  nano download_csv.php 
+  172  cd images/
+  173  ls -l
+  174  cd /srv/concreteconnect.co.uk/public/
+  175  drush cr
+  176  drush cr
+  177  drush cr
+  178  drush cr
+  179  drush cr
+  180  drush cr
+  181  drush cr
+  182  drush cr
+  183  cd /srv/concreteconnect.co.uk/public/
+  184  drush cr
+  185  drush cr
+  186  drush cr
+  187  drush cr
+  188  drush cr
+  189  drush cr
+  190  drush cr
+  191  drush cr
+  192  drush cr
+  193  cd /srv/images.concreteshow.co.uk/
+  194  ls -l
+  195  cd config/
+  196  ls -l
+  197  nano ftp-users
+  198  nano ftp-users
+  199  nano ftp-users
+  200  cd /srv/concreteconnect.co.uk/public/web/themes/
+  201  ls -l
+  202  cd custom/
+  203  ls -l
+  204  cd ..
+  205  cd ..
+  206  cd ..
+  207  git status
+  208  git add web/libraries/  
+  209  git status
+  210  git add web/themes/
+  211  git add composer.*  
+  212  git status
+  213  git add config/sync
+  214  git status
+  215  git commit -m "Neil sync live with local"  
+  216  git branch   
+  217  git push origin master  
+  218  git status  
+  219  drush cr
+  220  cd ..
+  221  ls -l
+  222  cd restore-mb511244/
+  223  ls -l
+  224  cd 2025-03-07T08\:36\:27Z0000/
+  225  ls -l
+  226  cd custom/
+  227  ls -l
+  228  cd ..
+  229  ls -l
+  230  mv custom /srv/concreteconnect.co.uk/public/web/themes/
+  231  cd ..
+  232  ls -l
+  233  cd 2025-03-06T08\:18\:56Z0000/
+  234  ls -l
+  235  mv custom /srv/concreteconnect.co.uk/public/web/themes/
+  236  ls -la
+  237  cd /srv
+  238  ls -la
+  239  cd concreteconnect.co.uk/
+  240  ls -la
+  241  mkdir restore-mb511244
+  242  cd restore-mb511244
+  243  ls -la
+  244  mythic-backup -L
+  245  mythic-backup -Z
+  246  mkdir 2025-03-06T08:18:56Z0000
+  247  cd 2025-03-06T08\:18\:56Z0000/
+  248  mythic-backup -z 2025-03-06T08:18:56Z0000 -r /srv/concreteconnect.co.uk/public/web/themes/custom
+  249  mythic-backup -z-v  2025-03-06T08:18:56Z0000 -r /srv/concreteconnect.co.uk/public/web/themes/custom
+  250  mythic-backup -z -v 2025-03-06T08:18:56Z0000 -r /srv/concreteconnect.co.uk/public/web/themes/custom
+  251  mythic-backup -v -z 2025-03-06T08:18:56Z0000 -r /srv/concreteconnect.co.uk/public/web/themes/custom
+  252  ls -la
+  253  cd ..
+  254  mkdir 2025-03-07T08:36:27Z0000
+  255  cd 2025-03-07T08:36:27Z0000
+  256  mythic-backup -v -z 2025-03-07T08:36:27Z0000 -r /srv/concreteconnect.co.uk/public/web/themes/custom
+  257  ls -la
+  258  cd custom/
+  259  ls -la
+  260  cd ..
+  261  ls -la
+  262  cd ..
+  263  ls -la
+  264  diff -r 2025-03-06T08:18:56Z0000 2025-03-07T08:36:27Z0000
+  265  ls -la
+  266  cd ..
+  267  ls -la
+  268  chown -R sympl:sympl restore-mb509588 restore-mb511244
+  269  ls -la
+  270  cd restore-mb511244
+  271  ls -la
+  272  cd /srv/concreteconnect.co.uk/public/web/themes/
+  273  ls -l
+  274  mv custom custom2
+  275  ls -l
+  276  ls -l
+  277  cd ..
+  278  cd ..
+  279  drush cr
+  280  cd web/themes/
+  281  ls -
+  282  ls -l
+  283  mv custom custom3
+  284  ls -l
+  285  drush cr
+  286  cd ..
+  287  cd ..
+  288  git status
+  289  drush cex  
+  290  git status  
+  291  git add config
+  292  git status  
+  293  git add web/themes/custom/
+  294  git status  
+  295  git commit -m "adding config filesfor CCTV"    
+  296  git push origin master  
+  297  drush cr
+  298  git status  
+  299  drush cex  
+  300  git status  
+  301  cd web/themes/
+  302  ls -l
+  303  cp custom custom-working
+  304  cp -r custom custom-working
+  305  ls -l
+  306  cd /srv/concreteconnect.co.uk/public/
+  307  git branch
+  308  cd /srv/concreteconnect.co.uk/public/
+  309  drush cr
+  310  drush cr
+  311  drush cr
+  312  drush cr
+  313  git staus
+  314  git status
+  315  redis-cli flushall
+  316  drush cr
+  317  drush cr
+  318  drush cr
+  319  drush cr
+  320  drush cr
+  321  drush cr
+  322  drush cr
+  323  cd web/themes/custom/
+  324  ls -l
+  325  cd themag_st/assets/css/
+  326  ls -l
+  327  cd ..
+  328  cd ..
+  329  ls -l
+  330  cd ..
+  331  ls -l
+  332  cd ..
+  333  ls -l
+  334  rm -r custom2
+  335  rm -r custom3
+  336  rm -r custom-working/
+  337  ls -l
+  338  drush cr
+  339  cd /srv/images.concreteshow.co.uk/public/
+  340  df -h /
+  341  cd htdocs/
+  342  df -h /
+  343  du -xhad1 | sort -h
+  344  cd /srv/concreteconnect.co.uk/public/
+  345  drush cr
+  346  cd ..
+  347  ls -l
+  348  cd restore-mb509588/
+  349  ls -l
+  350  cd ..
+  351  cd restore-mb511244/
+  352  ls -l
+  353  cd 2025-03-07T08\:36\:27Z0000/
+  354  ls -l
+  355  cd ..
+  356  cd 2025-03-06T08\:18\:56Z0000/
+  357  ls -l
+  358  cd ..
+  359  cd ..
+  360  cd public/
+  361  drush cr
+  362  drush cr
+  363  drush cr
+  364  drush cr
+  365  cd /srv/concreteconnect.co.uk/public/
+  366  drush watchdog-show 
+  367  drush watchdog-show 
+  368  drush watchdog-show 
+  369  cd /srv/concreteconnect.co.uk/public/web/sites/default/
+  370  nano settings.php
+  371  cd /srv/agg-net.com/public/web/sites/default/
+  372  ls -l
+  373  nano settings.php 
+  374  nano default.settings.php 
+  375  nano settings.php 
+  376  drush cr
+  377  ping 62.31.100.130
+  378  cd /etc/apache2/
+  379  ls
+  380  cd sites-available/
+  381  ls
+  382  exit
+  383  cd /etc/
+  384  git log -p
+  385  git log -p | grep -i maxrequest
+  386  git log -p | less
+  387  free
+  388  ps -ef | grep apache
+  389  cd
+  390  less /var/log/syslog
+  391  cd /etc/apache2/
+  392  grep -ir maxrequestworkers
+  393  ls
+  394  grep -ir mpm
+  395  ls mods-enabled/
+  396  cd mods-enabled/
+  397  emacs -nw mpm_prefork.conf 
+  398  vim mpm_prefork.conf
+  399  systemctl restart apache2
+  400  less /var/log/apache2/error.log
+  401  cat /etc/apache2/mods-enabled/mpm_prefork.conf 
+  402  ls
+  403  less mpm_prefork.load 
+  404  less mpm_prefork.conf
+  405  apachectl -M
+  406  free
+  407  ps -ef | grep apache
+  408  ps -ef | grep mailchimp
+  409  less /var/log/apache2/access.log
+  410  ls -al /var/log/apache2/
+  411  ls -al /var/log/apache2/access.log.1 
+  412  less /var/log/apache2/access.log.1
+  413  zless /var/log/apache2/access.log.2.gz
+  414  ls /var/log/apache2
+  415  less /var/log/apache2/other_vhosts_access.log
+  416  less /var/log/apache2/zz-mass-hosting.log
+  417  less /var/log/apache2/zz-mass-hosting.access.log
+  418  cd ../sites-enabled/
+  419  ls
+  420  less concreteconnect.co.uk.conf 
+  421  cd /srv/concreteconnect.co.uk/
+  422  ls
+  423  tree
+  424  less /etc/apache2/sites-enabled/concreteconnect.co.uk.conf 
+  425  cd public/logs/
+  426  ls
+  427  less access.log
+  428  less access.log.1
+  429  less error.log
+  430  ls -ltr
+  431  less ssl_access.log
+  432  less ssl_access.log.1
+  433  less ssl_error.log
+  434  less ssl_error.log.1
+  435  less ssl_access.log.1
+  436  cat ssl_access.log.1
+  437  cut -f 12 -d" " ssl_access.log.1 | head -n 10
+  438  cut -f 6 -d" " ssl_access.log.1 | head -n 10
+  439  cut -f 7 -d" " ssl_access.log.1 | head -n 10
+  440  cut -f 7 -d" " ssl_access.log.1 | sort | uniq -c | sort -n 
+  441  less ssl_access.log.1
+  442  cut -f 8 -d" " ssl_access.log.1 | sort | uniq -c | sort -n 
+  443  cut -f 9 -d" " ssl_access.log.1 | sort | uniq -c | sort -n 
+  444  less ssl_access.log.1
+  445  cat /proc/net/sockstat
+  446  cd
+  447  cd /root
+  448  ls
+  449  mkdir trowan
+  450  cd trowan/
+  451  while true ; do cat /proc/net/sockstat > /root/trowan/sockstats ; sleep 5 ; done
+  452  while true ; do date |tr -d '\n' >>/root/trowan/sockstats; echo -n " " >> /root/trowan/sockstats;  cat /proc/net/sockstat | grep 'TCP:'  >> /root/trowan/sockstats ; sleep 5 ; done
+  453  cat > log_sockstat
+  454  vim log_sockstat 
+  455  chmod 755
+  456  chmod 755 log_sockstat 
+  457  vim log_sockstat 
+  458  vim log_sockstat
+  459  ls
+  460  rm sockstats 
+  461  ./log_sockstat 
+  462  less /var/log/apache2/error.log
+  463  less /var/log/apache2/error.log
+  464  cd /root
+  465  ls
+  466  cd trowan/
+  467  ls
+  468  cat sockstats 
+  469  date
+  470  date -n
+  471  man date
+  472  date | tr '\n'
+  473  man tr
+  474  date | tr -d '\n'
+  475  cat sockstats 
+  476  cat sockstats 
+  477  cat sockstats 
+  478  cat sockstats 
+  479  cat sockstats 
+  480  cat sockstats 
+  481  ip a
+  482  cat sockstats 
+  483  cat sockstats  | cut -f 9
+  484  cat sockstats  | cut -f 9 -d " " 
+  485  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
+  486  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
+  487  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
+  488  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
+  489  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
+  490  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
+  491  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | 
+  492  cat sockstats  | cut -f 9 -d " " | sort | uniq -c 
+  493  cat /proc/net/sockstat
+  494  ss -ntap
+  495  ss -ntap | grep EST
+  496  cat sockstats  | cut -f 9 -d " " | sort | uniq -c 
+  497  ls
+  498  mkdir mythici
+  499  mv trowan/ mythici/
+  500  mv mythici/ mythic
+  501  cd /srv/concreteconnect.co.uk/public/
+  502  history > history_for_print.txt

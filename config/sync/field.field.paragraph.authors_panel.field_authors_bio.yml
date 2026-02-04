@@ -1,0 +1,21 @@
+uuid: 365dca78-2157-4444-8186-9a523a70b99e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_authors_bio
+    - paragraphs.paragraphs_type.authors_panel
+  module:
+    - text
+id: paragraph.authors_panel.field_authors_bio
+field_name: field_authors_bio
+entity_type: paragraph
+bundle: authors_panel
+label: 'Authors Bio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,34 @@
+uuid: 230d5d51-2fe5-420c-b62b-eaee1536044a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.light_blue_bar_left_with_dark_bl.field_dk_blue_link
+    - field.field.paragraph.light_blue_bar_left_with_dark_bl.field_lt_blue_text
+    - paragraphs.paragraphs_type.light_blue_bar_left_with_dark_bl
+  module:
+    - link
+id: paragraph.light_blue_bar_left_with_dark_bl.default
+targetEntityType: paragraph
+bundle: light_blue_bar_left_with_dark_bl
+mode: default
+content:
+  field_dk_blue_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_lt_blue_text:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

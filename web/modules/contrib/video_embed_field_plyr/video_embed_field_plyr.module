@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Contains video_embed_field_plyr.module.
+ */
+
+
+/**
+ * Implements hook_theme().
+ */
+function video_embed_field_plyr_theme() {
+  return [
+    'video_embed_plyr' => [
+      'variables' => [
+        'url' => '',
+        'videoId' => '',
+        'thumbnail' => '',
+        'provider' => [],
+        'attributes' => [],
+        'plyr_settings' => [],
+      ],
+    ],
+    'video_oembed_plyr' => [
+      'variables' => [
+        'iframe' => '',
+        'thumbnail' => '',
+        'provider' => [],
+        'attributes' => [],
+        'plyr_settings' => [],
+      ],
+    ],
+  ];
+}
+
+
+function video_embed_field_plyr_theme_suggestions_video_embed_plyr(array $variables): array {
+  return video_embed_field_plyr_build_theme_suggestions('video_embed_plyr__', $variables);
+}
+
+function video_embed_field_plyr_theme_suggestions_video_oembed_plyr(array $variables): array {
+  return video_embed_field_plyr_build_theme_suggestions('video_oembed_plyr__', $variables);
+}
+
+
+
+function video_embed_field_plyr_build_theme_suggestions(string $prefix,array $variables): array {
+  $suggestions[] = $prefix . $variables['provider'];
+  if ($variables['plyr_settings']['background']) {
+    $suggestions[] = $prefix.'background';
+    $suggestions[] = $prefix.'background__' . $variables['provider'];
+  }
+  return $suggestions;
+}

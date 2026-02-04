@@ -1,0 +1,23 @@
+uuid: 03650df5-20ef-4437-948c-c770d60a295e
+langcode: en
+status: true
+dependencies:
+  module:
+    - migrate_example_advanced_setup
+    - serialization
+    - user
+  enforced:
+    module:
+      - migrate_example_advanced_setup
+_core:
+  default_config_hash: 3jRN8sN2_AVaDluCqI0p3ATtwdpIz6I5Cb338PtLs5c
+id: migrate_example_advanced_variety_list
+plugin_id: migrate_example_advanced_variety_list
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+      - xml
+    supported_auth:
+      - cookie

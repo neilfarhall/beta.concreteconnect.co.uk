@@ -1,0 +1,100 @@
+uuid: fcdd741f-648a-4a6a-955e-d052ae0e1d6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.paragraph_preview
+    - field.field.media.twitter.field_url
+    - image.style.paragraph_preview
+    - media.type.twitter
+  module:
+    - field_group
+    - link
+    - svg_image
+third_party_settings:
+  field_group:
+    group_preview_wrapper:
+      children:
+        - group_thumb_preview
+        - group_content_preview
+      label: 'Preview Wrapper'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: pd-preview-wrapper
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+    group_thumb_preview:
+      children:
+        - thumbnail
+      label: 'Thumb Preview'
+      parent_name: group_preview_wrapper
+      region: content
+      weight: 9
+      format_type: html_element
+      format_settings:
+        classes: pd-preview-thumb
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+    group_content_preview:
+      children:
+        - field_url
+      label: 'Content Preview'
+      parent_name: group_preview_wrapper
+      region: content
+      weight: 10
+      format_type: html_element
+      format_settings:
+        classes: pd-preview-content
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+id: media.twitter.paragraph_preview
+targetEntityType: media
+bundle: twitter
+mode: paragraph_preview
+content:
+  field_url:
+    type: link
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: paragraph_preview
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  uid: true

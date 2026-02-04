@@ -1,0 +1,19 @@
+uuid: d01e06fb-c8e2-4417-99e2-47af4a1ac30c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lt_blue_text
+    - paragraphs.paragraphs_type.light_blue_bar_left_with_dark_bl
+id: paragraph.light_blue_bar_left_with_dark_bl.field_lt_blue_text
+field_name: field_lt_blue_text
+entity_type: paragraph
+bundle: light_blue_bar_left_with_dark_bl
+label: 'Lt Blue Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

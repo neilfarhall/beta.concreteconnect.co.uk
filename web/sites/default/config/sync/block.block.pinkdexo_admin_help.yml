@@ -1,0 +1,22 @@
+uuid: d2c55894-bad8-4c98-aa01-1736a5992558
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - pinkdexo_admin
+_core:
+  default_config_hash: xT3FuHCPE8st_K5iuipIn1kXX66RvZBmZIjZrdQYGzk
+id: pinkdexo_admin_help
+theme: pinkdexo_admin
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

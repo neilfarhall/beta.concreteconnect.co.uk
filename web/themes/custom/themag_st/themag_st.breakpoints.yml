@@ -1,0 +1,37 @@
+themag_st.xxs:
+  label: 'Mobile devices'
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+themag_st.xs:
+  label: 'Above IPhones'
+  mediaQuery: 'all and (min-width: 391px)'
+  weight: 1
+  multipliers:
+    - 1x
+themag_st.sm:
+  label: 'Small devices? 544?'
+  mediaQuery: 'all and (min-width: 544px)'
+  weight: 2
+  multipliers:
+    - 1x
+themag_st.md:
+  label: 'Medium devices'
+  mediaQuery: 'all and (min-width: 768px)'
+  weight: 3
+  multipliers:
+    - 1x
+themag_st.lg:
+  label: 'Large devices'
+  mediaQuery: 'all and (min-width: 992px)'
+  weight: 4
+  multipliers:
+    - 1x
+themag_st.xl:
+  label: 'Extra large devices'
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 5
+  multipliers:
+    - 1x
+

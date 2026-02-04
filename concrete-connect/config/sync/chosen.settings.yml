@@ -1,0 +1,21 @@
+_core:
+  default_config_hash: exRaKE0s6uZbfQrl_2WFEcTlc_1t81xEqCLuCCteUSk
+minimum_single: 5
+minimum_multiple: 5
+disable_search_threshold: 0
+minimum_width: 0
+max_shown_results: null
+use_relative_width: false
+jquery_selector: 'select:visible'
+search_contains: true
+disable_search: false
+allow_single_deselect: true
+disabled_themes:
+  seven: '0'
+  pinkdexo_admin: '0'
+  themag: '0'
+  themag_st: '0'
+chosen_include: 2
+placeholder_text_multiple: 'Choose Option'
+placeholder_text_single: 'Choose an option'
+no_results_text: 'No results match'

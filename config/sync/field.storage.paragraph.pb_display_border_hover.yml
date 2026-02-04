@@ -1,0 +1,21 @@
+uuid: e7d5b6d5-e1c2-4fe8-94e7-df2f5ebefe8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - paragraphs_bundles
+_core:
+  default_config_hash: Rwk1BxHoXsioiesV9y278niXv0wT6VrEgZg9dXooGBQ
+id: paragraph.pb_display_border_hover
+field_name: pb_display_border_hover
+entity_type: paragraph
+type: paragraphs_bundles_rgb
+settings: {  }
+module: paragraphs_bundles
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

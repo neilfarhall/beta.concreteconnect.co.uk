@@ -1,0 +1,176 @@
+@import "../../dependencies/index";
+
+.js .field--widget-paragraphs {
+
+  tr {
+    border: 0;
+  }
+
+  td {
+    padding: $spacer/2 0;
+  }
+
+  .draggable {
+    background-color: $color--gray--lightest;
+    box-shadow: 0 0 5px 0 rgba(#000, .1);
+    transition: background-color .15s ease-in-out;
+    &:hover {
+      background-color: darken($color--gray--lightest, 2%);
+    }
+  }
+
+  .paragraphs-features__add-in-between__row {
+    background: transparent;
+  }
+
+  // Table drag
+  //
+  .field-multiple-drag {
+    vertical-align: middle;
+    position: relative;
+
+    .warning {
+      background-color: $color--warning;
+      width: 4px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      text-indent: -9999rem;
+    }
+  }
+
+  a.tabledrag-handle {
+    display: block;
+    float: none;
+    height: auto;
+    margin: 0;
+    padding: 0 $spacer/2;
+    &:hover,
+    &:focus,
+    &:active {
+      .handle {
+        background-color: $color--primary--dark;
+      }
+    }
+
+    .handle {
+      box-sizing: border-box;
+      width: 64px;
+      height: 64px;
+      padding: 0;
+      margin: 0;
+      background-color: $color--gray--dark;
+      mask-image: url(../#{$path-to-icons}/drag_handle-24px.svg);
+      mask-position: center center;
+      mask-repeat: no-repeat;
+    }
+  }
+
+  // Paragraph form item
+  //
+  .paragraph-form-item {
+    .paragraph-top {
+      font-weight: bold;
+    }
+  }
+
+  // Paragraph item preview
+  //
+  .paragraph-form-item--preview {
+    @include media-breakpoint-up(xl) {
+      display: flex;
+      align-items: center;
+    }
+
+    .paragraph-top {
+      margin: 0 $spacer $spacer/2 0;
+      padding-bottom: $spacer/2;
+      border-bottom: 1px solid $color--gray;
+      @include media-breakpoint-up(xl) {
+        flex: 0 1 auto;
+        order: 1;
+        margin: 0 $spacer 0 0;
+        padding-bottom: 0;
+        border-bottom: 0;
+        text-align: right;
+      }
+    }
+
+    .paragraph {
+      @include media-breakpoint-up(xl) {
+        flex: 1 1 auto;
+        order: 0;
+      }
+    }
+  }
+
+  // Paragraph item edit form
+  //
+  .paragraph-form-item--subform {
+    display: flex;
+    flex-flow: column;
+    padding: $spacer;
+
+    .paragraph-top {
+      order: 1;
+      margin-top: $spacer;
+    }
+
+    .paragraphs-subform {
+      order: 0;
+      background: #FFF;
+      padding: $spacer*2;
+      box-shadow: 0 0 20px 0 #0003;
+
+      .field--type-entity-reference {
+
+        > details {
+          margin: 0;
+          padding: 0;
+          border: 0;
+
+          > summary {
+            display: none;
+          }
+
+          > .details-wrapper {
+            padding: 0;
+          }
+        }
+
+        > fieldset:not(.fieldgroup) {
+          margin: 0;
+          padding: 0;
+          border: 0;
+
+          > legend {
+            display: none;
+          }
+        }
+      }
+
+      // Slideshow reference field
+      //
+      .field--name-field-media-slideshow {
+
+        .entities-list.sortable {
+          margin: $spacer 0 0 $spacer* -1;
+          padding: 0;
+
+          .item-container {
+            margin-top: $spacer;
+            margin-left: $spacer;
+          }
+        }
+      }
+
+      input[type="text"],
+      input[type="url"],
+      input[type="email"] {
+        width: 100%;
+      }
+    }
+  }
+}

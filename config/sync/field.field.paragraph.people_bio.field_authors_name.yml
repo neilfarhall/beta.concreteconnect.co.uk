@@ -1,0 +1,19 @@
+uuid: 6a4049cc-6113-423c-a93d-c9551c73a8af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_authors_name
+    - paragraphs.paragraphs_type.people_bio
+id: paragraph.people_bio.field_authors_name
+field_name: field_authors_name
+entity_type: paragraph
+bundle: people_bio
+label: Name
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,5 @@
+taxonomy_delete.ui:
+  title: 'Taxonomy Delete'
+  route_name: taxonomy_delete.ui
+  appears_on:
+    - entity.taxonomy_vocabulary.collection

@@ -1,0 +1,36 @@
+uuid: 16f488fd-4695-4cef-9945-2e47b9b8868c
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.product
+  module:
+    - block_title_link
+    - facets
+    - system
+  theme:
+    - themag_st
+third_party_settings:
+  block_title_link:
+    title_link_url: ''
+    link_title: ''
+    title_link_target: ''
+    title_link_enable: 0
+id: product
+theme: themag_st
+region: content_right
+weight: 0
+provider: null
+plugin: 'facet_block:product'
+settings:
+  id: 'facet_block:product'
+  label: Product
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: product
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /dir-search-test

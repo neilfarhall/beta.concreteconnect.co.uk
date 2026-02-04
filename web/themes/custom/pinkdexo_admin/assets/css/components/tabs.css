@@ -1,0 +1,33 @@
+.tabs.primary .tabs__tab {
+  background: #9e9e9e;
+  border-color: #9e9e9e;
+}
+
+.tabs.primary .tabs__tab:not(:first-child) {
+  border-left-color: #b2b2b2;
+}
+
+.tabs.primary .tabs__tab a {
+  color: white;
+  text-decoration: none;
+  transition: all .15s ease-in-out;
+}
+
+.tabs.primary .tabs__tab a:not(.is-active):hover, .tabs.primary .tabs__tab a:not(.is-active):focus, .tabs.primary .tabs__tab a:not(.is-active):active {
+  background: #e0e0e0;
+  border-color: #e0e0e0;
+  color: rgba(33, 33, 33, 0.85);
+}
+
+.tabs.primary .tabs__tab.is-active {
+  background: #fafafa;
+}
+
+.tabs.primary .tabs__tab.is-active a {
+  color: #0288d1;
+}
+
+.is-collapse-enabled .tabs:before,
+.is-horizontal .tabs:before {
+  background-color: #9e9e9e;
+}

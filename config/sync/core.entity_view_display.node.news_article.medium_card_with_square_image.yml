@@ -1,0 +1,98 @@
+uuid: c4be4074-1404-4d37-9097-89696144f2d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.medium_card_with_square_image
+    - field.field.node.news_article.body
+    - field.field.node.news_article.feeds_item
+    - field.field.node.news_article.field_channel
+    - field.field.node.news_article.field_comment
+    - field.field.node.news_article.field_featured_news
+    - field.field.node.news_article.field_file_attachments
+    - field.field.node.news_article.field_keywords
+    - field.field.node.news_article.field_news_email
+    - field.field.node.news_article.field_news_image
+    - field.field.node.news_article.field_news_type
+    - field.field.node.news_article.field_omit_from_news_listing
+    - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_related_articles
+    - field.field.node.news_article.field_related_directories
+    - field.field.node.news_article.field_tagging_company
+    - field.field.node.news_article.field_tagging_location
+    - field.field.node.news_article.field_tagging_subject
+    - field.field.node.news_article.field_tags
+    - field.field.node.news_article.field_teaser_media
+    - field.field.node.news_article.field_teaser_text
+    - field.field.node.news_article.layout_builder__layout
+    - field.field.node.news_article.layout_selection
+    - node.type.news_article
+  module:
+    - field_formatter
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.news_article.medium_card_with_square_image
+targetEntityType: node
+bundle: news_article
+mode: medium_card_with_square_image
+content:
+  field_news_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_teaser_media:
+    type: field_formatter_with_inline_settings
+    label: hidden
+    settings:
+      field_name: field_image
+      type: image
+      settings:
+        image_link: ''
+        image_style: medium_teaser_card_370x280_home
+        svg_attributes:
+          width: null
+          height: null
+        svg_render_as_image: true
+        image_loading:
+          attribute: lazy
+      label: hidden
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  feeds_item: true
+  field_channel: true
+  field_comment: true
+  field_featured_news: true
+  field_file_attachments: true
+  field_keywords: true
+  field_news_email: true
+  field_news_image: true
+  field_omit_from_news_listing: true
+  field_paragraphs: true
+  field_related_articles: true
+  field_related_directories: true
+  field_tagging_company: true
+  field_tagging_location: true
+  field_tagging_subject: true
+  field_tags: true
+  field_teaser_text: true
+  layout_builder__layout: true
+  layout_selection: true
+  search_api_excerpt: true
+  shariff_field: true

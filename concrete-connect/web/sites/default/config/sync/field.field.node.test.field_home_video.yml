@@ -1,0 +1,26 @@
+uuid: a4e860f2-6470-43f4-aba8-035ac58a371f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_home_video
+    - node.type.test
+  module:
+    - video
+id: node.test.field_home_video
+field_name: field_home_video
+entity_type: node
+bundle: test
+label: 'Home Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'videos/[date:custom:Y]-[date:custom:m]'
+  file_extensions: ''
+  max_filesize: ''
+field_type: video

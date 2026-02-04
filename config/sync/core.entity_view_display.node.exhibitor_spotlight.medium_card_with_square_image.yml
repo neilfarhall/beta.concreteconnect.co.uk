@@ -1,0 +1,83 @@
+uuid: 38e6f74e-905d-4980-926e-58c68088135e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.medium_card_with_square_image
+    - field.field.node.exhibitor_spotlight.body
+    - field.field.node.exhibitor_spotlight.feeds_item
+    - field.field.node.exhibitor_spotlight.field_cs_link
+    - field.field.node.exhibitor_spotlight.field_image_link
+    - field.field.node.exhibitor_spotlight.field_teaser_media
+    - field.field.node.exhibitor_spotlight.field_teaser_text
+    - node.type.exhibitor_spotlight
+  module:
+    - field_formatter
+    - layout_builder
+    - link
+    - linked_field
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.exhibitor_spotlight.medium_card_with_square_image
+targetEntityType: node
+bundle: exhibitor_spotlight
+mode: medium_card_with_square_image
+content:
+  field_cs_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 300
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_teaser_media:
+    type: field_formatter_with_inline_settings
+    label: hidden
+    settings:
+      field_name: field_image
+      type: image
+      settings:
+        image_link: ''
+        image_style: medium_teaser_card_370x280_home
+        svg_attributes:
+          width: null
+          height: null
+        svg_render_as_image: true
+        image_loading:
+          attribute: lazy
+      label: hidden
+      link_to_entity: false
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_cs_link
+        advanced: {  }
+        token: ''
+    weight: 1
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  feeds_item: true
+  field_image_link: true
+  shariff_field: true
