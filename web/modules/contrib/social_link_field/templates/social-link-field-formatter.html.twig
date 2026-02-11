@@ -25,11 +25,11 @@ appearance.orientation,
   {% if links %}
     <ul {{ attributes.addClass(classes) }}>
       {% for link in links %}
-
+        <li>
           <a href="{{ link.url }}" class="{{ link.class }}" title="{{ link.title }}"{% if new_tab %} target="_blank"{% endif %}>
             {{ link.text }}
           </a>
-
+        </li>
       {% endfor %}
     </ul>
   {% endif %}

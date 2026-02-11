@@ -16,7 +16,7 @@ dependencies:
 id: test_views_rss_feed
 label: 'Views RSS'
 module: views
-description: ''
+description: 'Test view for the Advanced Views RSS Feed module.'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -148,9 +148,17 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: custom
-            custom_date_format: r
+            date_format: rfc822
             timezone: UTC
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -493,7 +501,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -547,13 +554,14 @@ display:
                 pubDate: created
       display_extenders: {  }
       path: views-rss.xml
+      displays:
+        default: default
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:

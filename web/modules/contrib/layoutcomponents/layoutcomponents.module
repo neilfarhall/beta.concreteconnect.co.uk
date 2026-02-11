@@ -4,7 +4,7 @@
  * @file
  * Contains layoutcomponents.module.
  */
-use Drupal\Core\Asset\AttachedAssetsInterface;
+
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
@@ -133,7 +133,7 @@ function layoutcomponents_entity_type_alter(array &$entity_types) {
 /**
  * Implements hook_css_alter().
  */
-function layoutcomponents_css_alter(&$css, AttachedAssetsInterface $assets) {
+function layoutcomponents_css_alter(&$css, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
   $route = \Drupal::routeMatch()->getRouteObject();
   $parameters = $route->getOption('parameters');
   if (isset($parameters)) {

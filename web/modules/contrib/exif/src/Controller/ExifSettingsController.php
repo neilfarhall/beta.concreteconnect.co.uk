@@ -79,10 +79,11 @@ class ExifSettingsController extends ControllerBase {
    * @param \Drupal\Core\Extension\ModuleExtensionList $module_extension_list
    *   Service that provides helper methods for loading entity types.
    */
-  public function __construct(EntityDisplayRepositoryInterface $entity_display_repository,
-  EntityTypeManagerInterface $entity_type_manager,
-  EntityTypeRepositoryInterface $repository,
-  ModuleExtensionList $module_extension_list
+  public function __construct(
+    EntityDisplayRepositoryInterface $entity_display_repository,
+    EntityTypeManagerInterface $entity_type_manager,
+    EntityTypeRepositoryInterface $repository,
+    ModuleExtensionList $module_extension_list,
   ) {
     $this->entityDisplayRepository = $entity_display_repository;
     $this->entityTypeManager = $entity_type_manager;
@@ -121,7 +122,7 @@ class ExifSettingsController extends ControllerBase {
   }
 
   /**
-   * Create a vocabulary "photographies'metadata".
+   * Create a vocabulary "photographs metadata".
    *
    * Use by routing.yml.
    */

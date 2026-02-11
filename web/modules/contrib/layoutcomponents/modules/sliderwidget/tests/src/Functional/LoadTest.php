@@ -13,17 +13,11 @@ use Drupal\Tests\BrowserTestBase;
 class LoadTest extends BrowserTestBase {
 
   /**
-   * {@inheritdoc}
-   */
-  protected $defaultTheme = 'olivero';
-
-
-  /**
    * Modules to enable.
    *
    * @var array
    */
-  protected static $modules = ['sliderwidget'];
+  public static $modules = ['sliderwidget'];
 
   /**
    * A user with permission to administer site configuration.
@@ -35,7 +29,7 @@ class LoadTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
     $this->user = $this->drupalCreateUser(['administer site configuration']);
     $this->drupalLogin($this->user);
@@ -46,7 +40,7 @@ class LoadTest extends BrowserTestBase {
    */
   public function testLoad() {
     $this->drupalGet(Url::fromRoute('<front>'));
-    $this->assertSession()->statusCodeEquals(200);
+    $this->assertResponse(200);
   }
 
 }

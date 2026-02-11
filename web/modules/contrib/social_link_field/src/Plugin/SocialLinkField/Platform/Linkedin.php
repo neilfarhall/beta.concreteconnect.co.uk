@@ -12,6 +12,7 @@ use Drupal\social_link_field\PlatformBase;
  *   name = @Translation("LinkedIn"),
  *   icon = "fa-linkedin-in",
  *   iconSquare = "fa-linkedin",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "https://www.linkedin.com/",
  * )
  */

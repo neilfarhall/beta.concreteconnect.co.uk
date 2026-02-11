@@ -2,16 +2,17 @@
 
 /**
  * @file
- * Autogenerates PDF preview into an image field.
+ * Auto-generates PDF preview into an image field.
  */
 
+use Drupal\Core\File\FileSystemInterface;
 use Drupal\file\Entity\File;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
+// cspell:disable-next-line
 use Spatie\PdfToImage\Pdf;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\FieldConfigInterface;
-use \Drupal\file\FileInterface;
 
 /**
  * Implements hook_entity_presave().
@@ -19,7 +20,7 @@ use \Drupal\file\FileInterface;
 function pdf_preview_image_entity_presave(EntityInterface $entity) {
   if ($entity instanceof ContentEntityInterface) {
     foreach ($entity->getFieldDefinitions() as $field_definition) {
-      if ($field_definition->getType() == 'file' && $field_definition->getThirdPartySetting('pdf_preview_image', 'enable')) {
+      if ($field_definition->getType() == 'file' && method_exists($field_definition, 'getThirdPartySetting') && $field_definition->getThirdPartySetting('pdf_preview_image', 'enable')) {
         $target_field = $entity->getFieldDefinition($field_definition->getThirdPartySetting('pdf_preview_image', 'target_field'));
         if (isset($target_field)) {
           $target_field_settings = $target_field->getItemDefinition()->getSettings();
@@ -36,6 +37,12 @@ function pdf_preview_image_entity_presave(EntityInterface $entity) {
             $img_preview_filename = str_replace('.pdf', '', $pdf_filename) . '.jpg';
             $token_service = \Drupal::token();
             $directory = $token_service->replace($target_field_settings['file_directory']);
+            if (!empty($directory)) {
+              $fileSystem = \Drupal::service('file_system');
+              $dirname = $target_field_settings['uri_scheme'] . '://' . $directory;
+              $fileSystem->prepareDirectory($dirname, FileSystemInterface::CREATE_DIRECTORY);
+            }
+
             $img_preview_path = $target_field_settings['uri_scheme'] . '://' . $directory . '/' . $img_preview_filename;
             $img_preview_uid = $file->get('uid')->getValue();
 
@@ -47,15 +54,36 @@ function pdf_preview_image_entity_presave(EntityInterface $entity) {
               'status' => 1,
             ]);
 
+            // Get any current file entities for clean up.
+            if ($existing = $entity->get($target_field->getName())->referencedEntities()) {
+              foreach ($existing as $e) {
+                $e->delete();
+              }
+            }
+
             $file_img_preview->save();
             $entity->set($target_field->getName(), $file_img_preview);
             // Create and save img preview file from pdf.
+            // cspell:disable-next-line
             if (class_exists('Spatie\PdfToImage\Pdf')) {
-              $pdf = new Pdf($pdf_file_path[0]['value']);
+              $realpath = \Drupal::service('file_system')->realpath($pdf_file_path[0]['value']);
+              $pdf = new Pdf($realpath);
               $pdf->saveImage($img_preview_path);
             }
             else {
+              // cspell:disable-next-line
               \Drupal::logger('pdf_preview_image')->error(t('Class Pdf not found. Package spatie/pdf-to-image is missing.'));
+            }
+          }
+          elseif (empty($file_pdf)) {
+            $target_field_name = $target_field->getName();
+            if (!$entity->get($target_field_name)->isEmpty()) {
+              $target_field_value = $entity->get($target_field_name)->first()->getValue();
+              $target_file = File::load($target_field_value['target_id']);
+              if ($target_file) {
+                $target_file->delete();
+              }
+              $entity->set($target_field_name, []);
             }
           }
         }
@@ -70,19 +98,19 @@ function pdf_preview_image_entity_presave(EntityInterface $entity) {
 function pdf_preview_image_form_field_config_edit_form_alter(&$form, FormStateInterface $form_state) {
   $field_config = $form_state->getBuildInfo()['callback_object']->getEntity();
 
-  if (pdf_to_image_preview_is_eligible($field_config)) {
+  if (_pdf_preview_image_is_eligible($field_config)) {
     // Since this file field accepts PDFs, we can hook in with our stuff.
-    $form['third_party_settings']['pdf_preview_image'] = array(
+    $form['third_party_settings']['pdf_preview_image'] = [
       '#type' => 'fieldset',
-      '#title' => t('PDF preview autogeneration'),
-    );
+      '#title' => t('PDF preview auto-generation'),
+    ];
 
-    $form['third_party_settings']['pdf_preview_image']['enable'] = array(
+    $form['third_party_settings']['pdf_preview_image']['enable'] = [
       '#type' => 'checkbox',
       '#title' => t('Generate first page preview'),
       '#description' => t('Automatically generate 1st page PDF preview and save it into an arbitrary image field on the same entity.'),
       '#default_value' => $field_config->getThirdPartySetting('pdf_preview_image', 'enable'),
-    );
+    ];
 
     // The rest of our settings should be visible only if the feature is
     // actually enabled.
@@ -92,14 +120,14 @@ function pdf_preview_image_form_field_config_edit_form_alter(&$form, FormStateIn
       ],
     ];
 
-    $form['third_party_settings']['pdf_preview_image']['target_field'] = array(
+    $form['third_party_settings']['pdf_preview_image']['target_field'] = [
       '#type' => 'select',
       '#title' => t('Store 1st page image preview in'),
       '#description' => t('Specify an image field where the 1st page preview of the PDF should be saved.'),
-      '#options' => pdf_to_image_preview_allowed_image_fields($field_config->getTargetEntityTypeId(), $field_config->getTargetBundle()),
+      '#options' => _pdf_preview_image_allowed_image_fields($field_config->getTargetEntityTypeId(), $field_config->getTargetBundle()),
       '#states' => $states,
       '#default_value' => $field_config->getThirdPartySetting('pdf_preview_image', 'target_field'),
-    );
+    ];
   }
 }
 
@@ -113,7 +141,7 @@ function pdf_preview_image_form_field_config_edit_form_alter(&$form, FormStateIn
  *   Whether the provided field config entity is eligible for PDF to image
  *   manipulation
  */
-function pdf_to_image_preview_is_eligible(FieldConfigInterface $field_config) {
+function _pdf_preview_image_is_eligible(FieldConfigInterface $field_config) {
   return $field_config->getType() == 'file' && preg_match('/(^|\s|,)pdf($|\s|,)/i', $field_config->getSetting('file_extensions'));
 }
 
@@ -129,7 +157,7 @@ function pdf_to_image_preview_is_eligible(FieldConfigInterface $field_config) {
  *   Array of possible field names where PDF preview could be saved. Keys are
  *   field names whereas values are their human labels
  */
-function pdf_to_image_preview_allowed_image_fields($entity_type, $bundle) {
+function _pdf_preview_image_allowed_image_fields($entity_type, $bundle) {
   $allowed_values = [];
 
   foreach (\Drupal::service('entity_field.manager')->getFieldDefinitions($entity_type, $bundle) as $field_definition) {

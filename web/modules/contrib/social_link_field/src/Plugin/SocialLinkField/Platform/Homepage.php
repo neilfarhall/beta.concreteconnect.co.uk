@@ -10,8 +10,8 @@ use Drupal\social_link_field\PlatformBase;
  * @SocialLinkFieldPlatform(
  *   id = "homepage",
  *   name = @Translation("Homepage"),
- *   icon = "fa-home",
- *   iconSquare = "fa-home-square",
+ *   icon = "fa-house",
+ *   iconSet = "fa-solid",
  *   urlPrefix = "https://www.",
  * )
  */

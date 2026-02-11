@@ -19,3 +19,4 @@ exif-sample:
     js/sample.js: {}
   dependencies:
     - core/jquery
+    - core/once

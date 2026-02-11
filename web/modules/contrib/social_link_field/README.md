@@ -65,12 +65,15 @@ information, see
     *   name = @Translation("PLATFORM NAME"),
     *   icon = "FONT_AWESOME_ICON_CLASS",
     *   iconSquare = "FONT_AWESOME_SQUARE_ICON_CLASS",
+    *   iconSet = "FONT_AWESOME_ICON_SET",
     *   urlPrefix = "PLATFORM_URL_PREFIX",
     * )
     */
     class CLASS_NAME extends PlatformBase {}
   ```
 
+### IconSet
+Icon set values include fa-brands and fa-solid.
 
 ## Maintainers
 

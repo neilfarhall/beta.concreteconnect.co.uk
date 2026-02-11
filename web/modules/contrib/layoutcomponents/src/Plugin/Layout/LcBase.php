@@ -79,6 +79,13 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
   protected $lcApiMedia;
 
   /**
+   * IF the sections is configured as tabs.
+   *
+   * @var bool
+   */
+  protected bool $isTabs;
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, LcLayoutsManager $manager, ConfigFactory $config_factory) {
@@ -120,6 +127,9 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
       'title' => [
         'title' => $lc->get('title_text'),
         'tab_title' => $lc->get('tab_title'),
+        'tab_classes' => $lc->get('tab_classes'),
+        'hidde_if_empty' => 0,
+        'hidde_if_empty_view' => 0,
       ],
       'styles' => [
         'title' => [
@@ -170,6 +180,7 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
           'paddings_right' => $lc->get('remove_right_padding'),
         ],
         'misc' => [
+          'extra_id' => '',
           'extra_class' => $lc->get('extra_class'),
         ],
       ],
@@ -241,7 +252,6 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
             'section_structure_xl' => 'none',
             'section_carousel' => boolval(0),
             'section_carousel_slick' => 'none',
-            'section_tabs' => boolval(0),
           ],
           'context' => [
             'rol' => [],
@@ -272,6 +282,7 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
             'bottom_padding' => $lc->get('bottom_padding'),
           ],
           'misc' => [
+            'extra_id' => '',
             'extra_class' => $lc->get('extra_class'),
             'extra_attributes' => $lc->get('extra_attributes'),
             'parallax' => (int) 0,
@@ -401,6 +412,10 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
       $general = $config['general'];
     }
 
+    $section = $this->getConfiguration()['section'];
+    $tabs = $section['general']['structure']['section_tabs'];;
+    $this->isTabs = isset($tabs) ? $tabs : 0;
+
     $groups = isset($config['subcolumn']['groups']) ? $config['subcolumn']['groups'] : [];
     $types = isset($config['subcolumn']['types']) ? $config['subcolumn']['types'] : [];
     $classes = isset($config['subcolumn']['classes']) ? $config['subcolumn']['classes'] : [];
@@ -420,28 +435,81 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
           'description' => $this->t('Set the title of this column'),
           'default_value' => (isset($general['title'])) ? $general['title'] : '',
           'attributes' => [
-            'placeholder' => $this->t('Title'),
+            'placeholder' => $this->t('Ej. Title'),
             'lc' => [
               'type' => 'text',
             ],
           ],
         ]
-      ),
-      'tab_title' => $this->lcApiText->plainText(
+      )
+    ];
+
+    // Show the tab fields if the section is tabs.
+    if (isset($this->isTabs) && boolval($this->isTabs)) {
+      $container['general']['tab_title'] = $this->lcApiText->plainText(
         [
           'id' => 'column_' . $region . '-tab_title',
           'title' => $this->t('Tab title'),
-          'description' => $this->t('Set the title of the tab if the option in section is enabled. No not use spaces or special characters'),
+          'description' => $this->t('Set the title of the tab if the option in section is enabled. Do not use spaces or special characters'),
           'default_value' => (isset($general['tab_title'])) ? $general['tab_title'] : '',
           'attributes' => [
-            'placeholder' => $this->t('Tab 1'),
+            'placeholder' => $this->t('Ej. Tab 1'),
             'lc' => [
               'type' => 'text',
             ],
           ],
         ]
-      ),
-    ];
+      );
+
+      $container['general']['tab_classes'] = $this->lcApiText->plainText(
+        [
+          'id' => 'column_' . $region . '-tab_classes',
+          'title' => $this->t('Tab Classes'),
+          'description' => $this->t('Set the classes of the tab if the option in section is enabled. Ej. myClass1,myClass2'),
+          'default_value' => (isset($general['tab_classes'])) ? $general['tab_classes'] : '',
+          'attributes' => [
+            'placeholder' => $this->t('Ej. myClass1,myClass2'),
+            'lc' => [
+              'type' => 'text',
+            ],
+          ],
+        ]
+      );
+
+      $container['general']['hidde_if_empty'] = $this->lcApiCheckbox->normal(
+        [
+          'id' => 'column_' . $region . '-hidde_if_empty',
+          'title' => $this->t('Hidde if empty'),
+          'description' => $this->t('Hidde this column if does not contain any block/field'),
+          'default_value' => $general['hidde_if_empty'],
+          'attributes' => [
+            'lc' => [
+              'type' => 'class',
+              'style' => 'checkbox',
+              'class_checkbox_active' => 'p-0',
+              'class_checkbox_disable' => '',
+            ],
+          ],
+        ]
+      );
+
+      $container['general']['hidde_if_empty_view'] = $this->lcApiCheckbox->normal(
+        [
+          'id' => 'column_' . $region . '-hidde_if_empty_view',
+          'title' => $this->t('Hidde this column if empty view'),
+          'description' => $this->t('Hidde this column if it contains views and they are empty, even if it has more blocks/fields'),
+          'default_value' => $general['hidde_if_empty_view'],
+          'attributes' => [
+            'lc' => [
+              'type' => 'class',
+              'style' => 'checkbox',
+              'class_checkbox_active' => 'p-0',
+              'class_checkbox_disable' => '',
+            ],
+          ],
+        ]
+      );
+    }
 
     $column_structures = $this->manager->getColumnOptions(count($this->getPluginDefinition()->getRegionNames()));
     if ($components = $this->getComponents($form_state, $region)) {
@@ -964,6 +1032,22 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
         '#type' => 'details',
         '#title' => $this->t('Misc'),
         '#group' => 'regions',
+        'extra_id' => $this->lcApiText->plainText(
+          [
+            'id' => 'column_' . $region,
+            'title' => $this->t('Id'),
+            'description' => $this->t('Set the ID of this column'),
+            'default_value' => $styles['misc']['extra_id'],
+            'attributes' => [
+              'placeholder' => $this->t('Ej. miId'),
+              'lc' => [
+                'type' => 'class',
+                'style' => 'extra_id',
+              ],
+            ],
+            'class' => '-extra_id',
+          ]
+        ),
         'extra_class' => $this->lcApiText->plainText(
           [
             'id' => 'column_' . $region,
@@ -1300,6 +1384,8 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
     $container = &$form['container']['section']['container'];
     $n_columns = count($this->getPluginDefinition()->getRegionNames());
     $column_structures = $this->manager->getColumnOptions($n_columns);
+    $tabs = $general['structure']['section_tabs'];
+    $this->isTabs = isset($tabs) ? $tabs : 0;
 
     $container['general'] = [
       '#type' => 'details',
@@ -1363,6 +1449,9 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
         '#type' => 'details',
         '#title' => $this->t('Structure'),
         '#group' => 'section',
+        '#attributes' => [
+          'class' => [(isset($this->isTabs) && boolval($this->isTabs)) ? 'hidden' : '']
+        ],
         'section_structure_xs' => $this->lcApiSelect->normal(
           [
             'id' => 'row',
@@ -1446,15 +1535,6 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
               ],
             ],
             'class' => 'column-size',
-          ]
-        ),
-        'section_tabs' => $this->lcApiCheckbox->normal(
-          [
-            'id' => 'section',
-            'title' => $this->t('Show as tabs'),
-            'description' => $this->t('If you check this chekbox, the columns of this section will be show as tabs'),
-            'default_value' => $general['structure']['section_tabs'],
-            'class' => 'section-tabs',
           ]
         ),
       ],
@@ -1721,6 +1801,22 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
         '#type' => 'details',
         '#title' => $this->t('Misc'),
         '#group' => 'section',
+        'extra_id' => $this->lcApiText->plainText(
+          [
+            'id' => 'section',
+            'title' => $this->t('Id'),
+            'description' => $this->t('Set the ID of this column'),
+            'default_value' => $styles['misc']['extra_id'],
+            'attributes' => [
+              'placeholder' => $this->t('Ej. miId'),
+              'lc' => [
+                'type' => 'class',
+                'style' => 'extra_id',
+              ],
+            ],
+            'class' => 'extra_id',
+          ]
+        ),
         'extra_class' => $this->lcApiText->plainText(
           [
             'id' => 'section',
@@ -1786,6 +1882,11 @@ class LcBase extends LayoutDefault implements ContainerFactoryPluginInterface {
       if (!empty($data)) {
         $values['regions'][$name]['subcolumn']['data'] = $data;
       }
+    }
+
+    // Set the value because the selector is hidden now.
+    if (isset($this->isTabs)) {
+      $values['section']['container']['general']['structure']['section_tabs'] = $this->isTabs;
     }
 
     $this->configuration['title'] = $values['title']['container'];

@@ -75,6 +75,10 @@ class SocialLinkFontAwesomeFormatter extends SocialLinkBaseFormatter {
       $social = $values['social'];
       $link = $values['link'];
 
+      if (!isset($this->platforms[$social])) {
+        continue;
+      }
+
       if ($icon_type == 'square' && isset($this->platforms[$social]['iconSquare'])) {
         $icon = $this->platforms[$social]['iconSquare'];
       }
@@ -82,12 +86,14 @@ class SocialLinkFontAwesomeFormatter extends SocialLinkBaseFormatter {
         $icon = $this->platforms[$social]['icon'];
       }
 
+      $iconset = $this->platforms[$social]['iconSet'] ?? 'fa-brands';
+
       $element['#links'][$delta] = [
         'text' => [
           '#type' => 'html_tag',
           '#tag' => 'i',
           '#attributes' => [
-            'class' => ['fab', $icon],
+            'class' => [$iconset, $icon],
           ],
         ],
         'url' => $this->platforms[$social]['urlPrefix'] . $link,

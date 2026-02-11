@@ -6,7 +6,7 @@
   "license": "GPL-2.0+",
   "homepage": "https://www.drupal.org/project/module_missing_message_fixer",
   "require": {
-    "drupal/core": "~9"
+    "drupal/core": "^9.3 || ^10 || ^11"
   },
   "authors": [
     {
@@ -24,7 +24,7 @@
   "extra": {
     "drush": {
       "services": {
-        "drush.services.yml": "^9"
+        "drush.services.yml": ">=9"
       }
     }
   }

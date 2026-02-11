@@ -8,7 +8,7 @@ dependencies:
   - drupal:views
   - ctools:ctools_views
 
-# Information added by Drupal.org packaging script on 2022-03-22
-version: '8.x-1.2'
+# Information added by Drupal.org packaging script on 2025-05-23
+version: '2.1.1'
 project: 'views_block_filter_block'
-datestamp: 1647969041
+datestamp: 1747991439

@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * The install file for install hooks, uninstall hooks, update hooks.
+ */
+
+/**
  * Implements hook_uninstall().
  */
 function node_access_rebuild_progressive_uninstall(): void {

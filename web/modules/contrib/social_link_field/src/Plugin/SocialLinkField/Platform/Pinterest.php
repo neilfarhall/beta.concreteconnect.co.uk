@@ -12,6 +12,7 @@ use Drupal\social_link_field\PlatformBase;
  *   name = @Translation("Pinterest"),
  *   icon = "fa-pinterest-p",
  *   iconSquare = "fa-pinterest-square",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "http://www.pinterest.com/",
  * )
  */

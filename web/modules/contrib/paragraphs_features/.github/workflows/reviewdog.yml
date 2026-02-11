@@ -7,7 +7,7 @@ jobs:
     name: runner / eslint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: eslint
         uses: reviewdog/action-eslint@v1
@@ -19,10 +19,10 @@ jobs:
     name: runner / phpcs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: phpcs
-        uses: chrfritsch/action-drupal-coder@v1
+        uses: thunder/action-drupal-coder@v1
         with:
           github_token: ${{ secrets.github_token }}
           level: error
@@ -31,7 +31,7 @@ jobs:
     name: runner / misspell
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: reviewdog/action-misspell@v1
         with:
           github_token: ${{ secrets.github_token }}

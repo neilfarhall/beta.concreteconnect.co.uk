@@ -7,16 +7,15 @@ main.page-content {
 }
 
 a.button-small {
-  font-weight: normal;
-  font-size: 0.9em;
   margin-top: 10px;
   margin-bottom: 20px;
+  font-size: 0.9em;
+  font-weight: normal;
 }
 
-
 dt {
-  font-weight: bold;
   margin-top: 10px;
+  font-weight: bold;
 }
 
 ul.vocabulary-structure {

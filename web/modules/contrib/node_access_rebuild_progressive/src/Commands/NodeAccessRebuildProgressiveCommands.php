@@ -8,7 +8,7 @@ use Consolidation\SiteAlias\SiteAliasManagerAwareTrait;
 use Drush\Commands\DrushCommands;
 
 /**
- * A Drush commandfile.
+ * A Drush command file.
  */
 class NodeAccessRebuildProgressiveCommands extends DrushCommands implements SiteAliasManagerAwareInterface {
 

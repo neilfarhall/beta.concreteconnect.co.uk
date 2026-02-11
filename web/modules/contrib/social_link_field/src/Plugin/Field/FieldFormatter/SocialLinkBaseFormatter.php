@@ -2,8 +2,9 @@
 
 namespace Drupal\social_link_field\Plugin\Field\FieldFormatter;
 
-use Drupal\Core\Field\FormatterBase;
+use Drupal\Core\Extension\ModuleHandler;
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -28,12 +29,20 @@ class SocialLinkBaseFormatter extends FormatterBase implements ContainerFactoryP
   protected $configFactory;
 
   /**
+   * The module handler.
+   *
+   * @var \Drupal\Core\Extension\ModuleHandler
+   */
+  protected $moduleHandler;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct($plugin_id, $plugin_definition, $field_definition, array $settings, $label, $view_mode, array $third_party_settings, $platforms_service, $config_factory) {
+  public function __construct($plugin_id, $plugin_definition, $field_definition, array $settings, $label, $view_mode, array $third_party_settings, $platforms_service, $config_factory, ModuleHandler $module_handler) {
     parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $label, $view_mode, $third_party_settings);
     $this->platforms = $platforms_service->getPlatforms();
     $this->configFactory = $config_factory;
+    $this->moduleHandler = $module_handler;
   }
 
   /**
@@ -49,7 +58,8 @@ class SocialLinkBaseFormatter extends FormatterBase implements ContainerFactoryP
       $configuration['view_mode'],
       $configuration['third_party_settings'],
       $container->get('plugin.manager.social_link_field.platform'),
-      $container->get('config.factory')
+      $container->get('config.factory'),
+      $container->get('module_handler')
     );
   }
 
@@ -85,14 +95,18 @@ class SocialLinkBaseFormatter extends FormatterBase implements ContainerFactoryP
     $element = [
       '#theme' => 'social_link_field_formatter',
       '#new_tab' => $this->getSetting('new_tab'),
-      '#attributes' => ['data-quickedit-field-id' => implode('/', [
+      '#attributes' => [],
+    ];
+
+    if ($this->moduleHandler->moduleExists('quickedit')) {
+      $element['#attributes']['data-quickedit-field-id'] = implode('/', [
         $entity->getEntityTypeId(),
         $entity->id(),
         $items->getName(),
         $langcode,
-        $this->viewMode
-      ])],
-    ];
+        $this->viewMode,
+      ]);
+    }
 
     return $element;
   }

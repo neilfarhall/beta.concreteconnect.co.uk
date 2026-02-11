@@ -2,10 +2,10 @@
 
 namespace Drupal\critical_css\Asset;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Asset\AssetCollectionRendererInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Render\Markup;
-use Drupal\Component\Utility\Html;
 use Drupal\Core\Template\TwigEnvironment;
 
 /**

@@ -1,3 +1,25 @@
+Advanced Views RSS Feed 8.x-2.3, 2024-09-16
+-------------------------------------------
+#3409451 by DamienMcKenna: RSS output is no longer valid XML.
+#3410597 by greenSkin, DamienMcKenna: Nested CDATA breaks XML validity.
+#3410684 by DamienMcKenna: dc:date is incorrect due to 10.1 core change.
+#3425960 by thatguy, edwardsay, ivnish, DamienMcKenna, misterdidi: Wrong
+  Content-type header for RSS Feed.
+#3420191 by DamienMcKenna: Add GitLab CI test file.
+#3414012 by DamienMcKenna, ivnish, sidharth_soman: Fix tests, module for Drupal
+  10.2 & PHP 8.2.
+#3414467 by ivnish, DamienMcKenna, scottop: Use getID3 v2 correctly; document
+  installation procedure.
+#3413726 by DamienMcKenna, ivnish: Date values should be in RFC-822 format, not
+  RFC-2822.
+#3414467 by ivnish: Follow-up to correct phpcs issues.
+#3419023 by DamienMcKenna: Tighten up output, remove unnecessary whitespace.
+#3451387 by Project Update Bot, DamienMcKenna: Automated Drupal 11 compatibility
+  fixes.
+#3446813 by ivnish, doxigo, damienmckenna: Warning: Undefined array key "#row"
+  in views_rss_core_preprocess_views_view_rss().
+
+
 Advanced Views RSS Feed 8.x-2.2, 2023-09-24
 -------------------------------------------
 #3386146 by idebr, Lendude: Warning: filesize(): stat failed when file is not

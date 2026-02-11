@@ -15,17 +15,15 @@
 <div {{ container.attributes }}>
   <div id="accordion-{{ container.id }}" {{ attributes.addClass(classes) }}>
     <div class="card">
-      {% for key, item in container.content.field_sa_accordion_item %}
-        {% if key|first != '#' %}
-          {% if loop.first %}
-            {% set collapsed = '' %}
-            {% set show_accordion = ' show' %}
-            {% set aria = 'true' %}
-          {% else %}
-            {% set collapsed = 'collapsed' %}
-            {% set show_accordion = '' %}
-            {% set aria = 'false' %}
-          {% endif %}
+      {% for key, item in container.content.field_sa_accordion_item if key|first != '#' %}
+        {% if loop.first %}
+          {% set collapsed = '' %}
+          {% set show_accordion = ' show' %}
+          {% set aria = 'true' %}
+        {% else %}
+          {% set collapsed = 'collapsed' %}
+          {% set show_accordion = '' %}
+          {% set aria = 'false' %}
         {% endif %}
         <div {{ item.header_attributes }}>
           <h5 class="mb-0">

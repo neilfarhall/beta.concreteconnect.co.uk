@@ -360,75 +360,75 @@ $tertiary-dark:$orange-dark;
   }
 
   //---------------------------------------- Columns
-
-  .container{
-    padding: 0;
-  }
-
-  .col-md-1 {
-    flex: 0 0 6.33333%;
-    max-width: 6.33333%;
-  }
-
-  .col-md-2 {
-    flex: 0 0 14.66667%;
-    max-width: 14.66667%;
-  }
-  .col-md-3{
-    flex: 0 0 23%;
-    max-width: 23%;
-  }
-  .col-md-4{
-    flex: 0 0 31.33333%;
-    max-width: 31.33333%;
-  }
-
-  .col-md-5{
-    flex: 0 0 38%;
-    max-width: 38%;
-  }
-
-  .col-md-6{
-    flex: 0 0 48%;
-    max-width: 48%;
-  }
-
-  .col-md-7{
-    flex: 0 0 58%;
-    max-width: 58%;
-  }
-
-  .col-md-8{
-    flex: 0 0 64.66666%;
-    max-width: 64.66666%;
-  }
-
-  .col-md-9{
-    flex: 0 0 73%;
-    max-width: 73%;
-  }
-  .col-md-10{
-    flex: 0 0 81.33333%;
-    max-width: 81.33333%;
-  }
-
-  .col-md-11 {
-    flex: 0 0 89.66667%;
-    max-width: 89.66667%;
-  }
-
-  .col-md-12{
-    flex: 0 0 98%;
-    max-width: 98%;
-  }
+  //
+  //.container{
+  //  padding: 0;
+  //}
+  //
+  //.col-md-1 {
+  //  flex: 0 0 6.33333%;
+  //  max-width: 6.33333%;
+  //}
+  //
+  //.col-md-2 {
+  //  flex: 0 0 14.66667%;
+  //  max-width: 14.66667%;
+  //}
+  //.col-md-3{
+  //  flex: 0 0 23%;
+  //  max-width: 23%;
+  //}
+  //.col-md-4{
+  //  flex: 0 0 31.33333%;
+  //  max-width: 31.33333%;
+  //}
+  //
+  //.col-md-5{
+  //  flex: 0 0 38%;
+  //  max-width: 38%;
+  //}
+  //
+  //.col-md-6{
+  //  flex: 0 0 48%;
+  //  max-width: 48%;
+  //}
+  //
+  //.col-md-7{
+  //  flex: 0 0 58%;
+  //  max-width: 58%;
+  //}
+  //
+  //.col-md-8{
+  //  flex: 0 0 64.66666%;
+  //  max-width: 64.66666%;
+  //}
+  //
+  //.col-md-9{
+  //  flex: 0 0 73%;
+  //  max-width: 73%;
+  //}
+  //.col-md-10{
+  //  flex: 0 0 81.33333%;
+  //  max-width: 81.33333%;
+  //}
+  //
+  //.col-md-11 {
+  //  flex: 0 0 89.66667%;
+  //  max-width: 89.66667%;
+  //}
+  //
+  //.col-md-12{
+  //  flex: 0 0 98%;
+  //  max-width: 98%;
+  //}
 
   &.layout-builder {
-
-    padding: calc(0.75rem - 1px);
-    border: 4px solid $primary-color-bg-border;
-    background-color: $primary-color-bg;
-    border-radius: $border-radius-base;
-    color: $primary-color-darkest;
+    //
+    //padding: calc(0.75rem - 1px);
+    //border: 4px solid $primary-color-bg-border;
+    //background-color: $primary-color-bg;
+    //border-radius: $border-radius-base;
+    //color: $primary-color-darkest;
 
     //---------------------------------------- Adjust
 
@@ -437,38 +437,39 @@ $tertiary-dark:$orange-dark;
     }
 
     //---------------------------------------- Copy clipboard
-    a{
-      word-break: break-word;
+    //a{
+    //  word-break: break-word;
+    //
+    //  &.lc-clipboard{
+    //    display: table;
+    //    margin:10px;
+    //    @extend %primary-button;
+    //    background: $secondary-color-medium;
+    //    text-decoration: none;
+    //
+    //    &.hidden{display: none !important;
+    //    }
+    //
+    //    &:after{
+    //      content: "\f24d";
+    //      @extend %fontawesome;
+    //      margin-left: 10px;
+    //
+    //    }
+    //
+    //    &:hover{
+    //      background: $secondary-color-dark;
+    //      color: white;
+    //      &:after{
+    //        color: white;
+    //      }
+    //    }
+    //  }
+    //}
 
-      &.lc-clipboard{
-        display: table;
-        margin:10px;
-        @extend %primary-button;
-        background: $secondary-color-medium;
-        text-decoration: none;
-
-        &.hidden{display: none !important;}
-
-        &:after{
-          content: "\f24d";
-          @extend %fontawesome;
-          margin-left: 10px;
-
-        }
-
-        &:hover{
-          background: $secondary-color-dark;
-          color: white;
-          &:after{
-            color: white;
-          }
-        }
-      }
-    }
-
-    p, h1, h2, h3, h4, h5, h6{
-      word-break: break-word;
-    }
+    //p, h1, h2, h3, h4, h5, h6{
+    //  word-break: break-word;
+    //}
 
 
 
@@ -502,46 +503,46 @@ $tertiary-dark:$orange-dark;
 
     //---------------------------------------- Configuration icons
 
-    .layout-builder__configure-block{
-
-      position: relative;
-      top: -2px;
-      margin: auto;
-      z-index: 10;
-      background-color:$primary-color-light;
-      border-radius: 0px 0px 4px 4px;
-      text-align: center;
-      display: table;
-      visibility: visible !important;
-
-      a{
-        text-decoration: none;
-        &.layout-builder__block_link{
-          padding: 5px;
-          color: $primary-color-bg-border;
-          &:hover{
-            color: white;
-          }
-        }
-      }
-    }
+    //.layout-builder__configure-block{
+    //
+    //  //position: relative;
+    //  //top: -2px;
+    //  //margin: auto;
+    //  z-index: 10;
+    //  background-color:$primary-color-light;
+    //  //border-radius: 0px 0px 4px 4px;
+    //  text-align: center;
+    //  //display: table;
+    //  visibility: visible !important;
+    //
+    //  a{
+    //    text-decoration: none;
+    //    &.layout-builder__block_link{
+    //      padding: 5px;
+    //      color: $primary-color-bg-border;
+    //      &:hover{
+    //        color: white;
+    //      }
+    //    }
+    //  }
+    //}
 
     //---------------------------------------- Link + icons
 
     a{
-      @extend %librefranklin;
-      color: $primary-color-light;
-      text-decoration: underline;
-      -webkit-transition: color 0.3s ease;
-      -moz-transition: color 0.3s ease;
-      -o-transition: color 0.3s ease;
-      transition: color 0.3s ease;
-
-      &:hover,
-      &:visited,
-      &:active{
-        color: $primary-color-medium
-      }
+      //@extend %librefranklin;
+      //color: $primary-color-light;
+      //text-decoration: underline;
+      //-webkit-transition: color 0.3s ease;
+      //-moz-transition: color 0.3s ease;
+      //-o-transition: color 0.3s ease;
+      //transition: color 0.3s ease;
+      //
+      //&:hover,
+      //&:visited,
+      //&:active{
+      //  color: $primary-color-medium
+      //}
 
       &.layout-builder__section_link-move,
       &.layout-builder__block_link-move{
@@ -554,7 +555,7 @@ $tertiary-dark:$orange-dark;
           content: "\f0b2";
           @extend %fontawesome;
           cursor: move;
-          color: $primary-color-bg-border;
+          //color: $primary-color-bg-border;
         }
       }
 
@@ -575,7 +576,7 @@ $tertiary-dark:$orange-dark;
           content: "\f338";
           cursor: pointer;
           @extend %fontawesome;
-          color: $primary-color-bg-border;
+          //color: $primary-color-bg-border;
         }
       }
 
@@ -589,7 +590,7 @@ $tertiary-dark:$orange-dark;
         &:before{
           content: "\f2ed";
           @extend %fontawesome;
-          color: $primary-color-bg-border;
+          //color: $primary-color-bg-border;
         }
       }
 
@@ -635,7 +636,7 @@ $tertiary-dark:$orange-dark;
       }
 
       &.layout-builder__add-block {
-        color: $primary-color-darkest;
+        //color: $primary-color-darkest;
         font-size: 20px;
       }
 
@@ -648,411 +649,411 @@ $tertiary-dark:$orange-dark;
 
     //---------------------------------------- Add section
 
-    .layout-builder__add-section{
-
-      width: 100%;
-      height: 0px;
-      padding: 0;
-      margin: 0;
-      text-align: center;
-      outline: none;
-      border: none;
-      z-index: 998;
-
-      //---------------------------------------- Add icon
-
-      a{
-        z-index: 200;
-
-        &:hover {
-          text-decoration: none;
-          transition: 0.3s;
-          color: white;
-          background:$primary-color-darker;
-        }
-
-        &.layout-builder__link{
-
-          position: relative;
-          display: inline-block;
-          color: $primary-color-bg-border;
-          background:$primary-color-darkest;
-          font-size: 1em;
-          z-index: 10;
-          top: -2px;
-          text-decoration: none;
-          box-shadow: 0px 0px 0px 4px $primary-color-bg;
-
-          &:hover {
-            text-decoration: none;
-            transition: 0.3s;
-            color: white;
-            background:$primary-color-darker;
-          }
-
-          //---------------------------------------- Copy icon
-
-          &.lc-copy{
-            background: $tertiary;
-
-            &:before {
-              content: "\f24d";
-              @extend %fontawesome;
-              color: white;
-              background: transparent !important;
-              display: block;
-              position: unset !important;
-              padding: 0;
-              font-size: 18px;
-            }
-
-            &:hover{
-              background: $tertiary-dark;
-              color: white;
-            }
-          }
-        }
-      }
-    }
+    //.layout-builder__add-section{
+    //
+    //  width: 100%;
+    //  height: 0px;
+    //  padding: 0;
+    //  margin: 0;
+    //  text-align: center;
+    //  outline: none;
+    //  border: none;
+    //  z-index: 998;
+    //
+    //  //---------------------------------------- Add icon
+    //
+    //  a{
+    //    z-index: 200;
+    //
+    //    &:hover {
+    //      text-decoration: none;
+    //      transition: 0.3s;
+    //      color: white;
+    //      background:$primary-color-darker;
+    //    }
+    //
+    //    &.layout-builder__link{
+    //
+    //      position: relative;
+    //      display: inline-block;
+    //      color: $primary-color-bg-border;
+    //      background:$primary-color-darkest;
+    //      font-size: 1em;
+    //      z-index: 10;
+    //      //top: -2px;
+    //      text-decoration: none;
+    //      box-shadow: 0px 0px 0px 4px $primary-color-bg;
+    //
+    //      &:hover {
+    //        text-decoration: none;
+    //        transition: 0.3s;
+    //        color: white;
+    //        background:$primary-color-darker;
+    //      }
+    //
+    //      //---------------------------------------- Copy icon
+    //
+    //      &.lc-copy{
+    //        background: $tertiary;
+    //
+    //        &:before {
+    //          content: "\f24d";
+    //          @extend %fontawesome;
+    //          color: white;
+    //          background: transparent !important;
+    //          display: block;
+    //          position: unset !important;
+    //          padding: 0;
+    //          font-size: 18px;
+    //        }
+    //
+    //        &:hover{
+    //          background: $tertiary-dark;
+    //          color: white;
+    //        }
+    //      }
+    //    }
+    //  }
+    //}
 
     //---------------------------------------- Section
 
-    .layout-builder__section{
-
-      border: 4px solid $primary-color-darkest;
-      margin: 0.75rem 0.5rem 0.75rem 0.5rem;
-      border-radius: $border-radius-base;
-      padding: 0;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-
-      &.is-layout-builder-highlighted{
-        border: 4px solid $primary-color-darker;
-        box-sizing: border-box;
-        border-radius:$border-radius-base;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-      }
-
-      //---------------------------------------- Section title
-
-      .lc-inline_container-title-edit{
-        h1{
-          @extend %librefranklin;
-          font-weight: bold;
-          padding: 0px 10px;
-          color: $primary-color-darkest !important;
-          margin: 0;
-          font-size: 2rem ;
-        }
-      }
-
-      //---------------------------------------- Section configure icons
-
-      .layout_builder__configure_section_items{
-
-        position: absolute;
-        background: $primary-color-darkest;
-        z-index: 10;
-        width: auto;
-        text-align: end;
-        margin-top: -2px;
-        margin-left: -2px;
-        padding: 0 4px;
-        border-radius: 0px 0px 4px 0px;
-
-        a{
-          text-decoration: none;
-          color: $primary-color-bg-border;
-          &.layout-builder__section_link,
-          &.layout-builder__column_link,
-          &.layout-builder__block_link {
-            padding: $padding-icons;
-            font-size: $font-size-large;
-            display: inline-block;
-            color: $primary-color-bg-border;
-            text-decoration: none;
-
-            &:hover{
-              color: white;
-            }
-          }
-        }
-      }
-
-      //---------------------------------------- Column
-
-      //---------------------------------------- Margins
-      .lc-inline_container-section-edit{
-        max-width: 100%;
-        >.lc-inline_row-edit{
-          max-width: 100%;
-        }
-      }
-      .layout-builder__layout{
-
-        margin: auto;
-        margin-bottom: 10px;
-        margin-top:45px;
-        padding: 0;
-        width: calc(100% - 20px);
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-
-        //---------------------------------------- Highlighted
-
-        &.is-layout-builder-highlighted{
-          box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          -webkit-box-sizing: border-box;
-          border: 4px solid $primary-color-darker;
-          border-radius: $border-radius-base;
-        }
-
-        //---------------------------------------- Columns
-
-        .layoutcomponent-column{
-
-          box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          -webkit-box-sizing: border-box;
-          border: 4px solid $primary-color-medium;
-          z-index: 80 !important;
-          border-radius: $border-radius-base;
-          margin: 1%;
-          padding: 15px;
-          position: relative;
-
-          &:hover{
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            border: 4px solid $primary-color-medium;
-          }
-
-          a{
-            color: $primary-color-bg-border;
-
-            //---------------------------------------- Column Copy icon
-
-            &.lc-copy{
-              &:before {
-                position: absolute;
-                display: block;
-                content: "\f24d";
-                @extend %fontawesome;
-                color: white !important;
-                display: block;
-                background: $tertiary;
-                padding: 5px 9px;
-                border-radius: 0px 4px 0px 4px;
-                right: 0px;
-                font-size: 18px;
-              }
-
-              &:hover{
-                background: $tertiary-dark;
-              }
-            }
-
-            &:hover{
-              color: white;
-            }
-          }
-
-          //---------------------------------------- Column Configure icons
-
-          .layout-builder__configure-column {
-
-            z-index: 80;
-            position: absolute;
-            top:-4px;
-            right:-4px;
-            padding: 0 5px;
-            text-align: right;
-            background-color: $primary-color-medium;
-            border-radius: 0px 4px 0px 4px;
-
-            a{
-              text-decoration: none;
-
-              &:hover{
-                &:before{
-                  color: white;
-                }
-              }
-              &:before{
-                color: $primary-color-bg-border;
-              }
-            }
-          }
-
-          //---------------------------------------- Region
-
-          .layout-builder__region{
-
-            display: flex;
-            justify-content: flex-start;
-            flex-direction: column;
-            height: auto;
-            outline: none;
-            min-height: 50px;
-
-            //---------------------------------------- Default region
-
-            .block-layout-builder {
-
-              border: 2px solid $primary-color-light;
-              background-color: transparent;
-              border-radius: $border-radius-base;
-              box-sizing: border-box;
-              -moz-box-sizing: border-box;
-              -webkit-box-sizing: border-box;
-              margin-bottom: 10px;
-              padding: 0px 5px 5px 5px;
-
-              .block-layout-builder, .block{
-                border: 0;
-              }
-
-              .block-layout-builder{
-                margin-bottom: 0;
-              }
-
-              [tabindex="-1"] {
-                pointer-events: inherit;
-              }
-
-              &.is-layout-builder-highlighted{
-                border: 3px solid $primary-color-medium;
-                border-radius: $border-radius-base;
-                box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                -webkit-box-sizing: border-box;
-              }
-
-              //---------------------------------------- Content
-
-              .content{
-                .nav{
-                  &.nav-tabs{
-                    border-bottom: 1px solid $primary-color-light;
-                    .nav-item{
-                      .nav-link{
-                        @extend %librefranklin;
-                        color: $primary-color-light;
-                        text-decoration: underline;
-                        -webkit-transition: color 0.3s ease;
-                        -moz-transition: color 0.3s ease;
-                        -o-transition: color 0.3s ease;
-                        transition: color 0.3s ease;
-
-                        &:hover{
-                          background-color: transparent;
-                          color: $primary-color-medium;
-                          border-color: $primary-color-lighter $primary-color-lighter $primary-color-bg;
-                        }
-
-                        &.active{
-                          background-color: transparent;
-                          color: $primary-color-medium;
-                          border-color: $primary-color-lighter $primary-color-light $primary-color-bg;
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-
-            //---------------------------------------- Highlighted region
-
-            .layout-builder-block{
-
-              border: 2px solid $primary-color-light;
-              margin-bottom: 10px;
-              background-color: transparent;
-              border-radius: $border-radius-base;
-              box-sizing: border-box;
-              -moz-box-sizing: border-box;
-              -webkit-box-sizing: border-box;
-              padding: 0px 5px 5px 5px;
-              overflow: hidden;
-
-              [tabindex="-1"] {
-                pointer-events: inherit;
-              }
-
-              &.is-layout-builder-highlighted{
-                border: 3px solid $primary-color-medium;
-                border-radius: $border-radius-base;
-                box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                -webkit-box-sizing: border-box;
-              }
-            }
-
-            //---------------------------------------- Add Region icon
-
-            .layout-builder__add-block {
-              background: none;
-
-              &[data-layout-builder-highlight-id^="block-"] {
-                padding: 1.5em 0;
-                text-align: center;
-              }
-
-              &.is-layout-builder-highlighted {
-                border: 4px solid $primary-color-light;
-              }
-
-              a{
-                &.layout-builder__column_link-add {
-                  background-color: $primary-color-light;
-                  font-size: 13px;
-                  width: 35px;
-                  height: 35px;
-                  transition: 0.3s;
-                  -webkit-transition: 0.3s ease-out;
-                  -moz-transition:  0.3s ease-out;
-                  transition:  0.3s ease-out;
-                  line-height: 35px;
-                  text-decoration: none;
-                  color: $primary-color-bg-border;
-
-                  //---------------------------------------- Region copy icon
-
-                  &.lc-copy{
-                    background: $tertiary;
-                    &:before {
-                      content: "\f24d";
-                      @extend %fontawesome;
-                      color: white;
-                      background: transparent !important;
-                      display: block;
-                      position: unset !important;
-                      padding: 0;
-                      font-size: 18px;
-                    }
-
-                    &:hover{
-                      background: $tertiary-dark;
-                    }
-                  }
-
-                  &:hover {
-                    background: $primary-color-medium;
-                    color: white;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    //.layout-builder__section{
+    //
+    //  border: 4px solid $primary-color-darkest;
+    //  margin: 0.75rem 0.5rem 0.75rem 0.5rem;
+    //  border-radius: $border-radius-base;
+    //  padding: 0;
+    //  box-sizing: border-box;
+    //  -moz-box-sizing: border-box;
+    //  -webkit-box-sizing: border-box;
+    //
+    //  &.is-layout-builder-highlighted{
+    //    border: 4px solid $primary-color-darker;
+    //    box-sizing: border-box;
+    //    border-radius:$border-radius-base;
+    //    -moz-box-sizing: border-box;
+    //    -webkit-box-sizing: border-box;
+    //  }
+    //
+    //  //---------------------------------------- Section title
+    //
+    //  .lc-inline_container-title-edit{
+    //    h1{
+    //      @extend %librefranklin;
+    //      font-weight: bold;
+    //      padding: 0px 10px;
+    //      color: $primary-color-darkest !important;
+    //      margin: 0;
+    //      font-size: 2rem ;
+    //    }
+    //  }
+    //
+    //  //---------------------------------------- Section configure icons
+    //
+    //  .layout_builder__configure_section_items{
+    //    //
+    //    //position: absolute;
+    //    background: $primary-color-darkest;
+    //    z-index: 10;
+    //    width: auto;
+    //    text-align: end;
+    //    margin-top: -2px;
+    //    margin-left: -2px;
+    //    padding: 0 4px;
+    //    border-radius: 0px 0px 4px 0px;
+    //
+    //    a{
+    //      text-decoration: none;
+    //      color: $primary-color-bg-border;
+    //      &.layout-builder__section_link,
+    //      &.layout-builder__column_link,
+    //      &.layout-builder__block_link {
+    //        padding: $padding-icons;
+    //        font-size: $font-size-large;
+    //        display: inline-block;
+    //        color: $primary-color-bg-border;
+    //        text-decoration: none;
+    //
+    //        &:hover{
+    //          color: white;
+    //        }
+    //      }
+    //    }
+    //  }
+    //
+    //  //---------------------------------------- Column
+    //
+    //  //---------------------------------------- Margins
+    //  .lc-inline_container-section-edit{
+    //    max-width: 100%;
+    //    >.lc-inline_row-edit{
+    //      max-width: 100%;
+    //    }
+    //  }
+    //  .layout-builder__layout{
+    //
+    //    margin: auto;
+    //    margin-bottom: 10px;
+    //    margin-top:45px;
+    //    padding: 0;
+    //    width: calc(100% - 20px);
+    //    box-sizing: border-box;
+    //    -moz-box-sizing: border-box;
+    //    -webkit-box-sizing: border-box;
+    //
+    //    //---------------------------------------- Highlighted
+    //
+    //    &.is-layout-builder-highlighted{
+    //      box-sizing: border-box;
+    //      -moz-box-sizing: border-box;
+    //      -webkit-box-sizing: border-box;
+    //      border: 4px solid $primary-color-darker;
+    //      border-radius: $border-radius-base;
+    //    }
+    //
+    //    //---------------------------------------- Columns
+    //
+    //    .layoutcomponent-column{
+    //
+    //      box-sizing: border-box;
+    //      -moz-box-sizing: border-box;
+    //      -webkit-box-sizing: border-box;
+    //      border: 4px solid $primary-color-medium;
+    //      z-index: 80 !important;
+    //      border-radius: $border-radius-base;
+    //      margin: 1%;
+    //      padding: 15px;
+    //      //position: relative;
+    //
+    //      &:hover{
+    //        box-sizing: border-box;
+    //        -moz-box-sizing: border-box;
+    //        -webkit-box-sizing: border-box;
+    //        border: 4px solid $primary-color-medium;
+    //      }
+    //
+    //      a{
+    //        color: $primary-color-bg-border;
+    //
+    //        //---------------------------------------- Column Copy icon
+    //
+    //        &.lc-copy{
+    //          &:before {
+    //            position: absolute;
+    //            display: block;
+    //            content: "\f24d";
+    //            @extend %fontawesome;
+    //            color: white !important;
+    //            display: block;
+    //            background: $tertiary;
+    //            padding: 5px 9px;
+    //            border-radius: 0px 4px 0px 4px;
+    //            right: 0px;
+    //            font-size: 18px;
+    //          }
+    //
+    //          &:hover{
+    //            background: $tertiary-dark;
+    //          }
+    //        }
+    //
+    //        &:hover{
+    //          color: white;
+    //        }
+    //      }
+    //
+    //      //---------------------------------------- Column Configure icons
+    //
+    //      .layout-builder__configure-column {
+    //
+    //        //z-index: 80;
+    //        ////position: absolute;
+    //        ////top:-4px;
+    //        ////right:-4px;
+    //        //padding: 0 5px;
+    //        //text-align: right;
+    //        //background-color: $primary-color-medium;
+    //        //border-radius: 0px 4px 0px 4px;
+    //
+    //        a{
+    //          text-decoration: none;
+    //
+    //          &:hover{
+    //            &:before{
+    //              color: white;
+    //            }
+    //          }
+    //          &:before{
+    //            color: $primary-color-bg-border;
+    //          }
+    //        }
+    //      }
+    //
+    //      //---------------------------------------- Region
+    //
+    //      .layout-builder__region{
+    //
+    //        display: flex;
+    //        justify-content: flex-start;
+    //        flex-direction: column;
+    //        height: auto;
+    //        outline: none;
+    //        min-height: 50px;
+    //
+    //        //---------------------------------------- Default region
+    //
+    //        .block-layout-builder {
+    //
+    //          border: 2px solid $primary-color-light;
+    //          background-color: transparent;
+    //          border-radius: $border-radius-base;
+    //          box-sizing: border-box;
+    //          -moz-box-sizing: border-box;
+    //          -webkit-box-sizing: border-box;
+    //          margin-bottom: 10px;
+    //          padding: 0px 5px 5px 5px;
+    //
+    //          .block-layout-builder, .block{
+    //            border: 0;
+    //          }
+    //
+    //          .block-layout-builder{
+    //            margin-bottom: 0;
+    //          }
+    //
+    //          [tabindex="-1"] {
+    //            pointer-events: inherit;
+    //          }
+    //
+    //          &.is-layout-builder-highlighted{
+    //            border: 3px solid $primary-color-medium;
+    //            border-radius: $border-radius-base;
+    //            box-sizing: border-box;
+    //            -moz-box-sizing: border-box;
+    //            -webkit-box-sizing: border-box;
+    //          }
+    //
+    //          //---------------------------------------- Content
+    //
+    //          .content{
+    //            .nav{
+    //              &.nav-tabs{
+    //                border-bottom: 1px solid $primary-color-light;
+    //                .nav-item{
+    //                  .nav-link{
+    //                    @extend %librefranklin;
+    //                    color: $primary-color-light;
+    //                    text-decoration: underline;
+    //                    -webkit-transition: color 0.3s ease;
+    //                    -moz-transition: color 0.3s ease;
+    //                    -o-transition: color 0.3s ease;
+    //                    transition: color 0.3s ease;
+    //
+    //                    &:hover{
+    //                      background-color: transparent;
+    //                      color: $primary-color-medium;
+    //                      border-color: $primary-color-lighter $primary-color-lighter $primary-color-bg;
+    //                    }
+    //
+    //                    &.active{
+    //                      background-color: transparent;
+    //                      color: $primary-color-medium;
+    //                      border-color: $primary-color-lighter $primary-color-light $primary-color-bg;
+    //                    }
+    //                  }
+    //                }
+    //              }
+    //            }
+    //          }
+    //        }
+    //
+    //        //---------------------------------------- Highlighted region
+    //
+    //        .layout-builder-block{
+    //
+    //          border: 2px solid $primary-color-light;
+    //          margin-bottom: 10px;
+    //          background-color: transparent;
+    //          border-radius: $border-radius-base;
+    //          box-sizing: border-box;
+    //          -moz-box-sizing: border-box;
+    //          -webkit-box-sizing: border-box;
+    //          padding: 0px 5px 5px 5px;
+    //          overflow: hidden;
+    //
+    //          [tabindex="-1"] {
+    //            pointer-events: inherit;
+    //          }
+    //
+    //          &.is-layout-builder-highlighted{
+    //            border: 3px solid $primary-color-medium;
+    //            border-radius: $border-radius-base;
+    //            box-sizing: border-box;
+    //            -moz-box-sizing: border-box;
+    //            -webkit-box-sizing: border-box;
+    //          }
+    //        }
+    //
+    //        //---------------------------------------- Add Region icon
+    //
+    //        .layout-builder__add-block {
+    //          background: none;
+    //
+    //          &[data-layout-builder-highlight-id^="block-"] {
+    //            padding: 1.5em 0;
+    //            text-align: center;
+    //          }
+    //
+    //          &.is-layout-builder-highlighted {
+    //            border: 4px solid $primary-color-light;
+    //          }
+    //
+    //          a{
+    //            &.layout-builder__column_link-add {
+    //              background-color: $primary-color-light;
+    //              font-size: 13px;
+    //              width: 35px;
+    //              height: 35px;
+    //              transition: 0.3s;
+    //              -webkit-transition: 0.3s ease-out;
+    //              -moz-transition:  0.3s ease-out;
+    //              transition:  0.3s ease-out;
+    //              line-height: 35px;
+    //              text-decoration: none;
+    //              color: $primary-color-bg-border;
+    //
+    //              //---------------------------------------- Region copy icon
+    //
+    //              &.lc-copy{
+    //                background: $tertiary;
+    //                &:before {
+    //                  content: "\f24d";
+    //                  @extend %fontawesome;
+    //                  color: white;
+    //                  background: transparent !important;
+    //                  display: block;
+    //                  position: unset !important;
+    //                  padding: 0;
+    //                  font-size: 18px;
+    //                }
+    //
+    //                &:hover{
+    //                  background: $tertiary-dark;
+    //                }
+    //              }
+    //
+    //              &:hover {
+    //                background: $primary-color-medium;
+    //                color: white;
+    //              }
+    //            }
+    //          }
+    //        }
+    //      }
+    //    }
+    //  }
+    //}
   }
 }
 
@@ -1120,7 +1121,6 @@ $tertiary-dark:$orange-dark;
 
       //-------------------------- Lateral Menu Content
 
-      #drupal-off-canvas-wrapper,
       #drupal-off-canvas,
       #drupal-off-canvas details,
       #drupal-off-canvas div.details-wrapper,
@@ -1129,7 +1129,6 @@ $tertiary-dark:$orange-dark;
         background: $primary-color-darkest;
       }
 
-      #drupal-off-canvas-wrapper,
       #drupal-off-canvas,
       #drupal-off-canvas *,
       #drupal-off-canvas details,
@@ -1249,7 +1248,7 @@ $tertiary-dark:$orange-dark;
         }
 
         .cke{
-          padding: auto;
+          padding: initial;
           background: inherit;
         }
 
@@ -1450,7 +1449,7 @@ $tertiary-dark:$orange-dark;
           transition: .2s ease;
 
           &:focus{
-            outline-color: none;
+            outline: none;
           }
         }
 
@@ -3325,9 +3324,9 @@ $tertiary-dark:$orange-dark;
   }
 }
 
-.layout-builder__configure-block{
-  display: table !important;
-}
+//.layout-builder__configure-block{
+//  display: table !important;
+//}
 
 .lc-ui-dialog,
 .lc-lateral-container{
@@ -3381,9 +3380,13 @@ $tertiary-dark:$orange-dark;
 
 @media screen and (max-width: 1600px) {
   .lc-ui-dialog{
-    #drupal-off-canvas-wrapper .layout-selection li,
     #drupal-off-canvas .layout-selection li {
       flex-basis: 100%;
     }
   }
 }
+
+
+/*************************************************************************/
+
+@import "custom-lg";

@@ -4,6 +4,7 @@ namespace Drupal\layoutcomponents;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\node\Entity\Node;
+use Drupal\commerce_store\Entity\Store;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Layout\LayoutPluginManager;
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -82,7 +83,7 @@ class LcTheme implements ContainerInjectionInterface {
    * @see \hook_theme_suggestions_HOOK()
    */
   public function themeSuggestionsLayoutLayoutcomponents(array &$suggestions, array $variables, $hook) {
-    if ($hook == 'layout__layoutcomponents_base') {
+    if ($hook == 'layout__layoutcomponents_base' ) {
       $classes = $variables['content']['#settings']['section']['styles']['misc']['extra_class'];
       $class = explode(',', $classes);
       if (is_array($class)) {
@@ -94,15 +95,12 @@ class LcTheme implements ContainerInjectionInterface {
 
       $suggestions[] = 'layout__layoutcomponents_base__' . $layout->id();
 
-      $node = $this->getNodeFromSectionContent($variables);
+      $entity = $this->getNodeFromSectionContent($variables);
+      $entity_data = $this->getEntityData($entity);
 
-      if (!isset($node)) {
-        $node = $this->routeMatch->getParameter('node');
-      }
-
-      if (isset($node)) {
-        $suggestions[] = 'layout__layoutcomponents_base__' . ((!empty($class)) ? ($class . '_') : '') . $layout->id() . '_' . $node->getType();
-        $suggestions[] = 'layout__layoutcomponents_base__' . ((!empty($class)) ? ($class . '_') : '') . $layout->id() . '_' . $node->id() . '_' . $node->getType();
+      if (isset($entity_data) && !empty($entity_data)) {
+        $suggestions[] = 'layout__layoutcomponents_base__' . ((!empty($class)) ? ($class . '_') : '') . $layout->id() . '_' . $entity_data['type'];
+        $suggestions[] = 'layout__layoutcomponents_base__' . ((!empty($class)) ? ($class . '_') : '') . $layout->id() . '_' . $entity_data['id'] . '_' . $entity_data['type'];
       }
     }
 
@@ -113,15 +111,12 @@ class LcTheme implements ContainerInjectionInterface {
         $class = $class[0];
       }
       $suggestions[] = 'layoutcomponents__region__' . (!empty($class) ? (str_replace('-', '_', $class) . '_') : '') . $variables['key'];
-      $node = $this->getNodeFromRegionContent($variables);
+      $entity = $this->getNodeFromRegionContent($variables);
+      $entity_data = $this->getEntityData($entity);
 
-      if (!isset($node)) {
-        $node = $this->routeMatch->getParameter('node');
-      }
-
-      if (isset($node)) {
-        $suggestions[] = 'layoutcomponents__region__' . (!empty($class) ? (str_replace('-', '_', $class) . '_') : '') . $variables['key'] . '_' . (str_replace('-', '_', $node->getType()));
-        $suggestions[] = 'layoutcomponents__region__' . (!empty($class) ? (str_replace('-', '_', $class) . '_') : '') . $variables['key'] . '_' . $node->id() . '_' . (str_replace('-', '_', $node->getType()));
+      if (isset($entity_data) && !empty($entity_data)) {
+        $suggestions[] = 'layoutcomponents__region__' . (!empty($class) ? (str_replace('-', '_', $class) . '_') : '') . $variables['key'] . '_' . (str_replace('-', '_', $entity_data['type']));
+        $suggestions[] = 'layoutcomponents__region__' . (!empty($class) ? (str_replace('-', '_', $class) . '_') : '') . $variables['key'] . '_' . $entity_data['id'] . '_' . (str_replace('-', '_', $entity_data['type']));
       }
     }
 
@@ -130,19 +125,17 @@ class LcTheme implements ContainerInjectionInterface {
       $attributes = $variables['subregion']['attributes'];
       $attributes_classes  =$attributes->getClass()->value();
 
-      $node = $this->getNodeFromRegionContent($variables, TRUE);
-      if (!isset($node)) {
-        $node = $this->routeMatch->getParameter('node');
-      }
+      $entity = $this->getNodeFromRegionContent($variables, TRUE);
+      $entity_data = $this->getEntityData($entity);
 
       $class = '';
       if (count($attributes_classes) > 2) {
         $class = $attributes_classes[0];
       }
 
-      if (isset($node)) {
-        $suggestions[] = 'layoutcomponents__subregion__' . $node->getType();
-        $suggestions[] = 'layoutcomponents__subregion__' . $node->id();
+      if (isset($entity_data) && !empty($entity_data)) {
+        $suggestions[] = 'layoutcomponents__subregion__' . $entity_data['type'];
+        $suggestions[] = 'layoutcomponents__subregion__' . $entity_data['id'];
       }
 
       if (!empty($class)) {
@@ -165,20 +158,38 @@ class LcTheme implements ContainerInjectionInterface {
     return $suggestions;
   }
 
+  public function getEntityData($entity) {
+    $entity_data = [];
+    if ($entity instanceof Node) {
+      $entity_data = [
+        'id' => $entity->id(),
+        'type' => $entity->getType(),
+      ];
+    }
+    elseif ($entity instanceof Store) {
+      $entity_data = [
+        'id' => $entity->id(),
+        'type' => $entity->bundle(),
+      ];
+    }
+
+    return $entity_data;
+  }
+
   /**
    * Method to determine the current node type of section.
    *
    * @param array $variables
    *   The complete array.
    *
-   * @return string|NULL
+   * @return Node|Store|NULL
    *   The type of node.
    */
   public function getNodeFromSectionContent(array $variables) {
     /** @var \Drupal\Core\Layout\LayoutDefinition $layout */
     $layout = $variables['content']['#layout'];
 
-    $node = NULL;
+    $res = NULL;
     foreach ($layout->getRegionNames() as $delta => $region_name) {
       if (array_key_exists($region_name, $variables['content'])) {
         foreach ($variables['content'][$region_name] as $block) {
@@ -186,13 +197,21 @@ class LcTheme implements ContainerInjectionInterface {
             continue;
           }
           if (array_key_exists('#object', $block['content']) && $block['content']['#object'] instanceof Node) {
-            $node = $block['content']['#object'];
+            $res = $block['content']['#object'];
           }
         }
       }
     }
 
-    return $node;
+    if (!isset($res)) {
+      $res = $this->routeMatch->getParameter('node');
+      if (!isset($res)) {
+        /** @var \Drupal\commerce_store\Entity\Store $res */
+        $res = $this->routeMatch->getParameter('commerce_store');
+      }
+    }
+
+    return $res;
   }
 
   /**
@@ -201,11 +220,11 @@ class LcTheme implements ContainerInjectionInterface {
    * @param array $variables
    *   The complete array.
    *
-   * @return string|NULL
+   * @return Node|Store|NULL
    *   The type of node.
    */
   public function getNodeFromRegionContent(array $variables, $isSubregion = FALSE) {
-    $node = NULL;
+    $res = NULL;
     if ($isSubregion) {
       $content = $variables['content'];
     }
@@ -214,20 +233,26 @@ class LcTheme implements ContainerInjectionInterface {
     }
     foreach ($content as $block) {
       if (is_array($block)) {
-        if (array_key_exists('#group', $block)) {
-          foreach ($block['#content'] as $delta => $block_content) {
-            if (!array_key_exists('#base_plugin_id', $block_content) || $block_content['#base_plugin_id'] !== 'field_block') {
-              continue;
-            }
-            if ($block_content['content']['#object'] instanceof Node) {
-              $node = $block_content['content']['#object'];
-            }
+        if (array_key_exists('content', $block)) {
+          if (!array_key_exists('#base_plugin_id', $block) || $block['#base_plugin_id'] !== 'field_block') {
+            continue;
+          }
+          if (array_key_exists('#object', $block['content']) && $block['content']['#object'] instanceof Node) {
+            $res = $block['content']['#object'];
           }
         }
       }
     }
 
-    return $node;
+    if (!isset($res)) {
+      $res = $this->routeMatch->getParameter('node');
+      if (!isset($res)) {
+        /** @var \Drupal\commerce_store\Entity\Store $res */
+        $res = $this->routeMatch->getParameter('commerce_store');
+      }
+    }
+
+    return $res;
   }
 
   /**
@@ -268,7 +293,7 @@ class LcTheme implements ContainerInjectionInterface {
         str_contains($theme_registry[$theme_hook]['template'], 'layout--layoutcomponents-base--')
       ) {
         // Include file.
-        $theme_registry[$theme_hook]['includes'][] = \Drupal::service('extension.list.module')->getPath('layoutcomponents') . '/layoutcomponents.theme.inc';
+        $theme_registry[$theme_hook]['includes'][] = drupal_get_path('module', 'layoutcomponents') . '/layoutcomponents.theme.inc';
         // Set new preprocess function.
         $theme_registry[$theme_hook]['preprocess functions'][] = '_layoutcomponents_preprocess_layout';
         $theme_registry[$theme_hook]['base hook'] = 'layout__layoutcomponents_base';

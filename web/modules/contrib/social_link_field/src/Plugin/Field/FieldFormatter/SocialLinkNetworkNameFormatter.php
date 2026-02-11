@@ -61,6 +61,10 @@ class SocialLinkNetworkNameFormatter extends SocialLinkBaseFormatter {
       $social = $values['social'];
       $link = $values['link'];
 
+      if (!isset($this->platforms[$social])) {
+        continue;
+      }
+
       $element['#links'][$delta] = [
         'text' => $this->platforms[$social]['name'],
         'class' => $social,

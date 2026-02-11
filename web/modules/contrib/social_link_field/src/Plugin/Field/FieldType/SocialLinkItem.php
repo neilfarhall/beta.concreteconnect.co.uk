@@ -52,9 +52,9 @@ class SocialLinkItem extends FieldItemBase {
     return $schema;
   }
 
-/**
- * {@inheritdoc}
- */
+  /**
+   * {@inheritdoc}
+   */
   public function isEmpty() {
     $value = $this->get('link')->getValue();
     $social = $this->get('social')->getValue();
@@ -93,8 +93,8 @@ class SocialLinkItem extends FieldItemBase {
    */
   public static function defaultFieldSettings() {
     return [
-        'platforms' => [],
-      ] + parent::defaultFieldSettings();
+      'platforms' => [],
+    ] + parent::defaultFieldSettings();
   }
 
   /**

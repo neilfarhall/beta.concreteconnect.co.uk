@@ -359,10 +359,10 @@ class ExifPHPExtension implements ExifInterface {
    * Dates should be parsed nicely.
    *
    * @param array $data
-   *   Section data containing all keyword woth associated value.
+   *   Section data containing all keyword with associated value.
    *
    * @return array
-   *   section data containing all keyword woth associated value.
+   *   section data containing all keyword with associated value.
    */
   private function reformat(array $data) {
     // Make the key lowercase as field names must be.

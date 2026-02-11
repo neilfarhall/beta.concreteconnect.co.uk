@@ -18,6 +18,7 @@ function views_rss_media_preprocess_item_content(&$variables) {
   }
 
   $variables['elements'] = [];
+  $file = [];
   foreach ($variables['raw']['items'] as $item) {
     // File fields.
     if (!empty($item['rendered']['#file'])) {
@@ -139,7 +140,12 @@ function views_rss_media_preprocess_item_thumbnail(&$variables) {
     // Media fields.
     elseif (!empty($item['rendered']['#media'])) {
       // Render the output so the URL can be extracted.
-      $output = \Drupal::service('renderer')->renderPlain($item['rendered'], FALSE);
+      $renderer = \Drupal::service('renderer');
+      $output = method_exists($renderer, 'renderInIsolation') ?
+        $renderer->renderInIsolation($item['rendered'], FALSE) :
+        // @todo use DeprecationHelper when D9 support will be dropped
+        // @phpstan-ignore method.deprecated
+        $renderer->renderPlain($item['rendered'], FALSE);
 
       // Extract the URL from the output string.
       preg_match('/src="(.*)" width="(.*)" height="(.*)" alt="([^"]*)"/', $output, $matches);

@@ -3,7 +3,7 @@
  * Provides Simple Home Caoursel integration.
  */
 
-(function ($, Drupal, drupalSettings, once) {
+(function ($, Drupal, drupalSettings) {
 
   'use strict';
 
@@ -43,10 +43,10 @@
                   $text += '<div class="slick-dot-text">' + title + '</div>';
                   $($dots[i]).find('button').html($text);
                 });
-                $(once('added', $slick.find('ul'))).append($li);
+                $slick.find('ul').once('added').append($li);
               } else {
                 var $ul = $('<ul class="slick-dots slick-dots-tabs slick-button-controls" role="tablist"/>');
-                $(once('added2', $slick)).append($ul.append($li));
+                $slick.once('added').append($ul.append($li));
               }
             }
           });
@@ -54,4 +54,4 @@
       })
     }
   };
-})(jQuery, Drupal, drupalSettings, once);
+})(jQuery, Drupal, drupalSettings);

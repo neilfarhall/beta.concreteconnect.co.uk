@@ -11,13 +11,14 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\BeforeCommand;
 use Drupal\Core\Ajax\CloseDialogCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\WidgetInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Render\Element;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
 use Drupal\media_library\MediaLibraryUiBuilder;
+use Drupal\Component\Render\FormattableMarkup;
 
 /**
  * Implements hook_help().
@@ -45,6 +46,14 @@ function media_library_edit_field_widget_settings_summary_alter(&$summary, $cont
     $settings = $context['widget']->getThirdPartySettings('media_library_edit');
     if (isset($settings['show_edit']) && $settings['show_edit']) {
       $summary[] = t('Show edit button');
+      if (isset($settings['edit_form_mode'])) {
+        /** @var \Drupal\Core\Entity\EntityDisplayRepositoryInterface $entity_display */
+        $entity_display = \Drupal::service('entity_display.repository');
+        $form_modes_options = $entity_display->getFormModeOptions('media');
+        $summary[] = t('Edit form mode: @form_mode', [
+          '@form_mode' => $form_modes_options[$settings['edit_form_mode']],
+        ]);
+      }
     }
   }
 }
@@ -63,6 +72,22 @@ function media_library_edit_field_widget_third_party_settings_form(WidgetInterfa
       '#type' => 'checkbox',
       '#title' => t('Show edit button'),
       '#default_value' => (isset($settings['show_edit'])) ? $settings['show_edit'] : '',
+    ];
+
+    /** @var \Drupal\Core\Entity\EntityDisplayRepositoryInterface $entity_display */
+    $entity_display = \Drupal::service('entity_display.repository');
+    $form_modes_options = $entity_display->getFormModeOptions('media');
+
+    $element['edit_form_mode'] = [
+      '#type' => 'select',
+      '#title' => t('Form mode'),
+      '#options' => $form_modes_options,
+      '#default_value' => (isset($settings['edit_form_mode'])) ? $settings['edit_form_mode'] : array_key_first($form_modes_options),
+      '#description' => t('You can select in which mode edit form will be rendered.'),
+      '#states' => [
+        'visible' => [':input[name$="[media_library_edit][show_edit]"]' => ['checked' => TRUE]],
+        'required' => [':input[name$="[media_library_edit][show_edit]"]' => ['checked' => TRUE]],
+      ],
     ];
   }
 
@@ -95,11 +120,16 @@ function media_library_edit_field_widget_single_element_form_alter(array &$eleme
             $edit_url_query_params = [
               'media_library_edit' => 'ajax',
             ];
+            if (!empty($settings['edit_form_mode'])) {
+              $edit_url_query_params['media_library_form_mode'] = $settings['edit_form_mode'];
+            }
             $edit_url = Url::fromUserInput(str_replace('{media}', $element['selection'][$key]['target_id']['#value'], $edit_template) . '?' . UrlHelper::buildQuery($edit_url_query_params));
             $dialog_options = MediaLibraryUiBuilder::dialogOptions();
             $element['selection'][$key]['media_edit'] = [
               '#type' => 'link',
-              '#title' => t('Edit media item'),
+              '#title' => new FormattableMarkup('<span class="visually-hidden">@link_text</span>', [
+                '@link_text' => t('Edit media item'),
+              ]),
               '#url' => $edit_url,
               '#attributes' => [
                 'class' => [
@@ -112,6 +142,7 @@ function media_library_edit_field_widget_single_element_form_alter(array &$eleme
                   'height' => $dialog_options['height'],
                   'width' => $dialog_options['width'],
                   'classes' => ['ui-dialog-content' => 'media-library-edit__modal'],
+                  'drupalAutoButtons' => FALSE,
                 ]),
                 'data-dialog-type' => 'modal',
               ],
@@ -170,4 +201,26 @@ function _media_library_edit_media_edit_save(array &$form, FormStateInterface $f
     $response->addCommand(new BeforeCommand('form', $message));
   }
   return $response;
+}
+
+/**
+ * Implements hook_entity_form_display_alter().
+ */
+function media_library_edit_entity_form_display_alter(EntityFormDisplayInterface &$form_display, array $context) {
+  if (isset($context['entity_type']) && isset($context['bundle'])
+    && $context['entity_type'] === 'media'
+    && \Drupal::request()->query->has('media_library_form_mode')
+  ) {
+    $selected_form_mode = \Drupal::request()->query->get('media_library_form_mode', 'default');
+
+    /** @var \Drupal\Core\Entity\EntityDisplayRepository $entity_display_repo */
+    $entity_display_repo = \Drupal::service('entity_display.repository');
+    $form_mode_opts = $entity_display_repo->getFormModeOptionsByBundle($context['entity_type'], $context['bundle']);
+
+    if (!array_key_exists($selected_form_mode, $form_mode_opts)) {
+      return;
+    }
+
+    $form_display = $entity_display_repo->getFormDisplay($context['entity_type'], $context['bundle'], $selected_form_mode) ?: $form_display;
+  }
 }

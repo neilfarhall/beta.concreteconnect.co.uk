@@ -227,7 +227,7 @@ class LcChooseBlockController extends ChooseBlockController {
     // Parent items.
     $build = parent::inlineBlockList($section_storage, $delta, $region);
     // Block definitions.
-    $definitions = $this->blockManager->getFilteredDefinitions('layout_builder', $this->getPopulatedContexts($section_storage), [
+    $definitions = $this->blockManager->getFilteredDefinitions('layout_builder', $this->getAvailableContexts($section_storage), [
       'section_storage' => $section_storage,
       'region' => $region,
       'list' => 'inline_blocks',

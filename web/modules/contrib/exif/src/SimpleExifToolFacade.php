@@ -195,7 +195,7 @@ class SimpleExifToolFacade implements ExifInterface {
   /**
    * Translate all keys to lowercase.
    *
-   * ExiffTool is case sensitive. the module is not.
+   * ExifTool is case-sensitive. the module is not.
    * So we need to lowercase all keys to be able to
    * get the needed values.
    *

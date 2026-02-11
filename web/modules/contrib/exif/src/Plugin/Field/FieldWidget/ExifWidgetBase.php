@@ -50,7 +50,7 @@ abstract class ExifWidgetBase extends WidgetBase {
     FieldDefinitionInterface $field_definition,
     array $settings,
     array $third_party_settings,
-    EntityFieldManagerInterface $entity_field_manager
+    EntityFieldManagerInterface $entity_field_manager,
   ) {
     parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $third_party_settings);
     $this->entityFieldManager = $entity_field_manager;

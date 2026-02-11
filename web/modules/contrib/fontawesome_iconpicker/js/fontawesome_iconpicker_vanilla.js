@@ -14,7 +14,16 @@
   // The parameters are reversed in the callback between jQuery `.each` method
   // and the native `.forEach` array method.
   function processingCallback(iconElementInput, index) {
-    const option = JSON.parse(iconElementInput.getAttribute('data-option'));
+    const dataOptions = JSON.parse(iconElementInput.getAttribute('data-option'));
+    const option = {
+      theme: 'default',
+      iconSource: [
+        'FontAwesome Brands 6',
+        'FontAwesome Solid 6',
+        'FontAwesome Regular 6',
+      ],
+      ...dataOptions
+    };
     new IconPicker(iconElementInput, option);
   }
 }(Drupal, once));

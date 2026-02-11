@@ -1,4 +1,4 @@
-(function ($, Drupal, once) {
+(function ($, Drupal) {
   Drupal.behaviors.VideoVeil = {
     attach: function (context, settings) {
 
@@ -11,7 +11,7 @@
       }
       stopAllYouTubeVideos();
       // Fix selector to get one element
-      $(once('VideoVeil', '.block-inline-blocksimple-video .videoimage', context)).each(function () {
+      $('.block-inline-blocksimple-video .videoimage', context).once('VideoVeil').each(function () {
         var vid = $(this).find('video').get(0);
         var image = $(this).find('.field--name-field-sv-image').get(0);
         var video = $(this).find('.field--name-field-sv-video').get(0);
@@ -80,4 +80,4 @@
     }
   };
 
-})(jQuery, Drupal, once);
+})(jQuery, Drupal);

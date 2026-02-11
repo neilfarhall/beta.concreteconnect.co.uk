@@ -2,17 +2,21 @@
 
 namespace Drupal\module_missing_message_fixer;
 
-use Drupal\Core\Extension\ModuleExtensionList;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Database\Connection;
+use Drupal\Core\Extension\Exception\UnknownExtensionException;
+use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class ModuleMissingMessageFixer.
+ * Implements "Missing Module Message Fixer" class.
  *
  * @package Drupal\module_missing_message_fixer
  */
 class ModuleMissingMessageFixer {
+
+  use StringTranslationTrait;
 
   /**
    * The database connection.
@@ -103,7 +107,12 @@ class ModuleMissingMessageFixer {
       }
 
       // Grab the checker.
-      $filename = $this->moduleExtensionList->getPathname($record->name);
+      try {
+        $filename = $this->moduleExtensionList->getPathname($record->name);
+      }
+      catch (UnknownExtensionException $exception) {
+        $filename = NULL;
+      }
 
       if ($filename === NULL) {
         // Report this module in the table.
@@ -121,14 +130,14 @@ class ModuleMissingMessageFixer {
         '@file' => $filename,
       ];
       if (!file_exists($filename)) {
-        // This case is unexpected, because drupal_get_filename() should take care
-        // of it already.
-        $message = 'The file @file for @name @type is missing.';
+        // This case is unexpected, because drupal_get_filename() should take
+        // care of it already.
+        $message = $this->t('The file @file for @name @type is missing.', $replacements);
       }
       elseif (!is_readable($filename)) {
-        // This case is unexpected, because drupal_get_filename() should take care
-        // of it already.
-        $message = 'The file @file for @name @type is not readable.';
+        // This case is unexpected, because drupal_get_filename() should take
+        // care of it already.
+        $message = $this->t('The file @file for @name @type is not readable.', $replacements);
       }
       else {
         // Verify if *.info file exists.
@@ -136,19 +145,17 @@ class ModuleMissingMessageFixer {
         $info_filename = dirname($filename) . '/' . $record->name . '.info.yml';
         $replacements['@info_file'] = $info_filename;
         if (!file_exists($info_filename)) {
-          $message = 'The *.info.yml file @info_file for @name @type is missing.';
+          $message = $this->t('The *.info.yml file @info_file for @name @type is missing.', $replacements);
 
         }
         elseif (!is_readable($info_filename)) {
-          $message = 'The *.info.yml file @info_file for @name @type is not readable.';
+          $message = $this->t('The *.info.yml file @info_file for @name @type is not readable.', $replacements);
         }
       }
 
       if ($message !== NULL) {
         // This case should never occur.
-        $this->messenger->addWarning(
-          t($message, $replacements),
-          FALSE);
+        $this->messenger->addWarning($message);
       }
     }
 

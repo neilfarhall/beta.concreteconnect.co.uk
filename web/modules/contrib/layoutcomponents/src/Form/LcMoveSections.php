@@ -63,7 +63,7 @@ class LcMoveSections extends MoveSectionsForm {
     $build = parent::buildForm($form, $form_state, $section_storage);
 
     // Sub section handler.
-    $sub_delta = $this->request->getCurrentRequest()->query->all()['sub_section'];
+    $sub_delta = $this->request->getCurrentRequest()->query->get('sub_section');
 
     foreach ($build['sections_wrapper']['sections'] as $delta => $wrapper) {
       if (!is_numeric($delta)) {

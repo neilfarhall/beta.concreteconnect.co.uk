@@ -2,16 +2,16 @@
 
 namespace Drupal\module_missing_message_fixer\Form;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\module_missing_message_fixer\ModuleMissingMessageFixer;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Database\Connection;
-use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Messenger\MessengerInterface;
 
 /**
- * Class ModuleMissingMessageFixerForm.
+ * Implements "Missing Module Message Fixer" form.
  *
  * @package Drupal\module_missing_message_fixer
  */

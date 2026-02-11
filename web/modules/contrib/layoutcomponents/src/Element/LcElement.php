@@ -19,7 +19,6 @@ use Drupal\layoutcomponents\LcLayoutsManager;
 use Drupal\layoutcomponents\LcDisplayHelperTrait;
 use Drupal\Core\Session\AccountProxy;
 use Drupal\layout_builder\Plugin\SectionStorage\DefaultsSectionStorage;
-use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**
  * {@inheritdoc}
@@ -87,21 +86,13 @@ class LcElement extends LayoutBuilder {
   protected $entity;
 
   /**
-   * The event dispatcher.
-   *
-   * @var \Symfony\Contracts\EventDispatcher\EventDispatcherInterface
-   */
-  protected $eventDispatcher;
-
-  /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EventDispatcherInterface $event_dispatcher , LayoutTempstoreRepositoryInterface $layout_tempstore_repository, MessengerInterface $messenger, ThemeHandlerInterface $theme_handler, ConfigFactory $config_factory, PrivateTempStoreFactory $temp_store, LcLayoutsManager $layout_manager, AccountProxy $current_user, LcSectionManager $lc_section_manager) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition, $event_dispatcher);
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, LayoutTempstoreRepositoryInterface $layout_tempstore_repository, MessengerInterface $messenger, ThemeHandlerInterface $theme_handler, ConfigFactory $config_factory, PrivateTempStoreFactory $temp_store, LcLayoutsManager $layout_manager, AccountProxy $current_user, LcSectionManager $lc_section_manager) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $layout_tempstore_repository, $messenger);
     $this->themeHandler = $theme_handler;
     $this->configFactory = $config_factory;
     $this->tempStoreFactory = $temp_store;
-    $this->eventDispatcher = $event_dispatcher;
     $this->layoutTempstore = $layout_tempstore_repository;
     $this->lcLayoutManager = $layout_manager;
     $this->currentUser = $current_user;
@@ -118,7 +109,6 @@ class LcElement extends LayoutBuilder {
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('event_dispatcher'),
       $container->get('layout_builder.tempstore_repository'),
       $container->get('messenger'),
       $container->get('theme_handler'),
@@ -189,6 +179,8 @@ class LcElement extends LayoutBuilder {
 
       if (array_key_exists('sub_section', $section['layout-builder__section']['#settings'])) {
         unset($output[$delta]);
+        // Delete the "add section" of this subsection.
+        unset($output[$delta-1]);
       }
     }
 
@@ -228,12 +220,33 @@ class LcElement extends LayoutBuilder {
    * {@inheritdoc}
    */
   public function buildAddSectionLink(SectionStorageInterface $section_storage, $delta, $sub_section = []) {
+    $storage_type = $section_storage->getStorageType();
+    $storage_id = $section_storage->getStorageId();
+
     $build = parent::buildAddSectionLink($section_storage, $delta);
     $build['link']['#title'] = '';
 
     // Alter Add Section button.
     /** @var \Drupal\Core\Url $url */
-    $url = $build['link']['#url'];
+    //$url = $build['link']['#url'];
+    $url = Url::fromRoute('layoutcomponents.section_selection',
+      [
+        'section_storage_type' => $storage_type,
+        'section_storage' => $storage_id,
+        'delta' => $delta,
+      ],
+      [
+        'attributes' => [
+          'class' => [
+            'use-ajax',
+            'layout-builder__link',
+            'layout-builder__link--add',
+          ],
+          'data-dialog-type' => 'dialog',
+          'data-dialog-renderer' => 'off_canvas',
+        ],
+      ]
+    );
 
     // Set update_layout if is "Add section".
     $url->setRouteParameter('update_layout', 0);
@@ -251,7 +264,7 @@ class LcElement extends LayoutBuilder {
       'layout-builder__link-add-section',
     ];
     $options['attributes']['data-dialog-options'] = $this->dialogOptions();
-    $options['attributes']['title'] = $this->t('Add new section');
+    $options['attributes']['title'] = $this->t('Add new section ttt');
 
     // Check if a section is ready to copy.
     $store = $this->tempStoreFactory->get('lc');
@@ -260,6 +273,8 @@ class LcElement extends LayoutBuilder {
 
     // Save new options.
     $url->setOptions($options);
+
+    $build['link']['#url'] = $url;
 
     if (isset($this->entity) && !$this->getAccess($this->currentUser, 'create ' . $this->entity->bundle() . ' ' . $this->entity->getEntityTypeId() . ' sections')) {
       unset($build['link']['#url']);
@@ -337,7 +352,7 @@ class LcElement extends LayoutBuilder {
       'update_layout' => [
         '#type' => 'link',
         '#title' => '',
-        '#url' => Url::fromRoute('layout_builder.choose_section',
+        '#url' => Url::fromRoute('layoutcomponents.section_selection',
           [
             'section_storage_type' => $storage_type,
             'section_storage' => $storage_id,
@@ -532,14 +547,11 @@ class LcElement extends LayoutBuilder {
       // Include sub sections.
       $current_layout_settings = $section_storage->getSection($delta)->getLayoutSettings();
 
+      $aa = $section_storage->getSections();
       /** @var \Drupal\layout_builder\Section $dd_section */
       foreach ($section_storage->getSections() as $dd => $dd_section) {
         $dd_settings = $dd_section->getLayoutSettings();
-        if (empty($dd_settings['sub_section'])) {
-          continue;
-        }
-
-        if (!array_key_exists('lc_id', $dd_settings['sub_section'])) {
+        if (empty($dd_settings['sub_section']) || !array_key_exists('lc_id', $dd_settings['sub_section'])) {
           continue;
         }
 
@@ -548,8 +560,17 @@ class LcElement extends LayoutBuilder {
           $section_storage->getSection($delta)->setLayoutSettings($current_layout_settings);
         }
 
-        if ($dd_settings['sub_section']['lc_id'] == $current_layout_settings['lc_id'] && $dd_settings['sub_section']['parent_region'] == $region) {
-          $build['layout-builder__section'][$region]['sub_section'][] = $this->buildAdministrativeSection($section_storage, $dd, $region);
+        if ($dd_settings['sub_section']['lc_id'] == $current_layout_settings['lc_id']) {
+          if ($dd_settings['sub_section']['parent_region'] == $region) {
+            $build['layout-builder__section'][$region]['sub_section'][] = $this->buildAdministrativeSection($section_storage, $dd, $region);
+          }
+          /*else {
+            if (!array_key_exists($dd_settings['sub_section']['parent_region'], $current_layout_settings['regions'])) {
+              $dd_settings['sub_section']['parent_region'] = 'first';
+              $dd_section->setLayoutSettings($dd_settings);
+              $build['layout-builder__section']['first']['sub_section'][] = $this->buildAdministrativeSection($section_storage, $dd, 'first');
+            }
+          }*/
         }
       }
     }

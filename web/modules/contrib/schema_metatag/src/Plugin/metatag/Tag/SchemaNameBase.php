@@ -138,7 +138,7 @@ class SchemaNameBase extends MetaNameBase implements ContainerFactoryPluginInter
     }
 
     if (empty($value)) {
-      return '';
+      return [];
     }
     // If this is a complex array of value, process the array.
     elseif (is_array($value)) {
@@ -255,7 +255,7 @@ class SchemaNameBase extends MetaNameBase implements ContainerFactoryPluginInter
    */
   protected function neverExplode() {
     return [
-      'name',      
+      'name',  
       'streetAddress',
       'reviewBody',
       'recipeInstructions',

@@ -58,7 +58,7 @@ class LcUpdateManager {
    *   The name of module.
    */
   public function updateConfig(array $config_names, $module) {
-    $config_path = \Drupal::service('extension.list.module')->getPath($module) . '/config/install';
+    $config_path = drupal_get_path('module', $module) . '/config/install';
     $source = new FileStorage($config_path);
 
     foreach ($config_names as $name) {

@@ -32,7 +32,7 @@ class ExifHelp {
     $output .= '<h2>' . t('About') . '</h2>';
     $output .= '<p>' . t('The Exif module allows you :');
     $output .= '<ul><li>' . t('extract metadata from an image') . '</li>';
-    $output .= '<li>' . t('to classify your images by settings terms in taxonamy vocabulary') . '</li></ul>';
+    $output .= '<li>' . t('to classify your images by settings terms in taxonomy vocabulary') . '</li></ul>';
     $output .= t('To classify images, you define <em>vocabularies</em> that contain related <em>terms</em>, and then assign the vocabularies to content types. For more information, see the online handbook entry for the <a href="http://drupal.org/handbook/modules/taxonomy/">Taxonomy module</a>.');
     $output .= '</p>';
     $output .= '<h2>' . t('Uses') . '</h2>';
@@ -50,9 +50,9 @@ class ExifHelp {
       ':permissionUrl' => $permissionUrl,
       ':taxonomyUrl' => $taxonomyUrl,
     ]);
-    $output .= t('This module will automatically create in the chosen vocabulary (by default "Photographies\' metadata"), the following structure:');
+    $output .= t('This module will automatically create in the chosen vocabulary (by default "Photographs\' metadata"), the following structure:');
     $output .= '</p>';
-    $output .= '<ul><li>' . t("<em>vocabulary</em>: Photographies'metadata") . '</li>';
+    $output .= '<ul><li>' . t("<em>vocabulary</em>: Photographs metadata") . '</li>';
     $output .= '<ul><li>' . t('<em>term</em>: iptc') . '</li>';
     $output .= '<ul><li>' . t('<em>sub-term</em>: keywords') . '</li>';
     $output .= '<ul><li>' . t('<em>ursub-term</em>: Paris') . '</li>';

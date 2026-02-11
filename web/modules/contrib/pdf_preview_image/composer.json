@@ -1,0 +1,7 @@
+{
+    "name": "drupal/pdf_preview_image",
+    "type": "drupal-module",
+    "description": "PDF Preview Image module provides an image preview from a pdf file and save it on a field image type.",
+    "homepage": "https://drupal.org/project/pdf_preview_image",
+    "license": "GPL-2.0-or-later"
+}

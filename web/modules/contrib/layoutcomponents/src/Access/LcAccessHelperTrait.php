@@ -18,11 +18,7 @@ trait LcAccessHelperTrait {
   protected function getCurrentEntity() {
     $parameters = \Drupal::routeMatch()->getParameters();
     $type = $parameters->get('entity_type_id');
-    if ($type) {
-      return $parameters->get($type);
-    } else {
-      return null;
-    }
+    return $parameters->get($type);
   }
 
   /**

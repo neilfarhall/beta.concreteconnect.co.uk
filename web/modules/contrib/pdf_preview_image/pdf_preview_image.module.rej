@@ -1,0 +1,53 @@
+--- pdf_preview_image.module
++++ pdf_preview_image.module
+@@ -19,8 +19,8 @@ use \Drupal\file\FileInterface;
+ function pdf_preview_image_entity_presave(EntityInterface $entity) {
+   if ($entity instanceof ContentEntityInterface) {
+     foreach ($entity->getFieldDefinitions() as $field_definition) {
+-      if ($field_definition->getType() == 'file' && $field_definition->getThirdPartySetting('pdf_to_image_preview', 'enable')) {
+-        $target_field = $entity->getFieldDefinition($field_definition->getThirdPartySetting('pdf_to_image_preview', 'target_field'));
++      if ($field_definition->getType() == 'file' && $field_definition->getThirdPartySetting('pdf_preview_image', 'enable')) {
++        $target_field = $entity->getFieldDefinition($field_definition->getThirdPartySetting('pdf_preview_image', 'target_field'));
+         if (isset($target_field)) {
+           $target_field_settings = $target_field->getItemDefinition()->getSettings();
+           $file_pdf = $entity->get($field_definition->getName())->getValue();
+@@ -72,33 +72,33 @@ function pdf_preview_image_form_field_config_edit_form_alter(&$form, FormStateIn
+ 
+   if (pdf_to_image_preview_is_eligible($field_config)) {
+     // Since this file field accepts PDFs, we can hook in with our stuff.
+-    $form['third_party_settings']['pdf_to_image_preview'] = array(
++    $form['third_party_settings']['pdf_preview_image'] = array(
+       '#type' => 'fieldset',
+       '#title' => t('PDF preview autogeneration'),
+     );
+ 
+-    $form['third_party_settings']['pdf_to_image_preview']['enable'] = array(
++    $form['third_party_settings']['pdf_preview_image']['enable'] = array(
+       '#type' => 'checkbox',
+       '#title' => t('Generate first page preview'),
+       '#description' => t('Automatically generate 1st page PDF preview and save it into an arbitrary image field on the same entity.'),
+-      '#default_value' => $field_config->getThirdPartySetting('pdf_to_image_preview', 'enable'),
++      '#default_value' => $field_config->getThirdPartySetting('pdf_preview_image', 'enable'),
+     );
+ 
+     // The rest of our settings should be visible only if the feature is
+     // actually enabled.
+     $states = [
+       'visible' => [
+-        ':input[name$="[pdf_to_image_preview][enable]"]' => ['checked' => TRUE],
++        ':input[name$="[pdf_preview_image][enable]"]' => ['checked' => TRUE],
+       ],
+     ];
+ 
+-    $form['third_party_settings']['pdf_to_image_preview']['target_field'] = array(
++    $form['third_party_settings']['pdf_preview_image']['target_field'] = array(
+       '#type' => 'select',
+       '#title' => t('Store 1st page image preview in'),
+       '#description' => t('Specify an image field where the 1st page preview of the PDF should be saved.'),
+       '#options' => pdf_to_image_preview_allowed_image_fields($field_config->getTargetEntityTypeId(), $field_config->getTargetBundle()),
+       '#states' => $states,
+-      '#default_value' => $field_config->getThirdPartySetting('pdf_to_image_preview', 'target_field'),
++      '#default_value' => $field_config->getThirdPartySetting('pdf_preview_image', 'target_field'),
+     );
+   }
+ }

@@ -3,7 +3,7 @@
  * Layout Components behaviors.
  */
 
-(function ($, Drupal, once) {
+(function ($, Drupal) {
 
   'use strict';
 
@@ -12,10 +12,10 @@
 
   behaviors.lcEditTooltip = {
     attach: function (context) {
-      $(once('tooltip', '.lc_editor-link, .lc-lateral-info', context)).tooltip({
+      $(".lc_editor-link, .lc-lateral-info").once('tooltip').tooltip({
         tooltipClass:"lc-tooltip"
       });
     }
   }
 
-})(jQuery, Drupal, once);
+})(jQuery, Drupal);

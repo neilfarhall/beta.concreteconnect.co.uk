@@ -41,6 +41,13 @@ class DisplayFeedTest extends BrowserTestBase {
   protected $testStartTime;
 
   /**
+   * A file object for testing with.
+   *
+   * @var \Drupal\file\Entity\File
+   */
+  protected $image;
+
+  /**
    * {@inheritdoc}
    */
   public function setUp(): void {
@@ -90,12 +97,15 @@ class DisplayFeedTest extends BrowserTestBase {
     $node2->setCreatedTime(strtotime(('-1 day')))->save();
 
     $this->drupalGet('views-rss.xml');
-    $this->assertSession()->responseHeaderEquals('Content-Type', 'application/rss+xml; charset=utf-8');
+    $this->assertSession()->statusCodeEquals(200);
+    $session = $this->assertSession();
+    $session->responseHeaderEquals('Content-Type', 'application/rss+xml; charset=utf-8');
     $this->assertEquals($node_title, $this->getSession()->getDriver()->getText('//item/title'));
     $this->assertEquals($node_link, $this->getSession()->getDriver()->getText('//item/link'));
     $this->assertEquals($node_link, $this->getSession()->getDriver()->getText('//item/comments'));
     // Verify HTML is properly escaped in the description field.
-    $this->assertSession()->responseContains('&lt;p&gt;A paragraph&lt;/p&gt;');
+    $this->assertEquals('&lt;p&gt;A paragraph&lt;/p&gt;', $this->getSession()->getDriver()->getText('//item/description'));
+
     $selector = sprintf(
       'enclosure[@url="%s"][@length="%s"][@type="%s"]',
       \Drupal::service('file_url_generator')->generateAbsoluteString('public://example.jpg'),
@@ -109,7 +119,7 @@ class DisplayFeedTest extends BrowserTestBase {
     $this->assertStringContainsString('views-rss.xml?field_tags_target_id=1', $this->getSession()->getDriver()->getText('//item/source/@url'));
 
     // Verify the channel pubDate matches the highest node pubDate.
-    $this->assertEquals(date('r', $node->getCreatedTime()), $this->getSession()->getDriver()->getText('//channel/pubDate'));
+    $this->assertEquals(date(\DateTimeInterface::RFC822, $node->getCreatedTime()), $this->getSession()->getDriver()->getText('//channel/pubDate'));
     $this->assertGreaterThanOrEqual($this->testStartTime, strtotime($this->getSession()->getDriver()->getText('//channel/lastBuildDate')));
   }
 
@@ -185,8 +195,8 @@ class DisplayFeedTest extends BrowserTestBase {
     $this->assertEquals(600, $driver->getText('//rss/channel/ttl'));
 
     // Test the channel image URL. This also confirms the absolute URL handling.
-    // $site_image_url = $this->getAbsoluteUrl('misc/druplicon.png');
-    // $this->assertEquals($site_image_url, $driver->getText('//rss/channel/image/url'));
+    // @code $site_image_url = $this->getAbsoluteUrl('misc/druplicon.png'); @endcode
+    // @code $this->assertEquals($site_image_url, $driver->getText('//rss/channel/image/url')); @endcode
     $this->assertEquals('https://www.drupal.org/misc/druplicon.png', $driver->getText('//rss/channel/image/url'));
     $this->assertEquals('Test feed', $driver->getText('//rss/channel/image/title'));
     $this->assertEquals($front_page, $driver->getText('//rss/channel/image/link'));

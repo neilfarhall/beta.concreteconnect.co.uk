@@ -3,6 +3,7 @@
 namespace Drupal\critical_css\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Core\Extension\ThemeExtensionList;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -26,14 +27,17 @@ class SettingsForm extends ConfigFormBase {
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
    *   The factory for configuration objects.
+   * @param \Drupal\Core\Config\TypedConfigManagerInterface $typedConfigManager
+   *  The typed config manager.
    * @param \Drupal\Core\Extension\ThemeExtensionList $themeExtensionList
    *   The theme extension list.
    */
   public function __construct(
     ConfigFactoryInterface $configFactory,
-    ThemeExtensionList $themeExtensionList
+    TypedConfigManagerInterface $typedConfigManager,
+    ThemeExtensionList $themeExtensionList,
   ) {
-    parent::__construct($configFactory);
+    parent::__construct($configFactory, $typedConfigManager);
     $this->themeExtensionList = $themeExtensionList;
   }
 
@@ -43,6 +47,7 @@ class SettingsForm extends ConfigFormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('config.factory'),
+      $container->get('config.typed'),
       $container->get('extension.list.theme')
     );
   }

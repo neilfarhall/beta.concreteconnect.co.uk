@@ -12,6 +12,7 @@ use Drupal\social_link_field\PlatformBase;
  *   name = @Translation("Facebook Event"),
  *   icon = "fa-facebook",
  *   iconSquare = "fa-facebook-square",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "https://www.facebook.com/event/",
  * )
  */

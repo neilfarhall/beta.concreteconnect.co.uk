@@ -153,7 +153,7 @@ function views_rss_rewrite_relative_paths(&$variables) {
 }
 
 /**
- * Maps assocative arrays.
+ * Maps associative arrays.
  *
  * Forms associative array from linear array, or returns original array if
  * already associative.
@@ -166,7 +166,7 @@ function views_rss_map_assoc($array) {
 }
 
 /**
- * Implemenents hook_theme_registry_alter().
+ * Implements hook_theme_registry_alter().
  */
 function views_rss_theme_registry_alter(array &$registry) {
   $module_dir = \Drupal::service('extension.list.module')->getPath('views_rss');
@@ -181,7 +181,7 @@ function views_rss_theme_registry_alter(array &$registry) {
 }
 
 /**
- * Simplfied function for obtaining the homepage's URL.
+ * Simplified function for obtaining the homepage's URL.
  *
  * @return string
  *   The URL for the homepage.
@@ -204,5 +204,5 @@ function views_rss_link_to_front_page() {
  *   The timestamp value in the required format.
  */
 function views_rss_format_date($timestamp) {
-  return date('r', $timestamp);
+  return date(\DateTimeInterface::RFC822, $timestamp);
 }

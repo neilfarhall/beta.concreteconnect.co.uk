@@ -61,6 +61,15 @@ use Drupal\migrate\Row;
  *       search: 'b'
  *       replace: 'strong'
  *     -
+ *       plugin: dom_str_replace
+ *       mode: attribute
+ *       xpath: //a
+ *       attribute_options:
+ *         name: href
+ *       regex: true
+ *       search: '/foo-(\d+)/'
+ *       replace: 'bar-$1'
+ *     -
  *       plugin: dom
  *       method: export
  * @endcode
@@ -93,6 +102,10 @@ class DomStrReplace extends DomProcessBase {
     ];
     foreach ($options_validation as $option_name => $possible_values) {
       if (empty($this->configuration[$option_name])) {
+        if ($option_name === 'replace' && isset($this->configuration[$option_name])) {
+          // Allow empty string for replace.
+          continue;
+        }
         throw new InvalidPluginDefinitionException(
           $this->getPluginId(),
           "Configuration option '$option_name' is required."

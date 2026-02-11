@@ -7,6 +7,7 @@
 
 use Drupal\file\FileInterface;
 use Drupal\image\Entity\ImageStyle;
+use JamesHeinrich\GetID3\GetID3;
 
 /**
  * Implements hook_views_rss_item_elements_alter().
@@ -42,7 +43,7 @@ function views_rss_media_getid3_preprocess_media_content(&$variables) {
         $uri = $file->getFileUri();
       }
       $realpath = \Drupal::service('file_system')->realpath($uri);
-      $id3_info = (new getID3())->analyze($realpath);
+      $id3_info = (new GetID3())->analyze($realpath);
 
       // Video details.
       if (!empty($id3_info['video']['frame_rate'])) {
@@ -104,7 +105,7 @@ function views_rss_media_getid3_preprocess_media_thumbnail(&$variables) {
       }
 
       $realpath = \Drupal::service('file_system')->realpath($uri);
-      $id3_info = (new getID3())->analyze($realpath);
+      $id3_info = (new GetID3())->analyze($realpath);
 
       if (!empty($id3_info['video']['resolution_x'])) {
         $variables['elements'][$index]['attributes']['width'] = $id3_info['video']['resolution_x'];

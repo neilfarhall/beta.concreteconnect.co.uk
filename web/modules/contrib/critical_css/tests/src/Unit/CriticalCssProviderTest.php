@@ -81,7 +81,7 @@ class CriticalCssProviderTest extends UnitTestCase {
   /**
    * Data provider for testSanitizePath.
    */
-  public function sanitizePathProvider() {
+  public static function sanitizePathProvider() {
     return [
       ["/node/1", "node-1"],
       ["/node /1ñá", "node-1"],

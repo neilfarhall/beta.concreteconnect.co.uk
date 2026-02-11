@@ -11,6 +11,8 @@ use Drupal\social_link_field\PlatformBase;
  *   id = "instagram",
  *   name = @Translation("Instagram"),
  *   icon = "fa-instagram",
+ *   iconSquare = "fa-square-instagram",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "https://www.instagram.com/",
  * )
  */

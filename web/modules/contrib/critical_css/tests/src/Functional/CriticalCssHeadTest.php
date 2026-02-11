@@ -3,8 +3,8 @@
 namespace Drupal\Tests\critical_css\Functional;
 
 use Drupal\Component\Utility\Html;
-use Drupal\Tests\BrowserTestBase;
 use Drupal\node\Entity\NodeType;
+use Drupal\Tests\BrowserTestBase;
 
 /**
  * Tests Critical CSS functionality on HTML HEAD.

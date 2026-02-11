@@ -5,7 +5,7 @@
   display: block;
 }
 
-#drupal-off-canvas-wrapper ul li a.inline-block-list__item.simple_accordion:before {
+#drupal-off-canvas ul li a.inline-block-list__item.simple_accordion:before {
   content: "\f03c";
   font-family: FontAwesome;
   font-size: 60px;

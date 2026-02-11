@@ -28,7 +28,7 @@ class ExifFactory {
    * Return configured exif parser.
    *
    * @return \Drupal\exif\ExifInterface
-   *   cCnfigured exif parser
+   *   Configured exif parser
    */
   public static function getExifInterface() {
     $config = \Drupal::config('exif.settings');

@@ -12,6 +12,7 @@ use Drupal\social_link_field\PlatformBase;
  *   name = @Translation("X (Twitter)"),
  *   icon = "fa-x-twitter",
  *   iconSquare = "fa-square-x-twitter",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "https://www.x.com/",
  * )
  */

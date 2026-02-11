@@ -10,8 +10,6 @@ layoutcomponents:
 
 layoutcomponents.editform:
   js:
-    js/includes/jquery.alterclass.js: {}
-    js/includes/jquery.changeelementtype.js: {}
     js/editForm.js: {}
     js/tooltip.js: {}
   dependencies:
@@ -21,6 +19,7 @@ layoutcomponents.editform:
 layoutcomponents.lateral:
   js:
     js/lateral/dialog.js: {}
+    js/custom-lb.js: {}
 
 layoutcomponents.lateral-column:
   js:

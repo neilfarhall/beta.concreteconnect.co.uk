@@ -10,8 +10,9 @@ use Drupal\social_link_field\PlatformBase;
  * @SocialLinkFieldPlatform(
  *   id = "email",
  *   name = @Translation("Email"),
- *   icon = "fa-solid fa-envelope",
- *   iconSquare = "fa-envelope",
+ *   icon = "fa-envelope",
+ *   iconSquare = "fa-square-envelope",
+ *   iconSet = "fa-solid",
  *   urlPrefix = "mailto:",
  * )
  */

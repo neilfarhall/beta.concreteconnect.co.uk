@@ -6,5 +6,5 @@ social_link_field.font_awesome_formatter:
 fontawesome.component:
   css:
     component:
-      //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css: { type: external, minified: true }
-      //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/v4-shims.min.css: { type: external, minified: true }
+      //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css: { type: external, minified: true }
+      //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/v4-shims.min.css: { type: external, minified: true }

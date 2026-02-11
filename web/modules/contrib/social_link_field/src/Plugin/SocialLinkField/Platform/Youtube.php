@@ -12,6 +12,7 @@ use Drupal\social_link_field\PlatformBase;
  *   name = @Translation("Youtube Channel"),
  *   icon = "fa-youtube",
  *   iconSquare = "fa-youtube-square",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "http://www.youtube.com/@",
  * )
  */

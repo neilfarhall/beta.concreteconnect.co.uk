@@ -9,6 +9,7 @@ use Drupal\Core\Plugin\PluginFormFactoryInterface;
 use Drupal\layout_builder\Controller\LayoutRebuildTrait;
 use Drupal\layout_builder\Form\ConfigureSectionForm;
 use Drupal\layout_builder\LayoutTempstoreRepositoryInterface;
+use Drupal\layout_builder\SectionComponent;
 use Drupal\layout_builder\SectionStorageInterface;
 use Drupal\layout_builder\Section;
 use Drupal\layoutcomponents\LcSectionManager;
@@ -57,6 +58,36 @@ class LcConfigureSection extends ConfigureSectionForm {
   protected $isDefault;
 
   /**
+   * If the section must be update.
+   *
+   * @var bool
+   */
+  protected bool $updateLayout = FALSE;
+
+  /**
+   * Autosave.
+   *
+   * @var bool
+   */
+  protected bool $autosave = FALSE;
+
+  /**
+   * If the sections are tabs.
+   *
+   * @var bool
+   */
+  protected bool $isTabs = FALSE;
+
+  protected $plugins = [
+    'layoutcomponents_one_column' => 1,
+    'layoutcomponents_two_column' => 2,
+    'layoutcomponents_three_column' => 3,
+    'layoutcomponents_four_column' => 4,
+    'layoutcomponents_five_column' => 5,
+    'layoutcomponents_six_column' => 6,
+  ];
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(LayoutTempstoreRepositoryInterface $layout_tempstore_repository, PluginFormFactoryInterface $plugin_form_manager, RequestStack $request, LcLayoutsManager $layout_manager, LcSectionManager $lc_section_manager) {
@@ -97,36 +128,17 @@ class LcConfigureSection extends ConfigureSectionForm {
     }
 
     // Get custom params.
-    $update_layout = $this->request->getCurrentRequest()->query->all()['update_layout'];
-    $autosave = $this->request->getCurrentRequest()->query->get('autosave');
-    $sub_section = $this->request->getCurrentRequest()->query->all('sub_section');
+    $this->updateLayout = $this->request->getCurrentRequest()->query->get('update_layout') ?? FALSE;
+    $this->autosave = $this->request->getCurrentRequest()->query->get('autosave') ?? FALSE;
+    $sub_section = $this->request->getCurrentRequest()->query->get('sub_section');
+    $tabs = $this->request->getCurrentRequest()->query->get('is_tabs');
+    $this->isTabs = isset($tabs) ? $tabs : 0;
 
     $form_state->setValue('sub_section', $sub_section);
 
     // Do we need update the layout?
-    if (boolval($update_layout)) {
-      // Old Section.
-      $section = $section_storage->getSection($delta);
-
-      // Store old components.
-      $components = $section->getComponents();
-
-      // All componentes should be in first region.
-      foreach ($components as $key => $component) {
-        $component->set('region', 'first');
-      }
-
-      // Store old layout settings.
-      $layoutSettings = $section->getLayoutSettings();
-
-      // New section with old values.
-      $newSection = new Section($plugin_id, $layoutSettings, $components);
-
-      // Remove old section to not get conflicts.
-      $section_storage->removeSection($delta);
-
-      // Register new section in SectionStorage $section_storage.
-      $section_storage->insertSection($delta, $newSection);
+    if (boolval($this->updateLayout)) {
+      $this->updateLayoutSettings($section_storage, $delta, $plugin_id);
 
       // Remove plugin id to parent form detect new section as old section.
       $plugin_id = NULL;
@@ -134,21 +146,21 @@ class LcConfigureSection extends ConfigureSectionForm {
 
     $build = parent::buildForm($form, $form_state, $section_storage, $delta, $plugin_id);
 
-    if ($this->isDefault && !boolval($autosave)) {
+    if ($this->isDefault && !boolval($this->autosave)) {
       // This section cannot be configured.
       $message = 'This section cannot be configured because is configurated as default';
       $build = $this->lcLayoutManager->getDefaultCancel($message);
     }
     else {
       // Add new step if is new section or is a update.
-      if (boolval($autosave)) {
+      if (boolval($this->autosave)) {
         $build['new_section'] = [
           '#type' => 'help',
           '#markup' => '<div class="layout_builder__add-section-confirm">' . $this->t("Are you sure to add a new section?") . '</div>',
           '#weight' => -1,
         ];
 
-        if (boolval($update_layout)) {
+        if (boolval($this->updateLayout)) {
           $build['new_section']['#markup'] = '<div class="layout_builder__add-section-confirm">' . $this->t("Are you sure to change layout?") . '</div>';
         }
 
@@ -182,6 +194,102 @@ class LcConfigureSection extends ConfigureSectionForm {
     return $build;
   }
 
+  public function updateLayoutSettings($section_storage, $delta, $plugin_id) {
+    /** @var \Drupal\layout_builder\Section $section */
+    $section = $section_storage->getSection($delta);
+
+    // Old section settings.
+    $layoutSettings = $section->getLayoutSettings();
+
+    // Get the old regions.
+    $regions = $layoutSettings['regions'];
+
+    // Generate the new section.
+    $newSection = new Section($plugin_id);
+
+    // The new layout settings.
+    $newLayoutSettings = $newSection->getLayoutSettings();
+    $n_regions = $newLayoutSettings['regions'];
+    $newLayoutSettings = $layoutSettings;
+    $newLayoutSettings['regions'] = $n_regions;
+
+    // Preprocess to determine the region of each component.
+    foreach ($regions as $plugin => $region) {
+      $region_components = $section->getComponentsByRegion($plugin);
+
+      /** @var \Drupal\layout_builder\SectionComponent  $component */
+      foreach ($region_components as $key => $component) {
+        $component = $component->toArray();
+
+        // If the componente region exists in the new section or if.
+        // The regions doesnt exists in the new section.
+        if (array_key_exists($plugin, $newLayoutSettings['regions'])) {
+          $n_plugin = $component['region'];
+        }
+        else {
+          $n_plugin = 'first';
+        }
+
+        // Anyway, include the component in the new section.
+        $newSection->appendComponent(new SectionComponent($component['uuid'], $n_plugin, $component['configuration'], $component['additional']));
+      }
+    }
+
+    // Restore previous each region configuration.
+    foreach ($newLayoutSettings['regions'] as $key => $region) {
+      if (array_key_exists($key, $regions)) {
+        $newLayoutSettings['regions'][$key] = $regions[$key];
+      }
+    }
+
+    // Check if the new section is tabs.
+    $newLayoutSettings = $this->setSectionAsTabs($newLayoutSettings);
+
+    // Set the new layout settings.
+    $newSection->setLayoutSettings($newLayoutSettings);
+
+
+
+    // Remove old section to not get conflicts.
+    $section_storage->removeSection($delta);
+
+    // Register the new section.
+    $section_storage->insertSection($delta, $newSection);
+
+    // If the new section doesnt contains the same number of colums.
+    // We have to check if the deleted column contained any section.
+    // If yes, we have to move the section to the first column.
+    $lcId = $newLayoutSettings['lc_id'];
+    foreach ($section_storage->getSections() as $dd => $section) {
+      $settings = $section->getLayoutSettings();
+
+      // Looking for the sections of deleted columns.
+      if (array_key_exists('sub_section', $settings) && $settings['sub_section']['lc_id'] == $lcId) {
+        if (!array_key_exists($settings['sub_section']['parent_region'], $newLayoutSettings['regions'])) {
+          // Set as fisrt column the parent of sections.
+          $settings['sub_section']['parent_region'] = 'first';
+          $section->setLayoutSettings($settings);
+          $section_storage->removeSection($dd);
+          $section_storage->insertSection($dd, $section);
+        }
+      }
+    }
+
+    return $section_storage;
+  }
+
+  public function setSectionAsTabs(array $layoutSettings) {
+    // Check if the new section is tabs.
+    if (boolval($this->isTabs)) {
+      $layoutSettings['section']['general']['structure']['section_tabs'] = 1;
+    }
+    else {
+      $layoutSettings['section']['general']['structure']['section_tabs'] = 0;
+    }
+
+    return $layoutSettings;
+  }
+
   /**
    * Custom submit form to include sub section configuration.
    *
@@ -197,6 +305,11 @@ class LcConfigureSection extends ConfigureSectionForm {
 
     $plugin_id = $this->layout->getPluginId();
     $configuration = $this->layout->getConfiguration();
+
+    // Tabs proccess.
+    if (boolval($this->isTabs)) {
+      $configuration = $this->setSectionAsTabs($configuration);
+    }
 
     if ($this->isUpdate) {
       $this->sectionStorage->getSection($this->delta)->setLayoutSettings($configuration);

@@ -2,13 +2,13 @@ name: Layout Components - Simple Image
 type: module
 description: Simple image block
 package: LayoutComponents
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^8.8 || ^9
 dependencies:
   - drupal:layoutcomponents
   - drupal:image
   - drupal:media
 
-# Information added by Drupal.org packaging script on 2023-12-14
-version: '3.0.2'
+# Information added by Drupal.org packaging script on 2022-06-05
+version: '4.0.0'
 project: 'layoutcomponents'
-datestamp: 1702568529
+datestamp: 1654427139

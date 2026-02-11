@@ -139,9 +139,10 @@ class LcChooseSectionController extends ChooseSectionController {
 
     // Get update layout param.
     $updateLayout = $this->request->getCurrentRequest()->query->get('update_layout');
+    $isTabs = $this->request->getCurrentRequest()->query->get('is_tabs');
 
     // Get sub section param.
-    $subSection = $this->request->getCurrentRequest()->query->all('sub_section');
+    $subSection = $this->request->getCurrentRequest()->query->get('sub_section');
 
     $build = parent::build($section_storage, $delta);
 
@@ -188,6 +189,7 @@ class LcChooseSectionController extends ChooseSectionController {
           'update_layout' => $updateLayout,
           'autosave' => 1,
           'sub_section' => $subSection,
+          'is_tabs' => $isTabs,
         ]);
       $item['#attributes']['data-dialog-options'] = $this->dialogOptions();
 
@@ -202,9 +204,10 @@ class LcChooseSectionController extends ChooseSectionController {
         }
       }
     }
-    // $output['layouts']['#items'] = array_merge($layoutcomponents, $others);.
+    //$build['layouts']['#items'] = array_merge($layoutcomponents, $others);
     // Only layoutcomponents layouts.
     $build['layouts']['#items'] = $layoutcomponents;
+    $build['tabs']['#items'] = $layoutcomponents;
 
     return $build;
   }

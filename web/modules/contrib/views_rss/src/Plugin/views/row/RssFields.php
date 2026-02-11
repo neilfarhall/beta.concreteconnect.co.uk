@@ -3,10 +3,12 @@
 namespace Drupal\views_rss\Plugin\views\row;
 
 use Drupal\Component\Utility\Xss;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
 use Drupal\views\Plugin\views\row\RowPluginBase;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Renders an RSS item based on fields.
@@ -27,6 +29,40 @@ class RssFields extends RowPluginBase {
    * @var bool
    */
   protected $usesFields = TRUE;
+
+  /**
+   * The module handler service.
+   */
+  protected ModuleHandlerInterface $moduleHandler;
+
+  /**
+   * Constructs a RssPluginBase  object.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   The module handler service.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ModuleHandlerInterface $module_handler) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->moduleHandler = $module_handler;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new self(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('module_handler'),
+    );
+  }
 
   /**
    * Function defineOptions.
@@ -56,6 +92,9 @@ class RssFields extends RowPluginBase {
     $initial_labels = ['' => $this->t('- None -')];
     $view_fields_labels = $this->displayHandler->getFieldLabels();
     $view_fields_labels = array_merge($initial_labels, $view_fields_labels);
+
+    // Element groups could be used both in channel and item settings.
+    $element_groups = views_rss_get('element_groups');
 
     $item_elements = views_rss_get('item_elements');
     if (count($item_elements)) {
@@ -100,7 +139,7 @@ class RssFields extends RowPluginBase {
             }
             // Add help link if provided.
             if (isset($definition['help']) && $definition['help']) {
-              $form_item['#description'] .= ' ' . Link::fromTextAndUrl('[?]', Url::fromUri($definition['help']), ['attributes' => ['title' => $this->t('Need more information?')]])->toString();
+              $form_item['#description'] .= ' ' . Link::fromTextAndUrl('[?]', Url::fromUri($definition['help']))->toString();
             }
 
             // Check if element should be displayed in a subgroup.
@@ -135,7 +174,7 @@ class RssFields extends RowPluginBase {
   public function validate() {
     $errors = parent::validate();
 
-    if (!\Drupal::moduleHandler()->moduleExists('views_rss_core')) {
+    if (!$this->moduleHandler->moduleExists('views_rss_core')) {
       $errors[] = $this->t('You have to enable <em>Views RSS: Core Elements</em> module to have access to basic feed elements.');
     }
     else {
@@ -150,7 +189,7 @@ class RssFields extends RowPluginBase {
   }
 
   /**
-   * Protected fuction mapRow.
+   * Protected function mapRow.
    */
   protected function mapRow($row) {
     $rendered_fields = $raw_fields = [];
@@ -169,6 +208,8 @@ class RssFields extends RowPluginBase {
 
     // Rewrite view rows to XML item rows.
     $item_elements = views_rss_get('item_elements');
+    $raw_item = [];
+    $item = [];
     foreach ($rendered_fields as $field_id => $rendered_field) {
       $item = $raw_item = [];
 
@@ -225,7 +266,7 @@ class RssFields extends RowPluginBase {
     // Preprocess whole item array before preprocessing separate elements.
     $hook = 'views_rss_preprocess_item';
     $modules = [];
-    \Drupal::moduleHandler()->invokeAllWith($hook, function (callable $hook, string $module) use (&$modules) {
+    $this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $module) use (&$modules) {
       $modules[] = $module;
     });
     $item_variables = [
@@ -238,7 +279,7 @@ class RssFields extends RowPluginBase {
       $item_variables['raw'] = $this->view->views_rss['raw_items'][$row->index];
     }
     foreach ($modules as $module) {
-      \Drupal::moduleHandler()->invoke($module, $hook, [$item_variables]);
+      $this->moduleHandler->invoke($module, $hook, [$item_variables]);
     }
 
     $item = new \stdClass();

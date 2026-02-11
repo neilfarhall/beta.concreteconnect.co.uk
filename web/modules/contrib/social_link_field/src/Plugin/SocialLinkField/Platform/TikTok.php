@@ -11,6 +11,7 @@ use Drupal\social_link_field\PlatformBase;
  *   id = "tiktok",
  *   name = @Translation("TikTok"),
  *   icon = "fa-tiktok",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "https://www.tiktok.com/",
  * )
  */

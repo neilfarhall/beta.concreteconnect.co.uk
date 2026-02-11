@@ -2,12 +2,12 @@
 
 namespace Drupal\module_missing_message_fixer\Commands;
 
-use Drush\Commands\DrushCommands;
-use Drupal\module_missing_message_fixer\ModuleMissingMessageFixer;
 use Consolidation\OutputFormatters\StructuredData\RowsOfFields;
+use Drupal\module_missing_message_fixer\ModuleMissingMessageFixer;
+use Drush\Commands\DrushCommands;
 
 /**
- * Class MmmfListCommand.
+ * Implements "Missing Module Message Fixer" Drush command.
  *
  * @package Drupal\module_missing_message_fixer
  */

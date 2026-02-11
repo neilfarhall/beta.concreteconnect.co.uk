@@ -39,7 +39,7 @@ class TwigDebugger extends ConfigFormBase {
       '#type' => 'checkbox',
       '#title' => $this->t('Enable Twig Debugging'),
       '#default_value' => $config->get('enabled'),
-      '#description' => $this->t('If checked/ticked, twig debugging will be enable for the site.'),
+      '#description' => $this->t('Enable the <a href="@debug">Twig template engine debugging tool</a>.', array('@debug' => "https://www.drupal.org/node/1906392"))
     ];
     return parent::buildForm($form, $form_state);
   }

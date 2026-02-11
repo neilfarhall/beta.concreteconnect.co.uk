@@ -3,8 +3,11 @@
 namespace Drupal\exif\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Entity\EntityTypeRepositoryInterface;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -12,62 +15,36 @@ use Drupal\exif\ExifFactory;
 use Drupal\file_entity\Entity\FileType;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Extension\ModuleHandlerInterface;
-use Drupal\Core\Entity\EntityTypeRepositoryInterface;
 
 /**
  * Manage Settings forms.
- *
- * @package Drupal\exif\Controller
  */
 class ExifSettingsForm extends ConfigFormBase implements ContainerInjectionInterface {
 
   use StringTranslationTrait;
 
   /**
-   * The entity manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
-   * The module handler service.
-   *
-   * @var \Drupal\Core\Extension\ModuleHandlerInterface
-   */
-  protected $moduleHandler;
-
-  /**
-   * The entity type repository.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeRepositoryInterface
-   */
-  protected $repository;
-
-  /**
    * Constructs the ExifSettingsForm object.
-   *
-   * @package \Drupal\exif\Form
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
    *   The configuration factory.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   * @param \Drupal\Core\Config\TypedConfigManagerInterface $typedConfigManager
+   *   The typed config service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   The entity manager.
-   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler
    *   The module handler service.
    * @param \Drupal\Core\Entity\EntityTypeRepositoryInterface $repository
    *   Service that provides helper methods for loading entity types.
    */
-  public function __construct(ConfigFactoryInterface $configFactory,
-      EntityTypeManagerInterface $entity_type_manager,
-      ModuleHandlerInterface $module_handler,
-      EntityTypeRepositoryInterface $repository
-      ) {
-    ConfigFormBase::__construct($configFactory);
-    $this->entityTypeManager = $entity_type_manager;
-    $this->moduleHandler = $module_handler;
-    $this->repository = $repository;
+  public function __construct(
+    ConfigFactoryInterface $configFactory,
+    TypedConfigManagerInterface $typedConfigManager,
+    protected EntityTypeManagerInterface $entityTypeManager,
+    protected ModuleHandlerInterface $moduleHandler,
+    protected EntityTypeRepositoryInterface $repository,
+  ) {
+    parent::__construct($configFactory, $typedConfigManager);
   }
 
   /**
@@ -76,6 +53,7 @@ class ExifSettingsForm extends ConfigFormBase implements ContainerInjectionInter
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('config.factory'),
+      $container->get('config.typed'),
       $container->get('entity_type.manager'),
       $container->get('module_handler'),
       $container->get('entity_type.repository')
@@ -148,7 +126,7 @@ class ExifSettingsForm extends ConfigFormBase implements ContainerInjectionInter
     ];
 
     // The old way (still in use so keep it).
-    if (\Drupal::moduleHandler()->moduleExists("file_entity")) {
+    if ($this->moduleHandler->moduleExists("file_entity")) {
       $form['file'] = [
         '#type' => 'details',
         '#title' => $this->t('File types'),
@@ -166,7 +144,7 @@ class ExifSettingsForm extends ConfigFormBase implements ContainerInjectionInter
         '#title' => $this->t('Filetypes'),
         '#options' => $all_mt,
         '#default_value' => $config->get('filetypes'),
-        '#description' => $this->t('Select filetypes which should be checked for Exif & ITPC data.'),
+        '#description' => $this->t('Select filetypes which should be checked for Exif & IPTC data.'),
       ];
     }
     else {
@@ -176,7 +154,7 @@ class ExifSettingsForm extends ConfigFormBase implements ContainerInjectionInter
       ];
     }
 
-    if (\Drupal::moduleHandler()->moduleExists("media")) {
+    if ($this->moduleHandler->moduleExists("media")) {
       $form['media'] = [
         '#type' => 'details',
         '#title' => $this->t('Media types'),
@@ -298,7 +276,7 @@ class ExifSettingsForm extends ConfigFormBase implements ContainerInjectionInter
           '#title' => $this->t('File types'),
           '#options' => $all_types,
           '#default_value' => $config->get('filetypes'),
-          '#description' => $this->t('Select file types which should be checked for Exif & ITPC data.'),
+          '#description' => $this->t('Select file types which should be checked for Exif & IPTC data.'),
         ];
       }
     }

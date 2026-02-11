@@ -20,10 +20,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xml:base="{{ link }}"{{ namespaces }}>
   <channel>
-    <title>{{ title }}</title>
-    <link>{{ link }}</link>
-    <description>{{ description }}</description>
-    <language>{{ langcode }}</language>
+    <title>{{ title -}}</title>
+    <link>{{ link -}}</link>
+    <description><![CDATA[{{ description -}}]]></description>
+    <language>{{ langcode -}}</language>
     {##
      # Output the channel elements as a raw tag so that the included HTML tags
      # are not converted to HTML entities. Also rename the "imagelink" tag to
@@ -31,7 +31,7 @@
      # system. This is safe to do as any security concerns are taken care of
      # by the render function.
      #}
-    {{ channel_elements|render|replace({"imagelink": "link"})|raw }}
-    {{ items }}
+    {{ channel_elements|render|replace({"imagelink": "link"})|raw -}}
+    {{ items -}}
   </channel>
 </rss>

@@ -1,12 +1,11 @@
 name: Token Block
-description: Allows users to create block with token. 
-core: 8.x
+description: It provides one custom block named as "Token Block" for creating dynamic content using token value. 
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 type: module
-core_version_requirement: ^8 || ^9 || ^10
 dependencies:
   - token
 
-# Information added by Drupal.org packaging script on 2023-07-26
-version: '2.0.0'
+# Information added by Drupal.org packaging script on 2024-07-20
+version: '2.0.2'
 project: 'token_block'
-datestamp: 1690386715
+datestamp: 1721472812

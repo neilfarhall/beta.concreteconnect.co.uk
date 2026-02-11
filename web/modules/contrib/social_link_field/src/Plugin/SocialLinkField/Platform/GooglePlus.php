@@ -12,6 +12,7 @@ use Drupal\social_link_field\PlatformBase;
  *   name = @Translation("Google+"),
  *   icon = "fa-google-plus",
  *   iconSquare = "fa-google-plus-square",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "https://plus.google.com/",
  * )
  */

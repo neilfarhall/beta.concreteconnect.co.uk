@@ -313,19 +313,33 @@ function views_rss_core_preprocess_views_view_rss(&$variables) {
   if (count($view->result) > 0) {
     $max_pub_date = NULL;
     foreach ($variables['rows'] as $row) {
-      foreach ($row['#row']->elements as $element) {
-        if ($element['key'] === 'pubDate') {
-          // This string cannot be parsed if there is a dash present.
-          // Unfortunately the default date output format for Drupal includes a
-          // dash, so remove it.
-          $this_pub_date = (string) $element['value'];
-          $this_pub_date = str_replace(' - ', ' ', $this_pub_date);
-          $this_pub_date = strtotime($this_pub_date);
-          if (!empty($this_pub_date) && (!$max_pub_date || $this_pub_date > $max_pub_date)) {
-            $max_pub_date = $this_pub_date;
+      if (isset($row['#row']) && is_object($row['#row']) && property_exists($row['#row'], 'elements')) {
+        $elements = $row['#row']->elements;
+        if (is_array($elements) || is_object($elements)) {
+          foreach ($elements as $element) {
+            if ($element['key'] === 'pubDate') {
+              // This string cannot be parsed if there is a dash present.
+              // Unfortunately the default date output format for Drupal
+              // includes a dash, so remove it.
+              $this_pub_date = (string) $element['value'];
+              $this_pub_date = str_replace(' - ', ' ', $this_pub_date);
+              $this_pub_date = strtotime($this_pub_date);
+              if (!empty($this_pub_date) && (!$max_pub_date || $this_pub_date > $max_pub_date)) {
+                $max_pub_date = $this_pub_date;
+              }
+              break;
+            }
           }
-          $element['value'] = views_rss_format_date($this_pub_date);
-          break;
+        }
+        // Ensure that the max value is neither the default NULL value nor a
+        // zero which would result in the date showing as January 1st, 1970.
+        if (!empty($max_pub_date)) {
+          $variables['channel_elements']['pubDate'] = [
+            '#type' => 'html_tag',
+            '#tag' => 'pubDate',
+            // Convert the date value to RFC-822 format.
+            '#value' => views_rss_format_date($max_pub_date),
+          ];
         }
       }
     }

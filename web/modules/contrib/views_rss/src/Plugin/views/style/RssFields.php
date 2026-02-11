@@ -3,10 +3,13 @@
 namespace Drupal\views_rss\Plugin\views\style;
 
 use Drupal\Component\Utility\Xss;
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
 use Drupal\views\Plugin\views\style\StylePluginBase;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Default style plugin to render an RSS feed from fields.
@@ -36,6 +39,64 @@ class RssFields extends StylePluginBase {
    * @var bool
    */
   protected $usesGrouping = FALSE;
+
+  /**
+   * The namespaces to add to the output.
+   *
+   * @var array
+   */
+  public array $namespaces = [];
+
+  /**
+   * The channel elements present for this display.
+   *
+   * @see \Drupal\views\Plugin\views\style\Row
+   */
+  // phpcs:ignore
+  public array $channel_elements = [];
+
+  /**
+   * The module handler service.
+   */
+  protected ModuleHandlerInterface $moduleHandler;
+
+  /**
+   * Configuration Factory.
+   */
+  protected ConfigFactoryInterface $configFactory;
+
+  /**
+   * Constructs a RssPluginBase  object.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   The module handler service.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ModuleHandlerInterface $module_handler, ConfigFactoryInterface $config_factory) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->moduleHandler = $module_handler;
+    $this->configFactory = $config_factory;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new self(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('module_handler'),
+      $container->get('config.factory'),
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -176,7 +237,7 @@ class RssFields extends StylePluginBase {
             }
             // Add help link if provided.
             if (!empty($definition['help'])) {
-              $form_item['#description'] .= ' ' . Link::fromTextAndUrl('[?]', Url::fromUri($definition['help']), ['attributes' => ['title' => $this->t('Need more information?')]])->toString();
+              $form_item['#description'] .= ' ' . Link::fromTextAndUrl('[?]', Url::fromUri($definition['help']))->toString();
             }
             // Check if element should be displayed in a subgroup.
             if (!empty($definition['group'])) {
@@ -277,11 +338,11 @@ class RssFields extends StylePluginBase {
 
     $hook = 'views_rss_options_form_validate';
     $modules = [];
-    \Drupal::moduleHandler()->invokeAllWith($hook, function (callable $hook, string $module) use (&$modules) {
+    $this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $module) use (&$modules) {
       $modules[] = $module;
     });
     foreach ($modules as $module) {
-      \Drupal::moduleHandler()->invoke($module, $hook, [$form, $form_state]);
+      $this->moduleHandler->invoke($module, $hook, [$form, $form_state]);
     }
   }
 
@@ -293,11 +354,11 @@ class RssFields extends StylePluginBase {
 
     $hook = 'views_rss_options_form_submit';
     $modules = [];
-    \Drupal::moduleHandler()->invokeAllWith($hook, function (callable $hook, string $module) use (&$modules) {
+    $this->moduleHandler->invokeAllWith($hook, function (callable $hook, string $module) use (&$modules) {
       $modules[] = $module;
     });
     foreach ($modules as $module) {
-      \Drupal::moduleHandler()->invoke($module, $hook, [$form, $form_state]);
+      $this->moduleHandler->invoke($module, $hook, [$form, $form_state]);
     }
   }
 
@@ -309,7 +370,7 @@ class RssFields extends StylePluginBase {
    */
   protected function getChannelElements() {
     $elements = [];
-    $renderer = \Drupal::service('renderer');
+    $renderer = $this->getRenderer();
 
     foreach (views_rss_get('channel_elements') as $module => $module_channel_elements) {
       foreach ($module_channel_elements as $element => $definition) {
@@ -386,7 +447,11 @@ class RssFields extends StylePluginBase {
             if (!empty($rss_element['value'])) {
               // Render arrays.
               if (is_array($rss_element['value'])) {
-                $render_element['#value'] = $renderer->renderPlain($rss_element['value'], FALSE);
+                $render_element['#value'] = method_exists($renderer, 'renderInIsolation') ?
+                  $renderer->renderInIsolation($rss_element['value'], FALSE) :
+                  // @todo use DeprecationHelper when D9 support will be dropped
+                  // @phpstan-ignore method.deprecated
+                  $renderer->renderPlain($rss_element['value'], FALSE);
               }
               // Simple values.
               else {
@@ -422,7 +487,7 @@ class RssFields extends StylePluginBase {
       $description = $this->tokenizeValue($description, 0);
     }
     else {
-      $description = \Drupal::config('system.site')->get('slogan');
+      $description = $this->configFactory->get('system.site')->get('slogan');
     }
 
     return $description;
@@ -453,7 +518,7 @@ class RssFields extends StylePluginBase {
             $namespace_key = $definition['prefix'] . ':' . $namespace;
             $namespaces[$namespace_key] = $definition['uri'];
           }
-          // Namespaces without prefix, for example: content="" or foaf="".
+          // Namespaces without prefix, for example: content="".
           else {
             $namespaces[$namespace] = $definition['uri'];
           }
@@ -488,6 +553,14 @@ class RssFields extends StylePluginBase {
       '#view' => $this->view,
       '#options' => $this->options,
       '#rows' => $rows,
+      '#attached' => [
+        'http_header' => [
+          [
+            'Content-Type',
+            'application/rss+xml; charset=utf-8',
+          ],
+        ],
+      ],
     ];
     unset($this->view->row_index);
     return $build;

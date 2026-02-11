@@ -12,6 +12,7 @@ use Drupal\social_link_field\PlatformBase;
  *   name = @Translation("Vimeo"),
  *   icon = "fa-vimeo",
  *   iconSquare = "vimeo-square",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "http://www.vimeo.com/",
  * )
  */

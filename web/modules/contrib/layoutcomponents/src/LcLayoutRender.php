@@ -5,6 +5,7 @@ namespace Drupal\layoutcomponents;
 use Drupal\Component\Utility\DiffArray;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\NestedArray;
+use Drupal\Component\Uuid\Uuid;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -448,7 +449,7 @@ class LcLayoutRender {
         if ($media->bundle() == 'image') {
           $background_image_fid = $media->getSource()->getSourceFieldValue($media);
           $file = File::load($background_image_fid);
-          $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+          $url = Url::fromUri(file_create_url($file->getFileUri()))->getUri();
           if (!empty($url)) {
             if (boolval($background_image_full)) {
               // Background as normal image.
@@ -504,6 +505,12 @@ class LcLayoutRender {
       }
     }
 
+    // Set extra classes.
+    $extra_id = $this->getSetting('section.styles.misc.extra_id', '');
+    if (!empty($extra_id)) {
+      $attributes->setAttribute('id', preg_replace('/[^A-Za-z0-9\-]/', '', $extra_id));
+    }
+
     // Set extra attributes.
     $extra_attributes = $this->getSetting('section.styles.misc.extra_attributes', '');
     if (!empty($extra_attributes)) {
@@ -548,11 +555,12 @@ class LcLayoutRender {
 
     $cont = 0;
     foreach ($this->getSetting('regions') as $name => $column) {
-      // Set Column Title.
-      $this->setColumnTitle($name);
-
-      // Set Column config.
-      $this->setColumn($name, $cont);
+      if (!$this->isAnEmptyRegion($name)) {
+        // Set Column Title.
+        $this->setColumnTitle($name);
+        // Set Column config.
+        $this->setColumn($name, $cont, mt_rand(1, 1000));
+      }
 
       $cont++;
     }
@@ -634,8 +642,10 @@ class LcLayoutRender {
    * @param string $delta
    *   The delta.
    */
-  public function setColumn($name, $delta) {
+  public function setColumn($name, $delta, $section_delta) {
     $path = 'regions.' . $name;
+    $column_tab_title = $this->getSetting($path . '.general.tab_title', '');
+    $column_tab_classes = $this->getSetting($path . '.general.tab_classes', '');
     $column_size_xs = explode('/', $this->getSetting('section.general.structure.section_structure_xs', 1));
     $column_size_sm = explode('/', $this->getSetting('section.general.structure.section_structure_sm', 1));
     $column_size = explode('/', $this->getSetting('section.general.structure.section_structure', 1));
@@ -656,10 +666,54 @@ class LcLayoutRender {
     $remove_padding_left = $this->getSetting($path . '.styles.spacing.paddings_left');
     $remove_padding_right = $this->getSetting($path . '.styles.spacing.paddings_right');
     $extra_classes = $this->getSetting($path . '.styles.misc.extra_class');
+    $extra_id = $this->getSetting($path . '.styles.misc.extra_id');
 
     $column_classes = new Attribute();
+    $column_tab_attributes = new Attribute();
+    $column_tab_content_attributes = new Attribute();
     $column_styles = [];
     $bg_wrapper = FALSE;
+
+    if ($this->isEmpty($name)) {
+      $column_classes->addClass('lc-empty');
+    }
+
+    // Column tab title.
+    if (!isset($column_tab_title) || empty($column_tab_title)) {
+      $this->setSetting($path . '.general.tab_title', $name);
+    }
+
+    // Tab classes.
+    if (!empty($column_tab_classes)) {
+      foreach (explode(',', $column_tab_classes) as $class) {
+        $class = str_replace(' ', '', $class);
+        $column_tab_attributes->addClass(preg_replace('/[^A-Za-z0-9\-]/', '', $class));
+      }
+    }
+
+    // Tab active class if first.
+    if ($name == 'first') {
+      $column_tab_attributes->addClass('active');
+      $column_tab_content_attributes->addClass('active');
+    }
+
+    $column_tab_attributes->addClass('nav-link');
+    $column_tab_content_attributes->addClass('tab-pane');
+
+    // Provide a default tab id.
+    $column_tab_attributes->setAttribute('id', $name . $section_delta . '-tab');
+    $column_tab_content_attributes->setAttribute('id', $name . $section_delta);
+    $this->setSetting($path . '.general.tab_id', $name . $section_delta);
+
+    // The rest of tab attributes.
+    $column_tab_attributes->setAttribute('data-bs-toggle', 'tab');
+    $column_tab_attributes->setAttribute('data-bs-target', '#' . $name . $section_delta);
+    $column_tab_attributes->setAttribute('type', 'button');
+    $column_tab_attributes->setAttribute('role', 'tab');
+    $column_tab_attributes->setAttribute('aria-controls', $name . $section_delta);
+    $column_tab_attributes->setAttribute('aria-selected', TRUE);
+    $column_tab_content_attributes->setAttribute('role', 'tabpanel');
+    $column_tab_content_attributes->setAttribute('aria-labelledby', $name . $section_delta . '-tab');
 
     // Column default classes.
     $column_classes->addClass('lc-inline_column_' . $name . '-edit');
@@ -717,7 +771,7 @@ class LcLayoutRender {
         if ($media->bundle() == 'image') {
           $background_image_fid = $media->getSource()->getSourceFieldValue($media);
           $file = File::load($background_image_fid);
-          $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+          $url = Url::fromUri(file_create_url($file->getFileUri()))->getUri();
           if (!empty($url)) {
             if (boolval($background_image_full)) {
               // Background as normal image.
@@ -768,6 +822,11 @@ class LcLayoutRender {
         $class = str_replace(' ', '', $class);
         $column_classes->addClass(preg_replace('/[^A-Za-z0-9\-]/', '', $class));
       }
+    }
+
+    // Column ID.
+    if (!empty($extra_id)) {
+      $column_classes->setAttribute('id', preg_replace('/[^A-Za-z0-9\-]/', '', $extra_id));
     }
 
     // Set column config.
@@ -860,6 +919,8 @@ class LcLayoutRender {
     // Column content.
     $this->setSetting('regions.' . $name . '.content', $content);
     $this->setSetting('regions.' . $name . '.attributes', "lc-inline_column_$name-content-edit");
+    $this->setSetting('regions.' . $name . '.tab_attr', $column_tab_attributes);
+    $this->setSetting('regions.' . $name . '.tab_content_attr', $column_tab_content_attributes);
 
     // Store the region inside container width custom theme.
     $new_region = [
@@ -1040,6 +1101,101 @@ class LcLayoutRender {
     $styles = new Attribute();
     $styles->setAttribute('style', implode(';', $title_styles));
     $this->setSetting('title.styles.attr_styles.title', $styles);
+  }
+
+  /**
+   * Check if the column is empty.
+   *
+   * @param $name
+   * @return bool
+   */
+  public function isEmpty($name) {
+    $section = $this->getContent();
+    $cont = 0;
+    if (array_key_exists($name, $section)) {
+      foreach ($section[$name] as $uuid => $block) {
+        if (!Uuid::isValid($uuid)) {
+          continue;
+        }
+        $cont++;
+      }
+
+      if ($cont > 0) {
+        return FALSE;
+      }
+    }
+
+    return TRUE;
+  }
+  /**
+   * Determine if the columns must be hidden by the view content.
+   *
+   * @param $name
+   *
+   * @return bool
+   */
+  public function isAnEmptyRegion($name) {
+    $section = $this->getContent();
+    $n_views = 0;
+    $n_empty_views = 0;
+    if (!$this->isAdminLayoutPage()) {
+      if (array_key_exists($name, $section)) {
+
+        foreach ($section[$name] as $uuid => $block) {
+          if (!Uuid::isValid($uuid)) {
+            continue;
+          }
+
+          if (!array_key_exists('#base_plugin_id', $block)) {
+            continue;
+          }
+
+          if ($block['#base_plugin_id'] !== 'views_block') {
+            continue;
+          }
+
+          /** @var \Drupal\views\ViewExecutable $view */
+          $view = $block['content']['#view'];
+          if (empty($view->result)) {
+            $n_empty_views++;
+
+            // If the block is a view and the view is empty, hidde the title.
+            $section[$name][$uuid]['#configuration']['label_display'] = '';
+          }
+
+          $n_views++;
+        }
+
+        if ($n_views > 0 && $n_views == $n_empty_views) {
+          // If region is not marked as "hidde if view empty", do not continue.
+          $region_if_empty_view = (array_key_exists('hidde_if_empty_view', $section['#settings']['regions'][$name]['general'])) ? $section['#settings']['regions'][$name]['general']['hidde_if_empty_view'] : 0;
+          if (boolval($region_if_empty_view)) {
+            $this->deleteRegion($name);
+            return TRUE;
+          }
+        }
+
+        $this->setContent($section);
+      }
+      else {
+        // If region is empty, check if we have to hidde it.
+        $region_if_empty = (array_key_exists('hidde_if_empty', $section['#settings']['regions'][$name]['general'])) ? $section['#settings']['regions'][$name]['general']['hidde_if_empty'] : 0;
+        if (boolval($region_if_empty)) {
+          $this->deleteRegion($name);
+          return TRUE;
+        }
+      }
+    }
+
+    return FALSE;
+  }
+
+  public function deleteRegion($name) {
+    $regions = $this->getSetting('regions', []);
+
+    // Remove empty region.
+    unset($regions[$name]);
+    $this->setSetting('regions', $regions);
   }
 
   /**

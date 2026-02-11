@@ -12,6 +12,7 @@ use Drupal\social_link_field\PlatformBase;
  *   name = @Translation("Behance"),
  *   icon = "fa-behance",
  *   iconSquare = "fa-behance-square",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "https://www.behance.net/",
  * )
  */

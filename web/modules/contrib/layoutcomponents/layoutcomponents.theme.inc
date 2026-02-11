@@ -30,7 +30,7 @@ function _layoutcomponents_preprocess_layout(array &$variables) {
   // Dispatch the event.
   $event = new LcPreprocessLayoutEvent($layout);
   $event_dispatcher = \Drupal::service('event_dispatcher');
-  $event_dispatcher->dispatch($event, LcPreprocessLayoutEvent::LC_LAYOUT);
+  $event_dispatcher->dispatch(LcPreprocessLayoutEvent::LC_LAYOUT, $event);
 
   $variables['lc_admin'] = FALSE;
   $route = \Drupal::routeMatch()->getRouteObject();

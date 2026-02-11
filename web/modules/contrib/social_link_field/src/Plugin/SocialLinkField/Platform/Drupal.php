@@ -11,6 +11,7 @@ use Drupal\social_link_field\PlatformBase;
  *   id = "drupal",
  *   name = @Translation("Drupal User Profile"),
  *   icon = "fa-drupal",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "https://www.drupal.org/u/",
  * )
  */

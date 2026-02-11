@@ -1,11 +1,15 @@
+tr {
+  display: "table-row";
+}
+
 tr.metadata-section {
   border-top: double cadetblue thin;
   border-bottom: double cadetblue thin;
 }
 
 .metadata-section td {
-  text-align: center;
   align-content: center;
+  text-align: center;
   font-weight: bolder;
 }
 
@@ -13,22 +17,18 @@ tr.metadata-section {
   background-color: #f4f5f0;
 }
 
-.metadata-row {
-  display: 'table-row';
-}
-
 .metadata-row.odd {
   background-color: #f6f5f0;
 }
 
 .metadata-key {
-  font-weight: bold;
   width: 250px;
+  font-weight: bold;
 }
 
 img.sample-image {
-  height: 70px;
   float: right;
+  height: 70px;
   margin: 0 0 15px 15px;
   vertical-align: sub;
 }

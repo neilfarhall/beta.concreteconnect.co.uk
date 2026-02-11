@@ -25,7 +25,7 @@ function views_rss_dc_views_rss_item_elements() {
     'help' => 'http://dublincore.org/documents/1999/07/02/dces/#title',
   ];
   $elements['dc:creator'] = [
-    'description' => t('An entity primarily responsible for making the content of the resource. Examples of a Creator include a person, an organisation, or a service. Typically, the name of a Creator should be used to indicate the entity.'),
+    'description' => t('An entity primarily responsible for making the content of the resource. Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.'),
     'preprocess functions' => ['views_rss_dc_preprocess_item_dc_creator'],
     'help' => 'http://dublincore.org/documents/1999/07/02/dces/#creator',
   ];
@@ -39,11 +39,11 @@ function views_rss_dc_views_rss_item_elements() {
     'help' => 'http://dublincore.org/documents/1999/07/02/dces/#description',
   ];
   $elements['dc:publisher'] = [
-    'description' => t('An entity responsible for making the resource available. Examples of a Publisher include a person, an organisation, or a service. Typically, the name of a Publisher should be used to indicate the entity.'),
+    'description' => t('An entity responsible for making the resource available. Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity.'),
     'help' => 'http://dublincore.org/documents/1999/07/02/dces/#publisher',
   ];
   $elements['dc:contributor'] = [
-    'description' => t('An entity responsible for making contributions to the content of the resource. Examples of a Contributor include a person, an organisation, or a service. Typically, the name of a Contributor should be used to indicate the entity.'),
+    'description' => t('An entity responsible for making contributions to the content of the resource. Examples of a Contributor include a person, an organization, or a service. Typically, the name of a Contributor should be used to indicate the entity.'),
     'help' => 'http://dublincore.org/documents/1999/07/02/dces/#contributor',
   ];
   $elements['dc:date'] = [
@@ -51,6 +51,9 @@ function views_rss_dc_views_rss_item_elements() {
       '@formats_url' => 'http://www.w3.org/TR/NOTE-datetime',
     ]),
     'preprocess functions' => [
+      // Use the 'core' date processor to fix the value prior to converting it.
+      'views_rss_core_preprocess_item_pubdate',
+      // The date value needs to be output in a specific format.
       'views_rss_dc_preprocess_item_dc_date',
     ],
     'help' => 'http://dublincore.org/documents/1999/07/02/dces/#date',

@@ -2,13 +2,14 @@
 
 namespace Drupal\module_missing_message_fixer\Commands;
 
-use Drush\Commands\DrushCommands;
-use Drupal\module_missing_message_fixer\ModuleMissingMessageFixer;
-use Drupal\Core\Database\Connection;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Database\Connection;
+use Drupal\module_missing_message_fixer\ModuleMissingMessageFixer;
+use Drush\Commands\DrushCommands;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Class MmmfFixCommand.
+ * Implements "Missing Module Message Fixer" Drush command.
  *
  * @package Drupal\module_missing_message_fixer
  */
@@ -104,11 +105,11 @@ class MmmfFixCommand extends DrushCommands {
         $modules[] = $name;
       }
       else {
-        $this->output()->writeln(dt('Module ' . $name . ' was not found.'), 'error');
+        $this->output()->writeln(dt('Module ' . $name . ' was not found.'), OutputInterface::VERBOSITY_VERY_VERBOSE);
       }
     }
     else {
-      $this->output()->writeln(dt('Missing input, provide module name or run with --all'), 'error');
+      $this->output()->writeln(dt('Missing input, provide module name or run with --all'), OutputInterface::VERBOSITY_VERY_VERBOSE);
     }
     // Delete if there is no modules.
     if (count($modules) > 0) {
@@ -118,11 +119,11 @@ class MmmfFixCommand extends DrushCommands {
       $query->execute();
 
       if ($options['all'] !== NULL) {
-        $this->output()->writeln(dt('All missing references have been removed.'), 'success');
+        $this->output()->writeln(dt('All missing references have been removed.'), OutputInterface::OUTPUT_NORMAL);
       }
       elseif ($name !== NULL) {
         if (in_array($name, $modules, TRUE)) {
-          $this->output()->writeln(dt('Reference to ' . $name . ' (if found) has been removed.'), 'success');
+          $this->output()->writeln(dt('Reference to ' . $name . ' (if found) has been removed.'), OutputInterface::OUTPUT_NORMAL);
         }
       }
     }

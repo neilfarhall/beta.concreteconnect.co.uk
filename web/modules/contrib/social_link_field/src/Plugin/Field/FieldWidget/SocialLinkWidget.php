@@ -13,6 +13,7 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Render\Element;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -198,6 +199,20 @@ class SocialLinkWidget extends WidgetBase implements ContainerFactoryPluginInter
           '#weight' => 1000,
         ],
       ];
+    }
+
+    return $element;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public static function afterBuild(array $element, FormStateInterface $form_state) {
+    parent::afterBuild($element, $form_state);
+
+    foreach (Element::children($element) as $delta) {
+      // Remove the 'delete' button added by Drupal. We'll use our own
+      unset($element[$delta]['_actions']['delete']);
     }
 
     return $element;
@@ -397,12 +412,12 @@ class SocialLinkWidget extends WidgetBase implements ContainerFactoryPluginInter
       $link = $default_values[$delta]['link'];
     }
     // From items.
-    else if ($apply_items_value) {
+    elseif ($apply_items_value) {
       $social = $entity_values->social;
       $link = $entity_values->link;
     }
     // From form state.
-    else if ($apply_state_value) {
+    elseif ($apply_state_value) {
       $social = $form_state_default['social'];
       $link = $form_state_default['link'];
     }
@@ -417,20 +432,20 @@ class SocialLinkWidget extends WidgetBase implements ContainerFactoryPluginInter
   /**
    * Get element link.
    *
-   * @param $form_element
+   * @param array $form_element
    *   The array form.
-   * @param $parents
+   * @param array $parents
    *   The array of the keys.
    *
    * @return array
    *   Return the element link.
    */
-  public function getElementLink($form_element, $parents) {
-    $next_index_key = count($parents) -1 ;
+  public function getElementLink(array $form_element, array $parents) {
+    $next_index_key = count($parents) - 1;
     $result = $form_element[$parents[0]];
 
     // Go to depth through the parent keys.
-    while ( $next_index_key !==0) {
+    while ($next_index_key !== 0) {
       $result = $result[$parents[count($parents) - $next_index_key]];
       $next_index_key--;
     }

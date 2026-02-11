@@ -12,6 +12,7 @@ use Drupal\social_link_field\PlatformBase;
  *   name = @Translation("GitHub"),
  *   icon = "fa-github",
  *   iconSquare = "fa-github-square",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "https://github.com/",
  * )
  */

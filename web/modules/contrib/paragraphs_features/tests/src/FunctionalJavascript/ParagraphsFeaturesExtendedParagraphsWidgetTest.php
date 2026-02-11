@@ -39,18 +39,17 @@ class ParagraphsFeaturesExtendedParagraphsWidgetTest extends ParagraphsFeaturesJ
     // Check that add in between option is available for modal add mode.
     $page->selectFieldOption('fields[field_paragraphs][settings_edit_form][settings][add_mode]', 'modal');
     $session->executeScript("jQuery('[name=\"fields[field_paragraphs][settings_edit_form][settings][add_mode]\"]').trigger('change');");
-    $this->assertSession()->assertWaitOnAjaxRequest();
     $is_option_visible = $session->evaluateScript("Array.from(document.querySelectorAll('.paragraphs-features__add-in-between__option')).filter((item) => { return item.offsetParent }).length === 2");
     $this->assertEquals(TRUE, $is_option_visible, 'After modal add mode is selected, "add in between" option should be available.');
     $page->checkField('fields[field_paragraphs][settings_edit_form][third_party_settings][paragraphs_features][add_in_between]');
-    $page->fillField('fields[field_paragraphs][settings_edit_form][third_party_settings][paragraphs_features][add_in_between_link_count]', 0);
+    $page->fillField('fields[field_paragraphs][settings_edit_form][third_party_settings][paragraphs_features][add_in_between_link_count]', '0');
     $is_checked = $session->evaluateScript("document.querySelector('.paragraphs-features__add-in-between__option').checked");
     $this->assertEquals(TRUE, $is_checked, 'Checkbox should be checked.');
 
-    $this->drupalPostForm(NULL, [], 'Update');
+    $this->submitForm([], 'Update');
     $this->assertSession()->assertWaitOnAjaxRequest();
 
-    $this->drupalPostForm(NULL, [], $this->t('Save'));
+    $this->submitForm([], 'Save');
 
     // Check that add in between functionality is used.
     $this->drupalGet("node/add/$content_type");
@@ -60,7 +59,6 @@ class ParagraphsFeaturesExtendedParagraphsWidgetTest extends ParagraphsFeaturesJ
     // Add a nested paragraph and check that add in between is used only for
     // base paragraphs field, but not for the nested paragraph.
     $session->executeScript("document.querySelector('.paragraphs-features__add-in-between__button').click()");
-    $this->assertSession()->assertWaitOnAjaxRequest();
     $page->find('xpath', '//*[contains(@class, "paragraphs-add-dialog") and contains(@class, "ui-dialog-content")]//*[contains(@name, "test_nested")]')->click();
     $this->assertSession()->assertWaitOnAjaxRequest();
 
@@ -76,21 +74,18 @@ class ParagraphsFeaturesExtendedParagraphsWidgetTest extends ParagraphsFeaturesJ
 
     // Check first add in between button.
     $page->find('xpath', '(//*[contains(@class, "paragraphs-features__add-in-between__button")])[1]')->click();
-    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertSession()->hiddenFieldValueEquals('field_paragraphs[add_more][add_more_delta]', '0');
     $page->find('xpath', '//*[contains(@class, "paragraphs-add-dialog") and contains(@class, "ui-dialog-content")]//*[contains(@name, "test_1")]')->click();
     $this->assertSession()->assertWaitOnAjaxRequest();
 
     // Check last add in between button.
     $this->scrollClick('xpath', '(//*[contains(@class, "paragraphs-features__add-in-between__button")])[last()]');
-    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertSession()->hiddenFieldValueEquals('field_paragraphs[add_more][add_more_delta]', '2');
     $page->find('xpath', '//*[contains(@class, "paragraphs-add-dialog") and contains(@class, "ui-dialog-content")]//*[contains(@name, "test_1")]')->click();
     $this->assertSession()->assertWaitOnAjaxRequest();
 
     // Check add in between button between existing paragraphs.
     $page->find('xpath', '(//*[contains(concat(" ", normalize-space(@class), " "), " paragraphs-features__add-in-between__button ")])[3]')->click();
-    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertSession()->hiddenFieldValueEquals('field_paragraphs[add_more][add_more_delta]', '2');
     $page->find('xpath', '//*[contains(@class, "paragraphs-add-dialog") and contains(@class, "ui-dialog-content")]//*[contains(@name, "test_1")]')->click();
     $this->assertSession()->assertWaitOnAjaxRequest();

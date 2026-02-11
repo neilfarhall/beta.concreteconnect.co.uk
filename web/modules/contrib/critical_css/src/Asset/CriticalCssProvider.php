@@ -2,15 +2,16 @@
 
 namespace Drupal\critical_css\Asset;
 
+use Drupal\Core\Asset\AssetOptimizerInterface;
+use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\Core\Path\CurrentPathStack;
 use Drupal\Core\Routing\AdminContext;
 use Drupal\Core\Routing\ResettableStackedRouteMatchInterface;
 use Drupal\Core\Session\AccountProxyInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\Core\Path\CurrentPathStack;
 use Drupal\Core\Theme\ThemeManagerInterface;
-use Drupal\Core\Asset\AssetOptimizerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Critical CSS Provider.
@@ -149,7 +150,7 @@ class CriticalCssProvider implements CriticalCssProviderInterface {
     AccountProxyInterface $current_user,
     ThemeManagerInterface $theme_manager,
     AdminContext $admin_context,
-    AssetOptimizerInterface $optimizer
+    AssetOptimizerInterface $optimizer,
   ) {
     $this->moduleHandler = $module_handler;
     $this->request = $request_stack->getCurrentRequest();
@@ -177,19 +178,31 @@ class CriticalCssProvider implements CriticalCssProviderInterface {
     // Get possible file paths and return first match.
     $filePaths = $this->getFilePaths();
     foreach ($filePaths as $filePath) {
-      if (is_file($filePath)) {
-        $this->matchedFilePath = $filePath;
-        $this->criticalCss = $this->performanceConfig->get('css.preprocess') ?
-          $this->optimizer->optimize([
-            'type' => 'file',
-            'preprocess' => TRUE,
-            'data' => $filePath,
-            'media' => 'all',
-          ]) :
-          trim(file_get_contents($filePath));
+      $this->matchedFilePath = $filePath;
+
+      if ($this->performanceConfig->get('css.preprocess')) {
+        if (UrlHelper::isExternal($this->matchedFilePath)) {
+          // If the file is external, make a local copy, so we can optimize it.
+          $filePath = tempnam(sys_get_temp_dir(), 'critical_css_');
+          file_put_contents($filePath, @file_get_contents($this->matchedFilePath));
+        }
+        $this->criticalCss = $this->optimizer->optimize([
+          'type' => 'file',
+          'preprocess' => TRUE,
+          'data' => $filePath,
+          'media' => 'all',
+        ]);
+      }
+      else {
+        $this->criticalCss = @file_get_contents($this->matchedFilePath);
+        $this->criticalCss = trim($this->criticalCss);
+      }
+
+      if ($this->criticalCss) {
         break;
       }
     }
+
     return $this->criticalCss;
   }
 

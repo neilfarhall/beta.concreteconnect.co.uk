@@ -12,6 +12,7 @@ use Drupal\social_link_field\PlatformBase;
  *   name = @Translation("BitBucket"),
  *   icon = "fa-bitbucket",
  *   iconSquare = "fa-bitbucket-square",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "https://bitbucket.org/",
  * )
  */

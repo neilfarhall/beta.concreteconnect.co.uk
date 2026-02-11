@@ -96,6 +96,9 @@ class FontawesomeIconpicker extends WidgetBase {
       'iconSource' => [
         "FontAwesome Solid 5",
         "FontAwesome Regular 5",
+        "FontAwesome Brands 6",
+        "FontAwesome Solid 6",
+        "FontAwesome Regular 6",
       ],
       'closeOnSelect' => TRUE,
       'i18n' => [

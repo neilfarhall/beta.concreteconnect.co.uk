@@ -20,7 +20,7 @@ class ResourcesTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'views_collapsible_list',
     'views_collapsible_list_test',
   ];

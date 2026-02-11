@@ -1,500 +1,1987 @@
-    3  drush config:set system.logging error_level verbose -y
-    4  drush cr
-    5  cd web/modules/contrib/
-    6  ls -l
-    7  rm -r ctools
-    8  df -h /
-    9  df -h /
-   10  cd restore-agg-net-2025-02-23/
-   11  ls
-   12  ls -altr
-   13  du -sh *
-   14  watch du -sh *
-   15  df -h /
-   16  watch du -sh *
-   17  watch du -s *
-   18  du -sh * && df -h /
-   19  watch du -sh * && df -h /
-   20  cd /srv/
-   21  ls
-   22  du -sh *
-   23  df -h  /
-   24  cd /root/
-   25  ls 
-   26  ls a-ltr
-   27  ls -altr
-   28  du -sh *
-   29  df -h /
-   30  df -h 
-   31  df / 
-   32  watch df / 
-   33  watch df / 
-   34  cd /root/restore-agg-net-2025-02-23/
-   35  ls
-   36  du -sh *
-   37  watch du -sh *
-   38  watch du -sh *
-   39  watch du -sh *
-   40  exit
-   41  df -h /
-   42  apt clean
-   43  df -h /
-   44  cd /root/
-   45  ls
-   46  mkdir restore-agg-net-2025-02-23
-   47  cd restore
-   48  ls
-   49  cd ../
-   50  cd restore-agg-net-2025-02-23/
-   51  ls
-   52  mythic-backup 
-   53  mythic-backup -
-   54  mythic-backup -Z
-   55  mythic-backup -z 2025-02-23T08:04:26Z0000 -r "/srv/agg-net.com/" -D "/root/restore-agg-net-2025-02-23/"
-   56  ls
-   57  ls a-l
-   58  ls -al
-   59  mythic-backup -z 2025-02-23T08:04:26Z0000 -r "/srv/agg-net.com/" -D "/root/restore-agg-net-2025-02-23/"
-   60  cd ..
-   61  rm -r restore-agg-net-2025-02-23/
-   62  mkdir restore-agg-net-2025-02-23
-   63  cd restore-agg-net-2025-02-23/
-   64  mythic-backup -z 2025-02-23T08:04:26Z0000 -r "/srv/agg-net.com/public/web/modules/" -D "/root/restore-agg-net-2025-02-23/"
-   65  mkdir web-modules
-   66  ls
-   67  mv contrib/ web-modules/
-   68  mv custom/ web-modules/
-   69  mv README.txt web-modules/
-   70  ls
-   71  mkdir cc-web-modules
-   72  mythic-backup -z 2025-02-23T08:04:26Z0000 -r "/srv/concreteconnect.co.uk/public/web/modules/" -D "/root/restore-agg-net-2025-02-23/cc-web-modules/"
-   73  mythic-backup -z 2025-02-23T08:04:26Z0000 -r "/srv/concreteconnect.co.uk/public/composer.json" -D "/root/restore-agg-net-2025-02-23/"
-   74  ls
-   75  mv web-modules/ agg-net-web-modules
-   76  ls -altr
-   77  du -sh *
-   78  exit
-   79  cd /root/
-   80  ls -l
-   81  cd restore-agg-net-2025-02-23/
-   82  ls -l
-   83  cd agg-net-web-modules/contrib/
-   84  ls -l
-   85  cp -r body_inject /srv/agg-net.com/public/web/modules/contrib/
-   86  cd /srv/agg-net.com/public/web/modules/contrib/
-   87  ls -l
-   88  rm -r body_inject
-   89  ls -l
-   90  cd /srv/agg-net.com/public/web/modules/
-   91  ls
-   92  cd /root
-   93  ls
-   94  mkdir restore
-   95  cd restore/
-   96  mythic-backup -Z
-   97  du -sh /srv/agg-net.com/
-   98  du -sh /srv/agg-net.com/public/web/modulees
-   99  du -sh /srv/agg-net.com/public/web/modules
-  100  cd ..
-  101  cd root
-  102  ls -l
-  103  mv -r restore-agg-net-2025-02-23 /srv/agg-net.com/
-  104  mv restore-agg-net-2025-02-23 /srv/agg-net.com/
-  105  pwd
-  106  cd /srv/agg-net.com/
-  107  ls -l
-  108  rm public/web/modules/contrib/body_inject
-  109  rm -r public/web/modules/contrib/body_inject
-  110  cd restore-agg-net-2025-02-23/agg-net-web-modules/contrib/
-  111  mv body_inject /srv/agg-net.com/public/web/modules/contrib/
-  112  cd /srv/agg-net.com/public/web/modules/contrib/
-  113  ls -l
-  114  drush cr
-  115  cd /srv/
-  116  ls -l
-  117  sympl web create images.concreteshow.co.uk
-  118  ls -l
-  119  ls -l
-  120  ls -l
-  121  cd /srv/images.concreteshow.co.uk/public/
-  122  ls -l
-  123  cd htdocs/
-  124  ls -l
-  125  nano index.php
-  126  ls -l
-  127  w
-  128  ps -Af
-  129  ps -Af|grep apa
-  130  ps -Af|grep apa|wc -l
-  131  w
-  132  ps -Af
-  133  df -h
-  134  cd /ar/log/apa
-  135  cd /var/log/apache2/
-  136  ls -ltra
-  137  tail -f other_vhosts_access.log
-  138  tail -f zz-mass-hosting.ssl_access.log
-  139  w
-  140  ps -Af
-  141  ps -Af|grep fpm
-  142  systmectl restart 'php*' apache2
-  143  systemctl restart 'php*' apache2
-  144  top
-  145  tail -f zz-mass-hosting.ssl_access.log
-  146  ls -ltra
-  147  tial -f *log
-  148  tail -f *log
-  149  ps -Af|grep apa|wc -l
-  150  cd /srv/
-  151  tail -f */public/logs/*cess.log
-  152  tail -f */public/logs/*cess.log
-  153  tail -f */public/logs/*cess.log
-  154  ls /srv/*/public/logs
-  155  tail -f /srv/*/public/logs/*.log
-  156  tail -f /srv/*/public/logs/*.log
-  157  cd /srv/images.concreteshow.co.uk/public/htdocs/
-  158  ls -l
-  159  nano index.php 
-  160  nano download_csv.php
-  161  mkdir  images
-  162  ls -l
-  163  cd images
-  164  cd ..
-  165  chmod 777 images
-  166  nano index.php 
-  167  nano index.php 
-  168  nano index.php 
-  169  ls -l
-  170  ls -l
-  171  nano download_csv.php 
-  172  cd images/
-  173  ls -l
-  174  cd /srv/concreteconnect.co.uk/public/
-  175  drush cr
-  176  drush cr
-  177  drush cr
-  178  drush cr
-  179  drush cr
-  180  drush cr
-  181  drush cr
-  182  drush cr
-  183  cd /srv/concreteconnect.co.uk/public/
-  184  drush cr
-  185  drush cr
-  186  drush cr
-  187  drush cr
-  188  drush cr
-  189  drush cr
-  190  drush cr
-  191  drush cr
-  192  drush cr
-  193  cd /srv/images.concreteshow.co.uk/
-  194  ls -l
-  195  cd config/
-  196  ls -l
-  197  nano ftp-users
-  198  nano ftp-users
-  199  nano ftp-users
-  200  cd /srv/concreteconnect.co.uk/public/web/themes/
-  201  ls -l
-  202  cd custom/
-  203  ls -l
-  204  cd ..
-  205  cd ..
-  206  cd ..
-  207  git status
-  208  git add web/libraries/  
-  209  git status
-  210  git add web/themes/
-  211  git add composer.*  
-  212  git status
-  213  git add config/sync
-  214  git status
-  215  git commit -m "Neil sync live with local"  
-  216  git branch   
-  217  git push origin master  
-  218  git status  
-  219  drush cr
-  220  cd ..
-  221  ls -l
-  222  cd restore-mb511244/
-  223  ls -l
-  224  cd 2025-03-07T08\:36\:27Z0000/
-  225  ls -l
-  226  cd custom/
-  227  ls -l
-  228  cd ..
-  229  ls -l
-  230  mv custom /srv/concreteconnect.co.uk/public/web/themes/
-  231  cd ..
-  232  ls -l
-  233  cd 2025-03-06T08\:18\:56Z0000/
-  234  ls -l
-  235  mv custom /srv/concreteconnect.co.uk/public/web/themes/
-  236  ls -la
-  237  cd /srv
-  238  ls -la
-  239  cd concreteconnect.co.uk/
-  240  ls -la
-  241  mkdir restore-mb511244
-  242  cd restore-mb511244
-  243  ls -la
-  244  mythic-backup -L
-  245  mythic-backup -Z
-  246  mkdir 2025-03-06T08:18:56Z0000
-  247  cd 2025-03-06T08\:18\:56Z0000/
-  248  mythic-backup -z 2025-03-06T08:18:56Z0000 -r /srv/concreteconnect.co.uk/public/web/themes/custom
-  249  mythic-backup -z-v  2025-03-06T08:18:56Z0000 -r /srv/concreteconnect.co.uk/public/web/themes/custom
-  250  mythic-backup -z -v 2025-03-06T08:18:56Z0000 -r /srv/concreteconnect.co.uk/public/web/themes/custom
-  251  mythic-backup -v -z 2025-03-06T08:18:56Z0000 -r /srv/concreteconnect.co.uk/public/web/themes/custom
-  252  ls -la
-  253  cd ..
-  254  mkdir 2025-03-07T08:36:27Z0000
-  255  cd 2025-03-07T08:36:27Z0000
-  256  mythic-backup -v -z 2025-03-07T08:36:27Z0000 -r /srv/concreteconnect.co.uk/public/web/themes/custom
-  257  ls -la
-  258  cd custom/
-  259  ls -la
-  260  cd ..
-  261  ls -la
-  262  cd ..
-  263  ls -la
-  264  diff -r 2025-03-06T08:18:56Z0000 2025-03-07T08:36:27Z0000
-  265  ls -la
-  266  cd ..
-  267  ls -la
-  268  chown -R sympl:sympl restore-mb509588 restore-mb511244
-  269  ls -la
-  270  cd restore-mb511244
-  271  ls -la
-  272  cd /srv/concreteconnect.co.uk/public/web/themes/
-  273  ls -l
-  274  mv custom custom2
-  275  ls -l
-  276  ls -l
-  277  cd ..
-  278  cd ..
-  279  drush cr
-  280  cd web/themes/
-  281  ls -
-  282  ls -l
-  283  mv custom custom3
-  284  ls -l
-  285  drush cr
-  286  cd ..
-  287  cd ..
-  288  git status
-  289  drush cex  
-  290  git status  
-  291  git add config
-  292  git status  
-  293  git add web/themes/custom/
-  294  git status  
-  295  git commit -m "adding config filesfor CCTV"    
-  296  git push origin master  
-  297  drush cr
-  298  git status  
-  299  drush cex  
-  300  git status  
-  301  cd web/themes/
+  183  ddev launch
+  184  ddev drush entup
+  185  ddev drush cr
+  186  ddev restart
+  187  ddev drush cr
+  188  ddev launch
+  189  ddev composer require 'drupal/file_mdm:^3.1'
+  190  ddev composer install
+  191  ddev composer update
+  192  ddev composer require 'drupal/file_mdm:^3.1'
+  193  composer require 'drupal/image_effects:^4.0'
+  194  ddev drush cedit image.style.thumbnail
+  195  ddev drush cr
+  196  composer require 'drupal/image_effects:^4.0'
+  197  yum install php-bcmath
+  198  ddev yum install php-bcmath
+  199  php -m
+  200  docker-php-ext-install bcmath
+  201  ddev docker-php-ext-install bcmath
+  202  docker-php-ext-install bcmath
+  203  ddev docker-php-ext-install bcmath
+  204  sudo apt-get install php-bcmath
+  205  ddev sudo apt-get install php-bcmath
+  206  docker
+  207  docker-php-ext-install bcmath
+  208  docker -version
+  209  docker --help
+  210  ddev config --php-extensions=bcmath\nddev restart
+  211  ddev config --php-extensions=bcmath
+  212  .ddev/web-build/Dockerfile
+  213  nano .ddev/web-build/Dockerfile
+  214  nano .ddev/web-build/Dockerfile
+  215  ddev restart
+  216  ddev ssh\nphp -m | grep bcmath
+  217  ddev composer require 'drupal/commerce:^3.2'
+  218  composer require 'drupal/commerce:^2.40'
+  219  composer require 'drupal/stripe:^2.0'
+  220  ddev drush entup
+  221  ddev npm run dev
+  222  ddev drush cr
+  223  ddev npm run dev
+  224  pwd
+  225  ddev npm run dev
+  226  ddev ssh
+  227  drush cr
+  228  ddev drush cr
+  229  ddev npm run dev
+  230  ddev ssh
+  231  npm install
+  232  ddev npm install
+  233  ddev ssh
+  234  ddev npm run dev
+  235  ddev npm run dev
+  236  ddev ssh
+  237  ddev start
+  238  composer require 'drupal/commerce_shipping:^2.15'
+  239  ddev composer update
+  240  ddev composer install
+  241  composer require 'drupal/commerce_opayo_pi:^2.1'
+  242  ddev php --version
+  243  composer require drupal/commerce_opayo_pi:^2.1 --prefer-dist --with-all-dependencies
+  244  composer config repositories.drupal composer https://packages.drupal.org/8\ncomposer require drupal/commerce_opayo_pi:^2.1
+  245  composer require 'drupal/commerce_opayo_pi:^2.1'
+  246  composer require 'drupal/phone_international:^4.0'
+  247  ddev composer require 'drupal/phone_international:^4.0'
+  248  composer show drupal/commerce_opayo_pi --all
+  249  composer remove drupal/commerce_opayo_pi
+  250  composer require drupal/commerce_opayo_pi:^2.1 --with-all-dependencies --prefer-dist
+  251  composer clear-cache
+  252  composer require drupal/commerce_opayo_pi:^2.1
+  253  composer show drupal/commerce_opayo_pi
+  254  composer require drupal/phone_international:^4.0 drupal/commerce_opayo_pi:^2.1 --with-all-dependencies
+  255  composer require drupal/phone_international:^4.0 drupal/commerce_opayo_pi:^2.1 --with-all-dependencies
+  256  ddev drush updb -y && ddev drush cr
+  257  composer require drupal/commerce_opayo_pi:^1.0 --with-all-dependencies
+  258  ddev composer require 'drupal/phone_international:^4.0'
+  259  composer require drupal/phone_international:^4.0 drupal/commerce_opayo_pi:^2.1 --with-all-dependencies
+  260  composer require drupal/commerce_opayo_pi:^1.0 --with-all-dependencies
+  261  composer why giggsey/libphonenumber-for-php
+  262  composer require drupal/phone_international:^4.0 drupal/commerce_opayo_pi:^2.1 --with-all-dependencies
+  263  composer why-not giggsey/libphonenumber-for-php ^9.0
+  264  composer why giggsey/libphonenumber-for-php
+  265  composer require drupal/phone_international:^4.0 drupal/commerce_opayo_pi:^2.1 --with-all-dependencies
+  266  composer why giggsey/libphonenumber-for-php\ncomposer why-not giggsey/libphonenumber-for-php ^9.0
+  267  composer why drupal/queue_unique
+  268  composer require drupal/queue_unique:^4.0\ncomposer require giggsey/libphonenumber-for-php:^9.0
+  269  composer require drupal/queue_unique:^4.0\n
+  270  composer update drupal/phone_international drupal/commerce_opayo_pi -W
+  271  composer update -W
+  272  composer why giggsey/libphonenumber-for-ph
+  273  composer why giggsey/libphonenumber-for-php
+  274  composer require giggsey/libphonenumber-for-php:^9.0 -W
+  275  composer show drupal/telephone_advanced --all | grep versions
+  276  composer require drupal/telephone_advanced:^1.x-dev -W
+  277  composer require giggsey/libphonenumber-for-php:^9.0 drupal/phone_international:^4.0 drupal/commerce_opayo_pi:^2.1 -W
+  278  composer update drupal/phone_international -W
+  279  composer why-not giggsey/libphonenumber-for-php ^9.0
+  280  composer update -W
+  281  composer why-not giggsey/libphonenumber-for-php ^9.0
+  282  ddev start
+  283  ddev config --project-type drupal\n\n
+  284  cd ..
+  285  ls -l
+  286  rm -r qmj_radix_restore
+  287  mkdir  qmj_radix_restore
+  288  ddev config --project-type drupal\n\n
+  289  cd  qmj_radix_restore
+  290  ddev config --project-type drupal\n\n
+  291  ls -l
+  292  ls -a
+  293  ddev start
+  294  ls -l
+  295  ddev composer install
+  296  ddev composer create-project drupal/recommended-project
+  297  ddev composer require --dev drush/drush
+  298  ddev drush site:install --account-name=admin --account-pass=admin -y\n
+  299  ddev start
+  300  ddev composer require --dev drush/drush
+  301  ddev drush site:install --account-name=admin --account-pass=admin -y\n
   302  ls -l
-  303  cp custom custom-working
-  304  cp -r custom custom-working
-  305  ls -l
-  306  cd /srv/concreteconnect.co.uk/public/
-  307  git branch
-  308  cd /srv/concreteconnect.co.uk/public/
-  309  drush cr
-  310  drush cr
-  311  drush cr
-  312  drush cr
-  313  git staus
-  314  git status
-  315  redis-cli flushall
-  316  drush cr
-  317  drush cr
-  318  drush cr
-  319  drush cr
-  320  drush cr
-  321  drush cr
-  322  drush cr
-  323  cd web/themes/custom/
-  324  ls -l
-  325  cd themag_st/assets/css/
-  326  ls -l
-  327  cd ..
-  328  cd ..
-  329  ls -l
-  330  cd ..
-  331  ls -l
-  332  cd ..
-  333  ls -l
-  334  rm -r custom2
-  335  rm -r custom3
-  336  rm -r custom-working/
-  337  ls -l
-  338  drush cr
-  339  cd /srv/images.concreteshow.co.uk/public/
-  340  df -h /
-  341  cd htdocs/
-  342  df -h /
-  343  du -xhad1 | sort -h
-  344  cd /srv/concreteconnect.co.uk/public/
-  345  drush cr
-  346  cd ..
-  347  ls -l
-  348  cd restore-mb509588/
-  349  ls -l
-  350  cd ..
-  351  cd restore-mb511244/
-  352  ls -l
-  353  cd 2025-03-07T08\:36\:27Z0000/
-  354  ls -l
-  355  cd ..
-  356  cd 2025-03-06T08\:18\:56Z0000/
-  357  ls -l
-  358  cd ..
-  359  cd ..
-  360  cd public/
-  361  drush cr
-  362  drush cr
-  363  drush cr
-  364  drush cr
-  365  cd /srv/concreteconnect.co.uk/public/
-  366  drush watchdog-show 
-  367  drush watchdog-show 
-  368  drush watchdog-show 
-  369  cd /srv/concreteconnect.co.uk/public/web/sites/default/
-  370  nano settings.php
-  371  cd /srv/agg-net.com/public/web/sites/default/
-  372  ls -l
-  373  nano settings.php 
-  374  nano default.settings.php 
-  375  nano settings.php 
-  376  drush cr
-  377  ping 62.31.100.130
-  378  cd /etc/apache2/
-  379  ls
-  380  cd sites-available/
-  381  ls
-  382  exit
-  383  cd /etc/
-  384  git log -p
-  385  git log -p | grep -i maxrequest
-  386  git log -p | less
-  387  free
-  388  ps -ef | grep apache
-  389  cd
-  390  less /var/log/syslog
-  391  cd /etc/apache2/
-  392  grep -ir maxrequestworkers
-  393  ls
-  394  grep -ir mpm
-  395  ls mods-enabled/
-  396  cd mods-enabled/
-  397  emacs -nw mpm_prefork.conf 
-  398  vim mpm_prefork.conf
-  399  systemctl restart apache2
-  400  less /var/log/apache2/error.log
-  401  cat /etc/apache2/mods-enabled/mpm_prefork.conf 
-  402  ls
-  403  less mpm_prefork.load 
-  404  less mpm_prefork.conf
-  405  apachectl -M
-  406  free
-  407  ps -ef | grep apache
-  408  ps -ef | grep mailchimp
-  409  less /var/log/apache2/access.log
-  410  ls -al /var/log/apache2/
-  411  ls -al /var/log/apache2/access.log.1 
-  412  less /var/log/apache2/access.log.1
-  413  zless /var/log/apache2/access.log.2.gz
-  414  ls /var/log/apache2
-  415  less /var/log/apache2/other_vhosts_access.log
-  416  less /var/log/apache2/zz-mass-hosting.log
-  417  less /var/log/apache2/zz-mass-hosting.access.log
-  418  cd ../sites-enabled/
-  419  ls
-  420  less concreteconnect.co.uk.conf 
-  421  cd /srv/concreteconnect.co.uk/
-  422  ls
-  423  tree
-  424  less /etc/apache2/sites-enabled/concreteconnect.co.uk.conf 
-  425  cd public/logs/
-  426  ls
-  427  less access.log
-  428  less access.log.1
-  429  less error.log
-  430  ls -ltr
-  431  less ssl_access.log
-  432  less ssl_access.log.1
-  433  less ssl_error.log
-  434  less ssl_error.log.1
-  435  less ssl_access.log.1
-  436  cat ssl_access.log.1
-  437  cut -f 12 -d" " ssl_access.log.1 | head -n 10
-  438  cut -f 6 -d" " ssl_access.log.1 | head -n 10
-  439  cut -f 7 -d" " ssl_access.log.1 | head -n 10
-  440  cut -f 7 -d" " ssl_access.log.1 | sort | uniq -c | sort -n 
-  441  less ssl_access.log.1
-  442  cut -f 8 -d" " ssl_access.log.1 | sort | uniq -c | sort -n 
-  443  cut -f 9 -d" " ssl_access.log.1 | sort | uniq -c | sort -n 
-  444  less ssl_access.log.1
-  445  cat /proc/net/sockstat
-  446  cd
-  447  cd /root
-  448  ls
-  449  mkdir trowan
-  450  cd trowan/
-  451  while true ; do cat /proc/net/sockstat > /root/trowan/sockstats ; sleep 5 ; done
-  452  while true ; do date |tr -d '\n' >>/root/trowan/sockstats; echo -n " " >> /root/trowan/sockstats;  cat /proc/net/sockstat | grep 'TCP:'  >> /root/trowan/sockstats ; sleep 5 ; done
-  453  cat > log_sockstat
-  454  vim log_sockstat 
-  455  chmod 755
-  456  chmod 755 log_sockstat 
-  457  vim log_sockstat 
-  458  vim log_sockstat
-  459  ls
-  460  rm sockstats 
-  461  ./log_sockstat 
-  462  less /var/log/apache2/error.log
-  463  less /var/log/apache2/error.log
-  464  cd /root
+  303  ddev composer require --dev drupal/core-dev\n
+  304  ddev composer create-project drupal/recommended-project\n
+  305  ddev launch
+  306  cd .ddev
+  307  ls -l
+  308  nano config.yaml
+  309  cd ..
+  310  web
+  311  cd web
+  312  ddev drush site:install --account-name=admin --account-pass=admin -y\n
+  313  cd ..
+  314  cd ..
+  315  ls -l
+  316  mkdir porky_pig
+  317  cd porky_pig
+  318  ls
+  319  ddev config --project-type=drupal11 --docroot=web\n
+  320  ddev start\n
+  321  ddev composer create-project drupal/cms\n
+  322  ddev launch\n
+  323  ddev composer require --dev drush/drush
+  324  ddev drush cr
+  325  ddev composer require 'drupal/radix:^6.0'
+  326  ddev drush --include="web/themes/contrib/radix" radix:create qmj_radix
+  327  drush then qmj_radix -y; drush config-set system.theme default qmj_radix -y
+  328  ddev drush then qmj_radix -y; drush config-set system.theme default qmj_radix -y
+  329  ddev restart
+  330  composer require 'drupal/commerce:^3.2'
+  331  composer require 'drupal/inline_entity_form:^3.0@RC'
+  332  composer require 'drupal/commerce:^3.2'
+  333  composer require 'drupal/commerce_opayo_pi:^2.1'
+  334  ddev start
+  335  composer update drupal/phone_international -W
+  336  composer why giggsey/libphonenumber-for-php
+  337  composer require giggsey/libphonenumber-for-php:^9.0 --with-all-dependencies
+  338  composer require 'drupal/telephone_validation:^2.5'
+  339  composer require oomphinc/composer-installers-extender\n
+  340  composer require 'drupal/phone_international:^3.3'
+  341  composer require oomphinc/composer-installers-extender\n
+  342  ddev composer update
+  343  ddev launch
+  344  composer require 'drupal/commerce_opayo_pi:^2.1'
+  345  composer require 'drupal/phone_international:^4.0'
+  346  composer require 'drupal/phone_international:^4.0'
+  347  composer require drupal/phone_international:^4.0 giggsey/libphonenumber-for-php:^9.0 --with-all-dependencies
+  348  composer why-not giggsey/libphonenumber-for-php ^9.0
+  349  composer show drupal/telephone_advanced --all | grep versions
+  350  composer remove 'drupal/telephone_advanced:^1.1'
+  351  composer why-not giggsey/libphonenumber-for-php ^9.0
+  352  ddev drush cr
+  353  composer why-not giggsey/libphonenumber-for-php ^9.0
+  354  composer require 'drupal/phone_international:^4.0'
+  355  composer require drupal/phone_international:^4.0 giggsey/libphonenumber-for-php:^9.0 --with-all-dependencies
+  356  ddev composer clearcache
+  357  composer require drupal/phone_international:^4.0 giggsey/libphonenumber-for-php:^9.0 --with-all-dependencies
+  358  composer update
+  359  ddev composer update
+  360  ddev composer install
+  361  composer require drupal/phone_international:^4.0 giggsey/libphonenumber-for-php:^9.0 --with-all-dependencies
+  362  ddev composer clearcache
+  363  ddev composer clearcache
+  364  ddev drush cr
+  365  ddev composer clearcache
+  366  composer require drupal/phone_international:^4.0 giggsey/libphonenumber-for-php:^9.0 --with-all-dependencies
+  367  composer remove drupal/telephone_advanced\ncomposer require drupal/phone_international:^4.0 giggsey/libphonenumber-for-php:^9.0 --with-all-dependencies
+  368  ddev drush cr
+  369  composer require 'drupal/commerce_opayo_pi:^2.1'
+  370  composer require 'drupal/queue_unique:^4.0'
+  371  composer require 'drupal/commerce_opayo_pi:^2.1'
+  372  ddev drush cr
+  373  ddev drush cr
+  374  ddev composer update
+  375  ddev drush cr
+  376  ddev composer install
+  377  ddev composer clearcache
+  378  composer require 'drupal/commerce_opayo_pi:^2.1'
+  379  composer require 'drupal/commerce_opayo_pi:^2.1'
+  380  composer require 'drupal/commerce_opayo_pi:^1.0'
+  381  composer require 'drupal/commerce_opayo_pi:^2.1'
+  382  ddev drush cr
+  383  ddev npm run dev
+  384  ddev drush entup
+  385  ddev drush entity:updates
+  386  drush meaofd:fix opayo_transaction
+  387  ddev drush meaofd:fix opayo_transaction
+  388  composer require 'drupal/commerce_opayo_pi:^2.1'
+  389  composer require 'drupal/commerce_opayo_pi:^1.0'
+  390  composer require 'drupal/commerce_opayo_pi:^2.1'
+  391  ddev drush entity-updates
+  392  composer require 'drupal/commerce_opayo_pi:^2.1'
+  393  ddev drush entity-updates
+  394  composer require 'drupal/commerce_opayo_pi:^2.1'
+  395  composer remove drupal/telephone_advanced\ncomposer update drupal/phone_international giggsey/libphonenumber-for-php --with-all-dependencies
+  396  composer require drupal/phone_international:^3.3 --with-all-dependencies
+  397  composer remove drupal/commerce_opayo_pi
+  398  composer update --with-all-dependencies
+  399  ddev composer clearcache
+  400  composer require 'drupal/commerce_opayo_pi:^2.1'
+  401  ddev drush cr
+  402  composer require drupal/jquery_form
+  403  ddev composer require drupal/jquery_form
+  404  composer require 'drupal/commerce_opayo_pi:^1.0'
+  405  composer require 'drupal/phone_international:^3.3'
+  406  composer remove drupal/commerce_opayo_pi
+  407  composer require 'drupal/phone_international:^3.3'
+  408  ddev composer require giggsey/libphonenumber-for-php ^8.13
+  409  composer remove 'drupal/phone_international:^3.3'
+  410  ddev composer require giggsey/libphonenumber-for-php ^8.13
+  411  composer remove 'drupal/phone_international\n"\nexit\nend\nquit
+  412  composer remove 'drupal/phone_international:\n\n\n\n
+  413  composer require 'drupal/commerce_opayo_pi:^1.0'
+  414  composer require 'drupal/commerce_opayo_pi:^2.1'
+  415  ddev drush cr
+  416  cd web/modules
+  417  ls -l
+  418  mkdir custom
+  419  cd custom
+  420  mkdir commerce_ajax_fix
+  421  cd commerce_ajax_fix
+  422  nano commerce_ajax_fix.info.yml
+  423  nano commerce_ajax_fix.libraries.yml
+  424  mkdir ommerce_ajax_fix.module
+  425  nano commerce_ajax_fix.module
+  426  ddev drush en commerce_ajax_fix -y
+  427  ddev drush cr
+  428  composer require 'drupal/phone_international:^3.3'
+  429  cd ..
+  430  cd ..
+  431  cd ..
+  432  ddev composer require 'drupal/phone_international:^4.0'
+  433  cd modules/custom
+  434  mkdir commerce_opayo_ajax_fix
+  435  cd commerce_opayo_ajax_fix
+  436  ls -l
+  437  nano commerce_opayo_ajax_fix.info.yml
+  438  nano commerce_opayo_ajax_fix.libraries.yml
+  439  nano commerce_opayo_ajax_fix.module
+  440  ddev drush en commerce_opayo_ajax_fix -y\n
+  441  ddev drush cr
+  442  cd..
+  443  cd ..
+  444  cd ..
+  445  composer update
+  446  cd custom
+  447  mkdir commerce_opayo_patch
+  448  cd commerce_opayo_patch
+  449  nano commerce_opayo_patch.info.yml
+  450  nano commerce_opayo_patch.libraries.yml
+  451  mkdir js
+  452  cd js
+  453  nano opayo_patch.js
+  454  cd ..
+  455  ddev drush en commerce_opayo_patch -y\n
+  456  composer require drupal/commerce_opayo
+  457  composer require drupal/commerce_opayo:^2.1
+  458  composer require 'drupal/commerce_opayo_pi:^2.1'
+  459  ddev drush en commerce_opayo -y
+  460  ddev drush en commerce_opayo_pi -y
+  461  ls -l
+  462  nano commerce_opayo_patch.info.yml
+  463  nano commerce_opayo_patch.libraries.yml
+  464  cd js
   465  ls
-  466  cd trowan/
-  467  ls
-  468  cat sockstats 
-  469  date
-  470  date -n
-  471  man date
-  472  date | tr '\n'
-  473  man tr
-  474  date | tr -d '\n'
-  475  cat sockstats 
-  476  cat sockstats 
-  477  cat sockstats 
-  478  cat sockstats 
-  479  cat sockstats 
-  480  cat sockstats 
-  481  ip a
-  482  cat sockstats 
-  483  cat sockstats  | cut -f 9
-  484  cat sockstats  | cut -f 9 -d " " 
-  485  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
-  486  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
-  487  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
-  488  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
-  489  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
-  490  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | sort -n
-  491  cat sockstats  | cut -f 9 -d " " | sort | uniq -c | 
-  492  cat sockstats  | cut -f 9 -d " " | sort | uniq -c 
-  493  cat /proc/net/sockstat
-  494  ss -ntap
-  495  ss -ntap | grep EST
-  496  cat sockstats  | cut -f 9 -d " " | sort | uniq -c 
-  497  ls
-  498  mkdir mythici
-  499  mv trowan/ mythici/
-  500  mv mythici/ mythic
-  501  cd /srv/concreteconnect.co.uk/public/
-  502  history > history_for_print.txt
+  466  nano opayo_patch.js
+  467  cd ..
+  468  ddev drush en commerce_opayo_pi -y
+  469  ddev drush en commerce_opayo_patch -y\n
+  470  ddev drush cr
+  471  cd ..
+  472  cd ..
+  473  cd ..
+  474  ddev composer require drupal/commerce_opayo_pi:^2.1
+  475  ddev drush cr
+  476  composer require drupal/commerce_opayo_pi:^2.1
+  477  composer require drupal/commerce_opayo_pi:^2.1
+  478  ddev drush cr
+  479  mkdir patches
+  480  cd patches
+  481  nano commerce-opayo-ajax-drupal10.patch
+  482  nano commerce-opayo-pi-ajax-drupal10.patch
+  483  cd ..
+  484  ddev composer install
+  485  ddev composer install
+  486  ddev composer install
+  487  ls
+  488     "extra": {\n        "patches": {\n            "drupal/commerce_opayo_pi": {\n                "Fix ajaxSubmit for Drupal 10": "patches/commerce-opayo-pi-ajax-drupal10.patch"\n            }\n        },\n        "installer-paths": {\n            "web/core": [\n                "type:drupal-core"\n            ],\n            "web/modules/contrib/{$name}": [\n                "type:drupal-module"\n            ],\n            "web/themes/contrib/{$name}": [\n                "type:drupal-theme"\n            ],\n            "web/modules/custom/{$name}": [\n                "type:drupal-custom-module"\n            ],\n            "web/themes/custom/{$name}": [\n                "type:drupal-custom-theme"\n            ]\n        }\n    },\n    "config": {\n        "allow-plugins": {\n            "composer/installers": true,\n            "cweagans/composer-patches": true,\n            "dealerdirect/phpcodesniffer-composer-installer": true,\n            "drupal/core-composer-scaffold": true,\n            "drupal/core-project-message": true,\n            "drupal/core-recipe-unpack": true,\n            "oomphinc/composer-installers-extender": true,\n            "php-http/discovery": true,\n            "php-tuf/composer-integration": true,\n            "phpstan/extension-installer": true,\n            "tbachert/spi": true\n        }\n    },\n    "minimum-stability": "RC",\n    "prefer-stable": true\n}\n
+  489  ls patches/commerce-opayo-pi-ajax-drupal10.patch
+  490  ddev composer install
+  491  cd ..
+  492  ls web/modules/contrib/commerce_opayo_pi/js
+  493  grep -n "ajaxSubmit" web/modules/contrib/commerce_opayo_pi/js/*.js
+  494  diff --git a/js/opayo_checkout.js b/js/opayo_checkout.js
+  495  grep -n "ajaxSubmit" web/modules/contrib/commerce_opayo_pi/js/*.js
+  496  ddev drush cr
+  497  grep -n "ajaxSubmit" web/modules/contrib/commerce_opayo_pi/js/*.js
+  498  grep -Ri "ajax" web/modules/contrib/commerce_opayo_pi/js | head -30
+  499  cat web/modules/contrib/commerce_opayo_pi/commerce_opayo_pi.libraries.yml
+  500  2. ```bash\ncat web/modules/contrib/commerce_opayo_pi/commerce_opayo_pi.libraries.yml\nexit
+  501  grep -Ri “ajax” web/modules/contrib/commerce_opayo_pi/js | head -30
+  502  cat web/modules/contrib/commerce_opayo_pi/commerce_opayo_pi.libraries.yml
+  503  ls -l
+  504  cd web/modules/contrib/commerce_opayo_pi/js
+  505  nano jquery.form.shim.js
+  506  cd ..
+  507  nano commerce_opayo_pi.libraries.yml
+  508  ddev drush cr
+  509  ddev composer install
+  510  ddev composer update
+  511  cd js
+  512  pwd
+  513  ls -l
+  514  naoo jquery.form.shim.js
+  515  nano jquery.form.shim.js
+  516  ddev drush cr
+  517  cd ..
+  518  cd ..
+  519  cd ..
+  520  cd custom
+  521  ls -l
+  522  mkdir commerce_opayo_pi_shim
+  523  cd commerce_opayo_pi_shim \n
+  524  nano commerce_opayo_pi_shim.info.yml
+  525  nano commerce_opayo_pi_shim.libraries.yml
+  526  nano commerce_opayo_pi_shim.module
+  527  ddev drush en commerce_opayo_pi_shim -y\n
+  528  nano commerce_opayo_pi_shim.info.yml
+  529  nano commerce_opayo_pi_shim.info.yml
+  530  nano commerce_opayo_pi_shim.info.yml
+  531  ddev drush cr\n
+  532  ddev drush en commerce_opayo_pi_shim -y
+  533  composer require 'drupal/commerce_opayo_pi:^2.1'
+  534  ddev composer update
+  535  composer require 'drupal/commerce_opayo_pi:^2.1' -W
+  536  composer require 'drupal/commerce_opayo_pi:^2.1'
+  537  composer require cweagans/composer-patches\n
+  538  composer require 'drupal/commerce_opayo_pi:^1.0@RC'\n
+  539  composer update drupal/commerce_opayo_pi --with-all-dependencies\n
+  540  ddev drush cr
+  541  ddev composer update
+  542  ddev composer install
+  543  composer require 'drupal/commerce_opayo_pi:^1.0@RC'\n
+  544  composer update drupal/commerce_opayo_pi --with-all-dependencies\n
+  545  composer require 'drupal/commerce_opayo_pi:^2.1'
+  546  ddev composer update
+  547  composer require 'drupal/queue_unique:^4.0'
+  548  composer require 'drupal/phone_international:^4.0'
+  549  ddev start
+  550  ddev launch
+  551  ddev drush cr
+  552  ddev drush cr
+  553  ddev restart
+  554  sudo nano web/sites/default/settings.php
+  555  sudo nano web/sites/default/settings.php
+  556  ddev composer update
+  557  ddev composer clearcache
+  558  ddev drush cr
+  559  ddev composer update
+  560  ddev drush cr
+  561  ddev composer remove cweagans/composer-patches
+  562  ddev drush cr
+  563  composer require oomphinc/composer-installers-extender\n
+  564  composer require "npm-asset/intl-tel-input:^25.3"\n
+  565  composer require "npm-asset/intl-tel-input:^25.3"\n
+  566  ddev drush cr
+  567  ddev composer require drupal/jquery_form\n
+  568  composer require drupal/jquery_form:^1.0@beta
+  569  ddev composer outdated drupal/commerce
+  570  ddev composer require drupal/commerce:^2.37
+  571  cd web/modules/
+  572  mkdir custom
+  573  cd custom
+  574  mkdir ajax_submit_shim
+  575  cd ajax_submit_shim
+  576  nano ajax_submit_shim.info.yml
+  577  nano name: 'AJAX Submit Shim'\ntype: module\ndescription: 'Provides a temporary shim for $.fn.ajaxSubmit for Drupal Commerce checkout.'\ncore_version_requirement: ^10 || ^11\npackage: Custom
+  578  nano ajax_submit_shim.libraries.yml
+  579  mkdir js
+  580  cd js
+  581  nano ajax-submit-shim.js
+  582  cd ..
+  583  nano ajax_submit_shim.module
+  584  ddev drush en ajax_submit_shim -y\n
+  585  ddev drush cr
+  586  cd js
+  587  ls -l
+  588  nano ajax-submit-shim.js
+  589  cd ..
+  590  ddev drush cr
+  591  cd js
+  592  nano ajax-submit-shim.js
+  593  cd ..
+  594  ddev drush cr
+  595  ddev drush cr
+  596  cd ..
+  597  cd ..
+  598  cd ..
+  599  cd ..
+  600  cd .ddev
+  601  cd php
+  602  ls -l
+  603  cd ..
+  604  ls -l
+  605  nano config.yaml
+  606  cd php
+  607  ls
+  608  cd..
+  609  cd ..
+  610  cd php
+  611  nano php.ini
+  612  ddev restart
+  613  nano php.ini
+  614  grep -r suhosin.so /etc/php5
+  615  cd ..
+  616  ls
+  617  nano config.yaml
+  618  ddev restart
+  619  ddev php --version
+  620  ddev drush cr
+  621  ddev drush cr
+  622  ddev php --version
+  623  nano config.yaml
+  624  ddev restart
+  625  ddev drush cr
+  626  nano config.yaml
+  627  ddev restart
+  628  ddev drush cr
+  629  nano config.yaml
+  630  ddev restart
+  631  ddev drush cr
+  632  ddev launch
+  633  ddev ssh\n
+  634  cd ..
+  635  ddev composer update drupal/commerce drupal/commerce_payment --with-dependencies
+  636  ddev drush cr
+  637  ddev drush ds ajax_submit_shim -y\n
+  638  ddev drush cr
+  639  cd web/modules/custom
+  640  ls -l
+  641  mkdir opayo_ajax_fix
+  642  cd opayo_ajax_fix
+  643  nano opayo_ajax_fix.info.yml
+  644  nano opayo_ajax_fix.module
+  645  ddev drush en opayo_ajax_fix -y
+  646  ddev drush cr
+  647  ls -l
+  648  nano opayo_ajax_fix.module
+  649  ddev drush cr
+  650  nano opayo_ajax_fix.module
+  651  nano opayo_ajax_fix.module
+  652  ddev drush cr
+  653  ddev drush cr
+  654  ddev drush cr
+  655  ddev drush cr
+  656  ddev start
+  657  ddev drush cr
+  658  ddev launch
+  659  ddev drush cr
+  660  ddev drush cr
+  661  ddev drush cr
+  662  pwd
+  663  cd ..
+  664  cd ..
+  665  ls -l
+  666  cd qmj.co.uk
+  667  ls -l
+  668  cd qmj.co.uk
+  669  ls -l
+  670  cd ..
+  671  cd ..
+  672  cd ..
+  673  ddev start
+  674  pwd
+  675  cd ..
+  676  git status
+  677  git init
+  678  git add
+  679  git add .
+  680  git commit -m "Initial commit of Drupal site"
+  681  nano .gitignore
+  682  git remote add origin https://github.com/neilfarhall/qmj-shop.git
+  683  git branch -M main
+  684  git push -u origin main
+  685  git push -u origin main
+  686  git push -u origin main
+  687  git init
+  688  git remote add origin https://github.com/neilfarhall/qmj-shop.git
+  689  git push -u origin main
+  690  git push -u origin main
+  691  git remote add origin https://github.com/neilfarhall/qmj-shop.git\ngit branch -M main\ngit push -u origin main
+  692  git remote add origin https://github.com/neilfarhall/qmj-shop.git\ngit branch -M main\ngit push -u origin main
+  693  git status
+  694  git init
+  695  git push -u origin main
+  696  git config user.name
+  697  git push -u origin main
+  698  git config --list
+  699  git config --global user.name "neilfarhall"
+  700  git push -u origin main
+  701  git config --global credential.helper osxkeychain\n
+  702  git clone https://github.com/neilfarhall/repo.git
+  703  git pull
+  704  git config --global credential.helper\n
+  705  git config --global --unset credential.helper\n
+  706  git config --global credential.helper osxkeychain\n
+  707  git clone https://github.com/username/repo.git
+  708  git credential-osxkeychain erase
+  709  sado git credential-osxkeychain erase
+  710  sudo git credential-osxkeychain erase
+  711  ddev start
+  712  sudo nano /etc/hosts
+  713  sudo killall -HUP mDNSResponder
+  714  ddev start
+  715  git status
+  716  git push -u origin main
+  717  pkg install git
+  718  ddev pkg install git
+  719  git status
+  720  git init
+  721  git add .
+  722  git commit -m "Initial commit of Drupal site2"
+  723  git commit -m "Initial commit of Drupal site2"
+  724  git remote add origin https://github.com/neilfarhall/qmj-shop.git
+  725  git push -u origin main
+  726  git remote -v
+  727  git push origin master
+  728  git remote add origin git@github.com:neilfarhall/qmj-shop.git\ngit branch -M main\ngit push -u origin main
+  729  ddev start
+  730  ddev launch
+  731  ls -l
+  732  pwd
+  733  cp composer.json testcomposer.josn
+  734  ls -l
+  735  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/testcomposer.josn aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/testcomposer.josn
+  736  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/ aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/
+  737  ddev start
+  738  ddev launch
+  739  ddev export-db --gzip=false --file /tmp/db.sql\n
+  740  ls -l
+  741  ddev export-db --gzip=false --file db.sql\n
+  742  ddev export-db --gzip=false --file db.sql\n
+  743  ls -l
+  744  ls -l
+  745  drush cim
+  746  ddev start
+  747  ddev drush cim
+  748  git status
+  749  ddev export-db --gzip=false > db.sql\n
+  750  ddev export-db --gzip=false > db-23-09-2025.sql\n
+  751  ls -l
+  752  ddev drush cim
+  753  ddev drush cex
+  754  ddev drush cim
+  755  ddev drush cim
+  756  cd web
+  757  ddev drush cim
+  758  ddev drush cim
+  759  ddev drush cim
+  760  ddev drush cim
+  761  composer update
+  762  ddev drush cim
+  763  ddev drush cr
+  764  composer require 'drupal/commerce_tokens:^1.0'
+  765  ddev drush cr
+  766  ddev drush cr
+  767  ddev drush cr
+  768  ddev drush cr
+  769  ddev npm run dev
+  770  ddev npm run dev
+  771  cd /var/www/html
+  772  cd /var/www/html
+  773  cd /var/www
+  774  cd /var
+  775  ls -l
+  776  ddev ssh
+  777  exit
+  778  ddev ssh
+  779  cd web/themes/custom
+  780  npm run dev
+  781  ddev npm run dev
+  782  ddev npm run dev
+  783  cd qmj_radix
+  784  ls -l
+  785  npm install\n
+  786  ddev npm install\n
+  787  ddev npm run dev
+  788  ddev npm run dev
+  789  ddev npm run dev
+  790  ddev npm run dev
+  791  ddev drush cr
+  792  ddev npm run dev
+  793  ddev drush cr
+  794  ddev npm run dev
+  795  ddev drush cr
+  796  ddev npm run dev
+  797  ddev drush cr
+  798  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+  799  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+  800  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+  801  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom
+  802  ddev start
+  803  cd ../concreteconnect.co.uk
+  804  ls -l
+  805  ddev start
+  806  composer require 'drupal/webform:^6.2'
+  807  ddev launch
+  808  composer require 'drupal/webform:^6.3@beta'
+  809  ddev drush cr
+  810  php --version
+  811  ddev drush cr
+  812  ddev restart
+  813  composer update drupal/core* --with-all-dependencies
+  814  grep -R "dependencies:" web/themes/custom web/modules/custom | grep -E "dependencies:\s*$|-\s*$"
+  815  ddev grep -R "dependencies:" web/themes/custom web/modules/custom | grep -E "dependencies:\s*$|-\s*$"
+  816  ddev grep -R "dependencies:" web/modules/contrib | grep -E "dependencies:\s*$|-\s*$"
+  817  grep -A5 "^drupal." core/core.libraries.yml
+  818  cd webpack.mix.js
+  819  grep -A5 "^drupal." core/core.libraries.yml
+  820  cd web
+  821  ls -l
+  822  pwd
+  823  cd ..
+  824  cd ..
+  825  cd ..
+  826  cd ..
+  827  cd web
+  828  grep -A5 "^drupal." core/core.libraries.yml
+  829  ddev drush cr
+  830  ddev drush ev "print_r(\Drupal::service('library.discovery')->getLibrariesByExtension('mytheme'))"
+  831  ddev drush pml | grep theme
+  832  ddev drush theme:uninstall mytheme
+  833  ddev drush cr
+  834  ddev drush pml | grep theme
+  835  ddev drush ev "print_r(\Drupal::service('library.discovery')->getLibrariesByExtension('mytheme'))"
+  836  ddev drush sqlq "DELETE FROM key_value WHERE collection='system.theme' AND name='mytheme';"\n
+  837  ddev drush sqlq "DELETE FROM system WHERE type='theme' AND name='mytheme';"\n
+  838  ddev drush cr
+  839  ddev drush ev "print_r(array_keys(\Drupal::service('library.discovery')->getLibraries()));"
+  840  ddev drush ev "\n\$extensions = \Drupal::service('extension.list.module')->getAllInstalled();\nforeach (\$extensions as \$ext) {\n  \$libs = \Drupal::service('library.discovery')->getLibrariesByExtension(\$ext);\n  if (libs)) {\n    echo \"Module: \$ext\n\";\n    print_r(array_keys(\$libs));\n  }\n}\n\$themes = \Drupal::service('extension.list.theme')->getAllInstalled();\nforeach (\$themes as \$theme) {\n  \$libs = \Drupal::service('library.discovery')->getLibrariesByExtension(\$theme);\n  if (!empty(\$libs)) {\n    echo \"Theme: \$theme\n\";\n    print_r(array_keys(\$libs));\n  }\n}\n"
+  841  ddev drush ev "\n\$extensions = \Drupal::service('extension.list.module')->getAllInstalled();\nforeach (\$extensions as \$ext) {\n  \$libs = \Drupal::service('library.discovery')->getLibrariesByExtension(\$ext);\n  if (libs)) {\n    echo \"Module: \$ext\n\";\n    print_r(array_keys(\$libs));\n  }\n}\n\$themes = \Drupal::service('extension.list.theme')->getAllInstalled();\nforeach (\$themes as \$theme) {\n  \$libs = \Drupal::service('library.discovery')->getLibrariesByExtension(\$theme);\n  if (!empty(\$libs)) {\n    echo \"Theme: \$theme\n\";\n    print_r(array_keys(\$libs));\n  }\n}\n"
+  842  ddev drush ev '\n$extensions = \Drupal::service("extension.list.module")->getAllInstalled();\nforeach ($extensions as $ext) {\n  $libs = \Drupal::service("library.discovery")->getLibrariesByExtension($ext);\n  if (!empty($libs)) {\n    echo "Module: $ext\n";\n    print_r(array_keys($libs));\n  }\n}\n$themes = \Drupal::service("extension.list.theme")->getAllInstalled();\nforeach ($themes as $theme) {\n  $libs = \Drupal::service("library.discovery")->getLibrariesByExtension($theme);\n  if (!empty($libs)) {\n    echo "Theme: $theme\n";\n    print_r(array_keys($libs));\n  }\n}\n'
+  843  ddev drush ev '\$extensions = \Drupal::service("extension.list.module")->getAllInstalled(); foreach (\$extensions as \$ext) { \$libs = \Drupal::service("library.discovery")->getLibrariesByExtension(\$ext); if (!empty(\$libs)) { echo "Module: \$ext\n"; print_r(array_keys(\$libs)); } } \$themes = \Drupal::service("extension.list.theme")->getAllInstalled(); foreach (\$themes as \$theme) { \$libs = \Drupal::service("library.discovery")->getLibrariesByExtension(\$theme); if (!empty(\$libs)) { echo "Theme: \$theme\n"; print_r(array_keys(\$libs)); } }'
+  844  nano list_libraries.php
+  845  ddev drush scr list_libraries.php
+  846  nano list_libraries.php
+  847  ddev drush scr list_libraries.php
+  848  nano list_libraries.php
+  849  ddev drush scr list_libraries.php
+  850  cd ..
+  851  ddev drush scr web/list_libraries.php
+  852  nano web/list_libraries.php
+  853  ddev drush scr web/list_libraries.php
+  854  nano web/list_checkout_libraries.php
+  855  ddev drush scr web/list_checkout_libraries.php
+  856  ddev drush cr
+  857  ddev drush cr
+  858  ddev drush cr
+  859  ddev drush cr
+  860  ddev drush cr
+  861  ddev drush cr
+  862  ddev drush cr
+  863  ls -l
+  864  cd ..
+  865  cd qmj_radix
+  866  ls -l
+  867  ddev drush cr
+  868  ddev start
+  869  ddev drush cr
+  870  ddev launch
+  871  cd ..
+  872  cd qmj_radix
+  873  ddev restart
+  874  ddev launch
+  875  SELECT name, data FROM config WHERE name LIKE '%commerce_checkout%';
+  876  ddev drush cgrep library
+  877  ddev drush eval "print_r(\Drupal::entityTypeManager()->getStorage('commerce_checkout_flow')->loadMultiple());"
+  878  ddev drush ev '\n$libraries = \Drupal::service("library.discovery")->getLibrariesByExtension("qmj_radix");\nforeach ($libraries as $name => $lib) {\n  if (!isset($lib["dependencies"])) {\n    echo "Library $name has no dependencies defined.\n";\n  }\n}\n'
+  879  cd web
+  880  nano scan_null_dependencies.ph
+  881  nano scan_null_dependencies.php
+  882  cd ..
+  883  ddev drush scr web/scan_null_dependencies.php
+  884  nano web/scan_null_dependencies.php
+  885  ddev drush scr web/scan_null_dependencies.php
+  886  nano web/remove_missing_extensions.php
+  887  ddev drush scr web/remove_missing_extensions.php
+  888  ddev drush scr web/remove_missing_extensions.php
+  889  nano web/remove_missing_extensions.php
+  890  ddev drush scr web/remove_missing_extensions.php
+  891  ddev drush scr web/scan_null_dependencies.php
+  892  nano web/scan_null_dependencies.php
+  893  ddev drush scr web/scan_null_dependencies.php
+  894  ddev drush scr web/remove_missing_extensions.php
+  895  nano web/remove_missing_extensions_d10.php
+  896  ddev drush scr web/remove_missing_extensions_d10.php
+  897  nano web/remove_missing_extensions_d10.php
+  898  ddev drush scr web/remove_missing_extensions_d10.php
+  899  ddev drush cr
+  900  composer update
+  901  ddev drush cr
+  902  ls -l
+  903  ddev import-db --file=db250925.sql
+  904  ddev drush cr
+  905  ddev drush cr
+  906  ls -l
+  907  cd ..
+  908  cd qmj_radix
+  909  ddev restart
+  910  cd ..
+  911  cd qmj_radix
+  912  ddev restart
+  913  composer update
+  914  composer update
+  915  composer update
+  916  composer update
+  917  composer clearcache
+  918  composer update
+  919  ddev drush cr
+  920  ddev drush cr
+  921  composer update
+  922  composer update
+  923  ddev drush cr
+  924  composer require 'drupal/commerce_reports:^1.0@RC'
+  925  ls -l
+  926  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom
+  927  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom
+  928  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/qmj_radix
+  929  ls -l
+  930  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/qmj_radix
+  931  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+  932  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+  933  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+  934  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+  935  ddev start
+  936  ddev npm run dev
+  937  ssh
+  938  ddev npm install\n
+  939  pwd
+  940  ls -l
+  941  ddev npm run dev
+  942  npm init
+  943  ddev npm init
+  944  ddev npm run dev
+  945  ddev npm init
+  946  ddev npm run dev
+  947  ddev npm install\n
+  948  ddev npm run dev
+  949  ddev npm run
+  950  ddev npm run start
+  951  ddev npm run dev
+  952  cd web
+  953  ddev npm run dev
+  954  ddev npm run
+  955  ddev npm run test
+  956  ddev npm install
+  957  ddev npm install --dev
+  958  ddev npm run dev
+  959  ddev npm run
+  960  ddev npm run watch
+  961  cd ..
+  962  ddev npm run watch
+  963  ddev npm run start
+  964  ddev npm run
+  965  ddev npm run dev
+  966  ddev npm run dev
+  967  ddev ssh
+  968  ddev launch
+  969  ddev npm run dev
+  970  ddev npm install --save-dev @symfony/webpack-encore
+  971  ddev npx encore dev --watch
+  972  ddev npm install
+  973  ddev npm run dev
+  974  ddev npm watch dev
+  975  cd web/themes/custom/qmj_radix
+  976  ddev npm run dev
+  977  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+  978  ddev npm run dev
+  979  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+  980  ddev npm run dev
+  981  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+  982  ddev npm run dev
+  983  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+  984  ddev npm run watch
+  985  cd web/themes/custom/qmj_radix/ddev npm run watch
+  986  web/themes/custom/qmj_radix/ddev npm run watch
+  987  ddev npm run watch
+  988  web/themes/custom/qmj_radix/ddev npm run watch
+  989  ddev npm install --dev
+  990  ddev npm run watch
+  991  ddev npm run watch
+  992  ddev ssh
+  993  ddev start
+  994  ddev launch
+  995  ddev npm run dev
+  996  ddev ssh
+  997  ddev drush cr
+  998  ddev npm run dev
+  999  sudo nano /etc/hosts
+ 1000  sudo killall -HUP mDNSResponder
+ 1001  pwd
+ 1002  ddev npm run dev
+ 1003  ddev npm run dev
+ 1004  ddev npm run dev
+ 1005  ddev npm run dev
+ 1006  ddev npm run dev
+ 1007  ddev npm run dev
+ 1008  ddev npm run dev
+ 1009  ddev npm run dev
+ 1010  ddev npm run dev
+ 1011  ddev npm run dev
+ 1012  ddev npm run dev
+ 1013  ddev npm run dev
+ 1014  ddev npm run dev
+ 1015  ls -l
+ 1016  ddev import-db --file=db300925.sql
+ 1017  ddev drush cr
+ 1018  ddev launch
+ 1019  ddev drush cr
+ 1020  drush upwd admin qmjfpi1918
+ 1021  ddev drush upwd admin qmjfpi1918
+ 1022  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1023  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1024  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1025  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1026  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1027  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1028  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1029  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1030  pwd
+ 1031  composer require 'drupal/social_media_platforms:^1.1'
+ 1032  composer require 'drupal/social_media_links:^2.10'
+ 1033  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1034  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1035  ddev start
+ 1036  ddev drush cr
+ 1037  ddev drush cr
+ 1038  ddev drush cr
+ 1039  ddev drush cr
+ 1040  ddev drush cr
+ 1041  ddev drush cr
+ 1042  ddev drush cr
+ 1043  ddev drush cr
+ 1044  ddev drush cr
+ 1045  pwd
+ 1046  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1047  pwd
+ 1048  ddev npm run dev
+ 1049  ddev npm run dev
+ 1050  ddev npm run dev
+ 1051  ddev start
+ 1052  ddev launch
+ 1053  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1054  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1055  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1056  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1057  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1058  ddev start
+ 1059  pwd
+ 1060  ddev drush cr
+ 1061  ddev drush cr
+ 1062  ddev drush cr
+ 1063  ddev drush cr
+ 1064  ddev drush cr
+ 1065  ddev drush cr
+ 1066  ddev drush cr
+ 1067  ddev drush cr
+ 1068  ddev drush cr
+ 1069  ddev drush cr
+ 1070  ddev drush cr
+ 1071  cd web/
+ 1072  nano themes/custom/qmj_radix/templates/field/field--field-cover-image.html.twig
+ 1073  ddev drush cr
+ 1074  ddev drush cr
+ 1075  ddev drush cr
+ 1076  ddev drush cr
+ 1077  ddev drush cr
+ 1078  ddev drush cr
+ 1079  ddev drush cr
+ 1080  pwd
+ 1081  ddev npm run dev
+ 1082  ddev npm run dev
+ 1083  ddev npm run dev
+ 1084  ddev npm run dev
+ 1085  ddev npm run dev
+ 1086  ddev npm run dev
+ 1087  ddev npm run dev
+ 1088  ddev npm run dev
+ 1089  ddev npm run dev
+ 1090  ddev npm run dev
+ 1091  ddev npm run dev
+ 1092  ddev npm run dev
+ 1093  ddev start
+ 1094  ddev launch
+ 1095  ddev start
+ 1096  ddev launch
+ 1097  ls -l
+ 1098  cd ..
+ 1099  cd ..
+ 1100  cd concreteconnect.co.uk
+ 1101  ls -l
+ 1102  ddev start
+ 1103  ddev launch
+ 1104  pwd
+ 1105  ls -l
+ 1106  pwd
+ 1107  pwd
+ 1108  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/test /Users/neilfarhall/workspace/concreteconnect.co.uk/\n
+ 1109  ls -l
+ 1110  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/sites/default/files/ /Users/neilfarhall/workspace/concreteconnect.co.uk/web/sites/default/files\n
+ 1111  ls -l
+ 1112  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/sites/default/files/ /Users/neilfarhall/workspace/concreteconnect.co.uk/web/sites/default/files/\n
+ 1113  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/composer.json /Users/neilfarhall/workspace/concreteconnect.co.uk/composer.json
+ 1114  ls -l
+ 1115  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/*.* /Users/neilfarhall/workspace/concreteconnect.co.uk/*.*
+ 1116  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/* /Users/neilfarhall/workspace/concreteconnect.co.uk/*
+ 1117  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/ /Users/neilfarhall/workspace/concreteconnect.co.uk/web
+ 1118  ls -l
+ 1119  pwd
+ 1120  cd ..
+ 1121  cd ..
+ 1122  cd concreteconnect.co.uk
+ 1123  ls -l
+ 1124  ls -l
+ 1125  cd web
+ 1126  ls -l
+ 1127  cd ..
+ 1128  ls -l
+ 1129  sudo chown neilfarhall:staff -R web
+ 1130  ls -l
+ 1131  sudo chown neilfarhall:staff -R web/
+ 1132  sudo chown neilfarhall:staff -R web
+ 1133  sudo chown neilfarhall:staff web
+ 1134  ls -l
+ 1135  cd web
+ 1136  ls -l
+ 1137  cd ..
+ 1138  sudo chown neilfarhall:staff web/
+ 1139  sudo chown -R neilfarhall:staff web/
+ 1140  chmod 755 -R web
+ 1141  sudo chmod -R 755 web/
+ 1142  cd web
+ 1143  ls -l
+ 1144  cd sites/default
+ 1145  ls -l
+ 1146  cd ..
+ 1147  cd ..
+ 1148  cd ..
+ 1149  ls -l
+ 1150  ddev import-db --file=db22300925.sql
+ 1151  ls -l
+ 1152  ddev drush cr
+ 1153  ls -l
+ 1154  ddev composer update
+ 1155  ddev drush cr
+ 1156  cd web/modules
+ 1157  ls -l
+ 1158  cd custom
+ 1159  ls -l
+ 1160  cd ..
+ 1161  cd contrib
+ 1162  ls -l
+ 1163  cd paragraphs_features
+ 1164  ls -l
+ 1165  ddev drush cr
+ 1166  ddev drush cr
+ 1167  ddev drush cr
+ 1168  ddev start
+ 1169  composer require 'drupal/symfony_mailer_lite:^2.0'
+ 1170  ddev launch
+ 1171  ls -a
+ 1172  ddev start
+ 1173  pwd
+ 1174  composer require 'drupal/commerce_reports:^1.0@RC'
+ 1175  ddev launch
+ 1176  ls -l
+ 1177  cd sites
+ 1178  cd default
+ 1179  ls -l
+ 1180  ddev drush cr
+ 1181  chmod 755 -R files
+ 1182  chmod 755 -R files
+ 1183  chmod -R 755 files
+ 1184  cd ..\\n
+ 1185  cd ..
+ 1186  composer require 'drupal/commerce_reports:^1.0@RC'
+ 1187  ddev launch
+ 1188  ddev launch
+ 1189  ddev start
+ 1190  composer require 'drupal/captcha:^2.0'
+ 1191  ddev npm run dev
+ 1192  ls -l
+ 1193  pwd
+ 1194  cd themes/custom
+ 1195  cd qmj_radix
+ 1196  ddev npm run dev
+ 1197  ddev drush cr
+ 1198  ddev npm run dev
+ 1199  ddev drush cr
+ 1200  ddev npm run dev
+ 1201  ddev npm run dev
+ 1202  ddev npm run dev
+ 1203  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1204  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/qmj.co.uk/public/web/themes/custom/
+ 1205  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/qmj.co.uk/public/web/themes/custom/
+ 1206  ddev start
+ 1207  dddev launch
+ 1208  ddev launch
+ 1209  ls -l
+ 1210  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ /Users/neilfarhall/workspace/agg-net.com/
+ 1211  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ /Users/neilfarhall/workspace/agg-net.com/
+ 1212  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ /Users/neilfarhall/workspace/agg-net.com/
+ 1213  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/web/sites/ /Users/neilfarhall/workspace/agg-net.com/web/sites/
+ 1214  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/web/sites/ /Users/neilfarhall/workspace/agg-net.com/web/sites/
+ 1215  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/web/sites/ /Users/neilfarhall/workspace/agg-net.com/web/sites/
+ 1216  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/web/sites/ /Users/neilfarhall/workspace/agg-net.com/web/sites/
+ 1217  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/web/sites/ /Users/neilfarhall/workspace/agg-net.com/web/sites/
+ 1218  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/web/sites/ /Users/neilfarhall/workspace/agg-net.com/web/sites/
+ 1219  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/web/sites/default/ /Users/neilfarhall/workspace/agg-net.com/web/sites/default/
+ 1220  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/web/ /Users/neilfarhall/workspace/agg-net.com/web/
+ 1221  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/web/themes/ /Users/neilfarhall/workspace/agg-net.com/web/themes
+ 1222  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/web/core/ /Users/neilfarhall/workspace/agg-net.com/web/core/
+ 1223  ddev launch
+ 1224  ls -l
+ 1225  chmod 755 -R web
+ 1226  chmod -R 755 web
+ 1227   sudo chown neilfarhall:staff web
+ 1228  sudo chmod -R 755 web
+ 1229  l
+ 1230  ls -l
+ 1231  cd ..
+ 1232  sudo chmod -R 755 agg-net.com
+ 1233  ddev launch
+ 1234  cd agg-net.com
+ 1235  ls -l
+ 1236  ddev import-db --file=db-agg-net-131025.sql\n
+ 1237  ddev drush cr
+ 1238  composer update
+ 1239  composer clearcache
+ 1240  xs ..
+ 1241  cd ..
+ 1242  cd ..
+ 1243  cd ..
+ 1244  ls -l
+ 1245  ddev start
+ 1246  composer require drupal/better_exposed_filters
+ 1247  ls -l
+ 1248  cd ..
+ 1249  sudo chmod -R 755 agg-net.com
+ 1250  sudo chown neilfarhall:staff agg-net.com
+ 1251  sudo chown -R neilfarhall:staff agg-net.com
+ 1252  cd agg-net.com
+ 1253  ls -l
+ 1254  composer require drupal/better_exposed_filters
+ 1255  composer require drupal/better_exposed_filters
+ 1256  composer clearcache
+ 1257  composer update
+ 1258  composer update
+ 1259  ddev drush cr
+ 1260  php --version
+ 1261  cd .ddev
+ 1262  ls -l
+ 1263  nano config.yaml
+ 1264  cd ..
+ 1265  ddev restart
+ 1266  ddev drush cr
+ 1267  ddev drush cr
+ 1268  composer update
+ 1269  ddev launch
+ 1270  composer install
+ 1271  composer help
+ 1272  composer help list
+ 1273  ddev drush status
+ 1274  cd .ddev
+ 1275  nano config.yaml
+ 1276  ddev restart
+ 1277  cd ..
+ 1278  composer update
+ 1279  ddev start
+ 1280  composer require 'drupal/google_analytics:^4.0'
+ 1281  ddev launch
+ 1282  ddev stsrt
+ 1283  ddev start
+ 1284  ddev launch
+ 1285  dde drush cr
+ 1286  ddev drush cr
+ 1287  ddev drush cr
+ 1288  ddev drush cr
+ 1289  mkdir web/modules/custom/disable_autocomplete
+ 1290  pwd
+ 1291  cd ..
+ 1292  cd ..
+ 1293  cd ..
+ 1294  cd ..
+ 1295  mkdir web/modules/custom/disable_autocomplete
+ 1296  cd web/modules/custom/disable_autocomplete
+ 1297  nano disable_autocomplete.info.yml
+ 1298  nano disable_autocomplete.module
+ 1299  cd ..
+ 1300  cd ..
+ 1301  cd ..
+ 1302  ddev drush en disable_autocomplete -y\n
+ 1303  ddev drush cr
+ 1304  cd ..
+ 1305  cd web/modules/custom/disable_autocomplete
+ 1306  nano disable_autocomplete.info.yml
+ 1307  ls -l
+ 1308  nano disable_autocomplete.module
+ 1309  ddev drush en disable_autocomplete -y\n
+ 1310  ddev drush cr
+ 1311  ddev drush cr
+ 1312  nano disable_autocomplete.module
+ 1313  ddev start
+ 1314  ddev launch
+ 1315  composer require 'drupal/redirect:^1.12'
+ 1316  ddev drush en require -y\n
+ 1317  cd ..
+ 1318  cd ..
+ 1319  cd ..
+ 1320  pwd
+ 1321  ddev drush cr
+ 1322  ddev launch
+ 1323  ddev start
+ 1324  ddev launch
+ 1325  composer require 'drupal/webform:^6.2'
+ 1326  ddev launch
+ 1327  cd modules/custom
+ 1328  mkdir qmj_user_contact
+ 1329  cd qmj_user_contact\n
+ 1330  nano qmj_user_contact.info.yml
+ 1331  nano qmj_user_contact.routing.yml
+ 1332  mkdir src/Form
+ 1333  mkdir src/
+ 1334  cd src
+ 1335  mkdir Form
+ 1336  nano UserContactForm.php
+ 1337  cd ..
+ 1338  c src/Form
+ 1339  ls
+ 1340  ls -l
+ 1341  cd src/
+ 1342  ls -l
+ 1343  mv UserContactForm.php From/
+ 1344  mv UserContactForm.php Form
+ 1345  ls -l
+ 1346  cd Form
+ 1347  ls -l
+ 1348  cd..
+ 1349  cd ..
+ 1350  cd ..
+ 1351  nano qmj_user_contact.module
+ 1352  ls
+ 1353  ls -l
+ 1354  ddev drush en qmj_user_contact -y\n
+ 1355  ddev launch
+ 1356  ddev launch
+ 1357  ddev launch
+ 1358  ddev launch
+ 1359  ddev launch
+ 1360  ddev launch
+ 1361  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1362  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/qmj.co.uk/public/web/themes/custom/
+ 1363  ddev start
+ 1364  pwd
+ 1365  cd web/themes/custom/qmj_radix
+ 1366  ddev npm run dev
+ 1367  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv /Users/neilfarhall/workspace/qmj_radix/web/themes/custom/qmj_radix aHSv qmjpublish.vs.mythic-beasts.com:/srv/shop.qmj.co.uk/public/web/themes/custom/
+ 1368  ddev start
+ 1369  ddev launch
+ 1370  ddev drush cr
+ 1371  ddev drush cr
+ 1372  ddev drush cr
+ 1373  ddev drush cr
+ 1374  ddev start
+ 1375  ddev launch
+ 1376  ddev composer require 'drupal/swiper_formatter:^1.0'
+ 1377  ddev start
+ 1378  ddev launch
+ 1379  ddev drush cr
+ 1380  ddev drush user-password admin
+ 1381  drush user-password <admin> --password="<QMJfpi1918>"
+ 1382  ddev drush user-password <admin> --password="<QMJfpi1918>"
+ 1383  ddev drush user-password admin --password="<QMJfpi1918>"
+ 1384  ddev drush user-password admin --password="QMJfpi1918"
+ 1385  ddev drush user:password <admin> --password="<QMJfpi1918>"\n
+ 1386  ddev drush user:password admin --password="<QMJfpi1918>"\n
+ 1387  ddev drush user:password admin --password="QMJfpi1918"\n
+ 1388  ddev drush upwd admin --password="QMJfpi1918"\n
+ 1389  ddev drush user-login admin
+ 1390  ddev composer update drupal/mailchimp --with-all-dependencies
+ 1391  ddev start
+ 1392  ddev launch
+ 1393  ddev start
+ 1394  ddev launch
+ 1395  ddev drush cr
+ 1396  ddev drush cr
+ 1397  ddev drush cr
+ 1398  ddev drush cr
+ 1399  ddev start
+ 1400  ddev launch
+ 1401  ddev drush cgrep pb_display_border_hover
+ 1402  drush cgrep pb_display_border_hover
+ 1403  ddev drush cgrep pb_display_border_hover
+ 1404  ddev drush config:list | grep pb_display_border_hover
+ 1405  ddev drush config-delete field.storage.paragraph.pb_display_border_hover -y\n
+ 1406  ddev drush config-delete field.field.paragraph.card_image_section_bundle.pb_display_border_hover -y
+ 1407  ddev drush cr
+ 1408  ddev drush config-delete field.field.paragraph.image_bundle.pb_display_border_hover -y
+ 1409  ddev drush config-delete field.field.paragraph.image_narrow_bundle.pb_display_border_hover -y\n
+ 1410  ddev drush config-delete field.field.paragraph.image_wide_bundle.pb_display_border_hover -y\n
+ 1411  ddev drush config-delete field.field.paragraph.simple_bundle.pb_display_border_hover -y
+ 1412  ddev drush cr
+ 1413  ddev drush devel-entity-updates
+ 1414  ddev drush entity:updates -y\n
+ 1415  ddev drush entup -y
+ 1416  ddev drush entity:update -y\n
+ 1417  ddev drush cr
+ 1418  ddev drush entity:update -y\n
+ 1419  drush drush entity-updates
+ 1420  ddev drush entity-updates
+ 1421  ddev composer require 'drupal/devel_entity_updates'
+ 1422  ddev drush en devel_entity_updates\n
+ 1423  ddev drush entity-updates\n
+ 1424  ddev drush php-eval "\n  \$storage = \Drupal::entityTypeManager()->getStorage('field_storage_config');\n  if (\$field = \$storage->load('paragraph.pb_display_border_hover')) {\n    echo 'Deleting field storage paragraph.pb_display_border_hover' . PHP_EOL;\n    \$field->delete();\n  }\n  else {\n    echo 'Field storage not found.' . PHP_EOL;\n  }\n"
+ 1425  ddev drush entity:updates -y || drush entup -y\ndrush cr
+ 1426  ddev drush entity-updates\n
+ 1427  ddev start
+ 1428  ddev launch
+ 1429  ddev start
+ 1430  history > history_for_print.txt\n
+ 1431  history >> history_for_print.txt\n
+ 1432  ls -l
+ 1433  ddev import-db --file=cc_12-12-25.sql
+ 1434  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/sites/default/files/ /Users/neilfarhall/workspace/concreteconnect.co.uk/web/sites/default/files/\n
+ 1435  ddev drush cget -y field.field.paragraph.*.pb_display_border_hover
+ 1436  drush cget -y field.field.paragraph.*.pb_display_border_hover
+ 1437  ddev drush cr
+ 1438  ddev drush cget -y field.field.paragraph.*.pb_display_border_hover
+ 1439  ddev drush cget -y 'field.field.paragraph.*.pb_display_border_hover'
+ 1440  ddev drush config:list | grep pb_display_border_hover
+ 1441  ddev drush config | grep pb_display_border_hover
+ 1442  ddev drush cr
+ 1443  ddev drush config:export -y\ngrep -R "pb_display_border_hover" -n config/sync
+ 1444  ddev drush config:get field.storage.paragraph.pb_display_border_hover
+ 1445  ls -la config/sync/field.storage.paragraph.pb_display_border_hover.yml
+ 1446  ddev drush config:delete -y field.field.paragraph.card_image_section_bundle.pb_display_border_hover\nddev drush config:delete -y field.field.paragraph.card_text_section_bundle.pb_display_border_hover\nddev drush config:delete -y field.field.paragraph.image_bundle.pb_display_border_hover\nddev drush config:delete -y field.field.paragraph.image_wide_bundle.pb_display_border_hover\nddev drush config:delete -y field.field.paragraph.image_narrow_bundle.pb_display_border_hover\nddev drush config:delete -y field.field.paragraph.simple_bundle.pb_display_border_hover
+ 1447  ddev drush cr
+ 1448  ddev drush cr
+ 1449  ddev drush cr
+ 1450  ddev drush cr
+ 1451  ddev drush cr
+ 1452  ddev drush cr
+ 1453  ddev drush cr
+ 1454  ddev drush config:status | grep entity_.*_display
+ 1455  drush csex core.entity_view_display --destination=/tmp/csex\ndrush csex core.entity_form_display --destination=/tmp/csex
+ 1456  ddev drush csex core.entity_view_display --destination=/tmp/csex\nddev drush csex core.entity_form_display --destination=/tmp/csex
+ 1457  ddev start
+ 1458  ddev start
+ 1459  ddev launch
+ 1460  composer update
+ 1461  composer update
+ 1462  composer update
+ 1463  composer update
+ 1464  composer update
+ 1465  composer update
+ 1466  composer update
+ 1467  composer update
+ 1468  composer update
+ 1469  composer update
+ 1470  composer update
+ 1471  composer update
+ 1472  composer update
+ 1473  composer update
+ 1474  composer update
+ 1475  composer update
+ 1476  composer install
+ 1477  composer help
+ 1478  composer --help
+ 1479  composer clearcache
+ 1480  composer install
+ 1481  grep -R "layout_builder_3080606" -n .
+ 1482  composer help
+ 1483  composer install
+ 1484  composer update nothing -W\n
+ 1485  grep -R "layout_builder_3080606" -n .
+ 1486  composer install -vvv | grep -i "Applying patches for drupal/core"
+ 1487  rm -f composer.lock\ncomposer install
+ 1488  composer config extra.patches
+ 1489  composer config extra.patches-file\ncomposer config extra.patchesFile\ncomposer config extra.patches-file --absolute
+ 1490  grep -R "layout_builder_3080606" -n . --exclude-dir=vendor --exclude=composer.lock\ngrep -R "fix-ief-layout-block-3117510" -n . --exclude-dir=vendor --exclude=composer.lock
+ 1491  grep -R "Reorder sections" -n .\n
+ 1492  composer validate --no-check-all --ansi
+ 1493  pwd\ncomposer -n config --list --source | head -n 50
+ 1494  composer -g config --list --source | grep -i patch\ncomposer -g config --list --source | grep -i merge
+ 1495  rm -f composer.lock\nrm -rf vendor web/core\ncomposer install
+ 1496  nano web/modules/contrib/layoutcomponents/composer.json
+ 1497  nano web/modules/contrib/layoutcomponents/composer.json
+ 1498  nano web/modules/contrib/layoutcomponents/composer.json
+ 1499  composer update --lock\ncomposer install
+ 1500  composer update --lock\ncomposer install
+ 1501  rm -f composer.lock\nrm -rf vendor web/core\ncomposer install
+ 1502  nano web/modules/contrib/layoutcomponents/composer.json
+ 1503  cd web/modules/contrib/layoutcomponents/
+ 1504  rm -f composer.lock\nrm -rf vendor web/core\ncomposer install
+ 1505  cd ..
+ 1506  cd ..
+ 1507  cd ..
+ 1508  cd ..
+ 1509  ddev drush en address -y\n# or without ddev:\ndrush en address -y
+ 1510  ddev drush cr
+ 1511  composer show drupal/commerce\nddev drush pm:list --type=module | grep -i commerce
+ 1512  composer require drupal/commerce
+ 1513  ddev drush en commerce_price -y\nddev drush cr
+ 1514  cd .ddev
+ 1515  nano config.yaml
+ 1516  ddev restart
+ 1517  ddev restart
+ 1518  cd ..
+ 1519  ddev php --version
+ 1520  ddev drush cr
+ 1521  ddev config --php-version=8.2\nddev restart\nddev php -v
+ 1522  composer install\nddev drush cr
+ 1523  ddev start
+ 1524  ddev launch
+ 1525  composer install
+ 1526  rm -f composer.lock\nrm -rf vendor web/core\ncomposer install
+ 1527  composer config --list --source | grep -iE "patch|merge|cweagans|wikimedia"
+ 1528  composer config extra.merge-plugin --source
+ 1529  grep -R "layout_builder_3080606" -n vendor | head -n 20\ngrep -R "fix-ief-layout-block-3117510" -n vendor | head -n 20
+ 1530  pwd\ncomposer status 2>/dev/null || true\nls -la composer.json composer.lock
+ 1531  pwd\ncomposer status 2>/dev/null || true\nls -la composer.json composer.lock
+ 1532  ls -la concrete-connect/composer.json concrete-connect/composer.lock 2>/dev/null
+ 1533  grep -n "\"patches\"" composer.json\ngrep -n "composer-patches" composer.json
+ 1534  composer update --lock\ncomposer install
+ 1535  composer update --lock\ncomposer install
+ 1536  sed -n '270,330p' composer.json\nsed -n '330,420p' composer.json
+ 1537  rm -f composer.lock\nrm -rf vendor web/core
+ 1538  COMPOSER_PROCESS_TIMEOUT=1200 composer install
+ 1539  COMPOSER_PROCESS_TIMEOUT=1200 composer install\n# or via ddev\nddev exec "COMPOSER_PROCESS_TIMEOUT=1200 composer install"
+ 1540  COMPOSER_PROCESS_TIMEOUT=1200 composer install\n# or via ddev\nddev exec "COMPOSER_PROCESS_TIMEOUT=1200 composer install"
+ 1541  pwd\nls -la composer.json composer.lock
+ 1542  composer config --list --source | grep -iE "patch|merge|cweagans|wikimedia"
+ 1543  composer -g config --list --source | grep -iE "patch|merge"
+ 1544  rm -f composer.lock\nrm -rf vendor web/core\ncomposer install
+ 1545  grep -R "layout_builder_3080606" -n web/modules/contrib/*/composer.json
+ 1546  rm -f composer.lock\nrm -rf vendor web/core\ncomposer install
+ 1547  rm -f composer.lock\nrm -rf vendor web/core\ncomposer install
+ 1548  grep -R "layout_builder_3080606" -n web/modules/contrib/*/composer.json
+ 1549  rm -f composer.lock\nrm -rf vendor web/core\ncomposer install
+ 1550  grep -R "layout_builder_3080606" -n web/modules/contrib/*/composer.json
+ 1551  rm -f composer.lock\nrm -rf vendor web/core\ncomposer install
+ 1552  composer update --lock\ncomposer install
+ 1553  composer update --lock\ncomposer install
+ 1554  composer config extra.composer-patches --json
+ 1555  composer install
+ 1556  composer update
+ 1557  rm -f composer.lock\nrm -rf vendor web/core\ncomposer install
+ 1558    - Applying patches for drupal/core\n    https://www.drupal.org/files/issues/2020-03-20/layout_builder_3080606-reorder-layout-sections-29_1.patch (Reorder sections)\n
+ 1559  composer show cweagans/composer
+ 1560  composer show cweagans/composer-patches | head -n 20
+ 1561  composer require --dev cweagans/composer-patches:^2.0 --update-with-dependencies
+ 1562  rm -f patches.lock.json\ncomposer update --lock\ncomposer install
+ 1563  Gathering patches for root package.\nInstalling dependencies from lock file (including require-dev)\nVerifying lock file contents can be installed on current platform.\n- Required package "enyo/dropzone" is in the lock file as "v5.9.3" but that does not satisfy your constraint "5.7.2".\n- Required package "algolia/places" is not present in the lock file.\n- Required package "choices/choices" is not present in the lock file.\n- Required package "codemirror/codemirror" is not present in the lock file.\n- Required package "jquery/chosen" is not present in the lock file.\n- Required package "jquery/geocomplete" is not present in the lock file.\n- Required package "jquery/hotkeys" is not present in the lock file.\n- Required package "jquery/icheck" is not present in the lock file.\n- Required package "jquery/image-picker" is not present in the lock file.\n- Required package "jquery/inputmask" is not present in the lock file.\n- Required package "jquery/intl-tel-input" is not present in the lock file.\n- Required package "jquery/rateit" is not present in the lock file.\n- Required package "jquery/select2" is not present in the lock file.\n- Required package "jquery/textcounter" is not present in the lock file.\n- Required package "jquery/timepicker" is not present in the lock file.\n- Required package "jquery/toggles" is not present in the lock file.\n- Required package "popperjs/popperjs" is not present in the lock file.\n- Required package "progress-tracker/progress-tracker" is not present in the lock file.\n- Required package "signature_pad/signature_pad" is not present in the lock file.\n- Required package "svg-pan-zoom/svg-pan-zoom" is not present in the lock file.\n- Required package "tabby/tabby" is not present in the lock file.\n- Required package "tippyjs/tippyjs" is not present in the lock file.\nThis usually happens when composer files are incorrectly merged or the composer.json file is manually edited.\nRead more about correctly resolving merge conflicts https://getcomposer.org/doc/articles/resolving-merge-conflicts.md\nand prefer using the "require" command over editing the composer.json file directly https://getcomposer.org/doc/03-cli.md#require-r\n
+ 1564  composer update --lock
+ 1565  composer update -W
+ 1566  composer update -W
+ 1567  composer update -W
+ 1568  composer update -W
+ 1569  composer update -W
+ 1570  rm -f patches.lock.json\ncomposer update --lock\ncomposer install
+ 1571  ddev php --version
+ 1572  ls -a
+ 1573  cd .ddev
+ 1574  ls -l
+ 1575  nano config.yaml
+ 1576  ddev restart
+ 1577  ddev php --version
+ 1578  ddev drush cr
+ 1579  cd ..
+ 1580  composer show drupal/address
+ 1581  composer require 'drupal/address:^2.0'
+ 1582  composer require drupal/address
+ 1583  ddev start
+ 1584  ddev launch
+ 1585  ls -l
+ 1586  cd web
+ 1587  ls -l
+ 1588  cd modules
+ 1589  ls -l
+ 1590  ls -lcd ..
+ 1591  cd ..
+ 1592  cd ..
+ 1593  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/modules/ /Users/neilfarhall/workspace/concreteconnect.co.uk/web/modules/
+ 1594  ls -l
+ 1595  rm test
+ 1596  cd test
+ 1597  ls -l
+ 1598  cd ..
+ 1599  rm -r test
+ 1600  sudo rm -r test
+ 1601  ls -l
+ 1602  cd ..
+ 1603  sudo chown neilfarhall:staff -R concreteconnect.co.uk
+ 1604  sudo chown neilfarhall:staff -R concreteconnect.co.uk/
+ 1605  ls -l
+ 1606  sudo chown neilfarhall:staff -R concreteconnect.co.uk/
+ 1607  sudo chown neilfarhall:staff -R concreteconnect.co.uk/
+ 1608  sudo chown neilfarhall:staff -r concreteconnect.co.uk/
+ 1609  ls -l
+ 1610  sudo chown neilfarhall:staff -r concreteconnect.co.uk/
+ 1611  cd concreteconnect.
+ 1612  cd concreteconnect.co.uk
+ 1613  ls -l
+ 1614  sudo chown neilfarhall:staff -r config
+ 1615  sudo chown neilfarhall:staff -R config
+ 1616  sudo chown neilfarhall:staff -R config
+ 1617  cd ..
+ 1618  sudo chown -r neilfarhall:staff concreteconnect.co.uk/
+ 1619  sudo chown -R neilfarhall:staff concreteconnect.co.uk/
+ 1620  cd concreteconnect.
+ 1621  cd concreteconnect.co.uk
+ 1622  ddev start
+ 1623  ddev start
+ 1624  ddev launch
+ 1625  ls -l
+ 1626  ddev import-db --file=cc_12-12-25.sql
+ 1627  ddev drush cr
+ 1628  ls -l
+ 1629  cd web
+ 1630  ls -l
+ 1631  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/ /Users/neilfarhall/workspace/concreteconnect.co.uk/web/
+ 1632  ls -l
+ 1633  cd ..
+ 1634  sudo chown -r neilfarhall:staff concreteconnect.co.uk/
+ 1635  sudo chown -R neilfarhall:staff concreteconnect.co.uk/
+ 1636  cd ..
+ 1637  sudo chown -R neilfarhall:staff concreteconnect.co.uk/
+ 1638  cd concreteconnect.co.uk
+ 1639  ddev launch
+ 1640  ls -l
+ 1641  cd web
+ 1642  ls -l
+ 1643  cd sites
+ 1644  ls -l
+ 1645  cd ..
+ 1646  cd ..
+ 1647  ls -l
+ 1648  composer install\
+ 1649  composer install
+ 1650  ddev launch
+ 1651  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/ /Users/neilfarhall/workspace/concreteconnect.co.uk/web/
+ 1652  ls -l
+ 1653  composer update
+ 1654  composer config --global process-timeout 20
+ 1655  composer update
+ 1656  ddev drush cr
+ 1657  cd web/sites/default
+ 1658  ls -l
+ 1659  curl -L https://www.drupal.org/files/issues/2023-02-13/3062742-27.patch -o /tmp/test.patch\ncd web/core\npatch -p1 --dry-run < /tmp/test.patch
+ 1660  composer patches-doctor
+ 1661  composer show | grep patches
+ 1662  cd ..
+ 1663  cd ..
+ 1664  cd ..
+ 1665  composer show | grep patches
+ 1666  composer -vvv about | grep -i "Loading plugin"
+ 1667  composer config --no-plugins allow-plugins.cweagans/composer-patches true
+ 1668  composer patches-doctor\n
+ 1669  composer install --no-plugins
+ 1670  composer patches-doctor\n
+ 1671  composer config allow-plugins.cweagans/composer-patches true\ncomposer require cweagans/composer-patches:^2.0 -W
+ 1672  composer patches-doctor\n
+ 1673  composer pd
+ 1674  ddev composer pd
+ 1675  ddev composer patches-doctor\n
+ 1676  brew install gpatch
+ 1677  ddev composer patches-doctor\n
+ 1678  composer patches-doctor\n
+ 1679  ddev composer install
+ 1680  ddev launch
+ 1681  ddev drush cr
+ 1682  ddev launch
+ 1683  ddev composer update
+ 1684  ddev composer audit
+ 1685  ddev drush cr
+ 1686  ddev launch
+ 1687  cd web
+ 1688  ls -l
+ 1689  cd ..
+ 1690  ls -l
+ 1691  cd ..
+ 1692  sudo chown -R neilfarhall:staff concreteconnect.co.uk/
+ 1693  cd concreteconnect.co.uk
+ 1694  ddev drush cr
+ 1695  ls -l
+ 1696  sudo chmod -R 755 web/
+ 1697  ddev drush cr
+ 1698  ddev launch
+ 1699  nano web/sites/default/settings.php
+ 1700  cd web/sites/default
+ 1701  ls -l
+ 1702  rm *.*
+ 1703  ls -l
+ 1704  rm -R filesold
+ 1705  rm -R test
+ 1706  ddev drush cr
+ 1707  ddev launch
+ 1708  ls 0l
+ 1709  cd ..
+ 1710  cd default
+ 1711  ls -l
+ 1712  sudo chmod *.* 755
+ 1713  sudo chmod *.* 777
+ 1714  sudo chmod 755 *.*
+ 1715  ls -l
+ 1716  ddev drush cr
+ 1717  ddev composer install
+ 1718  ddev launch
+ 1719  cd web/modules
+ 1720  ls -l
+ 1721  cd ..
+ 1722  ls -lcd ..
+ 1723  ls -l
+ 1724  cd ..
+ 1725  cd ..
+ 1726  history > history.txt\n\n
+ 1727  history >> history.txt\n\n
+ 1728  nano history.txt
+ 1729  history 1 > history.txt\n\n
+ 1730  nano history.txt
+ 1731  ls -l
+ 1732  ddev start
+ 1733  ddev stop
+ 1734  cd ..
+ 1735  ls -l
+ 1736  cd concreteconnect.co.uk
+ 1737  \ls -l
+ 1738  cd ..
+ 1739  rm -r concreteconnect.co.uk
+ 1740  ls -l
+ 1741  sudo rm -R concreteconnect.co.uk
+ 1742  ddev start
+ 1743  ddev launch
+ 1744  ddev stop
+ 1745  ls -l
+ 1746  cd concreteconnect.
+ 1747  cd concreteconnect.co.uk
+ 1748  ls -l
+ 1749  sudo rm -R test
+ 1750  ls -l
+ 1751  cd web
+ 1752  ls -l
+ 1753  cd sites
+ 1754  ls -l
+ 1755  cd ..
+ 1756  cd ..
+ 1757  ddev start
+ 1758  ddev launch
+ 1759  ddev drush cr
+ 1760  ddev stop
+ 1761  cd ..
+ 1762  ls -l
+ 1763  sudo rm -R concreteconnect.co.uk
+ 1764  ls -l
+ 1765  mkdir concreteconnect.co.uk
+ 1766  ls -l
+ 1767  sudo rm -R concreteconnect.co.uk
+ 1768  ls -l
+ 1769  mkdir concreteconnect.co.uk
+ 1770  cd concreteconnect.co.uk
+ 1771  ddev config --project-type=drupal9 --docroot=web\n
+ 1772  ddev config --database=mysql:8.0\n
+ 1773  ddev config --project-type=drupal9 --docroot=web\n
+ 1774  ls -l
+ 1775  git clone https://marekpercz@bitbucket.org/marekpercz/agg-net.git
+ 1776  ddev composer install
+ 1777  ls -l
+ 1778  cd web
+ 1779  ls -l
+ 1780  cd ..
+ 1781  git clone git@bitbucket.org:Neil_Farhall/concrete-connect.git
+ 1782  ls -l
+ 1783  cd concrete-connect
+ 1784  ls -l
+ 1785  ddev composer install
+ 1786  ddev start
+ 1787  ddev launch
+ 1788  ddev composer require 'drupal/webform_validation:^2.0@RC'
+ 1789  composer require 'drupal/dea_blocker:^2.0@RC'
+ 1790  ddev start
+ 1791  ddev launch
+ 1792  ddev launch
+ 1793  ddev launch
+ 1794  ddev start
+ 1795  ddev launch
+ 1796  ddev start
+ 1797  ddev launch
+ 1798  cd ..
+ 1799  ls -l
+ 1800  cd agg-net-local
+ 1801  ls -l
+ 1802  rsync -avz --exclude 'sites/default/files' --exclude 'vendor' --exclude 'web/sites/default/files' sympl@ 176.126.241.170:/ /srv/agg-net.com/public/web/ ./agg-net-local/
+ 1803  rsync -avz --exclude 'sites/default/files' --exclude 'vendor' --exclude 'web/sites/default/files' sympl@176.126.241.170:/srv/agg-net.com/public/web/ ./agg-net-local/
+ 1804  rsync -avz "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj"  --exclude 'sites/default/files' --exclude 'vendor' --exclude 'web/sites/default/files' sympl@176.126.241.170:/srv/agg-net.com/public/web/ ./agg-net-local/
+ 1805  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv --exclude '/srv/agg-net.com/public/sites/default/files' --exclude 'sites/default/files' --exclude 'vendor' --exclude 'web/sites/default/files' qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ /Users/neilfarhall/workspace/agg-net.com/
+ 1806  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv --exclude '/srv/agg-net.com/public/sites/default/files' --exclude 'sites/default/files' --exclude 'vendor' --exclude 'web/sites/default/files' qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ /Users/neilfarhall/workspace/agg-net.com/
+ 1807  rsync -avz "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj"  --exclude '/srv/agg-net.com/public/sites/default/files’ --exclude 'vendor' sympl@176.126.241.170:/srv/agg-net.com/public/web .\n
+ 1808  pwd
+ 1809  ls -l
+ 1810  ls -
+ 1811  sudo rsync -e -avz "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj"  --exclude '/srv/agg-net.com/public/sites/default/files’ --exclude 'vendor' sympl@176.126.241.170:/srv/agg-net.com/public/web .\n\n\n\n
+ 1812  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com: /srv/agg-net.com/public/web/test/ .
+ 1813  sudo rsync -e  rsync -avz "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" sympl@176.126.241.170:/srv/agg-net.com/public/web/test .
+ 1814  ls -a
+ 1815  cd ..
+ 1816  cd concreteconnect.co.uk
+ 1817  ls -a
+ 1818  cd ..
+ 1819  git clone git@github.com:neilfarhall/concreteconnect.co.uk.git concreteconnect\n
+ 1820  ssh-keygen -R github.com
+ 1821  ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+ 1822  ssh -T git@github.com
+ 1823  ls ~/.ssh
+ 1824  ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+ 1825  ssh -T git@github.com
+ 1826  ssh-add -l
+ 1827  eval "$(ssh-agent -s)"\nssh-add --apple-use-keychain ~/.ssh/id_rsa\nssh-add --apple-use-keychain ~/.ssh/id_rsa_qmj\nssh-add -l
+ 1828  ssh -T git@github.com
+ 1829  cat ~/.ssh/id_rsa.pub
+ 1830  ssh -T git@github.com
+ 1831  nano ~/.ssh/config
+ 1832  ssh -T git@github.com
+ 1833  ls -l
+ 1834  cd ~
+ 1835  ls -l
+ 1836  cd ~/workspace\ngit clone git@github.com:neilfarhall/concreteconnect.co.uk.git concreteconnect\ncd concreteconnect
+ 1837  ls -l
+ 1838  git pull
+ 1839  ls -a
+ 1840  git remote -v\ngit fetch --all --prune\ngit branch -vv\ngit branch -r
+ 1841  git remote -v
+ 1842  git fetch --all --prune\n
+ 1843  git branch -vv\n
+ 1844  git branch -r
+ 1845  git status
+ 1846  cd ~/workspace
+ 1847  ls -l
+ 1848  mv concreteconnect concreteconnect_empty_$(date +%Y%m%d_%H%M)
+ 1849  git clone git@github.com:neilfarhall/concreteconnect.co.uk.git concreteconnect\n
+ 1850  cd concreteconnect\n
+ 1851  ls -la
+ 1852  git branch\n
+ 1853  git log --oneline -5
+ 1854  git add .gitignore\n
+ 1855  cd /root/concreteconnect-export\n
+ 1856  cd ..
+ 1857  git clone git@github.com:neilfarhall/concreteconnect.co.uk.git\n
+ 1858  git branch\n
+ 1859  ls -l
+ 1860  rm -r concreteconnect.co.uk
+ 1861  git clone git@github.com:neilfarhall/concreteconnect.co.uk.git\n
+ 1862  cd concreteconnect.co.uk
+ 1863  ls -l
+ 1864  ddev start
+ 1865  cd web/sites/default
+ 1866  ls -l
+ 1867  sudo chown -R neilfarhall:staff files
+ 1868  ls -l
+ 1869  cd files
+ 1870  ls -l
+ 1871  cd ..
+ 1872  cd ..
+ 1873  cd ..
+ 1874  ls -l
+ 1875  cd sites
+ 1876  ls -l
+ 1877  cd ..
+ 1878  pwd
+ 1879  cd core
+ 1880  ls -,
+ 1881  ls -l
+ 1882  ddev start
+ 1883  ddev config --project-type=drupal9 --docroot=web --project-name=concreteconnect
+ 1884  ddev stop --unlist concreteconnect.co.uk
+ 1885  ddev config --project-type=drupal9 --docroot=web --project-name=concreteconnect
+ 1886  ddev start
+ 1887  ls
+ 1888  ddev drupal-settings
+ 1889  ddev start
+ 1890  ddev drupal-settings
+ 1891  nano web/sites/default/settings.php
+ 1892  nano web/sites/default/settings.ddev.php
+ 1893  la -l
+ 1894  ls -l
+ 1895  ddev import-db --src=cc_04-02-26.sql
+ 1896  ddev drush cr
+ 1897  ddev start
+ 1898  ddev composer install
+ 1899  ddev exec vendor/bin/drush cr
+ 1900  cd web/sites/default
+ 1901  ls -l
+ 1902  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/sites/default/files/ files/
+ 1903  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/themes/custom/themag/themes/charms/vendor ~/workspace/concreteconnect.co.uk/themes/custom/themag/themes/charm/vendor/parallax.js/
+ 1904  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/themes/custom/themag/themes/charms/vendor ~/workspace/concreteconnect.co.uk/web/themes/custom/themag/themes/charm/vendor
+ 1905  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/themes/custom/themag/themes/charm/vendor ~/workspace/concreteconnect.co.uk/web/themes/custom/themag/themes/charm/vendor
+ 1906  ddev dust
+ 1907  ddev drush cr
+ 1908  cd ..
+ 1909  cd ..
+ 1910  cd themes/custom/themag/themes/charm
+ 1911  ls -l
+ 1912  sudo chown -R neilfarhall:staff vendor
+ 1913  ddev drush cr
+ 1914  pwd
+ 1915  mag/themes/charm/vendor/parallax.js/parallax.min.j
+ 1916  cd vendor
+ 1917  ls -l
+ 1918  cd ..
+ 1919  ls -l
+ 1920  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/themes/custom/themag/themes/charm/vendor ~/workspace/concreteconnect.co.uk/web/themes/custom/themag/themes/charm/
+ 1921  ls -l
+ 1922  cd vendor
+ 1923  ls -l
+ 1924  cd ..
+ 1925  cd ..
+ 1926  cd ..
+ 1927  cd ..
+ 1928  cd ..
+ 1929  cd ..
+ 1930  cd ..
+ 1931  ddev drsuh cr
+ 1932  ddev drush cr
+ 1933  composer require 'drupal/admin_toolbar:^3.6'
+ 1934  ddev composer require 'drupal/admin_toolbar:^3.6'
+ 1935  ddev drush cr
+ 1936  ddev composer require drupal/slick_extras:^2.0 drupal/slick_views:^3.0 drupal/slick:^3.0 drupal/blazy:^3.0 -W -n
+ 1937  ddev drush cr
+ 1938  ddev composer update
+ 1939  ddev composer update --with-all-dependencies
+ 1940  ddev composer install
+ 1941  ddev drush cr
+ 1942  composer require 'drupal/blazy:^3.0'
+ 1943  composer require 'drupal/slick:^3.0'
+ 1944  composer require 'drupal/slick_lightbox:^2.0'
+ 1945  composer require 'drupal/slick:^3.0'
+ 1946  composer require 'drupal/slick_lightbox:^2.0'
+ 1947  composer require 'drupal/slick:^3.0'  --with-all-dependencies
+ 1948  composer require 'drupal/slick_lightbox:^2.0'  --with-all-dependencies
+ 1949  # from your project root (use ddev composer if that’s your normal flow)\nddev composer require drupal/slick:^3.0 -W\nddev composer require drupal/slick_lightbox:^2.0 -W
+ 1950  ddev composer install
+ 1951  ddev drush cr
+ 1952  ddev composer require 'drupal/datalayer:^2.0'
+ 1953  ddev drush cr
+ 1954  ddev composer require 'drupal/social_link_field:^2.1'
+ 1955  ddev composer require 'drupal/datalayer:^2.0'
+ 1956  ddev composer require 'drupal/radix:^6.0'
+ 1957  ddev composer show drupal/core-recommended drupal/core-composer-scaffold drupal/core-project-message
+ 1958  ddev composer require drupal/radix:^5 --update-with-all-dependencies -W
+ 1959  ddev drush cr
+ 1960  ddev composer install
+ 1961  ddev drush cr
+ 1962  ddev composer require drupal/radix:^5 --update-with-all-dependencies -W
+ 1963  ddev composer install
+ 1964  ddev drush cr
+ 1965  ddev launch
+ 1966  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W
+ 1967  ddev drush cr
+ 1968  ddev composer install
+ 1969  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W
+ 1970  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W -vvv
+ 1971  ddev php -v
+ 1972  ddev php -v\nddev composer check-platform-reqs\nddev composer config platform.php
+ 1973  ddev composer config platform --list
+ 1974  ddev exec "ls -la web/core | head"
+ 1975  ddev composer install
+ 1976  ddev exec "ls -la web/core | head"
+ 1977  ddev exec "test -f web/core/lib/Drupal.php && echo 'core present' || echo 'core missing'"
+ 1978  ddev composer config platform --list | head -n 30
+ 1979  ddev composer config platform --list
+ 1980  ddev composer why-not drupal/core-recommended:^10
+ 1981  ddev composer why-not drupal/core-recommended 10.0.0
+ 1982  ddev composer why-not drupal/core-recommended 10.3.0
+ 1983  ddev composer why-not drupal/core 10.3.0
+ 1984  ddev composer prohibits drupal/core 10.3.0 -t -v
+ 1985  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W
+ 1986  ddev composer require drupal/radix:^6 -W
+ 1987  ddev exec "test -f web/core/lib/Drupal.php && echo 'core present' || echo 'core missing'"
+ 1988  ddev exec "ls -la web/core | head"
+ 1989  ddev composer install
+ 1990  ddev drush cr
+ 1991  ddev exec "rm -rf vendor web/core"\n
+ 1992  ddev composer clear-cache\n
+ 1993  ddev composer install
+ 1994  ddev exec "cat composer.json | sed -n '1,120p'"
+ 1995  ddev drush cr
+ 1996  ddev exec "grep -n 'drupal/core' composer.json || true"
+ 1997  ddev composer install
+ 1998  ddev exec "rm -rf vendor web/core"\nddev composer clear-cache\nddev composer install
+ 1999  ddev drush updb -y
+ 2000  ddev launch
+ 2001  ls -l
+ 2002  ddev composer update
+ 2003  php --v
+ 2004  ddev php --version
+ 2005  ddev composer install
+ 2006  ddev launch
+ 2007  mkdir -p web/sites/default/files/css/optimized web/sites/default/files/js\n
+ 2008  ddev exec bash -lc "chown -R www-data:www-data web/sites/default/files"\n
+ 2009  sudo ddev exec bash -lc "chown -R www-data:www-data web/sites/default/files"\n
+ 2010  sudo exec bash -lc "chown -R www-data:www-data web/sites/default/files"\n
+ 2011  sudo ddev exec bash -lc "chown -R www-data:www-data web/sites/default/files"\n
+ 2012  ddev exec bash -lc "chown -R www-data:www-data web/sites/default/files"\n
+ 2013  ddev launch
+ 2014  ddev drush cr
+ 2015  ddev drush cim -y\n
+ 2016  ddev drush php:eval 'echo "sync dir: " . \Drupal::config("system.site")->get("config_sync_directory") . PHP_EOL;'
+ 2017  ls -l
+ 2018  cd config
+ 2019  ls -l
+ 2020  cd ..
+ 2021  ddev drush cim -y --source=web/sites/default/config/sync\n
+ 2022  ddev drush cr
+ 2023  nano web/sites/default/settings.php
+ 2024  ddev drush cim -y
+ 2025  ddev drush cr
+ 2026  ddev drush config:get system.performance css.preprocess\n
+ 2027  ddev drush config:get system.performance js.preprocess
+ 2028  ddev drush cr
+ 2029  ddev drush cr
+ 2030  ls -la themes/custom/themag/themes/charm/vendor/parallax.js/
+ 2031  cd web
+ 2032  ls -la themes/custom/themag/themes/charm/vendor/parallax.js/
+ 2033  ddev start
+ 2034  ddev launch
+ 2035  ddev composer install
+ 2036  ddev launch
+ 2037  ddev composer update
+ 2038  ddev composer update
+ 2039  ddev exec "grep -n 'drupal/core' composer.json || true"
+ 2040  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W
+ 2041  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W -vvv 2>&1 | tee /tmp/d10-require.log
+ 2042  sed -n '1,200p' /tmp/d10-require.log
+ 2043  ddev exec "grep -n 'minimum-stability\|prefer-stable' composer.json"
+ 2044  ddev composer config minimum-stability stable\nddev composer config prefer-stable true
+ 2045  ddev composer remove drupal/core-dev -W
+ 2046  ddev composer remove drupal/tamper -W
+ 2047  ddev composer clear-cache
+ 2048  ddev composer remove drupal/core-dev -W
+ 2049  ddev composer require \\n  drupal/tamper:^1 \\n  drupal/feeds_tamper:^2 \\n  -W
+ 2050  composer require 'drupal/feeds_tamper:^2.0@RC'
+ 2051  ddev exec "grep -n 'minimum-stability\|prefer-stable' composer.json || true"
+ 2052  ddev composer require 'drupal/core-dev:^9' --dev -W
+ 2053  ddev composer require \\n  'drupal/tamper:^1@alpha' \\n  'drupal/feeds_tamper:^2@rc' \\n  -W
+ 2054  ddev composer install
+ 2055  ddev launch
+ 2056  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W
+ 2057  ddev exec "rm -rf vendor web/core"\nddev composer install\nddev exec "test -f web/core/lib/Drupal.php && echo 'core present' || echo 'core missing'"
+ 2058  ddev composer install
+ 2059  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W
+ 2060  ddev exec "rm -rf vendor web/core"\nddev composer install\nddev exec "test -f web/core/lib/Drupal.php && echo 'core present' || echo 'core missing'"
+ 2061  grep -n "Problem [0-9]\|requires\|conflict\|locked to version" /tmp/d10-core.log | head -n 200
+ 2062  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W -vvv 2>&1 | tee /tmp/d10-core.log
+ 2063  grep -n "Problem [0-9]\|requires\|conflict\|locked to version" /tmp/d10-core.log | head -n 200
+ 2064  ddev composer prohibits drupal/core-recommended 10.3.0 -t -vvv 2>&1 | tee /tmp/d10-prohibits.log\ngrep -n "drupal/" /tmp/d10-prohibits.log | head -n 200
+ 2065  ddev composer show drupal/core-dev | cat
+ 2066  ddev composer show drupal/core-dev | cat
+ 2067  ddev composer require 'drupal/core-dev:^9' --dev -W
+ 2068  ddev composer config audit.abandoned report\nddev composer config audit.block-insecure false
+ 2069  ddev exec 'COMPOSER_AUDIT=0 composer install'
+ 2070  ddev composer remove drupal/feeds_tamper drupal/tamper -W
+ 2071  ddev composer require 'drupal/core-dev:^9' --dev -W --no-update\nddev composer update drupal/core-dev -W
+ 2072  nano composer.json
+ 2073  ddev composer require 'drupal/core-dev:^9' --dev -W
+ 2074  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W
+ 2075  ddev start
+ 2076  ddev composer install
+ 2077  ddev composer install
+ 2078  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W
+ 2079  ddev composer require 'drupal/core-dev:^9' --dev --no-update
+ 2080  ddev composer update drupal/core-dev -W
+ 2081  ddev composer why symfony/css-selector
+ 2082  ddev composer remove drupal/core-dev -W
+ 2083  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W
+ 2084  ddev composer require 'tijsverkoyen/css-to-inline-styles:^2.2' -W
+ 2085  ddev composer remove drupal/core-dev -W
+ 2086  ddev exec "grep -n \"patches\" -n composer.json | head -n 80"
+ 2087  ddev exec "grep -n \"patches-file\" -n composer.json"
+ 2088  ddev exec "grep -n '\"drupal/core\"' composer.json || true"
+ 2089  ddev exec "perl -0777 -i -pe 's/\"patches\"\\s*:\\s*\\{/\"patches_disabled\": {/' composer.json"
+ 2090  ddev composer install
+ 2091  ddev composer config audit.block-insecure false\nddev composer config audit.abandoned report
+ 2092  ddev composer require \\n  drupal/core-recommended:^10 \\n  drupal/core-composer-scaffold:^10 \\n  drupal/core-project-message:^10 \\n  -W -vvv 2>&1 | tee /tmp/d10-upgrade.log
+ 2093  ddev composer prohibits drupal/core 10.3.0 -t 2>&1 | tee /tmp/prohibits-core10.log\ngrep -n "drupal/.*requires drupal/core\|drupal/.*conflicts\|Problem " /tmp/prohibits-core10.log | head -n 200
+ 2094  ddev composer require \\n  drupal/core-recommended:^10.2 \\n  drupal/core-composer-scaffold:^10.2 \\n  drupal/core-project-message:^10.2 \\n  -W
+ 2095  ddev composer require drush/drush:^12 -W
+ 2096  ddev composer remove \\n  drupal/cloudflare \\n  drupal/delete_all \\n  drupal/flexslider \\n  drupal/jquery_ui_button \\n  drupal/jquery_ui_slider \\n  drupal/media_library_form_element \\n  drupal/pager \\n  drupal/pdf_preview_image \\n  drupal/purge_queuer_url \\n  drupal/shariff \\n  drupal/video_embed_media_player \\n  drupal/views_block_filter_block \\n  drupal/webprofiler \\n  -W
+ 2097  ddev composer require drush/drush:^12 -W
+ 2098  ddev composer remove \\n  drupal/cloudflare \\n  drupal/delete_all \\n  drupal/flexslider \\n  drupal/jquery_ui_button \\n  drupal/jquery_ui_slider \\n  drupal/media_library_form_element \\n  drupal/pager \\n  drupal/pdf_preview_image \\n  drupal/purge_queuer_url \\n  drupal/shariff \\n  drupal/video_embed_media_player \\n  drupal/views_block_filter_block \\n  drupal/webprofiler \\n  -W
+ 2099  ddev composer remove drupal/pagerer -W\nddev composer remove drupal/jquery_ui_button drupal/jquery_ui_slider -W
+ 2100  ddev composer show drupal/pagerer --all | head -n 80
+ 2101  ddev composer require drupal/pagerer:^3.1 -W
+ 2102  ddev composer remove drupal/jquery_ui_button drupal/jquery_ui_slider -W
+ 2103  ddev composer why drupal/jquery_ui_button
+ 2104  ddev composer remove \\n  drupal/cloudflare \\n  drupal/delete_all \\n  drupal/flexslider \\n  drupal/media_library_form_element \\n  drupal/pager \\n  drupal/pdf_preview_image \\n  drupal/purge_queuer_url \\n  drupal/shariff \\n  drupal/video_embed_media_player \\n  drupal/views_block_filter_block \\n  drupal/webprofiler \\n  -W
+ 2105  ddev composer require drupal/pagerer:^3.1 -W
+ 2106  ddev composer remove \\n  drupal/cloudflare \\n  drupal/color_field \\n  drupal/delete_all \\n  drupal/flexslider \\n  drupal/jquery_ui_button \\n  drupal/jquery_ui_slider \\n  drupal/lazy \\n  drupal/media_library_form_element \\n  drupal/menu_breadcrumb \\n  drupal/pager \\n  drupal/pdf_preview_image \\n  drupal/price \\n  drupal/purge_queuer_url \\n  drupal/shariff \\n  drupal/video_embed_media_player \\n  drupal/views_block_filter_block \\n  drupal/webprofiler \\n  -W
+ 2107  ddev composer why drupal/color_field
+ 2108  ddev composer remove drupal/layoutcomponents drupal/color_field -W
+ 2109  ddev composer remove drupal/layoutcomponents drupal/color_field -W
+ 2110  ddev composer remove \\n  drupal/cloudflare \\n  drupal/delete_all \\n  drupal/flexslider \\n  drupal/media_library_form_element \\n  drupal/pager \\n  drupal/pdf_preview_image \\n  drupal/purge_queuer_url \\n  drupal/shariff \\n  drupal/video_embed_media_player \\n  drupal/views_block_filter_block \\n  drupal/webprofiler \\n  -W
+ 2111  ddev composer remove drupal/better_exposed_filters -W
+ 2112  ddev composer remove drupal/jquery_ui_button drupal/jquery_ui_slider -W
+ 2113  ddev composer remove \\n  drupal/cloudflare \\n  drupal/delete_all \\n  drupal/flexslider \\n  drupal/media_library_form_element \\n  drupal/pager \\n  drupal/pdf_preview_image \\n  drupal/purge_queuer_url \\n  drupal/shariff \\n  drupal/video_embed_media_player \\n  drupal/views_block_filter_block \\n  drupal/webprofiler \\n  -W
+ 2114  drupal/typed_data 1.0.0-beta3 (conflicts drupal/core >=10.3)
+ 2115  ddev composer remove drupal/typed_data -W
+ 2116  ddev composer require \\n  drupal/core-recommended:^10.2 \\n  drupal/core-composer-scaffold:^10.2 \\n  drupal/core-project-message:^10.2 \\n  -W
+ 2117  ddev start
+ 2118  ddev launch
+ 2119  ddev composer require 'drupal/better_exposed_filters:^6.0'
+ 2120  ddev composer require 'drupal/block_form_alter:^2.1'
+ 2121  ddev composer require 'drupal/block_form_alter:^2.0'
+ 2122  ddev composer require 'drupal/cloudflare:^2.0@alpha'
+ 2123  ddev composer require 'drupal/color_field:^3.0'
+ 2124  ddev composer require 'drupal/delete_all:^3.0'
+ 2125  ddev composer require 'drupal/feeds:^3.0@beta'
+ 2126  ddev composer require 'drupal/flexslider:^3.0@alpha'
+ 2127  ddev composer require 'drupal/jquery_ui_button:^2.1'
+ 2128  ddev composer require 'drupal/jquery_ui_tooltip:^2.1'
+ 2129  ddev composer require 'drupal/media_library_form_element:^2.0'
+ 2130  ddev composer require 'drupal/menu_breadcrumb:^2.0'
+ 2131  ddev composer require 'drupal/pager:^3.0'
+ 2132  ddev composer require 'drupal/pagerer:3.0.x-dev@dev'
+ 2133  ddev composer remove 'drupal/pagerer
+ 2134  z
+ 2135  ddev composer remove drupal/pagerer
+ 2136  ddev drush pm-uninstall drupal/pagerer
+ 2137  ddev drush pm-uninstall pagerer
+ 2138  ddev drush cr
+ 2139  ddev composer install
+ 2140  ddev drush cr
+ 2141  git status
+ 2142  git reset --hard\ngit clean -fd
+ 2143  git pull
+ 2144  ddev start\nddev composer install
+ 2145  ddev start
+ 2146  ddev restart
+ 2147  ddev composer install
+ 2148  ls -l
+ 2149  git pull
+ 2150  ddev start\n
+ 2151  cd .ddev
+ 2152  ls -l
+ 2153  cd ..
+ 2154  ddev config
+ 2155  ls -l
+ 2156  ddev config
+ 2157  ddev stop
+ 2158  ddev config --project-type=drupal9 --docroot=web --project-name=concreteconnect\nddev star
+ 2166  ls -la .ddev
+ 2167  ddev config --project-name=concreteconnect --project-type=drupal9 --docroot=web
+ 2168  ddev config --project-name=concreteconnect --project-type=drupal9 --docroot=web
+ 2169  ddev stop --unlist concreteconnect
+ 2170  ddev config --project-name=concreteconnect --project-type=drupal9 --docroot=web
+ 2171  ddev start
+ 2172  ddev start
+ 2173  git pull\nddev composer install
+ 2176  ddev import-db --file=cc_04-02-26.sql\n
+ 2180  history > history_for_print.txt\n
+ 2181  100 history > history_for_print.txt\n

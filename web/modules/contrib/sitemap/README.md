@@ -89,10 +89,11 @@ of Sitemap plugins defined in other modules may be documented in that module.
         the Sitemap configuration page.
     - These plugins are defined in the `\Drupal\sitemap\Plugin\Sitemap\Menu`
         class.
-- If Drupal Core's "Book" module (`book`) is enabled, then you can enable a
-    section for each Book defined on the site. Enabling a sitemap plugin for a
-    book will display an unordered list with the pages in that book on the
-    sitemap.
+- If the "Book" module (`book`) is enabled (note the Book module is a contrib
+    module in Drupal 11; but part of Drupal core in D10 and earlier), then you
+    can enable a section for each Book defined on the site. Enabling a sitemap
+    plugin for a book will display an unordered list with the pages in that book
+    on the sitemap.
     - In "Plugin settings":
         - You can change the Title of the heading displayed before the unordered
             list of book pages (the heading will default to the book title).

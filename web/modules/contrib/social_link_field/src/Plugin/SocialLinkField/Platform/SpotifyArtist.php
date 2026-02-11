@@ -11,7 +11,7 @@ use Drupal\social_link_field\PlatformBase;
  *   id = "spotifyartist",
  *   name = @Translation("Spotify Artist"),
  *   icon = "fa-spotify",
- *   iconSquare = "spotify-square",
+ *   iconSet = "fa-brands",
  *   urlPrefix = "https://open.spotify.com/artist/",
  * )
  */
