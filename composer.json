@@ -86,7 +86,7 @@
         "drupal/core-project-message": "^9.4",
         "drupal/core-recommended": "^9.4",
         "drupal/critical_css": "^2.0",
-        "drupal/crop": "2.4.0",
+        "drupal/crop": "^2.5",
         "drupal/csv_importer": "^1.16",
         "drupal/datalayer": "^2.0",
         "drupal/default_content": "^2.0@alpha",
@@ -285,10 +285,6 @@
                 "web/modules/contrib/dropzonejs/composer.libraries.json",
                 "web/modules/contrib/webform/composer.libraries.json"
             ]
-        },
-        "symfony": {
-            "allow-contrib": false,
-            "require": "5.2.*"
         },
 	"patches": {
             "drupal/core": {
