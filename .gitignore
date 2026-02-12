@@ -21,3 +21,8 @@
 wget-log
 /web/*.tar.gz
 /web/*.tgz
+
+# editor swap files
+*.swp
+*.swo
+*~
