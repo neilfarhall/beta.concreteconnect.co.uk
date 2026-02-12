@@ -77,7 +77,6 @@
         "drupal/captcha": "^1.9",
         "drupal/chosen": "^4.0@RC",
         "drupal/ckeditor5_paste_filter": "^1.0",
-        "drupal/ckeditor_paste_filter": "^1.1",
         "drupal/cloudflare_purge": "^1.6",
         "drupal/color_field": "^3.0",
         "drupal/comment_notify": "^1.4",
@@ -327,7 +326,7 @@
                 "Elements with role=\"dialog\" or role=\"alertdialog\" do not have accessible names": "https://www.drupal.org/files/issues/2023-09-18/eu_cookie_compliance-dialog_accessibility-3379830-3-D9.patch"
             }
         },
-        "enable-patching": "true",
+        "enable-patching": "false",
         "drupal-core-project-message": {
             "include-keys": [
                 "homepage",

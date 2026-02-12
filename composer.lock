@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0af7254576dbfeaf4eba6d0633fecfd",
+    "content-hash": "39b8094d49bf99008fd40365d5f60228",
     "packages": [
         {
             "name": "algolia/places",
@@ -3041,55 +3041,6 @@
             }
         },
         {
-            "name": "drupal/ckeditor_paste_filter",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor_paste_filter.git",
-                "reference": "1.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_paste_filter-1.1.1.zip",
-                "reference": "1.1.1",
-                "shasum": "5977f87cc71148bd35b0c94e22479ced12d574a3"
-            },
-            "require": {
-                "drupal/ckeditor": "*",
-                "drupal/core": "^9.3 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.1.1",
-                    "datestamp": "1682411990",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "cosolom",
-                    "homepage": "https://www.drupal.org/user/1816882"
-                },
-                {
-                    "name": "JaydipJD",
-                    "homepage": "https://www.drupal.org/user/3621830"
-                }
-            ],
-            "description": "Extra plugins for ckeditor. Filter text pasted into editor.",
-            "homepage": "http://drupal.org/project/ckeditor_paste_filter",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ckeditor_paste_filter"
-            }
-        },
-        {
             "name": "drupal/cloudflare_purge",
             "version": "1.7.0",
             "source": {
@@ -4790,6 +4741,10 @@
             ],
             "authors": [
                 {
+                    "name": "anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
                     "name": "berdir",
                     "homepage": "https://www.drupal.org/user/214652"
                 },
@@ -4804,6 +4759,10 @@
                 {
                     "name": "Drupal Media Team",
                     "homepage": "https://www.drupal.org/user/3260690"
+                },
+                {
+                    "name": "grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
                 },
                 {
                     "name": "marcingy",
