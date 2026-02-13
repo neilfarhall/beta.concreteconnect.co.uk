@@ -238,7 +238,7 @@
     $html.attr({
       'id': 'sliding-popup',
       'role': 'alertdialog',
-      'aria-label': 'Popup text',
+      'aria-describedby': 'popup-text',
     });
     $html.addClass('eu-cookie-withdraw-wrapper');
 
@@ -461,7 +461,7 @@
     popup.attr({
       'id': 'sliding-popup',
       'role': 'alertdialog',
-      'aria-label': 'Popup text',
+      'aria-describedby': 'popup-text',
     });
     if (!drupalSettings.eu_cookie_compliance.popup_use_bare_css && !drupalSettings.eu_cookie_compliance.popup_use_olivero_css) {
       popup.height(drupalSettings.eu_cookie_compliance.popup_height)

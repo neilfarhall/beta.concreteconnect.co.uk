@@ -8,7 +8,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element\RenderElement;
 use Drupal\inline_entity_form\ElementSubmit;
 use Drupal\inline_entity_form\TranslationHelper;
-use Drupal\inline_entity_form\WidgetSubmit;
 
 /**
  * Provides an inline entity form element.
@@ -148,16 +147,9 @@ class InlineEntityForm extends RenderElement {
 
     $inline_form_handler = static::getInlineFormHandler($entity_form['#entity_type']);
     $entity_form = $inline_form_handler->entityForm($entity_form, $form_state);
-
     // The form element can't rely on inline_entity_form_form_alter() calling
     // ElementSubmit::attach() since form alters run before #process callbacks.
     ElementSubmit::attach($complete_form, $form_state);
-
-    if (isset($complete_form['settings']['block_form'])) {
-      // Attach the WidgetSubmit handler to inline blocks submitted
-      // by Layout builder.
-      WidgetSubmit::attach($complete_form['settings']['block_form'], $form_state);
-    }
 
     return $entity_form;
   }

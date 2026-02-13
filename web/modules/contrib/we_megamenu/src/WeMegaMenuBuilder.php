@@ -395,15 +395,13 @@ class WeMegaMenuBuilder {
           }
         }
 
-        if (isset($menu_config->menu_config->{$key_menu}->rows_content[$row_count][$col_count])) {
-          $menu_config->menu_config->{$key_menu}->rows_content[$row_count][$col_count]->col_content[] = $tmp_col_content;
-          $items_validate_serialize = array_map("serialize", $menu_config->menu_config->{$key_menu}->rows_content[$row_count][$col_count]->col_content);
-          $items_validate_unique = array_unique($items_validate_serialize);
-          $items_validate = array_map("unserialize", $items_validate_unique);
-          $menu_config->menu_config->{$key_menu}->rows_content[$row_count][$col_count]->col_content = $items_validate;
-          if (!isset($menu_config->menu_config->{$key_menu}->rows_content[$row_count][$col_count]->col_config)) {
-            $menu_config->menu_config->{$key_menu}->rows_content[$row_count][$col_count]->col_config = $tmp_col_cfg;
-          }
+        $menu_config->menu_config->{$key_menu}->rows_content[$row_count][$col_count]->col_content[] = $tmp_col_content;
+        $items_validate_serialize = array_map("serialize", $menu_config->menu_config->{$key_menu}->rows_content[$row_count][$col_count]->col_content);
+        $items_validate_unique = array_unique($items_validate_serialize);
+        $items_validate = array_map("unserialize", $items_validate_unique);
+        $menu_config->menu_config->{$key_menu}->rows_content[$row_count][$col_count]->col_content = $items_validate;
+        if (!isset($menu_config->menu_config->{$key_menu}->rows_content[$row_count][$col_count]->col_config)) {
+          $menu_config->menu_config->{$key_menu}->rows_content[$row_count][$col_count]->col_config = $tmp_col_cfg;
         }
       }
     }

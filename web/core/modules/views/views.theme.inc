@@ -890,7 +890,6 @@ function template_preprocess_views_view_rss(&$variables) {
   $variables['namespaces'] = new Attribute($style->namespaces);
   $variables['items'] = $items;
   $variables['channel_elements'] = $style->channel_elements;
-  $variables['image_url'] = $style->getImage();
 
   // During live preview we don't want to output the header since the contents
   // of the feed are being displayed inside a normal HTML page.

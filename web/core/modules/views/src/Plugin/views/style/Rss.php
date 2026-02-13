@@ -55,7 +55,6 @@ class Rss extends StylePluginBase {
     $options = parent::defineOptions();
 
     $options['description'] = ['default' => ''];
-    $options['image'] = ['default' => ''];
 
     return $options;
   }
@@ -67,14 +66,6 @@ class Rss extends StylePluginBase {
       '#type' => 'textfield',
       '#title' => $this->t('RSS description'),
       '#default_value' => $this->options['description'],
-      '#description' => $this->t('This will appear in the RSS feed itself.'),
-      '#maxlength' => 1024,
-    ];
-
-    $form['image'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('RSS image URL'),
-      '#default_value' => $this->options['image'],
       '#description' => $this->t('This will appear in the RSS feed itself.'),
       '#maxlength' => 1024,
     ];
@@ -103,18 +94,6 @@ class Rss extends StylePluginBase {
     $description = $this->tokenizeValue($description, 0);
 
     return $description;
-  }
-
-  /**
-   * Get RSS feed image.
-   *
-   * @return string
-   *   The string containing the image URL.
-   */
-  public function getImage() {
-    $image = $this->options['image'];
-
-    return $image;
   }
 
   public function render() {

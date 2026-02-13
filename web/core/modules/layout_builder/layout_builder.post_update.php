@@ -73,10 +73,3 @@ function layout_builder_post_update_section_storage_context_mapping(&$sandbox = 
 function layout_builder_post_update_tempstore_route_enhancer() {
   // Empty post-update hook.
 }
-
-/**
- * Clear caches due to new routes and UI elements.
- */
-function layout_builder_post_update_section_move_form() {
-    // Empty post-update hook.
-}

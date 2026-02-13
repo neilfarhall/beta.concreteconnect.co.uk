@@ -2,15 +2,8 @@
 
 namespace Drupal\views\Plugin\views\row;
 
-use Drupal\Core\Entity\EntityDisplayRepositoryInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Field\EntityReferenceFieldItemList;
-use Drupal\Core\File\FileUrlGenerator;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Image\ImageFactory;
 use Drupal\Core\Url;
-use Drupal\file\Plugin\Field\FieldType\FileFieldItemList;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Renders an RSS item based on fields.
@@ -26,73 +19,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class RssFields extends RowPluginBase {
 
   /**
-   * The image style manager.
-   *
-   * @var \Drupal\Core\Image\ImageFactory
-   */
-  protected $imageFactory;
-
-  /**
    * Does the row plugin support to add fields to its output.
    *
    * @var bool
    */
   protected $usesFields = TRUE;
-
-  /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
-   * The file url generator services.
-   *
-   * @var \Drupal\Core\File\FileUrlGenerator
-   */
-  protected $fileUrlGenerator;
-
-  /**
-   * Constructs a RssPluginBase  object.
-   *
-   * @param array $configuration
-   *   A configuration array containing information about the plugin instance.
-   * @param string $plugin_id
-   *   The plugin_id for the plugin instance.
-   * @param mixed $plugin_definition
-   *   The plugin implementation definition.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   The entity type manager.
-   * @param \Drupal\Core\Entity\EntityDisplayRepositoryInterface $entity_display_repository
-   *   The entity display repository.
-   * @param \Drupal\Core\Image\ImageFactory $image_factory
-   *   The image factory.
-   * @param \Drupal\Core\File\FileUrlGenerator $file_url_generator
-   *   The file url generator services.
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, EntityDisplayRepositoryInterface $entity_display_repository = NULL, ImageFactory $image_factory, FileUrlGenerator $file_url_generator) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-
-    $this->imageFactory = $image_factory;
-    $this->entityTypeManager = $entity_type_manager;
-    $this->fileUrlGenerator = $file_url_generator;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('entity_type.manager'),
-      $container->get('entity_display.repository'),
-      $container->get('image.factory'),
-      $container->get('file_url_generator')
-    );
-  }
 
   protected function defineOptions() {
     $options = parent::defineOptions();
@@ -101,7 +32,6 @@ class RssFields extends RowPluginBase {
     $options['description_field'] = ['default' => ''];
     $options['creator_field'] = ['default' => ''];
     $options['date_field'] = ['default' => ''];
-    $options['enclosure_field'] = ['default' => ''];
     $options['guid_field_options']['contains']['guid_field'] = ['default' => ''];
     $options['guid_field_options']['contains']['guid_field_is_permalink'] = ['default' => TRUE];
     return $options;
@@ -153,13 +83,6 @@ class RssFields extends RowPluginBase {
       '#options' => $view_fields_labels,
       '#default_value' => $this->options['date_field'],
       '#required' => TRUE,
-    ];
-    $form['enclosure_field'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Enclosure field'),
-      '#description' => $this->t('Describes a media object that is attached to the item. This must be a file or media field.'),
-      '#options' => $view_fields_labels,
-      '#default_value' => $this->options['enclosure_field'],
     ];
     $form['guid_field_options'] = [
       '#type' => 'details',
@@ -229,70 +152,6 @@ class RssFields extends RowPluginBase {
         'namespace' => ['xmlns:dc' => 'http://purl.org/dc/elements/1.1/'],
       ],
     ];
-
-    if ($this->options['enclosure_field']) {
-      $field_name = $this->options['enclosure_field'];
-      $field = $this->view->field[$field_name];
-      $field_options = $field->options;
-      $entity = $field->getEntity($this->view->result[$row_index]);
-      $enclosure = $entity->$field_name;
-      $file = NULL;
-
-      if ($enclosure instanceof FileFieldItemList && $enclosure->count() > 0) {
-        $value = $enclosure->getValue();
-        $file = $this->entityTypeManager->getStorage('file')->load($value[0]['target_id']);
-      }
-      elseif ($enclosure instanceof EntityReferenceFieldItemList && count($enclosure->referencedEntities()) > 0) {
-        $field = $this->entityTypeManager->getStorage('field_config')->load($entity->getEntityTypeId() . '.' . $entity->bundle() . '.' . $field_name);
-        if (isset($field)) {
-          $field_storage = $this->entityTypeManager->getStorage('field_storage_config')->load($field->getTargetEntityTypeId() . '.' . $field->getName());
-          if ($field->getType() == 'entity_reference' && $field_storage->getSetting("target_type") === "media") {
-            $file = $enclosure->referencedEntities()[0]->get('thumbnail')->entity;
-          }
-        }
-      }
-
-      if (isset($file)) {
-        $file_url = '';
-        $file_size = '';
-        $file_mimetype = '';
-        $file_uri = $file->getFileUri();
-        if (!empty($field_options['settings']['image_style'])) {
-          $style = $this->entityTypeManager->getStorage('image_style')->load($field_options['settings']['image_style']);
-          $derivative_uri = $style->buildUri($file_uri);
-          $derivative_exists = TRUE;
-          if (!file_exists($derivative_uri)) {
-            $derivative_exists = $style->createDerivative($file_uri,
-              $derivative_uri);
-          }
-          if ($derivative_exists) {
-            $image = $this->imageFactory->get($derivative_uri);
-            $file_url = $this->fileUrlGenerator->generateAbsoluteString($derivative_uri);
-            $file_size = $image->getFileSize();
-            $file_mimetype = $image->getMimeType();
-          }
-        }
-        else {
-          // In RSS feeds, it is necessary to use absolute URLs. The 'url.site'
-          // cache context is already associated with RSS feed responses, so it
-          // does not need to be specified here.
-          $file_url = $this->fileUrlGenerator->generateAbsoluteString($file_uri);
-          $file_size = $file->getSize();
-          $file_mimetype = $file->getMimeType();
-        }
-        if (!empty($file_url)) {
-          $item->elements[] = [
-            'key' => 'enclosure',
-            'attributes' => [
-              'url' => $file_url,
-              'length' => $file_size,
-              'type' => $file_mimetype,
-            ],
-          ];
-        }
-      }
-    }
-
     $guid_is_permalink_string = 'false';
     $item_guid = $this->getField($row_index, $this->options['guid_field_options']['guid_field']);
     if ($this->options['guid_field_options']['guid_field_is_permalink']) {
@@ -361,11 +220,6 @@ class RssFields extends RowPluginBase {
       // @todo Views should expect and store a leading /.
       // @see https://www.drupal.org/node/2423913
       return $host . $url_string;
-    }
-    // If the given URL already starts with http:// or https://, it's been
-    // processed.
-    elseif (strpos($url_string, 'http://') === 0 || strpos($url_string, 'https://') === 0) {
-      return $url_string;
     }
     // Otherwise, this is an unprocessed path (e.g. node/123) and we need to run
     // it through a Url object to allow outbound path processors to run (path

@@ -185,12 +185,11 @@
 
 /**
  * @todo remove in https://www.drupal.org/project/drupal/issues/3042127
- *   Ensure the row weight dropdowns in the Move Block & Sections dialogs
+ *   This rule ensures the row weight dropdowns in the Move Block dialog
  *   maintain the background color of their container when they are hovered
  *   over or are inside the active row.
  */
-#drupal-off-canvas .layout-builder-components-table__row .form-item,
-#drupal-off-canvas .layout-builder-sections-table__row .form-item {
+#drupal-off-canvas .layout-builder-components-table__row .form-item {
   background-color: transparent;
 }
 
@@ -218,7 +217,6 @@
  * unsaved changes until "Save layout" is submitted.
  * @todo create issue for todo.
  */
-.layout-builder-components-table .tabledrag-changed-warning,
-.layout-builder-sections-table .tabledrag-changed-warning {
+.layout-builder-components-table .tabledrag-changed-warning {
   display: none !important;
 }

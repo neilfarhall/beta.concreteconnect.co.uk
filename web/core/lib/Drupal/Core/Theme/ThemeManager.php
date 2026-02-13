@@ -143,9 +143,7 @@ class ThemeManager implements ThemeManagerInterface {
 
     // If an array of hook candidates were passed, use the first one that has an
     // implementation.
-    $template_suggestions = [$hook];
     if (is_array($hook)) {
-      $template_suggestions = $hook;
       foreach ($hook as $candidate) {
         if ($theme_registry->has($candidate)) {
           break;
@@ -157,21 +155,14 @@ class ThemeManager implements ThemeManagerInterface {
     // preprocess callbacks.
     $original_hook = $hook;
 
-    // Set derived suggestions for directly called suggestions like
-    // '#theme' => 'comment__node__article'.
-    $derived_suggestion = $original_hook;
-    $derived_suggestions[] = $derived_suggestion;
-    while ($pos = strrpos($derived_suggestion, '__')) {
-      $derived_suggestion = substr($derived_suggestion, 0, $pos);
-      $derived_suggestions[] = $derived_suggestion;
-    }
-
     // If there's no implementation, check for more generic fallbacks.
     // If there's still no implementation, log an error and return an empty
     // string.
     if (!$theme_registry->has($hook)) {
-      $derived_suggestions_without_original_hook = array_slice($derived_suggestions, 1);
-      foreach ($derived_suggestions_without_original_hook as $hook) {
+      // Iteratively strip everything after the last '__' delimiter, until an
+      // implementation is found.
+      while ($pos = strrpos($hook, '__')) {
+        $hook = substr($hook, 0, $pos);
         if ($theme_registry->has($hook)) {
           break;
         }
@@ -192,19 +183,6 @@ class ThemeManager implements ThemeManagerInterface {
     }
 
     $info = $theme_registry->get($hook);
-
-    // We've found a template implementation, but we need to let the template
-    // engine know about all possible suggestions (for discoverability). The
-    // code above only iteratively strips '__' parts from $hook if the hook was
-    // not found in the theme registry. If the #theme was an array, that also
-    // means $hook was the last element in that array. So we know it is safe to
-    // always grab the last suggestion from that array in order to find all
-    // possible template suggestions from the #theme value.
-    $possible_hook = $template_suggestions[array_key_last($template_suggestions)];
-    while ($pos = strrpos($possible_hook, '__')) {
-      $possible_hook = substr($possible_hook, 0, $pos);
-      $template_suggestions[] = $possible_hook;
-    }
 
     // If a renderable array is passed as $variables, then set $variables to
     // the arguments expected by the theme function.
@@ -250,15 +228,12 @@ class ThemeManager implements ThemeManagerInterface {
 
     // Invoke hook_theme_suggestions_HOOK().
     $suggestions = $this->moduleHandler->invokeAll('theme_suggestions_' . $base_theme_hook, [$variables]);
-
     // If the theme implementation was invoked with a direct theme suggestion
     // like '#theme' => 'node__article', add it to the suggestions array before
     // invoking suggestion alter hooks.
-    $derived_suggestions_excluding_base_hook = array_slice($derived_suggestions, 0, -1);
-    if (isset($info['base hook']) && !in_array($hook, $derived_suggestions_excluding_base_hook)) {
+    if (isset($info['base hook'])) {
       $suggestions[] = $hook;
     }
-    $suggestions = array_merge($suggestions, array_reverse($derived_suggestions_excluding_base_hook));
 
     // Invoke hook_theme_suggestions_alter() and
     // hook_theme_suggestions_HOOK_alter().
@@ -269,31 +244,13 @@ class ThemeManager implements ThemeManagerInterface {
     $this->moduleHandler->alter($hooks, $suggestions, $variables, $base_theme_hook);
     $this->alter($hooks, $suggestions, $variables, $base_theme_hook);
 
-    // Merge these new suggestions into our previous list of all possible
-    // template suggestions.
-    $reversed_suggestions = array_reverse($suggestions);
-    if (!in_array($hook, $reversed_suggestions)) {
-      // Make sure $hook is not actually replaced in the array_splice below.
-      $reversed_suggestions[] = $hook;
-    }
-    $hook_position = array_search($hook, $template_suggestions, TRUE);
-    array_splice($template_suggestions, $hook_position, 1, $reversed_suggestions);
-
-    // Add the base suggestion, should always have the lowest priority.
-    $derived_base_hook = array_slice($derived_suggestions, -1);
-    if (!in_array($derived_base_hook, $suggestions)) {
-      $suggestions = array_merge($derived_base_hook, $suggestions);
-    }
-
     // Check if each suggestion exists in the theme registry, and if so,
     // use it instead of the base hook. For example, a function may use
     // '#theme' => 'node', but a module can add 'node__article' as a suggestion
     // via hook_theme_suggestions_HOOK_alter(), enabling a theme to have
     // an alternate template file for article nodes.
-    $template_suggestion = $hook;
     foreach (array_reverse($suggestions) as $suggestion) {
       if ($theme_registry->has($suggestion)) {
-        $template_suggestion = $suggestion;
         $info = $theme_registry->get($suggestion);
         break;
       }
@@ -397,11 +354,7 @@ class ThemeManager implements ThemeManagerInterface {
       if (!isset($default_attributes)) {
         $default_attributes = new Attribute();
       }
-      foreach ([
-        'attributes',
-        'title_attributes',
-        'content_attributes',
-      ] as $key) {
+      foreach (['attributes', 'title_attributes', 'content_attributes'] as $key) {
         if (isset($variables[$key]) && !($variables[$key] instanceof Attribute)) {
           if ($variables[$key]) {
             $variables[$key] = new Attribute($variables[$key]);
@@ -428,10 +381,6 @@ class ThemeManager implements ThemeManagerInterface {
       if (isset($theme_hook_suggestion)) {
         $variables['theme_hook_suggestion'] = $theme_hook_suggestion;
       }
-      // Add two read-only variables that help the template engine understand
-      // how the template was chosen from among all suggestions.
-      $variables['template_suggestions'] = $template_suggestions;
-      $variables['template_suggestion'] = $template_suggestion;
       $output = $render_function($template_file, $variables);
     }
 
@@ -445,9 +394,8 @@ class ThemeManager implements ThemeManagerInterface {
    *   The current route match.
    */
   protected function initTheme(RouteMatchInterface $route_match = NULL) {
-    // Determine the active theme for the theme negotiator service. This
-    // includes the default theme as well as really specific ones like the ajax
-    // base theme.
+    // Determine the active theme for the theme negotiator service. This includes
+    // the default theme as well as really specific ones like the ajax base theme.
     if (!$route_match) {
       $route_match = \Drupal::routeMatch();
     }
@@ -472,8 +420,8 @@ class ThemeManager implements ThemeManagerInterface {
       $extra_types = $type;
       $type = array_shift($extra_types);
       // Allow if statements in this function to use the faster isset() rather
-      // than !empty() both when $type is passed as a string, or as an array
-      // with one item.
+      // than !empty() both when $type is passed as a string, or as an array with
+      // one item.
       if (empty($extra_types)) {
         unset($extra_types);
       }

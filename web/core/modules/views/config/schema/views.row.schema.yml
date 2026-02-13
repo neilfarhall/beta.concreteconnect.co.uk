@@ -46,9 +46,6 @@ views.row.rss_fields:
     date_field:
       type: string
       label: 'Publication date field'
-    enclosure_field:
-      type: string
-      label: 'Enclosure field'
     guid_field_options:
       type: mapping
       label: 'Guid settings'
