@@ -49,3 +49,7 @@ EOF
 *.sql.gz
 *.tar.gz
 wget-log*
+*.sql
+*.sql.gz
+*.tar.gz
+wget-log*
