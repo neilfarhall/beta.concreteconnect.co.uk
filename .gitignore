@@ -38,3 +38,4 @@ wget-log
 *.swp
 *.swo
 *~
+*.sql
