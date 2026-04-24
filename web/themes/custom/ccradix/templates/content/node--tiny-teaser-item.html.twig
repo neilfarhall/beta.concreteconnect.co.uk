@@ -1,0 +1,86 @@
+{#
+/**
+ * Node template for view mode: tiny-teaser-item
+ * Used in footer “Latest / Most popular”
+ *
+ * Supports taxonomy:
+ *  - Articles: field_news_type
+ *  - Insights: field_channel
+ */
+#}
+
+{# Pick taxonomy term for link + colour classes #}
+{% set taxonomy_term = null %}
+{% if node.field_news_type is defined and node.field_news_type|length and node.field_news_type.entity %}
+  {% set taxonomy_term = node.field_news_type.entity %}
+{% elseif node.field_channel is defined and node.field_channel|length and node.field_channel.entity %}
+  {% set taxonomy_term = node.field_channel.entity %}
+{% endif %}
+
+{% set taxonomy_classes = [] %}
+{% if taxonomy_term %}
+  {% set taxonomy_classes = [
+    'news-type--' ~ taxonomy_term.label|clean_class,
+    'news-type--tid-' ~ taxonomy_term.id
+  ] %}
+{% endif %}
+
+{%
+  set node_classes = [
+  'node',
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  node.bundle|clean_class,
+  'view-mode--' ~ view_mode|clean_class,
+  'teaser',
+  'teaser--tiny',
+]|merge(taxonomy_classes)
+%}
+
+<article{{ attributes.addClass(node_classes) }}>
+
+  <div class="teaser__media">
+    <a href="{{ url }}" aria-label="{{ node.label }}">
+      {% if content.field_teaser_media is defined and content.field_teaser_media|render %}
+        {{ content.field_teaser_media }}
+      {% elseif content.field_news_image is defined and content.field_news_image|render %}
+        {{ content.field_news_image }}
+      {% elseif content.field_image is defined and content.field_image|render %}
+        {{ content.field_image }}
+      {% endif %}
+    </a>
+  </div>
+
+  <div class="teaser__content">
+    {{ title_prefix }}
+    <h2 class="teaser__headline">
+      <a href="{{ url }}">{{ label }}</a>
+    </h2>
+    {{ title_suffix }}
+
+    <footer class="teaser__authored">
+      {% if taxonomy_term %}
+        <div class="news-type">
+          <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': taxonomy_term.id}) }}">
+            {{ taxonomy_term.label }}
+          </a>
+        </div>
+      {% endif %}
+
+      <div class="date">
+        {{ node.getCreatedTime|date('d/m/Y') }}
+      </div>
+    </footer>
+
+    {# Don’t dump fields (prevents labels/duplicates) #}
+    {{ content|without(
+      'field_teaser_media',
+      'field_news_image',
+      'field_image',
+      'field_news_type',
+      'field_channel'
+    ) }}
+  </div>
+
+</article>

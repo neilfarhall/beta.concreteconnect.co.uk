@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_paragraph_links
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_group: cc_import
+label: 'Paragraph: Links'
+
+source:
+  plugin: cc_paragraph_links
+  key: migrate_source
+
+process:
+  id: id
+  revision_id: revision_id
+  langcode: langcode
+  status: status
+  created: created
+
+  type:
+    plugin: default_value
+    default_value: links
+
+  field_links:
+    plugin: sub_process
+    source: field_links
+    process:
+      uri: uri
+      title: title
+
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+
+migration_dependencies: {  }

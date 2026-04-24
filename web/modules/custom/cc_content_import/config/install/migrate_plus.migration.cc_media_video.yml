@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_media_video
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_group: cc_import
+label: 'Media: Video'
+
+source:
+  plugin: cc_media_video
+  key: migrate_source
+
+process:
+  bundle:
+    plugin: default_value
+    default_value: video
+
+  langcode: langcode
+
+  uid:
+    plugin: default_value
+    default_value: 1
+
+  name: name
+  created: created
+  changed: changed
+
+  thumbnail/target_id:
+    plugin: migration_lookup
+    migration: cc_files
+    source: thumbnail__target_id
+
+  thumbnail/alt: thumbnail__alt
+  thumbnail/title: thumbnail__title
+
+  field_media_video_embed_field/value: field_media_video_embed_field_value
+
+  field_local_video/target_id:
+    plugin: migration_lookup
+    migration: cc_files
+    source: field_local_video_target_id
+
+  field_media_video_file/target_id:
+    plugin: migration_lookup
+    migration: cc_files
+    source: field_media_video_file_target_id
+
+  field_media_video_file_1/target_id:
+    plugin: migration_lookup
+    migration: cc_files
+    source: field_media_video_file_1_target_id
+
+destination:
+  plugin: 'entity:media'
+
+migration_dependencies:
+  required:
+    - cc_files

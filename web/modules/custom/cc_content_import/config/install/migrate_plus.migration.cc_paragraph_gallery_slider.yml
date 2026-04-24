@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_paragraph_gallery_slider
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_group: cc_import
+label: 'Paragraph: Gallery Slider'
+
+source:
+  plugin: cc_paragraph_gallery_slider
+  key: migrate_source
+
+process:
+  id: id
+  revision_id: revision_id
+  langcode: langcode
+  status: status
+  created: created
+
+  type:
+    plugin: default_value
+    default_value: gallery_slider
+
+  field_title/value: field_title_value
+
+  field_media:
+    plugin: sub_process
+    source: field_media
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: cc_media_image
+        source: target_id
+
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+
+migration_dependencies:
+  required:
+    - cc_media_image

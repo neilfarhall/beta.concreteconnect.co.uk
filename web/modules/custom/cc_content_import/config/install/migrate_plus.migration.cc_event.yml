@@ -1,0 +1,84 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_event
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_group: cc_import
+label: 'Event content'
+
+source:
+  plugin: cc_event
+  key: migrate_source
+
+process:
+  type:
+    plugin: default_value
+    default_value: event
+
+  langcode: langcode
+  status: status
+  uid: uid
+
+  title: title
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+
+  body/value: body_value
+  body/summary: body_summary
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_event_date/value: field_event_date_value
+  field_event_date/end_value: field_event_date_end_value
+
+  field_event_organiser: field_event_organiser_value
+  field_event_reference: field_event_reference_value
+
+  field_event_type/target_id:
+    plugin: migration_lookup
+    migration: cc_taxonomy_event_type
+    source: field_event_type_target_id
+
+  field_logo/target_id:
+    plugin: migration_lookup
+    migration: cc_files
+    source: field_logo_target_id
+  field_logo/alt: field_logo_alt
+  field_logo/title: field_logo_title
+
+  field_event_email: field_event_email_value
+
+  field_teaser_media/target_id:
+    plugin: migration_lookup
+    migration: cc_media_image
+    source: field_teaser_media_target_id
+
+  field_teaser_text/value: field_teaser_text_value
+
+  field_event_website/uri: field_event_website_uri
+  field_event_website/title: field_event_website_title
+
+  field_event_venue: field_event_venue_value
+  field_event_town_city: field_event_town_city_value
+  field_event_postcode: field_event_postcode_value
+  field_event_address_1: field_event_address_1_value
+  field_event_address_2: field_event_address_2_value
+  field_event_country: field_event_country_value
+  field_county: field_county_value
+  field_event_speakers_topic/value: field_event_speakers_topic_value
+
+destination:
+  plugin: 'entity:node'
+
+migration_dependencies:
+  required:
+    - cc_files
+    - cc_media_image
+    - cc_taxonomy_event_type
+  optional: {  }

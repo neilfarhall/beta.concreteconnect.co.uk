@@ -1,0 +1,26 @@
+<article{{ attributes.addClass('cc-tv-card') }}>
+
+  {% if content.field_teaser_media %}
+    <div class="cc-tv-card__media">
+      <a href="{{ url }}" class="cc-tv-card__media-link" aria-label="{{ label }}">
+        {{ content.field_teaser_media }}
+        <span class="cc-tv-card__play" aria-hidden="true"></span>
+      </a>
+    </div>
+  {% endif %}
+
+  <div class="cc-tv-card__body">
+    {{ title_prefix }}
+    <h2 class="cc-tv-card__title">
+      <a href="{{ url }}">{{ label }}</a>
+    </h2>
+    {{ title_suffix }}
+
+    {% if content.created %}
+      <div class="cc-tv-card__meta">
+        {{ content.created }}
+      </div>
+    {% endif %}
+  </div>
+
+</article>

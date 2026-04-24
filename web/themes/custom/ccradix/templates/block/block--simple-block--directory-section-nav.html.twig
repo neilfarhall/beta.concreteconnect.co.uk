@@ -1,0 +1,17 @@
+{% if node %}
+  <nav class="directory-section-nav">
+    <a href="#overview">Home</a>
+
+    {% if node.field_show_media.value %}
+      <a href="#media">Media Gallery</a>
+    {% endif %}
+
+    {% if node.field_show_downloads.value %}
+      <a href="#downloads">Downloads</a>
+    {% endif %}
+
+    {% if node.field_show_news.value %}
+      <a href="#news">News</a>
+    {% endif %}
+  </nav>
+{% endif %}

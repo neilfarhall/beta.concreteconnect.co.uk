@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_files
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_group: cc_import
+label: 'Import files'
+
+source:
+  plugin: table
+  key: migrate_source
+  table_name: file_managed
+  id_fields:
+    fid:
+      type: integer
+  fields:
+    - fid
+    - uuid
+    - langcode
+    - uid
+    - filename
+    - uri
+    - filemime
+    - filesize
+    - status
+    - created
+    - changed
+
+process:
+  fid: fid
+  uuid: uuid
+  langcode: langcode
+  uid: uid
+  filename: filename
+  uri: uri
+  filemime: filemime
+  filesize: filesize
+  status: status
+  created: created
+  changed: changed
+
+destination:
+  plugin: 'entity:file'
+
+migration_dependencies: {  }

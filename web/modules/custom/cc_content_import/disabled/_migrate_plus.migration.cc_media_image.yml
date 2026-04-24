@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_media_image
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_group: cc_import
+label: 'Import image media'
+
+source:
+  plugin: sql
+  key: migrate_source
+  query: >
+    SELECT
+      m.mid,
+      m.uuid,
+      m.bundle,
+      m.langcode,
+      m.uid,
+      m.name,
+      m.created,
+      m.changed,
+      f.field_image_target_id AS image_fid
+    FROM media_field_data m
+    LEFT JOIN media__field_image f
+      ON m.mid = f.entity_id
+    WHERE m.bundle = 'image'
+
+process:
+  mid: mid
+  uuid: uuid
+  bundle: bundle
+  langcode: langcode
+  uid: uid
+  name: name
+  created: created
+  changed: changed
+
+  field_image/target_id:
+    plugin: migration_lookup
+    migration: cc_files
+    source: image_fid
+
+destination:
+  plugin: 'entity:media'
+
+migration_dependencies:
+  required:
+    - cc_files

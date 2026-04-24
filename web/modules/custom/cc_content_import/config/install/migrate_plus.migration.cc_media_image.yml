@@ -1,0 +1,42 @@
+langcode: en
+status: true
+
+id: cc_media_image
+label: 'Media: Image'
+migration_group: cc_import
+
+source:
+  plugin: cc_media_image
+  key: migrate_source
+
+process:
+  bundle:
+    plugin: default_value
+    default_value: image
+
+  langcode: langcode
+
+  uid:
+    plugin: default_value
+    default_value: 1
+
+  name: name
+  created: created
+  changed: changed
+
+  field_image/target_id:
+    plugin: migration_lookup
+    migration: cc_files
+    source: field_image_target_id
+
+  field_image/alt: field_image_alt
+  field_image/title: field_image_title
+
+  field_description/value: field_description
+
+destination:
+  plugin: 'entity:media'
+
+migration_dependencies:
+  required:
+    - cc_files

@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Custom teaser template for Job listing in medium_teaser_item view mode.
+ */
+#}
+
+<article{{ attributes.addClass('job-card') }}>
+  {% if content.field_teaser_media %}
+    <div class="job-card__media">
+      {{ content.field_teaser_media }}
+    </div>
+  {% endif %}
+
+  <div class="job-card__body">
+    {% if label and not page %}
+      <h2 class="job-card__title">
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% endif %}
+
+    {% if content.created %}
+      <div class="job-card__date">
+        {{ content.created }}
+      </div>
+    {% endif %}
+
+    {% if content.field_teaser_text %}
+      <div class="job-card__teaser">
+        {{ content.field_teaser_text }}
+      </div>
+    {% endif %}
+  </div>
+</article>

@@ -1,0 +1,85 @@
+{#
+/**
+ * Bootstrap carousel for Gallery Slider paragraph
+ */
+#}
+
+{% set slider_id = 'gallery-slider-' ~ paragraph.id() %}
+
+{# Count slides first #}
+{% set slides = [] %}
+
+{% for item in paragraph.field_media %}
+  {% set gallery = item.entity %}
+  {% if gallery and gallery.field_media_slideshow is defined %}
+    {% for slide in gallery.field_media_slideshow %}
+      {% set slides = slides|merge([slide.entity]) %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+<div id="{{ slider_id }}" class="carousel slide" data-bs-ride="carousel">
+
+  {# Indicators (dots) #}
+  {% if slides|length > 1 %}
+    <div class="carousel-indicators">
+      {% for slide in slides %}
+        <button
+          type="button"
+          data-bs-target="#{{ slider_id }}"
+          data-bs-slide-to="{{ loop.index0 }}"
+          class="{{ loop.first ? 'active' : '' }}"
+          aria-current="{{ loop.first ? 'true' : 'false' }}"
+          aria-label="Slide {{ loop.index }}">
+        </button>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="carousel-inner">
+
+    {% for slide_media in slides %}
+
+      {% if slide_media and slide_media.field_image.entity %}
+
+        <div class="carousel-item{{ loop.first ? ' active' : '' }}">
+
+          <img
+            src="{{ file_url(slide_media.field_image.entity.fileuri) }}"
+            alt="{{ slide_media.field_image.alt|default('') }}"
+            class="d-block w-100"
+          >
+
+          {% if slide_media.field_description.value %}
+            <div class="carousel-caption d-none d-md-block">
+              {{ slide_media.field_description.value }}
+            </div>
+          {% endif %}
+
+        </div>
+
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+
+  {# Previous button #}
+  <button class="carousel-control-prev"
+          type="button"
+          data-bs-target="#{{ slider_id }}"
+          data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  {# Next button #}
+  <button class="carousel-control-next"
+          type="button"
+          data-bs-target="#{{ slider_id }}"
+          data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+</div>

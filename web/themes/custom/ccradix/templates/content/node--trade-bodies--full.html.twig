@@ -1,0 +1,26 @@
+<article{{ attributes }}>
+
+  {# Title / hero handled by Layout Builder or view #}
+
+  <nav class="directory-section-nav">
+    <a href="#overview">Home</a>
+
+    {% if node.field_show_media.value %}
+      <a href="#media">Media Gallery</a>
+    {% endif %}
+
+    {% if node.field_show_downloads.value %}
+      <a href="#downloads">Downloads</a>
+    {% endif %}
+
+    {% if node.field_show_news.value %}
+      <a href="#news">News</a>
+    {% endif %}
+  </nav>
+
+  {{ content }}
+  {{ dump(node.field_show_downloads.value) }}
+  <div style="background:red;color:white;padding:20px;font-size:30px;">
+    TEST TEMPLATE
+  </div>å
+</article>

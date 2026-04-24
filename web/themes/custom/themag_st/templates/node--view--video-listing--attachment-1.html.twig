@@ -1,15 +1,36 @@
 {#
 /**
  * @file
- * Medium teaser item
+ * CC TV small teaser card.
  */
 #}
 
-{% extends 'node--teaser-video.html.twig' %}
+<article{{ attributes.addClass('cc-tv-card') }}>
 
-{% set teaser_classes = [
-  'teaser--item',
-  'teaser--medium-item'
-] %}
+  {# IMAGE #}
+  {% if content.field_teaser_media %}
+    <div class="cc-tv-card__media">
+      {{ content.field_teaser_media }}
+    </div>
+  {% endif %}
 
-{% set attributes = attributes.addClass(teaser_classes) %}
+  {# BODY #}
+  <div class="cc-tv-card__body">
+
+    {# TITLE #}
+    {{ title_prefix }}
+    <h2 class="cc-tv-card__title">
+      <a href="{{ url }}">{{ label }}</a>
+    </h2>
+    {{ title_suffix }}
+
+    {# DATE #}
+    {% if content.created %}
+      <div class="cc-tv-card__meta">
+        {{ content.created }}
+      </div>
+    {% endif %}
+
+  </div>
+
+</article>

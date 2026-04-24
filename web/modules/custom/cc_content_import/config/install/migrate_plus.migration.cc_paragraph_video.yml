@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_paragraph_video
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_group: cc_import
+label: 'Paragraph: Video'
+
+source:
+  plugin: cc_paragraph_video
+  key: migrate_source
+
+process:
+  id: id
+  revision_id: revision_id
+  langcode: langcode
+  status: status
+  created: created
+
+  type:
+    plugin: default_value
+    default_value: video
+
+  field_video_embed/value: field_video_embed_value
+  field_video_caption/value: field_video_caption_value
+
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+
+migration_dependencies: {  }

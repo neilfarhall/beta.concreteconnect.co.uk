@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Theme override for the news article body field block.
+ *
+ * Injects a chosen block after the third paragraph of the body field.
+ *
+ * Requires Twig Tweak for drupal_block().
+ */
+#}
+
+{%
+  set classes = [
+  'block',
+  'block-field-block-node-news-article-body',
+]
+%}
+
+{% set body_html = content|render %}
+{% set paragraphs = body_html|split('</p>') %}
+
+{% set injected_block %}
+  {{ drupal_block('block_content:b5b372fc-85aa-4761-b242-dde9ebe89f1e') }}
+{% endset %}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  <div{{ content_attributes.addClass('block__content') }}>
+    {% set injected = false %}
+
+    {% for paragraph in paragraphs %}
+      {% if paragraph|trim is not empty %}
+        {{ (paragraph ~ '</p>')|raw }}
+
+        {% if loop.index == 3 %}
+          <div class="body-inject body-inject--video">
+            {{ injected_block }}
+          </div>
+          {% set injected = true %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% if not injected and body_html|trim is not empty %}
+      <div class="body-inject body-inject--video">
+        {{ injected_block }}
+      </div>
+    {% endif %}
+  </div>
+</div>

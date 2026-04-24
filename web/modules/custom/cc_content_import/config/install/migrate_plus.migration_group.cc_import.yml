@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_import
+label: 'CC selective import'
+description: 'Import selected content and media from live copy'
+source_type: 'MySQL'
+module: null
+shared_configuration:
+  source:
+    key: migrate_source

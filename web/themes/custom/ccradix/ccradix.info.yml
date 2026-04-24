@@ -1,0 +1,48 @@
+name: ccradix
+description: "ccradix theme based on <a href='https://www.drupal.org/project/radix' target='_blank'>Radix 6.x</a> and Bootstrap 5.x"
+screenshot: screenshot.png
+'alt text': 'ccradix theme screenshot'
+core_version_requirement: ^10
+engine: twig
+type: theme
+'base theme': radix
+starterkit: true
+'interface translation project': ccradix
+'interface translation server pattern': themes/custom/ccradix/translations/%language.po
+regions:
+  top_branding: 'Top branding strip'
+  navbar_branding: 'Navbar branding'
+  navbar_left: 'Navbar left'
+  navbar_right: 'Navbar right'
+  leaderboard: 'Leaderboard (below navbar)'
+  header: Header
+  content: Content
+  page_bottom: 'Page bottom'
+  footer_about: 'Footer: About (logo + text)'
+  footer_latest: 'Footer: Latest'
+  footer_popular: 'Footer: Most popular'
+  footer_search: 'Footer: Search'
+  footer_bottom: 'Footer: Bottom'
+  footer: Footer
+
+
+libraries:
+  - ccradix/style
+  - ccradix/smartadserver
+ckeditor5-stylesheets:
+  - build/css/main.style.css
+libraries-extend:
+  core/drupal.ajax:
+    - ccradix/drupal.ajax
+  core/drupal.checkbox:
+    - ccradix/drupal.checkbox
+  core/drupal.message:
+    - ccradix/drupal.message
+  core/drupal.progress:
+    - ccradix/drupal.progress
+  clientside_validation_jquery/cv.jquery.validate:
+    - ccradix/jquery.validate
+version: 6.0.2
+project: radix
+datestamp: 1746711574
+generator: 'radix_starterkit:6.0.2'

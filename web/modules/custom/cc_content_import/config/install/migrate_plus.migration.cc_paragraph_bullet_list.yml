@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_paragraph_bullet_list
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_group: cc_import
+label: 'Paragraph: Bullet List'
+
+source:
+  plugin: cc_paragraph_bullet_list
+  key: migrate_source
+
+process:
+  id: id
+  revision_id: revision_id
+  langcode: langcode
+  status: status
+  created: created
+
+  type:
+    plugin: default_value
+    default_value: bullet_list
+
+  field_bullet_text/value: field_bullet_text_value
+  field_bullet_text/format:
+    plugin: default_value
+    default_value: basic_html
+
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+
+migration_dependencies: {  }

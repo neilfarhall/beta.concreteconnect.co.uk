@@ -1,0 +1,42 @@
+<article{{ attributes.addClass(classes, 'insights-card') }}>
+  {% if content.field_teaser_media %}
+    <div class="insights-card__media">
+      {{ content.field_teaser_media }}
+    </div>
+  {% elseif content.field_image %}
+    <div class="insights-card__media">
+      {{ content.field_image }}
+    </div>
+  {% elseif content.field_images %}
+    <div class="insights-card__media">
+      {{ content.field_images }}
+    </div>
+  {% endif %}
+
+  <div class="insights-card__body">
+    {{ title_prefix }}
+    <h2 class="insights-card__title">
+      <a href="{{ url }}">{{ label }}</a>
+    </h2>
+    {{ title_suffix }}
+
+    <div class="insights-card__meta">
+      {% if node.field_channel is defined and not node.field_channel.isEmpty() %}
+        <span class="insights-card__type">
+        <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_channel.entity.id()}) }}">
+          {{ node.field_channel.entity.label }}
+        </a>
+      </span>
+        <span class="insights-card__sep">·</span>
+      {% endif %}
+      <span class="insights-card__date">{{ node.getCreatedTime|date('d/m/Y') }}</span>
+    </div>
+
+    {% if content.field_teaser_text %}
+      <div class="insights-card__teaser">
+        {{ content.field_teaser_text }}
+      </div>
+    {% endif %}
+  </div>
+
+</article>

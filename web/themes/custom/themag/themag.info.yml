@@ -2,7 +2,7 @@ name: TheMAG (base theme)
 type: theme
 description: 'Responsive Blog/Magazine Theme.'
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 version: 4.4.0
 base theme: charm
 hidden: false

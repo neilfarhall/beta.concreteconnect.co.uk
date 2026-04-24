@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_paragraph_block_reference
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_group: cc_import
+label: 'Paragraph: Block Reference'
+
+source:
+  plugin: cc_paragraph_block_reference
+  key: migrate_source
+
+process:
+  id: id
+  revision_id: revision_id
+  langcode: langcode
+  status: status
+  created: created
+
+  type:
+    plugin: default_value
+    default_value: block_reference
+
+  field_block_reference/plugin_id: field_block_reference_plugin_id
+  field_block_reference/settings: field_block_reference_settings
+
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+
+migration_dependencies: {  }

@@ -1,0 +1,39 @@
+<article{{ attributes.addClass(classes, 'news-card') }}>
+  {% if content.field_teaser_media %}
+    <div class="news-card__media">
+      {{ content.field_teaser_media }}
+    </div>
+  {% elseif content.field_news_image %}
+    <div class="news-card__media">
+      {{ content.field_news_image }}
+    </div>
+  {% elseif content.field_image %}
+    <div class="news-card__media">
+      {{ content.field_image }}
+    </div>
+  {% endif %}
+
+  {{ title_prefix }}
+  <h2 class="news-card__title">
+    <a href="{{ url }}">{{ label }}</a>
+  </h2>
+  {{ title_suffix }}
+
+  <div class="news-card__meta">
+    {% if node.field_news_type is defined and not node.field_news_type.isEmpty() %}
+      <span class="news-card__type">
+        <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_news_type.entity.id()}) }}">
+          {{ node.field_news_type.entity.label }}
+        </a>
+      </span>
+      <span class="news-card__sep">·</span>
+    {% endif %}
+    <span class="news-card__date">{{ node.getCreatedTime|date('d/m/Y') }}</span>
+  </div>
+
+  {% if content.body %}
+    <div class="news-card__teaser">
+      {{ content.body }}
+    </div>
+  {% endif %}
+</article>

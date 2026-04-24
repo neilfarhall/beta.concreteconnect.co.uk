@@ -1,0 +1,24 @@
+<article{{ attributes.addClass('directory-news-card') }}>
+  {% if content.field_teaser_media %}
+    <div class="directory-news-card__image">
+      {{ content.field_teaser_media }}
+    </div>
+  {% endif %}
+
+  <div class="directory-news-card__body">
+    {% if label %}
+      <h3 class="directory-news-card__title">
+        <a href="{{ url }}">{{ label }}</a>
+      </h3>
+    {% endif %}
+
+    <div class="directory-news-card__meta">
+      {% if content.field_news_type %}
+        <span class="directory-news-card__category">{{ content.field_news_type }}</span>
+      {% endif %}
+      {% if node.created.value %}
+        <span class="directory-news-card__date">{{ node.created.value|date("d/m/Y") }}</span>
+      {% endif %}
+    </div>
+  </div>
+</article>

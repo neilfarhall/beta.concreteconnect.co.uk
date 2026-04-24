@@ -1,0 +1,14 @@
+name: CC Content Import
+type: module
+description: Selective content import from live copy.
+core_version_requirement: ^10 || ^11
+package: Custom
+
+dependencies:
+  - drupal:migrate
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+
+migrate_plus:
+  migration_groups:
+    - cc_import

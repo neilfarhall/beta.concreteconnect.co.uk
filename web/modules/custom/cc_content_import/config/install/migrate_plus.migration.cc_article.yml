@@ -1,0 +1,106 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_article
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_group: cc_import
+label: 'Insights (article)'
+
+source:
+  plugin: cc_article
+  key: migrate_source
+
+process:
+  type:
+    plugin: default_value
+    default_value: article
+
+  langcode: langcode
+  status: status
+  uid: uid
+
+  title: title
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+
+  body/value: body_value
+  body/summary: body_summary
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_email: field_email_value
+  field_featured_article/value: field_featured_article_value
+  field_omit_from_news_listing/value: field_omit_from_news_listing_value
+
+  field_teaser_media/target_id:
+    plugin: migration_lookup
+    migration: cc_media_image
+    source: field_teaser_media_target_id
+
+  field_teaser_text/value: field_teaser_text_value
+
+  field_tags:
+    plugin: sub_process
+    source: field_tags
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: cc_taxonomy_tags
+        source: target_id
+
+  field_paragraphs:
+    plugin: sub_process
+    source: field_paragraphs
+    process:
+      _paragraph_lookup:
+        plugin: migration_lookup
+        migration:
+          - cc_paragraph_text
+          - cc_paragraph_image
+          - cc_paragraph_gallery_slider
+          - cc_paragraph_block_reference
+          - cc_paragraph_bullet_list
+          - cc_paragraph_links
+          - cc_paragraph_video
+        source: target_revision_id
+        no_stub: true
+
+      _skip_missing:
+        plugin: skip_on_empty
+        method: row
+        source: '@_paragraph_lookup'
+
+      target_id:
+        plugin: extract
+        source: '@_paragraph_lookup'
+        index:
+          - 0
+
+      target_revision_id:
+        plugin: extract
+        source: '@_paragraph_lookup'
+        index:
+          - 1
+
+destination:
+  plugin: 'entity:node'
+
+migration_dependencies:
+  required:
+    - cc_files
+    - cc_media_image
+    - cc_taxonomy_tags
+  optional:
+    - cc_paragraph_text
+    - cc_paragraph_image
+    - cc_paragraph_gallery_slider
+    - cc_paragraph_block_reference
+    - cc_paragraph_bullet_list
+    - cc_paragraph_links
+    - cc_paragraph_video

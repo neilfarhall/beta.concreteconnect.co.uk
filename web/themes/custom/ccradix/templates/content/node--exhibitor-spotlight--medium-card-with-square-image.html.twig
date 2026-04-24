@@ -1,0 +1,106 @@
+{#
+/**
+ * Node template for view mode: medium-card-with-square-image
+ * Supports:
+ *  - Articles (field_news_type)
+ *  - Insights (field_channel)
+ */
+#}
+
+{# --- Choose taxonomy term for colouring + meta: News Type OR Channel --- #}
+{% set taxonomy_term = null %}
+
+{# Articles: News Type #}
+{% if node.field_news_type is defined and node.field_news_type|length and node.field_news_type.entity %}
+  {% set taxonomy_term = node.field_news_type.entity %}
+  {# Insights: Channel #}
+{% elseif node.field_channel is defined and node.field_channel|length and node.field_channel.entity %}
+  {% set taxonomy_term = node.field_channel.entity %}
+{% endif %}
+
+{# Build classes for colouring #}
+{% set taxonomy_classes = [] %}
+{% if taxonomy_term %}
+  {% set taxonomy_classes = [
+    'news-type--' ~ taxonomy_term.label|clean_class,
+    'news-type--tid-' ~ taxonomy_term.id
+  ] %}
+{% endif %}
+
+{%
+  set node_classes = [
+  'node',
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  node.bundle|clean_class,
+  'view-mode--' ~ view_mode|clean_class,
+  'teaser',
+  'teaser--card',
+]|merge(taxonomy_classes)
+%}
+<!-- DEBUG bundle={{ node.bundle }}
+news_type_empty={{ node.field_news_type is defined ? node.field_news_type.isEmpty() : 'undef' }}
+channel_empty={{ node.field_channel is defined ? node.field_channel.isEmpty() : 'undef' }}
+channel_entity={{ node.field_channel is defined and not node.field_channel.isEmpty() and node.field_channel.entity ? node.field_channel.entity.label : 'none' }}
+channel_tid={{ node.field_channel is defined and not node.field_channel.isEmpty() and node.field_channel.entity ? node.field_channel.entity.id() : 'none' }}
+-->
+<article{{ attributes.addClass(node_classes) }}>
+
+  <div class="teaser__media">
+    <a href="{{ url }}" aria-label="{{ node.label }}">
+      {% if content.field_teaser_media is defined and content.field_teaser_media|render %}
+        {{ content.field_teaser_media }}
+      {% elseif content.field_news_image is defined and content.field_news_image|render %}
+        {{ content.field_news_image }}
+      {% elseif content.field_image is defined and content.field_image|render %}
+        {{ content.field_image }}
+      {% endif %}
+    </a>
+  </div>
+
+  <div class="teaser__content">
+    {{ title_prefix }}
+
+    {# Optional external link field for Exhibitor Spotlight style #}
+    {% set cs_link = null %}
+    {% if node.field_cs_link is defined and node.field_cs_link.uri %}
+      {% set cs_link = node.field_cs_link.uri %}
+    {% endif %}
+
+    <h2 class="teaser__headline">
+      {% if cs_link %}
+        <a href="{{ cs_link }}" target="_blank" rel="noopener">{{ label }}</a>
+      {% else %}
+        <a href="{{ url }}">{{ label }}</a>
+      {% endif %}
+    </h2>
+
+    {{ title_suffix }}
+
+    <footer class="teaser__authored">
+      <span class="date">{{ node.getCreatedTime|date('d/m/Y') }}</span>
+
+      {% if taxonomy_term %}
+        <span class="sep"> | </span>
+        <span class="news-type">
+          <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': taxonomy_term.id}) }}">
+            {{ taxonomy_term.label }}
+          </a>
+        </span>
+      {% endif %}
+    </footer>
+
+    {# Prevent label/duplicate output #}
+    {{ content|without(
+      'field_teaser_media',
+      'field_news_image',
+      'field_image',
+      'field_news_type',
+      'field_channel',
+      'field_teaser_text',
+      'field_cs_link'
+    ) }}
+  </div>
+
+</article>

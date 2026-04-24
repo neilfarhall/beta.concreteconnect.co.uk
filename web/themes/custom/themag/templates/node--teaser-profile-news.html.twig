@@ -1,0 +1,125 @@
+{#
+/**
+ * @file
+ * Base Teaser
+ */
+#}
+
+{# Teaser Markup #}
+{# ============= #}
+
+<article{{ attributes.addClass('teaser') }}>
+
+  {# == Media == #}
+  {# =========== #}
+  {% block media_block %}
+    <div class="teaser__media">
+      <div class="position-relative">
+        {% if themag.teaser.media_contained.html and themag.teaser.show_media_contained_icons %}
+          {% block media_icons %}
+            <div class="teaser__media-icons">
+              {{ themag.teaser.media_contained.html|raw }}
+            </div>
+          {% endblock %}
+        {% endif %}
+          {% if node.field_teaser_media.value %}
+          {% block teaser_image %}
+          <div class="image teaser__image">
+                  <a href="{{ url }}">
+                    {{ content.field_teaser_media }}
+                  </a>
+              </div>
+          {% endblock %}
+          {% else %}
+              <div class="image teaser__image">
+                  <a href="{{ url }}">
+                      {{ content.field_news_image }}
+                    {{ content.field_images }}
+                    {{ content.field_image }}
+                  </a>
+              </div>
+          {% endif %}
+     </div>
+    </div>
+  {% endblock %}
+
+
+
+  {% block teaser_content_block %}
+    <div{{ content_attributes.addClass('teaser__content') }}>
+      {% block teaser_content %}
+
+
+          {# == Title & Channel == #}
+          {# ===================== #}
+          {% block teaser_header_block %}
+              <header>
+                {% block teaser_headline %}
+                  {{ title_prefix }}
+                  <h2 class="teaser__headline">
+                    <a href="{{ url }}">{{ label }}</a>
+                  </h2>
+                  {{ title_suffix }}
+                {% endblock %}
+                  {% block teaser_authored_block %}
+                      {% if content.field_news_type %}
+                          <div class="teaser__authored">
+                              <span class="date">{{ date }} | {{ content.field_channel[0] }}  {{ content.field_news_type[0] }}</span>
+                          </div>
+                      {% else %}
+                        <div class="teaser__authored">
+                          <span class="date">{{ date }} |  {{ content.field_channel[0] }} {{ content.field_news_type[0] }}</span>
+                        </div>
+                      {% endif %}
+                  {% endblock %}
+                {% if content.field_teaser_text.0 %}
+                  <div class="teaser__body">
+                    {{ content|without('field_teaser_media', 'field_news_type', 'field_image', 'field_channel','field_article_article','field_images','body' ) }}
+
+                  </div>
+                {% else %}
+                  <div class="teaser__body">
+                    {{ content|without('field_teaser_media', 'field_news_type', 'field_image', 'field_channel','field_article_article','field_images','field_teaser_text' ) }}
+
+                  </div>
+                {% endif %}
+              </header>
+          {% endblock %}
+
+          {# == Authored info == #}
+          {# ===================
+          {% block teaser_authored_block %}
+              {% if themag.teaser.show_post_date or show_author_name %}
+                  {% block authored_info %}
+                      <footer class="teaser__authored">
+                          {% if themag.teaser.show_post_date %}
+                              {% block authored_date %}
+                                  <span class="date">{{ date }} | {{ content.field_news_type[0] }}</span>
+                              {% endblock %}
+                          {% endif %}
+                       </footer>
+                  {% endblock %}
+              {% endif %}
+          {% endblock %}#}
+
+
+        {# == Teaser text == #}
+        {# ================= #}
+        {% block teaser_text %}
+          {% if content.field_teaser_text.0 %}
+            <div class="teaser__body">
+              {{ content|without('field_teaser_media', 'field_news_type', 'field_image', 'field_channel','field_article_article','field_images','body' ) }}
+
+            </div>
+          {% else %}
+            <div class="teaser__body">
+              {{ content|without('field_teaser_media', 'field_news_type', 'field_image', 'field_channel','field_article_article','field_images','field_teaser_text' ) }}
+
+            </div>
+          {% endif %}
+        {% endblock %}
+      {% endblock %}
+    </div>
+  {% endblock %}
+
+</article>

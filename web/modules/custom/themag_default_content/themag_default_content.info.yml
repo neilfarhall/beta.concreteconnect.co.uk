@@ -2,7 +2,7 @@ name: 'TheMAG Default Content'
 type: module
 description: 'The module provides an initial demo content for TheMAG theme. This module is used for demonstration purposes only, you can disable it on your production site.'
 package: TheMAG Demo
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 dependencies:
   - default_content
 default_content:

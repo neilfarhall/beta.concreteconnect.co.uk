@@ -4,7 +4,7 @@ base theme: seven
 description: 'Administration theme that extends Seven to improve the content editing experience.'
 package: PinkDexo
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 version: VERSION
 libraries:
   - pinkdexo_admin/global-styling

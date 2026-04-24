@@ -2,7 +2,7 @@ name: 'TheMAG Demo'
 type: module
 description: 'Provide additional demo content for TheMAG. This module is used for demonstration purposes only, you can uninstall it on your production site.'
 package: TheMAG Demo
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^8 || ^9 || ^10 || ^11
 dependencies:
   - themag_default_content
   - entityqueue

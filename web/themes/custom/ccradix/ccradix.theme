@@ -1,0 +1,112 @@
+<?php
+
+/**
+ * @file
+ * Theme functions.
+ */
+
+// Include all files from the includes directory.
+$includes_path = __DIR__ . '/includes/*.theme';
+foreach (glob($includes_path) as $file) {
+  require_once __DIR__ . '/includes/' . basename($file);
+}
+
+use Drupal\image\Entity\ImageStyle;
+
+/**
+ * Preprocess for navbar template.
+ */
+function ccradix_preprocess_navbar(array &$variables): void {
+  $variables['account_avatar_url'] = NULL;
+  $variables['account_display_name'] = NULL;
+
+  $current_user = \Drupal::currentUser();
+  if ($current_user->isAuthenticated()) {
+    /** @var \Drupal\user\UserInterface $account */
+    $account = \Drupal\user\Entity\User::load($current_user->id());
+    if ($account) {
+      $variables['account_display_name'] = $account->getDisplayName();
+
+      // Default Drupal user picture field is "user_picture".
+      if ($account->hasField('user_picture') && !$account->get('user_picture')->isEmpty()) {
+        /** @var \Drupal\file\FileInterface $file */
+        $file = $account->get('user_picture')->entity;
+        if ($file) {
+          $uri = $file->getFileUri();
+
+          // Use an image style if you have one (adjust if you prefer another).
+          $style_id = 'thumbnail';
+          if (ImageStyle::load($style_id)) {
+            $variables['account_avatar_url'] = ImageStyle::load($style_id)->buildUrl($uri);
+          }
+          else {
+            $variables['account_avatar_url'] = file_create_url($uri);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function ccradix_preprocess_html(array &$variables): void {
+  $admin_context = \Drupal::service('router.admin_context');
+
+  // Only attach Smart Ad Server on non-admin pages.
+  if (!$admin_context->isAdminRoute()) {
+    $variables['#attached']['library'][] = 'ccradix/smartadserver';
+    $variables['#attached']['library'][] = 'ccradix/directory_nav';
+
+  }
+}
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function ccradix_preprocess_block(array &$variables) {
+  $plugin_id = $variables['elements']['#plugin_id'] ?? '';
+
+  if ($plugin_id === 'simple_block:directory_section_nav') {
+    $route_match = \Drupal::routeMatch();
+    $node = $route_match->getParameter('node');
+
+    if ($node instanceof NodeInterface) {
+      $variables['node'] = $node;
+    }
+  }
+}
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_preprocess_views_view_unformatted().
+ */
+function ccradix_preprocess_views_view_unformatted(array &$variables) {
+  $view = $variables['view'];
+
+  if ($view instanceof ViewExecutable
+    && $view->id() === 'directories_tabs_content_'
+    && $view->current_display === 'block_2') {
+
+    $variables['social_media_rendered'] = [];
+    $renderer = \Drupal::service('renderer');
+
+    foreach ($view->result as $index => $row) {
+      $variables['social_media_rendered'][$index] = '';
+
+      if (!empty($row->_entity)
+        && $row->_entity->hasField('field_social_media')
+        && !$row->_entity->get('field_social_media')->isEmpty()) {
+
+        $build = $row->_entity->get('field_social_media')->view([
+          'label' => 'hidden',
+        ]);
+
+        $variables['social_media_rendered'][$index] = $renderer->render($build);
+      }
+    }
+  }
+}
+

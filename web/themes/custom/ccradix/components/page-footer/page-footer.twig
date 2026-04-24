@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Template for a Page Footer component.
+ *
+#}
+{% set footer_attributes = footer_attributes ?: create_attribute() %}
+{%
+  set footer_classes = [
+    'page__footer',
+  ]|merge(footer_utility_classes ?: [])
+%}
+
+{% if page.footer %}
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          {{ page.footer_about }}
+        </div>
+
+        <div class="col-lg-4">
+          {{ page.footer_latest }}
+        </div>
+
+        <div class="col-lg-4">
+          {{ page.footer_popular }}
+        </div>
+      </div>
+
+      <div class="footer-search-row mt-5 pt-4">
+        {{ page.footer_search }}
+      </div>
+
+      {% if page.footer_bottom %}
+        <div class="footer-bottom mt-4 pt-3">
+          {{ page.footer_bottom }}
+        </div>
+      {% endif %}
+    </div>
+  </footer>
+  <footer {{ footer_attributes.addClass(footer_classes) }}>
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-md-between align-items-md-center">
+        {% block page_inner_footer %}
+          {{ page.footer }}
+        {% endblock %}
+      </div>
+    </div>
+  </footer>
+{% endif %}

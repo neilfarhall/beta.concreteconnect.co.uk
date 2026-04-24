@@ -1,0 +1,58 @@
+{% for row in rows %}
+  <div class="directory-home">
+    <div class="directory-home__summary">
+
+      <div class="directory-home__col directory-home__col--address">
+        <h3>Address</h3>
+        {{ row.content['#view'].style_plugin.render_tokens[loop.index0]['{{ field_address }}']|default('') }}
+      </div>
+
+      <div class="directory-home__col directory-home__col--categories">
+        <h3>Categories</h3>
+        {{ row.content['#view'].style_plugin.render_tokens[loop.index0]['{{ field_directory_organisation_sec }}']|default('') }}
+      </div>
+
+      <div class="directory-home__col directory-home__col--details">
+        <h3>Additional details</h3>
+        {% set phone = row.content['#view'].style_plugin.render_tokens[loop.index0]['{{ field_directory_contact_phone }}']|default('') %}
+        {% if phone %}
+          <div class="directory-home__detail directory-home__detail--phone">
+            {{ phone }}
+          </div>
+        {% endif %}
+
+        {% set website = row.content['#view'].style_plugin.render_tokens[loop.index0]['{{ field_directory_web_address }}']|default('') %}
+        {% if website %}
+          <div class="directory-home__detail directory-home__detail--web">
+            {{ website }}
+          </div>
+        {% endif %}
+
+        {% set email = row.content['#view'].style_plugin.render_tokens[loop.index0]['{{ field_display_email }}']|default('') %}
+        {% if email %}
+          <div class="directory-home__detail directory-home__detail--email">
+            {{ email }}
+          </div>
+        {% endif %}
+
+        {% if social_media_rendered[loop.index0] is not empty %}
+          <div class="directory-home__social-wrap">
+            <h4 class="directory-home__social-title">Social</h4>
+            <div class="directory-home__social">
+              {{ social_media_rendered[loop.index0] }}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+
+    {% set intro = row.content['#view'].style_plugin.render_tokens[loop.index0]['{{ body }}']|default('') %}
+    {% if intro %}
+      <div class="directory-home__intro">
+        {{ intro }}
+      </div>
+    {% endif %}
+
+  </div>
+{% endfor %}

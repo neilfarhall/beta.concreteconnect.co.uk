@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Theme override for Authors panel paragraph.
+ */
+#}
+
+<div class="authors-panel">
+  <div class="authors-panel__content">
+    <div class="authors-panel__text">
+      {% if paragraph.field_authors_name.value %}
+        <h3 class="authors-panel__name">
+          Guest Blogger: {{ paragraph.field_authors_name.value }}
+        </h3>
+      {% endif %}
+
+      {% if paragraph.field_authors_title.value %}
+        <div class="authors-panel__title">
+          {{ paragraph.field_authors_title.value }}
+        </div>
+      {% endif %}
+
+      {% if paragraph.field_website.uri %}
+        <div class="authors-panel__website">
+          Website:
+          <a href="{{ paragraph.field_website.uri }}">
+            {{ paragraph.field_website.title ?: paragraph.field_website.uri }}
+          </a>
+        </div>
+      {% endif %}
+
+      {% if paragraph.field_authors_bio.value %}
+        <div class="authors-panel__bio">
+          {{ paragraph.field_authors_bio.value|raw }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if content.field_profile_pic %}
+      <div class="authors-panel__image">
+        {{ content.field_profile_pic }}
+      </div>
+    {% endif %}
+  </div>
+</div>
