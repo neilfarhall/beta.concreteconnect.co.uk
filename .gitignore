@@ -45,3 +45,7 @@ cat >> .gitignore <<'EOF'
 *.tar.gz
 wget-log*
 EOF
+*.sql
+*.sql.gz
+*.tar.gz
+wget-log*
