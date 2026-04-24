@@ -112,7 +112,6 @@ class Fast404 {
     // Check if the URL is for an assets file because Drupal 10.1 changes how
     // assets are handled. In 10.1, asset files are generated if they result in
     // a 404, so we should not block these requests.
-    // lasdjkf
     if (version_compare(\Drupal::VERSION, '10.1', '>=')) {
       $assets_path = AssetsStream::basePath();
       if (strstr($path, $assets_path . '/css') !== FALSE || strstr($path, $assets_path . '/js') !== FALSE) {
@@ -199,10 +198,10 @@ class Fast404 {
     }
 
     // If we have a database connection we can use it, otherwise we might be
-    // initialising it. We remove '/' from the list of possible patterns as it
+    // initializing it. We remove '/' from the list of possible patterns as it
     // exists in the router by default. This means that the query would match
     // any path (/%) which is undesirable.
-    $sql = "SELECT pattern_outline FROM {router} WHERE :path LIKE CONCAT(pattern_outline, '%') AND pattern_outline != '/'";
+    $sql = "SELECT pattern_outline FROM {router} WHERE :path LIKE CONCAT(pattern_outline, '%') AND pattern_outline != '/' AND pattern_outline != ''";
     $result = Database::getConnection()->query($sql, [':path' => $path])->fetchField();
     if ($result) {
       return;
@@ -220,7 +219,7 @@ class Fast404 {
     // Check for redirects if set to respect them.
     if (Settings::get('fast404_respect_redirect', FALSE)) {
       $path_noslash = trim(urldecode($path), '/');
-      // If the path equals the prefix, we are probaby on a language without a
+      // If the path equals the prefix, we are probably on a language without a
       // prefix.
       $prefix = (isset($prefix) && $prefix !== $path_noslash) ? $prefix : '';
       $sql = "SELECT rid FROM {redirect} WHERE redirect_source__path = :path";

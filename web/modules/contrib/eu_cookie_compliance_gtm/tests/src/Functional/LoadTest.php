@@ -17,7 +17,7 @@ class LoadTest extends BrowserTestBase {
    *
    * @var array
    */
-  public static $modules = ['eu_cookie_compliance_gtm'];
+  protected static $modules = ['eu_cookie_compliance_gtm'];
 
   /**
    * A user with permission to administer site configuration.
@@ -34,7 +34,7 @@ class LoadTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
     $this->user = $this->drupalCreateUser(['administer site configuration']);
     $this->drupalLogin($this->user);

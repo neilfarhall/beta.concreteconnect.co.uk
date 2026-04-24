@@ -2,10 +2,10 @@
 
 namespace Drupal\advanced_datalayer\Form;
 
+use Drupal\advanced_datalayer\AdvancedDatalayerManager;
 use Drupal\Core\Entity\EntityConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
-use Drupal\advanced_datalayer\AdvancedDatalayerManager;
 
 /**
  * Builds the form to delete Datalayer defaults entities.

@@ -2,20 +2,22 @@
 
 namespace Drupal\paragraph_blocks\Plugin\Block;
 
-use Drupal\Component\Utility\Html;
-use Drupal\content_moderation\ModerationInformationInterface;
+use Drupal\Component\Uuid\UuidInterface;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\EntityDisplayRepository;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Plugin\ContextAwarePluginInterface;
-use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\content_moderation\ModerationInformationInterface;
 use Drupal\paragraph_blocks\ParagraphBlocksEntityManager;
+use Drupal\paragraph_blocks\ParagraphBlocksLabeller;
+use Drupal\paragraphs\Entity\Paragraph;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -79,6 +81,27 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
   protected ParagraphBlocksEntityManager $paragraphBlocksManager;
 
   /**
+   * The Paragraph Blocks labeller.
+   *
+   * @var \Drupal\paragraph_blocks\ParagraphBlocksLabeller
+   */
+  protected ParagraphBlocksLabeller $paragraphBlocksLabeller;
+
+  /**
+   * The entity display repository.
+   *
+   * @var \Drupal\Core\Entity\EntityDisplayRepository
+   */
+  protected EntityDisplayRepository $entityDisplayRepository;
+
+  /**
+   * The UUID service.
+   *
+   * @var \Drupal\Component\Uuid\UuidInterface
+   */
+  protected UuidInterface $uuidService;
+
+  /**
    * The content moderation information service.
    *
    * @var \Drupal\content_moderation\ModerationInformationInterface|null
@@ -101,15 +124,38 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
    * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
    *   The module handler service.
    * @param \Drupal\paragraph_blocks\ParagraphBlocksEntityManager $paragraph_blocks_manager
-   *   The config factory service.
+   *   The paragraph blocks entity manager service.
+   * @param \Drupal\paragraph_blocks\ParagraphBlocksLabeller $paragraph_blocks_labeller
+   *   The paragraph blocks labeller service.
+   * @param \Drupal\Core\Entity\EntityDisplayRepository $entity_display_repository
+   *   The entity display repository service.
+   * @param \Drupal\Component\Uuid\UuidInterface $uuid_service
+   *   The UUID service.
+   * @param \Drupal\content_moderation\ModerationInformationInterface|null $moderation_information
+   *   The content moderation information service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, ConfigFactoryInterface $config_factory, ModuleHandlerInterface $module_handler, ParagraphBlocksEntityManager $paragraph_blocks_manager) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    EntityTypeManagerInterface $entity_type_manager,
+    ConfigFactoryInterface $config_factory,
+    ModuleHandlerInterface $module_handler,
+    ParagraphBlocksEntityManager $paragraph_blocks_manager,
+    ParagraphBlocksLabeller $paragraph_blocks_labeller,
+    EntityDisplayRepository $entity_display_repository,
+    UuidInterface $uuid_service,
+    ?ModerationInformationInterface $moderation_information = NULL,
+  ) {
     $this->entityTypeManager = $entity_type_manager;
     $this->configFactory = $config_factory;
     $this->moduleHandler = $module_handler;
     $this->paragraphBlocksManager = $paragraph_blocks_manager;
+    $this->paragraphBlocksLabeller = $paragraph_blocks_labeller;
+    $this->entityDisplayRepository = $entity_display_repository;
+    $this->uuidService = $uuid_service;
     if ($this->moduleHandler->moduleExists('content_moderation')) {
-      $this->moderationInformation = \Drupal::service('content_moderation.moderation_information');
+      $this->moderationInformation = $moderation_information;
     }
 
     // Get the field delta from the plugin.
@@ -132,7 +178,12 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
       $container->get('entity_type.manager'),
       $container->get('config.factory'),
       $container->get('module_handler'),
-      $container->get('paragraph_blocks.entity_manager')
+      $container->get('paragraph_blocks.entity_manager'),
+      $container->get('paragraph_blocks.labeller'),
+      $container->get('entity_display.repository'),
+      $container->get('uuid'),
+      $container->has('content_moderation.moderation_information')
+        ? $container->get('content_moderation.moderation_information') : NULL,
     );
   }
 
@@ -143,6 +194,7 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
     return [
       'label' => '',
       'label_display' => FALSE,
+      'display_mode' => 'default',
     ];
   }
 
@@ -157,7 +209,7 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
       $config = $this->configFactory->get('paragraph_blocks.settings');
       $paragraph = $this->getLatestParagraph($entity);
       if (empty($paragraph)) {
-        $admin_title = \Drupal::service('uuid')->generate();
+        $admin_title = $this->uuidService->generate();
       }
       elseif (!$paragraph->hasAdminTitle()) {
         $admin_title = $paragraph->getSummary();
@@ -183,6 +235,38 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
   /**
    * {@inheritdoc}
    */
+  public function blockForm($form, FormStateInterface $form_state) {
+    $config = $this->configuration;
+    $paragraph_block = $this->paragraphBlocksLabeller->getParagraph($config['id']);
+    if ($this->paragraphBlocksLabeller->isParagraphFromLibrary($paragraph_block)) {
+      $paragraph_block = $this->paragraphBlocksLabeller->getParagraphFromLibrary($paragraph_block);
+    }
+    $options = $this->entityDisplayRepository->getViewModeOptionsByBundle('paragraph', $paragraph_block->bundle());
+
+    $form['display_mode'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Display mode'),
+      '#default_value' => $config['display_mode'],
+      '#options' => $options,
+      '#description' => $this->t('The display mode of the selected paragraph.'),
+      '#required' => TRUE,
+    ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function blockSubmit($form, FormStateInterface $form_state) {
+    $this->configuration['label'] = $form_state->getValue('label');
+    $this->configuration['label_display'] = $form_state->getValue('label_display');
+    $this->configuration['display_mode'] = $form_state->getValue('display_mode');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function build() {
     $paragraph = NULL;
     // Get the referencing and referenced entity.
@@ -202,25 +286,8 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
     // Build the render array.
     /** @var \Drupal\Core\Entity\EntityViewBuilder $view_builder */
     $view_builder = $this->entityTypeManager->getViewBuilder($paragraph->getEntityTypeId());
-    $build = $view_builder->view($paragraph, 'default');
-
-    // Add geysir contextual links.
-    // Geysir related code will be removed in an upcoming release.
-    // @deprecated
-    if (function_exists('geysir_contextual_links')) {
-      $link_options = [
-        'parent_entity_type' => $entity->getEntityType()->id(),
-        'parent_entity' => $entity->id(),
-        'field' => $this->fieldName,
-        'field_wrapper_id' => Html::getUniqueId('geysir--' . $this->fieldName),
-        'delta' => $this->fieldDelta,
-        'js' => 'nojs',
-        'paragraph' => $paragraph->id(),
-      ];
-      $build['#geysir_field_paragraph_links'] = geysir_contextual_links($link_options);
-      $build['#theme_wrappers'][] = 'geysir_field_paragraph_wrapper';
-      $build['#attributes']['data-geysir-field-paragraph-field-wrapper'] = $link_options['field_wrapper_id'];
-    }
+    $config = $this->getConfiguration();
+    $build = $view_builder->view($paragraph, $config['display_mode']);
 
     // Set the cache data appropriately.
     CacheableMetadata::createFromObject($this->getContext('entity'))
@@ -256,11 +323,18 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
   private function getLatestParagraph(ContentEntityInterface $entity): ?Paragraph {
     $paragraph = $this->getReferencedParagraph($entity);
 
-    // Check if we have a pending version of the entity we want to preview.
-    if (is_null($paragraph) && !is_null($this->moderationInformation) && $this->moderationInformation->isModeratedEntity($entity)) {
-      $entity_manager = $this->paragraphBlocksManager;
-      $entity = $entity_manager->getLatestEntityRevision($entity);
-      $paragraph = $this->getReferencedParagraph($entity);
+    // If paragraph not found, try loading a fresh entity from the database.
+    if (is_null($paragraph)) {
+      $fresh_entity = $this->paragraphBlocksManager->loadFreshEntity($entity);
+      if ($fresh_entity !== $entity) {
+        $paragraph = $this->getReferencedParagraph($fresh_entity);
+      }
+    }
+
+    // Check if this is a paragraphs library item that we need to get the
+    // referenced paragraph for.
+    if (!is_null($paragraph) && $this->paragraphBlocksLabeller->isParagraphFromLibrary($paragraph)) {
+      $paragraph = $this->paragraphBlocksLabeller->getParagraphFromLibrary($paragraph);
     }
 
     return $paragraph;

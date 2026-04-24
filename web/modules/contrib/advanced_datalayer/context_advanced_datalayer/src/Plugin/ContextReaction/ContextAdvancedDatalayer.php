@@ -2,9 +2,9 @@
 
 namespace Drupal\context_advanced_datalayer\Plugin\ContextReaction;
 
+use Drupal\advanced_datalayer\AdvancedDatalayerManagerInterface;
 use Drupal\context\ContextReactionPluginBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\advanced_datalayer\AdvancedDatalayerManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 

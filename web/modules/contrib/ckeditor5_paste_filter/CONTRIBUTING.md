@@ -29,28 +29,28 @@ There is also `yarn watch`, `yarn lint`, `yarn fix`.
 ## Test coverage
 
 All bug fixes and new features must have test coverage, we have a suite of
-Nightwatch tests that cover the functionality of the module.
-
-Currently the tests are written and run against Nightwatch 2.x and Drupal 10.
-We have plans to set up a GitLab CI job that will run tests against Drupal
-9.5.x using Nightwatch 2.x.
+Playwright tests that cover the functionality of the module.
 
 ### Running tests
 
-Getting set up to run Nightwatch tests locally is covered in the [core tests
-README] under the "Running Nightwatch tests" section.
+1. Copy .env.defaults to .env (this file will be ignored by git)
+2. Update `DRUPAL_TEST_BASE_URL` to point to your test site
+3. Run `yarn install` if you haven't already
+4. Run `yarn test`
 
-The process for setting up to run tests will differ depending on your
-development environment. Once you are set up, the following commands run from
-inside the Drupal `core` folder will install the dependencies and run the full
-test suite for this module.
+You may want to run tests via DDEV, the maintainers use DDEV and the Lullabot
+[ddev-playwright](https://github.com/Lullabot/ddev-playwright) add-on for
+developing the Playwright test suite.
 
-```
-yarn install
-yarn test:nightwatch --tag ckeditor5_paste_filter
-```
+Alternatively, you can run the tests locally using
+[gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
+without any further setup required:
 
-[core tests README]: https://git.drupalcode.org/project/drupal/-/blob/11.x/core/tests/README.md
+`gitlab-ci-local playwright`
+
+or
+
+`gitlab-ci-local "playwright (previous major)"`
 
 ## Committing
 
@@ -67,13 +67,18 @@ this is used, and [package.json](package.json) for how this is set up.
 ### Commit types
 
 - `chore`: Updates to internal tooling, release-related tasks, etc.
-- `ci`: CI updates (GitLab CI or Drupal CI)
+- `ci`: GitLab CI updates
 - `docs`: Documentation only changes
 - `feat`: A new feature
 - `fix`: A bug fix
 - `perf`: A code change that improves performance
 - `refactor`: A code change that neither fixes a bug nor adds a feature, and
   specifically does not change any functionality
+- `revert`: Reverting a commit. This type must be followed by the header of the reverted commit.
+  The body of the commit must contain: `This reverts commit <hash>.`,
+  where the hash is the SHA of the commit being reverted.
+  See commit [c873fd7](https://git.drupalcode.org/project/ckeditor5_paste_filter/-/commit/c873fd761a636b768993d80c29722453d5ea39e0)
+  for a real example.
 - `style`: Changes that do not affect the meaning of the code (fixing code
   style lint errors, whitespace-only changes, formatting, etc)
 - `test`: Testing updates

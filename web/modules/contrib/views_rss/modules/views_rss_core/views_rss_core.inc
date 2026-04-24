@@ -10,6 +10,7 @@ use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Url;
 use Drupal\file\FileInterface;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\TermInterface;
 use Drupal\video_embed_field\Plugin\Field\FieldType\VideoEmbedField;
 
 /**
@@ -260,14 +261,14 @@ function views_rss_core_preprocess_item_category(&$variables) {
     $element = [
       'key' => 'category',
       'value' => implode('/', array_reverse($values)),
+    ];
+    if ($term instanceof TermInterface) {
       // Drupal uses term URL for domain attribute. RSS Best Practices say that
       // a domain attribute identifies the category's taxonomy - which suggests
       // either vocabulary name or its URL. We don't have any safe way to know
       // public vocabulary URL, could use its name instead though? @TODO?
-      'attributes' => [
-        'domain' => $term->toUrl('canonical', ['absolute' => TRUE])->toString(),
-      ],
-    ];
+      $element['attributes']['domain'] = $term->toUrl()->setAbsolute()->toString();
+    }
 
     $variables['elements'][] = $element;
   }

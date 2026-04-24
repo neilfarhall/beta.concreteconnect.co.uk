@@ -6,8 +6,8 @@ use Drupal\Component\Transliteration\TransliterationInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\tamper\Exception\TamperException;
-use Drupal\tamper\TamperableItemInterface;
 use Drupal\tamper\TamperBase;
+use Drupal\tamper\TamperableItemInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -17,7 +17,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id = "transliteration",
  *   label = @Translation("Transliterates text from Unicode to US-ASCII."),
  *   description = @Translation("Runs the value through the transliteration service. Letters will have language decorations and accents removed."),
- *   category = "Text"
+ *   category = @Translation("Text"),
+ *   itemUsage = "ignored"
  * )
  */
 class Transliteration extends TamperBase implements ContainerFactoryPluginInterface {
@@ -64,7 +65,12 @@ class Transliteration extends TamperBase implements ContainerFactoryPluginInterf
   /**
    * {@inheritdoc}
    */
-  public function tamper($data, TamperableItemInterface $item = NULL) {
+  public function tamper($data, ?TamperableItemInterface $item = NULL) {
+    // Don't process empty or null values.
+    if (is_null($data) || $data === '') {
+      return $data;
+    }
+
     if (!is_string($data)) {
       throw new TamperException('Input should be a string.');
     }

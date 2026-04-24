@@ -50,6 +50,7 @@ function paragraph_blocks_update_9302(&$sandbox) {
  * Get admin title data stored in unrevisioned field data table.
  *
  * @return array
+ *   A list of admin titles from the paragraphs field data.
  */
 function paragraph_blocks_get_unrevisioned_admin_titles() {
   $rows = [];
@@ -72,10 +73,9 @@ function paragraph_blocks_get_unrevisioned_admin_titles() {
  * Only restore if no newer admin title has been entered.
  *
  * @param array $rows
- *
- * @return void
+ *   A list of admin titles from the paragraphs field data.
  */
-function paragraph_blocks_restore_unrevisioned_admin_titles(array $rows) {
+function paragraph_blocks_restore_unrevisioned_admin_titles(array $rows): void {
   $database = \Drupal::database();
   $table_revision = 'paragraphs_item_revision_field_data';
   if ($database->schema()->tableExists($table_revision)) {

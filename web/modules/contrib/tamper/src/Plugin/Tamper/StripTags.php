@@ -4,8 +4,8 @@ namespace Drupal\tamper\Plugin\Tamper;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\tamper\Exception\TamperException;
-use Drupal\tamper\TamperableItemInterface;
 use Drupal\tamper\TamperBase;
+use Drupal\tamper\TamperableItemInterface;
 
 /**
  * Plugin implementation for stripping tags.
@@ -14,7 +14,8 @@ use Drupal\tamper\TamperBase;
  *   id = "strip_tags",
  *   label = @Translation("Strip tags"),
  *   description = @Translation("Strip tags."),
- *   category = "Text"
+ *   category = @Translation("Text"),
+ *   itemUsage = "ignored"
  * )
  */
 class StripTags extends TamperBase {
@@ -59,7 +60,7 @@ class StripTags extends TamperBase {
   /**
    * {@inheritdoc}
    */
-  public function tamper($data, TamperableItemInterface $item = NULL) {
+  public function tamper($data, ?TamperableItemInterface $item = NULL) {
     // Don't process empty or null values.
     if (is_null($data) || $data === '') {
       return $data;

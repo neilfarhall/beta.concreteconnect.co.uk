@@ -13,7 +13,7 @@ use Drupal\simple_sitemap\Queue\QueueWorker;
  *
  * @group simple_sitemap
  */
-class SimplesitemapTest extends SimplesitemapTestBase {
+class SimpleSitemapTest extends SimpleSitemapTestBase {
 
   /**
    * Verify sitemap.xml has the link to the front page after first generation.
@@ -682,7 +682,7 @@ class SimplesitemapTest extends SimplesitemapTestBase {
   /**
    * Test cases for ::testGenerationResume.
    */
-  public function generationResumeProvider() {
+  public static function generationResumeProvider() {
     return [
       [1000, 500, 1],
       [1000, 500, 3, ['de']],

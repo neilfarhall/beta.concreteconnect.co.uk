@@ -107,7 +107,7 @@
   {% endif %}
 {% endfor %}
 
-{% set pb_close_button = content.pb_display_show_close_button|render|striptags|trim %}
+{% set pb_close_button = not paragraph.pb_display_show_close_button.isEmpty and paragraph.pb_display_show_close_button.value %}
 {% set pb_title = content.pb_content_title|render|striptags|trim %}
 
 {# Render the paragraph. #}
@@ -115,16 +115,16 @@
   <div class="{{ classes_inner }}" {% if pb_style_attributes|length > 0 %}style="{{ pb_style_attributes|join(' ') }}"{% endif %}>
 
     <div class="pb__content-full pb__content-alert">
-      {% if pb_close_button == 'On' or pb_title %}
+      {% if pb_close_button or pb_title %}
         <div class="pb__alert-top {{ pb_close_button }}">
-          {% if pb_close_button == 'On' %}
+          {% if pb_close_button %}
             <button aria-label="{{ 'Close alert'|t }}"
                     aria-expanded="{{ pb_default_state == 'closed' ? 'false' : 'true' }}"
                     aria-controls="{{ paragraph_id }}"
                     type="button"
                     class="pb__close-alert js-pb-close-alert">
               <span class="visually-hidden">{{ 'Close message'|t }}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="gray"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="gray"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
             </button>
           {% endif %}
 

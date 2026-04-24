@@ -7,7 +7,6 @@ use Drupal\Core\Cache\Cache;
 use Drupal\Core\Cache\CacheableResponse;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\simple_sitemap\Manager\Generator;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -32,15 +31,6 @@ class SimpleSitemapController extends ControllerBase {
    */
   public function __construct(Generator $generator) {
     $this->generator = $generator;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container): SimpleSitemapController {
-    return new static(
-      $container->get('simple_sitemap.generator')
-    );
   }
 
   /**
@@ -73,6 +63,9 @@ class SimpleSitemapController extends ControllerBase {
     $response->getCacheableMetadata()
       ->addCacheTags(Cache::buildTags('simple_sitemap', (array) $variant))
       ->addCacheContexts(['url.query_args']);
+
+    $date = new \DateTime('@' . $this->generator->getDefaultSitemap()->fromPublished()->getCreated());
+    $response->setLastModified($date);
 
     return $response;
   }

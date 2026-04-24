@@ -5,6 +5,6 @@
   "license": "GPL-2.0-or-later",
   "require-dev": {
     "james-heinrich/getid3": "^2.0@beta",
-    "drupal/video_embed_field": "^2.5"
+    "drupal/video_embed_field": "^2.5 || ^3"
   }
 }

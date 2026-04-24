@@ -40,7 +40,7 @@ class CommentNotifyAnonymousTest extends CommentNotifyTestBase {
     $subscribe = ['notify' => TRUE, 'notify_type' => COMMENT_NOTIFY_ENTITY];
     $this->drupalGet($node->toUrl());
     $this->postComment($node->toUrl()->toString(), $this->randomMachineName(), $this->randomMachineName(), $subscribe);
-    $this->assertTrue($this->getSession()->getPage()->hasContent(t('If you want to subscribe to comments you must supply a valid e-mail address.')));
+    $this->assertTrue($this->getSession()->getPage()->hasContent(t('If you want to subscribe to comments you must supply a valid email address.')));
   }
 
   /**

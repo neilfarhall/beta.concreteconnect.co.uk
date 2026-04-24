@@ -2,15 +2,15 @@
 
 namespace Drupal\advanced_datalayer\Form;
 
+use Drupal\advanced_datalayer\AdvancedDatalayerManagerInterface;
+use Drupal\advanced_datalayer\AdvancedDatalayerTagPluginManager;
+use Drupal\advanced_datalayer\AdvancedDatalayerToken;
 use Drupal\Core\Entity\ContentEntityType;
 use Drupal\Core\Entity\EntityForm;
-use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\advanced_datalayer\AdvancedDatalayerManagerInterface;
-use Drupal\advanced_datalayer\AdvancedDatalayerToken;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
-use Drupal\advanced_datalayer\AdvancedDatalayerTagPluginManager;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -150,8 +150,8 @@ class AdvancedDatalayerDefaultsForm extends EntityForm {
 
     // Find the current entity type and bundle.
     $datalayer_defaults_id = $datalayer_defaults->id();
-    $type_parts = explode('__', $datalayer_defaults_id);
-    $entity_type = $type_parts[0];
+    $type_parts = $datalayer_defaults_id ? explode('__', $datalayer_defaults_id) : [];
+    $entity_type = $type_parts[0] ?? NULL;
     $entity_bundle = $type_parts[1] ?? NULL;
 
     // Chek if need display only specific tags for this entity type and bundle.

@@ -2,9 +2,10 @@
 
 namespace Drupal\blazy\Media;
 
-use Drupal\blazy\internals\Internals;
-use Drupal\blazy\Theme\Attributes;
 use Drupal\Component\Utility\UrlHelper;
+use Drupal\blazy\Theme\Attributes;
+use Drupal\blazy\internals\Internals;
+use Drupal\blazy\Utility\CheckItem;
 
 /**
  * Provides thumbnail-related methods.
@@ -78,19 +79,21 @@ class Thumbnail {
       ?: $settings['thumbnail_style'] ?? $blazies->get('thumbnail.fallback');
 
     // @todo remove if against previous convention with core thumbnail fallback.
-    // We are here from Views style which may set just thumbnail.uri without
-    // thumbnail_style, unlike field formatters which set thumbnail_style,
-    // hardly thumbnail URI. Shortly, Views style offers Thumbnail image,
-    // field formatters Thumbnail style.
+    // Thumbnail URI may be provided via Views style, but not thumbnail_style.
     if (!$style && !$tn_uri) {
       return [];
     }
+
+    // @todo move it out of here, required by vanilla Splide navigation.
+    CheckItem::unstyled($settings, $uri);
+    $blazies = $settings['blazies'];
 
     // Thumbnails can use image styles, except for SVG for now.
     // @todo check for any modules (ImageMagick) which convert SVG to image,
     // and remove this check if present, leaving it for external URL + data URI.
     $unstyled = $blazies->is('unstyled');
     $valid = $blazies->get('image.valid') ?: BlazyFile::isValidUri($uri);
+
     if ($valid && !$blazies->is('svg')) {
       $unstyled = FALSE;
     }
@@ -112,8 +115,9 @@ class Thumbnail {
       '#item'       => $item,
       '#alt'        => $alt,
       '#attributes' => [
-        'decoding' => 'async',
-        'loading'  => $blazies->get('delta', 0) < $delta ? 'eager' : 'lazy',
+        'decoding'      => 'async',
+        'loading'       => $blazies->get('delta', 0) < $delta ? 'eager' : 'lazy',
+        'fetchpriority' => 'low',
       ],
     ];
 

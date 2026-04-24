@@ -2,7 +2,7 @@
 
 /**
  * @file
- * This module provides comment follow-up e-mail notifications.
+ * This module provides comment follow-up email notifications.
  *
  * It works for anonymous and registered users.
  */
@@ -60,7 +60,7 @@ function comment_notify_form_comment_form_alter(&$form, FormStateInterface $form
   $available_options = _comment_notify_options();
   // Add the checkbox for anonymous users.
   if ($user->isAnonymous()) {
-    // If anonymous users can't enter their e-mail don't tempt them with the
+    // If anonymous users can't enter their email don't tempt them with the
     // checkbox.
     if (empty($form['author']['mail'])) {
       return;
@@ -121,7 +121,7 @@ function comment_notify_comment_validate(&$form, FormStateInterface $form_state)
   // For anonymous users, though, we verify that they entered a mail and let
   // comment.module validate it is real.
   if ($user->isAnonymous() && $form['comment_notify_settings']['notify']['#value'] && empty($form['author']['mail']['#value'])) {
-    $form_state->setErrorByName('mail', t('If you want to subscribe to comments you must supply a valid e-mail address.'));
+    $form_state->setErrorByName('mail', t('If you want to subscribe to comments you must supply a valid email address.'));
   }
 }
 
@@ -264,9 +264,9 @@ function comment_notify_form_user_form_alter(&$form, FormStateInterface &$form_s
   if (\Drupal::currentUser()->hasPermission('administer nodes') || $bundles) {
     $form['comment_notify_settings']['entity_notify'] = [
       '#type' => 'checkbox',
-      '#title' => t('Receive content follow-up notification e-mails'),
+      '#title' => t('Receive content follow-up notification emails'),
       '#default_value' => isset($notify_settings['entity_notify']) ? $notify_settings['entity_notify'] : NULL,
-      '#description' => t('Check this box to receive e-mail notifications for comments on your <strong>content</strong> (e.g. an article authored by you). You cannot disable notifications for individual threads.'),
+      '#description' => t('Check this box to receive email notifications for comments on your <strong>content</strong> (e.g. an article authored by you). You cannot disable notifications for individual threads.'),
     ];
   }
   else {
@@ -281,10 +281,10 @@ function comment_notify_form_user_form_alter(&$form, FormStateInterface &$form_s
     $available_options += _comment_notify_options();
     $form['comment_notify_settings']['comment_notify'] = [
       '#type' => 'select',
-      '#title' => t('Receive comment follow-up notification e-mails'),
+      '#title' => t('Receive comment follow-up notification emails'),
       '#default_value' => isset($notify_settings['comment_notify']) ? $notify_settings['comment_notify'] : NULL,
       '#options' => $available_options,
-      '#description' => t("Choose whether, by default, to subscribe to e-mail notifications for replies to your own <strong>comments</strong>. Your site administrator may have customised the options available. You can change this setting on a per-comment basis, and later unsubscribe from individual posts."),
+      '#description' => t("Choose whether, by default, to subscribe to email notifications for replies to your own <strong>comments</strong>. Your site administrator may have customised the options available. You can change this setting on a per-comment basis, and later unsubscribe from individual posts."),
     ];
   }
   else {
@@ -472,7 +472,7 @@ function _comment_notify_mailalert(CommentInterface $comment) {
   $watchers = comment_notify_get_watchers($entity_id, $comment_type);
 
   foreach ($watchers as $alert) {
-    // If the user is not anonymous, always load the current e-mail address
+    // If the user is not anonymous, always load the current email address
     // from his or her user account instead of trusting $comment->mail.
     $recipient_user = $alert->getOwner();
     $mail = !empty($recipient_user->getEmail()) ? $recipient_user->getEmail() : $alert->getAuthorEmail();

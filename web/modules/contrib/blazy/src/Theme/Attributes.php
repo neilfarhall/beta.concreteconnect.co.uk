@@ -2,17 +2,17 @@
 
 namespace Drupal\blazy\Theme;
 
-use Drupal\blazy\internals\Internals;
+use Drupal\Component\Serialization\Json;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\UrlHelper;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\blazy\Media\BlazyImage;
 use Drupal\blazy\Media\BlazyResponsiveImage;
 use Drupal\blazy\Media\Placeholder;
 use Drupal\blazy\Media\Ratio;
 use Drupal\blazy\Utility\Arrays;
 use Drupal\blazy\Utility\Check;
-use Drupal\Component\Serialization\Json;
-use Drupal\Component\Utility\Html;
-use Drupal\Component\Utility\UrlHelper;
-use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\blazy\internals\Internals;
 
 /**
  * Provides non-reusable blazy attribute static methods.
@@ -78,17 +78,24 @@ class Attributes {
       }
     }
 
-    if (!empty($settings['caption']) || $blazies->get('view.multifield')) {
-      $classes[] = 'is-b-captioned';
+    // @todo remove when nativegrid masonry no longer needs this.
+    if ($blazies->is('grid')) {
+      $count = $blazies->get('view.count', 0);
+      if (!empty($settings['caption']) ||
+        ($count > 1 && $blazies->get('view.multifield'))) {
+        $classes[] = 'is-b-captioned';
+      }
     }
 
-    if ($blazies->use('ajax')) {
-      $classes[] = 'is-b-ajax';
-    }
-
+    // @todo remove, hardly used as identifier.
+    // if ($blazies->use('ajax')) {
+    // $classes[] = 'is-b-ajax';
+    // }
     // Needed for nested grids as well: blazy blazy--grid b-nativegrid, etc.
     $attributes['class'] = array_merge(['blazy'], $classes);
-    $attributes['data-blazy'] = $data && is_array($data) ? Json::encode($data) : '';
+    $attributes['data-blazy'] = $data && is_array($data)
+      ? Json::encode($data)
+      : '';
   }
 
   /**
@@ -381,10 +388,15 @@ class Attributes {
    *   If a background image.
    */
   public static function lazy(array &$attributes, $blazies, $bg = FALSE): void {
-    $trusted = $blazies->get('image.trusted');
     if ($url = $blazies->get('image.url')) {
+      $trusted = $blazies->get('image.trusted');
       $url = $trusted ? $url : UrlHelper::stripDangerousProtocols($url);
       $unlazy = Internals::isUnlazy($blazies);
+
+      // Makes query selector easier for filter.
+      if ($blazies->get('filter')) {
+        $attributes['class'][] = 'b-filter';
+      }
 
       // Native, or unlazy, has .blazy--nojs at container to fix issues, if any.
       if (!$unlazy) {
@@ -393,14 +405,10 @@ class Attributes {
         $attribute = $blazies->get('lazy.attribute', 'src');
         $attributes['data-' . $attribute] = $url;
       }
-
-      // Makes query selector easier for filter.
-      if ($blazies->get('filter')) {
-        $attributes['class'][] = 'b-filter';
-      }
-
-      if ($bg && $unlazy) {
-        self::inlineStyle($attributes, 'background-image: url(' . $url . ');');
+      else {
+        if ($bg) {
+          self::inlineStyle($attributes, 'background-image: url(' . $url . ');');
+        }
       }
     }
   }
@@ -484,14 +492,17 @@ class Attributes {
       return $blazies->get('image.raw');
     }
 
-    $title = $blazies->get('image.title') ?: $blazies->get('media.label');
-    $alt   = $blazies->get('image.alt');
+    // Plain hard-coded filter/ external image might not have ImageItem object.
+    // Soundcloud/remote videos (Vimeo, Youtube, etc) have meaningful titles.
+    $title = $blazies->is('image')
+      ? $blazies->get('image.title')
+      : $blazies->get('media.label');
+    $alt = $blazies->get('image.alt');
 
     // @todo remove this item check at 3.x, once they are all in blazies.image.
     if ($item) {
       // Title from fake item might be just file name, except from BlazyFilter.
       // Needed by thumbnails if any image item, fake or real, no biggies.
-      // @todo recheck, alt from fake image factory might be just file name.
       $alt = empty($item->alt) ? $alt : trim($item->alt);
       $desc = $item->description ?? NULL;
 
@@ -501,22 +512,25 @@ class Attributes {
       }
 
       // Do not output an empty 'title' attribute.
-      if (isset($item->title) && (mb_strlen($item->title) != 0)) {
-        $title = trim($item->title);
+      if (isset($item->title)) {
+        $title = mb_strlen($item->title) != 0 ? trim($item->title) : '';
       }
     }
 
     // Might be abused to use HTML, fine for captions, but not attributes.
     // This should make both parties happier ever after, sort of.
     // strip_tags always sounds harsh, but not when done for a noble purpose.
-    if ($title) {
-      // Prevents default ugly media.label filename as popup image title.
-      $ext = $blazies->get('image.extension', 'x');
-      $filename = strpos($title, '.' . $ext) !== FALSE;
-      $title = $filename ? '' : strip_tags($title);
+    $ext = $blazies->get('image.extension', 'x');
+
+    // Alt from fake image factory might be just file name.
+    if ($alt) {
+      $alt = strpos($alt, '.' . $ext) !== FALSE ? '' : strip_tags($alt);
     }
 
-    $alt = strip_tags($alt ?: '');
+    // Prevents default ugly media.label filename as popup image title.
+    if ($title) {
+      $title = strpos($title, '.' . $ext) !== FALSE ? '' : strip_tags($title);
+    }
 
     // Ensures called once, else filled up even when it should be empty.
     $blazies->set('image.raw.alt', $alt)
@@ -527,16 +541,32 @@ class Attributes {
   }
 
   /**
-   * Provide common attributes for IMG, IFRAME, VIDEO, etc. elements.
+   * Provide common attributes for IMG and IFRAME/VIDEO elements.
+   *
+   * @todo at 2022/2 core has no loading Responsive.
    */
   private static function common(array &$attributes, $blazies): void {
     $attributes['class'][] = 'media__element';
     $loading = $blazies->get('image.loading', 'lazy');
 
-    // @todo at 2022/2 core has no loading Responsive.
-    $excludes = in_array($loading, ['slider', 'unlazy']);
-    if ($blazies->get('image.width') && !$excludes) {
-      $attributes['loading'] = $loading;
+    // The fetchpriority is mostly relevant with slider architecture, and
+    // applicable to limited media: IMG and IFRAME. Just a hint, not mandatory.
+    // This option is limited to CWV:LCP hero image, and can be applied to
+    // non-slider hero image with `unlazy` option. Major browser supports are
+    // massive as per 2026/1/3.
+    // Slick/Splide can also display a single hero image.
+    // Only one image can have fetchpriority=high on a page. That is why it is
+    // limited only to the designated LCP as a hero image.
+    // See https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority
+    if (in_array($loading, ['slider', 'unlazy'])) {
+      // A hero image needs a high priority. Hidden images should be deferred.
+      $attributes['fetchpriority'] = $blazies->is('lcp') ? 'high' : 'low';
+    }
+    else {
+      // Ensures dimensions set.
+      if ($blazies->get('image.width')) {
+        $attributes['loading'] = $loading;
+      }
     }
   }
 
@@ -582,8 +612,11 @@ class Attributes {
       $attributes['title'] = $title;
     }
 
+    // LCP images should be sync or without decoding.
     // https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decode.
-    $attributes['decoding'] = 'async';
+    if (!$blazies->is('lcp')) {
+      $attributes['decoding'] = 'async';
+    }
 
     // Preserves UUID for sub-module lookups, relevant for BlazyFilter.
     if ($uuid = $blazies->get('entity.uuid')) {

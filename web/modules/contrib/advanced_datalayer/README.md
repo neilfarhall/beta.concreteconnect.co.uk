@@ -59,4 +59,3 @@ This module requires the following module:
 Maintainers:
  * Alex Lyzo (kenniec) - https://www.drupal.org/u/kenniec
  * Vyacheslav Malchik (validoll) - https://www.drupal.org/u/validoll
-

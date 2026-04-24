@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\Tests\fast404\Unit;
 
-use Symfony\Component\HttpKernel\Event\ExceptionEvent;
-use Drupal\fast404\EventSubscriber\Fast404EventSubscriber;
 use Drupal\Tests\UnitTestCase;
+use Drupal\fast404\EventSubscriber\Fast404EventSubscriber;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
@@ -31,15 +33,8 @@ class Fast404EventSubscriberTest extends UnitTestCase {
     parent::setUp();
     $kernel = $this->createMock('\Symfony\Component\HttpKernel\HttpKernelInterface');
     $request = new Request();
-    $this->event = new ExceptionEvent($kernel, $request, HttpKernelInterface::MASTER_REQUEST, new NotFoundHttpException());
+    $this->event = new ExceptionEvent($kernel, $request, HttpKernelInterface::MAIN_REQUEST, new NotFoundHttpException());
   }
-
-  /**
-   * Tests event handling for kernel requests.
-   *
-   * @covers ::onKernelRequest
-   */
-  // public function testOnKernelRequest() {}
 
   /**
    * Tests event handling for not found exceptions.

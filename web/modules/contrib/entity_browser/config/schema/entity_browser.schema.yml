@@ -211,14 +211,6 @@ entity_browser.field_widget_display.rendered_entity:
       type: string
       label: 'View mode'
 
-entity_browser.field_widget_display.inline_entity_form:
-  type: mapping
-  label: 'Inline entity form display widget'
-  mapping:
-    form_mode:
-      type: string
-      label: 'Form mode'
-
 field.widget.settings.entity_browser_file:
   type: mapping
   label: 'Entity browser file widget'

@@ -2,10 +2,10 @@ name: Unused Modules
 type: module
 description: List modules and projects that are unused and safe to delete.
 package: Development
-core_version_requirement: ^8 || ^9 || ^10
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
 configure: unused_modules.overview.projects.disabled
 
-# Information added by Drupal.org packaging script on 2023-02-04
-version: '8.x-1.5'
+# Information added by Drupal.org packaging script on 2026-02-10
+version: '8.x-1.6'
 project: 'unused_modules'
-datestamp: 1675537992
+datestamp: 1770733058

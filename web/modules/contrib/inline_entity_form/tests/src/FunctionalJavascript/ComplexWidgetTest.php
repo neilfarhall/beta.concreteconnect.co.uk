@@ -86,7 +86,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     $fieldset_label_multi_xpath = $this->getXpathForFieldsetLabel('Multiple nodes', 1);
 
     $assert_session = $this->assertSession();
-
     // Don't allow addition of existing nodes.
     $this->updateSetting('allow_existing', FALSE);
     $this->drupalGet($this->formContentAddUrl);
@@ -97,10 +96,8 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
 
     // Assert title field on inline form exists.
     $assert_session->elementExists('xpath', $inner_title_field_xpath);
-
     // Assert first name field on inline form exists.
     $assert_session->elementExists('xpath', $first_name_field_xpath);
-
     // Assert last name field on inline form exists.
     $assert_session->elementExists('xpath', $last_name_field_xpath);
     $assert_session->buttonExists('Create node');
@@ -114,29 +111,21 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
       ->elementExists('css', 'fieldset[data-drupal-selector="edit-multi"]');
     // Assert fieldset titles.
     $assert_session->elementExists('xpath', $fieldset_label_multi_xpath);
-
     // Assert title field does not appear.
     $assert_session->elementNotExists('xpath', $inner_title_field_xpath);
-
     // Assert first name field does not appear.
     $assert_session->elementNotExists('xpath', $first_name_field_xpath);
-
     // Assert last name field does not appear.
     $assert_session->elementNotExists('xpath', $last_name_field_xpath);
     $assert_session->buttonExists('Add existing node', $multi_fieldset);
-
     // Now submit 'Add new node' button in the 'Multiple nodes' fieldset.
     $multi_fieldset->pressButton('Add new node');
-
     // Assert fieldset title.
     $assert_session->elementExists('xpath', $fieldset_label_multi_xpath);
-
     // Assert title field on inline form exists.
     $this->assertNotEmpty($assert_session->waitForElement('xpath', $inner_title_field_xpath));
-
     // Assert first name field on inline form exists.
     $assert_session->elementExists('xpath', $first_name_field_xpath);
-
     // Assert second name field on inline form exists.
     $assert_session->elementExists('xpath', $last_name_field_xpath);
     $assert_session->buttonExists('Create node');
@@ -146,7 +135,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     $this->drupalGet($this->formContentAddUrl);
     $multi_fieldset = $assert_session->elementExists('css', 'fieldset[data-drupal-selector="edit-multi"]');
     $multi_fieldset->pressButton('Add existing node');
-
     // Assert existing entity reference autocomplete field appears.
     $this->assertNotEmpty($assert_session->waitForElement('xpath', $this->getXpathForAutoCompleteInput()));
     $assert_session->buttonExists('Add node');
@@ -208,11 +196,9 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     $assert_session->elementExists('xpath', $inner_title_field_xpath)->setValue('Some changed reference');
     $page->pressButton('Update node');
     $this->waitForRowByTitle('Some changed reference');
-
     // Tests if correct fields appear in the table.
     $assert_session->elementTextContains('css', '.ief-row-entity .inline-entity-form-node-label', 'Some changed reference');
     $assert_session->elementTextContains('css', '.ief-row-entity .inline-entity-form-node-status', 'Published');
-
     // Tests if edit and remove buttons appear.
     $multi_fieldset = $assert_session
       ->elementExists('css', 'fieldset[data-drupal-selector="edit-multi"]');
@@ -341,7 +327,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
 
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
-
     // Allow addition of existing nodes.
     $this->updateSetting('allow_existing', TRUE);
 
@@ -383,7 +368,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     $confirm_checkbox->check();
     $assert_session->elementExists('xpath', '(//input[@value="Remove"])[2]')->press();
     $this->waitForRowRemovedByTitle('Some reference 2');
-
     // Assert two rows show, instead of 3.
     $assert_session->elementsCount('css', 'tr.ief-row-entity', 2);
 
@@ -396,7 +380,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
 
     // Checks that entity does nor appear in IEF.
     $this->drupalGet('node/' . $parent_node->id() . '/edit');
-
     // Assert 2 rows show, instead of 3.
     $assert_session->elementsCount('css', 'tr.ief-row-entity', 2);
     $this->assertRowByTitle('Some reference 1');
@@ -413,7 +396,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     $assert_session->pageTextContains('Are you sure you want to remove Some reference 3?');
     $assert_session->elementExists('xpath', '(//input[@value="Remove"])[2]')->press();
     $this->waitForRowRemovedByTitle('Some reference 3');
-
     // Assert only one row displays.
     $assert_session->elementsCount('css', 'tr.ief-row-entity', 1);
     $this->assertRowByTitle('Some reference 1');
@@ -438,7 +420,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
 
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
-
     // Allow addition of existing nodes.
     $this->updateSetting('allow_existing', TRUE);
 
@@ -456,7 +437,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
       'multi' => [1],
       'all_bundles' => key($bundle_nodes),
     ]);
-
     // Remove first node since we already added it.
     unset($bundle_nodes[key($bundle_nodes)]);
 
@@ -471,7 +451,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
       $page->pressButton('Add node');
       $this->waitForRowByTitle($title);
     }
-
     // Add all remaining nodes from all bundles.
     foreach ($bundle_nodes as $id => $title) {
       $all_bundles_fieldset = $assert_session
@@ -482,7 +461,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
       $page->pressButton('Add node');
       $this->waitForRowByTitle($title);
     }
-
     // Save the node.
     $page->pressButton('Save');
     $assert_session->pageTextContains('IEF test complex Some title has been updated.');
@@ -554,7 +532,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     $this->drupalGet('node/add/ief_test_complex');
     $this->checkExistingValidationExpectation('', 'Node field is required.');
     $this->checkExistingValidationExpectation('Fake Title', 'There are no entities matching "Fake Title"');
-
     // Check adding nodes that cannot be referenced by this field.
     foreach ($this->createNodeForEveryBundle() as $id => $title) {
       $node = Node::load($id);
@@ -570,7 +547,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
       $page->pressButton('Add node');
       $this->waitForRowByTitle($title);
       $assert_session->elementNotExists('xpath', $node_field_xpath);
-
       // Try to add the same node again.
       $this->checkExistingValidationExpectation($current_title, 'The selected node has already been added.');
     }
@@ -701,7 +677,7 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
       'title' => 'Some title',
       'multi' => array_values($referenceNodes),
     ]);
-    /** @var \Drupal\node\Entity\NodeInterface $node */
+    /** @var NodeInterface $node */
     $parent_node = $this->drupalGetNodeByTitle('Some title');
 
     // Edit the parent node.
@@ -720,9 +696,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     $user_role->revokePermission('delete any ief_reference_type content');
     $user_role->save();
 
-    // Reloading page post updating permission to ensure session is updated.
-    $this->drupalGet('node/' . $parent_node->id() . '/edit');
-
     // Without delete permission, the checkbox to delete the entity when
     // removing the reference should not be visible.
     $delete_checkbox_xpath = $this->getXpathForNthInputByLabelText('Delete this node from the system.', 1);
@@ -734,9 +707,7 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     // user and reload the page.
     $user_role->grantPermission('delete any ief_reference_type content');
     $user_role->save();
-
-    // Reloading page post updating permission to ensure session is updated.
-    $this->drupalGet('node/' . $parent_node->id() . '/edit');
+    $this->getSession()->reload();
 
     // Delete the reference to the first entity, but keep it in the system.
     $assert_session->elementExists('xpath', '(//input[@value="Remove"])[1]')->press();
@@ -762,10 +733,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     // reload the page.
     $user_role->revokePermission('delete any ief_reference_type content');
     $user_role->save();
-
-    // Reloading page post updating permission to ensure session is updated.
-    $this->drupalGet('node/' . $parent_node->id() . '/edit');
-
     $this->updateSetting('removed_reference', 'keep');
     $this->drupalGet('node/' . $parent_node->id() . '/edit');
     $assert_session->pageTextNotContains($title1);
@@ -803,9 +770,7 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     // user and reload the page.
     $user_role->grantPermission('delete any ief_reference_type content');
     $user_role->save();
-
-    // Reloading page post updating permission to ensure session is updated.
-    $this->drupalGet('node/' . $parent_node->id() . '/edit');
+    $this->getSession()->reload();
 
     // Now unreference the fourth entity and check if it disappeared.
     $assert_session->elementsCount('css', 'tr.ief-row-entity', 2);
@@ -871,7 +836,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     $this->assertNotEmpty($assert_session->waitforButton('Update node 3'));
     $double_nested_node_update_title = $double_nested_node->getTitle() . ' - updated';
     $assert_session->elementExists('xpath', $double_nested_title_field_xpath)->setValue($double_nested_node_update_title);
-
     // Close the double nested IEF form.
     $page->pressButton('Update node 3');
     $this->waitForRowByTitle($double_nested_node_update_title);
@@ -880,7 +844,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
     $page->pressButton('Update node 2');
     $this->assertNotEmpty($assert_session->waitForElementRemoved('css', 'div[data-drupal-selector="edit-test-ref-nested1-form-inline-entity-form-entities-0-form"]'));
     $this->waitForRowByTitle($nested_node->label());
-
     // Save the top level node.
     $page->pressButton('Save');
 
@@ -1113,7 +1076,6 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
       $assert_session->waitForButton('Add new node 2');
       $page->pressButton('Add new node 2');
       $assert_session->waitForButton('Add new node 3');
-
       // The new node 2 should be empty and not already have a
       // double_nested_title present.
       $this->assertNoRowByTitle($double_nested_title);
@@ -1222,7 +1184,7 @@ class ComplexWidgetTest extends InlineEntityFormTestBase {
   /**
    * Data provider: FALSE, TRUE.
    */
-  public static function simpleFalseTrueDataProvider() {
+  public function simpleFalseTrueDataProvider() {
     return [
       [FALSE],
       [TRUE],

@@ -81,7 +81,8 @@ GETTING EXTRA SPEED OUT OF THE ADVANCED INSTALL
   pages are all still loading. Also make sure this list is accurate for your
   site:
 
-  $settings['fast404_whitelist']  = ['index.php', 'rss.xml', 'install.php', 'cron.php', 'update.php', 'xmlrpc.php'];
+  $settings['fast404_whitelist']  = ['index.php', 'rss.xml', 'install.php',
+   'cron.php', 'update.php', 'xmlrpc.php'];
 
 #4) Disallow imagestyles file creation for anonymous users
 
@@ -113,4 +114,5 @@ GETTING EXTRA SPEED OUT OF THE ADVANCED INSTALL
 
   $settings['fast404_string_whitelisting'] = ['/advagg_'];
 
-  Any further modules/paths that may need whitelisting can be added to the array.
+  Any further modules/paths that may need whitelisting can be added to the
+  array.

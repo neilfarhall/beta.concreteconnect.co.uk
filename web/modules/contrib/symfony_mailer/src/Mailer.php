@@ -277,7 +277,7 @@ class Mailer implements MailerInterface {
 
       // Log.
       $params = ['%message' => $message];
-      $this->loggerFactory->get('mailer')->error('Error sending email: %message', $params);
+      $this->loggerFactory->get('symfony_mailer')->error('Error sending email: %message', $params);
 
       // Messenger.
       if (!$this->account->hasPermission('administer mailer')) {

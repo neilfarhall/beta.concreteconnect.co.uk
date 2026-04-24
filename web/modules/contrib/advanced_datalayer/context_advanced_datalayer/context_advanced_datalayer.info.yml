@@ -2,12 +2,12 @@ name: Context Advanced Datalayer
 description: Allows site admins to setup Datalayer page variables using Contexts module
 type: module
 package: Context
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
 dependencies:
   - context:context
   - advanced_datalayer:advanced_datalayer
 
-# Information added by Drupal.org packaging script on 2023-01-21
-version: '2.0.0'
+# Information added by Drupal.org packaging script on 2025-01-25
+version: '2.1.0'
 project: 'advanced_datalayer'
-datestamp: 1674345173
+datestamp: 1737847376

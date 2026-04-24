@@ -23,7 +23,6 @@ use Drupal\symfony_mailer\Processor\EmailBuilderBase;
  *   },
  *   has_entity = TRUE,
  *   override = {"commerce.order_receipt"},
- *   override_warning = @Translation("Experimental, may change"),
  *   override_config = {
  *     "core.entity_view_mode.commerce_order.email",
  *     "core.entity_view_display.commerce_order.default.email",
@@ -62,7 +61,7 @@ class CommerceOrderEmailBuilder extends EmailBuilderBase {
    * @param \Drupal\commerce_order\Entity\OrderInterface $order
    *   The order.
    */
-  public function createParams(EmailInterface $email, OrderInterface $order = NULL) {
+  public function createParams(EmailInterface $email, ?OrderInterface $order = NULL) {
     assert($order != NULL);
     $email->setParam('commerce_order_item', $order);
   }
@@ -80,14 +79,22 @@ class CommerceOrderEmailBuilder extends EmailBuilderBase {
   /**
    * {@inheritdoc}
    */
+  public function init(EmailInterface $email) {
+    parent::init($email);
+    $order = $email->getParam('commerce_order_item');
+    $customer = $order->getCustomer();
+    $to = $customer->isAuthenticated() ? $customer : $order->getEmail();
+    $email->setTo($to);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function build(EmailInterface $email) {
     $order = $email->getParam('commerce_order_item');
     $store = $order->getStore();
-    $customer = $order->getCustomer();
-    $to = $customer->isAuthenticated() ? $customer : $order->getEmail();
 
-    $email->setTo($to)
-      ->setBodyEntity($order, 'email')
+    $email->setBodyEntity($order, 'email')
       ->addLibrary('symfony_mailer/commerce_order')
       ->setVariable('order_number', $order->getOrderNumber())
       ->setVariable('store', $store->getName());

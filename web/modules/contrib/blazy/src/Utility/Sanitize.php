@@ -2,12 +2,12 @@
 
 namespace Drupal\blazy\Utility;
 
-use Drupal\blazy\Blazy;
-use Drupal\blazy\BlazyDefault;
-use Drupal\blazy\internals\Internals;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Component\Utility\Xss;
+use Drupal\blazy\Blazy;
+use Drupal\blazy\BlazyDefault;
+use Drupal\blazy\internals\Internals;
 
 /**
  * Provides very few common sanitization wrapper methods.
@@ -246,13 +246,15 @@ class Sanitize {
    *
    * @param string $input
    *   The given url.
+   * @param bool $privacy
+   *   Whether to prioritize privacy, or default.
    *
    * @return string
    *   The sanitized input url.
    */
-  public static function inputUrl($input): ?string {
+  public static function inputUrl($input, $privacy = FALSE): ?string {
     // @todo move it out of here at 3.x:
-    if ($input = Internals::youtube($input)) {
+    if ($input = Internals::youtube($input, $privacy)) {
       $input = self::url($input);
     }
     return $input;

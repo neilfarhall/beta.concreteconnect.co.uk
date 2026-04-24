@@ -27,6 +27,7 @@ class BlockFormAlterTest extends BrowserTestBase {
     'layout_builder',
     'node',
     'contextual',
+    'field_ui',
   ];
 
   /**
@@ -71,6 +72,7 @@ class BlockFormAlterTest extends BrowserTestBase {
     $this->adminUser = $this->drupalCreateUser([
       'access administration pages',
       'administer blocks',
+      'administer block content',
       'bypass node access',
       'administer node display',
       'access contextual links',
@@ -102,7 +104,7 @@ class BlockFormAlterTest extends BrowserTestBase {
 
     // Verify hook_block_type_form_alter() is modifying custom block edit forms
     // rendered by block_content.
-    $this->drupalGet('/block/1');
+    $this->drupalGet('/admin/content/block/1');
     $assert_session->fieldValueEquals('body[0][value]', 'test body string');
 
     // Enable layout override of test content type.

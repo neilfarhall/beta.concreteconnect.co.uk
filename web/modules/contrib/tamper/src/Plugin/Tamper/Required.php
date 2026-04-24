@@ -4,8 +4,8 @@ namespace Drupal\tamper\Plugin\Tamper;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\tamper\Exception\SkipTamperItemException;
-use Drupal\tamper\TamperableItemInterface;
 use Drupal\tamper\TamperBase;
+use Drupal\tamper\TamperableItemInterface;
 
 /**
  * Plugin implementation for required values.
@@ -14,8 +14,9 @@ use Drupal\tamper\TamperBase;
  *   id = "required",
  *   label = @Translation("Required"),
  *   description = @Translation("Make this field required. If it is empty, the item will not be processed."),
- *   category = "Filter",
- *   handle_multiples = TRUE
+ *   category = @Translation("Filter"),
+ *   handle_multiples = TRUE,
+ *   itemUsage = "ignored"
  * )
  */
 class Required extends TamperBase {
@@ -63,7 +64,7 @@ class Required extends TamperBase {
   /**
    * {@inheritdoc}
    */
-  public function tamper($data, TamperableItemInterface $item = NULL) {
+  public function tamper($data, ?TamperableItemInterface $item = NULL) {
     $this->multiple = is_array($data);
 
     $invert = $this->getSetting(self::SETTING_INVERT);

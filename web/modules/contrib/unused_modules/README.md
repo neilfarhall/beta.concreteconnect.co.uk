@@ -37,23 +37,6 @@ See https://www.drupal.org/node/176046 .
 
 ## Usage
 
-Install and go to: /admin/config/development/unused_modules
+Install and go to: /admin/config/development/unused_modules/projects/disabled
 
 Sorry, it's a heavy page load.
-
-## Site Audit integration
-
-Site Audit is a Drupal static site analysis platform that generates reports with
-actionable best practice recommendations. Unused Modules is compatible with
-Site Audit and can be installed on an entire platform, eliminating the need for
-module installation.
-
-To use, put Unused Modules either in your codebase or in your Drush command
-locations, then:
-
-    # Clear Drush cache.
-    drush cc drush
-    # Audit extensions.
-    drush audit-extensions
-
-For more information on Site Audit, visit https://drupal.org/project/site_audit

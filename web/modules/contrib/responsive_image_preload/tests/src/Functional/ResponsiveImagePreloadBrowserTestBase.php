@@ -154,7 +154,7 @@ abstract class ResponsiveImagePreloadBrowserTestBase extends BrowserTestBase {
       static::assertEquals($expected[$idx]['media'], $preload->getAttribute('media'));
 
       if (isset($expected[$idx]['image_style'])) {
-        $pattern = '~^(/subdirectory)?/sites/simpletest/\d*/files/styles/' . $expected[$idx]['image_style'] . '/public/test.jpg?itok=.*\s1x$~';
+        $pattern = '~^(/web)?/sites/simpletest/\d*/files/styles/' . $expected[$idx]['image_style'] . '/public/test.jpg?itok=.*\s1x$~';
         static::assertNotFalse(preg_match($pattern, $preload->getAttribute('image_style')));
       }
 
@@ -166,7 +166,7 @@ abstract class ResponsiveImagePreloadBrowserTestBase extends BrowserTestBase {
 
         $imagesrcset = [];
         foreach ($expected[$idx]['imagesrcset'] as $image_style => $width) {
-          $imagesrcset[] = '(/subdirectory)?/sites/simpletest/\d*/files/styles/' . $image_style . '/public/test\.jpg\?itok=[a-zA-Z0-9\-_]*\s*' . $width;
+          $imagesrcset[] = '(/web)?/sites/simpletest/\d*/files/styles/' . $image_style . '/public/test\.jpg\?itok=[a-zA-Z0-9\-_]*\s*' . $width;
         }
         static::assertMatchesRegularExpression('~^' . implode(',\s*', $imagesrcset) . '$~', $preload->getAttribute('imagesrcset'));
       }

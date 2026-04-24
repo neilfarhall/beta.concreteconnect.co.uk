@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\Tests\fast404\Functional;
 
-use Drupal\language\Entity\ConfigurableLanguage;
 use Drupal\Tests\BrowserTestBase;
+use Drupal\language\Entity\ConfigurableLanguage;
 
 /**
  * Tests the html page functionality.
@@ -22,7 +24,7 @@ class Fast404HtmlPageTest extends BrowserTestBase {
    *
    * @var array
    */
-  public static $modules = ['fast404', 'language'];
+  protected static $modules = ['fast404', 'language'];
 
   /**
    * {@inheritdoc}

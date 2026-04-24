@@ -2,13 +2,14 @@
 
 namespace Drupal\advanced_datalayer\Form;
 
+use Drupal\Core\Config\TypedConfigManagerInterface;
+use Drupal\advanced_datalayer\AdvancedDatalayerManagerInterface;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\advanced_datalayer\AdvancedDatalayerManagerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\State\StateInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Defines the configuration export form.
@@ -41,6 +42,8 @@ class AdvancedDatalayerSettingsForm extends ConfigFormBase {
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   ConfigFactoryInterface object.
+   * @param \Drupal\Core\Config\TypedConfigManagerInterface $typedConfigManager
+   *   The typed config manager.
    * @param \Drupal\advanced_datalayer\AdvancedDatalayerManagerInterface $datalayer_manager
    *   Advance datalayer manager object.
    * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $entity_type_bundle_info
@@ -50,11 +53,12 @@ class AdvancedDatalayerSettingsForm extends ConfigFormBase {
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,
+    TypedConfigManagerInterface $typedConfigManager,
     AdvancedDatalayerManagerInterface $datalayer_manager,
     EntityTypeBundleInfoInterface $entity_type_bundle_info,
     StateInterface $state
   ) {
-    parent::__construct($config_factory);
+    parent::__construct($config_factory, $typedConfigManager);
     $this->datalayerManager = $datalayer_manager;
     $this->entityTypeBundleInfo = $entity_type_bundle_info;
     $this->state = $state;
@@ -66,6 +70,7 @@ class AdvancedDatalayerSettingsForm extends ConfigFormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('config.factory'),
+      $container->get('config.typed'),
       $container->get('advanced_datalayer.manager'),
       $container->get('entity_type.bundle.info'),
       $container->get('state')

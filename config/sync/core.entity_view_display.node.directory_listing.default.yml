@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.directory_listing.feeds_item
     - field.field.node.directory_listing.field_address
     - field.field.node.directory_listing.field_allow_widget
-    - field.field.node.directory_listing.field_brand_video
     - field.field.node.directory_listing.field_company_slogan
     - field.field.node.directory_listing.field_directory_address_postcode
     - field.field.node.directory_listing.field_directory_brands
@@ -74,18 +73,7 @@ content:
     third_party_settings: {  }
     weight: 30
     region: content
-  field_brand_video:
-    type: video_embed_field_video
-    label: above
-    settings:
-      autoplay: true
-      responsive: true
-      width: 854
-      height: 480
-    third_party_settings: {  }
-    weight: 21
-    region: content
-  field_directory_address_postcode:
+ field_directory_address_postcode:
     type: string
     label: above
     settings:

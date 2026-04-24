@@ -1,6 +1,6 @@
 {
     "name": "drupal/comment_notify",
-    "description": "Comment follow-up e-mail notification for anonymous as well as registered users.",
+    "description": "Comment follow-up email notification for anonymous as well as registered users.",
     "type": "drupal-module",
     "homepage": "https://drupal.org/project/comment_notify",
     "authors": [

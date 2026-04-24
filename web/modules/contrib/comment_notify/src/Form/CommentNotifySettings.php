@@ -3,6 +3,7 @@
 namespace Drupal\comment_notify\Form;
 
 use Drupal\comment\CommentInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
@@ -58,7 +59,8 @@ class CommentNotifySettings extends ConfigFormBase {
       $container->get('config.factory'),
       $container->get('entity_field.manager'),
       $container->get('module_handler'),
-      $container->get('messenger')
+      $container->get('messenger'),
+      $container->get('config.typed') ?? NULL
     );
   }
 
@@ -71,9 +73,11 @@ class CommentNotifySettings extends ConfigFormBase {
    *   The entity field manager.
    * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
    *   The module handler service.
+   * @param \Drupal\Core\Config\TypedConfigManagerInterface|null $typed_config_manager
+   *   The typed config manager.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, EntityFieldManager $field_manager, ModuleHandlerInterface $module_handler, MessengerInterface $messenger) {
-    parent::__construct($config_factory);
+  public function __construct(ConfigFactoryInterface $config_factory, EntityFieldManager $field_manager, ModuleHandlerInterface $module_handler, MessengerInterface $messenger, ?TypedConfigManagerInterface $typed_config_manager) {
+    parent::__construct($config_factory, $typed_config_manager);
     $this->fieldManager = $field_manager;
     $this->moduleHandler = $module_handler;
     $this->messenger = $messenger;
@@ -174,7 +178,7 @@ class CommentNotifySettings extends ConfigFormBase {
       '#type' => 'checkbox',
       '#title' => $this->t('Subscribe users to their entity follow-up notification emails by default'),
       '#default_value' => $config->get('enable_default.entity_author'),
-      '#description' => $this->t('If this is checked, new users will receive e-mail notifications for follow-ups on their entities by default until they individually disable the feature.'),
+      '#description' => $this->t('If this is checked, new users will receive email notifications for follow-ups on their entities by default until they individually disable the feature.'),
     ];
 
     $form['mail_templates'] = [

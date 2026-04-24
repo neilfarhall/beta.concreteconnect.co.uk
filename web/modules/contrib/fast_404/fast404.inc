@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
  * Fast 404 preboot.
  *
  * It's likely that the settings.php include will need refactoring when the
- * number of bootstrap phases is reduced and the kernel utilised more fully:
+ * number of bootstrap phases is reduced and the kernel utilized more fully:
  * - https://drupal.org/node/2023495
  * - https://drupal.org/node/2016629
  *

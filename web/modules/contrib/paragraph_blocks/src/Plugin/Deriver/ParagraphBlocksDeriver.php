@@ -3,8 +3,8 @@
 namespace Drupal\paragraph_blocks\Plugin\Deriver;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\EntityFieldManagerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\EntityTypeRepositoryInterface;
 use Drupal\Core\Plugin\Context\ContextDefinition;
 use Drupal\Core\Plugin\Context\EntityContextDefinition;
@@ -18,7 +18,14 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ParagraphBlocksDeriver extends EntityDeriverBase {
 
   /**
-   * Constructs new EntityViewDeriver.
+   * The maximum cardinality for paragraph fields.
+   *
+   * @var int
+   */
+  protected int $maxCardinality;
+
+  /**
+   * Constructs a new ParagraphBlocksDeriver instance.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
@@ -31,13 +38,18 @@ class ParagraphBlocksDeriver extends EntityDeriverBase {
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, TranslationInterface $string_translation, EntityFieldManagerInterface $entity_field_manager, EntityTypeRepositoryInterface $entity_type_repository, ConfigFactoryInterface $config_factory) {
-    $this->entityTypeManager = $entity_type_manager;
-    $this->stringTranslation = $string_translation;
-    $this->entityFieldManager = $entity_field_manager;
-    $this->entityTypeRepository = $entity_type_repository;
-    $this->maxCardinality = $config_factory->get('paragraph_blocks.settings')
-      ->get('max_cardinality') ?: 10;
+  public function __construct(
+    EntityTypeManagerInterface $entity_type_manager,
+    TranslationInterface $string_translation,
+    EntityFieldManagerInterface $entity_field_manager,
+    EntityTypeRepositoryInterface $entity_type_repository,
+    ConfigFactoryInterface $config_factory,
+  ) {
+    parent::__construct($entity_type_manager, $string_translation, $entity_field_manager, $entity_type_repository);
+    $configured = $config_factory->get('paragraph_blocks.settings')->get('max_cardinality');
+    // Set max cardinality as a limited, treat 0 or empty as "no limit". Use 10
+    // as a sensible default.
+    $this->maxCardinality = empty($configured) ? 10 : (int) $configured;
   }
 
   /**
@@ -83,7 +95,6 @@ class ParagraphBlocksDeriver extends EntityDeriverBase {
         }
         $bundles = $field_info[$field_name]['bundles'];
         foreach ($bundles as $bundle) {
-
           for ($delta = 0; $delta < $cardinality; $delta++) {
             $bundle_field_definitions = $this->entityFieldManager->getFieldDefinitions($entity_type_id, $bundle);
             $bundle_label = $bundle_field_definitions[$field_name]->getLabel();

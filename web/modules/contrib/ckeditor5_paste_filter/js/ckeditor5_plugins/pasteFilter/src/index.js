@@ -1,5 +1,5 @@
-import PasteFilter from "./pastefilter";
+import PasteFilter from './pastefilter';
 
 export default {
-  PasteFilter
+  PasteFilter,
 };

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\Tests\fast404\Unit;
 
 use Drupal\Tests\UnitTestCase;
@@ -22,7 +24,7 @@ class Fast404Test extends UnitTestCase {
     $requestStub = $this->createMock('\Symfony\Component\HttpFoundation\Request');
     $fast404 = $this->getMockBuilder('\Drupal\fast404\Fast404')
       ->setConstructorArgs([$requestStub])
-      ->setMethods(['isCli'])
+      ->onlyMethods(['isCli'])
       ->getMock();
     $fast404->method('isCli')
       ->willReturn(FALSE);
@@ -56,26 +58,5 @@ class Fast404Test extends UnitTestCase {
       ->willReturn(TRUE);
     $this->assertEquals(FALSE, $fast404->isPathBlocked());
   }
-
-  /**
-   * Tests checking if a extension is blocked.
-   *
-   * @covers ::extensionCheck
-   */
-  // public function testExtensionCheck() {}
-
-  /**
-   * Tests checking if a path is blocked.
-   *
-   * @covers ::pathCheck
-   */
-  // public function testPathCheck() {}
-
-  /**
-   * Tests Fast404 responses.
-   *
-   * @covers ::response
-   */
-  // public function testResponse() {}
 
 }

@@ -139,8 +139,12 @@ class ExifPHPExtension implements ExifInterface {
 
     if (is_array($data)) {
       foreach ($data as $section => $section_data) {
-        $section_data = $this->reformat($section_data);
-        $data[$section] = $section_data;
+        // Only process array data.
+        // @todo What should be done if the data is not an array? Should it be
+        // erased? For now it is left as-is.
+        if (is_array($section_data)) {
+          $data[$section] = $this->reformat($section_data);
+        }
       }
     }
     return $data;

@@ -28,28 +28,35 @@ function permissions_filter_help($route_name, RouteMatchInterface $route_match) 
  * Implements hook_form_alter() for permissions_filter.module.
  */
 function permissions_filter_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ($form_id == 'user_admin_permissions') {
-    $form['permissions']['#weight'] = 2;
-    $form['permissions_filter'] = [
-      '#type' => 'container',
-      '#attributes' => [
-        'class' => ['table-filter', 'js-show'],
-      ],
-      '#weight' => 1,
-    ];
-    $form['permissions_filter']['search_permission'] = [
-      '#type' => 'search',
-      '#title' => t('Enter a part of the Permission name'),
-      '#title_display' => 'invisible',
-      '#size' => 30,
-      '#placeholder' => t('Filter by name'),
-      '#description' => t('Enter a part of the permission'),
-      '#attributes' => [
-        'class' => ['table-filter-text'],
-        'data-table' => '#user-admin-permissions',
-        'autocomplete' => 'off',
-      ],
-    ];
-    $form['#attached']['library'][] = 'permissions_filter/permissions_js';
+  if ($form_id !== 'user_admin_permissions') {
+    return;
   }
+
+  if (isset($form['filters'])) {
+    // Has core filters
+    return;
+  }
+
+  $form['permissions']['#weight'] = 2;
+  $form['permissions_filter'] = [
+    '#type' => 'container',
+    '#attributes' => [
+      'class' => ['table-filter', 'js-show'],
+    ],
+    '#weight' => 1,
+  ];
+  $form['permissions_filter']['search_permission'] = [
+    '#type' => 'search',
+    '#title' => t('Enter a part of the Permission name'),
+    '#title_display' => 'invisible',
+    '#size' => 30,
+    '#placeholder' => t('Filter by name'),
+    '#description' => t('Enter a part of the permission'),
+    '#attributes' => [
+      'class' => ['table-filter-text'],
+      'data-table' => '#user-admin-permissions',
+      'autocomplete' => 'off',
+    ],
+  ];
+  $form['#attached']['library'][] = 'permissions_filter/permissions_js';
 }

@@ -9,7 +9,7 @@ dependencies:
   - drupal:responsive_image
   - paragraphs_bundles:paragraphs_bundles
 
-# Information added by Drupal.org packaging script on 2025-07-21
-version: '1.0.13'
+# Information added by Drupal.org packaging script on 2026-02-01
+version: '1.0.15'
 project: 'paragraphs_bundles'
-datestamp: 1753073038
+datestamp: 1769974869

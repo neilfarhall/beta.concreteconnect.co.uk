@@ -2,18 +2,18 @@
 
 namespace Drupal\unused_modules;
 
-use Drupal\Core\Extension\ExtensionDiscovery;
+use Composer\InstalledVersions;
+use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Extension\Extension;
+use Drupal\Core\Extension\ExtensionDiscovery;
 
 /**
  * Common Unused Modules functionality.
  */
-class UnusedModulesHelperService {
+class UnusedModulesHelperService implements UnusedModulesHelperServiceInterface {
 
   /**
-   * Returns an array with all available modules.
-   *
-   * @return \Drupal\unused_modules\UnusedModulesExtensionDecorator[]
+   * {@inheritdoc}
    */
   public function getModulesByProject() {
     $enabled_modules = static::getEnabledModules();
@@ -52,7 +52,7 @@ class UnusedModulesHelperService {
 
     if (!isset($available_modules)) {
       $listing = new ExtensionDiscovery(\Drupal::root());
-      $available_modules = array_map('self::decorateExtension', $listing->scan('module'));
+      $available_modules = array_map('\Drupal\unused_modules\UnusedModulesHelperService::decorateExtension', $listing->scan('module'));
       // Remove core modules.
       self::removeCoreModules($available_modules);
       // Add information from .info file.
@@ -72,7 +72,7 @@ class UnusedModulesHelperService {
     $available_modules = self::getAvailableModules();
     // Get all enabled modules.
     $moduleHandler = \Drupal::moduleHandler();
-    $enabled_modules = array_map('self::decorateExtension', $moduleHandler->getModuleList());
+    $enabled_modules = array_map('\Drupal\unused_modules\UnusedModulesHelperService::decorateExtension', $moduleHandler->getModuleList());
 
     // Return only enabled.
     $return = [];
@@ -165,7 +165,6 @@ class UnusedModulesHelperService {
   /**
    * Add module information from <module>.info file.
    *
-   *
    * @param \Drupal\unused_modules\UnusedModulesExtensionDecorator[] $modules
    *   List of modules.
    *
@@ -175,9 +174,9 @@ class UnusedModulesHelperService {
    */
   private static function addInfoFileInformation(&$modules = []) {
     // Prepare a composer package list with the install path.
-    $packages = array_combine(\Composer\InstalledVersions::getInstalledPackages(), \Composer\InstalledVersions::getInstalledPackages());
+    $packages = array_combine(InstalledVersions::getInstalledPackages(), InstalledVersions::getInstalledPackages());
     $packages = array_map(function ($package) {
-      return realpath(\Composer\InstalledVersions::getInstallPath($package) ?? '');
+      return realpath(InstalledVersions::getInstallPath($package) ?? '');
     }, $packages);
 
     // The Drupal packaging script adds project information to the .info file.
@@ -187,34 +186,28 @@ class UnusedModulesHelperService {
           $error_message = "No .info.yml file found for module '" . $module->getName() . "'";
           throw new UnusedModulesException($error_message);
         }
-        $info_file = file($module->getPathname(), FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-        // Traverse all lines in .info and look for the line that starts
-        // with "project". When found, add the project name to the module object.
-        foreach ($info_file as $line) {
-          if (substr($line, 0, 7) === "project") {
-            // Remove "project = " prefix.
-            $project = str_replace("project: ", "", $line);
-            // Remove surrounding single-quotes.
-            $project = str_replace("'", "", $project);
-            $module->projectName = $project;
-          }
+        // Add the project name to the module object.
+        $info_file = Yaml::decode(file_get_contents($module->getPathname()));
+        if (!empty($info_file['project'])) {
+          $module->projectName = $info_file['project'];
         }
 
         if (!$module->projectName) {
           $pathname = dirname($module->getPathname());
-          // If module's path contains the word custom, assign it to custom project.
+          // If module's path contains the word custom,
+          // assign it to custom project.
           if (strpos(dirname($pathname), 'custom') !== FALSE) {
             $module->projectName = 'custom';
           }
           elseif (class_exists('\Composer\InstalledVersions')) {
             // Check if it is installed with composer.
-            // Example: modules/contrib/paragraphs
+            // Example: modules/contrib/paragraphs.
             $packageName = array_search(\Drupal::root() . '/' . $pathname, $packages);
             // Check again if it is a submodule of a drupal module.
             // By convention all submodules are places in the modules/* folder
             // of the package.
-            // Example: modules/contrib/paragraphs/modules/paragraphs_demo
+            // Example: modules/contrib/paragraphs/modules/paragraphs_demo.
             if (!$packageName) {
               $pathname = dirname($pathname, 2);
               $packageName = array_search(\Drupal::root() . '/' . $pathname, $packages);
@@ -258,10 +251,8 @@ class UnusedModulesHelperService {
   /**
    * Sort helper. Used as uasort() callback.
    *
-   * @param \Drupal\unused_modules\UnusedModulesExtensionDecorator $a
-   * @param \Drupal\unused_modules\UnusedModulesExtensionDecorator $b
-   *
-   * @return \Drupal\unused_modules\UnusedModulesExtensionDecorator
+   * @return int
+   *   The result of comparing two projects.
    */
   private static function sortByProject($a, $b) {
 

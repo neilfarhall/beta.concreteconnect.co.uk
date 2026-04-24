@@ -10,7 +10,7 @@
         "seo"
     ],
     "require": {
-        "drupal/core": "^9 || ^10",
+        "drupal/core": "^10 || ^11",
         "drupal/token": "^1.0"
     }
 }

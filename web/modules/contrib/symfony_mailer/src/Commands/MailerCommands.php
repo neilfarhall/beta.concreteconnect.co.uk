@@ -5,6 +5,8 @@ namespace Drupal\symfony_mailer\Commands;
 use Consolidation\OutputFormatters\StructuredData\RowsOfFields;
 use Drupal\symfony_mailer\Processor\OverrideManagerInterface;
 use Drush\Commands\DrushCommands;
+use Drush\Exceptions\UserAbortException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Symfony Mailer drush commands.

@@ -7,6 +7,7 @@ use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\TempStore\PrivateTempStore;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\TempStore\TempStoreException;
+use Drupal\layout_builder\SectionListInterface;
 
 /**
  * The entity presave helper.
@@ -49,6 +50,13 @@ class ParagraphBlocksEntityPresaveHelper {
   private EntityInterface $entity;
 
   /**
+   * Layout builder section item list.
+   *
+   * @var \Drupal\layout_builder\SectionListInterface
+   */
+  private SectionListInterface $layout;
+
+  /**
    * Constructs a ParagraphBlocksEntityPresaveHelper object.
    *
    * @param \Drupal\Core\TempStore\PrivateTempStoreFactory $temp_store_factory
@@ -74,8 +82,8 @@ class ParagraphBlocksEntityPresaveHelper {
    */
   public function setEntity(EntityInterface $entity): void {
     $this->entity = $entity;
-    $this->tempStoreKey = $entity->bundle() . '.' . $entity->id() . '.' . $entity->language()
-      ->getId();
+    $this->tempStoreKey = $entity->bundle() . '.' . $entity->id() . '.'
+      . $entity->language()->getId();
     $this->layout = $this->entity->get('layout_builder__layout');
   }
 
@@ -141,8 +149,10 @@ class ParagraphBlocksEntityPresaveHelper {
     if ($this->entity->isNew()) {
       // Collect the paragraph ids of the new entity.
       foreach ($this->entity->getFields() as $fieldKey => $field) {
-        if (method_exists($field->getFieldDefinition(), 'getThirdPartySetting') && $field->getFieldDefinition()
-          ->getThirdPartySetting('paragraph_blocks', 'status')) {
+        if (
+          method_exists($field->getFieldDefinition(), 'getThirdPartySetting')
+          && $field->getFieldDefinition()->getThirdPartySetting('paragraph_blocks', 'status')
+        ) {
           foreach ($this->entity->get($fieldKey)
             ->getIterator() as $item) {
             $new_paragraph_ids[] = $item->getValue()['target_id'];
@@ -190,8 +200,10 @@ class ParagraphBlocksEntityPresaveHelper {
   private function getParagraphBlocksFields(): array {
     $fields = [];
     foreach ($this->entity->getFields() as $key => $field) {
-      if (method_exists($field->getFieldDefinition(), 'getThirdPartySetting') && $field->getFieldDefinition()
-        ->getThirdPartySetting('paragraph_blocks', 'status')) {
+      if (
+        method_exists($field->getFieldDefinition(), 'getThirdPartySetting')
+        && $field->getFieldDefinition()->getThirdPartySetting('paragraph_blocks', 'status')
+      ) {
         $fields[] = $key;
       }
     }
@@ -207,9 +219,15 @@ class ParagraphBlocksEntityPresaveHelper {
    * @return array
    *   The list of field deltas.
    */
-  private function getDeltasOriginal($field): array {
+  private function getDeltasOriginal(mixed $field): array {
     $deltas = [];
-    foreach ($this->entity->original->get($field)
+
+    // Retrieve the original entity or its relevant translation.
+    $original = $this->entity->original;
+    $language = $this->entity->language()->getId();
+    $entity = $original->hasTranslation($language) ? $original->getTranslation($language) : $original;
+
+    foreach ($entity->get($field)
       ->getIterator() as $delta => $item) {
       $deltas[$item->getValue()['target_id']] = $delta;
     }
@@ -225,7 +243,7 @@ class ParagraphBlocksEntityPresaveHelper {
    * @return array
    *   The list of field deltas.
    */
-  private function getDeltas($field): array {
+  private function getDeltas(mixed $field): array {
     $deltas = [];
     foreach ($this->entity->get($field)->getIterator() as $delta => $item) {
       $deltas[$item->getValue()['target_id']] = $delta;
@@ -302,10 +320,14 @@ class ParagraphBlocksEntityPresaveHelper {
   private function prepareLayoutBuilderDeltaUpdates(array &$delta_updates, array $deltas_reordered, string $field, array $configuration, $section_index, $component_index): void {
     if (!empty($deltas_reordered)) {
       foreach ($deltas_reordered as $delta_to => $delta_from) {
-        $delta_old = 'paragraph_field:' . $this->entity->getEntityType()
-          ->id() . ':' . $field . ':' . $delta_from . ':' . $this->entity->bundle();
-        $delta_new = 'paragraph_field:' . $this->entity->getEntityType()
-          ->id() . ':' . $field . ':' . $delta_to . ':' . $this->entity->bundle();
+        $delta_old = 'paragraph_field:' . $this->entity->getEntityType()->id()
+          . ':' . $field
+          . ':' . $delta_from
+          . ':' . $this->entity->bundle();
+        $delta_new = 'paragraph_field:' . $this->entity->getEntityType()->id()
+          . ':' . $field
+          . ':' . $delta_to
+          . ':' . $this->entity->bundle();
 
         // Collect the required paragraph delta updates.
         if ($configuration['id'] == $delta_old) {
@@ -330,17 +352,20 @@ class ParagraphBlocksEntityPresaveHelper {
       'section_index' => $section_index,
       'component_index' => $component_index,
       'configuration_id' => $configuration_id,
-    ]
-      ) {
+    ]) {
       $configuration = $this->layout
         ->getIterator()
         ->offsetGet($section_index)
-        ->getValue()['section']->getComponents()[$component_index]->get('configuration');
+        ->getValue()['section']
+        ->getComponents()[$component_index]
+        ->get('configuration');
       $configuration['id'] = $configuration_id;
       $this->layout
         ->getIterator()
         ->offsetGet($section_index)
-        ->getValue()['section']->getComponents()[$component_index]->setConfiguration($configuration);
+        ->getValue()['section']
+        ->getComponents()[$component_index]
+        ->setConfiguration($configuration);
     }
   }
 
@@ -364,8 +389,10 @@ class ParagraphBlocksEntityPresaveHelper {
    */
   private function prepareLayoutBuilderDeltaDeletes(array &$delta_deletes, array $deltas_deleted, $field, array $configuration, $section_index, $component_index, string $component_uuid): void {
     foreach ($deltas_deleted as $delta) {
-      $delta_old = 'paragraph_field:' . $this->entity->getEntityType()
-        ->id() . ':' . $field . ':' . $delta . ':' . $this->entity->bundle();
+      $delta_old = 'paragraph_field:' . $this->entity->getEntityType()->id()
+        . ':' . $field
+        . ':' . $delta
+        . ':' . $this->entity->bundle();
 
       // Collect the required paragraph delta updates.
       if ($configuration['id'] == $delta_old) {
@@ -393,7 +420,8 @@ class ParagraphBlocksEntityPresaveHelper {
       $this->layout
         ->getIterator()
         ->offsetGet($section_index)
-        ->getValue()['section']->removeComponent($component_uuid);
+        ->getValue()['section']
+        ->removeComponent($component_uuid);
     }
   }
 

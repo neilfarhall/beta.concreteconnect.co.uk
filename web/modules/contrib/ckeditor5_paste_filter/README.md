@@ -30,14 +30,14 @@ This module requires the CKEditor 5 module from Drupal core.
 
 ## Configuration
 
-- Add or edit a text format (/admin/config/content/formats)
-- Set the 'Text editor' of the text format to CKEditor 5
-- Under 'CKEditor 5 plugin settings' select the 'Paste filter' vertical tab
-- Enable the plugin by checking the 'Filter pasted content' checkbox
-- (Optional) Add/edit/remove the pre-configured filters if you have different
-  filtering requirements
-  - To add filters, click the "Add another filter" button inside the Paste
+1. Add or edit a text format (/admin/config/content/formats)
+2. Set the 'Text editor' of the text format to CKEditor 5
+3. Under 'CKEditor 5 plugin settings' select the 'Paste filter' vertical tab
+4. Enable the plugin by checking the 'Filter pasted content' checkbox
+5. (Optional) Add/edit/remove the pre-configured filters if you have different
+  filtering requirements:
+    - To add filters, click the "Add another filter" button inside the Paste
     filter configuration form
-  - To remove filters, empty the search and replace text boxes, the filters
+    - To remove filters, empty the search and replace text boxes, the filters
     will be removed after saving the text format
-- Save the text format: Scroll to the bottom and click "Save configuration"
+6. Save the text format: Scroll to the bottom and click "Save configuration"

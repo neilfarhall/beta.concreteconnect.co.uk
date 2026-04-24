@@ -8,7 +8,6 @@ use Drupal\ckeditor5\Plugin\CKEditor5PluginConfigurableInterface;
 use Drupal\ckeditor5\Plugin\CKEditor5PluginConfigurableTrait;
 use Drupal\ckeditor5\Plugin\CKEditor5PluginDefault;
 use Drupal\Component\Utility\NestedArray;
-use Drupal\Component\Utility\Xss;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\editor\EditorInterface;
@@ -439,28 +438,18 @@ class PasteFilter extends CKEditor5PluginDefault implements CKEditor5PluginConfi
       return ['pasteFilter' => FALSE];
     }
 
-    // Return only enabled filters, XSS filtered and sorted by weight.
+    // Return only enabled filters sorted by weight.
     $enabled_filters = array_filter($this->configuration['filters'], function (array $filter): bool {
       return (bool) $filter['enabled'];
     });
-    $filters = array_map([$this, 'xssFilterReplaceText'], $enabled_filters);
-    usort($filters, [
+    usort($enabled_filters, [
       'Drupal\Component\Utility\SortArray',
       'sortByWeightElement',
     ]);
 
     return [
-      'pasteFilter' => $filters,
+      'pasteFilter' => $enabled_filters,
     ];
-  }
-
-  /**
-   * Callback for array_map(): XSS filter filter replacement text.
-   */
-  private function xssFilterReplaceText(array $filter): array {
-    $filter['replace'] = Xss::filterAdmin($filter['replace']);
-
-    return $filter;
   }
 
 }

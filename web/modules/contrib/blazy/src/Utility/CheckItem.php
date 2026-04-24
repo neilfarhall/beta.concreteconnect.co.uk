@@ -2,13 +2,13 @@
 
 namespace Drupal\blazy\Utility;
 
+use Drupal\Component\Utility\UrlHelper;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\blazy\Blazy;
-use Drupal\blazy\internals\Internals;
 use Drupal\blazy\Media\BlazyFile;
 use Drupal\blazy\Media\BlazyImage;
 use Drupal\blazy\Theme\Attributes;
-use Drupal\Component\Utility\UrlHelper;
-use Drupal\Core\Entity\EntityInterface;
+use Drupal\blazy\internals\Internals;
 
 /**
  * Provides feature check methods at item level.
@@ -183,10 +183,12 @@ class CheckItem {
   public static function insanity(array &$settings): void {
     $blazies    = $settings['blazies'];
     $ratio      = $settings['ratio'] ?? '';
-    $unlazy     = $blazies->is('slider') && $blazies->is('initial');
-    $unlazy     = $unlazy ? TRUE : $blazies->is('unlazy');
+    $heroes     = $blazies->is('slider') || $blazies->is('unloading');
+    $lcp        = $heroes && $blazies->is('initial');
+    $siblings   = $heroes && !$blazies->is('initial');
+    $unlazy     = $blazies->is('unlazy');
     $use_loader = $blazies->use('loader') ?: $settings['use_loading'] ?? FALSE;
-    $use_loader = $unlazy ? FALSE : $use_loader;
+    $use_loader = $lcp || $unlazy ? FALSE : $use_loader;
     $is_unblur  = Internals::isUnlazy($blazies)
       || $blazies->is('unstyled') || $blazies->use('iframe');
     $is_blur    = !$is_unblur && $blazies->use('blur');
@@ -200,10 +202,24 @@ class CheckItem {
     // Redefines some since this can be fed by anyone, including custom works.
     $blazies->set('is.fluid', $is_fluid)
       ->set('is.blur', $is_blur)
-      ->set('is.unlazy', $unlazy)
+      ->set('is.lcp', $lcp)
+      ->set('is.lcp_siblings', $siblings)
+      ->set('is.unloading', $lcp || $blazies->is('unloading'))
+      ->set('is.unlazy', $lcp || $unlazy)
       ->set('use.blur', $is_blur)
       ->set('use.loader', $use_loader)
       ->set('was.prepare', TRUE);
+
+    // If a Hero image and grid, override siblings to use thumbnail if provided.
+    if ($siblings && !empty($blazies->is('grid'))) {
+      $image = $blazies->get('image');
+      if ($thumbnail = $blazies->get('thumbnail')) {
+        $blazies->set('image', $thumbnail, TRUE);
+
+        // Store replaced image into thumbnail.
+        $blazies->set('thumbnail.image', $image, TRUE);
+      }
+    }
 
     // Also disable blur effect attributes.
     if (!$is_blur && $blazies->get('fx') == 'blur') {
@@ -268,7 +284,7 @@ class CheckItem {
     $switch    = $settings['media_switch'] ?? NULL;
     $switch    = $blazies->get('switch', $switch);
     $provider  = $blazies->get('media.provider');
-    $type      = $blazies->get('media.type') ?: $settings['type'] ?? 'image';
+    $type      = $blazies->get('media.type', 'image');
     $embed_url = $settings['embed_url'] ?? '';
     $embed_url = $blazies->get('media.embed_url') ?: $embed_url;
     $is_vef    = $type == 'video';
@@ -330,10 +346,6 @@ class CheckItem {
         $blazies->set('switch', NULL);
       }
     }
-
-    // @todo remove deprecated dup is for use at 3.x.
-    $blazies->set('is.iframe', $is_iframe)
-      ->set('is.player', $is_player);
 
     $_type = str_replace([':'], '_', $type);
     $multimedia = $blazies->is('multimedia', $is_remote);

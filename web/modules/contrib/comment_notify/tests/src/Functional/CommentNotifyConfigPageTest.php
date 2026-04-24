@@ -209,7 +209,7 @@ class CommentNotifyConfigPageTest extends CommentNotifyTestBase {
     $this->drupalLogin($this->adminUser);
     $this->drupalGet("admin/config/people/comment_notify/unsubscribe");
     $this->getSession()->getPage()->fillField('Email to unsubscribe', $this->getRandomEmailAddress());
-    $this->submitForm([], 'Unsubscribe this e-mail');
+    $this->submitForm([], 'Unsubscribe this email');
     $this->assertSession()->responseContains('There were no active comment notifications for that email.');
     $this->drupalLogout();
 
@@ -228,7 +228,7 @@ class CommentNotifyConfigPageTest extends CommentNotifyTestBase {
     $this->drupalLogin($this->adminUser);
     $this->drupalGet("admin/config/people/comment_notify/unsubscribe");
     $this->getSession()->getPage()->fillField('Email to unsubscribe', $anonymous_mail);
-    $this->submitForm([], 'Unsubscribe this e-mail');
+    $this->submitForm([], 'Unsubscribe this email');
     $this->assertSession()->responseContains('Email unsubscribed from all the comment notifications.');
     $this->drupalLogout();
     $result = comment_notify_get_notification_type($comment['id']);
@@ -259,7 +259,7 @@ class CommentNotifyConfigPageTest extends CommentNotifyTestBase {
     $this->drupalLogin($this->adminUser);
     $this->drupalGet("admin/config/people/comment_notify/unsubscribe");
     $this->getSession()->getPage()->fillField('Email to unsubscribe', $anonymous_mail2);
-    $this->submitForm([], 'Unsubscribe this e-mail');
+    $this->submitForm([], 'Unsubscribe this email');
     $this->assertSession()->responseContains('Email unsubscribed from all the comment notifications.');
     $this->drupalLogout();
 
@@ -289,7 +289,7 @@ class CommentNotifyConfigPageTest extends CommentNotifyTestBase {
     $this->drupalLogin($this->adminUser);
     $this->drupalGet("admin/config/people/comment_notify/unsubscribe");
     $this->getSession()->getPage()->fillField('Email to unsubscribe', $user->getEmail());
-    $this->submitForm([], 'Unsubscribe this e-mail');
+    $this->submitForm([], 'Unsubscribe this email');
     $this->assertSession()->responseContains('Email unsubscribed from all the comment notifications.');
     $this->drupalLogout();
     $result = comment_notify_get_notification_type($comment['id']);

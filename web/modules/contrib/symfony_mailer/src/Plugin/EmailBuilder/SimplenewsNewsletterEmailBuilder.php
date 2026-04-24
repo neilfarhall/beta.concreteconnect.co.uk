@@ -20,7 +20,6 @@ use Drupal\symfony_mailer\Entity\MailerPolicy;
  *   },
  *   has_entity = TRUE,
  *   override = {"simplenews.node", "simplenews.test", "simplenews.extra"},
- *   override_warning = @Translation("Not tested for large numbers of recipients"),
  *   common_adjusters = {"email_subject", "email_from"},
  *   import = @Translation("Simplenews newsletter settings"),
  *   form_alter = {
@@ -52,7 +51,7 @@ class SimplenewsNewsletterEmailBuilder extends SimplenewsEmailBuilderBase {
    * @param bool|string $mode
    *   (Optional) The mode of sending: test, extra or node.
    */
-  public function createParams(EmailInterface $email, ContentEntityInterface $issue = NULL, SubscriberInterface $subscriber = NULL, $mode = NULL) {
+  public function createParams(EmailInterface $email, ?ContentEntityInterface $issue = NULL, ?SubscriberInterface $subscriber = NULL, $mode = NULL) {
     assert($subscriber != NULL);
     if ($mode === TRUE) {
       @trigger_error('Passing TRUE to SimplenewsNewsletterEmailBuilder::createParams() is deprecated in symfony_mailer:1.4.1 and is removed from symfony_mailer:2.0.0. Instead pass "test" or "extra". See https://www.drupal.org/node/3414408', E_USER_DEPRECATED);
@@ -88,7 +87,7 @@ class SimplenewsNewsletterEmailBuilder extends SimplenewsEmailBuilderBase {
       // @deprecated
       ->setVariable('test', $mode == 'test');
 
-    // @todo Create SubscriberInterface::getUnsubscriberUrl().
+    // @todo Create SubscriberInterface::getUnsubscribeUrl().
     if ($unsubscribe_url = \Drupal::token()->replace('[simplenews-subscriber:unsubscribe-url]', $email->getParams(), ['clear' => TRUE])) {
       $email->addTextHeader('List-Unsubscribe', "<$unsubscribe_url>");
     }

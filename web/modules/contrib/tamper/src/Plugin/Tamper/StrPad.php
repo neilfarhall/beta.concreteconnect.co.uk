@@ -4,8 +4,8 @@ namespace Drupal\tamper\Plugin\Tamper;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\tamper\Exception\TamperException;
-use Drupal\tamper\TamperableItemInterface;
 use Drupal\tamper\TamperBase;
+use Drupal\tamper\TamperableItemInterface;
 
 /**
  * Plugin implementation of the Str Pad plugin.
@@ -14,7 +14,8 @@ use Drupal\tamper\TamperBase;
  *   id = "str_pad",
  *   label = @Translation("Pad a string"),
  *   description = @Translation("Pad a string"),
- *   category = "Text"
+ *   category = @Translation("Text"),
+ *   itemUsage = "ignored"
  * )
  */
 class StrPad extends TamperBase {
@@ -88,7 +89,12 @@ class StrPad extends TamperBase {
   /**
    * {@inheritdoc}
    */
-  public function tamper($data, TamperableItemInterface $item = NULL) {
+  public function tamper($data, ?TamperableItemInterface $item = NULL) {
+    // Don't process empty or null values.
+    if (is_null($data) || $data === '') {
+      return $data;
+    }
+
     if (!is_string($data) && !is_numeric($data)) {
       throw new TamperException('Input should be a string or numeric.');
     }

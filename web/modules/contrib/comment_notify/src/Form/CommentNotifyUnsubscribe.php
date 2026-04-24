@@ -69,7 +69,7 @@ class CommentNotifyUnsubscribe extends FormBase {
     ];
     $form['comment_notify_unsubscribe']['submit'] = [
       '#type' => 'submit',
-      '#value' => t('Unsubscribe this e-mail'),
+      '#value' => t('Unsubscribe this email'),
     ];
     return $form;
   }

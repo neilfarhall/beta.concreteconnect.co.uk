@@ -58,7 +58,7 @@ class AdvancedDatalayerDefaultsListBuilder extends ConfigEntityListBuilder {
       $query->pager($this->limit);
     }
 
-    $entity_ids = $query->execute();
+    $entity_ids = $query->accessCheck(TRUE)->execute();
 
     // Load global entity always.
     return $entity_ids + $this->getParentIds($entity_ids);
@@ -84,7 +84,7 @@ class AdvancedDatalayerDefaultsListBuilder extends ConfigEntityListBuilder {
     }
     $parents_query = $this->getStorage()->getQuery()
       ->condition('id', $parents, 'IN');
-    return $parents_query->execute();
+    return $parents_query->accessCheck(TRUE)->execute();
   }
 
   /**

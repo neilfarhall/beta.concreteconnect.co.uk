@@ -20,7 +20,7 @@
           allow_cookie = true,
           read_cookie = '',
           cookie_val = 1,
-          cookie_days = values.cookie_expiry || 100,
+          cookie_days = (values.cookie_expiry !== undefined && values.cookie_expiry !== null) ? values.cookie_expiry : 100,
           match = 0,
           css_identity = '',
           spb_popup_id = '',
@@ -155,7 +155,7 @@
         // Inject layout class.
         switch (values.layout) {
           // Top left.
-          case '0':
+          case 0:
             $(layout_class).addClass('spb_top_left')
             $(layout_class).css({
               'width': values.width,

@@ -645,4 +645,30 @@ class ExifContent {
       ->loadByProperties(['name' => $term, 'vid' => $vid]);
   }
 
+  /**
+   * Get all of the metadata for a given media object.
+   *
+   * @param \Drupal\Core\Entity\FieldableEntityInterface $entity
+   *   The entity to look for metadata fields.
+   *
+   * @return array
+   *   The meta data that was extracted from the requested entity.
+   */
+  public function getMediaMetadata(FieldableEntityInterface $entity): array {
+    $image_fields = $this->getImageFields($entity);
+    unset($image_fields['thumbnail']);
+    if (!empty($image_fields)) {
+      /** @var \Drupal\field\Entity\FieldConfig $field */
+      $field = reset($image_fields);
+      if ($field->getType() == 'image') {
+        $image_url = $this->getFileUriAndLanguage($entity, $field->getName());
+        if (!empty($image_url)) {
+          $metadata = $this->getDataFromFileUri($image_url[0]['uri']);
+          return $metadata;
+        }
+      }
+    }
+    return [];
+  }
+
 }

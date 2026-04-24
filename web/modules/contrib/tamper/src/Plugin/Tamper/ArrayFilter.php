@@ -3,8 +3,8 @@
 namespace Drupal\tamper\Plugin\Tamper;
 
 use Drupal\tamper\Exception\TamperException;
-use Drupal\tamper\TamperableItemInterface;
 use Drupal\tamper\TamperBase;
+use Drupal\tamper\TamperableItemInterface;
 
 /**
  * Plugin implementation for filtering data.
@@ -13,8 +13,9 @@ use Drupal\tamper\TamperBase;
  *   id = "array_filter",
  *   label = @Translation("Filter items"),
  *   description = @Translation("Filter empty items from a list."),
- *   category = "List",
- *   handle_multiples = TRUE
+ *   category = @Translation("List"),
+ *   handle_multiples = TRUE,
+ *   itemUsage = "ignored"
  * )
  */
 class ArrayFilter extends TamperBase {
@@ -22,7 +23,12 @@ class ArrayFilter extends TamperBase {
   /**
    * {@inheritdoc}
    */
-  public function tamper($data, TamperableItemInterface $item = NULL) {
+  public function tamper($data, ?TamperableItemInterface $item = NULL) {
+    // Don't process empty values.
+    if (empty($data)) {
+      return $data;
+    }
+
     if (!is_array($data)) {
       throw new TamperException('Input should be an array.');
     }

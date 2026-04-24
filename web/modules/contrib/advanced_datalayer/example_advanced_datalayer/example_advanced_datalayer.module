@@ -45,7 +45,6 @@ function example_advanced_datalayer_page_attachments(array &$attachments) {
         '#type' => 'html_tag',
         '#tag' => 'script',
         '#attributes' => [
-          'type' => 'text/javascript',
           'src' => '/' . $module_path . '/js/example_advanced_datalayer.js',
         ],
         '#weight' => -95,

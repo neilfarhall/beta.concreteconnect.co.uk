@@ -11,6 +11,9 @@ paragraph_blocks.settings:
     suppress_label:
       type: boolean
       label: 'Whether to show the label field on layout manager block placement'
+    library_items_only:
+      type: boolean
+      label: 'Only show paragraph items from the paragraphs library'
 
 field.field.*.*.*.third_party.paragraph_blocks:
   type: mapping

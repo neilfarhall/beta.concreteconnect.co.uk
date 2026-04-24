@@ -6,10 +6,13 @@
  */
 
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
 use Drupal\exif\ExifContent;
 use Drupal\exif\ExifHelp;
+use Drupal\file\Entity\File;
+use Drupal\media\Entity\MediaType;
 use Drupal\media\MediaInterface;
 use Drupal\node\NodeInterface;
 
@@ -113,4 +116,91 @@ function exif_entity_create(EntityInterface $entity) {
       $exifContentHandler->checkTitle($entityType, $entity);
     }
   }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function exif_entity_extra_field_info() {
+  // For media types, add the EXIF data pseudo/extra field. This is added via
+  // hook_form_alter().
+  // For now this only works for media types.
+  if (class_exists(MediaType::class)) {
+    $label = t('EXIF data display');
+    $description = t('Show the EXIF details of a given image in a simple table.');
+    $extra_fields = [];
+    foreach (MediaType::loadMultiple() as $bundle) {
+      $extra_fields['media'][$bundle->id()]['form']['exif_inline_data_display'] = [
+        'label' => $label,
+        'description' => $description,
+        'visible' => FALSE,
+      ];
+    }
+    return $extra_fields;
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function exif_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  // Add the extra field to the form. This will be positioned on the form
+  // display settings.
+  $form_object = $form_state->getFormObject();
+  if (method_exists($form_object, 'getEntity')) {
+    $entity = $form_object->getEntity();
+
+    // When the media form is first loaded, or the image is first uploaded to
+    // the field, the entity won't be saved thus won't have an ID value. It
+    // also doesn't seem to be possible/easy to obtain the file that was just
+    // uploaded.
+    // @todo Is it possible to get the file that was just uploaded?
+    if ($entity instanceof MediaInterface && $entity->id()) {
+      $exif_content = new ExifContent();
+      $metadata = $exif_content->getMediaMetadata($entity);
+
+      if (!empty($metadata)) {
+        // Don't need to show this data.
+        unset($metadata['thumbnail']);
+
+        $form['exif_inline_data_display'] = [
+          '#type' => 'details',
+          '#title' => t('Available meta data from the file'),
+          '#open' => FALSE,
+        ];
+
+        foreach ($metadata as $group => $data) {
+          $form['exif_inline_data_display'][$group] = [
+            '#type' => 'table',
+            '#caption' => t('Meta data group: @group', ['@group' => $group]),
+            '#header' => [
+              t('Name'),
+              t('Value'),
+            ],
+            '#rows' => [],
+            '#multiple' => FALSE,
+            '#js_select' => FALSE,
+            '#input' => FALSE,
+            '#element_validate' => ['exif_table_validate'],
+            '#empty' => t('No data was found.'),
+          ];
+          foreach ($data as $item_name => $item_data) {
+            $form['exif_inline_data_display'][$group]['#rows'][] = [
+              'data' => [
+                $item_name,
+                is_array($item_data) ? implode(', ', $item_data) : $item_data,
+              ],
+            ];
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * FormAPI validation callback.
+ */
+function exif_table_validate() {
+  return TRUE;
 }

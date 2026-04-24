@@ -11,7 +11,7 @@ CONTENTS OF THIS FILE
 INTRODUCTION
 ------------
 
-Comment Notify is a lightweight tool to send notification e-mails to visitors about new,
+Comment Notify is a lightweight tool to send notification emails to visitors about new,
 published comments on pages where they have commented.
 Comment Notify works for both registered and anonymous users.
 Providing comment notifications for anonymous users is an important tool
@@ -71,7 +71,7 @@ CONFIGURATION
 
   -Determine which content types to activate it for
   -Determine which subscription modes are allowed
-  -Configure the templates for the e-mails
+  -Configure the templates for the emails
 
 6. Set your node-notify settings per user (optional)
 

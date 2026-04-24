@@ -1,10 +1,5 @@
 <?php
 
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\StringTranslation\TranslatableMarkup;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\file\FileInterface;
-
 /**
  * Implements hook_media_bulk_upload_file_ids_alter().
  *
@@ -39,22 +34,5 @@ function media_bulk_upload_dropzonejs_media_bulk_upload_file_ids_alter(array &$f
 
   if (!empty($fileIds)) {
     $file_ids = $fileIds;
-  }
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function media_bulk_upload_dropzonejs_form_media_bulk_upload_form_alter(
-  &$form,
-  FormStateInterface $form_state
-) {
-
-  $form['file_upload']['#type'] = 'dropzonejs';
-  $form['file_upload']['#disable_form_buttons'] = '.button.form-submit';
-  $form['file_upload']['#dropzone_description'] = new TranslatableMarkup('Click or drop your files here');
-
-  if (isset($form['file_upload']['#upload_validators']['file_validate_extensions'][0])) {
-    $form['file_upload']['#extensions'] = $form['file_upload']['#upload_validators']['file_validate_extensions'][0];
   }
 }

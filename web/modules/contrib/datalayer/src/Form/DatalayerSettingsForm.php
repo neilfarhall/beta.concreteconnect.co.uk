@@ -2,11 +2,13 @@
 
 namespace Drupal\datalayer\Form;
 
+use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\user\RoleInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -31,8 +33,8 @@ class DatalayerSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function __construct(ConfigFactoryInterface $config_factory, ModuleHandlerInterface $module_handler, EntityTypeManagerInterface $entity_type_manager) {
-    parent::__construct($config_factory);
+  public function __construct(ConfigFactoryInterface $config_factory, TypedConfigManagerInterface $typedConfigManager, ModuleHandlerInterface $module_handler, EntityTypeManagerInterface $entity_type_manager) {
+    parent::__construct($config_factory, $typedConfigManager);
     $this->moduleHandler = $module_handler;
     $this->entityTypeManager = $entity_type_manager;
   }
@@ -43,6 +45,7 @@ class DatalayerSettingsForm extends ConfigFormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('config.factory'),
+      $container->get('config.typed'),
       $container->get('module_handler'),
       $container->get('entity_type.manager')
     );
@@ -307,7 +310,9 @@ class DatalayerSettingsForm extends ConfigFormBase {
       '#description' => $this->t('Pages that should expose active user details to the dataLayer. Leaving empty will expose nothing.'),
     ];
 
-    $user_roles = user_roles(TRUE);
+    /** @var \Drupal\user\Entity\Role[] $user_roles */
+    $user_roles = $this->entityTypeManager->getStorage('user_role')->loadMultiple();
+    unset($user_roles[RoleInterface::ANONYMOUS_ID]);
     $role_options = [];
     foreach ($user_roles as $id => $role) {
       $role_options[$id] = $role->label();

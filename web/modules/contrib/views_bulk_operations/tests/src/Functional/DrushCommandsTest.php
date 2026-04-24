@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\Tests\views_bulk_operations\Functional;
 
 use Drupal\Tests\BrowserTestBase;
 use Drush\TestTraits\DrushTestTrait;
 
 /**
- * @coversDefaultClass \Drupal\views_bulk_operations\Commands\ViewsBulkOperationsCommands
+ * @coversDefaultClass \Drupal\views_bulk_operations\Drush\Commands\ViewsBulkOperationsCommands
  * @group views_bulk_operations
  */
-class DrushCommandsTest extends BrowserTestBase {
+final class DrushCommandsTest extends BrowserTestBase {
   use DrushTestTrait;
 
   private const TEST_NODE_COUNT = 15;
@@ -20,9 +22,14 @@ class DrushCommandsTest extends BrowserTestBase {
   protected $defaultTheme = 'stable9';
 
   /**
-   * Modules to install.
+   * Array of node objects used for testing.
    *
-   * @var array
+   * @var \Drupal\node\NodeInterface[]
+   */
+  protected array $testNodes = [];
+
+  /**
+   * {@inheritdoc}
    */
   protected static $modules = [
     'node',
@@ -69,18 +76,18 @@ class DrushCommandsTest extends BrowserTestBase {
     // Basic test.
     $this->drush('vbo-exec', $arguments);
     for ($i = 0; $i < self::TEST_NODE_COUNT; $i++) {
-      $this->assertStringContainsString("Test action (label: Title $i)", $this->getErrorOutput());
+      self::assertStringContainsString("Test action (label: Title $i)", $this->getErrorOutput());
     }
 
     // Exposed filters test.
     $this->drush('vbo-exec', $arguments, ['exposed' => 'sticky=1']);
     for ($i = 0; $i < self::TEST_NODE_COUNT; $i++) {
       $test_string = "Test action (label: Title $i)";
-      if ($i % 2) {
-        $this->assertStringContainsString($test_string, $this->getErrorOutput());
+      if ($i % 2 !== 0) {
+        self::assertStringContainsString($test_string, $this->getErrorOutput());
       }
       else {
-        $this->assertStringNotContainsString($test_string, $this->getErrorOutput());
+        self::assertStringNotContainsString($test_string, $this->getErrorOutput());
       }
     }
   }

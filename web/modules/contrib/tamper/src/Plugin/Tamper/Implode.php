@@ -4,8 +4,8 @@ namespace Drupal\tamper\Plugin\Tamper;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\tamper\Exception\TamperException;
-use Drupal\tamper\TamperableItemInterface;
 use Drupal\tamper\TamperBase;
+use Drupal\tamper\TamperableItemInterface;
 
 /**
  * Plugin implementation of the implode plugin.
@@ -14,8 +14,9 @@ use Drupal\tamper\TamperBase;
  *   id = "implode",
  *   label = @Translation("Implode"),
  *   description = @Translation("Converts an array to a string."),
- *   category = "List",
- *   handle_multiples = TRUE
+ *   category = @Translation("List"),
+ *   handle_multiples = TRUE,
+ *   itemUsage = "ignored"
  * )
  */
 class Implode extends TamperBase {
@@ -58,7 +59,12 @@ class Implode extends TamperBase {
   /**
    * {@inheritdoc}
    */
-  public function tamper($data, TamperableItemInterface $item = NULL) {
+  public function tamper($data, ?TamperableItemInterface $item = NULL) {
+    // Don't process null values.
+    if (is_null($data)) {
+      return $data;
+    }
+
     if (!is_array($data) && !is_string($data)) {
       throw new TamperException('Input should be an array or a string.');
     }

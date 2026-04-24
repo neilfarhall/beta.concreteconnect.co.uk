@@ -4,8 +4,8 @@ namespace Drupal\tamper\Plugin\Tamper;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\tamper\Exception\TamperException;
-use Drupal\tamper\TamperableItemInterface;
 use Drupal\tamper\TamperBase;
+use Drupal\tamper\TamperableItemInterface;
 
 /**
  * Plugin implementation of the Find replace REGEX plugin.
@@ -14,7 +14,8 @@ use Drupal\tamper\TamperBase;
  *   id = "find_replace_regex",
  *   label = @Translation("Find replace REGEX"),
  *   description = @Translation("Find replace REGEX"),
- *   category = "Text"
+ *   category = @Translation("Text"),
+ *   itemUsage = "ignored"
  * )
  */
 class FindReplaceRegex extends TamperBase {
@@ -68,7 +69,7 @@ class FindReplaceRegex extends TamperBase {
    */
   public function validateConfigurationForm(array &$form, FormStateInterface $form_state) {
     // Test the regex.
-    $test = @preg_replace($form_state->getValue(self::SETTING_FIND), '', 'asdfsadf');
+    $test = @preg_replace($form_state->getValue(self::SETTING_FIND), '', 'hello');
     if ($test === NULL) {
       $form_state->setErrorByName(self::SETTING_FIND, $this->t('Invalid regular expression.'));
     }
@@ -89,7 +90,12 @@ class FindReplaceRegex extends TamperBase {
   /**
    * {@inheritdoc}
    */
-  public function tamper($data, TamperableItemInterface $item = NULL) {
+  public function tamper($data, ?TamperableItemInterface $item = NULL) {
+    // Don't process empty or null values.
+    if (is_null($data) || $data === '') {
+      return $data;
+    }
+
     if (!is_string($data) && !is_numeric($data)) {
       throw new TamperException('Input should be a string or numeric.');
     }

@@ -239,6 +239,7 @@
       'id': 'sliding-popup',
       'role': 'alertdialog',
       'aria-describedby': 'popup-text',
+      'aria-label': Drupal.t('Cookie compliance banner'),
     });
     $html.addClass('eu-cookie-withdraw-wrapper');
 
@@ -462,6 +463,7 @@
       'id': 'sliding-popup',
       'role': 'alertdialog',
       'aria-describedby': 'popup-text',
+      'aria-label': Drupal.t('Cookie compliance banner'),
     });
     if (!drupalSettings.eu_cookie_compliance.popup_use_bare_css && !drupalSettings.eu_cookie_compliance.popup_use_olivero_css) {
       popup.height(drupalSettings.eu_cookie_compliance.popup_height)
@@ -679,6 +681,12 @@
       nextStatus = cookieValueAgreed;
     }
 
+    /* Necessary to keep the euCookieComplianceLoadScripts() load order consistent on page load. */
+    if (!euCookieComplianceHasLoadedScripts && typeof euCookieComplianceLoadScripts === "function") {
+      euCookieComplianceLoadScripts();
+    }
+    euCookieComplianceHasLoadedScripts = true;
+
     Drupal.eu_cookie_compliance.setAcceptedCategories(categories);
     // Load scripts for all categories. If no categories selected, none
     // will be loaded.
@@ -714,7 +722,6 @@
       }
       if (drupalSettings.eu_cookie_compliance.settings_tab_enabled) {
         popup.animate({top: Drupal.eu_cookie_compliance.getBannerTopHiddenPosition(height)}, drupalSettings.eu_cookie_compliance.popup_delay, null).trigger('eu_cookie_compliance_popup_close');
-        $('.eu-cookie-withdraw-tab').click(Drupal.eu_cookie_compliance.toggleWithdrawBanner);
       }
       else {
         popup.animate({top: Drupal.eu_cookie_compliance.getBannerTopHiddenPosition(height)}, drupalSettings.eu_cookie_compliance.popup_delay, null, function () {
@@ -728,7 +735,6 @@
     else {
       if (drupalSettings.eu_cookie_compliance.settings_tab_enabled) {
         popup.animate({ bottom: popup.outerHeight() * -1 }, drupalSettings.eu_cookie_compliance.popup_delay, null).trigger('eu_cookie_compliance_popup_close');
-        $('.eu-cookie-withdraw-tab').click(Drupal.eu_cookie_compliance.toggleWithdrawBanner);
       }
       else {
         popup.animate({ bottom: popup.outerHeight() * -1 }, drupalSettings.eu_cookie_compliance.popup_delay, null, function () {

@@ -186,7 +186,7 @@ class WrapAndConvertEmailAdjuster extends EmailAdjusterBase implements Container
       ];
     }
 
-    return $this->renderer->renderPlain($render);
+    return $this->renderer->renderInIsolation($render);
   }
 
 }

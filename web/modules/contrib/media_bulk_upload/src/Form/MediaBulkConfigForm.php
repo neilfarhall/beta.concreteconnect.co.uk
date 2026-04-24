@@ -5,8 +5,10 @@ namespace Drupal\media_bulk_upload\Form;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityDisplayRepositoryInterface;
 use Drupal\Core\Entity\EntityForm;
+use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\StreamWrapper\PrivateStream;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -103,7 +105,8 @@ class MediaBulkConfigForm extends EntityForm implements ContainerInjectionInterf
       '#title' => $this->t('Upload location'),
       '#description' => $this->t('Location to initially upload the files before they are moved to the determined
       location in the media types.'),
-      '#default_value' => $mediaBulkConfig->get('upload_location'),
+      '#default_value' => $mediaBulkConfig->get('upload_location') ?: 'temporary://media-bulk-upload',
+      '#required' => TRUE,
     ];
 
     return $form;
@@ -122,6 +125,52 @@ class MediaBulkConfigForm extends EntityForm implements ContainerInjectionInterf
     natsort($mediaTypeOptions);
 
     return $mediaTypeOptions;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    $upload_location = $form_state->getValue('upload_location');
+    $upload_location_ok = FALSE;
+    $upload_location_error = NULL;
+
+    // Check for file system and schema issues before using
+    // FileSystemInterface::prepareDirectory() to create/check the directory.
+    try {
+      /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+      $file_system = \Drupal::service('file_system');
+      /** @var \Drupal\Core\StreamWrapper\StreamWrapperManager $stream_wrapper_manager */
+      $stream_wrapper_manager = \Drupal::service('stream_wrapper_manager');
+
+      if (empty($upload_location)) {
+        $upload_location_error = t('No upload location provided.');
+      }
+      elseif (str_starts_with($upload_location, 'private://') && !PrivateStream::basePath()) {
+        $upload_location_error = t('You need to configure and set up your private files directory before you can use it for Media Bulk Uploads.');
+      }
+      elseif (str_starts_with($upload_location, 'temporary://')) {
+        if (!$file_system->getTempDirectory()) {
+          $upload_location_error = t('You need to configure and set up your temporary files directory before you can use it for Media Bulk Uploads.');
+        }
+      }
+      elseif ($stream_wrapper_manager::getScheme($upload_location) && !$stream_wrapper_manager->isValidScheme($stream_wrapper_manager::getScheme($upload_location))) {
+        $upload_location_error = t('Invalid scheme provided. Standard schemes include public:// , private:// and temporary://');
+      }
+
+      // Create the directory and give it the permissions needed.
+      if (empty($upload_location_error)) {
+        $upload_location_ok = $file_system->prepareDirectory($upload_location, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+      }
+    }
+    catch (\Exception $e) {
+      $form_state->setError($form['upload_location'], 'Media upload location does not exist, or could not be created. [ Error: ' . $e->getMessage() . ']');
+    }
+
+    // Check the result.
+    if (!$upload_location_ok) {
+      $form_state->setError($form['upload_location'], $upload_location_error ?? 'Media upload location does not exist, or could not be created.');
+    }
   }
 
   /**

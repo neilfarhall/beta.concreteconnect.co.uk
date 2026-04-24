@@ -2,26 +2,14 @@
 
 namespace Drupal\paragraph_blocks;
 
-use Drupal\content_moderation\ModerationInformationInterface;
-use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Extension\ModuleHandlerInterface;
-use Drupal\path_alias\AliasManagerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * The paragraph blocks entity manager.
  */
-class ParagraphBlocksEntityManager implements ContainerInjectionInterface {
-
-  /**
-   * The path alias manager.
-   *
-   * @var \Drupal\path_alias\AliasManagerInterface
-   */
-  protected AliasManagerInterface $aliasManager;
+class ParagraphBlocksEntityManager {
 
   /**
    * The entity type manager.
@@ -38,40 +26,14 @@ class ParagraphBlocksEntityManager implements ContainerInjectionInterface {
   protected RequestStack $requestStack;
 
   /**
-   * The module handler.
-   *
-   * @var \Drupal\Core\Extension\ModuleHandlerInterface
-   */
-  protected ModuleHandlerInterface $moduleHandler;
-
-  /**
-   * The content moderation information service.
-   *
-   * @var \Drupal\content_moderation\ModerationInformationInterface|null
-   */
-  protected ?ModerationInformationInterface $moderationInformation = NULL;
-
-  /**
    * Constructs a new ParagraphBlocksEntityManager object.
    */
-  public function __construct(EntityTypeManagerInterface $entityTypeManager, RequestStack $request_stack, ModuleHandlerInterface $module_handler) {
+  public function __construct(
+    EntityTypeManagerInterface $entityTypeManager,
+    RequestStack $request_stack,
+  ) {
     $this->entityTypeManager = $entityTypeManager;
     $this->requestStack = $request_stack;
-    $this->moduleHandler = $module_handler;
-    if ($this->moduleHandler->moduleExists('content_moderation')) {
-      $this->moderationInformation = \Drupal::service('content_moderation.moderation_information');
-    }
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container): ParagraphBlocksEntityManager {
-    return new static(
-      $container->get('entity_type.manager'),
-      $container->get('request_stack'),
-      $container->get('module_handler')
-    );
   }
 
   /**
@@ -90,46 +52,47 @@ class ParagraphBlocksEntityManager implements ContainerInjectionInterface {
 
     // If section storage is for a single entity override there will be an
     // entity to return.
-    if ('overrides' === $section_storage->getPluginId()) {
+    if (!empty($section_storage) && 'overrides' === $section_storage->getPluginId()) {
       $entity = $section_storage->getContext('entity')
         ->getContextData()
         ->getEntity();
-      if (!is_null($this->moderationInformation) && $this->moderationInformation->isModeratedEntity($entity)) {
-        return $this->getLatestEntityRevision($entity);
-      }
-      return $entity;
+
+      // Load entity fresh from database using ID, bypassing any tempstore
+      // cached version to ensure newly added paragraphs are available.
+      return $this->loadFreshEntity($entity);
     }
     return NULL;
   }
 
   /**
-   * Load the latest entity revision when using content moderation.
+   * Load a fresh copy of the entity from the database.
    *
    * @param \Drupal\Core\Entity\ContentEntityInterface $entity
-   *   The content entity interface.
+   *   The entity to reload.
    *
    * @return \Drupal\Core\Entity\ContentEntityInterface
-   *   The latest revision of the content entity.
+   *   The freshly loaded entity.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function getLatestEntityRevision(ContentEntityInterface &$entity): ContentEntityInterface {
-    $default_published = $this->moderationInformation->isDefaultRevisionPublished($entity);
-    $pending = $this->moderationInformation->hasPendingRevision($entity);
-    if (!$default_published || $pending || !$entity->isLatestRevision()) {
-      /** @var \Drupal\Core\Entity\ContentEntityStorageInterface $storage */
-      $entity_type_id = $entity->getEntityTypeId();
-      /** @var \Drupal\Core\Entity\ContentEntityStorageInterface $storage */
-      $storage = $this->entityTypeManager->getStorage($entity_type_id);
-      $latest_revision_id = $storage->getLatestTranslationAffectedRevisionId($entity->id(), $entity->language()
-        ->getId());
+  public function loadFreshEntity(ContentEntityInterface $entity): ContentEntityInterface {
+    $entity_type_id = $entity->getEntityTypeId();
+    /** @var \Drupal\Core\Entity\RevisionableStorageInterface $storage */
+    $storage = $this->entityTypeManager->getStorage($entity_type_id);
 
-      $entity = $this->entityTypeManager->getStorage($entity_type_id)
-        ->loadRevision($latest_revision_id);
+    // Load the latest revision directly from the database.
+    if ($entity->getEntityType()->isRevisionable()) {
+      $latest_revision_id = $storage->getLatestTranslationAffectedRevisionId(
+        $entity->id(),
+        $entity->language()->getId()
+      );
+      if ($latest_revision_id) {
+        return $storage->loadRevision($latest_revision_id);
+      }
     }
 
-    return $entity;
+    return $storage->load($entity->id());
   }
 
 }

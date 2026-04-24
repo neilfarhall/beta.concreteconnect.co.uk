@@ -4,8 +4,8 @@ namespace Drupal\tamper\Plugin\Tamper;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\tamper\Exception\TamperException;
-use Drupal\tamper\TamperableItemInterface;
 use Drupal\tamper\TamperBase;
+use Drupal\tamper\TamperableItemInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -15,7 +15,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id = "country_to_code",
  *   label = @Translation("Country to ISO code"),
  *   description = @Translation("Converts this field from a country name string to the two character ISO 3166-1 alpha-2 code."),
- *   category = "Text"
+ *   category = @Translation("Text"),
+ *   itemUsage = "ignored"
  * )
  */
 class CountryToCode extends TamperBase implements ContainerFactoryPluginInterface {
@@ -30,7 +31,12 @@ class CountryToCode extends TamperBase implements ContainerFactoryPluginInterfac
   /**
    * {@inheritdoc}
    */
-  public function tamper($data, TamperableItemInterface $item = NULL) {
+  public function tamper($data, ?TamperableItemInterface $item = NULL) {
+    // Don't process empty or null values.
+    if (is_null($data) || $data === '') {
+      return $data;
+    }
+
     if (!is_string($data)) {
       throw new TamperException('Input should be a string.');
     }

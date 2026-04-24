@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.directory_listing.feeds_item
     - field.field.node.directory_listing.field_address
     - field.field.node.directory_listing.field_allow_widget
-    - field.field.node.directory_listing.field_brand_video
     - field.field.node.directory_listing.field_company_slogan
     - field.field.node.directory_listing.field_directory_address_postcode
     - field.field.node.directory_listing.field_directory_brands
@@ -98,7 +97,6 @@ hidden:
   body: true
   feeds_item: true
   field_allow_widget: true
-  field_brand_video: true
   field_company_slogan: true
   field_directory_address_postcode: true
   field_directory_brands: true

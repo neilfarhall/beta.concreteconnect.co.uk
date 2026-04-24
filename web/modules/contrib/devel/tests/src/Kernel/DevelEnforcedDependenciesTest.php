@@ -2,8 +2,8 @@
 
 namespace Drupal\Tests\devel\Kernel;
 
-use Drupal\block\Entity\Block;
 use Drupal\KernelTests\KernelTestBase;
+use Drupal\block\Entity\Block;
 use Drupal\system\Entity\Menu;
 
 /**
@@ -16,9 +16,9 @@ class DevelEnforcedDependenciesTest extends KernelTestBase {
   /**
    * Modules to enable.
    *
-   * @var array
+   * @var string[]
    */
-  public static $modules = ['devel', 'block', 'user', 'system'];
+  protected static $modules = ['devel', 'block', 'user', 'system'];
 
   /**
    * {@inheritdoc}
@@ -35,7 +35,7 @@ class DevelEnforcedDependenciesTest extends KernelTestBase {
   /**
    * Tests devel menu enforced dependencies.
    */
-  public function testMenuEnforcedDependencies() {
+  public function testMenuEnforcedDependencies(): void {
     /** @var \Drupal\Core\Config\ConfigManagerInterface $config_manager */
     $config_manager = $this->container->get('config.manager');
 

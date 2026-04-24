@@ -3,8 +3,8 @@
 namespace Drupal\tamper\Plugin\Tamper;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\tamper\TamperableItemInterface;
 use Drupal\tamper\TamperBase;
+use Drupal\tamper\TamperableItemInterface;
 
 /**
  * Plugin implementation for converting text value to boolean value.
@@ -13,7 +13,8 @@ use Drupal\tamper\TamperBase;
  *   id = "convert_boolean",
  *   label = @Translation("Convert to Boolean"),
  *   description = @Translation("Convert to boolean."),
- *   category = "Text"
+ *   category = @Translation("Text"),
+ *   itemUsage = "ignored"
  * )
  */
 class ConvertBoolean extends TamperBase {
@@ -60,7 +61,7 @@ class ConvertBoolean extends TamperBase {
       '#type' => 'checkbox',
       '#title' => $this->t('Match case'),
       '#default_value' => $this->getSetting(self::SETTING_MATCH_CASE),
-      '#description' => $this->t('Match the case.'),
+      '#description' => $this->t('If enabled, the comparison becomes case-sensitive.'),
     ];
 
     // If no match setting.
@@ -154,7 +155,7 @@ class ConvertBoolean extends TamperBase {
   /**
    * {@inheritdoc}
    */
-  public function tamper($data, TamperableItemInterface $item = NULL) {
+  public function tamper($data, ?TamperableItemInterface $item = NULL) {
     // Copy field value in case 'pass' is set.
     $match_field = $data;
     $truth_value = $this->getSetting(self::SETTING_TRUTH_VALUE);
@@ -163,7 +164,7 @@ class ConvertBoolean extends TamperBase {
     // Convert match field, truth and false values to lowercase, if no match
     // case required.
     if (!$this->getSetting(self::SETTING_MATCH_CASE)) {
-      $match_field = mb_strtolower($match_field);
+      $match_field = mb_strtolower((string) $match_field);
       $truth_value = mb_strtolower($truth_value);
       $false_value = mb_strtolower($false_value);
     }
@@ -174,7 +175,7 @@ class ConvertBoolean extends TamperBase {
     if ($match_field == $false_value) {
       return FALSE;
     }
-    if ($this->getSetting(self::SETTING_NO_MATCH) == 'pass') {
+    if ($this->getSetting(self::SETTING_NO_MATCH) === 'pass') {
       return $data;
     }
     return $this->getSetting(self::SETTING_NO_MATCH);

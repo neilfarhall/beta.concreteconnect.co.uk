@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\Tests\fast404\Functional;
 
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\BrowserTestBase;
+use Drupal\taxonomy\Entity\Vocabulary;
 
 /**
  * Tests the path checking functionality.
@@ -75,7 +77,7 @@ class Fast404PathTest extends BrowserTestBase {
     $this->assertSession()->responseContains('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "/does_not_exist" was not found on this server.</p></body></html>');
 
     // Ensure requests to the front page are not blocked.
-    $this->drupalGet('');
+    $this->drupalGet('<front>');
     $this->assertSession()->statusCodeEquals(200);
 
     // Ensure items in the router are not blocked.

@@ -71,8 +71,6 @@ class FieldPreprocessorTest extends UnitTestCase {
       });
 
     $entity_type_manager = $this->createMock(EntityTypeManagerInterface::class);
-
-
     $entity_type_manager->method('getStorage')
       ->willReturn($this->storage);
 

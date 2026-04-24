@@ -2,9 +2,9 @@
 
 namespace Drupal\advanced_datalayer\Entity;
 
+use Drupal\advanced_datalayer\AdvancedDatalayerDefaultsInterface;
 use Drupal\Core\Config\Entity\ConfigEntityBase;
 use Drupal\Core\Config\Entity\ConfigEntityInterface;
-use Drupal\advanced_datalayer\AdvancedDatalayerDefaultsInterface;
 
 /**
  * Defines the datalayer defaults entity.

@@ -31,20 +31,27 @@ class ParagraphBlocksSettingsForm extends ConfigFormBase {
     $config = $this->config('paragraph_blocks.settings');
     $form['max_cardinality'] = [
       '#type' => 'number',
-      '#title' => $this->t('Max cardinality of paragraphs you want to see in Layout Builder.'),
+      '#title' => $this->t('Max cardinality for unlimited paragraph fields.'),
       '#default_value' => $config->get('max_cardinality'),
-      '#description' => $this->t('Layout Builder allows you to place each item in a multi-value paragraphs field as its own block. This sets the max number you think you need to see. You can change it later.'),
+      '#description' => $this->t('Limits the number of paragraph items available for placement in Layout Builder for fields with unlimited cardinality. Fields with a defined cardinality use their configured limit. Leave empty or set to 0 for no limit (defaults to 10).'),
     ];
     $form['individual_block_ui'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Display individual paragraph blocks in the UI.'),
+      '#title' => $this->t('Display individual paragraph blocks in Layout Builder Restrictions.'),
       '#default_value' => $config->get('individual_block_ui'),
-      '#description' => $this->t('When configuring layout builder restrictions on an entity type or placing blocks in the global block UI we filter out individual paragraph blocks to prevent UI clutter. Enabling this option exposes all blocks in the interface. The number of available paragraph blocks can be immense so only enable this if you really need to.'),
+      '#description' => $this->t('When configuring Layout Builder Restrictions on an entity display, show individual checkboxes for each paragraph item instead of one checkbox per field. Only enable if you need granular control over which paragraph items are allowed.'),
     ];
     $form['suppress_label'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Suppress label field on layout manager block placement.'),
       '#default_value' => $config->get('suppress_label'),
+      '#description' => $this->t("Hides the block label field when placing paragraph blocks in Layout Builder. The paragraph's admin title is already used as the block label, making the additional label field redundant."),
+    ];
+    $form['library_items_only'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Only show paragraph items from the paragraphs library.'),
+      '#default_value' => $config->get('library_items_only'),
+      '#description' => $this->t('When enabled, only paragraphs that reference items from the paragraphs library will be available for placement in the block layout UI. This significantly reduces UI clutter on sites with many paragraph entities.'),
     ];
 
     return parent::buildForm($form, $form_state);
@@ -60,6 +67,7 @@ class ParagraphBlocksSettingsForm extends ConfigFormBase {
     $config->set('max_cardinality', $form_state->getValue('max_cardinality'));
     $config->set('individual_block_ui', $form_state->getValue('individual_block_ui'));
     $config->set('suppress_label', $form_state->getValue('suppress_label'));
+    $config->set('library_items_only', $form_state->getValue('library_items_only'));
     $config->save();
   }
 

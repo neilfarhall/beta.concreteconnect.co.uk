@@ -24,7 +24,7 @@ INSTALLATION
 
   -Determine which content types to activate it for
   -Determine which subscription modes are allowed
-  -Configure the templates for the e-mails
+  -Configure the templates for the emails
   
 6. Set your node-notify settings per user (optional)
 

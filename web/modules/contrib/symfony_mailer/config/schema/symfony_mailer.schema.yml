@@ -119,8 +119,8 @@ symfony_mailer.address_adjuster_base:
         type: mapping
         mapping:
           value:
-            type: email
-            label: 'E-mail address'
+            type: string
+            label: 'E-mail address or special code'
           display:
             type: label
             label: 'Display name'

@@ -22,7 +22,8 @@ class ParagraphBlocksEntity extends Paragraph {
     $summary_items = $this->getSummaryItems($options);
     if (!empty($summary_items['content'])) {
       foreach ($summary_items['content'] as $item) {
-        $summary .= trim(strip_tags(str_replace(["\r", "\n"], " ", $item))) . ' ';
+        $summary .= trim(strip_tags(str_replace(["\r", "\n"], " ", $item)))
+          . ' ';
       }
     }
 
@@ -30,14 +31,17 @@ class ParagraphBlocksEntity extends Paragraph {
   }
 
   /**
-   * {@inheritdoc}
+   * Get root parent entity for nested paragraphs.
+   *
+   * @return \Drupal\Core\Entity\ContentEntityInterface|\Drupal\Core\Entity\EntityInterface|\Drupal\Core\TypedData\TranslatableInterface|null
+   *   Returns the parent entity or NULL.
    */
-  public function getSummaryItems(array $options = []): array {
-    $summary_items = parent::getSummaryItems($options);
-    if ($this->hasAdminTitle()) {
-      array_unshift($summary_items['content'], $this->getAdminTitle());
+  public function getRootEntity() {
+    $parent = $this->getParentEntity();
+    if ($parent instanceof Paragraph) {
+      return $parent->getRootEntity();
     }
-    return $summary_items;
+    return $parent;
   }
 
   /**
@@ -51,6 +55,16 @@ class ParagraphBlocksEntity extends Paragraph {
       return '';
     }
     $text = $this->get('admin_title')->value ?? '';
+
+    $root_parent = $this->getRootEntity();
+
+    $token_data['paragraph'] = $this;
+    if ($root_parent && !$root_parent instanceof Paragraph) {
+      $token_data[$root_parent->getEntityType()->id()] = $root_parent;
+    }
+    $text = \Drupal::token()
+      ->replacePlain($text, $token_data, ['clear' => TRUE]);
+
     return Unicode::truncate(trim(strip_tags($text)), 100);
   }
 

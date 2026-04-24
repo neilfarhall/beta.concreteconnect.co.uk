@@ -4,7 +4,7 @@ The Paragraph Blocks module allows you to place each value of a multi-value
 paragraph field into a different block. And further it allows you to place
 paragraph fields from related entities in a similar manner. It does so by
 extending both paragraphs with an admin title that is only used in the UI for
-layout and extending panels by providing the blocks for placement.
+layout and extending layout builder by providing the blocks for placement.
 
 For a full description of the module, visit the
 [project page](https://www.drupal.org/project/paragraph_blocks).
@@ -41,8 +41,14 @@ information, see
 1. Navigate to Administration > Extend and enable the project and its
    dependencies.
 2. Navigate to Administration > Configuration > Content authoring >
-   Paragraph Blocks Settings and set the maximum number of paragraphs you
-   wish to see. Save Configuration.
+   Paragraph Blocks Settings to configure:
+   - **Max cardinality**: Limits paragraph items available in Layout Builder for
+     fields with unlimited cardinality. Fields with a defined cardinality use
+     their configured limit. Set to 0 or leave empty for no limit (defaults to
+     10).
+   - **Library items only**: When enabled, only paragraphs from the paragraphs
+     library are available for placement. Useful for sites with many paragraphs
+     to reduce UI clutter.
 
 
 ### Using with Core Layout Builder per entity type
@@ -67,5 +73,4 @@ information, see
 ## Maintainers
 
 - Doug Green - [douggreen](https://www.drupal.org/u/douggreen)
-- Vaibhav Jain - [vaibhavjain](https://www.drupal.org/u/vaibhavjain)
 - Bas Vredeling - [basvredeling](https://www.drupal.org/u/basvredeling)

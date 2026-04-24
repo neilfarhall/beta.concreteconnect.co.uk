@@ -1,32 +1,14 @@
 (function ($, Drupal) {
-
-  'use strict';
+  "use strict";
 
   Drupal.behaviors.commentNotify = {
     attach: function (context) {
-
-      $('.comment-notify', context)
-        .bind('change', function() {
-          var checkbox = $(this);
-          var form = checkbox.closest('.comment-notify-form');
-
-          if (form.length > 0) {
-            var radios = $('.comment-notify-type', form);
-
-            if (radios.length > 0) {
-              var radiosHolder = radios.parent().parent();
-
-              if (checkbox.is(':checked')) {
-                radiosHolder.show();
-              }
-              else {
-                radiosHolder.hide();
-              }
-            }
-          }
-
+      $("#edit-notify, [id^='edit-notify--']", context)
+        .bind("change", function () {
+          $("#edit-notify-type, [id^='edit-notify-type--']", context)
+            [this.checked ? "show" : "hide"]()
         })
-        .trigger('change');
-    }
+        .trigger("change");
+    },
   };
 })(jQuery, Drupal);

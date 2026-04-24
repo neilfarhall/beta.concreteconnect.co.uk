@@ -59,7 +59,7 @@ class CommentNotifyUserPreferencesTest extends CommentNotifyTestBase {
 
     // The user only has the 'subscribe to comments' permission, he should be
     // able to see the Comment Notify settings box but the 'Receive content
-    // follow-up notification e-mails' checkbox shouldn't appear.
+    // follow-up notification emails' checkbox shouldn't appear.
     $this->authenticatedUser = $this->drupalCreateUser([
       'post comments',
       'skip comment approval',
@@ -68,8 +68,8 @@ class CommentNotifyUserPreferencesTest extends CommentNotifyTestBase {
     $this->drupalLogin($this->authenticatedUser);
     $this->drupalGet($this->authenticatedUser->toUrl('edit-form')->toString());
     $this->assertTrue($this->getSession()->getPage()->hasContent(t('Comment follow-up notification settings')));
-    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive comment follow-up notification e-mails')));
-    $this->assertFalse($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification e-mails')));
+    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive comment follow-up notification emails')));
+    $this->assertFalse($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification emails')));
     $this->drupalLogout();
 
     // The user only has the 'administer nodes' permission, he should be
@@ -83,14 +83,14 @@ class CommentNotifyUserPreferencesTest extends CommentNotifyTestBase {
     $this->drupalLogin($this->authenticatedUser);
     $this->drupalGet($this->authenticatedUser->toUrl('edit-form')->toString());
     $this->assertTrue($this->getSession()->getPage()->hasContent(t('Comment follow-up notification settings')));
-    $this->assertFalse($this->getSession()->getPage()->hasContent(t('Receive comment follow-up notification e-mails')));
-    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification e-mails')));
+    $this->assertFalse($this->getSession()->getPage()->hasContent(t('Receive comment follow-up notification emails')));
+    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification emails')));
     $this->drupalLogout();
 
     // The user only hasn't the 'administer nodes' permission nor the 'subscribe
     // to comments' permission but he can create nodes of the type article, so
     // he should be able to see the Comment Notify settings box with the
-    // 'Receive content follow-up notification e-mails' checkbox.
+    // 'Receive content follow-up notification emails' checkbox.
     $this->authenticatedUser = $this->drupalCreateUser([
       'post comments',
       'skip comment approval',
@@ -99,8 +99,8 @@ class CommentNotifyUserPreferencesTest extends CommentNotifyTestBase {
     $this->drupalLogin($this->authenticatedUser);
     $this->drupalGet($this->authenticatedUser->toUrl('edit-form')->toString());
     $this->assertTrue($this->getSession()->getPage()->hasContent(t('Comment follow-up notification settings')));
-    $this->assertFalse($this->getSession()->getPage()->hasContent(t('Receive comment follow-up notification e-mails')));
-    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification e-mails')));
+    $this->assertFalse($this->getSession()->getPage()->hasContent(t('Receive comment follow-up notification emails')));
+    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification emails')));
     $this->drupalLogout();
 
     // The has all the permissions, so he should be able to see all the Comment
@@ -114,8 +114,8 @@ class CommentNotifyUserPreferencesTest extends CommentNotifyTestBase {
     $this->drupalLogin($this->authenticatedUser);
     $this->drupalGet($this->authenticatedUser->toUrl('edit-form')->toString());
     $this->assertTrue($this->getSession()->getPage()->hasContent(t('Comment follow-up notification settings')));
-    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive comment follow-up notification e-mails')));
-    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification e-mails')));
+    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive comment follow-up notification emails')));
+    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification emails')));
     $this->drupalLogout();
   }
 
@@ -137,7 +137,7 @@ class CommentNotifyUserPreferencesTest extends CommentNotifyTestBase {
   public function testsCommentFollowUpsNotifications() {
     $this->drupalLogin($this->authenticatedUser);
     $this->drupalGet($this->authenticatedUser->toUrl('edit-form')->toString());
-    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive comment follow-up notification e-mails')));
+    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive comment follow-up notification emails')));
 
     // Test the "No notifications" option.
     $this->getSession()->getPage()->selectFieldOption('comment_notify', COMMENT_NOTIFY_DISABLED);
@@ -175,7 +175,7 @@ class CommentNotifyUserPreferencesTest extends CommentNotifyTestBase {
     // the 'administer nodes' permission.
     $this->drupalLogin($this->authenticatedUser);
     $this->drupalGet($this->authenticatedUser->toUrl('edit-form')->toString());
-    $this->assertFalse($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification e-mails')));
+    $this->assertFalse($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification emails')));
     $this->drupalLogout();
 
     // Tests that the option is present in the user profile if the user has the
@@ -184,12 +184,12 @@ class CommentNotifyUserPreferencesTest extends CommentNotifyTestBase {
     $this->authenticatedUser = $this->createUser($permissions);
     $this->drupalLogin($this->authenticatedUser);
     $this->drupalGet($this->authenticatedUser->toUrl('edit-form')->toString());
-    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification e-mails')));
-    $this->getSession()->getPage()->checkField('Receive content follow-up notification e-mails');
+    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification emails')));
+    $this->getSession()->getPage()->checkField('Receive content follow-up notification emails');
     $this->getSession()->getPage()->pressButton(t('Save'));
     $node_notify_preference = $this->container->get('comment_notify.user_settings')->getSetting($this->authenticatedUser->id(), 'entity_notify');
     $this->assertEquals(COMMENT_NOTIFY_ENTITY, $node_notify_preference);
-    $this->assertSession()->checkboxChecked(t('Receive content follow-up notification e-mails'));
+    $this->assertSession()->checkboxChecked(t('Receive content follow-up notification emails'));
     $this->drupalLogout();
 
     // Tests that the notification is sent when the content created by the user
@@ -225,10 +225,10 @@ class CommentNotifyUserPreferencesTest extends CommentNotifyTestBase {
     // the content notifications setting.
     $this->drupalLogin($this->authenticatedUser);
     $this->drupalGet($this->authenticatedUser->toUrl('edit-form')->toString());
-    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification e-mails')));
-    $this->getSession()->getPage()->uncheckField('Receive content follow-up notification e-mails');
+    $this->assertTrue($this->getSession()->getPage()->hasContent(t('Receive content follow-up notification emails')));
+    $this->getSession()->getPage()->uncheckField('Receive content follow-up notification emails');
     $this->getSession()->getPage()->pressButton(t('Save'));
-    $this->assertTrue($this->getSession()->getPage()->hasUncheckedField('Receive content follow-up notification e-mails'));
+    $this->assertTrue($this->getSession()->getPage()->hasUncheckedField('Receive content follow-up notification emails'));
     $this->drupalLogout();
     $node_notify_preference = $this->container->get('comment_notify.user_settings')->getSetting($this->authenticatedUser->id(), 'entity_notify');
     $this->assertEquals(COMMENT_NOTIFY_DISABLED, $node_notify_preference);
