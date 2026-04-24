@@ -39,3 +39,9 @@ wget-log
 *.swo
 *~
 *.sql
+cat >> .gitignore <<'EOF'
+*.sql
+*.sql.gz
+*.tar.gz
+wget-log*
+EOF
