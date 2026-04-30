@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\layout_builder\Section;
 
 /**
  * Make admin title field revisionable.
@@ -97,4 +98,212 @@ function paragraph_blocks_restore_unrevisioned_admin_titles(array $rows): void {
       }
     }
   }
+}
+
+/**
+ * Migrate layout builder components from delta-based to entity ID references.
+ *
+ * Previously, paragraph_blocks identified paragraphs by their field delta
+ * position (e.g. paragraph_field:node:field_links_list:2:page). This caused
+ * issues when editors reordered paragraphs on the node edit form — the new
+ * order was reflected in layout builder, breaking the intended layout.
+ *
+ * The module now stores a paragraph_id in the component configuration to
+ * reference paragraphs by entity ID. This update hook migrates all existing
+ * layout builder sections that still use delta-based references.
+ */
+function paragraph_blocks_update_10401(&$sandbox) {
+  $database = \Drupal::database();
+
+  // Discover all entity types using layout builder by finding tables
+  // matching the pattern *__layout_builder__layout.
+  $tables = [];
+  $all_tables = $database->schema()->findTables('%__layout_builder__layout');
+
+  foreach ($all_tables as $table) {
+    // Skip revision tables, they'll be added alongside their base table.
+    if (str_contains($table, '_revision__layout_builder__layout')) {
+      continue;
+    }
+
+    // Extract entity type from table name:
+    // e.g. "node" from "node__layout_builder__layout".
+    $entity_type = str_replace('__layout_builder__layout', '', $table);
+
+    // Base table: e.g. node__layout_builder__layout → field prefix node__.
+    $tables[$table] = $entity_type . '__';
+
+    // Revision table: e.g. node_revision__layout_builder__layout.
+    $revision_table = $entity_type . '_revision__layout_builder__layout';
+    if ($database->schema()->tableExists($revision_table)) {
+      $tables[$revision_table] = $entity_type . '_revision__';
+    }
+  }
+
+  if (!isset($sandbox['total'])) {
+    $sandbox['total'] = 0;
+    $sandbox['current'] = 0;
+    $sandbox['migrated'] = 0;
+
+    // Store table metadata with per-table offsets. Row identifiers are not
+    // preloaded to avoid serializing large arrays into the sandbox.
+    $sandbox['tables'] = [];
+    foreach ($tables as $lb_table => $field_table_prefix) {
+      if (!$database->schema()->tableExists($lb_table)) {
+        continue;
+      }
+
+      $count = (int) $database->select($lb_table, 'lb')
+        ->countQuery()
+        ->execute()
+        ->fetchField();
+
+      $sandbox['tables'][] = [
+        'lb_table' => $lb_table,
+        'field_table_prefix' => $field_table_prefix,
+        'offset' => 0,
+        'count' => $count,
+      ];
+      $sandbox['total'] += $count;
+    }
+  }
+
+  // Process 50 rows at a time, advancing per-table offsets.
+  $limit = 50;
+  $remaining = $limit;
+
+  foreach ($sandbox['tables'] as &$table_info) {
+    if ($remaining <= 0) {
+      break;
+    }
+
+    $rows = $database->select($table_info['lb_table'], 'lb')
+      ->fields('lb', ['entity_id', 'revision_id', 'langcode', 'delta'])
+      ->range($table_info['offset'], $remaining)
+      ->execute()
+      ->fetchAll();
+
+    $table_info['offset'] += count($rows);
+    $remaining -= count($rows);
+    $sandbox['current'] += count($rows);
+
+    foreach ($rows as $row) {
+      // Load the section blob for this specific row.
+      $section_blob = $database->select($table_info['lb_table'], 'lb')
+        ->fields('lb', ['layout_builder__layout_section'])
+        ->condition('lb.entity_id', $row->entity_id)
+        ->condition('lb.revision_id', $row->revision_id)
+        ->condition('lb.langcode', $row->langcode)
+        ->condition('lb.delta', $row->delta)
+        ->execute()
+        ->fetchField();
+
+      if (!$section_blob) {
+        continue;
+      }
+
+      $section_data = unserialize($section_blob);
+
+      if (!$section_data instanceof Section) {
+        continue;
+      }
+
+      // Collect which fields/deltas need resolution for this section.
+      $lookups = [];
+      $components = $section_data->getComponents();
+
+      foreach ($components as $uuid => $component) {
+        $config = $component->get('configuration');
+
+        if (!isset($config['id']) || !str_starts_with($config['id'], 'paragraph_field:')) {
+          continue;
+        }
+
+        if (!empty($config['paragraph_id'])) {
+          continue;
+        }
+
+        $parts = explode(':', $config['id']);
+        if (count($parts) < 4 || !is_numeric($parts[3])) {
+          continue;
+        }
+
+        $lookups[$uuid] = [
+          'field_name' => $parts[2],
+          'field_delta' => (int) $parts[3],
+        ];
+      }
+
+      if (empty($lookups)) {
+        continue;
+      }
+
+      // Preload paragraph IDs for all fields referenced in this section.
+      $delta_to_id_map = [];
+      $fields_needed = array_unique(array_column($lookups, 'field_name'));
+
+      foreach ($fields_needed as $field_name) {
+        $field_table = $table_info['field_table_prefix'] . $field_name;
+        $target_column = $field_name . '_target_id';
+
+        if (!$database->schema()->tableExists($field_table)) {
+          continue;
+        }
+
+        $field_rows = $database->select($field_table, 'f')
+          ->fields('f', ['delta', $target_column])
+          ->condition('f.entity_id', $row->entity_id)
+          ->condition('f.revision_id', $row->revision_id)
+          ->execute()
+          ->fetchAllKeyed();
+
+        $delta_to_id_map[$field_name] = $field_rows;
+      }
+
+      // Apply paragraph IDs to the components.
+      $modified = FALSE;
+
+      foreach ($lookups as $uuid => $lookup) {
+        $paragraph_id = $delta_to_id_map[$lookup['field_name']][$lookup['field_delta']] ?? NULL;
+
+        if ($paragraph_id) {
+          $config = $components[$uuid]->get('configuration');
+          $config['paragraph_id'] = (int) $paragraph_id;
+          $components[$uuid]->setConfiguration($config);
+          $modified = TRUE;
+          $sandbox['migrated']++;
+        }
+      }
+
+      if ($modified) {
+        $database->update($table_info['lb_table'])
+          ->fields([
+            'layout_builder__layout_section' => serialize($section_data),
+          ])
+          ->condition('entity_id', $row->entity_id)
+          ->condition('revision_id', $row->revision_id)
+          ->condition('langcode', $row->langcode)
+          ->condition('delta', $row->delta)
+          ->execute();
+      }
+    }
+  }
+  unset($table_info);
+
+  // Update progress.
+  if ($sandbox['total'] == 0) {
+    $sandbox['#finished'] = 1;
+  }
+  else {
+    $sandbox['#finished'] = ($sandbox['current'] / $sandbox['total']);
+  }
+
+  if ($sandbox['#finished'] >= 1) {
+    return t('Migrated %migrated paragraph block components from delta to entity ID references. Total rows processed: %total.', [
+      '%migrated' => $sandbox['migrated'],
+      '%total' => $sandbox['total'],
+    ]);
+  }
+
+  return NULL;
 }

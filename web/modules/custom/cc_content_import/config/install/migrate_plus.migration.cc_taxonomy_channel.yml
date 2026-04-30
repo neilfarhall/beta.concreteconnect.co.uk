@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_taxonomy_channel
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_group: cc_import
+label: 'Taxonomy: Channel'
+
+source:
+  plugin: cc_taxonomy_channel
+  key: migrate_source
+
+process:
+  tid: tid
+
+  vid:
+    plugin: default_value
+    default_value: channel
+
+  langcode: langcode
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+  weight: weight
+  changed: changed
+  status: status
+
+destination:
+  plugin: 'entity:taxonomy_term'
+
+migration_dependencies: {  }

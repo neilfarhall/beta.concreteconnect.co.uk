@@ -195,6 +195,7 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
       'label' => '',
       'label_display' => FALSE,
       'display_mode' => 'default',
+      'paragraph_id' => NULL,
     ];
   }
 
@@ -237,7 +238,23 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
    */
   public function blockForm($form, FormStateInterface $form_state) {
     $config = $this->configuration;
-    $paragraph_block = $this->paragraphBlocksLabeller->getParagraph($config['id']);
+    // Try entity-ID-based lookup first, fall back to delta-based.
+    $paragraph_block = NULL;
+    if (!empty($config['paragraph_id'])) {
+      $paragraph_block = $this->entityTypeManager->getStorage('paragraph')->load($config['paragraph_id']);
+    }
+    if (!$paragraph_block) {
+      $paragraph_block = $this->paragraphBlocksLabeller->getParagraph($config['id']);
+    }
+    if (!$paragraph_block) {
+      // Preserve the existing display_mode so blockSubmit does not null it out.
+      return [
+        'display_mode' => [
+          '#type' => 'hidden',
+          '#value' => $config['display_mode'],
+        ],
+      ];
+    }
     if ($this->paragraphBlocksLabeller->isParagraphFromLibrary($paragraph_block)) {
       $paragraph_block = $this->paragraphBlocksLabeller->getParagraphFromLibrary($paragraph_block);
     }
@@ -262,6 +279,22 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
     $this->configuration['label'] = $form_state->getValue('label');
     $this->configuration['label_display'] = $form_state->getValue('label_display');
     $this->configuration['display_mode'] = $form_state->getValue('display_mode');
+    $entity = $this->paragraphBlocksManager->getRefererEntity();
+    if (isset($entity)) {
+      // Store the directly referenced paragraph ID (e.g. the from_library
+      // wrapper), not the resolved library content ID. This ensures build()
+      // can find the paragraph in the entity's field references.
+      $paragraph = $this->getReferencedParagraph($entity);
+      if (!$paragraph) {
+        $fresh_entity = $this->paragraphBlocksManager->loadFreshEntity($entity);
+        if ($fresh_entity !== $entity) {
+          $paragraph = $this->getReferencedParagraph($fresh_entity);
+        }
+      }
+      if ($paragraph) {
+        $this->configuration['paragraph_id'] = (int) $paragraph->id();
+      }
+    }
   }
 
   /**
@@ -353,10 +386,20 @@ class ParagraphBlock extends BlockBase implements ContextAwarePluginInterface, C
     $referenced_entities = $entity
       ->get($this->fieldName)
       ->referencedEntities();
-    if (isset($referenced_entities[$this->fieldDelta])) {
-      $paragraph = $referenced_entities[$this->fieldDelta];
+    // Look up by entity ID if available.
+    if (!empty($this->configuration['paragraph_id'])) {
+      foreach ($referenced_entities as $referenced_entity) {
+        if ($referenced_entity->id() == $this->configuration['paragraph_id']) {
+          return $referenced_entity;
+        }
+      }
+      return NULL;
     }
-    return $paragraph ?? NULL;
+    // Fall back to delta-based lookup for backward compatibility.
+    if (isset($referenced_entities[$this->fieldDelta])) {
+      return $referenced_entities[$this->fieldDelta];
+    }
+    return NULL;
   }
 
 }

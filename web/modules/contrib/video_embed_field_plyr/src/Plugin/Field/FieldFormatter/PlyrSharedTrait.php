@@ -98,6 +98,7 @@ trait PlyrSharedTrait
         $settings['muted'] = TRUE;
         $settings['volume'] = 0;
         $settings['autopause'] = FALSE;
+        $settings['loop']['active'] = TRUE;
         $settings['settings']['loop'] = TRUE;
         $settings['playsinline'] = TRUE;
         $settings['displayDuration'] = FALSE;

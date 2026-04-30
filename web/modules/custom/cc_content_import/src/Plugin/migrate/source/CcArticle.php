@@ -54,6 +54,9 @@ class CcArticle extends SqlBase {
     $query->leftJoin('node__field_teaser_text', 'tt', 'n.nid = tt.entity_id');
     $query->addField('tt', 'field_teaser_text_value', 'field_teaser_text_value');
 
+    $query->leftJoin('node__field_channel', 'ch', 'n.nid = ch.entity_id');
+    $query->addField('ch', 'field_channel_target_id', 'field_channel_target_id');
+
     $query->condition('n.type', 'article');
 
     return $query;
@@ -75,14 +78,18 @@ class CcArticle extends SqlBase {
       'changed' => $this->t('Changed timestamp'),
       'promote' => $this->t('Promoted'),
       'sticky' => $this->t('Sticky'),
+
       'body_value' => $this->t('Body value'),
       'body_summary' => $this->t('Body summary'),
       'body_format' => $this->t('Body format'),
+
       'field_email_value' => $this->t('Email'),
       'field_featured_article_value' => $this->t('Featured article'),
       'field_omit_from_news_listing_value' => $this->t('Omit from news listing'),
       'field_teaser_media_target_id' => $this->t('Teaser media'),
       'field_teaser_text_value' => $this->t('Teaser text'),
+      'field_channel_target_id' => $this->t('Channel'),
+
       'field_tags' => $this->t('Tag references'),
       'field_paragraphs' => $this->t('Paragraph references'),
     ];
@@ -116,14 +123,14 @@ class CcArticle extends SqlBase {
       ->condition('deleted', 0)
       ->orderBy('delta', 'ASC');
 
-    $tag_results = $tags_query->execute()->fetchAll();
-    foreach ($tag_results as $record) {
+    foreach ($tags_query->execute()->fetchAll() as $record) {
       $record = (array) $record;
       $tags[] = [
         'target_id' => $record['field_tags_target_id'] ?? NULL,
         'delta' => $record['delta'] ?? 0,
       ];
     }
+
     $row->setSourceProperty('field_tags', $tags);
 
     $paragraphs = [];
@@ -137,8 +144,7 @@ class CcArticle extends SqlBase {
       ->condition('deleted', 0)
       ->orderBy('delta', 'ASC');
 
-    $paragraph_results = $paragraphs_query->execute()->fetchAll();
-    foreach ($paragraph_results as $record) {
+    foreach ($paragraphs_query->execute()->fetchAll() as $record) {
       $record = (array) $record;
       $paragraphs[] = [
         'target_id' => $record['field_paragraphs_target_id'] ?? NULL,
@@ -146,6 +152,7 @@ class CcArticle extends SqlBase {
         'delta' => $record['delta'] ?? 0,
       ];
     }
+
     $row->setSourceProperty('field_paragraphs', $paragraphs);
 
     return parent::prepareRow($row);

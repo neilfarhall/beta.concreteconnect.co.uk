@@ -14,6 +14,8 @@ source:
   key: migrate_source
 
 process:
+  nid: nid
+
   type:
     plugin: default_value
     default_value: article
@@ -44,6 +46,11 @@ process:
     source: field_teaser_media_target_id
 
   field_teaser_text/value: field_teaser_text_value
+
+  field_channel/target_id:
+    plugin: migration_lookup
+    migration: cc_taxonomy_channel
+    source: field_channel_target_id
 
   field_tags:
     plugin: sub_process
@@ -104,3 +111,4 @@ migration_dependencies:
     - cc_paragraph_bullet_list
     - cc_paragraph_links
     - cc_paragraph_video
+    - cc_taxonomy_channel

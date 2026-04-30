@@ -1731,6 +1731,7 @@
 .news-strip article.news-type--tid-10926{ border-top-color:#0d6efd; } /* Featured Projects */
 .news-strip article.news-type--tid-10927{ border-top-color:#e83e8c; } /* Product Focus */
 .news-strip article.news-type--tid-10942{ border-top-color:#6c757d; } /* Architecture */
+.news-strip article.news-type--tid-11054 { border-top-color:#3A6EA5; }
 
 /* Underline colours (match the same TID colours) */
 .news-strip article.news-type--tid-10178 .teaser__authored .news-type a::after{ background:#00cd36; }
@@ -1752,9 +1753,9 @@
 .news-strip article.news-type--tid-10926 .teaser__authored .news-type a::after{ background:#0d6efd; }
 .news-strip article.news-type--tid-10927 .teaser__authored .news-type a::after{ background:#e83e8c; }
 .news-strip article.news-type--tid-10942 .teaser__authored .news-type a::after{ background:#6c757d; }
-.news-strip article.news-type--tid-11054 .teaser__authored .news-type a::after{ background:#6c757d; }
+.news-strip article.news-type--tid-11054 .teaser__authored .news-type a::after{ background:#3A6EA5; }
 
-.news-strip article.channel--tid-11054 .teaser__authored .channel a::after{ background:#3A6EA5; }
+.news-strip article.news-type--tid-11054 .teaser__authored .channel a::after{ background:#3A6EA5; }
 
 /* ==========================================================
    INDUSTRY HOME STRIP (Concrete Insights)
@@ -8715,3 +8716,140 @@ html {
   background: #2f4f3e;
   border-radius: 2px;
 }
+.site-footer,
+.footer {
+  background: #1f1f1f;
+  color: #aaa;
+  padding: 48px 0;
+  font-size: 15px;
+}
+
+.cc-footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.cc-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+}
+
+.cc-footer-links a {
+  color: #bdbdbd;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.cc-footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.cc-footer-details {
+  max-width: 760px;
+  line-height: 1.6;
+  color: #9f9f9f;
+}
+
+.cc-footer-details p {
+  margin: 0 0 28px;
+}
+
+.cc-footer-details a {
+  color: #cfcfcf;
+  text-decoration: underline;
+}
+
+.cc-footer-details a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .cc-footer-links {
+    gap: 14px 22px;
+  }
+
+  .site-footer,
+  .footer {
+    padding: 36px 0;
+  }
+}
+.page__footer {
+
+  background: #1f1f1f;
+
+  color: #aaa;
+
+}
+footer .cc-footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+
+footer .cc-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 36px;
+}
+
+footer .cc-footer-links a {
+  color: #bdbdbd;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+footer .cc-footer-links a:not(:last-child)::after {
+  content: "|";
+  display: inline-block;
+  margin: 0 24px;
+  color: #555;
+}
+
+footer .cc-footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+footer .cc-footer-details {
+  max-width: 760px;
+  line-height: 1.6;
+  color: #9f9f9f;
+}
+
+footer .cc-footer-details p {
+  margin-bottom: 24px;
+}
+footer {
+  color: #cfcfcf;
+}
+
+footer p {
+  color: #bdbdbd;
+}
+footer .cc-footer-details {
+  border-top: 1px solid #333;
+  padding-top: 24px;
+}
+.cc-footer-links a {
+  color: #bdbdbd;
+  text-decoration: none;
+  position: relative;
+}
+
+.cc-footer-links a {
+  position: relative;
+}
+
+

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+id: cc_path_alias
+label: 'Path aliases'
+migration_group: cc_import
+
+source:
+  plugin: cc_path_alias
+  key: migrate_source
+
+process:
+  path: path
+  alias: alias
+  langcode:
+    plugin: default_value
+    default_value: en
+  status:
+    plugin: default_value
+    default_value: 1
+
+destination:
+  plugin: 'entity:path_alias'
+
+migration_dependencies: {  }

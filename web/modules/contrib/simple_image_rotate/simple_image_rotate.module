@@ -5,10 +5,9 @@
  * This is the Simple Image Rotate module for rotating uploaded image files.
  */
 
+use Drupal\Core\Render\Markup;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Link;
-use Drupal\Core\Url;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\file\Entity\File;
@@ -49,8 +48,8 @@ function simple_image_rotate_form_field_config_edit_form_alter(&$form, FormState
   if ($field_type == "image") {
     $form['enable_rotate'] = [
       '#type' => 'checkbox',
-      '#title' => t('Enable rotate icon'),
-      '#description' => t('If checked rotate icon will appear near each uploaded image.'),
+      '#title' => t('Enable rotate function'),
+      '#description' => t('If checked a button to rotate the image will appear near each uploaded image.'),
       '#default_value' => $image_field->getThirdPartySetting('simple_image_rotate', 'enable_rotate', FALSE),
       '#weight' => 16,
     ];
@@ -117,18 +116,11 @@ function simple_image_rotate_field_widget_complete_form_alter(&$field_widget_com
 function simple_image_rotate_widget_process($element, FormStateInterface $form_state) {
 
   if (isset($element['#files']) && count($element['#files']) > 0) {
-    $options = [
-      'attributes' => [
-        'title' => t('Rotate image clockwise'),
-        'class' => ['rotate-icon'],
-        'data-weight' => $element['#array_parents'][2],
-        'data-rotate' => 0,
-        'rel' => 'nofollow',
-        'data-fid' => $element['fids']['#value'][0],
-      ],
+    $element['rotate_button'] = [
+      '#markup' => Markup::create(sprintf('<button class="button button--secondary rotate-icon">%s</button>', t('Rotate image clockwise'))),
+      '#weight' => $element['#weight'],
+      '#theme_wrappers' => ['container']
     ];
-    $element['rotate_link'] = Link::fromTextAndUrl(t('&#8635;'), Url::fromUserInput('#', $options))
-      ->toRenderable();
   }
   return $element;
 }
@@ -213,6 +205,9 @@ function simple_image_rotate_rotate_image(EntityInterface &$entity) {
                   // Update image width and height in entity.
                   $instance->set("width", $image->getWidth());
                   $instance->set("height", $image->getHeight());
+
+                  // Set update to 0 since image has been rotated. This makes this routine idempotent.
+                  $instance->set("rotate", 0);
 
                   // Update file.
                   $file->setSize($image->getFileSize());

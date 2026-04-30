@@ -242,11 +242,13 @@ class ParagraphBlocksLabeller {
       && $library_item = LibraryItem::load($paragraph->get('field_reusable_paragraph')->target_id)
     ) {
       if ($this->paragraphStorage instanceof RevisionableStorageInterface) {
-        return $this->paragraphStorage->loadRevision($library_item->get('paragraphs')->target_revision_id);
+        $result = $this->paragraphStorage->loadRevision($library_item->get('paragraphs')->target_revision_id);
+        if ($result) {
+          return $result;
+        }
       }
-      else {
-        return $this->paragraphStorage->load($library_item->get('paragraphs')->target_id);
-      }
+      // Fall back to loading by entity ID if revision loading fails.
+      return $this->paragraphStorage->load($library_item->get('paragraphs')->target_id);
     }
     return NULL;
   }

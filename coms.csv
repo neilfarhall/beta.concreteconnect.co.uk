@@ -1,0 +1,895 @@
+  500  ddev drush cr
+  501  ddev drush cr
+  502  ddev drush cr
+  503  ddev drush cr
+  504  ddev drush cr
+  505  ddev drush cr
+  506  ddev drush cr
+  507  ddev drush cr
+  508  ddev drush cr
+  509  ddev drush cr
+  510  ddev drush cr
+  511  ddev drush cr
+  512  ddev drush cr
+  513  ddev drush cr
+  514  ddev drush cr
+  515  ddev drush cr
+  516  ddev drush cr
+  517  ddev drush cr
+  518  ddev drush cr
+  519  ddev drush cr
+  520  ddev drush cr
+  521  ddev drush cr
+  522  ddev drush cr
+  523  ddev drush cr
+  524  ddev drush cr
+  525  ddev drush cr
+  526  ddev drush cr
+  527  ddev drush cr
+  528  ddev drush cr
+  529  ddev drush cr
+  530  ddev drush cr
+  531  ddev drush cr
+  532  ddev drush cr
+  533  ddev drush cr
+  534  ddev drush cr
+  535  ddev drush cr
+  536  ddev drush cr
+  537  ddev start
+  538  ddev npm run watch\n
+  539  ddev npm exec -- drupal-radix-cli add
+  540  ddev npm run watch\n
+  541  ddev  start
+  542  ddev  start
+  543  ddev drush cr
+  544  ddev drush cr
+  545  ddev drush cr
+  546  ddev drush cr
+  547  ddev drush cr
+  548  ddev drush cr
+  549  ddev drush cr
+  550  ddev drush cr
+  551  ddev drush cr
+  552  ddev drush cr
+  553  ddev drush cr
+  554  ddev drush cr
+  555  ddev drush cr
+  556  ddev drush cr
+  557  ddev drush cr
+  558  ddev drush cr
+  559  ddev drush cr
+  560  ddev drush cr
+  561  ddev npm run watch\n
+  562  ddev npm run watch\n
+  563  ddev  start
+  564  ddev drush cr
+  565  ddev drush cr
+  566  ddev drush cr
+  567  ddev drush cr
+  568  ddev drush cr
+  569  ddev drush cr
+  570  ddev drush cr
+  571  ddev drush cr
+  572  ddev drush cr
+  573  ddev drush cr
+  574  ddev drush cr
+  575  ddev drush cr
+  576  ddev drush cr
+  577  ddev npm run watch\n
+  578  ddev start
+  579  ddev drush cr
+  580  ddev drush cr
+  581  ddev drush cr
+  582  ddev drush cr
+  583  ddev drush cr
+  584  ddev drush cr
+  585  ddev drush cr
+  586  ddev drush cr
+  587  ddev drush cr
+  588  ddev drush cr
+  589  ddev drush cr
+  590  ddev drush cr
+  591  ddev drush cr
+  592  ddev drush cr
+  593  ddev drush cr
+  594  ddev drush cr
+  595  ddev drush cr
+  596  ddev drush cr
+  597  ddev drush cr
+  598  ddev drush cr
+  599  ddev drush cr
+  600  ddev drush cr
+  601  ddev drush cr
+  602  ddev drush cr
+  603  ddev drush cr
+  604  ddev drush cr
+  605  ddev drush cr
+  606  ddev drush cr
+  607  ddev drush cr
+  608  ddev drush cr
+  609  ddev drush cr
+  610  ddev drush cr
+  611  ddev drush cr
+  612  ddev drush cr
+  613  ddev drush cr
+  614  ddev npm exec -- drupal-radix-cli add
+  615  ddev npm run watch\n
+  616  ddev start
+  617  ddev start
+  618  ddev drush cr
+  619  ddev drush cr
+  620  ddev drush cr
+  621  ddev drush cr
+  622  ddev drush cr
+  623  ddev drush cr
+  624  ddev drush cr
+  625  ddev drush cr
+  626  ddev drush cr
+  627  ddev drush cr
+  628  ddev drush cr
+  629  ddev drush cr
+  630  ddev drush cr
+  631  ddev drush cr
+  632  ddev drush cr
+  633  ddev drush cr
+  634  ddev drush cr
+  635  ddev drush cr
+  636  ddev drush cr
+  637  ddev npm run watch\n
+  638  ddev npm run watch\n
+  639  ddev npm run watch\n
+  640  ddev npm run watch
+  641  ddev start
+  642  ddev start
+  643  ddev start
+  644  ddev start
+  645  ddev drush cr
+  646  ddev drush cr
+  647  ddev drush cr
+  648  ddev drush cr
+  649  ddev drush cr
+  650  ddev drush cr
+  651  ddev drush cr
+  652  ddev drush cr
+  653  ddev drush cr
+  654  ddev drush cr
+  655  ddev drush cr
+  656  ddev drush cr
+  657  ddev drush cr
+  658  ddev drush cr
+  659  ddev drush cr
+  660  ddev drush cr
+  661  ddev drush cr
+  662  ddev drush cr
+  663  ddev drush cr
+  664  ddev drush cr
+  665  ddev drush cr
+  666  ddev drush cr
+  667  ddev drush cr
+  668  ddev drush cr
+  669  ddev drush cr
+  670  ddev drush cr
+  671  ddev drush cr
+  672  ddev drush cr
+  673  ddev drush cr
+  674  /* All placements: never overflow the parent */\n#sas_53422 {\n  width: 100% \n  max-width: 100% !important;\n  margin: 0 auto 1rem !important;\n  box-sizing: border-box !important;\n}\n\n#sas_53422 [id^="sas_relDivPlayer_"] {\n  display: block !important;\n}\n\n#sas_53422 video {\n  display: block !important;\n  width: 100% !important;\n  max-width: 100% !important;\n  height: auto !important;\n}\n\n/* Article body only: allow a larger video area */\n.body-inject--video #sas_53422 {\n  max-width: 680px !important;\n}
+  675  ddev drush cr
+  676  ddev drush cr
+  677  ddev drush cr
+  678  ddev drush cr
+  679  ddev drush cr
+  680  ddev drush cr
+  681  ddev npm run watch\n
+  682  ddev start
+  683  ddev start
+  684  ddev npm run watch\n
+  685  ddev start
+  686  ddev npm run watch\n
+  687  ddev npm exec -- drupal-radix-cli add
+  688  ddev launch
+  689  ddev start
+  690  ddev npm run watch\n
+  691  ddev drush cr
+  692  ddev drush cr
+  693  ddev drush cr
+  694  ddev drush cr
+  695  ddev drush cr
+  696  ddev drush cr
+  697  ddev drush cr
+  698  ddev drush cr
+  699  ddev drush cr
+  700  ddev drush cr
+  701  ddev drush cr
+  702  ddev drush cr
+  703  ddev drush cr
+  704  ddev start
+  705  ddev start
+  706  ddev npm run watch\n
+  707  ddev start
+  708  ddev npm run watch\n
+  709  ddev start
+  710  ddev launch
+  711  ddev npm run watch\n
+  712  ddev drush cr
+  713  ddev start
+  714  ddev start
+  715  ddev start
+  716  ddev start
+  717  ddev launch
+  718  nano web/sites/default/settings.php
+  719  nano web/sites/default/settings.php
+  720  ddev drush cr
+  721  chmod -R 775 web/sites/default/files
+  722  ls -l
+  723  ddev ssh\nmkdir -p web/sites/default/files/images/directories/main\nchmod -R 775 web/sites/default/files\nexit\nddev drush cr
+  724  ddev npm run watch\n
+  725  nano web/sites/default/settings.php
+  726  ddev ssh
+  727  ddev drsuh cr
+  728  ddev drush cr
+  729  ddev ssh -c "ls -ld web/sites/default web/sites/default/files web/sites/default/files/default_images web/sites/default/files/images web/sites/default/files/images/directories web/sites/default/files/images/directories/main"
+  730  ddev snapshot --name=cc_02042026
+  731  ddev snapshot --list
+  732  ddev npm run watch\n
+  733  ddev start
+  734  ddev start
+  735  ddev npm run watch\n
+  736  ddev start
+  737  ip
+  738  ddev ip
+  739  ddev npm
+  740  ddev npm run watch\n
+  741  ddev start
+  742  ddev drush cr
+  743  ddev drush cr
+  744  ddev drush cr
+  745  ddev composer require 'drupal/twig_tweak:^3.4'
+  746  ddev drush cr
+  747  ddev drush cr
+  748  ddev drush cr
+  749  ddev drush cr
+  750  ddev drush cr
+  751  ddev drush cr
+  752  ddev drush cr
+  753  ddev drush cr
+  754  ddev drush cr
+  755  ddev drush cr
+  756  ddev drush cr
+  757  ddev drush cr
+  758  ddev npm run watch\n
+  759  ddev start
+  760  ddev npm run watch\n
+  761  ddev start
+  762  ddev exec mkdir -p web/sites/default/files/file_attachments\n
+  763  ddev exec chmod -R 775 web/sites/default/files\n
+  764  ddev drush cr
+  765  ddev exec mkdir -p web/sites/default/files/file_attachments\n
+  766  ddev exec chmod -R 775 web/sites/default/files\n
+  767  ddev drush cr
+  768  ddev exec chmod -R 777 web/sites/default/files\n
+  769  ddev exec mkdir -p web/sites/default/files/file_attachments\n
+  770  ddev drush cr
+  771  ddev drush cr
+  772  ddev drush cr
+  773  ddev drush cr
+  774  ddev drush cr
+  775  ddev drush cr
+  776  ddev npm run watch\n
+  777  ddev start
+  778  ddev drush cr
+  779  ddev drush cr
+  780  ddev drush cr
+  781  ddev drush cr
+  782  ddev drush cr
+  783  ddev drush cr
+  784  ddev drush cr
+  785  ddev drush cr
+  786  ddev drush cr
+  787  ddev drush cr
+  788  ddev drush cr
+  789  ddev drush cr
+  790  ddev drush cr
+  791  ddev drush cr
+  792  ddev drush cr
+  793  ddev snapshot
+  794  ddev export-db --file=local-before-content-import.sql.gz\n
+  795  ddev composer require drupal/migrate_plus drupal/migrate_tools\nddev drush en migrate migrate_drupal migrate_plus migrate_tools -y
+  796  mkdir -p web/modules/custom/cc_content_import/config/install\nmkdir -p web/modules/custom/cc_content_import/migrations
+  797  ddev drush en cc_content_import -y
+  798  ssh root@176.126.241.170 "mysqldump -u concrete_d9_v4 -p'9qzsbA0S3An9GBufDighmkHovTQeZOAs' concrete_d9_v4" > live.sql
+  799  sudo ssh root@176.126.241.170 "mysqldump -u concrete_d9_v4 -p'9qzsbA0S3An9GBufDighmkHovTQeZOAs' concrete_d9_v4" > live.sql
+  800  ddev mysql -e "CREATE DATABASE livecopy;"
+  801  ddev mysql
+  802  ddev mysql livecopy < cc_17-04-26.sql
+  803  ddev mysql livecopy
+  804  nano web/sites/default/settings.php
+  805  ddev drush cr
+  806  ddev export-db --file=local-17062026.sql
+  807  ddev drush cr\nddev drush migrate:status
+  808  nano web/sites/default/settings.php
+  809  ddev drush cr\nddev drush migrate:status
+  810  grep -R "d7_rdf_mapping" web/modules web/sites web/themes .
+  811  ddev drush config:delete migrate_plus.migration.upgrade_d7_rdf_mapping -y
+  812  ddev drush cr
+  813  ddev drush migrate:status
+  814  ddev drush php:eval "print_r(array_keys(\Drupal::service('config.storage')->listAll('migrate_plus.migration.upgrade_')));"
+  815  ddev drush php:eval '\n$storage = \Drupal::service("config.storage");\n$configs = $storage->listAll("migrate_plus.migration.upgrade_");\nforeach ($configs as $config) {\n  \Drupal::service("config.factory")->getEditable($config)->delete();\n  print "Deleted: $config\n";\n}\n'
+  816  ddev drush migrate:status
+  817  ddev drush php:eval '$storage=\Drupal::service("config.storage"); print_r($storage->listAll("migrate_plus.migration."));'
+  818  ddev drush pm:list --status=enabled | grep migrate
+  819  ddev drush pm:uninstall migrate_upgrade migrate_drupal_ui migrate_drupal migrate_example_advanced_setup field_group_migrate -y
+  820  ddev drush cr
+  821  ddev drush migrate:status
+  822  ls -1 web/modules/custom/cc_content_import/config/install
+  823  ddev drush pm:uninstall cc_content_import -y
+  824  ddev drush cr
+  825  ddev drush en cc_content_import -y
+  826  ddev drush migrate:status
+  827  mv web/modules/custom/cc_content_import/config/install/migrate_plus.migration_group.cc_import.yml web/modules/custom/cc_content_import/migrations/\nmv web/modules/custom/cc_content_import/config/install/migrate_plus.migration.cc_files.yml web/modules/custom/cc_content_import/migrations/\nmv web/modules/custom/cc_content_import/config/install/migrate_plus.migration.cc_media_image.yml web/modules/custom/cc_content_import/migrations/
+  828  ddev drush cr
+  829  ddev drush migrate:status
+  830  ddev drush cr
+  831  ddev drush migrate:status
+  832  ddev drush ev "print_r(\Drupal::service('plugin.manager.migration')->getDefinitions());"
+  833  ddev drush pm:uninstall cc_content_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  834  ddev drush ev "echo \Drupal::service('extension.list.module')->getPath('cc_content_import');"
+  835  ddev drush ev "echo \Drupal::service('extension.list.module')->getPath('cc_content_import');"
+  836  ddev drush ev "print_r(\Drupal::service('extension.list.module')->getExtensionInfo('cc_content_import'));"
+  837  mv web/modules/custom/cc_content_import/cc_content_import/* web/modules/custom/cc_content_import/\nrmdir web/modules/custom/cc_content_import/cc_content_import
+  838  find web/modules/custom/cc_content_import -maxdepth 2 -type f | sort
+  839  ddev drush pm:uninstall cc_content_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  840  ddev drush pm:uninstall cc_content_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  841  shopt -s dotglob\nmv web/modules/custom/cc_content_import/cc_content_import/* web/modules/custom/cc_content_import/\nrmdir web/modules/custom/cc_content_import/cc_content_import
+  842  setopt dotglob\nmv web/modules/custom/cc_content_import/cc_content_import/* web/modules/custom/cc_content_import/\nrmdir web/modules/custom/cc_content_import/cc_content_import\nunsetopt dotglob
+  843  find web/modules/custom/cc_content_import -maxdepth 2 -type f | sort
+  844  mkdir -p web/modules/custom/cc_content_import/config/install\n\nmv web/modules/custom/cc_content_import/migrations/cc_import.yml \\n  web/modules/custom/cc_content_import/config/install/migrate_plus.migration_group.cc_import.yml\n\nmv web/modules/custom/cc_content_import/migrations/cc_files.yml \\n  web/modules/custom/cc_content_import/config/install/migrate_plus.migration.cc_files.yml\n\nmv web/modules/custom/cc_content_import/migrations/cc_media_image.yml \\n  web/modules/custom/cc_content_import/config/install/migrate_plus.migration.cc_media_image.yml
+  845  ddev drush pm:uninstall cc_content_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+  846  ddev drush php:eval '$storage=\Drupal::service("config.storage"); print_r($storage->listAll("migrate_plus.migration"));'
+  847  ddev drush migrate:status
+  848  mv web/modules/custom/cc_content_import/config/install/migrate_plus.migration.cc_media_image.yml \\nweb/modules/custom/cc_content_import/config/install/_migrate_plus.migration.cc_media_image.yml
+  849  ddev drush pm:uninstall cc_content_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  850  ddev drush migrate:import cc_files
+  851  mkdir -p web/modules/custom/cc_content_import/disabled\nmv web/modules/custom/cc_content_import/config/install/_migrate_plus.migration.cc_media_image.yml web/modules/custom/cc_content_import/disabled/
+  852  mv web/modules/custom/cc_content_import/config/install/migrate_plus.migration.cc_media_image.yml web/modules/custom/cc_content_import/disabled/
+  853  ls -1 web/modules/custom/cc_content_import/config/install
+  854  web/modules/custom/cc_content_import/config/install/migrate_plus.migration.cc_files.yml
+  855  ddev drush pm:uninstall cc_content_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+  856  ddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y
+  857  ddev drush cr
+  858  ddev drush en cc_content_import -y\nddev drush cr
+  859  ddev drush migrate:status
+  860  grep -R "plugin: sql" web/modules/custom/cc_content_import
+  861  ddev drush php:eval '$storage=\Drupal::service("config.storage"); foreach ($storage->listAll("migrate_plus.migration.") as $name) { $data = $storage->read($name); echo "\n=== $name ===\n"; print_r($data["source"] ?? []); }'
+  862  ddev drush config:delete migrate_plus.migration.cc_media_image -y
+  863  ddev drush cr
+  864  ddev drush migrate:status
+  865  ddev drush cr\nddev drush migrate:status
+  866  ddev drush cget migrate_plus.migration.cc_files
+  867  ddev drush cget migrate_plus.migration.cc_files
+  868  grep -n "id_fields\|ids:" web/modules/custom/cc_content_import/config/install/migrate_plus.migration.cc_files.yml
+  869  ddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y
+  870  ddev drush config:delete migrate_plus.migration.cc_media_image -y
+  871  ddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+  872  ddev drush cget migrate_plus.migration.cc_files
+  873  ddev drush migrate:status
+  874  ddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+  875  ls -1 web/modules/custom/cc_content_import/config/install
+  876  cat web/modules/custom/cc_content_import/config/install/migrate_plus.migration_group.cc_import.yml
+  877  cat web/modules/custom/cc_content_import/config/install/migrate_plus.migration.cc_files.yml
+  878  ddev drush cr\nddev drush en cc_content_import -y\nddev drush migrate:status
+  879  ddev drush cr\nddev drush en cc_content_import -y\nddev drush migrate:status
+  880  ls -1 web/modules/custom/cc_content_import/config/install
+  881  ddev drush pm:uninstall cc_content_import -y
+  882  ddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true
+  883  ddev drush cr
+  884  ddev drush pm:list | grep cc_content_import
+  885  ddev drush en cc_content_import -y\nddev drush cr
+  886  ddev drush migrate:status
+  887  nano web/sites/default/settings.php
+  888  ddev mysql -e "SHOW DATABASES;"
+  889  ddev drush cr
+  890  ddev drush php:eval "print_r(\Drupal\Core\Database\Database::getConnectionInfo('migrate_source'));"
+  891  ddev drush migrate:status
+  892  ddev drush migrate:status
+  893  ddev mysql -uroot -proot -e "CREATE DATABASE IF NOT EXISTS livecopy; GRANT ALL PRIVILEGES ON livecopy.* TO 'db'@'%'; FLUSH PRIVILEGES;"
+  894  ddev mysql -udb -pdb -e "SHOW TABLES IN livecopy;"
+  895  ddev drush cr\nddev drush migrate:status
+  896  ddev drush cr\nddev drush migrate:status
+  897  langcode: en\nstatus: true\ndependencies: {  }\n\nid: cc_files\nclass: Drupal\migrate\Plugin\Migration\nfield_plugin_method: null\ncck_plugin_method: null\nmigration_group: cc_import\nlabel: 'Import files'\n\nsource:\n  plugin: table\n  key: migrate_source\n  table_name: file_managed\n  id_fields:\n    fid:\n      type: integer\n  fields:\n    fid: 'File ID'\n    uuid: 'UUID'\n    langcode: 'Language'\n    uid: 'User ID'\n    filename: 'Filename'\n    uri: 'URI'\n    filemime: 'MIME type'\n    filesize: 'Filesize'\n    status: 'Status'\n    created: 'Created'\n    changed: 'Changed'\n\nprocess:\n  fid: fid\n  uuid: uuid\n  langcode: langcode\n  uid: uid\n  filename: filename\n  uri: uri\n  filemime: filemime\n  filesize: filesize\n  status: status\n  created: created\n  changed: changed\n\ndestination:\n  plugin: 'entity:file'\n\nmigration_dependencies: {  }
+  898  ddev drush pm:uninstall cc_content_import -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+  899  ddev drush migrate:status
+  900  ddev npm run watch\n
+  901  ddev start
+  902  ddev drush migrate:status
+  903  cd web/sites/default
+  904  ls -l
+  905  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/site/default/files .
+  906  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/sites/default/files .
+  907  ls -l
+  908  sudo chown -R neilfarhall:staff files
+  909  ls -l
+  910  cd ..
+  911  cd ..
+  912  cd ..
+  913  ddev drush migrate:status
+  914  ddev drush migrate:import cc_files
+  915  ddev drush pm:uninstall cc_content_import -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+  916  ddev drush migrate:status\nddev drush migrate:import cc_files
+  917  ddev drush pm:uninstall cc_content_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+  918  ddev drush migrate:status
+  919  ddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y
+  920  ddev drush cr
+  921  ddev drush en cc_content_import -y
+  922  ddev drush cr\nddev drush en cc_content_import -y
+  923  ddev drush migrate:status
+  924  ddev drush config:import --partial --source=web/modules/custom/cc_content_import/config/install -y
+  925  cd web/modules/custom/cc_content_import/config/install
+  926  ls -l
+  927  ddev drush config:import --partial --source=. -y
+  928  cd ..
+  929  cd ..
+  930  ddev drush cr
+  931  ddev drush migrate:status
+  932  ls -1 web/modules/custom/cc_content_import/config/install
+  933  ls -1 web/modules/custom/cc_content_import/config/install
+  934  ls -l
+  935  cd ..
+  936  cd ..
+  937  cd ..
+  938  cd ..
+  939  ls -1 web/modules/custom/cc_content_import/config/install
+  940  ddev drush config:import --partial --source=web/modules/custom/cc_content_import/config/install -y
+  941  cat web/modules/custom/cc_content_import/config/install/migrate_plus.migration.cc_paragraph_text.yml
+  942  ddev drush migrate:status
+  943  ddev drush config:import --partial --source=web/modules/custom/cc_content_import/config/install -y
+  944  ddev drush config:import --partial --source=/var/www/html/web/modules/custom/cc_content_import/config/install -y
+  945  ddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true
+  946  ddev drush pm:uninstall cc_content_import -y || true
+  947  ddev drush cr
+  948  ddev drush en cc_content_import -y
+  949  ddev drush migrate:status
+  950  ddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  951  ddev drush config:delete migrate_plus.migration.cc_paragraph_text -y\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  952  ddev mysql livecopy -e "SHOW TABLES LIKE '%text%';"
+  953  ddev mysql livecopy -e "SHOW TABLES LIKE 'field_data_%';"
+  954  ddev mysql livecopy -e "DESCRIBE paragraph_revision__field_text;"
+  955  ddev mysql livecopy -e "DESCRIBE paragraph_field_data;"
+  956  ddev mysql livecopy -e "SHOW TABLES LIKE 'paragraph%';"
+  957  ddev mysql livecopy -e "SHOW TABLES LIKE 'paragraphs%';"
+  958  ddev mysql livecopy -e "DESCRIBE paragraphs_item_field_data;"\nddev mysql livecopy -e "DESCRIBE paragraphs_item_revision_field_data;"\nddev mysql livecopy -e "DESCRIBE paragraphs_item;"
+  959  ddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  960  ddev drush cr
+  961  ddev drush migrate:status
+  962  ddev drush migrate:import cc_paragraph_text
+  963  ddev mysql livecopy -e "DESCRIBE node__field_paragraphs;"\nddev mysql livecopy -e "DESCRIBE node_revision__field_paragraphs;"
+  964  ddev mysql livecopy -e "DESCRIBE node_field_data;"
+  965  ddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  966  ddev drush migrate:import cc_news_article --limit=10
+  967  ddev drush migrate:rollback cc_news_article
+  968  ddev drush migrate:status
+  969  ddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  970  ddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  971  ddev drush migrate:import cc_news_article --limit=10
+  972  ddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  973  ddev drush migrate:import cc_news_article --limit=10
+  974  ddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  975  ddev drush migrate:rollback cc_news_article
+  976  ddev drush migrate:status
+  977  ddev drush migrate:import cc_news_article --limit=10
+  978  ddev drush migrate:messages cc_news_article --limit=20
+  979  ddev drush migrate:messages cc_news_article | head -20
+  980  ddev drush sqlq "\nSELECT n.nid, n.title, p.delta, p.field_paragraphs_target_id\nFROM node_field_data n\nLEFT JOIN node__field_paragraphs p ON n.nid = p.entity_id\nORDER BY n.nid DESC\nLIMIT 20;\n"
+  981  ddev mysql livecopy -e "\nSELECT p.bundle, COUNT(*) AS total\nFROM node__field_paragraphs nfp\nJOIN paragraphs_item_field_data p\n  ON nfp.field_paragraphs_target_id = p.id\nJOIN node_field_data n\n  ON nfp.entity_id = n.nid\nWHERE n.type = 'news_article'\nGROUP BY p.bundle\nORDER BY total DESC;\n"
+  982  ddev mysql livecopy -e "\nSELECT p.type, COUNT(*) AS total\nFROM node__field_paragraphs nfp\nJOIN paragraphs_item_field_data p\n  ON nfp.field_paragraphs_target_id = p.id\nJOIN node_field_data n\n  ON nfp.entity_id = n.nid\nWHERE n.type = 'news_article'\nGROUP BY p.type\nORDER BY total DESC;\n"
+  983  ddev mysql livecopy -e "\nSELECT n.nid, n.title, p.type, nfp.delta\nFROM node__field_paragraphs nfp\nJOIN paragraphs_item_field_data p\n  ON nfp.field_paragraphs_target_id = p.id\nJOIN node_field_data n\n  ON nfp.entity_id = n.nid\nWHERE n.nid IN (84458, 84459, 84460)\nORDER BY n.nid, nfp.delta;\n"
+  984  ddev mysql livecopy -e "\nSELECT n.nid, n.title, p.type, nfp.delta\nFROM node__field_paragraphs nfp\nJOIN paragraphs_item_field_data p\n  ON nfp.field_paragraphs_target_id = p.id\nJOIN node_field_data n\n  ON nfp.entity_id = n.nid\nWHERE n.nid IN (84458, 84459, 84460)\nORDER BY n.nid, nfp.delta;\n"
+  985  ddev mysql livecopy -e "DESCRIBE paragraph_revision__field_image;"\nddev mysql livecopy -e "DESCRIBE paragraph__field_image;"
+  986  ddev drush config:delete migrate_plus.migration.cc_paragraph_image -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  987  ddev drush migrate:import cc_paragraph_image --limit=20
+  988  ddev drush migrate:import cc_paragraph_image
+  989  ddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+  990  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+  991  ddev drush sqlq "\nSELECT n.nid, n.title, p.delta, p.field_paragraphs_target_id\nFROM node_field_data n\nLEFT JOIN node__field_paragraphs p ON n.nid = p.entity_id\nORDER BY n.nid DESC\nLIMIT 20;\n"
+  992  ddev drush migrate:import cc_media_image
+  993  ddev drush migrate:status
+  994  ddev drush config:delete migrate_plus.migration.cc_media_image -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  995  ddev drush config:delete migrate_plus.migration.cc_media_image -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+  996  ddev drush migrate:import cc_media_image --limit=20
+  997  ddev drush php:eval "var_dump(class_exists('\Drupal\cc_content_import\Plugin\migrate\source\CcNewsArticle'));"\nddev drush php:eval "var_dump(class_exists('\Drupal\cc_content_import\Plugin\migrate\source\CcMediaImage'));"
+  998  ddev ssh\nls -l /var/www/html/web/modules/custom/cc_content_import/src/Plugin/migrate/source\nexit
+  999  ddev ssh\nls -l /var/www/html/web/modules/custom/cc_content_import/src/Plugin/migrate/source\nexit
+ 1000  ddev ssh\nls -l /var/www/html/web/modules/custom/cc_content_import/src/Plugin/migrate/source\nexit
+ 1001  ls -l /var/www/html/web/modules/custom/cc_content_import/src/Plugin/migrate/source/
+ 1002  ls -l /var/www/html/web/modules/custom/cc_content_import/src/Plugin/migrate/source/
+ 1003  ddev ssh
+ 1004  php -l /var/www/html/web/modules/custom/cc_content_import/src/Plugin/migrate/source/CcNewsArticle.php\nphp -l /var/www/html/web/modules/custom/cc_content_import/src/Plugin/migrate/source/CcMediaImage.php
+ 1005  sed -n '1,40p' /var/www/html/web/modules/custom/cc_content_import/src/Plugin/migrate/source/CcNewsArticle.php\nsed -n '1,40p' /var/www/html/web/modules/custom/cc_content_import/src/Plugin/migrate/source/CcMediaImage.php
+ 1006  ddev exec php -l /var/www/html/web/modules/custom/cc_content_import/src/Plugin/migrate/source/CcNewsArticle.php\nddev exec php -l /var/www/html/web/modules/custom/cc_content_import/src/Plugin/migrate/source/CcMediaImage.php
+ 1007  ddev ssh
+ 1008  ddev drush cr\nddev drush php:eval "var_dump(class_exists('\Drupal\cc_content_import\Plugin\migrate\source\CcNewsArticle'));"\nddev drush php:eval "var_dump(class_exists('\Drupal\cc_content_import\Plugin\migrate\source\CcMediaImage'));"
+ 1009  ddev exec find /var/www/html/web/modules/custom/cc_content_import -maxdepth 2 -type f | sort
+ 1010  ddev exec find /var/www/html/web/modules/custom -name "cc_content_import.info.yml" -o -name "*.info.yml" | sort | grep cc_content_import
+ 1011  ddev composer dump-autoload\nddev drush cr\nddev drush php:eval "var_dump(class_exists('\Drupal\cc_content_import\Plugin\migrate\source\CcNewsArticle'));"\nddev drush php:eval "var_dump(class_exists('\Drupal\cc_content_import\Plugin\migrate\source\CcMediaImage'));"
+ 1012  ddev drush php:eval 'var_dump(\Drupal::service("extension.list.module")->getPath("cc_content_import"));'\nddev drush php:eval 'print_r(\Drupal::service("class_loader")->getPrefixesPsr4()["Drupal\\\\cc_content_import\\\\"] ?? null);'\nddev exec find /var/www/html/web/modules/custom/cc_content_import -maxdepth 2 -type f | sort
+ 1013  ddev drush migrate:status\nddev drush migrate:import cc_media_image --limit=20
+ 1014  ddev drush migrate:import cc_media_image\nddev drush migrate:rollback cc_paragraph_image\nddev drush migrate:import cc_paragraph_image\nddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1015  ddev composer dump-autoload\nddev drush cr\nddev drush php:eval "var_dump(class_exists('\Drupal\cc_content_import\Plugin\migrate\source\CcNewsArticle'));"\nddev drush php:eval "var_dump(class_exists('\Drupal\cc_content_import\Plugin\migrate\source\CcMediaImage'));"
+ 1016  ddev drush pm:uninstall cc_content_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1017  ddev composer dump-autoload\nddev drush cr\nddev drush php:eval "var_dump(class_exists('\Drupal\cc_content_import\Plugin\migrate\source\CcNewsArticle'));"\nddev drush php:eval "var_dump(class_exists('\Drupal\cc_content_import\Plugin\migrate\source\CcMediaImage'));"
+ 1018  ddev drush migrate:status
+ 1019  ddev composer dump-autoload\nddev drush cr\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1020  ddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration.cc_news_article -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y
+ 1021  ddev drush cr
+ 1022  ddev drush en cc_content_import -y\nddev drush cr
+ 1023  ddev drush migrate:status
+ 1024  ddev drush migrate:import cc_media_image --limit=20
+ 1025  ddev drush migrate:import cc_media_image
+ 1026  ddev drush migrate:rollback cc_paragraph_image\nddev drush migrate:import cc_paragraph_image
+ 1027  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1028  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1029  ddev drush migrate:import cc_news_article
+ 1030  ddev drush cr
+ 1031  ddev drush migrate:rollback cc_news_article
+ 1032  ddev drush migrate:import cc_news_article --limit=10
+ 1033  ddev drush sqlq "\nSELECT n.nid, n.title, p.delta, p.field_paragraphs_target_id\nFROM node_field_data n\nLEFT JOIN node__field_paragraphs p ON n.nid = p.entity_id\nORDER BY n.nid DESC\nLIMIT 20;\n"
+ 1034  ddev drush cr
+ 1035  ddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_media_image -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1036  ddev drush migrate:import cc_media_image --limit=20
+ 1037  ddev drush migrate:import cc_media_image
+ 1038  ddev drush migrate:import cc_media_image
+ 1039  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1040  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1041  ddev drush migrate:import cc_media_image
+ 1042  ddev drush sqlq "\nSELECT n.nid, n.title, p.delta, p.field_paragraphs_target_id\nFROM node_field_data n\nLEFT JOIN node__field_paragraphs p ON n.nid = p.entity_id\nORDER BY n.nid DESC\nLIMIT 20;\n"
+ 1043  ddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_media_image -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1044  ddev drush migrate:import cc_media_image
+ 1045  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article
+ 1046  ddev npm run watch\n
+ 1047  ddev start
+ 1048  ddev mysql livecopy -e "DESCRIBE taxonomy_term_field_data;"\nddev mysql livecopy -e "DESCRIBE taxonomy_term__parent;"\nddev mysql livecopy -e "DESCRIBE taxonomy_term__field_tags;"
+ 1049  ddev mysql livecopy -e "SELECT vid, name FROM taxonomy_vocabulary;"
+ 1050  ddev mysql livecopy -e "SELECT vid, name FROM taxonomy_vocabulary ORDER BY vid;"
+ 1051  ddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y || true\nddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_media_image -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1052  ddev drush migrate:import cc_taxonomy_tags --limit=20
+ 1053  ddev drush cr
+ 1054  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1055  ddev drush cr\nddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1056  ddev drush sqlq "\nSELECT n.nid, n.title, t.field_tags_target_id\nFROM node_field_data n\nJOIN node__field_tags t ON n.nid = t.entity_id\nORDER BY n.nid DESC\nLIMIT 20;\n"
+ 1057  ddev drush sqlq "\nSELECT n.nid, n.title, p.delta, p.field_paragraphs_target_id\nFROM node_field_data n\nLEFT JOIN node__field_paragraphs p ON n.nid = p.entity_id\nORDER BY n.nid DESC\nLIMIT 20;\n"
+ 1058  ddev drush sqlq "\nSELECT n.nid, n.title, tm.field_teaser_media_target_id\nFROM node_field_data n\nLEFT JOIN node__field_teaser_media tm ON n.nid = tm.entity_id\nORDER BY n.nid DESC\nLIMIT 20;\n"
+ 1059  ddev mysql livecopy -e "SELECT vid, name FROM taxonomy_vocabulary ORDER BY vid;"
+ 1060  ddev mysql livecopy -e "\nSELECT name, data\nFROM config\nWHERE name LIKE 'taxonomy.vocabulary.%';\n"
+ 1061  ddev mysql livecopy -e "\nSELECT name\nFROM config\nWHERE name LIKE 'taxonomy.vocabulary.%'\nORDER BY name;\n"
+ 1062  ddev drush migrate:import cc_taxonomy_tags\nddev drush cr\nddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1063  ddev drush sqlq "\nSELECT n.nid, n.title, t.field_tags_target_id\nFROM node_field_data n\nJOIN node__field_tags t ON n.nid = t.entity_id\nORDER BY n.nid DESC\nLIMIT 20;\n"
+ 1064  ddev drush migrate:status
+ 1065  ddev drush migrate:import cc_taxonomy_tags
+ 1066  ddev drush migrate:import cc_taxonomy_tags
+ 1067  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1068  ddev mysql livecopy -e "\nSELECT entity_id, delta, field_tags_target_id\nFROM node__field_tags\nORDER BY entity_id DESC\nLIMIT 20;\n"
+ 1069  ddev drush sqlq "\nSELECT entity_id, delta, field_tags_target_id\nFROM node__field_tags\nORDER BY entity_id DESC\nLIMIT 20;\n"
+ 1070  ddev drush migrate:status
+ 1071  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1072  ddev drush sqlq "\nSELECT entity_id, delta, field_tags_target_id\nFROM node__field_tags\nORDER BY entity_id DESC\nLIMIT 20;\n"
+ 1073  ddev drush migrate:status
+ 1074  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1075  ddev mysql livecopy -e "\nSELECT entity_id, delta, field_tags_target_id\nFROM node__field_tags\nORDER BY entity_id DESC\nLIMIT 20;\n"
+ 1076  ddev drush migrate:status
+ 1077  ddev drush sqlq "\nSELECT entity_id, delta, field_tags_target_id\nFROM node__field_tags\nORDER BY entity_id DESC\nLIMIT 20;\n"
+ 1078  ddev mysql livecopy -e "DESCRIBE paragraph_revision__field_images;"\nddev mysql livecopy -e "DESCRIBE paragraph__field_images;"\nddev mysql livecopy -e "DESCRIBE paragraph_revision__field_media;"\nddev mysql livecopy -e "DESCRIBE paragraph__field_media;"\nddev mysql livecopy -e "DESCRIBE paragraph_revision__field_title;"\nddev mysql livecopy -e "DESCRIBE paragraph__field_title;"
+ 1079  ddev drush config:delete migrate_plus.migration.cc_paragraph_gallery_slider -y || true\nddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_media_image -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1080  ddev drush migrate:import cc_paragraph_gallery_slider --limit=20
+ 1081  ddev drush migrate:import cc_paragraph_gallery_slider
+ 1082  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1083  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1084  ddev drush sqlq "\nSELECT nid, title, status, type, created\nFROM node_field_data\nWHERE type = 'news_article'\nORDER BY nid DESC\nLIMIT 20;\n"
+ 1085  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1086  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article
+ 1087  ddev drush cr
+ 1088  ddev drush migrate:rollback cc_news_article
+ 1089  ddev drush migrate:import cc_news_article --limit=20
+ 1090  ddev drush migrate:rollback cc_news_article
+ 1091  ddev drush migrate:import cc_news_article
+ 1092  ddev drush cr
+ 1093  ddev drush migrate:rollback cc_news_article
+ 1094  ddev drush migrate:import cc_news_article
+ 1095  ddev drush migrate:rollback cc_news_article
+ 1096  ddev mysql livecopy -e "\nSELECT name\nFROM config\nWHERE name LIKE 'taxonomy.vocabulary.%'\nORDER BY name;\n"
+ 1097  ddev drush config:delete migrate_plus.migration.cc_taxonomy_news_type -y || true\nddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_gallery_slider -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_media_image -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1098  ddev drush migrate:import cc_taxonomy_news_type --limit=20\nddev drush migrate:import cc_taxonomy_news_type
+ 1099  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=20
+ 1100  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article
+ 1101  ddev drush migrate:rollback cc_news_article
+ 1102  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article
+ 1103  ddev drush cr\nddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1104  ddev drush cr\nddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article
+ 1105  ddev drush config:delete migrate_plus.migration.cc_taxonomy_news_type -y || true\nddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_gallery_slider -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y || true\nddev drush config:delete migrate_plus.migration.cc_media_image -y || true\nddev drush config:delete migrate_plus.migration.cc_files -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1106  ddev drush cr\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+ 1107  ddev drush cr\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+ 1108  ddev drush cr\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+ 1109  ddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration.cc_media_image -y\nddev drush config:delete migrate_plus.migration.cc_news_article -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_gallery_slider -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_news_type -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y
+ 1110  ddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1111  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article --limit=10
+ 1112  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article
+ 1113  ddev mysql livecopy < cc_21-04-26.sql
+ 1114  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article
+ 1115  ddev mysql livecopy -e "SHOW TABLES;"
+ 1116  ddev drush migrate:import cc_new_content_type --limit=10
+ 1117  ddev drush migrate:import cc_files\nddev drush migrate:import cc_media_image\nddev drush migrate:import cc_taxonomy_tags\nddev drush migrate:import cc_taxonomy_news_type\nddev drush migrate:import cc_paragraph_text\nddev drush migrate:import cc_paragraph_image\nddev drush migrate:import cc_paragraph_gallery_slider\nddev drush migrate:import cc_news_article
+ 1118  ddev drush sqlq "SELECT field_image_alt FROM media__field_image LIMIT 10;"
+ 1119  ddev drush migrate:rollback cc_media_image
+ 1120  ddev drush migrate:import cc_media_image
+ 1121  ddev drush migrate:rollback cc_news_article\nddev drush migrate:import cc_news_article
+ 1122  ddev drush cr\nddev drush migrate:rollback cc_media_image\nddev drush migrate:import cc_media_image
+ 1123  ddev drush cr\nddev drush migrate:rollback cc_media_image\nddev drush migrate:import cc_media_image
+ 1124  ddev mysql livecopy -e "\nSELECT field_image_target_id, field_image_alt, field_image_title\nFROM media__field_image\nWHERE field_image_alt <> '' OR field_image_title <> ''\nLIMIT 10;\n"
+ 1125  ddev mysql livecopy -e "\nSELECT field_description_value\nFROM media__field_description\nWHERE field_description_value <> ''\nLIMIT 10;\n"
+ 1126  ddev drush sqlq "\nSELECT entity_id, field_image_target_id, field_image_alt, field_image_title\nFROM media__field_image\nWHERE field_image_alt <> '' OR field_image_title <> ''\nLIMIT 20;\n"
+ 1127  ddev drush sqlq "\nSELECT entity_id, field_description_value\nFROM media__field_description\nWHERE field_description_value <> ''\nLIMIT 20;\n"
+ 1128  ddev drush cr\nddev drush migrate:rollback cc_media_image\nddev drush migrate:import cc_media_image
+ 1129  ddev drush sqlq "\nSELECT entity_id, field_image_target_id, field_image_alt, field_image_title\nFROM media__field_image\nWHERE field_image_alt <> '' OR field_image_title <> ''\nLIMIT 20;\n"
+ 1130  ddev drush sqlq "\nSELECT entity_id, field_description_value\nFROM media__field_description\nWHERE field_description_value <> ''\nLIMIT 20;\n"\\n
+ 1131  ddev drush sqlq "\nSELECT entity_id, field_image_target_id, field_image_alt, field_image_title\nFROM media__field_image\nWHERE field_image_alt <> '' OR field_image_title <> ''\nLIMIT 20;\n"
+ 1132  ddev drush sqlq "\nSELECT entity_id, field_description_value\nFROM media__field_description\nWHERE field_description_value <> ''\nLIMIT 20;\n"
+ 1133  ddev drush sqlq "\nSELECT n.nid, n.title, tm.field_teaser_media_target_id\nFROM node_field_data n\nLEFT JOIN node__field_teaser_media tm ON n.nid = tm.entity_id\nWHERE n.type = 'news_article'\nORDER BY n.nid DESC\nLIMIT 10;\n"
+ 1134  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fi.field_image_title, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.mid = 3581;\n"
+ 1135  ddev drush sqlq "\nSELECT p.entity_id AS paragraph_id, p.field_image_target_id AS media_id\nFROM paragraph__field_image p\nORDER BY p.entity_id DESC\nLIMIT 20;\n"
+ 1136  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fi.field_image_title, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.mid = MEDIA_ID_HERE;\n"
+ 1137  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fi.field_image_title, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.mid = 11970;\n"
+ 1138  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fi.field_image_title, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.mid = 9186;\n"
+ 1139  ddev drush migrate:rollback cc_news_article\nddev drush migrate:rollback cc_paragraph_gallery_slider\nddev drush migrate:rollback cc_paragraph_image\n\nddev drush migrate:import cc_media_image\nddev drush migrate:import cc_paragraph_image\nddev drush migrate:import cc_paragraph_gallery_slider\nddev drush migrate:import cc_news_article --limit=10
+ 1140  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fi.field_image_title, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.mid = 11970;\n"
+ 1141  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fi.field_image_title, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.mid = 9186;\n"
+ 1142  cd wen
+ 1143  cd web/sites/default
+ 1144   sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/site/default/files . 
+ 1145  sudo rsync -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj" -aHSv qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/sites/default/files .
+ 1146  sudo chown -R neilfarhall:staff files 
+ 1147  ddev npm run watch\n
+ 1148  ddev start
+ 1149  ddev drush migrate:status
+ 1150  ddev drush migrate:rollback cc_news_article\nddev drush migrate:rollback cc_paragraph_gallery_slider\nddev drush migrate:rollback cc_paragraph_image\nddev drush migrate:rollback cc_media_image
+ 1151  ddev drush migrate:import cc_media_image\nddev drush migrate:import cc_paragraph_image\nddev drush migrate:import cc_paragraph_gallery_slider\nddev drush migrate:import cc_news_article --limit=10
+ 1152  ddev drush sqlq "\nSELECT n.nid, n.title, tm.field_teaser_media_target_id\nFROM node_field_data n\nLEFT JOIN node__field_teaser_media tm ON n.nid = tm.entity_id\nWHERE n.type = 'news_article'\nORDER BY n.nid DESC\nLIMIT 10;\n"
+ 1153  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fi.field_image_title, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.mid = REPLACE_WITH_REAL_ID;\n"
+ 1154  ddev drush sqlq "\nSELECT p.entity_id AS paragraph_id, p.field_image_target_id AS media_id\nFROM paragraph__field_image p\nORDER BY p.entity_id DESC\nLIMIT 10;\n"
+ 1155  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fi.field_image_title, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.mid = ACTUAL_ID_HERE;\n"
+ 1156  ddev drush migrate:rollback cc_news_article\nddev drush migrate:rollback cc_paragraph_gallery_slider\nddev drush migrate:rollback cc_paragraph_image\nddev drush migrate:rollback cc_media_image
+ 1157  ddev drush cr\nddev drush migrate:import cc_media_image\nddev drush migrate:import cc_paragraph_image\nddev drush migrate:import cc_paragraph_gallery_slider\nddev drush migrate:import cc_news_article --limit=10
+ 1158  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.name = 'gantry_removal_1.png';\n"
+ 1159  ddev mysql livecopy -e "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.name = 'gantry_removal_1.png';\n"
+ 1160  ddev mysql livecopy -e "\nSELECT entity_id, revision_id, field_image_target_id, field_image_alt, field_image_title\nFROM media__field_image\nWHERE entity_id = (\n  SELECT mid FROM media_field_data WHERE name = 'gantry_removal_1.png' LIMIT 1\n);\n"
+ 1161  ddev drush sqlq "\nSELECT sourceid1, destid1, source_row_status\nFROM migrate_map_cc_media_image\nWHERE sourceid1 = 6480 OR destid1 = 26081;\n"
+ 1162  ddev drush cr\nddev drush migrate:rollback cc_news_article\nddev drush migrate:rollback cc_paragraph_gallery_slider\nddev drush migrate:rollback cc_paragraph_image\nddev drush migrate:rollback cc_media_image\n\nddev drush migrate:import cc_media_image\nddev drush migrate:import cc_paragraph_image\nddev drush migrate:import cc_paragraph_gallery_slider\nddev drush migrate:import cc_news_article --limit=10
+ 1163  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.name = 'gantry_removal_1.png';\n"
+ 1164  ddev drush sqlq "\nSELECT sourceid1, destid1, source_row_status\nFROM migrate_map_cc_media_image\nWHERE sourceid1 = 6480;\n"
+ 1165  ddev drush sqlq "\nSELECT sourceid1, destid1, source_row_status\nFROM migrate_map_cc_media_image\nWHERE destid1 = 28963;\n"
+ 1166  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fi.field_image_title, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.mid = ACTUAL_DESTID;\n"
+ 1167  ddev drush cr\nddev drush migrate:rollback cc_news_article\nddev drush migrate:rollback cc_paragraph_gallery_slider\nddev drush migrate:rollback cc_paragraph_image\nddev drush migrate:rollback cc_media_image\nddev drush migrate:import cc_media_image\nddev drush migrate:import cc_paragraph_image\nddev drush migrate:import cc_paragraph_gallery_slider\nddev drush migrate:import cc_news_article --limit=10
+ 1168  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fi.field_image_title, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.mid = 28963;\n"
+ 1169  ddev mysql livecopy -e "\nSELECT mfd.mid, mfd.vid, mfd.name, mfd.bundle, mfd.langcode\nFROM media_field_data mfd\nWHERE mfd.name = 'gantry_removal_1.png';\n"
+ 1170  ddev mysql livecopy -e "\nSELECT entity_id, revision_id, langcode, delta, field_image_target_id, field_image_alt, field_image_title\nFROM media__field_image\nWHERE entity_id = 6480;\n"
+ 1171  ddev mysql livecopy -e "\nSELECT entity_id, revision_id, langcode, delta, field_image_target_id, field_image_alt, field_image_title\nFROM media_revision__field_image\nWHERE entity_id = 6480 OR revision_id = 6481;\n"
+ 1172  ddev mysql livecopy -e "\nSELECT entity_id, revision_id, langcode, delta, field_description_value\nFROM media__field_description\nWHERE entity_id = 6480;\n"
+ 1173  ddev mysql livecopy -e "\nSELECT entity_id, revision_id, langcode, delta, field_description_value\nFROM media_revision__field_description\nWHERE entity_id = 6480 OR revision_id = 6481;\n"
+ 1174  ddev drush config:get field.field.media.image.field_image\nddev drush config:get field.field.media.image.field_description
+ 1175  ddev drush config:get migrate_plus.migration.cc_media_image
+ 1176  ddev drush migrate:rollback cc_news_article\nddev drush migrate:rollback cc_paragraph_gallery_slider\nddev drush migrate:rollback cc_paragraph_image\nddev drush migrate:rollback cc_media_image
+ 1177  ddev drush config:delete migrate_plus.migration.cc_media_image -y\nddev drush config:delete migrate_plus.migration.cc_news_article -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_gallery_slider -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_news_type -y\nddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y
+ 1178  ddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+ 1179  ddev drush config:get migrate_plus.migration.cc_media_image
+ 1180  ddev drush migrate:import cc_media_image\nddev drush migrate:import cc_paragraph_image\nddev drush migrate:import cc_paragraph_gallery_slider\nddev drush migrate:import cc_news_article --limit=10
+ 1181  ddev drush sqlq "\nSELECT mfd.mid, mfd.name, fi.field_image_alt, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE mfd.name = 'gantry_removal_1.png';\n"
+ 1182  ddev drush cr
+ 1183  ddev drush sqlq "\nSELECT mfd.mid, fi.field_image_alt, fd.field_description_value\nFROM media_field_data mfd\nLEFT JOIN media__field_image fi ON mfd.mid = fi.entity_id\nLEFT JOIN media__field_description fd ON mfd.mid = fd.entity_id\nWHERE fi.field_image_alt IS NOT NULL\nLIMIT 10;\n"
+ 1184  ddev drush migrate:status
+ 1185  ddev drush migrate:import cc_news_article
+ 1186  SELECT COUNT(*) FROM node_field_data WHERE type = 'news_article';
+ 1187  mysql
+ 1188  SELECT COUNT(*) FROM node_field_data WHERE type = 'news_article';
+ 1189  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'news_article';"
+ 1190  ddev mysql livecopy -e "\nSELECT COUNT(*) AS total_news_articles\nFROM node_field_data\nWHERE type = 'news_article';\n"
+ 1191  ddev drush migrate:rollback cc_news_article
+ 1192  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'news_article';"
+ 1193  ddev drush entity:delete node --bundle=news_article
+ 1194  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'news_article';"
+ 1195  ddev drush migrate:import cc_news_article
+ 1196  # Local\nddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'news_article';"\n\n# Live\nddev mysql livecopy -e "SELECT COUNT(*) FROM node_field_data WHERE type = 'news_article';"
+ 1197  ddev mysql livecopy -e "DESCRIBE paragraph_revision__field_block_reference;"\nddev mysql livecopy -e "DESCRIBE paragraph__field_block_reference;"
+ 1198  ddev mysql livecopy -e "DESCRIBE paragraph_revision__field_bullet_text;"\nddev mysql livecopy -e "DESCRIBE paragraph__field_bullet_text;"
+ 1199  ddev mysql livecopy -e "DESCRIBE paragraph_revision__field_links;"\nddev mysql livecopy -e "DESCRIBE paragraph__field_links;"
+ 1200  ddev mysql livecopy -e "DESCRIBE paragraph_revision__field_video_embed;"\nddev mysql livecopy -e "DESCRIBE paragraph__field_video_embed;"\nddev mysql livecopy -e "DESCRIBE paragraph_revision__field_video_caption;"\nddev mysql livecopy -e "DESCRIBE paragraph__field_video_caption;"
+ 1201  ddev drush config:delete migrate_plus.migration.cc_paragraph_block_reference -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_bullet_list -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_links -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_video -y || true\nddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\n\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1202  ddev drush config:delete migrate_plus.migration.cc_paragraph_block_reference -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_bullet_list -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_links -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_video -y || true\nddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\n\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1203  ddev drush config:delete migrate_plus.migration.cc_paragraph_block_reference -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_bullet_list -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_links -y || true\nddev drush config:delete migrate_plus.migration.cc_paragraph_video -y || true\nddev drush config:delete migrate_plus.migration.cc_news_article -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\n\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1204  ddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration.cc_media_image -y\nddev drush config:delete migrate_plus.migration.cc_news_article -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_gallery_slider -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_block_reference -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_bullet_list -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_links -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_video -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_news_type -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y
+ 1205  ddev drush cr
+ 1206  ddev drush en cc_content_import -y\nddev drush cr
+ 1207  ddev drush migrate:status
+ 1208  ddev drush migrate:import cc_paragraph_block_reference\nddev drush migrate:import cc_paragraph_bullet_list\nddev drush migrate:import cc_paragraph_links\nddev drush migrate:import cc_paragraph_video\nddev drush migrate:import cc_news_article --limit=20
+ 1209  ddev drush migrate:rollback cc_news_article\nddev drush migrate:rollback cc_paragraph_video\nddev drush migrate:rollback cc_paragraph_links\nddev drush migrate:rollback cc_paragraph_bullet_list\nddev drush migrate:rollback cc_paragraph_block_reference\nddev drush migrate:rollback cc_paragraph_gallery_slider\nddev drush migrate:rollback cc_paragraph_image\nddev drush migrate:rollback cc_paragraph_text\nddev drush migrate:rollback cc_media_image
+ 1210  ddev drush migrate:import cc_files --limit=5\nddev drush migrate:import cc_media_image --limit=5\nddev drush migrate:import cc_taxonomy_tags --limit=5\nddev drush migrate:import cc_taxonomy_news_type --limit=5\nddev drush migrate:import cc_paragraph_text --limit=5\nddev drush migrate:import cc_paragraph_image --limit=5\nddev drush migrate:import cc_paragraph_gallery_slider --limit=5\nddev drush migrate:import cc_paragraph_block_reference --limit=5\nddev drush migrate:import cc_paragraph_bullet_list --limit=5\nddev drush migrate:import cc_paragraph_links --limit=5\nddev drush migrate:import cc_paragraph_video --limit=5\nddev drush migrate:import cc_news_article --limit=5
+ 1211  ddev drush migrate:import cc_files --limit=5\nddev drush migrate:import cc_media_image --limit=5\nddev drush migrate:import cc_taxonomy_tags --limit=5\nddev drush migrate:import cc_taxonomy_news_type --limit=5\nddev drush migrate:import cc_paragraph_text --limit=5\nddev drush migrate:import cc_paragraph_image --limit=5\nddev drush migrate:import cc_paragraph_gallery_slider --limit=5\nddev drush migrate:import cc_paragraph_block_reference --limit=5\nddev drush migrate:import cc_paragraph_bullet_list --limit=5\nddev drush migrate:import cc_paragraph_links --limit=5\nddev drush migrate:import cc_paragraph_video --limit=5\nddev drush migrate:import cc_news_article --limit=5
+ 1212  ddev drush migrate:import cc_files\nddev drush migrate:import cc_media_image\nddev drush migrate:import cc_taxonomy_tags\nddev drush migrate:import cc_taxonomy_news_type\nddev drush migrate:import cc_paragraph_text\nddev drush migrate:import cc_paragraph_image\nddev drush migrate:import cc_paragraph_gallery_slider\nddev drush migrate:import cc_paragraph_block_reference\nddev drush migrate:import cc_paragraph_bullet_list\nddev drush migrate:import cc_paragraph_links\nddev drush migrate:import cc_paragraph_video
+ 1213  ddev drush migrate:import cc_news_article --limit=5 --execute-dependencies=0
+ 1214  ddev drush migrate:import cc_news_article --limit=5
+ 1215  ddev drush migrate:rollback cc_news_article\n\nddev drush config:delete migrate_plus.migration.cc_news_article -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr
+ 1216  ddev drush migrate:import cc_news_article --limit=5
+ 1217  ddev drush cr
+ 1218  ddev drush en cc_content_import -y\nddev drush cr
+ 1219  ddev drush migrate:status
+ 1220  ddev drush config:delete migrate_plus.migration.cc_news_article -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1221  ddev drush config:delete migrate_plus.migration.cc_news_article -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1222  ls -1 web/modules/custom/cc_content_import/config/install | grep cc_news_article
+ 1223  ddev drush pm:uninstall cc_content_import -y\nddev drush cr
+ 1224  ddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1225  ddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration.cc_media_image -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_block_reference -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_bullet_list -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_gallery_slider -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_links -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_video -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_news_type -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y
+ 1226  ddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1227  ddev drush migrate:import cc_news_article
+ 1228  ddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1229  ddev drush migrate:messages cc_news_article
+ 1230  ddev mysql livecopy -e "SELECT COUNT(*) AS total FROM node_field_data WHERE type = 'article';"\n\nddev mysql livecopy -e "DESCRIBE node__body;"\nddev mysql livecopy -e "DESCRIBE node__field_email;"\nddev mysql livecopy -e "DESCRIBE node__field_featured_article;"\nddev mysql livecopy -e "DESCRIBE node__field_omit_from_news_listing;"\nddev mysql livecopy -e "DESCRIBE node__field_teaser_media;"\nddev mysql livecopy -e "DESCRIBE node__field_teaser_text;"\nddev mysql livecopy -e "DESCRIBE node__field_tags;"\nddev mysql livecopy -e "DESCRIBE node__field_paragraphs;"
+ 1231  ddev drush config:delete migrate_plus.migration.cc_article -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1232  ddev drush config:delete migrate_plus.migration.cc_article -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1233  ddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration.cc_media_image -y\nddev drush config:delete migrate_plus.migration.cc_news_article -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_block_reference -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_bullet_list -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_gallery_slider -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_links -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_video -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_news_type -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y\nddev drush config:delete migrate_plus.migration.cc_article -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1234  migrate_plus.migration.cc_article.yml
+ 1235  ddev drush config:get migrate_plus.migration.cc_article
+ 1236  ddev drush migrate:import cc_article --limit=10
+ 1237  ddev drush migrate:import cc_article
+ 1238  ddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1239  ddev mysql livecopy -e "SELECT COUNT(*) AS total FROM node_field_data WHERE type = 'video';"\n\nddev mysql livecopy -e "DESCRIBE node__body;"\nddev mysql livecopy -e "DESCRIBE node__field_teaser_text;"\nddev mysql livecopy -e "DESCRIBE node__field_teaser_media;"\nddev mysql livecopy -e "DESCRIBE node__field_video_embed;"\nddev mysql livecopy -e "DESCRIBE node__field_video_type;"\nddev mysql livecopy -e "DESCRIBE node__field_tagging_subject;"
+ 1240  ddev mysql livecopy -e "\nSELECT COUNT(*) AS total\nFROM media_field_data\nWHERE bundle = 'video';\n"\n\nddev mysql livecopy -e "\nDESCRIBE media_field_data;\n"\n\nddev mysql livecopy -e "\nSHOW TABLES LIKE 'media%video%';\n"\n\nddev mysql livecopy -e "\nSELECT *\nFROM media_field_data\nWHERE bundle = 'video'\nLIMIT 5;\n"\n\nddev mysql livecopy -e "\nSELECT name\nFROM config\nWHERE name LIKE 'taxonomy.vocabulary.%'\n  AND data LIKE '%Video%';\n"
+ 1241  ddev drush config:delete migrate_plus.migration.cc_media_video -y || true\nddev drush config:delete migrate_plus.migration.cc_taxonomy_video_type -y || true\nddev drush config:delete migrate_plus.migration.cc_video -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1242  ddev drush config:delete migrate_plus.migration.cc_article -y\nddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration.cc_media_image -y\nddev drush config:delete migrate_plus.migration.cc_news_article -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_block_reference -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_bullet_list -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_gallery_slider -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_links -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_video -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_news_type -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y\nddev drush config:delete migrate_plus.migration.cc_media_video -y || true\nddev drush config:delete migrate_plus.migration.cc_taxonomy_video_type -y || true\nddev drush config:delete migrate_plus.migration.cc_video -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1243  ddev drush migrate:import cc_taxonomy_video_type\nddev drush migrate:import cc_media_video\nddev drush migrate:import cc_video
+ 1244  ddev mysql livecopy -e "SELECT COUNT(*) AS total FROM node_field_data WHERE type = 'event';"\n\nddev mysql livecopy -e "DESCRIBE node__body;"\nddev mysql livecopy -e "DESCRIBE node__field_event_date;"\nddev mysql livecopy -e "DESCRIBE node__field_event_organiser;"\nddev mysql livecopy -e "DESCRIBE node__field_event_reference;"\nddev mysql livecopy -e "DESCRIBE node__field_event_type;"\nddev mysql livecopy -e "DESCRIBE node__field_logo;"\nddev mysql livecopy -e "DESCRIBE node__field_event_email;"\nddev mysql livecopy -e "DESCRIBE node__field_teaser_media;"\nddev mysql livecopy -e "DESCRIBE node__field_teaser_text;"\nddev mysql livecopy -e "DESCRIBE node__field_event_website;"\nddev mysql livecopy -e "DESCRIBE node__field_event_venue;"\nddev mysql livecopy -e "DESCRIBE node__field_event_town_city;"\nddev mysql livecopy -e "DESCRIBE node__field_event_postcode;"\nddev mysql livecopy -e "DESCRIBE node__field_event_address_1;"\nddev mysql livecopy -e "DESCRIBE node__field_event_address_2;"\nddev mysql livecopy -e "DESCRIBE node__field_event_country;"\nddev mysql livecopy -e "DESCRIBE node__field_county;"\nddev mysql livecopy -e "DESCRIBE node__field_event_speakers_topic;"
+ 1245  ddev drush config:delete migrate_plus.migration.cc_taxonomy_event_type -y || true\nddev drush config:delete migrate_plus.migration.cc_event -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1246  ddev drush config:delete migrate_plus.migration.cc_taxonomy_event_type -y || true\nddev drush config:delete migrate_plus.migration.cc_event -y || true\nddev drush config:delete migrate_plus.migration_group.cc_import -y || true\nddev drush pm:uninstall cc_content_import -y || true\nddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1247  ddev drush config:delete migrate_plus.migration.cc_article -y\nddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration.cc_media_image -y\nddev drush config:delete migrate_plus.migration.cc_media_video -y\nddev drush config:delete migrate_plus.migration.cc_news_article -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_block_reference -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_bullet_list -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_gallery_slider -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_links -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_video -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_event_type -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_news_type -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_video_type -y\nddev drush config:delete migrate_plus.migration.cc_video -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y
+ 1248  ddev drush config:delete migrate_plus.migration.cc_article -y\nddev drush config:delete migrate_plus.migration.cc_files -y\nddev drush config:delete migrate_plus.migration.cc_media_image -y\nddev drush config:delete migrate_plus.migration.cc_media_video -y\nddev drush config:delete migrate_plus.migration.cc_news_article -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_block_reference -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_bullet_list -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_gallery_slider -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_image -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_links -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_text -y\nddev drush config:delete migrate_plus.migration.cc_paragraph_video -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_event_type -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_news_type -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_tags -y\nddev drush config:delete migrate_plus.migration.cc_taxonomy_video_type -y\nddev drush config:delete migrate_plus.migration.cc_video -y\nddev drush config:delete migrate_plus.migration_group.cc_import -y
+ 1249  ddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1250  ddev drush migrate:import cc_taxonomy_event_type\nddev drush migrate:import cc_event --limit=10
+ 1251  ddev drush migrate:import cc_taxonomy_event_type\nddev drush migrate:import cc_event
+ 1252  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'event';"\nddev mysql livecopy -e "SELECT COUNT(*) FROM node_field_data WHERE type = 'event';"
+ 1253  ddev drush migrate:rollback cc_event
+ 1254  ddev drush migrate:rollback cc_event
+ 1255  ddev drush migrate:import cc_taxonomy_event_type\nddev drush migrate:import cc_event
+ 1256  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'event';"\nddev mysql livecopy -e "SELECT COUNT(*) FROM node_field_data WHERE type = 'event';"
+ 1257  ddev drush migrate:rollback cc_event
+ 1258  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'event';"
+ 1259  ddev drush entity:delete node --bundle=event
+ 1260  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'event';"
+ 1261  ddev drush migrate:import cc_taxonomy_event_type\nddev drush migrate:import cc_event
+ 1262  ddev drush migrate:import cc_taxonomy_event_type\nddev drush migrate:import cc_event
+ 1263  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'event';"\nddev mysql livecopy -e "SELECT COUNT(*) FROM node_field_data WHERE type = 'event';"
+ 1264  ddev start
+ 1265  ddev drush cr\nddev drush en cc_content_import -y\nddev drush cr\nddev drush migrate:status
+ 1266  ddev drush migrate:rollback cc_article
+ 1267  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'article';"
+ 1268  ddev drush migrate:rollback cc_article
+ 1269  ddev drush entity:delete node --bundle=article
+ 1270  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'article';"
+ 1271  ddev drush migrate:import cc_article
+ 1272  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'article';"\nddev mysql livecopy -e "SELECT COUNT(*) FROM node_field_data WHERE type = 'article';"
+ 1273  ddev drush migrate:rollback cc_news_article\nddev drush migrate:rollback cc_taxonomy_news_type
+ 1274  ddev drush sqlq "\nSELECT tid, name\nFROM taxonomy_term_field_data\nWHERE vid = 'news_type'\nORDER BY name;\n"
+ 1275  ddev drush entity:delete taxonomy_term --bundle=news_type
+ 1276  ddev drush migrate:import cc_taxonomy_news_type\nddev drush migrate:import cc_news_article
+ 1277  ddev drush sqlq "\nSELECT name, COUNT(*) AS c\nFROM taxonomy_term_field_data\nWHERE vid = 'news_type'\nGROUP BY name\nHAVING c > 1;\n"
+ 1278  ddev start
+ 1279  cd ..
+ 1280  cd ..
+ 1281  cd ..
+ 1282  git init
+ 1283  nano .gitignore
+ 1284  git add composer.json composer.lock web/modules/custom web/themes/custom web/sites/default/default.settings.php\ngit commit -m "Initial Drupal 10 beta site code"
+ 1285  git status
+ 1286  git rm -r --cached vendor web/core web/modules/contrib web/themes/contrib web/sites/default/files
+ 1287  git add .\ngit commit -m "Clean repo - remove vendor/core/files from tracking"
+ 1288  git status
+ 1289  git status
+ 1290  git remote add origin https://github.com/neilfarhall/beta.concreteconnect.co.uk.git
+ 1291  git remote -v
+ 1292  git branch -M main\ngit push -u origin main
+ 1293  git rm --cached cc_17-04-26.sql cc_04-02-26.sql\necho "*.sql" >> .gitignore\ngit add .gitignore\ngit commit -m "Remove SQL dumps from repository"
+ 1294  git filter-repo --path cc_17-04-26.sql --path cc_04-02-26.sql --invert-paths
+ 1295  brew install git-filter-repo
+ 1296  git status\ngit log -- cc_17-04-26.sql\ngit log -- cc_04-02-26.sql
+ 1297  git remote set-url origin git@github.com:neilfarhall/beta.concreteconnect.co.uk.git\ngit push -u origin main --force
+ 1298  brew install git-filter-repo
+ 1299  git filter-repo \\n  --path cc_04-02-26.sql \\n  --path cc_17-04-26.sql \\n  --path web/combined.tar.gz \\n  --path wget-log \\n  --invert-paths
+ 1300  nano .gitignore
+ 1301  git add .gitignore\ngit commit -m "Ignore database dumps and archive files"
+ 1302  git log -- cc_04-02-26.sql\ngit log -- cc_17-04-26.sql\ngit log -- web/combined.tar.gz\ngit log -- wget-log
+ 1303  git push -u origin main --force
+ 1304  git filter-repo --help
+ 1305  uit
+ 1306  brew install git-filter-repo
+ 1307  cat >> .gitignore <<'EOF'\n*.sql\n*.sql.gz\n*.tar.gz\nwget-log*\nEOF\n\ngit add .gitignore\ngit commit -m "Ignore database dumps and archive files"
+ 1308  git log --all -- cc_04-02-26.sql\ngit log --all -- cc_17-04-26.sql\ngit log --all -- web/combined.tar.gz\ngit log --all -- wget-log
+ 1309  git remote -v
+ 1310  git push -u origin main --force
+ 1311  git filter-repo --force \\n  --path-glob '*cc_04-02-26.sql' \\n  --path-glob '*cc_17-04-26.sql' \\n  --path-glob '*combined.tar.gz' \\n  --path-glob '*wget-log*' \\n  --invert-paths
+ 1312  git log --all --name-only --pretty=format: | grep -E 'cc_04-02-26.sql|cc_17-04-26.sql|combined.tar.gz|wget-log'
+ 1313  cat >> .gitignore <<'EOF'\n*.sql\n*.sql.gz\n*.tar.gz\nwget-log*\nEOF\n\ngit add .gitignore\ngit commit -m "Ignore dumps and archive files"
+ 1314  git remote -v
+ 1315  git remote add origin git@github.com:neilfarhall/beta.concreteconnect.co.uk.git
+ 1316  git remote -v
+ 1317  git push -u origin main --force
+ 1318  # local\nddev export-db --file=beta-db.sql.gz\nrsync -avz web/sites/default/files/ user@server:/path/to/beta/web/sites/default/files/\nscp beta-db.sql.gz user@server:/path/to/beta/
+ 1319  ls -l
+ 1320  DDEV START
+ 1321  ddev start
+ 1322  ddev npm run watch\n
+ 1323  ddev start
+ 1324  sudo nano /etc/hosts
+ 1325  sudo dscacheutil -flushcache
+ 1326  ping beta.concreteconnect.co.uk
+ 1327  sudo nano /etc/hosts
+ 1328  sudo dscacheutil -flushcache
+ 1329  cd /srv/beta.concreteconnect.co.uk/public\nls -l htdocs
+ 1330  git status
+ 1331  ddev drush cex -y\ngit add .\ngit commit -m "Config update"\ngit push
+ 1332  nano config/sync/core.entity_form_display.media.gallery.default.yml
+ 1333  ddev drush cim --preview
+ 1334  ddev drush config:import --preview
+ 1335  ddev drush cim -y
+ 1336  sed -n '15,35p' config/sync/core.entity_form_display.media.gallery.default.yml
+ 1337  nano  config/sync/core.entity_form_display.media.gallery.default.yml
+ 1338  ddev drush cim -y
+ 1339  git add config/sync/core.entity_form_display.media.gallery.default.yml\ngit commit -m "Fix gallery media form display YAML"\ngit push
+ 1340  nano config/sync/core.entity_view_display.node.directory_listing.default.yml
+ 1341  nano config/sync/core.entity_view_display.node.directory_listing.default.yml
+ 1342  ddev drush cim -y
+ 1343  git add config/sync/core.entity_view_display.node.directory_listing.default.yml\ngit commit -m "Fix directory listing view display YAML indentation"\ngit push
+ 1344  ddev drush cim -y\ngit add config/sync/core.entity_view_display.node.directory_listing.default.yml\ngit commit -m "Fix directory listing display YAML indentation"\ngit push
+ 1345  ddev export-db --file=beta-latest.sql.gz
+ 1346  ls -l
+ 1347  ddev import-db --src=beta-latest.sql.gz
+ 1348  ddev drush cr
+ 1349  ddev import-db --src=beta-db.sql.gz\n
+ 1350  ddev drush cr
+ 1351  ddev import-db --src=beta-db.sql.gz
+ 1352  ddev import-db --src=cc_21-04-26.sql\n
+ 1353  ddev drush cr
+ 1354  ddev drush cr
+ 1355  ddev import-db --src=beta-db.sql.gz
+ 1356  ddev drush cr
+ 1357  ddev start
+ 1358  ls -l
+ 1359  ddev import-db --src=cc_17-04-26.sql\n
+ 1360  ddev drush cr
+ 1361  nano web/sites/default/settings.
+ 1362  nano web/sites/default/settings.php
+ 1363  ddev drush cr
+ 1364  ddev composer update
+ 1365  ddev drush cr
+ 1366  ddev import-db --src=beta-db.sql.gz
+ 1367  ddev drush cr
+ 1368  ddev mysql livecopy < concrete-28-04-26.sql
+ 1369  ddev mysql livecopy -e "SELECT COUNT(*) FROM node_field_data;"
+ 1370  ls -l
+ 1371  ddev drush cr
+ 1372  -l
+ 1373  ls -l
+ 1374  ddev mysql livecopy < concrete-28-04-26.sql
+ 1375  ddev mysql livecopy -e "SELECT COUNT(*) FROM node_field_data;"
+ 1376  ddev drush migrate:rollback cc_news_article
+ 1377  ddev drush migrate:reset-status cc_news_article
+ 1378  ddev drush migrate:rollback cc_taxonomy_news_type\nddev drush migrate:reset-status cc_taxonomy_news_type
+ 1379  ddev drush migrate:import cc_taxonomy_news_type
+ 1380  ddev drush sqlq "SELECT COUNT(*) FROM node_field_data WHERE type = 'news_article';"
+ 1381  ddev drush sqlq "SELECT nid, title FROM node_field_data WHERE type = 'news_article' LIMIT 10;"
+ 1382  ddev drush migrate:import cc_news_article
+ 1383  ddev drush migrate:import cc_taxonomy_news_type
+ 1384  ddev drush migrate:import cc_news_article --limit=20
+ 1385  ddev drush migrate:import cc_files\nddev drush migrate:import cc_media_image
+ 1386  ddev drush migrate:import cc_paragraph_*
+ 1387  ddev drush migrate:import cc_news_article --limit=20
+ 1388  ddev drush migrate:status
+ 1389  ddev drush migrate:import cc_taxonomy_tags
+ 1390  ddev drush migrate:import cc_taxonomy_news_type
+ 1391  ddev drush migrate:import cc_news_article --limit=20
+ 1392  ddev drush migrate:import cc_news_article
+ 1393  history
+ 1394  history 100

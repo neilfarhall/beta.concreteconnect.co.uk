@@ -21,9 +21,8 @@
         $(element).on('click', function (e) {
           // Prevent default click on rotate icon
           e.preventDefault();
-
-          let rotate = parseInt($(this).attr('data-rotate'));
           const $rotate_input = $(this).closest('.image-widget').find('.rotate');
+          let rotate = parseInt($rotate_input.attr('value'));
           const $image = $(this).closest('.image-widget').find('img')
             .add($(this).closest('.media-library-add-form li').find('[data-drupal-selector="edit-preview"] img'))
             .add($(this).closest('.js-media-library-add-form li').find('[data-drupal-selector="edit-preview"] img'));
@@ -37,7 +36,11 @@
           // Add new rotate CSS class and update rotate value in elements.
           $image.addClass('rotate-' + rotate);
           $rotate_input.attr('value', rotate);
-          $(this).attr('data-rotate', rotate);
+          let message = Drupal.t('Image rotated 90 degrees.');
+          if (rotate === 0) {
+            message = Drupal.t('Image is again in initial position.');
+          }
+          Drupal.announce(message);
         });
       });
     }
