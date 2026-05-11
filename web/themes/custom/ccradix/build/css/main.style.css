@@ -21996,4 +21996,22 @@ body.restricted-anonymous .block-shariff-block {
   width: 100%;
 }
 
+.region-header::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  top: 0;
+  bottom: 0;
+  background: #f3f3f3;
+  z-index: -1;
+}
+
+.region-header {
+  position: relative;
+  background: #f3f3f3;
+}
+
 /*# sourceMappingURL=main.style.css.map*/
