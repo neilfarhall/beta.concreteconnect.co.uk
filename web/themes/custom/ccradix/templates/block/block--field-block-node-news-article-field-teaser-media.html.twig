@@ -1,0 +1,7 @@
+{% set node = content['#block_content'] ?? null %}
+
+{% if not (drupal_entity('node', elements['content']['#object'].id()).field_restricted_content.value == '1' and not logged_in) %}
+
+  {{ content }}
+
+{% endif %}
