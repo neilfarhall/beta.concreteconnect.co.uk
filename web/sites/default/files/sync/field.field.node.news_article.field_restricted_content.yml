@@ -1,0 +1,21 @@
+uuid: 6777e23b-f468-4f5f-8b4a-f0faf48ebca2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_restricted_content
+    - node.type.news_article
+id: node.news_article.field_restricted_content
+field_name: field_restricted_content
+entity_type: node
+bundle: news_article
+label: 'Restricted Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean
