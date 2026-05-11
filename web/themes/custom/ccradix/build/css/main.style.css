@@ -21985,4 +21985,15 @@ body.restricted-anonymous .block-shariff-block {
   max-width: 100% !important;
 }
 
+.region-header,
+.region-header .container,
+.header,
+.site-header {
+  background: #f3f3f3 !important;
+}
+
+.region-header {
+  width: 100%;
+}
+
 /*# sourceMappingURL=main.style.css.map*/
