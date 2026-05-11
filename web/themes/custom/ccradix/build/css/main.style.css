@@ -21979,4 +21979,10 @@ body.restricted-anonymous .block-shariff-block {
   background: #f3f3f3;
 }
 
+.page,
+.dialog-off-canvas-main-canvas {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 /*# sourceMappingURL=main.style.css.map*/
