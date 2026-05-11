@@ -1,0 +1,53 @@
+{% set node = element['#object'] %}
+{% set restricted = node.field_restricted_content.0.value|default(0) %}
+
+{% if restricted == 1 and not logged_in %}
+
+  <div class="restricted-content-message">
+
+    <div class="restricted-content-inner">
+
+      <h2>Premium content</h2>
+
+      <p class="restricted-intro">
+        This article is available to registered Concrete Connect users.
+      </p>
+
+      <a href="/user/login?destination={{ path('<current>') }}"
+         class="btn btn-primary restricted-login-btn">
+        Log in to continue
+      </a>
+      <a href="/user/register?destination={{ path('<current>') }}"
+         class="btn btn-primary restricted-login-btn">
+        Create new account
+      </a>
+
+      <div class="restricted-benefits">
+
+        <p>
+          Creating an account is completely free and gives you access to:
+        </p>
+
+        <ul>
+          <li>Premium industry news and features</li>
+          <li>Exclusive concrete sector insights</li>
+          <li>Weekly newsletter updates</li>
+        </ul>
+
+        <p class="restricted-privacy">
+          Your details will never be shared with third parties.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% else %}
+
+  {% for item in items %}
+    {{ item.content }}
+  {% endfor %}
+
+{% endif %}

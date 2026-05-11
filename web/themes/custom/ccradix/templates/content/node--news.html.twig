@@ -1,0 +1,5 @@
+{% set is_restricted = node.field_restricted_content.value == '1' %}
+
+<div class="news-article-wrapper{% if is_restricted and not logged_in %} restricted-anonymous{% endif %}">
+  {{ content }}
+</div>

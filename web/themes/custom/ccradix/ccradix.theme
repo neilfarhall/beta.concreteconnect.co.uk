@@ -5,13 +5,16 @@
  * Theme functions.
  */
 
+use Drupal\Core\Block\BlockPluginInterface;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\node\NodeInterface;
+use Drupal\views\ViewExecutable;
+
 // Include all files from the includes directory.
 $includes_path = __DIR__ . '/includes/*.theme';
 foreach (glob($includes_path) as $file) {
   require_once __DIR__ . '/includes/' . basename($file);
 }
-
-use Drupal\image\Entity\ImageStyle;
 
 /**
  * Preprocess for navbar template.
@@ -21,26 +24,28 @@ function ccradix_preprocess_navbar(array &$variables): void {
   $variables['account_display_name'] = NULL;
 
   $current_user = \Drupal::currentUser();
+
   if ($current_user->isAuthenticated()) {
-    /** @var \Drupal\user\UserInterface $account */
+    /** @var \Drupal\user\UserInterface|null $account */
     $account = \Drupal\user\Entity\User::load($current_user->id());
+
     if ($account) {
       $variables['account_display_name'] = $account->getDisplayName();
 
-      // Default Drupal user picture field is "user_picture".
       if ($account->hasField('user_picture') && !$account->get('user_picture')->isEmpty()) {
-        /** @var \Drupal\file\FileInterface $file */
+        /** @var \Drupal\file\FileInterface|null $file */
         $file = $account->get('user_picture')->entity;
+
         if ($file) {
           $uri = $file->getFileUri();
-
-          // Use an image style if you have one (adjust if you prefer another).
           $style_id = 'thumbnail';
-          if (ImageStyle::load($style_id)) {
-            $variables['account_avatar_url'] = ImageStyle::load($style_id)->buildUrl($uri);
+          $style = ImageStyle::load($style_id);
+
+          if ($style) {
+            $variables['account_avatar_url'] = $style->buildUrl($uri);
           }
           else {
-            $variables['account_avatar_url'] = file_create_url($uri);
+            $variables['account_avatar_url'] = \Drupal::service('file_url_generator')->generateString($uri);
           }
         }
       }
@@ -54,36 +59,82 @@ function ccradix_preprocess_navbar(array &$variables): void {
 function ccradix_preprocess_html(array &$variables): void {
   $admin_context = \Drupal::service('router.admin_context');
 
-  // Only attach Smart Ad Server on non-admin pages.
+  // Only attach Smart Ad Server and directory nav on non-admin pages.
   if (!$admin_context->isAdminRoute()) {
     $variables['#attached']['library'][] = 'ccradix/smartadserver';
     $variables['#attached']['library'][] = 'ccradix/directory_nav';
+  }
 
+  // Add body class for restricted news articles viewed by anonymous users.
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof NodeInterface
+    && $node->bundle() === 'news_article'
+    && $node->hasField('field_restricted_content')
+    && !$node->get('field_restricted_content')->isEmpty()
+    && $node->get('field_restricted_content')->value == 1
+    && \Drupal::currentUser()->isAnonymous()) {
+    $variables['attributes']['class'][] = 'restricted-anonymous';
   }
 }
-use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_preprocess_block().
  */
-function ccradix_preprocess_block(array &$variables) {
+function ccradix_preprocess_block(array &$variables): void {
   $plugin_id = $variables['elements']['#plugin_id'] ?? '';
 
   if ($plugin_id === 'simple_block:directory_section_nav') {
-    $route_match = \Drupal::routeMatch();
-    $node = $route_match->getParameter('node');
+    $node = \Drupal::routeMatch()->getParameter('node');
 
     if ($node instanceof NodeInterface) {
       $variables['node'] = $node;
     }
   }
 }
-use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function ccradix_block_view_alter(array &$build, BlockPluginInterface $block): void {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if (!$node instanceof NodeInterface) {
+    return;
+  }
+
+  if ($node->bundle() !== 'news_article') {
+    return;
+  }
+
+  if (!$node->hasField('field_restricted_content') || $node->get('field_restricted_content')->isEmpty()) {
+    return;
+  }
+
+  if ($node->get('field_restricted_content')->value != 1) {
+    return;
+  }
+
+  if (!\Drupal::currentUser()->isAnonymous()) {
+    return;
+  }
+
+  $plugin_id = $block->getPluginId();
+
+  $restricted_blocks = [
+    'field_block:node:news_article:field_teaser_media',
+    'shariff_block',
+  ];
+
+  if (in_array($plugin_id, $restricted_blocks, TRUE)) {
+    $build['#access'] = FALSE;
+  }
+}
 
 /**
  * Implements hook_preprocess_views_view_unformatted().
  */
-function ccradix_preprocess_views_view_unformatted(array &$variables) {
+function ccradix_preprocess_views_view_unformatted(array &$variables): void {
   $view = $variables['view'];
 
   if ($view instanceof ViewExecutable
@@ -109,4 +160,3 @@ function ccradix_preprocess_views_view_unformatted(array &$variables) {
     }
   }
 }
-
