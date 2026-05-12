@@ -9194,3 +9194,57 @@ body.restricted-anonymous .block-shariff-block {
     background: #f3f3f3;
   }
 }
+.ukcs-partner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.ukcs-text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #666;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ukcs-logo {
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .ukcs-logo {
+    width: 160px;
+  }
+
+  .ukcs-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+
+  .ukcs-partner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .ukcs-text {
+    text-align: center;
+    white-space: normal;
+    font-size: 0.85rem;
+  }
+
+  .ukcs-logo {
+    width: 150px;
+  }
+}
