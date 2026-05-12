@@ -13,14 +13,6 @@
 
 <div {{ page_attributes.addClass(page_classes) }}>
 
-  {% if page.top_branding %}
-    <div class="top-branding-strip">
-      <div class="container">
-        {{ page.top_branding }}
-      </div>
-    </div>
-  {% endif %}
-
   {% block page_navigation %}
     {% include 'ccradix:page-navigation' %}
   {% endblock %}
