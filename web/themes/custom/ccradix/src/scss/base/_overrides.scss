@@ -381,7 +381,6 @@
 .navbar .fa-2x{
 
   font-size: 1.3em;
-  color: white;
 
 }
 /* Default navbar link styling */
@@ -9247,4 +9246,94 @@ body.restricted-anonymous .block-shariff-block {
   .ukcs-logo {
     width: 150px;
   }
+}
+
+.navbar {
+  background: #fff !important;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 0;
+}
+
+.navbar .nav-link {
+  color: #222 !important;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 18px 14px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.navbar .nav-link:hover {
+  color: #c9002b !important;
+  border-bottom-color: #c9002b;
+  background: transparent !important;
+}
+
+/* Active */
+.navbar .nav-link.active,
+.navbar .nav-link.is-active {
+  color: #222 !important;
+  border-bottom-color: #c9002b;
+  background: transparent !important;
+}
+.navbar {
+  background: #fff !important;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 0;
+}
+
+.navbar .nav-link {
+  color: #222 !important;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 18px 14px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.navbar .nav-link:hover {
+  color: #c9002b !important;
+  border-bottom-color: #c9002b;
+  background: transparent !important;
+}
+
+/* Active */
+.navbar .nav-link.active,
+.navbar .nav-link.is-active {
+  color: #222 !important;
+  border-bottom-color: #c9002b;
+  background: transparent !important;
+}
+
+.navbar .dropdown-menu {
+  background: #fff !important;
+  border: 1px solid #ddd;
+  border-top: 3px solid #c9002b;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.navbar .dropdown-menu a,
+.navbar .dropdown-menu .dropdown-item {
+  color: #222 !important;
+  background: transparent !important;
+}
+
+.navbar .dropdown-menu a:hover,
+.navbar .dropdown-menu .dropdown-item:hover {
+  color: #c9002b !important;
+  background: #f7f7f7 !important;
+}
+.navbar .nav-link {
+
+  padding: 14px 12px;
+
 }
