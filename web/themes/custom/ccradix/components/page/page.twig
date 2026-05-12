@@ -7,28 +7,39 @@
 {% set page_attributes = attributes ?: create_attribute() %}
 {% set
   page_classes = [
-    'page',
-  ]|merge(page_utility_classes ?: [])
+  'page',
+]|merge(page_utility_classes ?: [])
 %}
 
-<div {{ page_attributes.addClass(page_classes) }}
+<div {{ page_attributes.addClass(page_classes) }}>
+
+  {% if page.top_branding %}
+    <div class="top-branding-strip">
+      <div class="container">
+        {{ page.top_branding }}
+      </div>
+    </div>
+  {% endif %}
 
   {% block page_navigation %}
     {% include 'ccradix:page-navigation' %}
   {% endblock %}
+
   {% if page.leaderboard %}
     <div class="region region-leaderboard">
       {{ page.leaderboard }}
     </div>
   {% endif %}
+
   {% block page_content %}
     {% include 'radix:page-content' with {
       page_main_utility_classes: ['py-5'],
       page_header_container_utility_classes: ['mb-3'],
-    }%}
+    } %}
   {% endblock %}
 
   {% block page_footer %}
     {% include 'ccradix:page-footer' %}
   {% endblock %}
+
 </div>
