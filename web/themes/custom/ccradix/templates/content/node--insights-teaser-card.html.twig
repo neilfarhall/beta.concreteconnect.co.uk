@@ -14,11 +14,6 @@
   {% endif %}
 
   <div class="insights-card__body">
-    {{ title_prefix }}
-    <h2 class="insights-card__title">
-      <a href="{{ url }}">{{ label }}</a>
-    </h2>
-    {{ title_suffix }}
 
     <div class="insights-card__meta">
       {% if node.field_channel is defined and not node.field_channel.isEmpty() %}
@@ -27,10 +22,14 @@
           {{ node.field_channel.entity.label }}
         </a>
       </span>
-        <span class="insights-card__sep">·</span>
+        <span class="insights-card__sep">|</span>
       {% endif %}
       <span class="insights-card__date">{{ node.getCreatedTime|date('d/m/Y') }}</span>
     </div>
+    {{ title_prefix }}
+    <h2 class="insights-card__title">
+      <a href="{{ url }}">{{ label }}</a>
+    </h2>
 
     {% if content.field_teaser_text %}
       <div class="insights-card__teaser">

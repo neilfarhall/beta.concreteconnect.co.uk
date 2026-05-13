@@ -4094,22 +4094,19 @@
 
 .views-element-container.block-views-blockall-news-block-2,
 .views-element-container.block-views-blockall-news-block-3 {
-  background: #f5f2f2;
   border-top: 6px solid #a51633;
-  border-radius: 16px;
-  padding: 34px 56px 30px;
+  padding: 34px 0px 30px;
   margin-bottom: 3rem;
 }
+
 
 /* ======================================
    Header block - Jobs
    ====================================== */
 
 .views-element-container.block-views-blockjobs-listing-block-1 {
-  background: #f2f7f7;
   border-top: 6px solid #007c89;
-  border-radius: 16px;
-  padding: 34px 56px 30px;
+  padding: 34px 0px 30px;
   margin-bottom: 3rem;
 }
 
@@ -4738,10 +4735,8 @@
    ====================================== */
 
 .views-element-container.block-views-blockjobs-listing-block-1 {
-  background: #f2f7f7;
   border-top: 6px solid #007c89;
-  border-radius: 16px;
-  padding: 34px 56px 30px;
+  padding: 34px 0px 30px;
   margin-bottom: 3rem;
 }
 
@@ -5485,10 +5480,8 @@
    ====================================== */
 
 .insights-landing {
-  background: #f6f2f2;
   border-top: 6px solid #cfa946;
-  border-radius: 18px;
-  padding: 34px 42px 38px;
+  padding: 34px 0px 38px;
   margin-bottom: 3rem;
 }
 
@@ -9340,4 +9333,14 @@ body.restricted-anonymous .block-shariff-block {
 .py-5 {
 
   padding-top: 0px;
+}
+@media (min-width: 1400px) {
+
+  .top-branding-strip .container,
+  .navbar .container,
+  .region-leaderboard .container,
+  main .container {
+    max-width: 1500px;
+  }
+
 }
