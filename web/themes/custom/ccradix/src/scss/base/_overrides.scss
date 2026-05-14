@@ -1154,7 +1154,7 @@
 .themag-layout__region--third .block--advertisement,
 .themag-layout__region--third #sas_53336 {
   width: 100%;
-  max-width: 300px;   /* standard MPU width */
+  max-width: 3050px;   /* standard MPU width */
   margin-left: auto;
   margin-right: auto;
 }
@@ -1162,14 +1162,14 @@
 /* MPU – force Smart image creative to fit the column */
 .themag-layout__region--third #sas_53336 {
   width: 100%;
-  max-width: 300px;          /* keep MPU sized */
+  max-width: 350px;          /* keep MPU sized */
   margin: 0 auto;
 }
 
 /* Smart often injects a wrapper like <div id="sas_..."> with inline width:min(600px,100%) */
 .themag-layout__region--third #sas_53336 div[id^="sas_"] {
   width: 100% !important;
-  max-width: 300px !important;
+  max-width: 350px !important;
   margin: 0 auto !important;
 }
 
@@ -3944,7 +3944,6 @@
   flex-direction: column;
   height: 100%;
   background: #fff;
-  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 28px rgba(0,0,0,.05);
   transition: transform .18s ease, box-shadow .18s ease;
@@ -4208,7 +4207,6 @@
   .views-element-container.block-views-blockall-news-block-3,
   .views-element-container.block-views-blockjobs-listing-block-1 {
     padding: 26px 22px 30px;
-    border-radius: 12px;
   }
 
   .views-element-container.block-views-blockall-news-block-2 .view-header p,
@@ -4813,7 +4811,6 @@
 
   background: #fff;
   border-top: 4px solid #007c89;
-  border-radius: 14px;
   padding: 22px 24px;
   box-shadow: 0 10px 28px rgba(0,0,0,.05);
   transition: transform .18s ease, box-shadow .18s ease;
@@ -5002,7 +4999,6 @@
 @media (max-width: 900px) {
   .views-element-container.block-views-blockjobs-listing-block-1 {
     padding: 26px 22px 30px;
-    border-radius: 12px;
   }
 
   .view-jobs-listing.view-display-id-block_1 article {
@@ -5050,7 +5046,6 @@
   gap: 24px;
   background: #fff;
   border-top: 4px solid #007c89;
-  border-radius: 14px;
   padding: 22px 24px;
   box-shadow: 0 10px 28px rgba(0,0,0,.05);
 }
@@ -5708,7 +5703,6 @@
 @media (max-width: 767px) {
   .insights-landing {
     padding: 24px 20px 28px;
-    border-radius: 12px;
   }
 
   .insights-landing .views-view-grid > .views-row {
@@ -6365,12 +6359,15 @@
 .event-listing {
   margin-top: 1rem;
 }
+.view-header-intro a{
 
+text-decoration: none;
+
+}
 /* Header panel */
 .event-listing .view-header {
   background: #f7f4f4;
   border-top: 5px solid #a51633;
-  border-radius: 18px;
   padding: 34px 40px 36px;
   margin-bottom: 2.5rem;
 }
@@ -6467,7 +6464,6 @@
   object-fit: contain;
   display: block;
   background: #fff;
-  border-radius: 10px;
 }
 
 /* Title */
@@ -6534,14 +6530,12 @@
   padding: 1.6rem;
   background: #fcfbfb;
   border: 1px solid #e6c8cf;
-  border-radius: 16px;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
   .event-listing .view-header {
     padding: 24px 22px 28px;
-    border-radius: 14px;
   }
 
   .event-listing article,
@@ -9343,4 +9337,14 @@ body.restricted-anonymous .block-shariff-block {
     max-width: 1500px;
   }
 
+}
+#sas_53336 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#sas_53336 iframe,
+#sas_53336 img {
+  max-width: 100%;
+  height: auto;
 }
