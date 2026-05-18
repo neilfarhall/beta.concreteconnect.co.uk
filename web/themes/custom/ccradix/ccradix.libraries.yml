@@ -2,8 +2,11 @@ style:
   css:
     theme:
       build/css/main.style.css: {}
+
   js:
     build/js/main.script.js: {}
+    js/nav-search.js: {}
+
   dependencies:
     - core/drupal
 
@@ -91,3 +94,4 @@ directory_nav:
   dependencies:
     - core/drupal
     - core/once
+
