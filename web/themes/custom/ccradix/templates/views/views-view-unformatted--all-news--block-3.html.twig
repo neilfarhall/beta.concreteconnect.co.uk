@@ -1,0 +1,15 @@
+{% for row in rows %}
+  {{ row.content }}
+
+  {% if loop.index == 3 %}
+    <div class="news-grid-ad news-grid-ad--video">
+      <div id="sas_53422">
+        &nbsp;
+      </div>
+      <script type="application/javascript">
+        sas.cmd.push(function() {
+          sas.render("53422");  // Format : Video 640x480 0x0
+        });
+      </script>    </div>
+  {% endif %}
+{% endfor %}

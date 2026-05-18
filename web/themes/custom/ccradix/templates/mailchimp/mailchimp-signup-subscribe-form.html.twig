@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the mailchimp_signup subscribe form.
+ *
+ * @see template_preprocess_form()
+ * @see template_preprocess_mailchimp_signup_subscribe_form()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="newsletter-signup-header">
+  <h1>Free Concrete Industry Newsletter</h1>
+  <p>
+    Get the latest concrete industry news, projects, product launches and business updates delivered straight to your inbox.
+  </p>
+  <p class="newsletter-signup-small">
+    Choose the topics most relevant to you and manage your preferences at any time.
+  </p>
+</div>
+
+{{ form }}
+
+<form{{ attributes }}>
+  <div class="mailchimp-signup-subscribe-description">{{ element.description }}</div>
+  {{ element|without('description') }}
+</form>
