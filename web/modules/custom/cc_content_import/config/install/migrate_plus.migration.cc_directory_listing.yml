@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies: { }
+
+id: cc_directory_listing
+class: Drupal\migrate\Plugin\Migration
+migration_group: cc_import
+label: 'CC Directory listings'
+
+source:
+  plugin: cc_directory_listing
+  key: migrate_source
+
+process:
+  nid: nid
+
+  type:
+    plugin: default_value
+    default_value: directory_listing
+
+  langcode: langcode
+  status: status
+  uid: uid
+  title: title
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+
+  body/value: body_value
+  body/summary: body_summary
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_directory_contact_email: field_directory_contact_email_value
+  field_directory_contact_phone: field_directory_contact_phone_value
+  field_directory_address_postcode: field_directory_address_postcode_value
+
+  field_directory_web_address/uri: field_directory_web_address_uri
+  field_directory_web_address/title: field_directory_web_address_title
+
+  field_teaser_media/target_id:
+    plugin: migration_lookup
+    migration: cc_media_image
+    source: field_teaser_media_target_id
+
+  field_directory_logo/target_id:
+    plugin: migration_lookup
+    migration: cc_files
+    source: field_directory_logo_target_id
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: directory_listing
+
+migration_dependencies:
+  required:
+    - cc_files
+    - cc_media_image
