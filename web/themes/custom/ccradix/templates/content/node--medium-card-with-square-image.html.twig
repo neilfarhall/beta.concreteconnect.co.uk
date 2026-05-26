@@ -43,8 +43,10 @@
 <article{{ attributes.addClass(node_classes) }}>
 
   {# ---------------- Media ---------------- #}
-  <div class="teaser__media">
+  <div class="teaser__media teaser-image-wrapper">
     <a href="{{ url }}" aria-label="{{ label }}">
+      {% include '@ccradix/node/partials/media-icons.html.twig' %}
+
       {% if content.field_teaser_media is defined and content.field_teaser_media|render %}
         {{ content.field_teaser_media }}
       {% elseif content.field_news_image is defined and content.field_news_image|render %}

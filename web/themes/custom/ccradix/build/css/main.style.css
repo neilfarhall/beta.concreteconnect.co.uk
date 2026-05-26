@@ -22818,4 +22818,16 @@ img {
   font-weight: 700;
 }
 
+.news-card__media,
+.teaser-image-wrapper {
+  position: relative;
+}
+
+.media-icons {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+}
+
 /*# sourceMappingURL=main.style.css.map*/
