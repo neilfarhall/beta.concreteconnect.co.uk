@@ -1,6 +1,49 @@
 {% for row in rows %}
   {{ row.content }}
+  <div class="news-card-image">
 
+    {% if row._entity.field_content is defined %}
+
+      {% set has_video = false %}
+      {% set has_gallery = false %}
+
+      {% for item in row._entity.field_content %}
+        {% if item.entity %}
+
+          {% if item.entity.bundle() == 'video' %}
+            {% set has_video = true %}
+          {% endif %}
+
+          {% if item.entity.bundle() == 'gallery_slider' %}
+            {% set has_gallery = true %}
+          {% endif %}
+
+        {% endif %}
+      {% endfor %}
+
+    {% endif %}
+
+    {% if has_video or has_gallery %}
+      <div class="media-icons">
+
+        {% if has_video %}
+          <span class="media-icon media-icon-video">
+          <i class="fas fa-play-circle"></i>
+        </span>
+        {% endif %}
+
+        {% if has_gallery %}
+          <span class="media-icon media-icon-gallery">
+          <i class="fas fa-camera"></i>
+        </span>
+        {% endif %}
+
+      </div>
+    {% endif %}
+
+    {{ fields.field_teaser_media.content }}
+
+  </div>
   {% if loop.index == 3 %}
     <div class="news-grid-ad news-grid-ad--video">
       <div id="sas_53422">

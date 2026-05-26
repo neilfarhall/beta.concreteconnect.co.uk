@@ -1,18 +1,15 @@
 langcode: en
 status: true
 
-id: cc_media_image
-label: 'Media: Image'
+id: cc_media_gallery
+label: 'CC media gallery'
 migration_group: cc_import
 
 source:
-  plugin: cc_media_image
+  plugin: cc_media_gallery
   key: migrate_source
 
 process:
-  mid: mid
-  vid: vid
-
   bundle:
     plugin: default_value
     default_value: image

@@ -1,0 +1,43 @@
+langcode: en
+status: true
+
+id: cc_media_gallery
+label: 'CC media gallery'
+migration_group: cc_import
+
+source:
+  plugin: cc_media_gallery
+  key: migrate_source
+
+process:
+  mid: mid
+
+  bundle:
+    plugin: default_value
+    default_value: gallery
+
+  langcode: langcode
+
+  uid:
+    plugin: default_value
+    default_value: 1
+
+  name: name
+  created: created
+  changed: changed
+
+field_media_slideshow:
+  plugin: sub_process
+  source: field_media_slideshow
+  process:
+    target_id:
+      plugin: migration_lookup
+      migration: cc_media_image
+      source: target_id
+
+destination:
+  plugin: 'entity:media'
+
+migration_dependencies:
+  required:
+    - cc_media_image

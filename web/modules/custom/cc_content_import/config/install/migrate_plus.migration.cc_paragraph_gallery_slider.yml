@@ -32,12 +32,14 @@ process:
     process:
       target_id:
         plugin: migration_lookup
-        migration: cc_media_image
+        migration:
+          - cc_media_image
+          - cc_media_gallery
         source: target_id
-
 destination:
   plugin: 'entity_reference_revisions:paragraph'
 
 migration_dependencies:
   required:
     - cc_media_image
+    - cc_media_gallery

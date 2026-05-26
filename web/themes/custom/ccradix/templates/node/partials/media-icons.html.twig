@@ -1,0 +1,28 @@
+{% set has_video = false %}
+{% set has_gallery = false %}
+
+{% if node.field_paragraphs is defined %}
+  {% for item in node.field_paragraphs %}
+    {% if item.entity %}
+      {% if item.entity.bundle() == 'video' %}
+        {% set has_video = true %}
+      {% endif %}
+
+      {% if item.entity.bundle() == 'gallery_slider' %}
+        {% set has_gallery = true %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if has_video or has_gallery %}
+  <div class="media-icons">
+    {% if has_video %}
+      <span class="media-icon media-icon-video">▶</span>
+    {% endif %}
+
+    {% if has_gallery %}
+      <span class="media-icon media-icon-gallery">📷</span>
+    {% endif %}
+  </div>
+{% endif %}
