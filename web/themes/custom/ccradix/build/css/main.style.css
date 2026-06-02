@@ -15775,7 +15775,7 @@ th {
   /* responsive structure */
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
 }
 
 /* Make the logo responsive */
@@ -22830,11 +22830,179 @@ img {
   z-index: 10;
 }
 
-.form-control {
-  margin: 3px;
-  padding: 1.2rem;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(0, 0, 0, 0.35);
+.trade-bodies-directory .views-exposed-form {
+  background: #f7f3f0;
+  border: 1px solid #e3ded9;
+  border-radius: 14px;
+  padding: 28px;
+  margin: 28px 0 40px;
+}
+
+.trade-bodies-directory .views-exposed-form .form--inline {
+  display: grid;
+  grid-template-columns: 1fr 260px auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.trade-bodies-directory .views-exposed-form input,
+.trade-bodies-directory .views-exposed-form select {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid #d6d1cc;
+  border-radius: 6px;
+  background: #fff;
+  padding: 0 16px;
+  font-size: 1rem;
+}
+
+.trade-bodies-directory .views-exposed-form .form-actions {
+  margin: 0;
+}
+
+.trade-bodies-directory .views-exposed-form .button,
+.trade-bodies-directory .views-exposed-form input[type=submit] {
+  min-height: 52px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 6px;
+  background: #151515;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media (max-width: 800px) {
+  .trade-bodies-directory .views-exposed-form .form--inline {
+    grid-template-columns: 1fr;
+  }
+}
+.trade-bodies-directory .form-item-company-name label,
+.trade-bodies-directory .form-item-category label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.directory-search-header {
+  margin-bottom: 20px;
+}
+
+.directory-search-header h3, .directory-search-header .h3 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+}
+
+.directory-search-header p {
+  margin: 0;
+  color: #666;
+}
+
+.views-exposed-form .form--inline {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.trade-search-panel {
+  background: #f7f3f0;
+  border: 1px solid #e5dfda;
+  border-radius: 14px;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.trade-search-panel h2, .trade-search-panel .h2 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+}
+
+.trade-search-panel p {
+  margin: 0 0 24px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.trade-search-panel input[type=text] {
+  height: 60px;
+  font-size: 1.2rem;
+  border: 2px solid #d8d3ce;
+  padding: 0 20px;
+}
+
+.trade-search-panel select {
+  height: 52px;
+}
+
+.trade-search-panel .form-actions {
+  margin: 0;
+}
+
+.home-feature-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.9fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.home-feature-grid > .column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.home-feature-grid .card,
+.home-feature-grid .ad-block {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.home-feature-grid .main-card {
+  aspect-ratio: 16/10;
+}
+
+.home-feature-grid .small-card {
+  aspect-ratio: 16/9;
+}
+
+.home-feature-grid .newsletter-card {
+  min-height: 170px;
+}
+
+.home-feature-grid {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.home-feature-grid .column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.home-feature-grid img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 1200px) {
+  .home-feature-grid {
+    grid-template-columns: 1.8fr 1fr 1fr;
+  }
 }
 
 /*# sourceMappingURL=main.style.css.map*/
