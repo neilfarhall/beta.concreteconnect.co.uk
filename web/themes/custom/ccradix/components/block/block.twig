@@ -50,7 +50,7 @@
   ]|merge(block_content_utility_classes ?: [])
 %}
 {% if block_html_tag %}
-<{{block_html_tag}} {{ block_attributes|without('id').addClass(block_classes) }}>
+  <{{ block_html_tag }}{{ block_attributes.addClass(block_classes) }}>
 {% endif %}
 
   {{ title_prefix }}

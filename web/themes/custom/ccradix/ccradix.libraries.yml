@@ -6,6 +6,7 @@ style:
   js:
     build/js/main.script.js: {}
     js/nav-search.js: {}
+    js/newsletter-popup.js: {}
 
   dependencies:
     - core/drupal
