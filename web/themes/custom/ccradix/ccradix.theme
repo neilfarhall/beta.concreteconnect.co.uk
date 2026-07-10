@@ -65,6 +65,42 @@ function ccradix_preprocess_html(array &$variables): void {
     $variables['#attached']['library'][] = 'ccradix/directory_nav';
   }
 
+  // Add news type classes to taxonomy term listing pages.
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+
+  if ($term instanceof TermInterface) {
+    $variables['attributes']['class'][] = 'news-type-page';
+    $variables['attributes']['class'][] = 'news-type--tid-' . $term->id();
+  }
+
+  // Add body class for restricted news articles viewed by anonymous users.
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if (
+    $node instanceof NodeInterface
+    && $node->bundle() === 'news_article'
+    && $node->hasField('field_restricted_content')
+    && !$node->get('field_restricted_content')->isEmpty()
+    && $node->get('field_restricted_content')->value == 1
+  ) {
+    // Keep the remainder of your existing restricted-content code here.
+  }
+
+  /**
+   * Implements hook_preprocess_taxonomy_term().
+   */
+  function ccradix_preprocess_taxonomy_term(array &$variables): void {
+    if (
+      isset($variables['term'])
+      && $variables['term'] instanceof TermInterface
+    ) {
+      $variables['attributes']['class'][] = 'news-type-page';
+      $variables['attributes']['class'][] =
+        'news-type--tid-' . $variables['term']->id();
+    }
+  }
+
+
   // Add body class for restricted news articles viewed by anonymous users.
   $node = \Drupal::routeMatch()->getParameter('node');
 

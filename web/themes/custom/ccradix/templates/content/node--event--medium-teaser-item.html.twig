@@ -1,0 +1,65 @@
+<article{{ attributes.addClass(classes, 'event-card') }}>
+
+  <div class="event-card__media">
+    {% if content.field_teaser_media %}
+      {{ content.field_teaser_media }}
+    {% elseif content.field_image %}
+      {{ content.field_image }}
+    {% endif %}
+  </div>
+
+  <div class="event-card__content">
+
+    {% if node.field_event_date is defined and not node.field_event_date.isEmpty() %}
+      <div class="event-card__date">
+        <span class="event-card__day">
+          {{ node.field_event_date.value|date('d') }}
+        </span>
+        <span class="event-card__month">
+          {{ node.field_event_date.value|date('M') }}
+        </span>
+        <span class="event-card__year">
+          {{ node.field_event_date.value|date('Y') }}
+        </span>
+      </div>
+    {% endif %}
+
+    <div class="event-card__details">
+
+      {{ title_prefix }}
+
+      <h2 class="event-card__title">
+        <a href="{{ url }}">{{ label }}</a>
+      </h2>
+
+      {% if content.field_teaser_text %}
+        <div class="event-card__summary">
+          {{ content.field_teaser_text }}
+        </div>
+      {% elseif content.body %}
+        <div class="event-card__summary">
+          {{ content.body }}
+        </div>
+      {% endif %}
+
+      <div class="event-card__meta">
+        {% if node.field_event_type is defined and not node.field_event_type.isEmpty() %}
+          <span class="event-card__type">
+            {{ node.field_event_type.entity.label }}
+          </span>
+        {% endif %}
+
+        {% if node.field_location is defined and not node.field_location.isEmpty() %}
+          <span class="event-card__location">
+            {{ node.field_location.value }}
+          </span>
+        {% endif %}
+      </div>
+
+      <a class="event-card__link" href="{{ url }}">
+        View event
+      </a>
+
+    </div>
+  </div>
+</article>

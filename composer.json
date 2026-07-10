@@ -206,6 +206,7 @@
         "drupal/video": "^3.0",
         "drupal/video_embed_field": "^2.7",
         "drupal/video_embed_field_plyr": "^2.0@beta",
+        "drupal/views_aggregator": "^2.1",
         "drupal/views_bulk_operations": "^4.2",
         "drupal/views_collapsible_list": "^1.4",
         "drupal/views_infinite_scroll": "^2.0",

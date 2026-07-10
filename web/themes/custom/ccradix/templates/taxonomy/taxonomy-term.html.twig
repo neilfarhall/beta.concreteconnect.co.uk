@@ -25,4 +25,9 @@
  * @ingroup themeable
  */
 #}
-{% include "radix:taxonomy" %}
+{% include "radix:taxonomy" with {
+  taxonomy_utility_classes: [
+    'news-type-page',
+    'news-type--tid-' ~ term.id()
+  ]
+} %}
