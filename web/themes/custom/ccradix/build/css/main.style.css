@@ -23899,4 +23899,130 @@ article.news-type-page .views-element-container.block-views-blockall-news-block-
   height: auto !important;
 }
 
+@media (max-width: 767.98px) {
+  /* Prevent fixed-width content from widening the page */
+  .path-concrete-insights main,
+  .path-concrete-insights main .container,
+  .path-concrete-insights main .view-content,
+  .path-concrete-insights main article {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  /* Stack Drupal Views/Bootstrap columns */
+  .path-concrete-insights .views-view-grid .row,
+  .path-concrete-insights .view-content > .row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .path-concrete-insights .views-view-grid .row > *,
+  .path-concrete-insights .view-content > .row > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Make the oversized heading wrap */
+  .path-concrete-insights h1, .path-concrete-insights .h1 {
+    max-width: 100%;
+    font-size: clamp(2.25rem, 11vw, 3.5rem);
+    line-height: 1.05;
+    white-space: normal !important;
+    overflow-wrap: break-word;
+  }
+  .path-concrete-insights main img {
+    max-width: 100%;
+    height: auto;
+  }
+  /* Final protection against horizontal scrolling */
+  body.path-concrete-insights {
+    overflow-x: hidden;
+  }
+}
+@media (max-width: 767.98px) {
+  .path-events .event-listing .field--name-field-image,
+  .path-events .event-listing .field--name-field-image picture {
+    display: block;
+    width: 100%;
+  }
+  .path-events .event-listing .field--name-field-image img {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
+  }
+}
+@media (max-width: 767px) {
+  .event-listing .field--name-field-teaser-media img, .event-listing .field--name-field-image img, .event-listing .teaser__media img, .event-listing figure img {
+    max-width: auto;
+    width: auto;
+    height: auto;
+    -o-object-fit: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .signup-newsletter {
+    margin-bottom: 1.5rem;
+  }
+}
+.directory-home__summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 767.98px) {
+  .directory-home__summary {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.5rem;
+  }
+  .directory-home__summary > .directory-home__col {
+    width: 100%;
+    min-width: 0;
+  }
+  .directory-home__col--details a {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+}
+@media (max-width: 767.98px) {
+  .path-newsletter-signup .bs-ml-5 {
+    margin-left: 0 !important;
+  }
+  .path-newsletter-signup .bs-mr-5 {
+    margin-right: 0 !important;
+  }
+  .path-newsletter-signup .bs-p-5 {
+    padding: 1rem !important;
+  }
+  .path-newsletter-signup .mailchimp-signup-subscribe-form-block input:not([type=checkbox], [type=radio], [type=submit]),
+  .path-newsletter-signup .mailchimp-signup-subscribe-form-block select,
+  .path-newsletter-signup .mailchimp-signup-subscribe-form-block textarea {
+    width: 100% !important;
+    max-width: 100%;
+    min-height: 48px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 767.98px) {
+  article[data-history-node-id="63682"] .node__content > .bs-p-5 {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding: 1rem !important;
+  }
+  article[data-history-node-id="63682"] .mailchimp-signup-subscribe-form-block input:not([type=checkbox], [type=radio], [type=submit]),
+  article[data-history-node-id="63682"] .mailchimp-signup-subscribe-form-block select,
+  article[data-history-node-id="63682"] .mailchimp-signup-subscribe-form-block textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 48px;
+    box-sizing: border-box;
+  }
+}
+
 /*# sourceMappingURL=main.style.css.map*/
