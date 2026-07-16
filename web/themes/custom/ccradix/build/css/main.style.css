@@ -23869,5 +23869,34 @@ article.news-type-page .views-element-container.block-views-blockall-news-block-
     margin-bottom: 1rem;
   }
 }
+@media (max-width: 767.98px) {
+  .path-frontpage .view-mode--large-compact-teaser {
+    margin-bottom: 1rem;
+  }
+}
+.region-leaderboard iframe {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  aspect-ratio: 970/250;
+  height: auto !important;
+  border: 0;
+  margin-inline: auto;
+}
+
+#sas_53425,
+#sas_53425 > div,
+#sas_53425 a {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+#sas_53425 img {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
 
 /*# sourceMappingURL=main.style.css.map*/
