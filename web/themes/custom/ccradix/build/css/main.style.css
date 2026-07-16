@@ -23864,5 +23864,10 @@ article.news-type-page .views-element-container.block-views-blockall-news-block-
     padding-left: 1rem;
   }
 }
+@media (max-width: 767.98px) {
+  .path-frontpage .view-mode--large-compact-teaser {
+    margin-bottom: 1rem;
+  }
+}
 
 /*# sourceMappingURL=main.style.css.map*/
