@@ -10985,3 +10985,27 @@ article.news-type-page
   }
 }
 
+@media (max-width: 767.98px) {
+  /* Space around the burger/icons row */
+  .navbar > .container {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  /* Gap before the first homepage item/advert */
+  .path-frontpage main {
+    padding-top: 1rem;
+  }
+
+  /* Consistent spacing between homepage sections */
+  .path-frontpage main section + section,
+  .path-frontpage main .views-element-container + .views-element-container {
+    margin-top: 1.5rem;
+  }
+
+  /* Keep content away from screen edges */
+  .path-frontpage main > .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
