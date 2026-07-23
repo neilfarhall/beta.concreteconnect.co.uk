@@ -17167,7 +17167,6 @@ th {
   }
   /* Target the News top-level item by href */
   .navbar-nav > li.nav-item.dropdown:has(> a[href="/news"]) > .dropdown-menu {
-    display: none;
     width: 760px;
     padding: 18px 22px;
     border: 0;
@@ -17209,7 +17208,6 @@ th {
     margin-top: 0;
   }
   .navbar-nav > li.news-menu > .dropdown-menu {
-    display: none;
     width: 760px;
     padding: 18px 22px;
     border: 0;
