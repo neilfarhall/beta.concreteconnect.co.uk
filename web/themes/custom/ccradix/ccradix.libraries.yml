@@ -65,28 +65,26 @@ jquery.validate:
     - core/jquery
 
 smartadserver:
+  header: true
   js:
     js/sas-bootstrap.js:
-      header: true
       weight: -30
-
     https://ced.sascdn.com/tag/2534/smart.js:
       type: external
-      header: true
       attributes:
         async: true
       weight: -20
-
     js/sas-init.js:
-      header: true
       weight: -10
-
-    js/sas-render.js:
-      # IMPORTANT: do NOT set header:true here.
-      # Let this run when the DOM / BigPipe content is present.
-      weight: 0
-
   dependencies:
+    - core/drupal
+    - core/once
+
+smartadserver.render:
+  js:
+    js/sas-render.js: {}
+  dependencies:
+    - ccradix/smartadserver
     - core/drupal
     - core/once
 directory_nav:
