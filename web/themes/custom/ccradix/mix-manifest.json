@@ -32,5 +32,6 @@
     "/components/nav-item/nav-item.css": "/components/nav-item/nav-item.css",
     "/components/nav-item/nav-item.css.map": "/components/nav-item/nav-item.css.map",
     "/components/html/html.css": "/components/html/html.css",
-    "/components/html/html.css.map": "/components/html/html.css.map"
+    "/components/html/html.css.map": "/components/html/html.css.map",
+    "/build/assets/images/ukcsnodate.svg": "/build/assets/images/ukcsnodate.svg"
 }
