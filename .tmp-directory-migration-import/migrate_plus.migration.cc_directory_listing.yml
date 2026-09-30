@@ -1,0 +1,215 @@
+langcode: en
+status: true
+dependencies: {  }
+
+id: cc_directory_listing
+class: Drupal\migrate\Plugin\Migration
+migration_group: cc_import
+label: 'CC Directory listings'
+
+source:
+  plugin: cc_directory_listing
+  key: migrate_source
+
+process:
+  nid: nid
+
+  type:
+    plugin: default_value
+    default_value: directory_listing
+
+  langcode: langcode
+  status: status
+  uid: uid
+  title: title
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+
+  body/value: body_value
+  body/summary: body_summary
+  body/format:
+    plugin: default_value
+    source: body_format
+    default_value: basic_html
+
+  field_address/country_code: field_address_country_code
+  field_address/administrative_area: field_address_administrative_area
+  field_address/locality: field_address_locality
+  field_address/dependent_locality: field_address_dependent_locality
+  field_address/postal_code: field_address_postal_code
+  field_address/sorting_code: field_address_sorting_code
+  field_address/address_line1: field_address_address_line1
+  field_address/address_line2: field_address_address_line2
+  field_address/organization: field_address_organization
+  field_address/given_name: field_address_given_name
+  field_address/additional_name: field_address_additional_name
+  field_address/family_name: field_address_family_name
+
+  field_directory_brands: field_directory_brands_value
+  field_company_slogan: field_company_slogan_value
+
+  field_directory_page_type:
+    plugin: sub_process
+    source: field_directory_page_type
+    process:
+      target_id:
+        plugin: entity_lookup
+        source: name
+        entity_type: taxonomy_term
+        value_key: name
+        bundle_key: vid
+        bundle: directory_type
+        ignore_case: true
+        access_check: false
+
+  field_directory_products:
+    plugin: sub_process
+    source: field_directory_products
+    process:
+      target_id:
+        plugin: entity_lookup
+        source: name
+        entity_type: taxonomy_term
+        value_key: name
+        bundle_key: vid
+        bundle: products
+        ignore_case: true
+        access_check: false
+
+  field_display_email:
+    plugin: sub_process
+    source: field_display_email
+    process:
+      value: value
+
+  field_downloads_tab: field_downloads_tab_value
+  field_show_downloads: field_downloads_tab_value
+
+  field_directory_contact_email:
+    plugin: sub_process
+    source: field_directory_contact_email
+    process:
+      value: value
+
+  field_file_attachments:
+    plugin: sub_process
+    source: field_file_attachments
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: cc_files
+        source: target_id
+        no_stub: true
+      display: display
+      description: description
+
+  field_home_tab: field_home_tab_value
+  field_directory_key: field_directory_key_value
+
+  field_directory_logo/target_id:
+    plugin: migration_lookup
+    migration: cc_files
+    source: field_directory_logo_target_id
+    no_stub: true
+  field_directory_logo/alt: field_directory_logo_alt
+  field_directory_logo/title: field_directory_logo_title
+  field_directory_logo/width: field_directory_logo_width
+  field_directory_logo/height: field_directory_logo_height
+
+  field_media_gallery:
+    plugin: sub_process
+    source: field_media_gallery
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration:
+          - cc_media_image
+          - cc_media_video
+        source: target_id
+        no_stub: true
+
+  field_media_gallery_tab: field_media_gallery_tab_value
+  field_show_media: field_media_gallery_tab_value
+  field_news_tab: field_news_tab_value
+  field_show_news: field_news_tab_value
+  field_directory_opco_key: field_directory_opco_key_value
+  field_directory_organisations: field_directory_organisations_value
+
+  field_directory_contact_phone:
+    plugin: sub_process
+    source: field_directory_contact_phone
+    process:
+      value: value
+
+  field_directory_address_postcode: field_directory_address_postcode_value
+
+  field_directory_product_type:
+    plugin: sub_process
+    source: field_directory_product_type
+    process:
+      target_id:
+        plugin: entity_lookup
+        source: name
+        entity_type: taxonomy_term
+        value_key: name
+        bundle_key: vid
+        bundle: product_type
+        ignore_case: true
+        access_check: false
+
+  field_teaser_media/target_id:
+    plugin: migration_lookup
+    migration: cc_media_image
+    source: field_teaser_media_target_id
+    no_stub: true
+
+  field_directory_regional_offices: field_directory_regional_offices_value
+
+  field_related_articles:
+    plugin: sub_process
+    source: field_related_articles
+    process:
+      target_id: target_id
+
+  field_social_media:
+    plugin: sub_process
+    source: field_social_media
+    process:
+      social: social
+      link: link
+
+  field_directory_organisation_sec:
+    plugin: sub_process
+    source: field_directory_organisation_sec
+    process:
+      target_id:
+        plugin: entity_lookup
+        source: name
+        entity_type: taxonomy_term
+        value_key: name
+        bundle_key: vid
+        bundle: organisation_directory_section
+        ignore_case: true
+        access_check: false
+
+  field_directory_web_address:
+    plugin: sub_process
+    source: field_directory_web_address
+    process:
+      uri: uri
+      title: title
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: directory_listing
+
+migration_dependencies:
+  required:
+    - cc_files
+    - cc_media_image
+    - cc_media_video
+  optional:
+    - cc_article
+    - cc_news_article

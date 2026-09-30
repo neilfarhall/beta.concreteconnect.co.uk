@@ -1,0 +1,414 @@
+  700  cd ..
+  701  cd ..
+  702  git add .
+  703  git commit -m "menu fix"  
+  704  git push
+  705  ddev drush cr
+  706  ddev drush cr
+  707  git add .
+  708  git commit -m "menu fix2"  
+  709  git push
+  710  git add .
+  711  git commit -m "menu fix3"  
+  712  git push
+  713  npm run build\ndrush cr
+  714  ddev npm run build\nddev drush cr
+  715  pwd
+  716  ddev npm run watch  
+  717  pwd
+  718  ddev start
+  719  ddev launch
+  720  ddev launch
+  721  ddev launch
+  722  ddev drush cr
+  723  ddev start
+  724  ddev start
+  725  ddev restart
+  726  pwd
+  727  cd ..
+  728  ls -l
+  729  ddev start
+  730  ddev launch
+  731  ddev snapshot --name=before-permission-cleanup
+  732  ddev drush php:eval '\n$permission_handler = \Drupal::service("user.permissions");\n$valid = array_keys($permission_handler->getPermissions());\n\nforeach (\Drupal::entityTypeManager()->getStorage("user_role")->loadMultiple() as $role) {\n  $invalid = array_diff($role->getPermissions(), $valid);\n\n  foreach ($invalid as $permission) {\n    $role->revokePermission($permission);\n  }\n\n  if ($invalid) {\n    $role->save();\n    echo $role->id() . ": removed " . count($invalid) . " invalid permissions\n";\n  }\n}\n'
+  733  ddev drush cache:rebuild\nddev drush updatedb:status
+  734  composer require 'drupal/radix:^6.0'\n
+  735  ddev composer require 'drupal/radix:^6.0'\n
+  736  ddev snapshot --name=before-switching-from-themag\n\nddev drush theme:enable olivero -y\nddev drush config:set system.theme default olivero -y\nddev drush cache:rebuild
+  737  ddev drush php:eval '\n$definitions = \Drupal::service("plugin.manager.core.layout")->getDefinitions();\n\nforeach ($definitions as $id => $definition) {\n  $provider = $definition["provider"] ?? "unknown";\n\n  if (stripos($id, "themag") !== FALSE || stripos($provider, "themag") !== FALSE) {\n    echo $id . " | provider: " . $provider . PHP_EOL;\n  }\n}\n'
+  738  ddev drush php:eval '\n$definitions = \Drupal::service("plugin.manager.core.layout")->getDefinitions();\n\nforeach ($definitions as $id => $definition) {\n  $provider = $definition["provider"] ?? "unknown";\n\n  if (stripos($id, "themag") !== FALSE || stripos($provider, "themag") !== FALSE) {\n    echo $id . " | provider: " . $provider . PHP_EOL;\n  }\n}\n'
+  739  ddev drush sql:query \\n"SELECT name FROM config WHERE data LIKE '%themag_%';"
+  740  ddev drush php:eval '\n$definitions = \Drupal::service("plugin.manager.core.layout")->getDefinitions();\n\nforeach ($definitions as $id => $definition) {\n  $provider = $definition->getProvider();\n\n  if (stripos($id, "themag") !== FALSE || stripos($provider, "themag") !== FALSE) {\n    $regions = implode(", ", array_keys($definition->getRegions()));\n    echo $id . " | provider: " . $provider . " | regions: " . $regions . PHP_EOL;\n  }\n}\n'
+  741  ddev drush php:eval '\n$manager = \Drupal::service("plugin.manager.core.layout");\n$targets = [];\n\nforeach ($manager->getDefinitions() as $id => $definition) {\n  $provider = $definition->getProvider();\n\n  if (stripos($id, "themag") !== FALSE || stripos($provider, "themag") !== FALSE) {\n    $targets[$id] = TRUE;\n  }\n}\n\n$storage = \Drupal::service("config.storage");\n\nforeach ($storage->listAll() as $name) {\n  $data = $storage->read($name);\n\n  $walk = function ($value, $path = "") use (&$walk, $targets, $name) {\n    if (is_array($value)) {\n      foreach ($value as $key => $child) {\n        $walk($child, $path === "" ? $key : $path . "." . $key);\n      }\n    }\n    elseif (is_string($value) && isset($targets[$value])) {\n      echo $name . " | " . $path . " | " . $value . PHP_EOL;\n    }\n  };\n\n  $walk($data);\n}\n'
+  742  ddev mysql -N -e "SHOW TABLES LIKE '%__layout_builder__layout';"
+  743  ddev drush php:eval '\n$manager = \Drupal::service("plugin.manager.core.layout");\n$ids = [\n  "layout_onecol",\n  "layout_twocol_section",\n  "layout_threecol_section",\n  "layout_fourcol_section",\n];\n\nforeach ($ids as $id) {\n  if ($manager->hasDefinition($id)) {\n    $definition = $manager->getDefinition($id);\n    echo $id . " | regions: " .\n      implode(", ", array_keys($definition->getRegions())) .\n      PHP_EOL;\n  }\n  else {\n    echo $id . " | unavailable\n";\n  }\n}\n'
+  744  for table in $(ddev mysql -N -e "SHOW TABLES LIKE '%__layout_builder__layout'"); do\n  count=$(ddev mysql -N -e \\n    "SELECT COUNT(*) FROM ${table}\n     WHERE layout_builder__layout_section LIKE '%themag_%'\n        OR layout_builder__layout_section LIKE '%layout_a%';")\n  echo "${table}: ${count}"\ndone
+  745  ddev drush config:get views.view.aggregates_directory \\ndisplay.block_1.display_options.exposed_form.options.layout\n\nddev drush config:get views.view.consultants_directory \\ndisplay.block_1.display_options.exposed_form.options.layout\n\nddev drush config:get views.view.news_listings \\ndisplay.block_6.display_options.exposed_form.options.layout
+  746  ddev snapshot --name=before-removing-themag-themes
+  747  ddev drush php:eval '\n$path = "display.block_1.display_options.exposed_form.options.layout";\n\n$updates = [\n  "views.view.aggregates_directory" => [\n    "path" => $path,\n    "widgets" => [\n      "dir_agg_prod_search_tid" => "first",\n      "dir_products_type_tid" => "first",\n      "dir_products_tid" => "second",\n      "dir_materials_tid" => "third",\n      "sort_by" => "second",\n      "sort_order" => "second",\n      "items_per_page" => "second",\n      "offset" => "second",\n      "submit" => "third",\n      "reset" => "third",\n    ],\n  ],\n  "views.view.consultants_directory" => [\n    "path" => $path,\n    "widgets" => [\n      "combine" => "first",\n      "field_directory_consultants_cat_target_id" => "second",\n      "sort_by" => "first",\n      "sort_order" => "first",\n      "items_per_page" => "first",\n      "offset" => "first",\n      "submit" => "third",\n      "reset" => "third",\n    ],\n  ],\n  "views.view.news_listings" => [\n    "path" => "display.block_6.display_options.exposed_form.options.layout",\n    "widgets" => [\n      "combine" => "first",\n      "field_article_article_target_id" => "second",\n      "sort_by" => "second",\n      "sort_order" => "second",\n      "items_per_page" => "second",\n      "offset" => "second",\n      "submit" => "third",\n      "reset" => "third",\n    ],\n  ],\n];\n\n$factory = \Drupal::configFactory();\n\nforeach ($updates as $name => $update) {\n  $layout = [\n    "layout_id" => "layout_threecol_section",\n    "change" => "Change",\n    "widget_region" => $update["widgets"],\n  ];\n\n  $factory->getEditable($name)\n    ->set($update["path"], $layout)\n    ->save();\n\n  echo "Updated $name\n";\n}\n'
+  748  ddev drush cache:rebuild\n\nddev drush config:get views.view.aggregates_directory \\ndisplay.block_1.display_options.exposed_form.options.layout
+  749  ddev drush php:eval '\n$theme_layouts = [\n  "layout_a",\n  "page_1",\n  "page_2",\n  "page_3",\n  "article_1",\n  "article_2",\n  "article_3",\n];\n\n$storage = \Drupal::service("config.storage");\n\nforeach ($storage->listAll() as $name) {\n  $data = $storage->read($name);\n\n  $walk = function ($value, $path = "") use (&$walk, $theme_layouts, $name) {\n    if (is_array($value)) {\n      foreach ($value as $key => $child) {\n        $child_path = $path === "" ? $key : $path . "." . $key;\n\n        if (\n          $key === "layout_id" &&\n          is_string($child) &&\n          in_array($child, $theme_layouts, TRUE)\n        ) {\n          echo $name . " | " . $child_path . " | " . $child . PHP_EOL;\n        }\n\n        $walk($child, $child_path);\n      }\n    }\n  };\n\n  $walk($data);\n}\n'
+  750  ddev drush theme:uninstall themag_st -y\nddev drush theme:uninstall themag -y\nddev drush cache:rebuild\nddev drush status
+  751  ddev launch
+  752  find web/modules web/themes -type d \( \\n  -name 'themag_commerce_field_group' -o \\n  -name 'themag_default_content' -o \\n  -name 'themag_demo' -o \\n  -name 'pinkdexo_admin' -o \\n  -name 'themag_st' -o \\n  -name 'themag' \\n\) -prune -print
+  753  ddev drush cache:rebuild\nddev drush status\ngit status --short
+  754  ddev drush theme:list --status=enabled --format=list\nddev drush theme:uninstall classy stable -y\nddev drush cache:rebuild
+  755  ddev drush pm:list --type=theme --status=enabled --format=list\nddev drush config:get system.theme
+  756  ddev snapshot --name=before-obsolete-theme-cleanup\n\nddev drush theme:uninstall charm -y\nddev drush theme:uninstall seven -y\nddev drush theme:uninstall classy -y\nddev drush theme:uninstall stable -y\nddev drush cache:rebuild
+  757  mkdir -p .migration-backup/removed-projects\n\nmv web/modules/custom/themag_default_content \\n   web/modules/custom/themag_demo \\n   web/modules/custom/themag_commerce_field_group \\n   web/themes/custom/pinkdexo_admin \\n   web/themes/custom/themag \\n   web/themes/custom/themag_st \\n   .migration-backup/removed-projects/
+  758  ddev drush cache:rebuild\nddev drush status\nddev drush pm:list --type=theme --status=enabled --format=list\ngit status --short
+  759  ddev drush php:eval '\n$database = \Drupal::database();\n$schema = $database->schema();\n\n$tables = [\n  "node__layout_builder__layout",\n  "node_revision__layout_builder__layout",\n  "paragraph__layout_builder__layout",\n  "paragraph_revision__layout_builder__layout",\n  "taxonomy_term__layout_builder__layout",\n  "taxonomy_term_revision__layout_builder__layout",\n  "user__layout_builder__layout",\n];\n\n$column = "layout_builder__layout_section";\n\nforeach ($tables as $table) {\n  if (!$schema->tableExists($table) || !$schema->fieldExists($table, $column)) {\n    continue;\n  }\n\n  $query = $database->select($table, "t");\n  $query->addField("t", $column, "section_data");\n\n  $counts = [];\n\n  foreach ($query->execute() as $row) {\n    $section = @unserialize($row->section_data);\n\n    if ($section instanceof \Drupal\layout_builder\Section) {\n      $id = $section->getLayoutId();\n      $counts[$id] = ($counts[$id] ?? 0) + 1;\n    }\n  }\n\n  ksort($counts);\n\n  echo PHP_EOL . $table . PHP_EOL;\n\n  foreach ($counts as $id => $count) {\n    echo "  " . $id . ": " . $count . PHP_EOL;\n  }\n}\n'
+  760  ddev snapshot --name=before-themag-layout-migration
+  761  ddev drush php:eval '\n$map = [\n  "themag_onecol_section" => "layout_onecol",\n  "themag_twocol_section" => "layout_twocol_section",\n  "themag_threecol_section" => "layout_threecol_section",\n  "themag_fourcol_section" => "layout_fourcol_section",\n];\n\n$database = \Drupal::database();\n$schema = $database->schema();\n$transaction = $database->startTransaction();\n\ntry {\n  /*\n   * Migrate configuration-based sections, including entity displays\n   * and Layout Library templates.\n   */\n  $config_factory = \Drupal::configFactory();\n  $config_storage = \Drupal::service("config.storage");\n  $config_manager = \Drupal::service("config.manager");\n  $changed_config = [];\n  $config_sections = 0;\n\n  $migrate_array = function (&$value) use (&$migrate_array, $map, &$config_sections) {\n    if (!is_array($value)) {\n      return;\n    }\n\n    if (\n      isset($value["layout_id"]) &&\n      is_string($value["layout_id"]) &&\n      isset($map[$value["layout_id"]])\n    ) {\n      $old_id = $value["layout_id"];\n      $value["layout_id"] = $map[$old_id];\n\n      if ($old_id === "themag_onecol_section" && !empty($value["components"])) {\n        foreach ($value["components"] as &$component) {\n          if (($component["region"] ?? NULL) === "first") {\n            $component["region"] = "content";\n          }\n        }\n        unset($component);\n      }\n\n      $config_sections++;\n    }\n\n    foreach ($value as &$child) {\n      if (is_array($child)) {\n        $migrate_array($child);\n      }\n    }\n    unset($child);\n  };\n\n  foreach ($config_storage->listAll() as $name) {\n    $data = $config_storage->read($name);\n    $before = $config_sections;\n\n    $migrate_array($data);\n\n    if ($config_sections > $before) {\n      $config_factory->getEditable($name)\n        ->setData($data)\n        ->save(TRUE);\n\n      $changed_config[] = $name;\n      echo "Updated configuration: $name\n";\n    }\n  }\n\n  /*\n   * Reload and save changed configuration entities so dependencies\n   * are recalculated for the core layout providers.\n   */\n  foreach ($changed_config as $name) {\n    $config_factory->reset($name);\n    $entity = $config_manager->loadConfigEntityByName($name);\n\n    if ($entity) {\n      $entity->calculateDependencies();\n      $entity->save();\n    }\n  }\n\n  /*\n   * Migrate serialized sections in current content and revisions.\n   */\n  $tables = [\n    "node__layout_builder__layout",\n    "node_revision__layout_builder__layout",\n    "paragraph__layout_builder__layout",\n    "paragraph_revision__layout_builder__layout",\n    "taxonomy_term__layout_builder__layout",\n    "taxonomy_term_revision__layout_builder__layout",\n    "user__layout_builder__layout",\n  ];\n\n  $column = "layout_builder__layout_section";\n  $key_candidates = [\n    "bundle",\n    "deleted",\n    "entity_id",\n    "revision_id",\n    "langcode",\n    "delta",\n  ];\n\n  $database_sections = 0;\n\n  foreach ($tables as $table) {\n    if (!$schema->tableExists($table) || !$schema->fieldExists($table, $column)) {\n      continue;\n    }\n\n    $keys = array_values(array_filter(\n      $key_candidates,\n      fn($key) => $schema->fieldExists($table, $key)\n    ));\n\n    $query = $database->select($table, "t");\n    $query->fields("t", $keys);\n    $query->addField("t", $column, "section_data");\n\n    $table_count = 0;\n\n    foreach ($query->execute() as $row) {\n      $section = @unserialize($row->section_data);\n\n      if (!$section instanceof \Drupal\layout_builder\Section) {\n        continue;\n      }\n\n      $old_id = $section->getLayoutId();\n\n      if (!isset($map[$old_id])) {\n        continue;\n      }\n\n      $section_data = $section->toArray();\n      $section_data["layout_id"] = $map[$old_id];\n\n      if ($old_id === "themag_onecol_section") {\n        foreach ($section_data["components"] as &$component) {\n          if (($component["region"] ?? NULL) === "first") {\n            $component["region"] = "content";\n          }\n        }\n        unset($component);\n      }\n\n      $new_section = \Drupal\layout_builder\Section::fromArray($section_data);\n\n      $update = $database->update($table)\n        ->fields([$column => serialize($new_section)]);\n\n      foreach ($keys as $key) {\n        $update->condition($key, $row->{$key});\n      }\n\n      $update->execute();\n      $table_count++;\n      $database_sections++;\n    }\n\n    echo "$table: migrated $table_count sections\n";\n  }\n\n  unset($transaction);\n\n  echo PHP_EOL;\n  echo "Configuration sections migrated: $config_sections\n";\n  echo "Database sections migrated: $database_sections\n";\n}\ncatch (\Throwable $exception) {\n  $transaction->rollBack();\n  throw $exception;\n}\n'
+  762  ddev drush cache:rebuild\nddev drush status
+  763  ddev drush pm:uninstall themag_layouts -y\nddev drush cache:rebuild\nddev drush updatedb:status
+  764  mv web/modules/custom/themag_layouts \\n   .migration-backup/removed-projects/
+  765  ddev drush cache:rebuild\nddev drush status\nddev drush watchdog:show --count=30 --severity=Error
+  766  ddev composer why-not drupal/core ^10
+  767  ddev composer show drupal/crop\nddev composer show drupal/focal_point
+  768  rg -n \\n"getUriWithoutConvertedExtension|3293782|3583142|drupal/crop" \\ncomposer.json composer.lock patches web/modules/contrib/crop
+  769  sed -n '1,260p' why-not-d10.txt
+  770  ddev snapshot --name=before-crop-downgrade\n\nddev composer require 'drupal/crop:2.4.0' \\n  --with-all-dependencies \\n  --no-security-blocking\n\nddev drush updatedb -y\nddev drush cache:rebuild
+  771  ddev composer show drupal/crop | sed -n '1,12p'\n\nrg -n "getUriWithoutConvertedExtension" \\n  web/modules/contrib/crop || true
+  772  ddev drush watchdog:show \\n  --count=20 \\n  --severity=Error
+  773  ddev composer why-not drupal/core 10.6.15 \\n  > why-not-d10.txt 2>&1 || true\n\nsed -n '1,300p' why-not-d10.txt
+  774  ddev drush php:eval '\n$modules = [\n  "csv_serialization",\n  "jquery_ui_button",\n  "jquery_ui_slider",\n  "pagerer",\n  "price",\n  "typed_data",\n  "video_embed_media_player",\n  "views_block_filter_block",\n];\n\nforeach ($modules as $module) {\n  echo $module . ": " .\n    (\Drupal::moduleHandler()->moduleExists($module) ? "enabled" : "not enabled") .\n    PHP_EOL;\n}\n'
+  775  ddev composer why drupal/csv_serialization\nddev composer why drupal/jquery_ui_button\nddev composer why drupal/jquery_ui_slider\nddev composer why drupal/pagerer\nddev composer why drupal/price\nddev composer why drupal/typed_data\nddev composer why drupal/video_embed_media_player\nddev composer why drupal/views_block_filter_block
+  776  ddev drush pm:list \\n  --type=module \\n  --status=enabled \\n  --format=list |\nrg '^(csv_serialization|jquery_ui_button|jquery_ui_slider|pagerer|price|typed_data|rules|rules_ui|video_embed_media_player|views_block_filter_block)$'
+  777  ddev drush sql:query \\n"SELECT name FROM config\n WHERE name LIKE 'rules.%'\n    OR name LIKE 'rules_reaction_rule.%'\n ORDER BY name;"
+  778  ddev drush pm:uninstall price -y\n\nddev composer remove \\n  drupal/price \\n  drupal/rules \\n  drupal/typed_data \\n  --with-all-dependencies \\n  --no-security-blocking\n\nddev drush cache:rebuild\nddev drush updatedb:status
+  779  ddev drush php:eval '\n$manager = \Drupal::service("config.manager");\n\nforeach (["video_embed_media_player"] as $module) {\n  echo $module . ":" . PHP_EOL;\n  $dependencies = $manager->findConfigEntityDependencies("module", $module);\n\n  if (!$dependencies) {\n    echo "  no configuration dependencies" . PHP_EOL;\n    continue;\n  }\n\n  foreach ($dependencies as $dependency) {\n    echo "  " . $dependency->getConfigDependencyName() . PHP_EOL;\n  }\n}\n'
+  780  ddev composer require 'drupal/price:2.0.0' \\n  --with-all-dependencies \\n  --no-security-blocking\n\nddev drush cache:rebuild\nddev drush status
+  781  ddev mysql -N -e "\nSELECT 'node__field_event_price', COUNT(*)\nFROM node__field_event_price\nUNION ALL\nSELECT 'node_revision__field_event_price', COUNT(*)\nFROM node_revision__field_event_price;\n"
+  782  ddev drush sql:query "\nSELECT name\nFROM config\nWHERE name = 'field.storage.node.field_event_price'\n   OR name LIKE 'field.field.node.%.field_event_price'\nORDER BY name;\n"
+  783  ddev drush php:eval '\n$manager = \Drupal::service("config.manager");\n$dependencies = $manager->findConfigEntityDependencies(\n  "module",\n  ["video_embed_media_player"]\n);\n\nif (!$dependencies) {\n  echo "No configuration dependencies." . PHP_EOL;\n}\nelse {\n  foreach ($dependencies as $dependency) {\n    echo $dependency->getConfigDependencyName() . PHP_EOL;\n  }\n}\n'
+  784  ddev drush php:eval '\n$field = \Drupal\field\Entity\FieldConfig::load(\n  "node.event.field_event_price"\n);\n\nif ($field) {\n  $field->delete();\n  echo "Deleted field instance." . PHP_EOL;\n}\n\n$storage = \Drupal\field\Entity\FieldStorageConfig::load(\n  "node.field_event_price"\n);\n\nif ($storage) {\n  $storage->delete();\n  echo "Deleted field storage." . PHP_EOL;\n}\n\nfor ($i = 0; $i < 20; $i++) {\n  field_purge_batch(1000);\n}\n\necho "Field purge completed." . PHP_EOL;\n'
+  785  ddev drush php:eval '\n$field = \Drupal\field\Entity\FieldConfig::load(\n  "node.event.field_event_price"\n);\n\nif ($field) {\n  $field->delete();\n  echo "Deleted field instance." . PHP_EOL;\n}\n\n$storage = \Drupal\field\Entity\FieldStorageConfig::load(\n  "node.field_event_price"\n);\n\nif ($storage) {\n  $storage->delete();\n  echo "Deleted field storage." . PHP_EOL;\n}\n\nfor ($i = 0; $i < 20; $i++) {\n  field_purge_batch(1000);\n}\n\necho "Field purge completed." . PHP_EOL;\n'
+  786  ddev drush sql:query "\nSELECT name\nFROM config\nWHERE name LIKE '%field_event_price%';\n"
+  787  ddev drush pm:uninstall \\n  price \\n  video_embed_media_player \\n  -y\n\nddev composer remove \\n  drupal/price \\n  drupal/video_embed_media_player \\n  --with-all-dependencies \\n  --no-security-blocking
+  788  ddev drush pm:uninstall \\n  price \\n  video_embed_media_player \\n  -y\n\nddev composer remove \\n  drupal/price \\n  drupal/video_embed_media_player \\n  --with-all-dependencies \\n  --no-security-blocking
+  789  ddev drush cache:rebuild\nddev drush updatedb:status\nddev drush status\n\nddev composer why-not drupal/core 10.6.15 \\n  > why-not-d10.txt 2>&1 || true\n\nsed -n '1,220p' why-not-d10.txt
+  790  ddev composer require \\n  'drupal/video_embed_field:2.5.0' \\n  'drupal/video_embed_media:2.5.0' \\n  --with-all-dependencies \\n  --no-security-blocking\n\nddev drush cache:rebuild\nddev drush updatedb:status\nddev drush status
+  791  ddev composer require \\n  'drupal/video_embed_field:2.5.0' \\n  'drupal/video_embed_media:2.5.0' \\n  --with-all-dependencies \\n  --no-security-blocking\n\nddev drush cache:rebuild\nddev drush updatedb:status\nddev drush status
+  792  ddev drush pm:list \\n  --type=module \\n  --status=enabled \\n  --format=list |\nrg '^video_embed_(field|media|media_player)$'
+  793  pwd
+  794  pwd 
+  795  ls -l
+  796  cd web/themes/custom
+  797  ls -l
+  798  cd aggradix
+  799  ddev npm run watch  
+  800  ddev start
+  801  ddev drush pm:list \\n  --type=module \\n  --status=enabled \\n  --format=list |\nrg '^video_embed_(field|media|media_player)$'
+  802  mkdir -p .migration-backup/pre-d10-composer\n\ncp composer.json composer.lock \\n  .migration-backup/pre-d10-composer/\n\nddev snapshot --name=before-drupal-10
+  803  ddev composer require \\n  'drupal/core-recommended:10.6.15' \\n  'drupal/core-composer-scaffold:10.6.15' \\n  'drupal/core-project-message:10.6.15' \\n  'drupal/csv_serialization:^4.0' \\n  'drupal/pagerer:^3.1' \\n  'drupal/jquery_ui_button:^2.1' \\n  'drupal/jquery_ui_slider:^2.1' \\n  'drupal/views_block_filter_block:^2.1' \\n  'drush/drush:^12.4.3' \\n  --with-all-dependencies \\n  --no-security-blocking
+  804  ddev drush state:set system.maintenance_mode 0\nddev drush cache:rebuild
+  805  ddev composer why egulias/email-validator\nddev composer why-not egulias/email-validator 4.0.4\n\nddev composer why guzzlehttp/guzzle\nddev composer why-not guzzlehttp/guzzle 7.5.0
+  806  ddev drush php:eval '\n$config = \Drupal::service("config.factory")\n  ->getEditable("system.mail");\n\n$interfaces = $config->get("interface") ?: [];\n\nforeach ($interfaces as $key => $plugin) {\n  if ($plugin === "swiftmailer") {\n    $interfaces[$key] = "php_mail";\n    echo "Changed {$key} from swiftmailer to php_mail." . PHP_EOL;\n  }\n}\n\n$config->set("interface", $interfaces)->save();\n'
+  807  ddev snapshot --name=before-mail-cloudflare-removal
+  808  ddev drush pm:uninstall \\n  swiftmailer \\n  cloudflare \\n  -y
+  809  ddev composer remove \\n  drupal/swiftmailer \\n  drupal/cloudflare \\n  --with-all-dependencies \\n  --no-security-blocking
+  810  ddev drush cache:rebuild\nddev drush updatedb:status\nddev drush status\n\nddev drush pm:list \\n  --type=module \\n  --status=enabled \\n  --format=list |\nrg '^(swiftmailer|cloudflare|symfony_mailer)$'
+  811  ddev composer require \\n  'drupal/swiftmailer:2.4.0' \\n  --with-all-dependencies \\n  --no-security-blocking\n\nddev drush cache:rebuild
+  812  ddev drush pm:uninstall swiftmailer -y -vvv
+  813  ddev composer remove \\n  drupal/swiftmailer \\n  --with-all-dependencies \\n  --no-security-blocking\n\nddev drush cache:rebuild\nddev drush updatedb:status\nddev drush status
+  814  ddev drush pm:list \\n  --type=module \\n  --status=enabled \\n  --format=list |\nrg '^(swiftmailer|symfony_mailer)$'
+  815  ddev composer show \\n  d8-contrib-modules/cloudflarephpsdk \\n  2>/dev/null || true
+  816  mkdir -p .migration-backup/pre-d10-attempt2\n\ncp composer.json composer.lock \\n  .migration-backup/pre-d10-attempt2/\n\nddev snapshot --name=before-drupal-10-attempt2
+  817  ddev drush state:set system.maintenance_mode 1\nddev drush cache:rebuild
+  818  ddev composer require \\n  'drupal/core-recommended:10.6.15' \\n  'drupal/core-composer-scaffold:10.6.15' \\n  'drupal/core-project-message:10.6.15' \\n  'drupal/csv_serialization:^4.0' \\n  'drupal/pagerer:^3.1' \\n  'drupal/jquery_ui_button:^2.1' \\n  'drupal/jquery_ui_slider:^2.1' \\n  'drupal/views_block_filter_block:^2.1' \\n  'drush/drush:^12.4.3' \\n  --with-all-dependencies \\n  --no-security-blocking
+  819  ddev drush state:set system.maintenance_mode 0\nddev drush cache:rebuild
+  820  ddev composer require \\n  'drupal/core-recommended:10.6.15' \\n  'drupal/core-composer-scaffold:10.6.15' \\n  'drupal/core-project-message:10.6.15' \\n  'drupal/csv_serialization:^4.0' \\n  'drupal/pagerer:^3.1' \\n  'drupal/jquery_ui_button:^2.1' \\n  'drupal/jquery_ui_slider:^2.1' \\n  'drupal/views_block_filter_block:^2.1' \\n  'drush/drush:^12.4.3' \\n  --with-all-dependencies \\n  --no-security-blocking
+  821  ddev composer why d8-contrib-modules/cloudflarephpsdk\nddev composer why guzzlehttp/guzzle
+  822  ddev composer show --direct |\nrg -i 'cloudflare|guzzle'
+  823  ddev composer remove \\n  d8-contrib-modules/cloudflarephpsdk \\n  --with-all-dependencies \\n  --no-security-blocking
+  824  ddev drush pm:list \\n  --type=module \\n  --status=enabled \\n  --format=list |\nrg '^cloudflare_purge$' || true
+  825  ddev composer remove \\n  drupal/cloudflare_purge \\n  --with-all-dependencies \\n  --no-security-blocking
+  826  ddev composer why guzzlehttp/guzzle
+  827  ddev composer require \\n  'drupal/core-recommended:10.6.15' \\n  'drupal/core-composer-scaffold:10.6.15' \\n  'drupal/core-project-message:10.6.15' \\n  'drupal/csv_serialization:^4.0' \\n  'drupal/pagerer:^3.1' \\n  'drupal/jquery_ui_button:^2.1' \\n  'drupal/jquery_ui_slider:^2.1' \\n  'drupal/views_block_filter_block:^2.1' \\n  'drush/drush:^12.4.3' \\n  --with-all-dependencies \\n  --no-security-blocking
+  828  ddev drush state:set system.maintenance_mode 1\nddev drush cache:rebuild
+  829  ddev composer require \\n  'drupal/core-recommended:10.6.15' \\n  'drupal/core-composer-scaffold:10.6.15' \\n  'drupal/core-project-message:10.6.15' \\n  'drupal/csv_serialization:^4.0' \\n  'drupal/pagerer:^3.1' \\n  'drupal/jquery_ui_button:^2.1' \\n  'drupal/jquery_ui_slider:^2.1' \\n  'drupal/views_block_filter_block:^2.1' \\n  'drush/drush:^12.4.3' \\n  --with-all-dependencies \\n  --no-security-blocking
+  830  ddev drush updatedb -y\nddev drush cache:rebuild\nddev drush status\nddev drush updatedb:status
+  831  ddev drush updatedb -y\nddev drush cache:rebuild\nddev drush status\nddev drush updatedb:status
+  832  ddev config --php-version=8.3\nddev restart
+  833  ddev drush state:set system.maintenance_mode 0\nddev drush cache:rebuild
+  834  ddev drush status\nddev drush updatedb:status
+  835  ddev composer require \\n  'drupal/crop:^2.6' \\n  --with-all-dependencies \\n  --no-security-blocking\n\nddev drush updatedb -y\nddev drush cache:rebuild
+  836  composer require 'drupal/crop:^2.6'
+  837  ddev composer require 'drupal/crop:^2.6'
+  838  ddev drush watchdog:show \\n  --count=30 \\n  --severity=Error
+  839  neilfarhall@Neils-MacBook-Pro-2 agg-net % ddev drush watchdog:show \\n  --count=30 \\n  --severity=Error\n ---------- -------------- ------ ---------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- \n  ID         Date           Type   Severity   Message                                                                                                                                                          \n ---------- -------------- ------ ---------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- \n  14400896   18/Aug 14:18   php    Error      TypeError: Drupal\qmj_client_edit_access\EventSubscriber\QmjClientEditAccessSubscriber::onKernelRequest(): Argument #1 ($event) must be of type                  \n                                              Symfony\Component\HttpKernel\Event\GetRespon                                                                                                                     \n  14400895   18/Aug 14:18   php    Error      TypeError: Drupal\qmj_client_edit_access\EventSubscriber\QmjClientEditAccessSubscriber::onKernelRequest(): Argument #1 ($event) must be of type                  \n                                              Symfony\Component\HttpKernel\Event\GetRespon                                                                                                                     \n  14400887   17/Aug 16:32   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'video_embed_field' found in the                             \n                                              'field.storage.node.field_brand_video' configuration in                                                                                                          \n  14400884   17/Aug 16:25   php    Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400883   17/Aug 16:25   php    Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400882   17/Aug 16:24   php    Error      TypeError: Drupal\Core\Config\ConfigManager::findConfigEntityDependencies(): Argument #2 ($names) must be of type array, string given, called in                 \n                                              /var/www/html/vendor/drush/drush/src/Comman                                                                                                                      \n  14400880   17/Aug 16:24   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400878   17/Aug 15:54   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400877   17/Aug 15:44   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400864   17/Aug 12:19   php    Error      Error: Cannot use object of type Drupal\Core\Layout\LayoutDefinition as array in eval() (line 5 of                                                               \n                                              /var/www/html/vendor/drush/drush/src/Commands/core/PhpCommands.php(30) : eval()'d code) #                                                                        \n  14400863   17/Aug 12:18   php    Error      Error: Cannot use object of type Drupal\Core\Layout\LayoutDefinition as array in eval() (line 5 of                                                               \n                                              /var/www/html/vendor/drush/drush/src/Commands/core/PhpCommands.php(30) : eval()'d code) #                                                                        \n  14400861   17/Aug 11:27   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400860   13/Aug 10:01   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400859   12/Aug 14:45   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400858   12/Aug 14:44   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400857   12/Aug 14:43   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400856   12/Aug 14:43   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400855   12/Aug 14:25   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400854   12/Aug 12:31   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400853   23/Jul 15:05   php    Error      Drupal\Component\Plugin\Exception\PluginException: Plugin (slider) instance class "Drupal\sliderwidget\Element\Slider" does not exist. in                        \n                                              Drupal\Component\Plugin\Factory\DefaultFactory::ge                                                                                                               \n  14400850   23/Jul 15:05   php    Error      Drupal\Component\Plugin\Exception\PluginException: Plugin (slider) instance class "Drupal\sliderwidget\Element\Slider" does not exist. in                        \n                                              Drupal\Component\Plugin\Factory\DefaultFactory::ge                                                                                                               \n  14400847   23/Jul 15:02   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400846   23/Jul 14:58   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400845   23/Jul 14:57   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400841   23/Jul 14:50   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400840   23/Jul 14:49   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400839   23/Jul 14:49   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400838   23/Jul 14:49   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400837   23/Jul 14:40   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400801   17/Jul 10:07   php    Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: The "themag_onecol_section" plugin does not exist. Valid plugin IDs for                               \n                                              Drupal\Core\Layout\LayoutPluginManager are: layout_twocol                                                                                                        \n ---------- -------------- ------ ---------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- \nneilfarhall@Neils-MacBook-Pro-2 agg-net %nano web/modules/custom/qmj_client_edit_access/src/EventSubscriber/QmjClientEditAccessSubscriber.php
+  840  neilfarhall@Neils-MacBook-Pro-2 agg-net % ddev drush watchdog:show \\n  --count=30 \\n  --severity=Error\n ---------- -------------- ------ ---------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- \n  ID         Date           Type   Severity   Message                                                                                                                                                          \n ---------- -------------- ------ ---------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- \n  14400896   18/Aug 14:18   php    Error      TypeError: Drupal\qmj_client_edit_access\EventSubscriber\QmjClientEditAccessSubscriber::onKernelRequest(): Argument #1 ($event) must be of type                  \n                                              Symfony\Component\HttpKernel\Event\GetRespon                                                                                                                     \n  14400895   18/Aug 14:18   php    Error      TypeError: Drupal\qmj_client_edit_access\EventSubscriber\QmjClientEditAccessSubscriber::onKernelRequest(): Argument #1 ($event) must be of type                  \n                                              Symfony\Component\HttpKernel\Event\GetRespon                                                                                                                     \n  14400887   17/Aug 16:32   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'video_embed_field' found in the                             \n                                              'field.storage.node.field_brand_video' configuration in                                                                                                          \n  14400884   17/Aug 16:25   php    Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400883   17/Aug 16:25   php    Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400882   17/Aug 16:24   php    Error      TypeError: Drupal\Core\Config\ConfigManager::findConfigEntityDependencies(): Argument #2 ($names) must be of type array, string given, called in                 \n                                              /var/www/html/vendor/drush/drush/src/Comman                                                                                                                      \n  14400880   17/Aug 16:24   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400878   17/Aug 15:54   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400877   17/Aug 15:44   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400864   17/Aug 12:19   php    Error      Error: Cannot use object of type Drupal\Core\Layout\LayoutDefinition as array in eval() (line 5 of                                                               \n                                              /var/www/html/vendor/drush/drush/src/Commands/core/PhpCommands.php(30) : eval()'d code) #                                                                        \n  14400863   17/Aug 12:18   php    Error      Error: Cannot use object of type Drupal\Core\Layout\LayoutDefinition as array in eval() (line 5 of                                                               \n                                              /var/www/html/vendor/drush/drush/src/Commands/core/PhpCommands.php(30) : eval()'d code) #                                                                        \n  14400861   17/Aug 11:27   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400860   13/Aug 10:01   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400859   12/Aug 14:45   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400858   12/Aug 14:44   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400857   12/Aug 14:43   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400856   12/Aug 14:43   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400855   12/Aug 14:25   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400854   12/Aug 12:31   php    Error      Error: Call to undefined method Drupal\image\Controller\ImageStyleDownloadController::getUriWithoutConvertedExtension() in                                       \n                                              Drupal\crop\Entity\Crop::getCropFromImageStyleId() (line 172 of /                                                                                                \n  14400853   23/Jul 15:05   php    Error      Drupal\Component\Plugin\Exception\PluginException: Plugin (slider) instance class "Drupal\sliderwidget\Element\Slider" does not exist. in                        \n                                              Drupal\Component\Plugin\Factory\DefaultFactory::ge                                                                                                               \n  14400850   23/Jul 15:05   php    Error      Drupal\Component\Plugin\Exception\PluginException: Plugin (slider) instance class "Drupal\sliderwidget\Element\Slider" does not exist. in                        \n                                              Drupal\Component\Plugin\Factory\DefaultFactory::ge                                                                                                               \n  14400847   23/Jul 15:02   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400846   23/Jul 14:58   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400845   23/Jul 14:57   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400841   23/Jul 14:50   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400840   23/Jul 14:49   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400839   23/Jul 14:49   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400838   23/Jul 14:49   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400837   23/Jul 14:40   menu   Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'price' found in the 'field.storage.node.field_event_price'  \n                                              configuration in Drupal\fiel                                                                                                                                     \n  14400801   17/Jul 10:07   php    Error      Drupal\Component\Plugin\Exception\PluginNotFoundException: The "themag_onecol_section" plugin does not exist. Valid plugin IDs for                               \n                                              Drupal\Core\Layout\LayoutPluginManager are: layout_twocol                                                                                                        \n ---------- -------------- ------ ---------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- \nneilfarhall@Neils-MacBook-Pro-2 agg-net %nano web/modules/custom/qmj_client_edit_access/src/EventSubscriber/QmjClientEditAccessSubscriber.php
+  841  nano web/modules/custom/qmj_client_edit_access/src/EventSubscriber/QmjClientEditAccessSubscriber.php
+  842  ddev drush cache:rebuild\nddev launch
+  843  ddev drush status | rg 'Drupal version|PHP version|Drupal bootstrap'
+  844  cd web/themes
+  845  ls -l
+  846  cd custom
+  847  ls -l
+  848  rm -r aggradix
+  849  cd ..
+  850  cd ..
+  851  cd ..
+  852  ddev composer require 'drupal/radix:^6.0' --with-all-dependencies\nddev drush theme:enable radix -y\nddev drush cache:rebuild
+  853  sed -n '1,160p' web/themes/custom/aggradix/aggradix.info.yml
+  854  cd web/themes
+  855  ls -l
+  856  cd ..
+  857  cd ..
+  858  sed -n '1,160p' web/themes/custom/aggradix/aggradix.info.yml
+  859  rg -n -i 'ccradix|concrete.?connect' web/themes/custom/aggradix \\n  --glob '!node_modules/**' \\n  --glob '!build/**'
+  860  sed -n '1,120p' \\nweb/themes/custom/aggradix/config/optional/block.block.aggradix_breadcrumbs.yml
+  861  sed -n '1,120p' \\nweb/themes/custom/aggradix/config/optional/block.block.aggradix_breadcrumbs.yml
+  862  ddev composer require 'drupal/radix:^6.0' --with-all-dependencies\nddev drush theme:enable radix -y\nddev drush cache:rebuild
+  863  ddev drush pm:list --type=theme --format=table |\nrg 'Radix|aggradix|radix'
+  864  ddev npm run watch  
+  865  ddev npm run
+  866  ddev npm ci\nddev npm run production
+  867  ls -lh build/css/main.style.css build/js/main.script.js
+  868  cd ../../../..\nddev drush theme:enable aggradix -y\nddev drush cache:rebuild
+  869  ddev drush pm:list --type=theme --status=enabled --format=list |\nrg '^(radix|aggradix)$'
+  870  find web/themes/custom/aggradix/config \\n  -type f -name 'block.block.*.yml' |\nsort
+  871  ddev drush config:set system.theme default aggradix -y\nddev drush cache:rebuild
+  872  ddev drush config:set system.theme default olivero -y\nddev drush cache:rebuild
+  873  rg -n '^(id|theme):' \\nweb/themes/custom/aggradix/config/optional
+  874  rg -n '^(id|theme):' \\nweb/themes/custom/aggradix/config/optional/block.block.aggradix_breadcrumbs.yml
+  875  perl -pi -e \\n's/^id: ccradix_breadcrumbs$/id: aggradix_breadcrumbs/' \\nweb/themes/custom/aggradix/config/optional/block.block.aggradix_breadcrumbs.yml
+  876  rg -n '^(id|theme):' \\nweb/themes/custom/aggradix/config/optional/block.block.aggradix_breadcrumbs.yml
+  877  ddev drush config:set system.theme default olivero -y\nddev drush theme:uninstall aggradix -y\nddev drush config:delete block.block.ccradix_breadcrumbs -y\nddev drush config:delete block.block.aggradix_breadcrumbs -y\nddev drush cache:rebuild\n\nddev drush theme:enable aggradix -y\nddev drush cache:rebuild
+  878  ddev drush pm:list --type=theme --status=enabled --format=list |\nrg '^(radix|aggradix)$'
+  879  ddev drush config:set system.theme default aggradix -y\nddev drush cache:rebuild\nddev drush status | rg 'Drupal bootstrap|Default theme'
+  880  ddev snapshot --name=drupal10-radix-installed
+  881  ddev launch
+  882  nano web/modules/custom/qmj_client_edit_access/src/EventSubscriber/QmjClientEditAccessSubscriber.php
+  883  rg -n \\n'GetResponseEvent|FilterResponseEvent|GetResponseForExceptionEvent|GetResponseForControllerResultEvent' \\nweb/modules/custom
+  884  ddev drush cache:rebuild\nddev launch
+  885  nano web/modules/custom/qmj_client_edit_access/src/EventSubscriber/QmjClientEditAccessSubscriber.php
+  886  sed -n '1,70p' \\nweb/modules/custom/qmj_client_edit_access/src/EventSubscriber/QmjClientEditAccessSubscriber.php
+  887  perl -pi -e \\n's/GetResponseEvent/RequestEvent/g; s/FilterResponseEvent/ResponseEvent/g' \\nweb/modules/custom/qmj_client_edit_access/src/EventSubscriber/QmjClientEditAccessSubscriber.php
+  888  ddev exec php -l \\nweb/modules/custom/qmj_client_edit_access/src/EventSubscriber/QmjClientEditAccessSubscriber.php\n\nddev drush cache:rebuild\nddev launch
+  889  find web/themes/custom/aggradix/components \\n  -maxdepth 3 -type f |\nrg '/nav/'
+  890  rg -n 'ccradix' web/themes/custom/aggradix \\n  --glob '!build/**' \\n  --glob '!node_modules/**'
+  891  find web/themes/custom/aggradix -name '*ccradix*' -print
+  892  nl -ba \\nweb/themes/custom/aggradix/templates/navigation/links.html.twig |\nsed -n '30,40p'
+  893  perl -pi -e 's/ccradix:nav/aggradix:nav/g' \\nweb/themes/custom/aggradix/templates/navigation/links.html.twig
+  894  rg -n 'ccradix:nav|aggradix:nav' \\nweb/themes/custom/aggradix/templates/navigation/links.html.twig
+  895  ddev exec \\n"grep -n 'ccradix:nav\|aggradix:nav' web/themes/custom/aggradix/templates/navigation/links.html.twig"
+  896  ddev drush cache:rebuild\nddev launch
+  897  ddev restart\nddev drush cache:rebuild\nddev launch
+  898  rg -n 'ccradix:' web/themes/custom/aggradix \\n  --glob '!build/**' \\n  --glob '!node_modules/**'
+  899  ddev drush cache:rebuild\nddev launch
+  900  rg -l -0 'ccradix:' web/themes/custom/aggradix \\n  --glob '!build/**' \\n  --glob '!node_modules/**' |\nxargs -0 perl -pi -e 's/ccradix:/aggradix:/g'\n\nddev drush cache:rebuild\nddev launch
+  901  find web/themes/custom/aggradix/components \\n  -maxdepth 3 -type f |\nrg '/(page-navigation|page-content|page-footer)/'
+  902  perl -pi -e 's/ccradix:/aggradix:/g' \\nweb/themes/custom/aggradix/components/page/page.twig
+  903  rg -n 'ccradix:' web/themes/custom/aggradix \\n  --glob '!build/**' \\n  --glob '!node_modules/**'
+  904  ddev drush cache:rebuild\nddev launch
+  905  ddev drush watchdog:show --count=5 --severity=Error
+  906  rg -n -i 'ccradix|concrete.?connect' \\nweb/themes/custom/aggradix \\n--glob '!node_modules/**'
+  907  ddev drush watchdog:show --count=5 --severity=Error
+  908  nl -ba \\nweb/themes/custom/aggradix/templates/page/page--front.html.twig |\nsed -n '38,52p'
+  909  perl -pi -e \\n"s/include 'aggradix'/include 'aggradix:page'/" \\nweb/themes/custom/aggradix/templates/page/page--front.html.twig
+  910  sed -n '43,47p' \\nweb/themes/custom/aggradix/templates/page/page--front.html.twig
+  911  find \\nweb/themes/custom/aggradix/components \\nweb/themes/contrib/radix/components \\n-path '*page-title*' -type f |\nsort
+  912  perl -pi -e \\n's/aggradix:page-title/radix:page-title/g' \\nweb/themes/custom/aggradix/templates/content/page-title.html.twig
+  913  rg -n \\n'aggradix:page|page-title' \\nweb/themes/custom/aggradix/templates/page/page--front.html.twig \\nweb/themes/custom/aggradix/templates/content/page-title.html.twig
+  914  ddev drush cache:rebuild\nddev launch
+  915  rg -o --no-filename \\n'aggradix:[A-Za-z0-9_-]+' \\nweb/themes/custom/aggradix \\n--glob '*.twig' |\nsort -u
+  916  rg -o --no-filename \\n'aggradix:[A-Za-z0-9_-]+' \\nweb/themes/custom/aggradix \\n--glob '*.twig' |\nsort -u |\nwhile read reference; do\n  component="${reference#aggradix:}"\n\n  if [[ -f "web/themes/custom/aggradix/components/${component}/${component}.component.yml" ]]; then\n    echo "OK      ${reference}"\n  elif [[ -f "web/themes/contrib/radix/components/${component}/${component}.component.yml" ]]; then\n    echo "RADIX   ${reference} -> should probably be radix:${component}"\n  else\n    echo "MISSING ${reference}"\n  fi\ndone
+  917  ddev drush watchdog:show --count=5 --severity=Error
+  918  ddev drush watchdog:show --count=5 --severity=Error
+  919  ddev composer show drupal/prelinker\nddev composer why drupal/prelinker\nddev drush pm:list --filter=prelinker
+  920  ddev snapshot --name=before-prelinker-removal\n\nddev drush pm:uninstall prelinker -y\n\nddev composer remove drupal/prelinker \\n  --with-all-dependencies \\n  --no-security-blocking\n\nddev drush cache:rebuild\nddev launch
+  921  ddev snapshot --name=radix-first-working-render
+  922  ddev start
+  923  ddev launch
+  924  ddev drsuh cr
+  925  ddev drush cr
+  926  ddev npm run production\n
+  927  ddev drush cache:rebuild\nddev launch
+  928  cd ..
+  929  ls -l
+  930  mkdir old.agg-net.com
+  931  ls -l
+  932  cd old.agg-net.com
+  933  ls -l
+  934  nano web/sites/default/settings.php
+  935  sudo du -xhd 1 /System/Volumes/Data 2>/dev/null | sort -h
+  936  sudo du -xhd 1 /System/Volumes/Data/Users/neilfarhall 2>/dev/null | sort -h
+  937  sudo du -xhd 1 /System/Volumes/Data/Users/neilfarhall/Library 2>/dev/null | sort -h
+  938  sudo du -xhd 1 ~/Library/CloudStorage 2>/dev/null | sort -h
+  939  sudo du -xhd 1 ~/Library/Group\ Containers 2>/dev/null | sort -h | tail -20
+  940  sudo du -xhd 1 ~/Library/Containers 2>/dev/null | sort -h | tail -20
+  941  sudo du -xhd 2 "$HOME/Library/Group Containers/UBF8T346G9.OneDriveStandaloneSuite" 2>/dev/null | sort -h | tail -30
+  942  df -h /
+  943  sudo du -xhd 1 /System/Volumes/Data 2>/dev/null | sort -h
+  944  df -h /
+  945  cd ..
+  946  mkdir old.agg-net.com\ncd old.agg-net.com
+  947  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ \\n
+  948  ls -l
+  949  cd \\nls 
+  950  cd ..
+  951  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  952  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  953  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  954  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  955  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  956  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  957  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  958  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  959  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  960  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  961  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  962  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  963  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  964  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  965  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  966  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  967  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  968  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  969  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  970  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  971  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  972  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  973  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  974  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  975  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  976  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  977  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  978  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  979  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  980  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+  981  rsync -avz --partial --progress --timeout=0 \\n  --exclude='sites/default/files/styles/' \\n  --exclude='sites/default/files/php/' \\n  --exclude='sites/default/files/css/' \\n  --exclude='sites/default/files/js/' \\n  -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj -o ServerAliveInterval=30 -o ServerAliveCountMax=20" \\n  sympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ \\n  old.agg-net.com/
+  982  df -h /System/Volumes/Data
+  983  sudo du -sh ~/Library/CloudStorage/OneDrive-TheQMJGroupLtd \\n"$HOME/Library/Group Containers/UBF8T346G9.OneDriveStandaloneSuite"
+  984  sudo du -xhd 1 "$HOME/Library/CloudStorage/OneDrive-TheQMJGroupLtd" 2>/dev/null | sort -h | tail -20
+  985  df -h /System/Volumes/Data
+  986  df -h /System/Volumes/Data
+  987  df -h /System/Volumes/Data
+  988  df -h /System/Volumes/Data
+  989  find ~/workspace -type d -path '*/.ddev/db_snapshots' \\n-exec du -sh {} \; 2>/dev/null | sort -h
+  990  find ~/workspace -type d -path '*/.ddev/' \\n-exec du -sh {} \; 2>/dev/null | sort -h
+  991  du -xhd 1 ~/workspace 2>/dev/null | sort -h | tail -20
+  992  docker system df
+  993  sudo du -xhd 1 /System/Volumes/Data 2>/dev/null | sort -h
+  994  sudo du -xhd 1 /System/Volumes/Data/users 2>/dev/null | sort -h
+  995  sudo du -xhd 1 /System/Volumes/Data/Users/neilfarhall 2>/dev/null | sort -h
+  996  sudo du -xhd 1 /System/Volumes/Data/Users/neilfarhall/library 2>/dev/null | sort -h
+  997  sudo du -xhd 1 "$HOME/Library/Containers" 2>/dev/null | sort -h | tail -20
+  998  sudo du -xhd 1 "$HOME/Library/Application Support" 2>/dev/null | sort -h | tail -20
+  999  sudo du -xhd 1 "$HOME/Library/Caches" 2>/dev/null | sort -h | tail -20
+ 1000  df -h /System/Volumes/Data
+ 1001  df -h /System/Volumes/Data
+ 1002  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ old.agg-net.com\n
+ 1003  rsync -avz --partial --progress --timeout=0 \\n  --exclude='sites/default/files/styles/' \\n  --exclude='sites/default/files/php/' \\n  --exclude='sites/default/files/css/' \\n  --exclude='sites/default/files/js/' \\n  -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj -o ServerAliveInterval=30 -o ServerAliveCountMax=20" \\n  sympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ \\n  old.agg-net.com/
+ 1004  rsync -avni --delete \\n  -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj -o ServerAliveInterval=30 -o ServerAliveCountMax=20" \\n  sympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ \\n  old.agg-net.com/
+ 1005  rsync -avnic --delete \\n  --exclude='sites/default/files/styles/' \\n  --exclude='sites/default/files/php/' \\n  --exclude='sites/default/files/css/' \\n  --exclude='sites/default/files/js/' \\n  -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj -o ServerAliveInterval=30 -o ServerAliveCountMax=20" \\n  sympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ \\n  old.agg-net.com/ \\n  2>&1 | tee rsync-comparison.txt
+ 1006  rsync -avz --partial --progress \\n  --exclude='logs/' \\n  --exclude='web/sites/default/files/styles/' \\n  --exclude='web/sites/default/files/php/' \\n  --exclude='web/sites/default/files/css/' \\n  --exclude='web/sites/default/files/js/' \\n  -e "ssh -i /Users/neilfarhall/.ssh/id_rsa_qmj -o ServerAliveInterval=30 -o ServerAliveCountMax=20" \\n  sympl@qmjpublish.vs.mythic-beasts.com:/srv/agg-net.com/public/ \\n  old.agg-net.com/
+ 1007  cd old.agg-net.com
+ 1008  ssh-add --apple-use-keychain /Users/neilfarhall/.ssh/id_rsa_qmj
+ 1009  ssh-add -l
+ 1010  nano web/sites/default/settings.php
+ 1011  cd web/sites/default
+ 1012  ls -l
+ 1013  cd ..
+ 1014  cd ..
+ 1015  cd ..
+ 1016  cd ..
+ 1017  cd agg-net
+ 1018  ls -l
+ 1019  ddev start
+ 1020  ddev start
+ 1021  ddev launch
+ 1022  pwd
+ 1023  cd ..
+ 1024  cd old.agg-net.com
+ 1025  ddev drush cset captcha.captcha_point.user_login_form status 0 -y\nddev drush cr
+ 1026  ddev drush cset captcha.captcha_point.user_login_form status 0 -y\nddev drush cr
+ 1027  ddev drush cset user.flood user_window 1 -y\nddev drush sql:query "DELETE FROM flood WHERE event LIKE 'user.failed_login_%';"\nddev drush cr
+ 1028  ddev start
+ 1029  ddev start
+ 1030  cd ..
+ 1031  cd agg-net
+ 1032  ddev start
+ 1033  ddev start
+ 1034  ddev launch
+ 1035  ddev start
+ 1036  ddev launch
+ 1037  ddev start
+ 1038  ddev launch
+ 1039  ddev export-db --file=local-db-backup-2026-09-16.sql.gz
+ 1040  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/sites/default/files/ \\nweb/sites/default/files/\n
+ 1041  ls -l
+ 1042  ddev mysql livecopy < concrete-16-09-26.sql
+ 1043  sudo chown -R neilfarhall:staff web/sites/default/files
+ 1044  ddev drush cr
+ 1045  ddev drush migrate:import cc_files --update
+ 1046  pwd
+ 1047  ddev npm run watch  
+ 1048  ddev npm run watch  
+ 1049  ddev start
+ 1050  ddev start
+ 1051  ddev launch
+ 1052  history
+ 1053  history 100
+ 1054  ddev drush migrate:import cc_files --update
+ 1055  # Media\nddev drush migrate:import cc_media_image --update\nddev drush migrate:import cc_media_video --update\n\n# Taxonomy\nddev drush migrate:import cc_taxonomy_channel --update\nddev drush migrate:import cc_taxonomy_news_type --update\nddev drush migrate:import cc_taxonomy_tags --update\nddev drush migrate:import cc_taxonomy_event_type --update\nddev drush migrate:import cc_taxonomy_video_type --update\n\n# Paragraphs and galleries\nddev drush migrate:import cc_paragraph_text --update\nddev drush migrate:import cc_paragraph_image --update\nddev drush migrate:import cc_media_gallery --update\nddev drush migrate:import cc_paragraph_gallery_slider --update\nddev drush migrate:import cc_paragraph_block_reference --update\nddev drush migrate:import cc_paragraph_bullet_list --update\nddev drush migrate:import cc_paragraph_links --update\nddev drush migrate:import cc_paragraph_video --update\n\n# Content\nddev drush migrate:import cc_news_article --update\nddev drush migrate:import cc_article --update\nddev drush migrate:import cc_event --update\nddev drush migrate:import cc_video --update\n\n# URL aliases — run last\nddev drush migrate:import cc_path_alias --update\n\n# Finish\nddev drush cr\nddev drush migrate:status
+ 1056  history 300
+ 1057  ddev mysql livecopy < concrete-21-09-26.sql\n
+ 1058  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/sites/default/files/ \\nweb/sites/default/files/\n
+ 1059  rsync -avz \\n-e "ssh -i ~/.ssh/id_rsa_qmj" \\nsympl@qmjpublish.vs.mythic-beasts.com:/srv/concreteconnect.co.uk/public/web/sites/default/files/ \\nweb/sites/default/files/\n
+ 1060  ddev mysql livecopy < concrete-21-09-26.sql\n
+ 1061  history 300
+ 1062  sudo chown -R neilfarhall:staff web/sites/default/files
+ 1063  ddev drush cr\n
+ 1064  ddev drush cr\nddev drush migrate:status
+ 1065  ddev drush migrate:import cc\_files --update
+ 1066  ddev drush migrate:import cc_media_image --update\n
+ 1067  ddev drush migrate:import cc_media_video --update\n
+ 1068  ddev drush migrate:import cc_taxonomy_channel --update\nddev drush migrate:import cc_taxonomy_news_type --update\nddev drush migrate:import cc_taxonomy_tags --update\nddev drush migrate:import cc_taxonomy_event_type --update\nddev drush migrate:import cc_taxonomy_video_type --update
+ 1069  ddev drush migrate:import cc_paragraph_text --update\nddev drush migrate:import cc_paragraph_image --update\nddev drush migrate:import cc_media_gallery --update\nddev drush migrate:import cc_paragraph_gallery_slider --update\nddev drush migrate:import cc_paragraph_block_reference --update\nddev drush migrate:import cc_paragraph_bullet_list --update\nddev drush migrate:import cc_paragraph_links --update\nddev drush migrate:import cc_paragraph_video --update
+ 1070  ddev drush migrate:import cc_news_article --update\nddev drush migrate:import cc_article --update\nddev drush migrate:import cc_event --update\nddev drush migrate:import cc_video --update
+ 1071  ddev drush migrate:import cc_path_alias --update\n
+ 1072  ddev drush cr\nddev drush migrate:status
+ 1073  ddev drush migrate:messages MIGRATION_ID
+ 1074  ddev drush migrate:messages cc_media_image
+ 1075  ddev mysql livecopy -e "\nSELECT COUNT(DISTINCT nid) AS directory_listings\nFROM node_field_data\nWHERE type = 'directory_listing';\n"
+ 1076  ddev drush cget migrate_plus.migration.cc_directory_listing source
+ 1077  rg -n "cc_directory_listing" web/modules/custom
+ 1078  grep -R -n "cc_directory_listing" web/modules/custom
+ 1079  sed -n '1,280p' web/modules/custom/cc_content_import/src/Plugin/migrate/source/CcDirectoryListing.php
+ 1080  ddev mysql -e "\nSELECT\n  'Live source' AS location,\n  COUNT(DISTINCT nid) AS directory_listings\nFROM livecopy.node_field_data\nWHERE type = 'directory_listing'\n\nUNION ALL\n\nSELECT\n  'Local target' AS location,\n  COUNT(DISTINCT nid) AS directory_listings\nFROM db.node_field_data\nWHERE type = 'directory_listing';\n"
+ 1081  ddev mysql -e "\nSELECT\n  live.nid AS live_nid,\n  live.title\nFROM livecopy.node_field_data AS live\nLEFT JOIN db.node_field_data AS local\n  ON local.type = 'directory_listing'\n  AND local.title = live.title\nWHERE live.type = 'directory_listing'\n  AND local.nid IS NULL\nORDER BY live.title;\n"
+ 1082  ddev mysql -e "\nSELECT\n  local.nid AS local_nid,\n  local.title\nFROM db.node_field_data AS local\nLEFT JOIN livecopy.node_field_data AS live\n  ON live.type = 'directory_listing'\n  AND live.title = local.title\nWHERE local.type = 'directory_listing'\n  AND live.nid IS NULL\nORDER BY local.title;\n"
+ 1083  ddev exec php -l web/modules/custom/cc_content_import/src/Plugin/migrate/source/CcDirectoryListing.php
+ 1084  mkdir -p .tmp-directory-migration-import\n\ncp \\n  web/modules/custom/cc_content_import/config/install/migrate_plus.migration.cc_directory_listing.yml \\n  .tmp-directory-migration-import/\n\nddev drush config:import \\n  --partial \\n  --source=/var/www/html/.tmp-directory-migration-import \\n  -y\n\nddev drush cr\nddev drush migrate:status
+ 1085  ddev export-db --file=before-directory-import-2026-09-21.sql.gz
+ 1086  ddev mysql -e "\nSELECT nid, type, title\nFROM node_field_data\nWHERE nid = 84628;\n"
+ 1087  ddev drush migrate:import cc_directory_listing --idlist=84628 -vvv\nddev drush migrate:messages cc_directory_listing\nddev drush cr
+ 1088  ddev drush migrate:import cc_directory_listing \\n  --idlist=84635,84637,84638,84705,84704,84634,84703,84679,84615,84693 \\n  -vvv
+ 1089  ddev drush migrate:import cc_path_alias --update\nddev drush cr\nddev drush migrate:messages cc_directory_listing
+ 1090  ddev exec pgrep -af 'drush.*cc_directory_listing'
+ 1091  ddev mysql -e "\nSELECT nid, type, title\nFROM node_field_data\nWHERE nid = 84628;\n"
+ 1092  ddev drush migrate:import cc_directory_listing \\n  --idlist=84635,84637,84638,84705,84704,84634,84703,84679,84615,84693 \\n  -vvv
+ 1093  ddev mysql -e "\nSELECT\n  'Live source' AS location,\n  COUNT(DISTINCT nid) AS directory_listings\nFROM livecopy.node_field_data\nWHERE type = 'directory_listing'\n\nUNION ALL\n\nSELECT\n  'Local target' AS location,\n  COUNT(DISTINCT nid) AS directory_listings\nFROM db.node_field_data\nWHERE type = 'directory_listing';\n"
+ 1094  ddev start
+ 1095  ddev mysql -e "\nSELECT\n  'Live source' AS location,\n  COUNT(DISTINCT nid) AS directory_listings\nFROM livecopy.node_field_data\nWHERE type = 'directory_listing'\n\nUNION ALL\n\nSELECT\n  'Local target' AS location,\n  COUNT(DISTINCT nid) AS directory_listings\nFROM db.node_field_data\nWHERE type = 'directory_listing';\n"
+ 1096  ddev drush migrate:status
+ 1097  ddev drush migrate:reset-status cc_directory_listing\nddev drush migrate:status
+ 1098  ddev drush migrate:import cc_directory_listing \\n  --idlist=84628,84635,84637,84638,84705,84704,84634,84703,84679,84615,84693 \\n  -vvv
+ 1099  ddev exec php -l web/modules/custom/cc_content_import/src/Plugin/migrate/source/CcDirectoryListing.php\n\nddev drush cr\n\nddev drush migrate:reset-status cc_directory_listing
+ 1100  ddev drush migrate:import cc_directory_listing \\n  --idlist=84628,84635,84637,84638,84705,84704,84634,84703,84679,84615,84693 \\n  -vvv
+ 1101  ddev drush migrate:import cc_path_alias --update\nddev drush cr\nddev drush migrate:messages cc_directory_listing
+ 1102  ddev mysql -e "\nSELECT 'Live source' AS location, COUNT(DISTINCT nid) AS total\nFROM livecopy.node_field_data\nWHERE type = 'directory_listing'\n\nUNION ALL\n\nSELECT 'Local target' AS location, COUNT(DISTINCT nid) AS total\nFROM db.node_field_data\nWHERE type = 'directory_listing';\n"
+ 1103  ddev start
+ 1104  ddev launch
+ 1105  ddev npm run watch  
+ 1106  ddev start
+ 1107  pwd
+ 1108  ddev start
+ 1109  ddev launch
+ 1110  ddevstart
+ 1111  ddev start
+ 1112  ddev npm run watch  
+ 1113  history 500
