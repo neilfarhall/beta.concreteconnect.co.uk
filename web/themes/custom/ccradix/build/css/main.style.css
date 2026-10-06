@@ -25767,4 +25767,16 @@ body.news-type--tid-10998 .insights-landing {
   z-index: 10;
 }
 
+.paragraph--type--text .field--name-field-text h3, .paragraph--type--text .field--name-field-text .h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Article / Insights listing cards */
+.card-body,
+.teaser-card__content {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 /*# sourceMappingURL=main.style.css.map*/

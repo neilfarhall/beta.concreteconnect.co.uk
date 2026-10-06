@@ -1,0 +1,9 @@
+{% set channel = element['#object'].field_channel.entity.label|default('') %}
+
+{% if channel != 'Seminar Spotlight' %}
+  {% for item in items %}
+    <div{{ item.attributes.addClass('field__item') }}>
+      {{ item.content }}
+    </div>
+  {% endfor %}
+{% endif %}

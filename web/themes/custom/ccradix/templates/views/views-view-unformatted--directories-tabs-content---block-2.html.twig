@@ -22,14 +22,16 @@
         {% endif %}
 
         {% set website = row.content['#view'].style_plugin.render_tokens[loop.index0]['{{ field_directory_web_address }}']|default('') %}
-        {% if website %}
+
+        {% if website|striptags|trim %}
           <div class="directory-home__detail directory-home__detail--web">
             {{ website }}
           </div>
         {% endif %}
 
         {% set email = row.content['#view'].style_plugin.render_tokens[loop.index0]['{{ field_display_email }}']|default('') %}
-        {% if email %}
+
+        {% if email|striptags|trim %}
           <div class="directory-home__detail directory-home__detail--email">
             {{ email }}
           </div>
