@@ -13008,9 +13008,16 @@ body.news-type--tid-10998 .insights-landing {
     }
   }
 }
-/* Article / Insights listing cards */
-.card-body,
-.teaser-card__content {
-  padding-left: 24px;
-  padding-right: 24px;
+
+.insights-landing .views-view--grid > .row {
+  display: flex !important;
+  gap: 32px !important;
+  margin-bottom: 36px !important;
+  align-items: stretch !important;
+}
+
+.insights-landing .views-view--grid > .row > .col-lg-4 {
+  width: calc((100% - 64px) / 3);
+  padding-left: 0;
+  padding-right: 0;
 }
